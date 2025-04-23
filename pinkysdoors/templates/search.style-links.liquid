@@ -1,0 +1,32 @@
+{%- assign order = 'Flat,Arch,Full Arch' | split: ',' -%}
+{%- paginate search.results by 50 -%}
+{%- assign others = '' -%}
+{%- assign swatches = '' -%}
+{%- for i in (1..order.size) -%}
+  {%- assign order_index = forloop.index0 -%}
+  {%- for item in search.results -%}
+    {%- unless item.title contains "Special Order" -%}
+    {%- assign pt = item.title | split: ' - ' -%}
+    {%- assign doors = 'Single' -%}
+    {%- if item.title contains 'Double' -%}
+      {%- assign doors = 'Double' -%}
+    {%- endif -%}
+    {%- capture order_check -%}{{doors}} {{order[order_index]}}{%- endcapture -%}
+    {%- assign title_check = pt[1] | strip -%}
+    {%- if order_check  == title_check -%}
+      {%- capture swatches-%}{{swatches}}<a id="{{item.title | handle }}-swatch" class="style-thumb" data-info="{{order_check}}" href="#" data-original-image="{{item.images[0] | img_url: '600x'}}" data-hover-image="{{item.images[1] | img_url: '600x'}}"><img class="lazyload hs-lazyload hs-id-5564e7f0" data-src="{{ item.featured_image | img_url: '50x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>{%- endcapture -%}
+      {%- unless item.title contains 'Flat' -%}
+	  {%- capture others -%}
+		{{others}}
+        <div style="display: none;" class="grid__item medium-up--one-third small--one-half" id="{{item.title | handle}}" data-style="{{pt[0] | strip}}" data-number="{{doors}}" data-type="{{pt[1] | remove:'Single' | remove: 'Double' | strip}}"> 
+          {% include 'product-card-grid', product: item %}
+        </div>
+	  {%- endcapture -%}
+      {%- endunless -%}
+    {%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- endpaginate -%}
+<div class="swatches">{{swatches}}</div>
+<div class="my-others flex">{{others}}</div>

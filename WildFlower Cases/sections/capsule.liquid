@@ -1,0 +1,184 @@
+{% render 'hs-defer-css', filename: 'capsule.css', pages: 'collection,index,product' | split: ',', local: true %}
+<div id="capsule" >
+    {%- liquid 
+    if section.settings.image != blank
+        echo '<div class="small-hide">'
+        render 'image-element', image: section.settings.image
+        echo '</div>'
+    endif
+    if section.settings.image_mobile != blank
+        echo '<div class="medium-up-hide">'
+        render 'image-element', image: section.settings.image_mobile
+        echo '</div>'
+    endif
+    -%}
+  
+    <div id="capsule-text">
+      {% if section.settings.title != blank %}
+      <h2>{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+      <h1>{{ section.settings.text }}</h1>
+      {% endif %}
+      
+      <div id="capsule-countdown" class="flex c" data-countdown-to="{{ section.settings.countdown_to }}">  
+        <div class="cap-element">
+          <div id="cap-days" class="cap-box">000</div>
+          <span>DAYS</span>
+        </div>
+        
+        <div class="cap-element">
+          <div id="cap-hours" class="cap-box">00</div>
+          <span>HOURS</span>
+        </div>
+        
+        <div class="cap-element">
+          <div id="cap-minutes" class="cap-box">00</div>
+          <span>MINUTES</span>
+        </div>
+        
+        <div class="cap-element">
+          <div id="cap-seconds" class="cap-box">00</div>
+          <span>SECONDS</span>
+        </div>
+      </div>
+    </div>
+    
+    <div id="capsule-buttons" class="text-center small-hide">
+      <a class="line-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a><br/><br/>
+      <a class="line-btn" href="{{ section.settings.button_link2 }}">{{ section.settings.button_label2 }}</a><br/><br/>
+    </div>
+  </div>
+  
+  <div id="capsule-buttons-mobile" class="medium-up-hide center">
+    <a class="line-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a><br/><br/>
+    <a class="line-btn" href="{{ section.settings.button_link2 }}">{{ section.settings.button_label2 }}</a><br/><br/>
+  </div>
+</div>
+
+<script defer src="{{ 'capsule.min.js' | asset_url }}"></script>
+  {% schema %}
+{
+  "name": "Capsule",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (mobile)"
+    },
+    {
+      "type": "text",
+      "id": "max_height",
+      "label": "Image Max Height",
+      "default": "900"
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text",
+      "id": "countdown_to",
+      "label": "Countdown to...",
+      "default": "2017-04-21 00:00",
+      "info": "Format (YYYY-MM-DD mm:ss)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text overlay"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_label2",
+      "label": "Button label 2"
+    },
+    {
+      "type": "url",
+      "id": "button_link2",
+      "label": "Button link 2"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "p_color",
+      "label": "Sub-Heading Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Button Text Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "countdown_color",
+      "label": "Countdown Color",
+      "default": "#FFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Capsule",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+  
+<style>
+    #capsule { 
+        height: {{ section.settings.max_height }}px; 
+    }
+    #capsule-text h1 { 
+        color: {{ section.settings.heading_color }}; 
+    }
+    #capsule-text h2 { 
+        color: {{ section.settings.p_color }}; 
+    }
+    #capsule-buttons .line-btn { color: {{ section.settings.btn_text_color }}; }
+    @media screen and (max-width: 768px) {
+      #capsule { height: auto;  }
+    }
+    .cap-element { color: {{ section.settings.countdown_color }}; }
+    .cap-box { color: {{ section.settings.countdown_color }}; border-color: {{section.settings.countdown_color}} !important; }
+    #capsule .line-btn { border-bottom: 1px solid {{ section.settings.btn_text_color }}; }
+</style>
+  
+  

@@ -1,0 +1,51 @@
+{% if image != blank %}
+  {%- assign collection_image = image -%}
+{% elsif collection.image %}
+  {%- assign collection_image = collection.image -%}
+{% elsif collection.products.first and collection.products.first.images != empty %}
+  {%- assign collection_image = collection.products.first.featured_image -%}
+{% else %}
+  {% assign collection_image = blank %}
+{% endif %}
+{% if position %}
+{% assign position = position | strip %}
+{% endif %}
+{% if shape %}
+{% assign shape = shape | strip %}
+{% endif %}
+
+<div class="collection-grid-item">
+  <a href="{% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}" >
+    {% unless collection_image == blank %}
+      <div class="box {{shape}}-box lazyload js"
+        data-bgset="{% include 'bgset', image: collection_image %}"
+        data-sizes="auto"
+        data-parent-fit="cover">
+      </div>
+    {% else %}
+      {% if collection == empty %}
+        <div class="collection-grid-item">
+          {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% else %}
+        <div class="collection-grid-item {{shape}}-box lazyload hs-lazyload hs-id-ace5be89" data-bgset="{{ collection_image | img_url: '1024x1024' }}'" style=""></div>
+      {% endif %}
+    {% endunless %}
+	{% if position == 'overlay' %}
+    <div class="collection-grid-item__title-wrapper">
+      <div class="collection-grid-item__title h3">
+        {% if collection.title == blank %}
+          {{ 'homepage.onboarding.collection_title' | t }}
+        {% else %}
+          {{ collection.title }}
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+  </a>
+  {{text_position}}
+  {% if position == 'below' %}
+  <h4 class="text-center">{{collection.title | link_to: collection.url}}</h4>
+  {% endif %}
+</div>

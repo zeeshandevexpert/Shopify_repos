@@ -1,0 +1,44 @@
+.site-header{ background-color: white !important; }
+.site-header .site-nav__link{ color: #202020 !important; }
+.sticky-header .header-section{ transition: ease all 0.5s; }
+.hero__btn{ box-shadow: 0 0 4px 0px #000000; color: #3a3a3a; background: white; font-weight: bold; }
+.home-gear-up-section .wrapper{ padding: 0px !important; }
+.home-gear-up-section .grid.grid--spacer { margin: 0px !important;}
+.home-gear-up-section .grid__item.large--six-twelfths{
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+}
+.home-gear-up-section .grid__item.large--six-twelfths .rte{
+    display: none;
+}
+.home-gear-up-section .grid__item.large--six-twelfths:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 9%, rgba(0,0,0,0.6867121848739496) 53%, rgba(0,0,0,0) 100%);
+}
+
+.template-index .main-content .home-gear-up-section .grid .grid__item.large--six-twelfths h3{
+    position: absolute;
+    bottom: 15px;
+    left: 20px;
+    color: white;
+    z-index: 1;
+}
+.template-index .main-content .home-gear-up-section .grid .grid__item.large--six-twelfths h3 a{
+    color: white;
+}
+
+@media screen and (max-width: 769px) {
+    .hero-mobile-xlarge {
+        min-height: calc(50vh - 60px);
+    }
+    .hero-mobile-xlarge  .btn{
+      font-size: 12px;
+      padding: 10px 15px; 
+    }
+}

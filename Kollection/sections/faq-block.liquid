@@ -1,0 +1,65 @@
+<section class="faq-block">
+    <div class="wrap-faq-block">
+        <div class="container">
+            <div class="content-block">
+                <div class="accordion-box">
+                    {% for block in section.blocks %}
+                        <div class="accordion aos-init aos-animate" data-aos="fade-up" data-aos-duration="1500">
+                            <div class="accordion-head">
+                                <div class="icon"></div>    
+                                <h2 class="heading">{{ block.settings.heading }}</h2>
+                                
+                            </div>
+                            <div class="accordion-body" style="display: none;">
+                                <div class="text">
+                                  {{ block.settings.content }}
+                                </div>
+                            </div>
+                        </div>    
+                    {% endfor %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "Accordion Block",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            }
+           
+            ],
+                "blocks": [
+                    {
+                    "type": "aacordion",
+                    "name": "Accordion",
+                    "settings": [
+                        {
+                        "type": "text",
+                        "id": "heading",
+                        "default": "What is Lorem Ipsum?",
+                        "label": "Heading"
+                        },
+                        {
+                        "type": "richtext",
+                        "id": "content",
+                        "default": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of</p>",
+                        "label": "Content"
+                        }
+                    ]
+                    }
+                ],
+            "presets": [
+                {
+                    "name": "Accordion Block"
+                }
+            ]
+    }
+    {% endschema %}

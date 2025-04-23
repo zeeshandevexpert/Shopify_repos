@@ -1,0 +1,89 @@
+
+    <div class="container-style materials-page-top-container">
+        <h1>{{ collection.title }}</h1>
+        <h2>{{ collection.description }}</h2>
+
+        <div class="materials-page-row">
+            <div class="materials-page-menu">
+                <h3>{{ section.settings.sliders_title }}</h3>
+                <ul>
+                    {% assign counter = 0 %}
+                    {% for block in section.blocks %}
+                        <li data-slide="{{ counter }}"><span>{{ block.settings.title }}</span></li>
+                        {% assign counter = counter | plus: 1 %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="swiper materials-page-slider">
+                <div class="swiper-wrapper">
+                    {% for block in section.blocks %}
+                        <div class="swiper-slide">
+                            <div class="swiper-slide-content">
+                                <div class="materials-page-slider-left">
+                                    <img src="{{ block.settings.image | img_url: "700x" }}" />
+                                </div>
+                                <div class="materials-page-slider-right">
+                                    <p>{{ block.settings.description }}</p>
+                                    <a href="{{ block.settings.button_link }}">{{ block.settings.button_title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Materials Head",
+  "tag": "section",
+  "class": "materials-page-top-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sliders_title",
+      "label": "Sliders Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings":[
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Materials Head"
+    }
+  ]
+}
+{% endschema %}

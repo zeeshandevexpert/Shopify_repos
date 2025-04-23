@@ -1,0 +1,230 @@
+<ul class="header__nav__list inline__wrapper nav{% if inline_centered == true %} inline-centered{% endif %} {{ position }}">
+{% for link in linklists[section.settings.main_nav].links offset:offset limit:start %}
+    {%- liquid
+
+      assign collections_mega_menu = false
+      assign linklist_mega_menu = false
+      assign linklist_images_menu = false
+
+    -%}
+
+    {% if link.levels > 1 %}
+    {% assign linklist_qty = link.links.size %}
+      {% case linklist_qty %}
+        {% when 2 %}
+          {% assign columns = '2' %}
+        {% when 3 %}
+          {% assign columns = '3' %}
+        {% else %}
+          {% assign columns = '4' %}
+      {% endcase %}
+     {% capture 'linklist_columns' %}
+       <div class="header__linklist-columns-wrapper block-{{ block.id }}" {{ block.shopify_attributes }}>
+         <div class="header__linklist-columns-container" style="columns: {{ columns }};">           
+           {% for sub_link in link.links %}
+            <ul class="header__linklist-columns-list">
+               <h5 class="header__linklist-header">
+                 <a href="{{ sub_link.url }}">{{ sub_link.title | truncate: 30 }}</a>
+               </h5>
+               {% for sub_sub_link in sub_link.links %}
+                  <li class="header__linklist-item"><a class="header__linklist-link" href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a></li>
+               {% endfor %}
+           </ul>
+           {% endfor %}
+         </div>
+       </div>
+     {% endcapture %}
+     {% assign linklist_mega_menu = true %}
+    {% endif %}
+
+    {% for block in section.blocks %}
+     {% if block.type == 'collections_mega_menu' %}
+      {% if block.settings.collection_item == link.title %}
+        {% capture 'collections_mega' %}
+          <div class="header__megamenu-wrapper image-ratio-{{ block.settings.image_ratio }}" {{ block.shopify_attributes }}>
+            {% for n in (1..6) %}
+              {%- liquid
+
+                assign collection = "collection_" | append: n
+                assign collection = block.settings[collection]
+                assign collection = collections[collection]
+
+              -%}
+              {% if collection != blank %}
+                <a class="header__megamenu-item" href="{{ collection.url }}">
+                  <div class="header__megamenu-image">
+                    {% if collection.image %}
+                      {% render 'basic-responsive-image',
+                        type: collection.image,
+                        width: width,
+                        loading: 'eager',
+                        sm_render: '300px',
+                        md_render: md_render,
+                        lg_render: lg_render,
+                      %}
+                    {% elsif collection.products.first and collection.products.first.media != empty %}
+                      {% render 'basic-responsive-image',
+                        type: collection.products.first.featured_media.preview_image,
+                        width: width,
+                        loading: 'eager',
+                        sm_render: '300px',
+                        md_render: md_render,
+                        lg_render: lg_render,
+                      %}
+                    {% endif %}
+                  </div>
+                  <p class="header__megamenu-title collection-title">{{ collection.title }}</p>
+                </a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endcapture %}
+        {% assign collections_mega_menu = true %}
+      {% endif %}
+     {% elsif block.type == 'linklist_with_images' %}
+        {% if block.settings.linklist_images_menu_item == link.title %}
+            {% capture 'linklist_images_columns' %}
+              <div class="header__linklist-images-wrapper image-ratio-{{ block.settings.image_ratio }}" {{ block.shopify_attributes }}>
+                <div class="header__linklist-images-container">
+                  {% for sub_link in link.links %}
+                    <ul class="header__linklist-images-list">
+                      <h5 class="header__linklist-images-header">
+                       <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                      </h5>
+                      {% for sub_sub_link in sub_link.links %}
+                        <li class="header__linklist-images-item">
+                          <a class="header__linklist-images-link" href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endfor %}
+                 </div>
+                  {% for n in (1..3) %}
+                    {%- liquid
+
+                      assign custom_image = "featured_image_" | append: n
+                      assign custom_image = block.settings[custom_image]
+                      assign custom_title = "featured_image_label_" | append: n
+                      assign custom_title = block.settings[custom_title]
+                      assign custom_url = "image_url_" | append: n
+                      assign custom_url = block.settings[custom_url]
+
+                    -%}
+                    {% if custom_url %}<a class="header__linklist-images__image-wrapper" href="{{ custom_url }}">{% else %}<div class="header__linklist-images__image-wrapper">{% endif %}
+                      <div class="header__linklist-images__image">
+                        {% if custom_image != blank %}
+                          {{ custom_image | image_url: width: 450 | image_tag: loading: 'eager' }}
+                        {% endif %}
+                      </div>
+                      {% if custom_title != blank %}
+                        <h5 class="header__linklist-images__title">
+                          {{ custom_title }}
+                        </h5>
+                      {% endif %}
+                    {% if custom_url %}</a>{% else %}</div>{% endif %}
+                  {% endfor %}
+              </div>
+            {% endcapture %}
+          {% assign linklist_images_menu = true %}
+        {% endif %}
+     {% endif %}
+    {% endfor %}
+
+    {% if collections_mega_menu %}
+      <li class="header__nav__list-item header__nav__dropdown-megamenu has_sub_menu first-level js-doubletap-to-go js-aria-expand" data-active-class="navigation__menuitem--active" aria-haspopup="true" aria-expanded="false" role="none">
+        <a class="header__nav__link dlink first-level js-open-dropdown-on-key" href="{{ link.url }}">
+          {{ link.title | escape }}
+        </a>
+        {{ collections_mega }}
+      </li>
+    {% elsif linklist_images_menu %}
+      <li class="header__nav__list-item header__nav__dropdown-linklistImages has_sub_menu first-level js-doubletap-to-go js-aria-expand" data-active-class="navigation__menuitem--active" aria-haspopup="true" aria-expanded="false" role="none">
+        <a class="header__nav__link dlink first-level js-open-dropdown-on-key" href="{{ link.url }}">
+          {{ link.title | escape }}
+          {% render 'snip-icons',
+           wrapper: '.header__nav__link',
+           type: 'apollo',
+           icon: 'down-carrot',
+           classes: 'header__nav__link--icon vib-center',
+           size: '6px',
+           fill: 'var(--nav-color)',
+           hover: 'var(--nav-color)' %}
+        </a>
+        {{ linklist_images_columns }}
+      </li>
+    {% elsif linklist_mega_menu %}
+      <li class="header__nav__list-item header__nav__dropdown-linklist has_sub_menu first-level js-doubletap-to-go js-aria-expand" data-active-class="navigation__menuitem--active" aria-haspopup="true" aria-expanded="false" role="none">
+        <a class="header__nav__link dlink first-level js-open-dropdown-on-key" href="{{ link.url }}">
+          {{ link.title | escape }}
+          {% render 'snip-icons',
+           wrapper: '.header__nav__link',
+           type: 'apollo',
+           icon: 'down-carrot',
+           classes: 'header__nav__link--icon vib-center',
+           size: '6px',
+           fill: 'var(--nav-color)',
+           hover: 'var(--nav-color)' %}
+        </a>
+        {{ linklist_columns }}
+      </li>
+    {% elsif link.links != blank %}
+      {% if section.settings.logo_position == 'above'%}<span class="{% if forloop.rindex <= 3 %}right{% else %}left{% endif %}">{% endif %}
+      <li class="header__nav__list-item header__nav__dropdown-simple has_sub_menu first-level js-doubletap-to-go js-aria-expand" data-active-class="navigation__menuitem--active" aria-haspopup="true" aria-expanded="false" role="none">
+        <a class="header__nav__link dlink first-level js-open-dropdown-on-key" href="{{ link.url }}">
+          {{ link.title | escape }}
+          {% render 'snip-icons',
+           wrapper: '.header__nav__link',
+           type: 'apollo',
+           icon: 'down-carrot',
+           classes: 'header__nav__link--icon vib-center',
+           size: '6px',
+           fill: 'var(--nav-color)',
+           hover: 'var(--nav-color)' %}
+        </a>
+        <ul class="header__nav__submenu{% if link.links.size  > 10 %} large__submenu{% endif %}">
+          {% for sub_link in link.links %}
+            {% if sub_link.links != blank %}
+              <li data-active-class="dropdown__menuitem--active" class="header__nav__list-item is_parent has_sub_menu js-menuitem-with-nested-dropdown js-aria-expand" data-active-class="navigation__menuitem--active" aria-haspopup="true" aria-expanded="false" role="none">
+                <a class="header__nav__link second-level" href="{{ sub_link.url }}">
+                  {{ sub_link.title | escape }}
+                  {% render 'snip-icons',
+                   wrapper: '.header__nav__link',
+                   type: 'apollo',
+                   icon: 'down-carrot',
+                   classes: 'header__nav__link--icon vib-center',
+                   size: '6px',
+                   fill: 'var(--nav-dropdown-text)',
+                   hover: 'var(--nav-dropdown-text)' %}
+                </a>
+                <ul class="header__nav__sub-sub-menu js-dropdown-nested">
+                  {% for sub_sub_link in sub_link.links %}
+                    <li class="header__nav__list-item">
+                      <a class="header__nav__link third-level" href="{{ sub_sub_link.url }}">
+                        {{ sub_sub_link.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
+            {% else %}
+              <li class="header__nav__list-item">
+                <a class="header__nav__link second-level" href="{{ sub_link.url }}">
+                  {{ sub_link.title | escape }}
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      {% if section.settings.logo_position == 'above'%}</span>{% endif %}
+    {% else %}
+     {% if section.settings.logo_position == 'above'%}<span class="{% if forloop.rindex <= 3 %}right{% else %}left{% endif %}">{% endif %}
+      <li class="header__nav__list-item no-dropdown first-level js-doubletap-to-go js-aria-expand" data-active-class="navigation__menuitem--active" aria-haspopup="true" aria-expanded="false" role="none">
+        <a class="header__nav__link dlink first-level js-open-dropdown-on-key" href="{{ link.url }}">
+          {{ link.title | escape }}
+        </a>
+      </li>
+     {% if section.settings.logo_position == 'above'%}</span>{% endif %}
+    {% endif %}
+{% endfor %}
+</ul>

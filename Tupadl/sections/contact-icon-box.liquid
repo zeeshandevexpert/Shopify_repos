@@ -1,0 +1,52 @@
+<div class="contact-features">
+    <div class="container">
+        {% for block in section.blocks %}
+            <div class="features">
+                <div class="icon">
+                    <img src="{{ block.settings.icon |  img_url: 'master' }}" alt="">
+                </div>
+                <p class="title">{{ block.settings.heading }}</p>
+              
+            </div>        
+        {% endfor %}
+        <div class="subtext">{{ section.settings.sub_text }}</div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Contact Icon Box",
+        "settings": [
+            {
+                    "type": "richtext",
+                    "id": "sub_text",
+                    "label": "Sub Text"
+                    }
+            ],
+            "blocks": [
+                {
+                "type": "Item",
+                "name": "Icon",
+                "settings": [
+                    {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                    },
+                    {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                    }
+                  
+                ]
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Contact Icon Box"
+                }
+            ]
+    }
+    {% endschema %}

@@ -1,0 +1,17 @@
+<div class="search-modal">
+    <div class="search-modal-content">
+        <form action="{{ routes.search_url }}">
+            <span class="search-modal-close">close</span>
+            <h2>search</h2>
+            <div class="search-modal-row">
+                <div class="search-modal-input">
+                    <input type="text" name="q" placeholder="type keywords here">
+                    <input type="hidden" name="type" value="article" />
+                </div>
+                <div class="search-modal-button">
+                    <button type="submit">see results</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

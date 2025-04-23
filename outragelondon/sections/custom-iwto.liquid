@@ -1,0 +1,112 @@
+<style>
+  #shopify-section-{{section.id}} .custom-iwto-image-wrapper:hover .custom-iwto-link{
+    box-shadow: 0 0 0 1px {{section.settings.bfg}};
+  }
+</style>
+  <div class="custom-iwto">
+    <div class="custom-iwto-wrapper">
+      {% if section.settings.link != blank %}
+      <a href="{{ section.settings.link }}" class="custom-iwto-image-wrapper">
+      {% else %}
+      <div class="custom-iwto-image-wrapper">
+      {% endif %}
+        {% if section.settings.img %}
+        <img src="{{ section.settings.img | img_url: 'master' }}" class="custom-iwto-img {% if section.settings.img_mob %}custom-iwto--mob{% endif %}" />
+          {% if section.settings.img_mob %}
+            <img src="{{ section.settings.img_mob | img_url: 'master' }}" class="custom-iwto-mob" />
+          {% endif %}
+        {% endif %}
+        {% if section.settings.preheading != blank or section.settings.heading != blank or section.settings.link_text != blank %}
+          <div class="custom-iwto-text-wrapper" style="background: {{ section.settings.overlay }};">
+            {% if section.settings.Preheading != blank %}
+              <p class="custom-iwto-preheading" style="color: {{section.settings.fg}}">{{ section.settings.Preheading }}</p>
+            {% endif %}
+            {% if section.settings.heading != blank %}
+              <h2 class="custom-iwto-heading" style="color: {{section.settings.fg}}">{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.link_text != blank %}
+              <span class="custom-iwto-link" style="color: {{ section.settings.bfg }}; background: {{ section.settings.bbg }}33; border: 1px solid {{ section.settings.bfg }};">{{ section.settings.link_text }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      {% if section.settings.link != blank %}
+      </a>
+      {% else %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+{% schema %}
+{
+  "name": "Custom Img w/t Text Over",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "img_mob",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "Preheading",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_background",
+      "id": "overlay",
+      "label": "Overlay Bg Color",
+      "default": "linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.5))"
+    },
+    {
+      "type": "color",
+      "id": "fg",
+      "label": "Overlay Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "bbg",
+      "label": "Button Bg Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "bfg",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Img w/t Text Over"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}

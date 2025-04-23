@@ -1,0 +1,34 @@
+$black: #1d1d1d;
+$white: #ffffff;
+
+html,body {
+  background: $black;
+  color: $white;
+}
+
+.dark-mode {
+  #shopify-section-header,
+  .site-header,
+  .site-header__mobile-nav {
+    background: $black;
+    color: $white;
+  }
+  .site-header__logo-image svg,
+  .site-header__icons-wrapper svg path,
+  .site-header__icons-wrapper svg g {
+    fill: $white !important;
+  }
+  a.wk-link .wk-icon svg path {
+    fill: $white;
+    stroke: $white;
+  }
+  .site-nav__link--main {
+    color: $white;
+  }
+  .plp-extra-info {
+    background: rgba($white,.25);
+    color: $white;
+  }
+  .filter-group h4:after {
+  }
+}

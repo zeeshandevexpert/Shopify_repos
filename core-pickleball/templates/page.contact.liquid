@@ -1,0 +1,98 @@
+<!-- /templates/page.contact.liquid -->
+ <div class="section-header">
+      <h1 class="page-title" style="text-align:left;">{{ page.title }}</h1>
+    </div>
+<div class="grid">
+  
+  <div class="grid__item large--six-twelfths">
+
+   
+
+    {% unless page.content == blank %}
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    {% endunless %}
+
+    <div class="form-vertical">
+      {% form 'contact' %}
+
+        {% comment %}
+          Successful message
+        {% endcomment %}
+        {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+        {{ form.errors | default_errors }}
+
+        <div class="grid grid--small">
+          <div class="grid__item large--one-half">
+            <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+            <input type="text" id="ContactFormName" class="input-full" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>
+
+          <div class="grid__item large--one-half">
+            <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+            <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          </div>
+        </div>
+
+        <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+        <input type="tel" id="ContactFormPhone" class="input-full" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+        <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+        <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+        <div class="text-right">
+          <button type="submit" class="btn btn--primary">
+            {{ 'contact.form.send' | t }} <span class="fa fa-arrow-right" aria-hidden="true"></span>   
+          </button>
+        </div>
+
+      {% endform %}
+    </div>
+
+  </div>
+   <div class="grid__item large--five-twelfths">
+       <div class="contact-info">
+     <p class="address desltwv_12">
+        <span class="add_label"><i class="fas fa-map-marker-alt"></i> </span>
+        <span class="add_value"><span style=" font-weight: bold;line-height: 1.4em;">Address:</span> CORE Pickleball LLC, 184 South Livingston Ave, Suite 9-108, Livingston NJ, 07039</span>
+    </p>
+   
+    <!-- <p class="address">
+        <span class="add_label"><i class="fas fa-phone"></i> </span>
+        <span class="add_value">
+         <span style=" font-weight: bold;line-height: 1.4em;">  Phone: </span> <a href="tel:+12677539050">(267) 753-9050</a>
+        </span>
+    </p> -->
+    <p class="address">
+        <span class="add_label"><i class="fas fa-envelope"></i> </span>
+        <span class="add_value">
+          <span style=" font-weight: bold;line-height: 1.4em;"> Email: </span><a href="mailto:customercare@corepickleballusa.com">customercare@corepickleballusa.com</a>
+        </span>
+    </p>
+</div>
+     <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=90 Springbrook Rd, Livingston, New Jersey 07039&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://connectionsgame.org/"></a></div><style>.mapouter{position:relative;text-align:right;width:600px;height:395px;}.gmap_canvas {overflow:hidden;background:none!important;width:496px;height:390px;}.gmap_iframe {width:500px!important;height:287px!important;}</style></div>
+     
+   </div>
+</div>
+<style>
+  @media screen and (max-width: 580px){
+  .mapouter{
+    display:none;
+  }
+    .contact-info {
+    margin-top: 20px;
+}
+    #contact-core .page-title{
+      text-align:center !important;
+    }
+    p.address {
+    font-size: 16px;
+}
+  }
+</style>

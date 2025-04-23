@@ -1,0 +1,138 @@
+.quick-add__colors {
+  position: relative;
+  z-index: 1;
+}
+.quick-add__button {
+  background: 0;
+  border: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+.quick-add__button[selected] {
+  border: var(--inputs-border-width) solid rgba(var(--color-foreground),var(--inputs-border-opacity));
+}
+
+.quick-add__button:not([selected]):hover {
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 3px rgba(var(--color-foreground),0.25);
+}
+
+.quick-add__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.quick-add__button--color {
+  margin: 5px;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.quick-add__button--color[selected] {
+  border: var(--inputs-border-width) solid rgba(var(--color-foreground),0.5);
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 3px rgba(var(--color-foreground),0.5);
+}
+quick-add {
+  display: block;
+  margin: 0px auto;
+  text-align: center;
+  max-width: 225px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width:767px){
+.swiper-wrapper .swiper-slide .card-product .flex-box quick-add button{
+  /* width:225px; */
+  padding:10px 5px;
+}  
+}
+
+
+.quick-add__add-button {
+  padding: 0.9rem 0;
+  font-size: 1.2rem;
+  width: 100%;
+  margin: 0px auto;
+  max-width: 136px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  background: 0;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgb(var(--color-foreground));
+  transition: all .3s ease;
+/*   background: rgb(var(--color-foreground)); */
+/*   color: rgb(var(--color-background)); */
+
+}
+
+@media screen and (min-width: 990px) {
+  .quick-add__add-button {
+    max-width: 175px;
+    padding: 1.3rem 0;
+  }
+  .quick-add__add-button:hover {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+}
+
+.quick-add__add-button:disabled {
+  opacity: .25;
+  cursor: default;
+}
+
+.quick-add__colors .link {
+  display: inline-block;
+  color: rgba(var(--color-foreground),0.5);
+  text-decoration: none;
+  position: relative;
+  margin-left: 0.5rem;
+  top: 0.5rem;
+}
+
+.card__selected-color {
+  opacity: 0.5;
+  display: block;
+  margin-top: -0.15rem !important;
+}
+
+@media screen and (max-width: 749px) {
+  .quick-add__button--color {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.1rem;
+  }
+}
+
+.quick-add__add-button {
+  position: relative;
+}
+
+.quick-add__add-button .spinner {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: -0.75rem;
+  margin-left: -0.75rem;
+  transition: opacity 0.3s ease;
+}
+
+quick-add.loading .spinner {
+  opacity: 1;
+  visibility: visible;
+}
+
+.quick-add__add-button * {
+  pointer-events: none;;
+}

@@ -1,0 +1,220 @@
+.subscriberOuter #appstle-widget-template {
+    width: 100%;
+    max-width: 565px;
+}
+
+.product-mediasInnerColumnwrap{
+     max-width: 565px;
+}
+
+.subscriberOuter .appstle_widget_title{
+  display: none;
+}
+
+.product-info-wrapper .product-description-header{
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 56px;
+  margin: 0 0 15px;
+  text-transform: capitalize;
+  letter-spacing: initial;
+  color: #a264a9;
+}
+
+.product-description-main-wrapper {
+    padding-left: 0;
+}
+
+#appstle_subscription_widget0 .appstle_subscription_wrapper {
+  border: none;
+  display: flex;
+  flex-flow: column;
+}
+
+.appstle_input_wrapper.appstle_subscription_option, .appstle_span_wrapper span,
+.appstle-selling-plan-name-wrapper.appstle-selling-plan-label-name{
+  color: #000;
+}
+
+.widgetSellingPlanWrapper .appstle_subscription_option label {
+  border: none;
+  background: #fff;
+  border-radius: 20px;
+}
+
+
+.appstle_sub_widget input[type=radio]+label:before{
+  display: none;
+}
+
+.widgetSellingPlanWrapper .appstle_input_wrapper label{
+  border: none;
+  background: #fff;
+  border-radius: 20px;
+  line-height: initial;
+  /* align-items: center !important; */
+}
+
+.appstle-selling-plan-name-wrapper.appstle-selling-plan-label-name, .appstle-selling-plan-name-wrapper {
+    font-size: 34px;
+    color: #A264A9;
+    font-weight: 900;
+    font-family: var(--header-font-stack);
+}
+
+.appstle_lowercase.appstle_sellingPlan_formattedCompareAtPrice.appstle_price_block,
+.appstle-plan-text, .yotpo-reviews-pagination-container{
+    display: none !important;
+}
+
+.appstle-selling-plan-detail-wrapper {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+.appstle-selling-plan-detail-wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_discount_block.appstle_formattedPrepaidPerDeliveryPriceText,
+.appstle-selling-plan-detail-wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_onetime_amount {
+  font-size: 44px !important;
+  font-weight: 900;
+  color: #A264A9;
+  font-family: var(--header-font-stack);
+}
+
+.appstle_input_wrapper .appstle_sellingPlan_discountText {
+  left: 20px!important;
+  right: auto;
+  bottom: 8px;
+  background: #FEEEE6;
+  height: auto;
+  color: #D06B28;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 5px 15px !important;
+  display: none !important;
+}
+
+.appstle_span_wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_price_block {
+    /* font-size: 18px !important;
+    font-weight: 400 !important;
+    color: #D06B28; */
+    color: #a264a9;
+    font-weight: 900 !important;
+    font-family: var(--header-font-stack);
+    font-size: 18px !important;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1198px) {
+  .appstle_span_wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_price_block {
+    font-size: 24px !important;
+  }
+}
+
+@media screen and (min-width: 1199px) {
+  .appstle_span_wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_price_block {
+    font-size: 34px !important;
+  }
+}
+
+ .btn.secondary-btn {
+    margin: 10px 0;
+    background: #A264A9;
+    color: #ffffff;
+}
+
+.subscriberOuter{
+  gap: 20px;
+  max-width:565px;
+}
+
+.subscriberOuter .secondary-btn {
+    width: auto !important;
+    flex: 0 0 auto;
+}
+
+
+.subscriberOuter .widgetSellingPlanWrapper input:checked+label {
+  background-color: #fff;
+  margin-bottom:unset !important;
+}
+
+.widgetSellingPlanWrapper input:checked+label {
+    background-color: #f4e8f5 !important;
+    border: 1px solid #a764a6 !important;
+}
+
+#pastry-kit-subscription #appstle-widget-template {
+    display: none;
+}
+
+
+.appstle-selling-plan-detail-wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_discount_block.appstle_formattedPrepaidPerDeliveryPriceText{
+  display: none;
+}
+
+@media(max-width:1279px){
+  
+  .appstle-selling-plan-name-wrapper.appstle-selling-plan-label-name {
+    font-size: 24px;
+  }
+
+  .appstle-selling-plan-detail-wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_discount_block.appstle_formattedPrepaidPerDeliveryPriceText {
+    font-size: 34px!important;
+  }
+
+  .pdpMainOuter {
+      padding-top: 40px;
+  }
+  
+  .product-info-wrapper .product-description-header {
+    font-size: 34px;
+  }
+}
+
+  @media(max-width:991px){
+    .product-mediasInnerColumnwrap {
+        margin: 0 auto;
+    }
+  }
+
+  @media(max-width:767px){
+    
+    .testimonialInnerContent-review .yotpo-main-reviews-widget .yotpo-review-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .product-info-wrapper {
+      padding-top: 30px;
+    }
+
+    .testimonial-section-outer {
+       padding-bottom: 0;
+    }
+  }
+
+  @media(max-width: 574px){
+   
+    .appstle-selling-plan-name-wrapper.appstle-selling-plan-label-name {
+        font-size: 18px;
+    }
+
+    .appstle-selling-plan-detail-wrapper .appstle_lowercase.appstle_sellingPlan_price.appstle_discount_block.appstle_formattedPrepaidPerDeliveryPriceText {
+        font-size: 20px!important;
+    }
+
+    .pdpMainOuter {
+        padding-top: 0;
+    }
+
+    .subscriberOuter .secondary-btn {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    .product-info-wrapper .product-description-header {
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+
+
+  }

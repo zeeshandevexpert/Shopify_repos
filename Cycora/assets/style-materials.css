@@ -1,0 +1,239 @@
+.materials-page-top-section {
+	padding: 165px 0 102px 0;
+    background: var(--colorlightgray);
+}
+
+.materials-page-top-container {
+	max-width: 1202px;
+}
+
+.materials-page-top-section h1 {
+	text-align: center;
+	color:var(--colorlightblack);
+	font-size:30px;
+	line-height: 0.9em;
+	letter-spacing: -0.03em;
+	margin:0 0 23px 0;
+}
+
+.materials-page-top-section h2 {
+	text-align: center;
+	color:var(--colorlightblack);
+	font-size:60px;
+	line-height: 1em;
+	letter-spacing: -0.03em;
+	margin:0 0 46px 0;
+}
+
+.materials-page-menu h3 {
+	font-family: 'Helvetica-Bold';
+	font-size:14px;
+	line-height: 1.3em;
+	letter-spacing: -0.01em;
+	color:var(--colorlightblack);
+	display:inline-flex;
+}
+
+.materials-page-row {
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.materials-page-menu {
+	width:33.333%;
+}
+
+.materials-page-menu ul {
+	display:block;
+	margin:0; 
+	padding:0;
+	list-style: none;
+}
+
+.materials-page-menu ul li {
+	display: block;
+	margin:0;
+	padding:0;	
+}
+
+.materials-page-menu ul li span {
+	color:var(--colorlightblack);
+	line-height: 1.5em;
+	font-size:30px;
+	display:inline-flex;
+	cursor: pointer;
+	position: relative;
+}
+
+.materials-page-menu ul li.active span:after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0px;
+	height: 2px;
+	background: url('../assets/dots-black.png');
+}
+
+.materials-page-slider {
+	width:66.666%;
+	user-select: none;
+}
+
+.materials-page-slider .swiper-slide-content {
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.materials-page-slider-left {
+	width:50%;
+	overflow: hidden;
+}
+
+.materials-page-slider-left img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border-radius: 50%;
+}
+
+.materials-page-slider-right {
+	width:50%;
+	padding-left: 145px;
+	position: relative;
+}
+
+.materials-page-slider-right:before {
+	position: absolute;
+	content:'';
+	border-right:1px solid var(--colorlightblack);
+	width:104px;
+	height:100%;
+	left:25px;
+}
+
+.materials-page-slider-right:after {
+	position: absolute;
+	content:'';
+	height:1px;
+	background: var(--colorlightblack);
+	width:104px;
+	left:25px;
+	top:calc(50% - 1px);
+}
+
+.materials-page-slider-right p {
+	font-size:14px;
+	line-height: 1.5em;
+	color:var(--colorlightblack);
+	letter-spacing: -0.01em;
+	margin: 0 0 25px 0;
+}
+
+.materials-page-slider-right a {
+	display:inline-flex;
+	font-size:14px;
+	line-height: 1.5em;
+	color:var(--colorlightblack);
+	margin:0;
+	padding: 0 32px 0 0;
+    background: url(../assets/button-more.svg) center right no-repeat;
+}
+
+@media(min-width:992px) {
+	.materials-page-slider .swiper-pagination {
+		display: none;
+	}
+}
+
+.materials-page-slider .swiper-pagination {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.materials-page-slider .swiper-pagination-bullet {
+	width:6px;
+	height:6px;
+	background: var(--colorlightblack);
+	opacity: 0.3;
+}
+
+.materials-page-slider .swiper-pagination-bullet-active {
+	width:8px;
+	height:8px;
+	background: var(--colorlightblack);
+	opacity:1;
+}
+
+
+@media (max-width:991px) {
+	.materials-page-top-section {
+		padding:157px 0 84px 0;
+	}
+
+	.materials-page-top-section h1 {
+		font-size:14px;
+		letter-spacing: 0;
+	}
+
+	.materials-page-top-section h2 {
+		font-size:45px;
+	}	
+
+	.materials-page-row {
+		flex-wrap: wrap;
+	}
+
+	.materials-page-menu {
+		width:100%;
+	}
+	.materials-page-menu ul li span {
+		font-size:24px;
+		letter-spacing: -0.03em;
+	}
+
+	.materials-page-menu h3 {
+		display: none;
+	}
+
+	.materials-page-menu ul li:not(.active) {
+		display: none;
+	}
+
+	.materials-page-menu ul {
+		text-align: center;
+	}
+
+	.materials-page-slider {
+		width:100%;
+	}
+
+	.materials-page-slider .swiper-slide {
+		width:80%;
+	}
+
+	.materials-page-slider .swiper-slide-content {
+		flex-wrap: wrap;
+	}
+	
+	.materials-page-slider-left {
+		width:100%;
+		padding-top:28px;
+	}
+
+	.materials-page-slider-right {
+		width:100%;
+		padding-left:0;
+		padding-top:51px;
+		text-align: center;
+	}
+
+	.materials-page-slider-right:after, .materials-page-slider-right:before {
+		display: none;
+	}
+
+
+}

@@ -1,0 +1,495 @@
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+
+  @media screen and (min-width: 0px) and (max-width: 321px)
+  {
+    .container {
+    padding: 16px;
+	width: 250px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 80%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 75%;
+	}
+    
+    /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 361px)
+  {
+    .container {
+    padding: 16px;
+	width: 300px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 70%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 70%;
+	}
+    
+    /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+  @media screen and (min-width: 361px) and (max-width: 533px)
+  {
+    .container {
+    padding: 16px;
+	width: 390px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 50%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 50%;
+	}
+    
+    /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+  @media screen and (min-width: 534px) and (max-width: 641px)
+  {
+    .container {
+    padding: 16px;
+	width: 600px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 50%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 40%;
+	}
+    
+    /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+  @media screen and (min-width: 641px) and (max-width: 733px)
+  {
+    .container {
+    padding: 16px;
+	width: 700px;
+	margin: auto;
+	text-align: center;
+	}
+    
+	.form-control {
+  display: block;
+  width: 35%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 30%;
+	}
+    
+     /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px)
+  {
+    .container {
+    padding: 16px;
+	width: 770px;
+	margin: auto;
+	text-align: center;
+	}
+    
+	.form-control {
+  display: block;
+  width: 30%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 20%;
+	}
+    
+     /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 60%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+  @media screen and (min-width: 1024px) and (max-width: 1366px)
+  {
+    .container {
+    padding: 16px;
+	width: 900px;
+	margin: auto;
+	text-align: center;
+	}
+    
+	.form-control {
+  display: block;
+  width: 15%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 20%;
+	}
+    
+     /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+  @media screen and (min-width: 1366px) and (max-width: 2401px)
+  {
+    .container {
+    padding: 16px;
+	width: 900px;
+	margin: auto;
+	text-align: center;
+	}
+
+    .form-control {
+  display: block;
+  width: 15%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555555;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  margin:auto;
+	}
+    
+    .signupbtn {
+  float: center;
+  width: 20%;
+	}
+    
+     /* Full-width input fields */
+	input[type=text], input[type=email] {
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+	}
+  }
+  
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+}
+
+button:hover {
+    opacity:1;
+}
+
+
+/*  signup buttons and add an equal width */
+
+
+
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+  
+}  
+</style>
+
+<script>
+  var onSuccessGetData = function(response){ 		
+    	if(response.select.referralpage && response.IsTeamManager)
+		{
+		  $("#welcomemsg").show();
+		}
+  }
+  
+  
+  $(document).ready(function(){
+  
+    var urlVal= window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?customerId={{customer.id}}&customerName=null&data=4";
+	
+      $.get(
+       	   urlVal,
+           function (data, status) {
+                 onSuccessGetData(data);
+        	}
+       );        
+  });
+  
+  	var onSuccessSubmit = function (response,textStatus)
+    {
+      if(response.customer.id == 0)
+      {
+        $("#errorsmsg").show();
+      }
+      else if(response.customer.id == 1){
+        $("#OtherSuccessmsg").show();
+      }
+      else if(response.customer.id == -1){
+        $("#RepExistErrorMsg").show();
+      }
+      else
+      {
+        $("#successmsg").show();
+      }
+	  $(".signupbtn").html("Send Invite");
+    }
+	var submiteDetails = function(){      
+		$(".signupbtn").html("Sending Request...");
+		$("#errorsmsg").hide();
+		$("#successmsg").hide();
+        $("#OtherSuccessmsg").hide();
+        $("#RepExistErrorMsg").hide();
+     
+  		var usermail=document.getElementById("mailid").value;
+  		var username=document.getElementById("Username").value;
+        var Lname=document.getElementById("Lname").value;
+  			    	
+		var strUser;
+		{% if customer %}
+			strUser = {{customer.id}};
+		{% else %}
+			strUser = "";
+		{% endif %}
+        
+         var TeamManagerName="{{customer.first_name}} {{customer.last_name}}"
+    	
+    	var user = {
+    		"salesrepId" : strUser,
+        	"email" : usermail,
+            "name" : username,
+            "TeamManagerName":TeamManagerName,
+            "Lname":Lname
+    	}
+        
+        var data = JSON.stringify(user);
+        var urlVal = window.location.protocol +"//"+ window.location.hostname +"/apps/SalesRep?pageIndex=1&data="+data;
+        console.log(urlVal);
+        $.post(
+       		urlVal,
+		    function (data, status) {                 
+					   onSuccessSubmit(data, status);					                   
+					}
+			);
+  	}
+  	
+</script>
+
+<body>
+
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p>Please fill in this form to sign up as a sales rep and get access to sales rep features.</p>
+    <hr>
+	<p id="welcomemsg" style="display:none"> Hello {{customer.first_name}}, sign up sales rep and get a commission on sales made by reps under you</p>
+	
+    <br><br><br>
+    <label for="email"><b>Email</b></label>
+    <input id="mailid" type="email" placeholder="Enter Email" name="email" required>
+	<br>
+    <label for="psw"><b>First Name</b></label>
+    <input id="Username" type="text" placeholder="Enter First Name" name="name" required>
+    <label><b>Last Name</b></label>
+    <input id="Lname" type="text" placeholder="Enter Last Name" name="name" required>
+
+    
+    <div class="clearfix">
+      <button class="signupbtn" onclick="submiteDetails()">Send Invite</button>
+    </div>
+    <h4 style="color: darkseagreen; display:none" id="successmsg">Sales rep registered successfully. Account activation instructions sent in email</h4>
+    <h4 style="color: darkseagreen; display:none" id="OtherSuccessmsg">Sales rep registered successfully.</h4>
+    <h4 style="color: #f80000;display:none" id="errorsmsg">Error while registration. This user email may already have an account on the store.</h4>
+    <h4 style="color: #f80000;display:none" id="RepExistErrorMsg">User is already exist as a rep.</h4>
+  </div>
+
+</body>

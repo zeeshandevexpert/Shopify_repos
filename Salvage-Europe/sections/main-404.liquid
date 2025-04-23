@@ -1,0 +1,23 @@
+<section class="404__section row">
+  <div id="page" class="desktop-12 tablet-6 mobile-3">
+    <p>{{ 'general.404.subtext' | t }}</p>
+
+    <div id="search-bar">
+      <form action="{{ routes.search_url }}" method="get">
+        <h3>Search our store</h3>
+        <label class="visually-hidden" for="search-{{ section.id }}">{{ 'sections.search.placeholder' | t }}</label>
+        <input type="text" name="q" id="search-{{ section.id }}" placeholder="{{ 'sections.search.placeholder' | t }}" title="{{ 'sections.search.title' | t }}" />
+        {% if settings.search_show_products_only %}
+          <input type="hidden" name="type" value="product">
+        {% endif %}
+      </form>
+    </div>
+
+    <h3 style="padding-top: 30px; margin-top: 30px;">
+      {{ 'general.404.contact' | t }}
+    </h3>
+
+    {% render 'contact' %}
+
+  </div>
+</section>

@@ -1,0 +1,157 @@
+<style>
+    input#Company, textarea#Description, input#First_Name, input#Last_Name, input#Email, input#Phone { background-color: #ffffff; color: #000000; }
+    .page-width--tiny { max-width: 100%!important; height: 850px; background-color: #ffffff!important;}
+    @media only screen and (max-width: 715px) {
+        .page-width--tiny { height: 900px;}   
+    }
+    @media only screen and (max-width: 700px) {
+        .page-width--tiny { height: 840px;}   
+    }
+    @media only screen and (max-width: 425px) {
+        .page-width--tiny { height: 1225px;}   
+    }
+    @media only screen and (max-width: 372px) {
+        .page-width--tiny { height: 1360px;}   
+    }
+    @media only screen and (max-width: 181px) {
+        .page-width--tiny { height: 1570px;}   
+    }
+    @media only screen and (max-width: 125px) {
+        .page-width--tiny { height: 1930px;}   
+    }
+</style>
+{% assign splits = page.content | split: '<!--split-->' %}
+{% assign split_size = splits.size %}
+
+{% capture profiles %}
+<h3 class="">Profiles</h3>
+<div class="grid flex flex--profiles">
+<div class="grid__item one-third small--one-whole  i1">
+  <a href="#w20-popup" class="mfp-inline">
+    <img class="lazyload hs-lazyload hs-id-edcebb20" data-src="{{ '1.W20-Render.png' | file_img_url: '300x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="100%">
+    <h4>W20 Hot Rolled Steel</h4>
+  </a>
+</div>
+<div class="grid__item one-third small--one-whole  i2">
+  <a href="#w40-popup" class="mfp-inline">
+    <img class="lazyload hs-lazyload hs-id-ce824616" data-src="{{ 'W40-Render.png' | file_img_url: '300x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="100%">
+    <h4>W40 Hot Rolled Steel NFRC Tested U Factors as low as .44</h4>
+  </a>
+</div>
+<div class="grid__item one-third small--one-whole i3">
+  <a href="#w50-popup" class="mfp-inline">å
+    <img class="lazyload hs-lazyload hs-id-5357fed6" data-src="{{ 'W50-Render.png' | file_img_url: '300x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="100%">
+    <h4>MTS-50 Steel TB NFRC Tested U Factors as low as .31</h4>
+  </a>
+</div>
+</div>
+{% endcapture %}
+
+<div class="nfrc-page">
+{% for i in (1..split_size) %}
+{% if forloop.index == 6 %}
+<div id="nfrc-profiles">
+<div class="text-center nfrc-page-flex">
+  {{ profiles }}
+</div>
+</div>
+{% endif %}
+<div class="{% cycle 'odd','even' %}">
+  <div class="page-width flex flex--align-center nfrc-page-flex">
+    <div class="nfrc-text">
+      {% capture content %}{{splits[forloop.index0]}}{% endcapture %}
+      {% include 'shortcode' load: content %}
+    </div>
+    <div class="nfrc-image ">
+      {%- capture src %}nfrc-{{i}}.jpg{%- endcapture -%}
+      {%- assign loading = src | file_img_url: '100x' -%}
+      {%- assign img_url = src | file_img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+      <img class="lazyload"
+           src="{{loading}}"
+           data-src="{{ img_url }}"
+           data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+           data-sizes="auto"
+           width="100%"
+           alt="{{alt}}" />
+    </div>
+  </div>
+</div>
+{% endfor %}
+<div class="page-width--tiny index-section small--page-width nfrcFormContainer">
+    <div class="IGDWidth100">
+        <div class="IGDWidth25">
+            <p> </p>
+        </div>
+        <div class="IGDWidth50  IGDYTV">
+            <!-- Start of Form -->
+            <div class="contact-form form-vertical category-contact-form ">
+                {% include 'zoho-form' %}
+                {% comment %}
+                {%- assign formId = 'ContactForm' -%}
+                {% form 'contact', id: formId %}
+                {% include 'form-status', form_id: formId %}
+
+                <div class="grid grid--half-gutters">
+                <div class="grid__item medium-up--one-half">
+                    <label for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
+                    <input type="text" id="{{ formId }}-name" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+                </div>
+                <div class="grid__item medium-up--one-half">
+                    <label for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+                    <input
+                        type="email"
+                        id="{{ formId }}-email"
+                        name="contact[email]"
+                        autocorrect="off"
+                        autocapitalize="off"
+                        value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                        aria-required="true"
+                        {%- if form.errors contains 'email' -%}
+                        class="input--error"
+                        aria-invalid="true"
+                        aria-describedby="{{ formId }}-email-error"
+                        {%- endif -%}
+                        >
+                    {%- if form.errors contains 'email' -%}
+                    <span id="{{ formId}}-email-error" class="input-error-message">{% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                    {%- endif -%}
+                </div>
+
+                <div class="grid__item medium-up--one-half">
+                    <label for="{{ formId }}-company">Company</label>
+                    <input type="text" id="{{ formId }}-company" name="contact[company]" value="{% if form[company] %}{{ form[company] }}{% endif %}">
+                </div>
+
+                <div class="grid__item medium-up--one-half">
+                    <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+                    <input type="tel" id="{{ formId }}-phone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+                </div>
+                </div>
+                <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
+                <textarea rows="10" id="{{ formId }}-message" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+                <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+                {% endform %}
+                {% endcomment %}           
+            </div>
+            <!-- End of Form --> 
+        </div>
+        <div class="IGDWidth25">
+            <p> </p>
+        </div>
+    </div>
+</div>
+</div>
+<div style="display: none;">
+<div id="w20-popup" class="regular-mfp-popup">
+  {% capture content %}{{pages.w20-hot-rolled-steel.content}}{% endcapture %}
+  {% include 'shortcode' load: content %}
+</div>
+<div id="w40-popup" class="regular-mfp-popup">
+  {% capture content %}{{pages.w40-hot-rolled-steel.content}}{% endcapture %}
+  {% include 'shortcode' load: content %}
+</div>
+<div id="w50-popup" class="regular-mfp-popup">
+  {% capture content %}{{pages.w50-hot-rolled-steel.content}}{% endcapture %}
+  {% include 'shortcode' load: content %}
+</div>
+</div>

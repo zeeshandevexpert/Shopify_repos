@@ -1,0 +1,40 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lunasima:wght@400;700&display=swap');
+// Breakpoints Structure
+$custom-breakpoints: (
+    xs: (minSize: 0px, maxSize: 575px, maxContWidth: 0px, name: 'XS'),
+    sm: (minSize: 576px, maxSize: 767px, maxContWidth: 719px, name: 'SM'),
+    md: (minSize: 768px, maxSize: 991px, maxContWidth: 720px, name: 'MD'),
+    lg: (minSize: 992px, maxSize: 1249px, maxContWidth: 960px, name: 'LG'),
+    xl: (minSize: 1250px, maxSize: 1499px, maxContWidth: 1250px, name: 'XL'),
+    max: (minSize: 1500px, maxSize: 0px, maxContWidth: 1201px, name: 'MAX')
+); 
+
+@font-face {
+    font-family: 'Sporting Grotesque Bold';
+    src: url('SportingGrotesque-Bold.woff2') format('woff2'),
+        url('SportingGrotesque-Bold.woff') format('woff'),
+        url('SportingGrotesque-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sporting Grotesque Regular';
+    src: url('SportingGrotesque-Regular.woff2') format('woff2'),
+        url('SportingGrotesque-Regular.woff') format('woff'),
+        url('SportingGrotesque-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+// Variables
+$black : #000000;
+$whitealt : #E3E3DD; 
+$sportingregular : 'Sporting Grotesque Regular';
+$sportingbold : 'Sporting Grotesque Bold';

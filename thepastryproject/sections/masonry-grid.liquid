@@ -1,0 +1,114 @@
+{{ 'masonry-grid.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+     padding-top: {{ section.settings.padding_top | times: 0.75 }}px;
+     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 }}px;
+    }
+
+    @media screen and (min-width: 991px) {
+    .section-{{ section.id }}-padding {
+     padding-top: {{ section.settings.padding_top }}px;
+     padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+    {% if section.settings.background != blank %}
+    .section-{{ section.id }}-padding {
+      background-color: {{ section.settings.background }};
+    }
+    {% endif %}
+{% endstyle %}
+
+<div
+  class="section-{{ section.id }}-padding masonry-grid"
+>
+  <div class="container">
+    <div class="masonry__wrap">
+      {% if section.blocks.size > 0 %}
+        <div class="masonry-group" 
+          >
+          <div class="masonry-sizer" hidden></div>  
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+              <div class="masonry-item">
+                <img src="{{ block.settings.image | img_url: 'master' }}" alt={{ block.settings.image.alt }}>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'masonry-lib.js' | asset_url }}" defer></script>
+<script src="{{ 'masonry-grid.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Masonry Grid",
+  "class": "masonry-grid",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Masonry Grid",
+      "category": "Image"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "product",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "search"
+    ]
+  }
+}
+{% endschema %}

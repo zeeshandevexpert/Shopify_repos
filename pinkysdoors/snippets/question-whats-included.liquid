@@ -1,0 +1,78 @@
+
+{% capture weight_table %}
+{% if product.title contains 'Double' %}
+{{pages.weight-double-door.content}}
+{% elsif product.title contains 'Single' %}
+{{pages.weight-single-door.content}}
+{% else %}
+{{pages.weight-double-door.content}}
+{{pages.weight-single-door.content}}
+{% endif %}
+{% if product.title contains 'Thermally Broken' and 'Transom' %}
+{{pages.weight-thermally-broken-with-transom.content}}
+{% endif %}
+{% endcapture %}
+
+{% case type %}
+
+{% when 'Handles' or 'Door Handles' %}
+
+<h4>What's included</h4>
+<div>Handle shown in product photo.</div>
+
+{% when 'Color Samples' %}
+
+<h4>What's included</h4>
+<div>Color chip shown in product photo.</div>
+
+{% when 'Glass Samples' %}
+
+<h4>What's included</h4>
+<div>Glass sample shown in product photo.</div>
+
+{% when 'Thermally Broken Doors' %}
+
+
+{% capture content %}{{pages.pdp-whats-included-thermally-broken-doors.content | replace: "[weight_tables]", weight_table }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{% when 'Bi-Fold/Accordion' %}
+
+{% capture content %}{{pages.pdp-whats-included-bi-fold-accordion.content }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{% when 'Passage Doors' %}
+
+{% capture content %}{{pages.pdp-whats-included-passage-doors.content | replace: "[weight_tables]", weight_table  }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{% when 'Locks' %}
+
+{% capture content %}{{pages.pdp-single-or-double-set.content }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{% when 'Transoms' %}
+
+{% capture content %}{{pages.pdp-whats-included-transoms.content }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{% when 'Sidelights' %}
+
+{% capture content %}{{pages.pdp-whats-included-sidelights.content }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{%- when 'Merchandise' %}
+<div class="text-center"><h4>Coming Soon</h4></div>
+
+
+{% else %}
+{% capture content %}{{pages.pdp-whats-included.content | replace: "[weight_tables]", weight_table }}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+{% endcase %}

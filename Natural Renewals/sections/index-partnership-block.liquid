@@ -1,0 +1,83 @@
+<div class="partnership-block-content">
+    <div class="home-partnership-top">
+        <h3>{{ section.settings.heading }}</h3>
+            {% if section.settings.button_title != blank %} <a class="link" href="{{ section.settings.button_link }}">{{ section.settings.button_title }} </a>{% endif %}
+    </div>
+
+    <div class="items-row">
+        {% for block in section.blocks %}
+            <a class="item-block" href="{{ block.settings.button_link }}">
+                <div class="image">
+                  <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                  <div class="overlay"></div>
+                  <div class="description-block">
+                    <div class="content">
+                            <div class="text">{{ block.settings.title }}</div>
+                            {% if block.settings.button_title  != blank %} <span class="link"> {{ block.settings.button_title }} </span>{% endif %}
+                    </div>
+                    </div>    
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+</div>
+
+{% schema %}
+    {
+      "name": "Index - Partnership",
+      "tag": "section",
+      "class": "partnership-section",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Top Title"
+        },
+        {
+            "type": "text",
+            "id": "button_title",
+            "label": "Link Title"
+                },
+                {
+                "type": "url",
+                "id": "button_link",
+                "label": "Link"
+                }
+      ],
+      "blocks": [
+        {
+          "name": "Item",
+          "type": "item",
+          "settings":[
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "text",
+              "id": "button_title",
+              "label": "Link Title"
+            },
+            {
+              "type": "url",
+              "id": "button_link",
+              "label": "Link"
+            }
+           
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Index - Partnership"
+        }
+      ]
+    }
+    {% endschema %}

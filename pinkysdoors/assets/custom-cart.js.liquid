@@ -1,0 +1,16 @@
+{%- capture results -%}
+{%- for item in cart.items -%}
+{%- unless forloop.first -%},{%- endunless -%}
+{
+"title": "{{item.product.title | escape }}",
+"variants": "{{item.variant.option1}}{% if item.variant.option2 | escape" %} / {{item.variant.option2  | escape}}{% endif %}{% if item.variant.option3  | escape %} / {{item.variant.option3}}{% endif %}",
+"in_cart_qty": {{ item.quantity }},
+"total_qty": {% if item.title contains "Special Order" %}"~"{% else %}{{item.variant.inventory_quantity}}{% endif %}
+}
+{%- endfor -%}
+{%- endcapture -%}
+{
+  "item_count": {{ cart.item_count }},
+  "total_price": {{cart.total_price}},
+  "results": [{{ results }}]
+}

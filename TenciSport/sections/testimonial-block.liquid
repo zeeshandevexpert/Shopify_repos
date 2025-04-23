@@ -1,0 +1,76 @@
+<div class="testimonial-section" style="background-image: url(https://cdn.shopify.com/s/files/1/0576/0057/3476/files/Group_30.png?v=1719950356)">
+<div class="testimonials-container">
+    <div class="subheading">
+        <h4>{{ section.settings.sub_heading }}</h4>
+    </div>
+    <div class="heading">
+        <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="testimonial">
+
+    {% for block in section.blocks %}
+        <div class="single-testimonial">
+            <div class="testimonial-wrapper">
+                <div class="client-text">
+                    {{ block.settings.content }}
+                </div>
+                <div class="client-image">
+                    <img src="{{ block.settings.icon |  img_url: 'master' }}" alt="">
+                </div>
+                <div class="client-name">
+                    <p>{{ block.settings.name }}</p>
+                </div>
+            </div>
+        </div>        
+    {% endfor %}
+    </div>
+</div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Testimonial Block",
+        "settings": [
+            { 
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub Heading"
+            },
+            { 
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            }
+           
+            ],
+            "blocks": [
+                {
+                "type": "Item",
+                "name": "Testimonial",
+                "settings": [
+                    { 
+                        "type": "richtext",
+                        "id": "content",
+                        "label": "Content"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Client Icon"
+                    },
+                    {
+                    "type": "text",
+                    "id": "name",
+                    "label": "Client Name"
+                    }
+                ]
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Testimonial Block"
+                }
+            ]
+    }
+    {% endschema %}

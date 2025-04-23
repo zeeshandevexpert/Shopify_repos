@@ -1,0 +1,32 @@
+<hr class="hr--invisible">
+<div class="page-width--thin small--page-width text-center">
+  <h1 class="page-title">{{ page.title }}</h1>
+  <div class="video-wrapper" style="display:none;">
+    <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="lazyload hs-id-2001dd5a" data-src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}" frameborder="0" height="315" width="560">
+</iframe>
+  </div>
+  <hr class="hr--invisible">
+  <h2 class="page-title">Complete Application</h2>
+  {{ page.content }}
+</div>
+{% schema %}
+  {
+    "name": "Dealer Program",
+    "settings": [
+	{
+		"id":"video_url",
+		"type":"video_url",
+		"label":"Video URL",
+		"accept":["youtube"],
+		"info":"Accepts Youtube URLs",
+		"placeholder":"Youtube Video URL"
+	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

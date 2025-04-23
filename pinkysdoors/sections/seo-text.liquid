@@ -1,0 +1,17 @@
+{% if product.metafields.seo.text != blank %}
+<div class="page-width">
+  <div class="rte">{{ product.metafields.seo.text }}</div>
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "SEO text",
+    "settings": [
+      {
+        "type":"paragraph",
+        "content":"If an SEO metafield exists for the product, then it will show here."
+      }
+    ],
+    "presets": [{"name":"SEO Text"}]
+  }
+{% endschema %}

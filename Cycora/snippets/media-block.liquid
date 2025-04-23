@@ -1,0 +1,82 @@
+
+{% if block_type == 1 %}
+    {% assign media_type = block.settings.media_type %}
+    {% assign media_image = block.settings.image %}
+    {% assign media_image_mobile = block.settings.image_mobile %}
+    {% assign media_video_file = block.settings.video_file %}
+    {% assign media_video_type = block.settings.vimeo_youtube_video.type %}
+    {% assign media_video_id = block.settings.vimeo_youtube_video.id %}
+{% elsif include_parameters == 1 %}
+    {% assign media_type = media_type %}
+    {% assign media_image = media_image %}
+    {% assign media_image_mobile = media_image_mobile %}
+    {% assign media_video_file = media_video_file %}
+    {% assign media_video_type = media_video_type %}
+    {% assign media_video_id = media_video_id %}
+{% else %}
+    {% assign media_type = section.settings.media_type %}
+    {% assign media_image = section.settings.image %}
+    {% assign media_image_mobile = section.settings.image_mobile %}
+    {% assign media_video_file = section.settings.video_file %}
+    {% assign media_video_type = section.settings.vimeo_youtube_video.type %}
+    {% assign media_video_id = section.settings.vimeo_youtube_video.id %}
+{% endif %}
+
+{% comment %}
+       ===== IMAGE BLOCK =====
+{% endcomment %}
+{% if media_type == 'image' %}
+    {% if mobile == 1 %}
+        <img loading="lazy" src="{{ media_image_mobile | img_url: 'master' }}" />
+    {% else %}
+        <img loading="lazy" src="{{ media_image | img_url: 'master' }}" />
+    {% endif %}
+{% endif %}
+
+{% if media_image != blank %}
+    <style>
+        .video_poster_background_{{ section.id }}{
+            background: url('{{ media_image | img_url: 'master' }}') no-repeat !important;
+            background-size: cover !important;
+        }
+    </style>
+{% endif %}
+
+{% comment %}
+     ===== VIDEO FILE BLOCK =====
+{% endcomment %}
+{% if media_type == 'video_file' %}
+    <div class="standard-video-iframe video_poster_background_{{ section.id }}">
+        <video autoplay muted defaultMuted playsinline loop>
+            <source src="{{ media_video_file }}" type="video/mp4">
+        </video>
+    </div>
+{% endif %}
+
+{% comment %}
+   ===== YOUTUBE OR VIMEO BLOCK =====
+{% endcomment %}
+{% if media_type == 'vimeo_youtube_video' %}
+    {% if media_video_type == 'youtube' %}
+        <div class="standard-youtube-iframe video_poster_background_{{ section.id }}">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/{{ media_video_id }}?controls=0&disablekb=1&mute=1&autoplay=1" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="false"></iframe>
+        </div>
+    {% endif %}
+
+    {% if media_video_type == 'vimeo' %}
+        <div class="standard-vimeo-iframe video_poster_background_{{ section.id }}">
+            <iframe loading="lazy" src="https://player.vimeo.com/video/{{ media_video_id }}?background=1"  frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="false"></iframe>
+        </div>
+    {% endif %}
+{% endif %}
+
+{% if media_type == 'vimeo_youtube_video' and media_image != blank %}
+<script>
+    $(document).ready(function() {
+        // setTimeout(function (){
+        //     $('.poster-image').hide();
+        //     $('.standard-vimeo-iframe, .standard-youtube-iframe').show();
+        // }, 2000);
+    });
+</script>
+{% endif %}

@@ -1,0 +1,449 @@
+{
+  "sections": {
+    "banner_block_teEeVD": {
+      "type": "banner-block",
+      "disabled": true,
+      "settings": {
+        "bg_image1": "shopify:\/\/shop_images\/Group_4.svg",
+        "bg_image2": "shopify:\/\/shop_images\/Group-190.png",
+        "heading": "KEEP YOUR AC DRAIN LINE CLEAR FOR JUST PENNIES A DAY.",
+        "description": "<p>FloXtreme 24\/7's patented technology sends a low-dose drip of environmentally friendly cleaner into your AC’s drain pan, where algae and bacteria begin.  The solution mixes with condensation from your AC unit, then flows through the drain line to prevent the growth of toxic sludge.  <\/p><p> <\/p><p>FloXtreme 24\/7 was invented by Brian Hoskins, an AC contractor in Florida for over 20 years.  Brian knows first-hand the discomfort, expense and damage that clogged AC lines can cause.  When he found that blocked lines accounted for more than half his service calls, he developed a simple, preventive solution that stops AC blockages before they start.  <\/p>",
+        "button_title": "",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "featured_product_bXfbdw": {
+      "type": "featured-product",
+      "blocks": {
+        "text_9pVDdW": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "price_WBXg7C": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "title_f67Vii": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "description_eyw7fV": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker_8E43WC": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_Uap3DE": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_My4XWD": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_DeVaY8": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_9pVDdW",
+        "price_WBXg7C",
+        "title_f67Vii",
+        "description_eyw7fV",
+        "variant_picker_8E43WC",
+        "quantity_selector_Uap3DE",
+        "buy_buttons_My4XWD",
+        "share_DeVaY8"
+      ],
+      "settings": {
+        "reverse": true,
+        "product": "floxtreme-clearshot",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "featured_product_wgGnLh": {
+      "type": "featured-product",
+      "blocks": {
+        "price_HPAFkg": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "title_AjjjQ9": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "description_HJQgJ8": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker_pDgRMD": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_pbebjh": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_QXwcwh": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "price_HPAFkg",
+        "title_AjjjQ9",
+        "description_HJQgJ8",
+        "variant_picker_pDgRMD",
+        "quantity_selector_pbebjh",
+        "buy_buttons_QXwcwh"
+      ],
+      "settings": {
+        "reverse": false,
+        "product": "floxtreme-clearshot-2-bottles",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_4YFiB7": {
+      "type": "featured-product",
+      "blocks": {
+        "price_d3UkcW": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "title_rzThae": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "description_CC9U4T": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker_xkwg8U": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_jUApnK": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_zxxRHb": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "price_d3UkcW",
+        "title_rzThae",
+        "description_CC9U4T",
+        "variant_picker_xkwg8U",
+        "quantity_selector_jUApnK",
+        "buy_buttons_zxxRHb"
+      ],
+      "settings": {
+        "reverse": true,
+        "product": "what-is-ac-drain-clear",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_product_UyWn36": {
+      "type": "featured-product",
+      "blocks": {
+        "price_7EDzMT": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "title_TVNWDq": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "description_mzV3QX": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker_cDEDFM": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_DM7hL4": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons_dyrjhF": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        }
+      },
+      "block_order": [
+        "price_7EDzMT",
+        "title_TVNWDq",
+        "description_mzV3QX",
+        "variant_picker_cDEDFM",
+        "quantity_selector_DM7hL4",
+        "buy_buttons_dyrjhF"
+      ],
+      "settings": {
+        "reverse": false,
+        "product": "floxtreme-solution-refills",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "none",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "blurb_section_FazfLe": {
+      "type": "blurb-section",
+      "disabled": true,
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/c2ffa853-3681-4766-8828-67bc44ab7daa.png",
+        "video_media": "",
+        "heading": "The Clear Difference",
+        "description": "<p>FloXtreme offers clear advantages over <br\/>other products:<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_FJzA8U": {
+      "type": "blurb-section",
+      "disabled": true,
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/76004c1c-7dd9-4dc3-875f-e055930ee5bf.png",
+        "video_media": "",
+        "heading": "Order yours today, risk free.",
+        "description": "<p>The FloXtreme System includes everything you need to install FloXtreme in just minutes, plus a bottle of our proprietary cleaning solution. Refills can be purchased individually, or you can subscribe for regular deliveries of FloXtreme at a discount, to ensure that you always have a supply on hand.  <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_wVrYtH": {
+      "type": "blurb-section",
+      "disabled": true,
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_195_509df058-cb67-444a-bdbd-d0b4d5b4cb85.png",
+        "video_media": "",
+        "heading": "THE FLOXTREME SYSTEM - $99.00",
+        "description": "<p><strong>Includes:<\/strong><\/p><p>• PVC fittings<br\/>• Patented dispensing cap<br\/>• Solution bottle<\/p><p>•  ClearShot Bottle<\/p>",
+        "button_title": "ORDER NOW",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "blurb_section_gaT9Cd": {
+      "type": "blurb-section",
+      "disabled": true,
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_197.png",
+        "video_media": "",
+        "heading": "FLOXTREME SOLUTION REFILLS - $39.99",
+        "description": "<p>Our non-acidic solution works wonders on your drainage system, and it won’t damage your AC. One bottle will last up to three months, depending on your AC usage.<\/p>",
+        "button_title": "ORDER NOW",
+        "button_link": "shopify:\/\/products\/floxtreme-solution-refills"
+      }
+    },
+    "blurb_section_e463G6": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 2,
+        "bg_image": "shopify:\/\/shop_images\/Group_5.svg",
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/90_DAY_GUARANTEE_SEAL_2_300_DPI.png",
+        "video_media": "",
+        "heading": "YOU’LL LOVE FLOXTREME",
+        "description": "<p>We guarantee you’ll love the performance, convenience and peace of mind you’ll get from installing FloXtreme 24\/7 on your AC unit.  We’re so confident that our superior solution will stop clogged drain lines before they start that we invite you to try FloXtreme 24\/7 today, risk-free.  If you are not completely satisfied with its performance, we’ll give you a full refund within 90 days of purchase, guaranteed.<\/p>",
+        "button_title": "",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "rich_text_R8x3ta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PiUwFx": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fast, safe, and effective. Keep your AC system in top condition with minimal effort. Order your bottle today and experience the difference!",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PiUwFx"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "text_banner_section_xwWbRC": {
+      "type": "text-banner-section",
+      "disabled": true,
+      "settings": {
+        "heading": "STOP CLOGS BEFORE THEY START.",
+        "description": "<p>Unlike home remedies and other products on the market, AC Drain Clear stops the problem where it starts:  in your AC’s drain pan.  Our proprietary solution is non-toxic, non-acidic and environmentally friendly.  It keeps the toxic slime away without damaging your AC unit.<\/p>",
+        "button_title": "ORDER TODAY",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    }
+  },
+  "order": [
+    "banner_block_teEeVD",
+    "featured_product_bXfbdw",
+    "banner",
+    "featured_product_wgGnLh",
+    "featured_product_4YFiB7",
+    "featured_product_UyWn36",
+    "product-grid",
+    "blurb_section_FazfLe",
+    "blurb_section_FJzA8U",
+    "blurb_section_wVrYtH",
+    "blurb_section_gaT9Cd",
+    "blurb_section_e463G6",
+    "rich_text_R8x3ta",
+    "text_banner_section_xwWbRC"
+  ]
+}

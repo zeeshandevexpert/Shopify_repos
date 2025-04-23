@@ -1,0 +1,60 @@
+{% if page.handle == 'become-an-installer' %}
+  {% section 'page-become-an-installer' %}
+{% elsif page.handle == 'how-to' %}
+  {% section 'page-how-to' %}
+{% elsif page.handle == 'how-our-website-works' %}
+  {% section 'page-how-the-site-works' %}
+{% elsif page.handle == 'faq' %}
+  {% section 'page-faq' %}
+{% elsif page.handle == 'about-us' %}
+  {% section 'page-about-timeline' %}
+{% elsif page.handle contains 'category-contact' %}
+  {% section 'page-category-contact' %}
+{% elsif page.handle contains 'customize-anything' %}
+  {% section 'page-category-contact' %}
+{% elsif page.handle == 'steel-windows-doors-nfrc-rated' %}
+  {% include 'page-nfrc' %}
+{% elsif page.handle == 'pinkys-dealer-trade-program' %}
+	{% section 'page-dealer-program' %}
+{% elsif page.handle == 'nfrc-dev' %}
+  {% section 'nfrc' %}
+{% elsif page.handle == 'track-my-order' %}
+  {% section 'page-track-my-order' %}
+{% elsif page.handle == 'military-discount' %}
+  {% section 'discount-military' %}
+{% elsif page.handle == 'first-responder-discount' %}
+  {% section 'discount-healthcare' %}
+{% else %}
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item {% if page.handle == 'inspiration' %}one-whole{% else %} medium-up--five-sixths medium-up--push-one-twelfth {% endif %}">
+      
+      <div class="section-header text-center">
+        {% if page.handle == 'thermally-broken-doors' %}
+        <div class="text-center"><a class="btn btn--left-icon" href="/collections/thermally-broken-doors-special-order">{% include 'icon-chevron-left' %} Back</a></div>
+        <hr class="hr--invisible" />
+        {% endif %}
+
+        <h1>{{ page.title }}</h1>
+      </div>
+	  {% if page.handle == 'reviews' %}
+      <div class="full-page--preloader text-center">
+        {% include 'icon-preloader' %}
+      </div>
+      {% endif %}
+      <div class="rte">
+        
+        {% if page.content != blank %}
+        {% capture content %}{{page.content}}{% endcapture %}
+		{% include 'shortcode' load: content %}
+        {% else %}
+        {% include 'placeholder-text', paragraphs: 4 %}
+        {% endif %}
+      </div>
+      {% if page.handle == 'thermally-broken-doors' %}
+      <div class="text-center"><a class="btn btn--left-icon" href="/collections/thermally-broken-doors-special-order">{% include 'icon-chevron-left' %} Back</a></div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

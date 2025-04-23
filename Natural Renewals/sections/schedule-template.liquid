@@ -1,0 +1,49 @@
+
+    <div class="container-style schedule-intro-container">
+        <div class="schedule-intro-row">
+            <div class="schedule-intro-col-left">
+                <h2>{{ section.settings.title }}</h2>
+                <p>{{ section.settings.description }}</p>
+            </div>
+            <div class="schedule-intro-col-right">
+                <h3>{{ section.settings.form_title }}</h3>
+
+
+                <span style="display: none" id="schedule_form">
+                {ets_cf_5fX}
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+
+{% schema %}
+{
+  "name": "Schedule",
+  "tag": "section",
+  "class": "schedule-intro-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Schedule"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,98 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-banner",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-14T210543.981.png",
+        "heading": "",
+        "subheading": "Ring Size Guide",
+        "fg": "#ffffff"
+      }
+    },
+    "custom_iwt_WeFYbA": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Outrage_Ldn_ring_size_guide_1_.pdf_1.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Method 1: ring size guide",
+        "heading": "Print Our Size Guide",
+        "text": "<p>To determine your ring size, follow these simple steps:<\/p><ol><li>Download and print the provided file at 100% scale.<\/li><li>Ensure that your banking card fits precisely between the lines on the printed sheet.<\/li><li>Cut out one of the sizing strips.<\/li><li>Wrap the strip tightly around your finger.<\/li><li>Locate your ring size at the intersection on the sizer.<\/li><li> contact us if you are struggling to find your size.<\/li><\/ol>",
+        "link_text": "",
+        "link": "https:\/\/file\/\/\/Users\/kieranireland\/Downloads\/Outrage%20Ldn%20ring%20size%20guide%20(1).pdf.pdf",
+        "button_text": "Download PDF",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_yUMfHG": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/US_Outrage_London_2000_x_2000_px_1.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Method 2:",
+        "heading": "String and Ruler",
+        "text": "<p>To measure your ring size at home, you'll need a pair of scissors, a piece of paper, and a ruler or measuring tape. Follow these steps:<\/p><ol><li>Wrap the paper tightly around your finger.<\/li><li>Mark where the paper overlaps.<\/li><li>Measure the length from the starting point to the mark.<\/li><li>Once you have the circumference of your finger, consult the men's ring size chart on the left to find your corresponding ring size.<\/li><\/ol>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_CJXtYT": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-14T211458.867.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Method 3: Use a ring sizer",
+        "heading": "Ring Sizer",
+        "text": "<p>Eliminate the hassle of finding the perfect fit by ordering a ring sizer. Say goodbye to scouring online  ring size charts. The ring sizer tool allows you to try on all our ring sizes, ensuring you find the perfect fit with ease. See below for an overview of the ring sizer in action. These ring sizers can be found online.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_richtext_j9KFWz": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Need help with your ring size?",
+        "text": "<p>If you need help reach out to us on our email or use the chat support. We aim to reply within 24 hrs.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "Contact Us",
+        "button_link": "shopify:\/\/pages\/contact-details",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_iwt_WeFYbA",
+    "custom_iwt_yUMfHG",
+    "custom_iwt_CJXtYT",
+    "custom_richtext_j9KFWz"
+  ]
+}

@@ -1,0 +1,18 @@
+{%- if shipping_product != blank -%}
+{%- capture shipping_time_echo -%}
+  {%- if shipping_product.metafields.pinkys.shipping_information != blank %}
+	{{ shipping_product.metafields.pinkys.shipping_information }}
+  {%- elsif shipping_product.title contains 'Special Order' -%}
+	{%- assign is_special = true -%}
+	Ships within {% include 'special-order-shipping-time' %}
+  {%- else -%}
+	{%- assign is_instock = true -%}
+    {%- if shipping_product.type == 'Locks' -%}
+    Ships within 1 to 7 days
+    {%- else -%}
+    Ships within 24 to 48 hours
+    {%- endif - %}	
+  {%- endif -%}
+{%- endcapture -%}
+{{- shipping_time_echo -}}
+{%- endif -%}

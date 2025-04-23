@@ -1,0 +1,263 @@
+<style>
+.paywhirl-options .no-js:not(html) {
+  display: none !important;
+}
+
+.paywhirl-options .no-js .no-js:not(html) {
+  display: block !important;
+}
+
+.product-form__fieldset {
+  padding: 0;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.product-form__fieldset legend {
+  padding-top: 1rem;
+}
+
+/*================ Selling Plans ================*/
+
+.purchase-options__label {
+  padding: 0 0 16px 0;
+}
+
+.purchase-options--single .purchase-options__label {
+  display: none;
+}
+.purchase-options--single.selling-plan__group-label--only-group input[type="radio"] {
+  display: none;
+}
+
+.product-form__item .selling-plan__group-label {
+  display: flex;
+  align-items: center;
+}
+
+.selling-plan__input {
+  margin-right: 7px;
+}
+
+.selling-plan__description {
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+font-size: 14px;
+font-weight: bold;
+}
+
+.selling-plan__description--unavailable {
+  display: none;
+}
+
+.selling-plan-option {
+  display:flex;
+  align-items: center;
+  margin-left: 1.3rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.selling-plan-option__label {
+  margin-right: 1rem;
+  flex: 0 1 auto;
+}
+
+.selling-plan--inactive .selling-plan-option, .selling-plan--inactive .selling-plan__description {
+  display: none;
+}
+
+.selling-plan-option__select {
+  flex:1;
+  margin-bottom: 0;
+}
+
+.selling-plan--unavailable {
+  display: none;
+}
+
+.selling-plan__select {
+  flex-grow: 1;
+}
+
+.product-form__item .product-form__label {
+  display: block;
+}
+
+.product-form__item .product-form--hide-variant-labels .product-form__label {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.price--subscription .price__sale {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.price--subscription .price__regular {
+  display: none;
+}
+  
+#selling_plan_39502223540389 {
+  display: none;
+}
+  
+</style>
+
+<!-- Selling plans! -->
+{% if product.selling_plan_groups.size > 0 %}
+    <fieldset style="display:none" class="product-form__fieldset purchase-options product-form__item paywhirl-options
+                 {% if product.requires_selling_plan and product.selling_plan_groups.size == 1 %}purchase-options--single{% endif %}
+                 ">
+        <legend class="purchase-options__label">Purchase options</legend>
+        {% unless product.requires_selling_plan %}
+            <label class="selling-plan__group-label" for="sellingPlan-One-time-purchase">
+                <input class="selling-plan__input"
+                       type="radio" value="once" name="sellingPlanGroup"
+                       data-purchase-option
+                       id="sellingPlan-One-time-purchase"
+                        {%- unless product.selected_selling_plan_allocation -%} checked {%- endunless -%}
+                ><span id="sellingPlan-One-time-label">One-time purchase</span>
+            </label>
+        {% endunless %}
+        {% for selling_plan_group in product.selling_plan_groups %}
+            <div class="selling-plan
+              {% unless product.selected_selling_plan_allocation.selling_plan.group_id == selling_plan_group.id -%}
+              selling-plan--inactive
+              {%- endunless %}
+                      selling-plan__group-wrapper"
+            >
+                <label for="sellingPlanGroup-{{ selling_plan_group.id }}"
+                       class="selling-plan__group-label">
+                    <input class="selling-plan__input" type="radio" name="sellingPlanGroup" value="{{ selling_plan_group.id }}"
+                           data-selling-plan-group
+                           data-selling-plan-group-id="{{ selling_plan_group.id }}"
+                           data-purchase-option
+                           id="sellingPlanGroup-{{ selling_plan_group.id }}"
+                           {% if selling_plan_group.id == product.selected_selling_plan_allocation.selling_plan.group_id %}checked{% endif %}
+
+                    >
+                    {{- selling_plan_group.name -}}
+                </label>
+                {% for option in selling_plan_group.options %}
+
+                    <div class="product-form__item selling-plan-option">
+                        <label for="sellingPlanOption-{{ option.name }}" class="selling-plan-option__label"> {{ option.name }}</label>
+                        <select id="sellingPlanOption-{{ option.name }}"
+                                data-selling-plan-option data-index="{{ forloop.index0 }}"
+                                data-selling-plan-group-id="{{ selling_plan_group.id }}"
+                                name="sellingPlan" class="selling-plan-option__select"
+                        >
+              {% assign spi = 0 %}
+                            {% for value in option.values %}
+                                <option type="radio" name="sellingPlan"
+                    data-selling-plan-id="{{selling_plan_group.selling_plans[spi].id}}"
+                                        value="{{ value }}"
+                                        {%- if value == option.selected_value -%} selected="selected" {%- endif -%}
+                                >
+                                    {{- value -}}
+                                </option>
+                {% assign spi = spi | plus: 1 %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                {% endfor %}
+                <div class="selling-plan__description" data-selling-plan-description>
+                    {{ product.selected_selling_plan_allocation.selling_plan.description }}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="no-js">
+            <!-- No JS flow; requires buyer to choose a term for their selected variant -->
+            <label for="plans">Selling plan:</label>
+            <select name="selling_plan" id="plans" data-selling-term-selector="{{ section.id }}" class="selling-plans-allocation">
+                <option id="sellingPlan-One-time-term-option" value=""
+                        {%- unless product.selected_selling_plan_allocation -%} checked {%- endunless -%}
+                >
+                    One-time purchase
+                </option>
+                <option id="sellingPlan-invalid-option" style="display:none" value="0">Invalid selling plan selection</option>
+                {% for variant in product.variants %}
+                    <optgroup label="{{ variant.title }}" data-variant-id="{{ variant.id }}">
+                        {% for allocation in variant.selling_plan_allocations %}
+                            <option data-value="{{ variant.id }}-{{ allocation.selling_plan.id }}"
+                                    data-description="{{ allocation.selling_plan.description }}"
+                                    data-price="{{ allocation.price }}"
+                                    value="{{ allocation.selling_plan.id }}"
+                                    {% if variant.id == product.selected_variant.id and allocation.selling_plan.id == product.selected_selling_plan_allocation.selling_plan.id %}
+                                        selected="selected"
+                                    {% endif %}
+                            >
+                                {{ allocation.selling_plan.name }}
+                            </option>
+                        {% endfor %}
+                    </optgroup>
+                {% endfor %}
+            </select>
+        </div>
+    </fieldset>
+{% endif %}
+<!-- End of selling plans -->
+
+<script>
+window.paywhirl = window.paywhirl || {};
+window.paywhirl.prod_id = '{{product.id}}';
+window.paywhirl.money_format = '{{shop.money_format}}';
+window.paywhirl.defaultPrice = '{{product.price}}';
+window.paywhirl.formatedDefaultPrice = '{% if product.selected_variant %} {{ product.selected_variant.price | money }} {% else %} {{product.price | money}} {% endif %} ';
+window.paywhirl.variants = {};
+{% for variant in product.variants %}
+  window.paywhirl.variants[{{ variant.id }}] = '{{ variant.price }}';
+{% endfor %}
+
+var paywhirlTranslate = {
+  en: {
+    purchase_options: 'Purchase options',
+    one_time_purchase: 'One-time purchase',
+    invalid_selling_plan: 'Invalid selling plan selection',
+  }
+}
+
+function getTranslation(localeName, key, defaultValue) {
+  if (paywhirlTranslate[localeName] !== undefined) {
+
+    return paywhirlTranslate[localeName][key] || defaultValue;
+  }
+
+  return defaultValue;
+}
+
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var locale = Shopify.locale;
+
+  var purchaseOptionsElement = document.querySelector("fieldset.purchase-options legend.purchase-options__label");
+  var oneTimeLabelElement = document.getElementById("sellingPlan-One-time-label");
+  var oneTimeTermElement = document.getElementById("sellingPlan-One-time-term-option");
+  var invalidOptionElement = document.getElementById("sellingPlan-invalid-option");
+
+  if (purchaseOptionsElement) {
+    purchaseOptionsElement.innerHTML = getTranslation(locale, 'purchase_options', 'Purchase options');
+  }
+  if (oneTimeLabelElement) {
+    oneTimeLabelElement.innerHTML = getTranslation(locale, 'one_time_purchase', 'One-time purchase');
+  }
+  if (oneTimeTermElement) {
+    oneTimeTermElement.innerHTML = getTranslation(locale, 'one_time_purchase', 'One-time purchase');
+  }
+  if (invalidOptionElement) {
+    invalidOptionElement.innerHTML = getTranslation(locale, 'invalid_selling_plan', 'Invalid selling plan selection');
+  }
+
+});
+</script>

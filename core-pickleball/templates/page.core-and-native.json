@@ -1,0 +1,327 @@
+{
+  "sections": {
+    "featured_content_EFUTNG": {
+      "type": "featured-content",
+      "disabled": true,
+      "custom_css": [
+        ".bg-section {background: black;}",
+        "h2 {color: white;}",
+        ".rte {color: red;}",
+        ".box {padding: 25px 0px 15px;}"
+      ],
+      "settings": {
+        "title": "Your Order Is Almost Complete",
+        "text": "<p><strong>WARNING:<\/strong>  Please do not hit the back button - it may cause issues with your order<\/p>",
+        "section_style": "bg-section",
+        "text_size": "medium",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "featured_columns_rd_rW3U9b": {
+      "type": "featured-columns-rd",
+      "blocks": {
+        "text_block_kB96eC": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/core-yellow-pickleball.jpg",
+            "title": "EXCLUSIVE OFFER! 79 Cents per Ball",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "shopify:\/\/products\/ppr-1-per-ball-impact-yellow-core-pickleball-indoor-outdoor"
+          }
+        },
+        "text_block_dfWaj8": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/core-green-pickleball.jpg",
+            "title": "CORE Outdoor - Fast and Built to Last",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "shopify:\/\/products\/ppr-core-pickleball-outdoor-fast-and-built-to-last"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_kB96eC",
+        "text_block_dfWaj8"
+      ],
+      "custom_css": [
+        "div {text-align: center;}"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "section_style": "",
+        "text_align": "",
+        "grid_desktop_block_width": "large--six-twelfths",
+        "grid_mobile_block_width": "medium--six-twelfths",
+        "ticktextclass": ""
+      }
+    },
+    "featured_columns_rd_bzcWRd": {
+      "type": "featured-columns-rd",
+      "blocks": {
+        "text_block_UU7WfV": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_personalized_pickleballs.jpg",
+            "title": "Personalized Pickleballs",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/personalized-pickleballs-awesome-custom-pickleballs-gift-uv-printed-no-decals-send-us-your-idea-design-logo-photos-fast-shipping"
+          }
+        },
+        "text_block_9XUq34": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_tournament_t-shirts.jpg",
+            "title": "Custom Tournament T-Shirts",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-t-shirts"
+          }
+        },
+        "text_block_kaLwqA": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_tournament_baseball_cap.jpg",
+            "title": "Custom Baseball Caps",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-baseball-caps"
+          }
+        },
+        "text_block_pMJc9k": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_custom_headbands.jpg",
+            "title": "Custom Tournament Headbands",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-headbands"
+          }
+        },
+        "text_block_thMwDA": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_tournament_decals.jpg",
+            "title": "Custom Tournament Decals",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-decals"
+          }
+        },
+        "text_block_pBxnz6": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_tournament_ID_tags.jpg",
+            "title": "Custom Tournament ID Tags",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-id-tags"
+          }
+        },
+        "text_block_drWw3P": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_custom_sun_visor_caps.jpg",
+            "title": "Personalized Sun Visor Caps",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/personalized-sun-visor-caps"
+          }
+        },
+        "text_block_kLdMwg": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_tournament_wrist_bands.jpg",
+            "title": "Custom Tournament Wristbands",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-wristbands"
+          }
+        },
+        "text_block_taQcVR": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_custom_face_masks.jpg",
+            "title": "Custom Tournament Face Masks",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-face-masks"
+          }
+        },
+        "text_block_AzpqVC": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_custom_pickleball_paddles.jpg",
+            "title": "Custom Pickleball Paddles",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-pickleball-paddles"
+          }
+        },
+        "text_block_hg9zB3": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_personalized_pickleball_paddle_covers.jpg",
+            "title": "Custom pickleball Paddle Covers",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-pickleball-paddle-covers"
+          }
+        },
+        "text_block_NBVprh": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_tournament_water_bottles.jpg",
+            "title": "Custom Tournament Water Bottles",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-water-bottles"
+          }
+        },
+        "text_block_9CiTCF": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_personalized_tournament_banners.jpg",
+            "title": "Custom Tournament Banners",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-tournament-banners"
+          }
+        },
+        "text_block_qAj3Ka": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_personalized_standing_banners.jpg",
+            "title": "Custom Standing Banners",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/custom-standing-banners"
+          }
+        },
+        "text_block_e48e8x": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_custom_tennis_balls.jpg",
+            "title": "Personalized Tennis Balls",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/personalized-tennis-balls-unique-christmas-gifts-give-the-gift-of-custom-tennis-balls-rush-orders-fast-shipping"
+          }
+        },
+        "text_block_cgAPXn": {
+          "type": "text_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/native_athletics_custom_padel_balls.jpg",
+            "title": "Personalized Padel Balls",
+            "text": "",
+            "button_style": "btn--primary",
+            "button_label": "See Buying Options >",
+            "button_link": "https:\/\/nativeathletics.co\/products\/personalized-padel-balls"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_UU7WfV",
+        "text_block_9XUq34",
+        "text_block_kaLwqA",
+        "text_block_pMJc9k",
+        "text_block_thMwDA",
+        "text_block_pBxnz6",
+        "text_block_drWw3P",
+        "text_block_kLdMwg",
+        "text_block_taQcVR",
+        "text_block_AzpqVC",
+        "text_block_hg9zB3",
+        "text_block_NBVprh",
+        "text_block_9CiTCF",
+        "text_block_qAj3Ka",
+        "text_block_e48e8x",
+        "text_block_cgAPXn"
+      ],
+      "custom_css": [
+        "div {text-align: center;}"
+      ],
+      "settings": {
+        "title": "Custom EVERYTHING!",
+        "subtitle": "",
+        "section_style": "",
+        "text_align": "",
+        "grid_desktop_block_width": "large--six-twelfths",
+        "grid_mobile_block_width": "medium--full",
+        "ticktextclass": ""
+      }
+    },
+    "featured_image_6gJVbR": {
+      "type": "featured-image",
+      "settings": {
+        "full_width": true,
+        "image": "shopify:\/\/shop_images\/core_native_6.svg",
+        "section_style": "",
+        "image_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "featured_content_6N7d83": {
+      "type": "featured-content",
+      "settings": {
+        "title": "Custom Paddle Sports Equipment",
+        "text": "<p>CORE Pickleball and Native Athletics have joined forces to provide you the very best in paddle sports customization. We're you're one stop-shop for all your tournament needs.  From custom shirts, hats, banners, trophies, paddles and more, we print on everything at the best prices. 100% money back guarantee if you're not completely satisfied.<\/p>",
+        "section_style": "",
+        "text_size": "large",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "Learn More >",
+        "button_link": "https:\/\/nativeathletics.co\/pages\/core-pickleball-and-native-athletics",
+        "ticktextclass": ""
+      }
+    },
+    "featured_row_qkkYeq": {
+      "type": "featured-row",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/claim_your_free_banner.jpg",
+        "section_style": "",
+        "text_size": "medium",
+        "image_alignement": "left",
+        "text_alignment": "",
+        "title": "Get your FREE Tournament Banner",
+        "text": "<p>As a limited time introduction offer, we are giving away a FREE Tournament Banner!No hooks, no gimmicks.Claim yours now before they're all gone.<\/p>",
+        "button_style": "btn--primary",
+        "button_label": "Claim Yours Now!",
+        "button_link": "https:\/\/nativeathletics.co\/products\/claim-your-free-tournament-banner",
+        "ticktextclass": ""
+      }
+    }
+  },
+  "order": [
+    "featured_content_EFUTNG",
+    "featured_columns_rd_rW3U9b",
+    "featured_columns_rd_bzcWRd",
+    "featured_image_6gJVbR",
+    "featured_content_6N7d83",
+    "featured_row_qkkYeq"
+  ]
+}

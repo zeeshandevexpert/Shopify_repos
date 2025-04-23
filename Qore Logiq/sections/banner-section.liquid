@@ -1,0 +1,344 @@
+<style>
+  /* You can remove this page div in your website */
+  #before-after {
+    /* margin-top: 100px; */
+    /* margin-bottom: -100px; */
+  }
+
+  /* Our normalize css */
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* Our wrapper */
+  .wrapper {
+    width: 350px;
+    height: 900px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    /* overflow: hidden; */
+    /* box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); */
+  }
+
+  /* Our image information */
+  .before,
+  .after {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    /* background: linear-gradient(180deg, #1A1C4A 0%, #3E43B0 100%); */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .content-image {
+    height: 100%;
+  }
+
+  .content-image.mob {
+   display: none;
+  }
+
+  .after {
+    width: 125px;
+  }
+
+  .scroller {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: #3cb5e8;
+    opacity: 0.9;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  .scroller:hover {
+    opacity: 1;
+  }
+
+  .scrolling {
+    pointer-events: none;
+    opacity: 1;
+    // z-index: 1;
+  }
+
+  .scroller__thumb {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+  }
+
+  .scroller:before,
+  .scroller:after {
+    content: ' ';
+    display: block;
+    width: 13px;
+    height: 425px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3.5px;
+    z-index: 30;
+    transition: 0.1s;
+  }
+
+  .scroller:before {
+    top: 100%;
+  }
+
+  .scroller:after {
+    bottom: 100%;
+  }
+
+  /* If you want to cahnge the colors, make sure you change the fill in the svgs to match */
+  .scroller {
+  ;
+  /* border: 5px solid #fff; */
+}
+
+.scroller:before,
+.scroller:after {
+  background: #3cb5e8;
+  opacity: 0.2;
+}
+
+
+
+@media (max-width:767px) {
+
+.wrapper{
+  height: 575px;
+ width: 250px;
+}
+
+.scroller:before,
+ .scroller:after{
+   height: 250px;
+ }
+ /* .banner-block .wrap-banner-block .slider-wrapper .content-block .right-block img {
+  display: none;
+  
+ }
+ .banner-block .wrap-banner-block .slider-wrapper .content-block .right-block img.mob {
+  display: block;
+  height: 50%;
+ } */
+ 
+} 
+
+</style>
+
+<section class="banner-block" style="background-image:url({{ section.settings.bg_image |  img_url: 'master' }})">
+  <div class="wrap-banner-block">
+    <div class="slider-wrapper slider">
+      {% for block in section.blocks %}
+        <div class="content-block">
+          <div class="left-block">
+            <h2 class="heading">{{ block.settings.heading }}</h2>
+            <div class="content">{{ block.settings.text }}</div>
+            <a href="{{ block.settings.btn_link }}" class="global_button">{{ block.settings.btn_text }}</a>
+          </div>
+          <div class="right-block{% if block.settings.slide %} single-slide{% endif %}">
+            {% if block.settings.slide %}
+              <img src="{{ block.settings.image |  img_url: 'master' }}" alt="">
+              {% else %}
+              <div id="before-after">
+                  <div class="wrapper">
+                    <div class="before">
+                      <img
+                        class="content-image"
+                        src="{{ block.settings.before |  img_url: 'master' }}"
+                        draggable="true">
+                    
+                    </div>
+                    <div class="after">
+                      <img
+                        class="content-image"
+                        src="{{ block.settings.after |  img_url: 'master' }}"
+                        draggable="true">
+                    
+                    </div>
+                    <div class="scroller">
+                      <svg
+                        class="scroller__thumb"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="100"
+                        height="100"
+                        viewBox="0 0 100 100">
+                        <polygon points="0 50 37 68 37 32 0 50" style="fill:#fff" />
+                        <polygon points="100 50 64 32 64 68 100 50" style="fill:#fff" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script>
+
+let active = false;
+
+// Mouse events
+document.querySelector('.scroller').addEventListener('mousedown', startScroll);
+document.body.addEventListener('mouseup', stopScroll);
+document.body.addEventListener('mouseleave', stopScroll);
+document.body.addEventListener('mousemove', handleMove);
+
+// Touch events
+document.querySelector('.scroller').addEventListener('touchstart', startScroll);
+document.body.addEventListener('touchend', stopScroll);
+document.body.addEventListener('touchcancel', stopScroll);
+document.body.addEventListener('touchmove', handleTouchMove);
+
+function startScroll(event) {
+  active = true;
+  document.querySelector('.scroller').classList.add('scrolling');
+}
+
+function stopScroll(event) {
+  active = false;
+  document.querySelector('.scroller').classList.remove('scrolling');
+}
+
+function handleMove(event) {
+  if (!active) return;
+
+  let x = event.pageX;
+
+  x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+
+  scrollIt(x);
+}
+
+function handleTouchMove(event) {
+  if (!active || event.touches.length !== 1) {
+    return;
+  }
+
+  let touch = event.touches[0];
+  let x = touch.pageX - document.querySelector('.wrapper').getBoundingClientRect().left;
+
+  scrollIt(x);
+}
+
+// function scrollIt(x) {
+//   let wrapperWidth = document.querySelector('.wrapper').offsetWidth;
+//   let transform = Math.max(0, Math.min(x, wrapperWidth));
+//   document.querySelector('.after').style.width = transform + 'px';
+//   document.querySelector('.scroller').style.left = transform - 25 + 'px';
+
+//   // Adjust opacity of the "before" image based on scroller position
+//   let opacity = 1 - transform / wrapperWidth;
+//   document.querySelector('.before').style.opacity = opacity;
+// }
+
+
+function scrollIt(x) {
+  let wrapperWidth = document.querySelector('.wrapper').offsetWidth;
+  let transform = Math.max(0, Math.min(x, wrapperWidth));
+  document.querySelector('.after').style.width = transform + 'px';
+  
+  let scrollerOffset = 25; // Default offset for desktop
+  
+  // Check screen width to determine the device type
+  if (window.innerWidth <= 768) { // Example threshold for mobile
+    scrollerOffset = 10; // Adjust offset for mobile
+  }
+  
+  document.querySelector('.scroller').style.left = transform - scrollerOffset + 'px';
+
+  // Adjust opacity of the "before" image based on scroller position
+  let opacity = 1 - transform / wrapperWidth;
+  document.querySelector('.before').style.opacity = opacity;
+} 
+
+
+
+scrollIt(0);
+
+  // And finally let's repeat the process for touch events
+  // first our middle scroller...
+
+</script>
+
+{% schema %}
+  {
+    "name": "Banner Block",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bg_image",
+        "label": "Background Image"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Slide",
+        "type": "slide",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "text"
+          },
+          {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button Text"
+          },
+          {
+            "type": "url",
+            "id": "btn_link",
+            "label": "Button Link"
+          }, 
+          {
+            "type": "checkbox",
+            "id": "slide",
+            "label": "Single Image"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "before",
+            "label": "Before Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "after",
+            "label": "After Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Banner Block"
+      }
+    ]
+  }
+{% endschema %}

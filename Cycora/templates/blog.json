@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "blog-template",
+      "settings": {
+      }
+    },
+    "16552132863a923b53": {
+      "type": "material-head",
+      "settings": {
+      }
+    },
+    "16552133135d55cf80": {
+      "type": "material-related-products",
+      "settings": {
+        "title_plp": "",
+        "view_all_link": "",
+        "title_plp_bottom": "",
+        "learn_more_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16552132863a923b53",
+    "16552133135d55cf80"
+  ]
+}

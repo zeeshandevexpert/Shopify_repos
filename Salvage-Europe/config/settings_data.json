@@ -1,0 +1,1388 @@
+{
+  "presets": {
+    "Wardrobe": {
+      "favicon": "",
+      "announcement_background": "#393939",
+      "announcement_text": "#ffffff",
+      "header_background": "#ffffff",
+      "mobile_header_background": "#ffffff",
+      "nav_color": "#000000",
+      "nav_hover_link_color": "#515151",
+      "nav_hover_accent_color": "#9f9070",
+      "secondary_color": "#ffffff",
+      "background": "#ffffff",
+      "text_color": "#393939",
+      "sale_color": "#eba1b8",
+      "so_color": "#f4cd6f",
+      "new_color": "#000000",
+      "dotted_color": "#d5d5d5",
+      "review_stars": "#f4cd6f",
+      "section_heading_text": "#393939",
+      "section_heading_primary": "rgba(0,0,0,0)",
+      "section_heading_primary_hover": "rgba(0,0,0,0)",
+      "section_heading_accent": "#9f9070",
+      "banner_text": "#161616",
+      "banner_caption_bg": "#ffffff",
+      "button_text": "#ffffff",
+      "button_color": "#393939",
+      "button_hover": "#000000",
+      "secondary_button_text": "#000000",
+      "secondary_button_color": "#d5d5d5",
+      "secondary_button_hover": "#d6d6d6",
+      "direction_color": "#9f9070",
+      "direction_background": "#ffffff",
+      "direction_hover": "#ffffff",
+      "swatch_color": "#000000",
+      "swatch_background": "#ffffff",
+      "swatch_border": "#d5d5d5",
+      "swatch_selected_color": "#ffffff",
+      "swatch_selected_background": "#000000",
+      "swatch_selected_border": "#000000",
+      "footer_background": "#ffffff",
+      "footer_text": "#000000",
+      "footer_icons": "#000000",
+      "main_font": "neuzeit_office_n4",
+      "nav_font": "neuzeit_office_n4",
+      "heading_font": "neuzeit_office_n7",
+      "font_size": 15,
+      "nav_size": 15,
+      "h1_size": 32,
+      "h2_size": 28,
+      "h3_size": 25,
+      "ultra_wide": false,
+      "scroll_animation": "fade-up",
+      "rounded_buttons": true,
+      "breadcrumb": false,
+      "collection_image_ratio": "original",
+      "collection_titles": "screen",
+      "collection_image_overlay": true,
+      "header_border_weight": 3,
+      "header_border_width": 10,
+      "header_border_style": "solid",
+      "header_horizontal_alignment": "bottom",
+      "header_edges": "none",
+      "header_vertical_alignment": "center",
+      "keyboard_focus": "#747474",
+      "focus_border_style": "dotted",
+      "focus_border_weight": 2,
+      "image_ratio": "original",
+      "display_options": "image-switch",
+      "product_icon_position": "top-left",
+      "product_align": "center",
+      "price_bold": false,
+      "vendor": true,
+      "product_border": false,
+      "quickview": false,
+      "product_info": "sizes",
+      "show_product_review_stars": false,
+      "show_cart_notes": true,
+      "show_shipping_calculator": false,
+      "shipping_calculator_default_country": "United States",
+      "show_shipping_countdown": true,
+      "free_shipping_threshold": "200",
+      "free_shipping_bg": "#9f9070",
+      "free_shipping_text": "#fff",
+      "twitter_url": "",
+      "facebook_url": "https:\/\/www.facebook.com\/shopify",
+      "pinterest_url": "https:\/\/www.pinterest.com\/shopify",
+      "tumblr_url": "",
+      "youtube_url": "https:\/\/www.youtube.com\/user\/shopify",
+      "instagram_url": "https:\/\/instagram.com\/shopify",
+      "snapchat_id": "",
+      "weibo_id": "",
+      "show_notfication": true,
+      "notification_position": "above-footer",
+      "notification_bar_height": 62,
+      "notification_text": "<p>THANKS FOR STOPPING BY - TAKE 20% OFF WITH CODE&nbsp; <strong>SAVE20<\/strong><\/p>",
+      "notification_size": 14,
+      "notification_text_color": "#ffffff",
+      "notification_text_alignment": "center",
+      "notification_background_color": "#b19d75",
+      "notification_background_image": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#b5b5b5",
+      "checkout_button_color": "#000000",
+      "checkout_error_color": "#e32c2b",
+      "link_color": "#000000",
+      "link_hover_color": "#4c4c4c",
+      "button_hover_text": "#d5d5d5",
+      "secondary_button_hover_text": "#000000",
+      "accordion_header_bg": "#d5d5d5",
+      "accordion_header_text": "#ffffff",
+      "accordion_content_text": "#ffffff",
+      "h4_size": 16,
+      "h5_size": 14,
+      "link_decoration": "none",
+      "quickview_vendor": false,
+      "quickview_sku": false,
+      "quickview_qty": false,
+      "quickview_product_variants": "swatches",
+      "quickview_color_swatch_options": "default-color",
+      "enable_video_looping": false,
+      "color_swatch_options": "custom-image",
+      "ajax_cart_method": "drawer",
+      "show_display_discount_code": true,
+      "shipping_calculator_heading": "Get shipping estimate",
+      "shipping_calculator_submit_button_label": "Calculate shipping",
+      "shipping_calculator_submit_button_label_disabled": "Calculating...",
+      "googleplus_url": "https:\/\/plus.google.com\/+shopify",
+      "popup": true,
+      "test_mode": false,
+      "show_discount_code": true,
+      "generic_coupon_code": "SAVE20",
+      "mail_popup_title": "Join + Save",
+      "popup_h3_size": 36,
+      "mail_popup_text": "Join our newsletter and get 20% off right away!",
+      "popup_subheading_size": 18,
+      "mail_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time.",
+      "mail_button_text": "Sign Up",
+      "popup_text_color": "#ffffff",
+      "popup_text_alignment": "center",
+      "popup_image": "background",
+      "popup_background_color": "#9f9070",
+      "email_image": "",
+      "header_color": "#ffffff",
+      "header_wrapper_background": "#ffffff",
+      "mobile_header_color": "#161616",
+      "mobile_header_links": "#161616",
+      "nav_dropdown_color": "#000000",
+      "dropdown_background_color": "#ffffff",
+      "navigation_transform": "uppercase",
+      "dropdown_transform": "none",
+      "twittername": "shopify",
+      "show_multiple_currencies": true,
+      "product_font_size": 13,
+      "show_recently_viewed": true,
+      "currency_format": "money_with_currency_format",
+      "supported_currencies": "CAD GBP EUR",
+      "default_currency": "CAD",
+      "navigation": "rgba(0,0,0,0)",
+      "cart_notes_enable": true,
+      "sections": {
+        "mobile-navigation": {
+          "type": "mobile-navigation",
+          "blocks": {
+            "1539296456419": {
+              "type": "search_box",
+              "settings": {
+              }
+            },
+            "1539296469223": {
+              "type": "cart_status",
+              "settings": {
+              }
+            },
+            "1539296377499": {
+              "type": "navigation",
+              "settings": {
+                "main_nav": "main-menu",
+                "customer_account_links": false
+              }
+            },
+            "1539296479805": {
+              "type": "social_icons",
+              "settings": {
+                "icon_color": "",
+                "icon_hover_color": ""
+              }
+            }
+          },
+          "block_order": [
+            "1539296456419",
+            "1539296469223",
+            "1539296377499",
+            "1539296479805"
+          ],
+          "settings": {
+            "background_color": "#393939",
+            "link_color": "#ffffff",
+            "border_color": "#e6e6e6"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_position": "above_center",
+            "full_width": false,
+            "absolute_header": false,
+            "nav_top_border": false,
+            "nav_bottom_border": false,
+            "homepage_nav_color": "#ffffff",
+            "nav_border_color": "#e4e4e4",
+            "logo": "shopify:\/\/shop_images\/logo.png",
+            "logo_max_width": 210,
+            "main_nav": "main-menu",
+            "nav_height": 70,
+            "nav_hover_effect": "hover-color",
+            "nav_split": 3
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1520914274198": {
+              "type": "text",
+              "settings": {
+                "title": "About",
+                "footer_text": "<p>Since 2013 Mr Parker has been providing the most on point fashion and lifestyle accessories.<\/p>"
+              }
+            },
+            "1520914258601": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "footer",
+                "title": "Our Collections"
+              }
+            },
+            "1520914306190": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "main-menu",
+                "title": "Explore"
+              }
+            },
+            "1520914313408": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Connect",
+                "mailing_subheading": "<p>Join our mailing list for updates<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1520914274198",
+            "1520914258601",
+            "1520914306190",
+            "1520914313408"
+          ],
+          "settings": {
+            "show_credit_cards": true,
+            "show_copyright": true,
+            "show_locale_selector": true
+          }
+        },
+        "product-recommendations": {
+          "type": "product-recommendations",
+          "settings": {
+            "product_recommendations_heading": "Recommended products",
+            "grid": 4
+          }
+        },
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+            "full_width": false,
+            "icons_only": false,
+            "announcement_text_size": 15,
+            "show_locale_selector": false
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "popup": false,
+            "popup_delay": 5,
+            "popup_frequency": 7,
+            "email_image": "shopify:\/\/shop_images\/mumu2.jpg",
+            "mail_popup_title": "Join us and get nice things",
+            "mail_popup_text": "Free stuff and general goodness",
+            "mail_button_text": "Sign Up",
+            "mail_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time.",
+            "popup_h3_size": 22,
+            "popup_subheading_size": 17,
+            "popup_text_color": "#393939",
+            "popup_background_color": "#ffffff"
+          }
+        }
+      }
+    },
+    "Locker": {
+      "favicon": "",
+      "announcement_background": "#000000",
+      "announcement_text": "#ffffff",
+      "header_background": "#ffffff",
+      "mobile_header_background": "#ffffff",
+      "nav_color": "#000000",
+      "nav_hover_link_color": "#515151",
+      "nav_hover_accent_color": "#000000",
+      "secondary_color": "#fbfbfb",
+      "background": "#ffffff",
+      "text_color": "#000000",
+      "sale_color": "#e60000",
+      "so_color": "#edd509",
+      "new_color": "#000000",
+      "dotted_color": "#d5d5d5",
+      "review_stars": "#edd509",
+      "section_heading_text": "#000000",
+      "section_heading_primary": "#ffffff",
+      "section_heading_primary_hover": "rgba(0,0,0,0)",
+      "section_heading_accent": "#000000",
+      "banner_text": "#000000",
+      "banner_caption_bg": "#ffffff",
+      "button_text": "#ffffff",
+      "button_color": "#000000",
+      "button_hover": "#808080",
+      "secondary_button_text": "#ffffff",
+      "secondary_button_color": "#808080",
+      "secondary_button_hover": "#000000",
+      "direction_color": "#000",
+      "direction_background": "#ffffff",
+      "direction_hover": "#ffffff",
+      "swatch_color": "#000000",
+      "swatch_background": "#ffffff",
+      "swatch_border": "#d5d5d5",
+      "swatch_selected_color": "#ffffff",
+      "swatch_selected_background": "#000000",
+      "swatch_selected_border": "#000000",
+      "footer_background": "#000000",
+      "footer_text": "#ffffff",
+      "footer_icons": "#ffffff",
+      "main_font": "avenir_next_n3",
+      "nav_font": "avenir_next_n5",
+      "heading_font": "avenir_next_n6",
+      "font_size": 16,
+      "nav_size": 16,
+      "h1_size": 32,
+      "h2_size": 28,
+      "h3_size": 24,
+      "scroll_animation": "fade-up",
+      "rounded_buttons": true,
+      "breadcrumb": false,
+      "collection_titles": "below",
+      "header_border_weight": 2,
+      "header_border_width": 10,
+      "header_border_style": "solid",
+      "header_horizontal_alignment": "bottom",
+      "header_edges": "none",
+      "header_vertical_alignment": "center",
+      "keyboard_focus": "#747474",
+      "focus_border_style": "dotted",
+      "focus_border_weight": 1,
+      "image_ratio": "original",
+      "display_options": "image-switch",
+      "product_icon_position": "top-right",
+      "product_align": "left",
+      "price_bold": false,
+      "vendor": false,
+      "product_border": false,
+      "quickview": true,
+      "product_info": "sizes",
+      "show_product_review_stars": false,
+      "product_variants": "dropdowns",
+      "show_sku": false,
+      "show_tax_note": true,
+      "show_shipping_note": true,
+      "show_cart_notes": true,
+      "show_shipping_calculator": true,
+      "shipping_calculator_default_country": "United States",
+      "show_shipping_countdown": true,
+      "free_shipping_threshold": "250",
+      "free_shipping_bg": "#a99e80",
+      "free_shipping_text": "#ffffff",
+      "twitter_url": "",
+      "facebook_url": "",
+      "pinterest_url": "",
+      "tumblr_url": "",
+      "youtube_url": "",
+      "instagram_url": "",
+      "snapchat_id": "",
+      "weibo_id": "",
+      "show_notfication": true,
+      "notification_position": "above-footer",
+      "notification_bar_height": 62,
+      "notification_text": "<p>Add some text to the notification bar<\/p>",
+      "notification_size": 14,
+      "notification_text_color": "#000000",
+      "notification_text_alignment": "center",
+      "notification_background_color": "#ffd450",
+      "notification_background_image": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#b5b5b5",
+      "checkout_button_color": "#000000",
+      "checkout_error_color": "#e32c2b",
+      "link_color": "#000000",
+      "link_hover_color": "#4c4c4c",
+      "button_hover_text": "#d5d5d5",
+      "secondary_button_hover_text": "#ffffff",
+      "accordion_header_bg": "#d5d5d5",
+      "accordion_header_text": "#ffffff",
+      "accordion_content_text": "#ffffff",
+      "h4_size": 16,
+      "h5_size": 14,
+      "link_decoration": "none",
+      "quickview_vendor": false,
+      "quickview_sku": false,
+      "quickview_qty": false,
+      "quickview_product_variants": "swatches",
+      "quickview_color_swatch_options": "default-color",
+      "enable_video_looping": false,
+      "color_swatch_options": "variant-image",
+      "ajax_cart_method": "drawer",
+      "show_display_discount_code": true,
+      "shipping_calculator_heading": "Get shipping estimate",
+      "shipping_calculator_submit_button_label": "Calculate shipping",
+      "shipping_calculator_submit_button_label_disabled": "Calculating...",
+      "googleplus_url": "",
+      "popup": true,
+      "test_mode": false,
+      "show_discount_code": true,
+      "generic_coupon_code": "coupon",
+      "mail_popup_title": "Newsletter heading",
+      "popup_h3_size": 36,
+      "mail_popup_text": "Newsletter subheading",
+      "popup_subheading_size": 17,
+      "mail_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time.",
+      "mail_button_text": "Sign Up",
+      "popup_text_color": "#ffffff",
+      "popup_text_alignment": "center",
+      "popup_image": "background",
+      "popup_background_color": "#9f9070",
+      "email_image": "shopify:\/\/shop_images\/slide1.jpg",
+      "header_color": "#000000",
+      "header_wrapper_background": "#ffffff",
+      "mobile_header_color": "#000000",
+      "mobile_header_links": "#000000",
+      "nav_dropdown_color": "#000000",
+      "dropdown_background_color": "#ffffff",
+      "navigation_transform": "uppercase",
+      "dropdown_transform": "none",
+      "twittername": "undergndmedia",
+      "show_multiple_currencies": false,
+      "product_font_size": 13,
+      "show_recently_viewed": true,
+      "currency_format": "money_with_currency_format",
+      "supported_currencies": "CAD GBP EUR",
+      "default_currency": "CAD",
+      "navigation": "rgba(0,0,0,0)",
+      "cart_notes_enable": true,
+      "sections": {
+        "mobile-navigation": {
+          "type": "mobile-navigation",
+          "blocks": {
+            "1603134279730": {
+              "type": "cart_status",
+              "settings": {
+              }
+            },
+            "1603134282065": {
+              "type": "navigation",
+              "settings": {
+                "main_nav": "main-menu",
+                "customer_account_links": true
+              }
+            },
+            "1603134286633": {
+              "type": "search_box",
+              "settings": {
+              }
+            },
+            "1603134294387": {
+              "type": "social_icons",
+              "settings": {
+                "icon_color": "#000000",
+                "icon_hover_color": "#313131"
+              }
+            },
+            "1603134297258": {
+              "type": "featured_text",
+              "settings": {
+                "featured_text": "<p><b>Featured Text<\/b><\/p><p><em>A great place to share about a sale!<\/em><\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1603134279730",
+            "1603134282065",
+            "1603134286633",
+            "1603134294387",
+            "1603134297258"
+          ],
+          "settings": {
+            "background_color": "#ffffff",
+            "link_color": "#000000",
+            "border_color": "#000000"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_position": "inline",
+            "full_width": true,
+            "absolute_header": true,
+            "nav_top_border": false,
+            "nav_bottom_border": false,
+            "homepage_nav_color": "#000000",
+            "nav_border_color": "#161616",
+            "logo": "",
+            "logo_max_width": 100,
+            "main_nav": "main-menu",
+            "nav_height": 54,
+            "nav_hover_effect": "bottom-border",
+            "nav_split": 2
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1520914274198": {
+              "type": "text",
+              "settings": {
+                "title": "About",
+                "footer_text": "<p>Since 2013 Mr Parker has been providing the&nbsp;most on point fashion and lifestyle accessories.<\/p>"
+              }
+            },
+            "1520914258601": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "footer",
+                "title": "Our Collections"
+              }
+            },
+            "1520914306190": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "main-menu",
+                "title": "Explore"
+              }
+            },
+            "1520914313408": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Connect",
+                "mailing_subheading": "<p>Join our mailing list for updates<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1520914274198",
+            "1520914258601",
+            "1520914306190",
+            "1520914313408"
+          ],
+          "settings": {
+            "show_credit_cards": true
+          }
+        }
+      }
+    },
+    "Spa": {
+      "favicon": "",
+      "header_background": "rgba(0,0,0,0)",
+      "header_color": "#000000",
+      "header_wrapper_background": "#ffffff",
+      "background": "#ffffff",
+      "text_color": "#000000",
+      "link_color": "#000000",
+      "link_hover_color": "#4c4c4c",
+      "sale_color": "#f4e9e8",
+      "so_color": "#f0f0f0",
+      "new_color": "#000000",
+      "dotted_color": "#f0f0f0",
+      "review_stars": "#000000",
+      "mobile_header_background": "#ffffff",
+      "mobile_header_color": "#161616",
+      "mobile_header_links": "#161616",
+      "nav_color": "#000000",
+      "nav_hover_link_color": "#000000",
+      "nav_hover_accent_color": "#f4e9e8",
+      "nav_dropdown_color": "#000000",
+      "dropdown_background_color": "#ffffff",
+      "secondary_color": "rgba(0,0,0,0)",
+      "section_heading_text": "#ffffff",
+      "section_heading_primary": "#000000",
+      "section_heading_primary_hover": "#f4e9e8",
+      "section_heading_accent": "#000000",
+      "banner_text": "#161616",
+      "banner_caption_bg": "#ffffff",
+      "button_color": "#282828",
+      "button_text": "#ffffff",
+      "button_hover": "#f4e9e8",
+      "button_hover_text": "#ffffff",
+      "secondary_button_color": "#f4e3cb",
+      "secondary_button_text": "#242424",
+      "secondary_button_hover": "#e9bbad",
+      "secondary_button_hover_text": "#000000",
+      "direction_color": "#000",
+      "direction_background": "rgba(0,0,0,0)",
+      "direction_hover": "rgba(0,0,0,0)",
+      "accordion_header_bg": "#f4e9e8",
+      "accordion_header_text": "#000000",
+      "accordion_content_text": "#ffffff",
+      "swatch_color": "#000000",
+      "swatch_background": "#ffffff",
+      "swatch_border": "#f3e6d1",
+      "swatch_selected_color": "#000000",
+      "swatch_selected_background": "#ffffff",
+      "swatch_selected_border": "#000000",
+      "footer_background": "#f4e9e8",
+      "footer_text": "#282828",
+      "footer_icons": "#282828",
+      "main_font": "courier_new_n4",
+      "nav_font": "poppins_n3",
+      "heading_font": "poppins_n2",
+      "font_size": 13,
+      "nav_size": 14,
+      "h1_size": 24,
+      "h2_size": 17,
+      "h3_size": 19,
+      "h4_size": 17,
+      "h5_size": 15,
+      "navigation_transform": "uppercase",
+      "dropdown_transform": "uppercase",
+      "link_decoration": "none",
+      "scroll_animation": "fade-up",
+      "breadcrumb": false,
+      "rounded_buttons": true,
+      "header_border_weight": 4,
+      "header_border_width": 100,
+      "header_border_style": "dotted",
+      "header_horizontal_alignment": "middle",
+      "header_edges": "banner_flag",
+      "header_vertical_alignment": "left",
+      "quickview": false,
+      "enable_video_looping": false,
+      "keyboard_focus": "#747474",
+      "focus_border_style": "dotted",
+      "focus_border_weight": 1,
+      "image_ratio": "original",
+      "display_options": "show-content",
+      "product_icon_position": "bottom-right",
+      "product_align": "left",
+      "price_bold": true,
+      "vendor": true,
+      "product_info": "add_to_cart",
+      "color_swatch_options": "variant-image",
+      "product_border": true,
+      "show_product_review_stars": false,
+      "ajax_cart_method": "drawer",
+      "show_display_discount_code": true,
+      "show_cart_notes": true,
+      "show_shipping_calculator": false,
+      "shipping_calculator_heading": "Get shipping estimate",
+      "shipping_calculator_default_country": "United States",
+      "shipping_calculator_submit_button_label": "Calculate shipping",
+      "shipping_calculator_submit_button_label_disabled": "Calculating...",
+      "show_shipping_countdown": true,
+      "free_shipping_threshold": "50",
+      "free_shipping_bg": "#f4e3cb",
+      "free_shipping_text": "#000000",
+      "twitter_url": "",
+      "facebook_url": "",
+      "pinterest_url": "",
+      "tumblr_url": "",
+      "youtube_url": "",
+      "googleplus_url": "",
+      "instagram_url": "",
+      "snapchat_id": "",
+      "weibo_id": "",
+      "popup": false,
+      "test_mode": false,
+      "show_discount_code": true,
+      "generic_coupon_code": "SAVE20",
+      "mail_popup_title": "Join + Save",
+      "popup_h3_size": 36,
+      "mail_popup_text": "Join our newsletter",
+      "popup_subheading_size": 18,
+      "mail_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time.",
+      "mail_button_text": "Sign Up",
+      "popup_text_color": "#000000",
+      "popup_text_alignment": "center",
+      "popup_image": "content",
+      "popup_background_color": "#ffffff",
+      "email_image": "shopify:\/\/shop_images\/aydry2.jpg",
+      "show_notfication": true,
+      "notification_position": "above-footer",
+      "notification_bar_height": 62,
+      "notification_text": "<p>Save 20% when you buy three items with coupon&nbsp;BUYTHREE<\/p>",
+      "notification_size": 14,
+      "notification_text_color": "#ffffff",
+      "notification_text_alignment": "center",
+      "notification_background_color": "#606060",
+      "notification_background_image": "shopify:\/\/shop_images\/mascara.jpg",
+      "show_multiple_currencies": false,
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#b5b5b5",
+      "checkout_button_color": "#000000",
+      "checkout_error_color": "#e32c2b",
+      "sections": {
+        "mobile-navigation": {
+          "type": "mobile-navigation",
+          "blocks": {
+            "1603134279730": {
+              "type": "cart_status",
+              "settings": {
+              }
+            },
+            "1603134282065": {
+              "type": "navigation",
+              "settings": {
+                "main_nav": "main-menu",
+                "customer_account_links": true
+              }
+            },
+            "1603134286633": {
+              "type": "search_box",
+              "settings": {
+              }
+            },
+            "1603134294387": {
+              "type": "social_icons",
+              "settings": {
+                "icon_color": "#000000",
+                "icon_hover_color": "#313131"
+              }
+            },
+            "1603134297258": {
+              "type": "featured_text",
+              "settings": {
+                "featured_text": "<p><b>Featured Text<\/b><\/p><p><em>A great place to share about a sale!<\/em><\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1603134279730",
+            "1603134282065",
+            "1603134286633",
+            "1603134294387",
+            "1603134297258"
+          ],
+          "settings": {
+            "background_color": "#ffffff",
+            "link_color": "#000000",
+            "border_color": "#000000"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_position": "inline",
+            "full_width": false,
+            "absolute_header": true,
+            "nav_top_border": true,
+            "nav_bottom_border": true,
+            "homepage_nav_color": "#000000",
+            "nav_border_color": "#f4e9e8",
+            "logo": "",
+            "logo_max_width": 200,
+            "main_nav": "main-menu",
+            "nav_height": 54,
+            "nav_hover_effect": "underline-box",
+            "nav_split": 2
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1520914274198": {
+              "type": "text",
+              "settings": {
+                "title": "About",
+                "footer_text": "<p>Since 2013 Mr Parker has been providing the&nbsp;most on point fashion and lifestyle accessories.<\/p>"
+              }
+            },
+            "1520914258601": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "footer",
+                "title": "Our Collections"
+              }
+            },
+            "1520914306190": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "main-menu",
+                "title": "Explore"
+              }
+            },
+            "1520914313408": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Connect",
+                "mailing_subheading": "<p>Join our mailing list for updates<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1520914274198",
+            "1520914258601",
+            "1520914306190",
+            "1520914313408"
+          ],
+          "settings": {
+            "show_credit_cards": true
+          }
+        }
+      }
+    },
+    "Home": {
+      "favicon": "",
+      "header_background": "#f6f5f3",
+      "header_color": "#000000",
+      "header_wrapper_background": "#ffffff",
+      "background": "#ffffff",
+      "text_color": "#000000",
+      "link_color": "#000000",
+      "link_hover_color": "#4c4c4c",
+      "sale_color": "#59533f",
+      "so_color": "#efa739",
+      "new_color": "#28323c",
+      "dotted_color": "#28323c",
+      "review_stars": "#59533f",
+      "mobile_header_background": "#ffffff",
+      "mobile_header_color": "#161616",
+      "mobile_header_links": "#161616",
+      "nav_color": "#000000",
+      "nav_hover_link_color": "#59533f",
+      "nav_hover_accent_color": "#efa739",
+      "nav_dropdown_color": "#000000",
+      "dropdown_background_color": "#f6f5f3",
+      "secondary_color": "rgba(0,0,0,0)",
+      "section_heading_text": "#ffffff",
+      "section_heading_primary": "#161616",
+      "section_heading_primary_hover": "#59533f",
+      "section_heading_accent": "#161616",
+      "banner_text": "#161616",
+      "banner_caption_bg": "#f6f5f3",
+      "button_color": "#28323c",
+      "button_text": "#ffffff",
+      "button_hover": "#59533f",
+      "button_hover_text": "#ffffff",
+      "secondary_button_color": "#59533f",
+      "secondary_button_text": "#ffffff",
+      "secondary_button_hover": "#efa739",
+      "secondary_button_hover_text": "#ffffff",
+      "direction_color": "#000",
+      "direction_background": "#ccc",
+      "direction_hover": "#aaa",
+      "accordion_header_bg": "#f6f5f3",
+      "accordion_header_text": "#161616",
+      "accordion_content_text": "#161616",
+      "swatch_color": "#28323c",
+      "swatch_background": "#ffffff",
+      "swatch_border": "#28323c",
+      "swatch_selected_color": "#ffffff",
+      "swatch_selected_background": "#28323c",
+      "swatch_selected_border": "#393c4a",
+      "footer_background": "#f6f5f3",
+      "footer_text": "#161616",
+      "footer_icons": "#28323c",
+      "main_font": "monotype_news_gothic_n4",
+      "nav_font": "monotype_news_gothic_n4",
+      "heading_font": "monotype_new_clarendon_n5",
+      "font_size": 15,
+      "nav_size": 13,
+      "h1_size": 28,
+      "h2_size": 20,
+      "h3_size": 22,
+      "h4_size": 18,
+      "h5_size": 16,
+      "navigation_transform": "uppercase",
+      "dropdown_transform": "none",
+      "link_decoration": "underline",
+      "scroll_animation": "none",
+      "breadcrumb": false,
+      "rounded_buttons": false,
+      "header_border_weight": 3,
+      "header_border_width": 100,
+      "header_border_style": "solid",
+      "header_horizontal_alignment": "middle",
+      "header_edges": "skewy",
+      "header_vertical_alignment": "center",
+      "quickview": false,
+      "enable_video_looping": false,
+      "keyboard_focus": "#747474",
+      "focus_border_style": "dotted",
+      "focus_border_weight": 1,
+      "image_ratio": "vertical",
+      "display_options": "image-switch",
+      "product_icon_position": "bottom-right",
+      "product_align": "left",
+      "price_bold": true,
+      "vendor": true,
+      "product_info": "colors",
+      "color_swatch_options": "custom-image",
+      "product_border": false,
+      "show_product_review_stars": true,
+      "ajax_cart_method": "page",
+      "show_display_discount_code": true,
+      "show_cart_notes": true,
+      "show_shipping_calculator": true,
+      "shipping_calculator_heading": "Get shipping estimate",
+      "shipping_calculator_default_country": "United States",
+      "shipping_calculator_submit_button_label": "Calculate shipping",
+      "shipping_calculator_submit_button_label_disabled": "Calculating...",
+      "show_shipping_countdown": true,
+      "free_shipping_threshold": "200",
+      "free_shipping_bg": "#efa739",
+      "free_shipping_text": "#fff",
+      "twitter_url": "",
+      "facebook_url": "",
+      "pinterest_url": "",
+      "tumblr_url": "",
+      "youtube_url": "",
+      "googleplus_url": "",
+      "instagram_url": "",
+      "snapchat_id": "",
+      "weibo_id": "",
+      "popup": false,
+      "test_mode": false,
+      "show_discount_code": true,
+      "generic_coupon_code": "SAVE20",
+      "mail_popup_title": "Join + Save",
+      "popup_h3_size": 36,
+      "mail_popup_text": "Join our newsletter",
+      "popup_subheading_size": 18,
+      "mail_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time.",
+      "mail_button_text": "Sign Up",
+      "popup_text_color": "#ffffff",
+      "popup_text_alignment": "center",
+      "popup_image": "background",
+      "popup_background_color": "#ffffff",
+      "email_image": "shopify:\/\/shop_images\/065827-580_10_1511496541_4b78068f-14b1-4aba-944a-fab07ed7a19c.jpg",
+      "show_notfication": true,
+      "notification_position": "above-footer",
+      "notification_bar_height": 62,
+      "notification_text": "<p>Don't Let This Expire:&nbsp;40% OFF&nbsp;Your Purchase (CODE:&nbsp;BRSURPRISE)<a href=\"https:\/\/dev-underground-mrparker.myshopify.com\/collections\/all\" title=\"All Products\">&nbsp;<span style=\"text-decoration: underline;\">Exclusions Apply<\/span><\/a><\/p>",
+      "notification_size": 14,
+      "notification_text_color": "#ffffff",
+      "notification_text_alignment": "center",
+      "notification_background_color": "#28323c",
+      "notification_background_image": "shopify:\/\/shop_images\/065827-580_10_1511496541_4b78068f-14b1-4aba-944a-fab07ed7a19c.jpg",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "checkout_accent_color": "#b5b5b5",
+      "checkout_button_color": "#000000",
+      "checkout_error_color": "#e32c2b",
+      "sections": {
+        "mobile-navigation": {
+          "type": "mobile-navigation",
+          "blocks": {
+            "1603134279730": {
+              "type": "cart_status",
+              "settings": {
+              }
+            },
+            "1603134282065": {
+              "type": "navigation",
+              "settings": {
+                "main_nav": "main-menu",
+                "customer_account_links": true
+              }
+            },
+            "1603134286633": {
+              "type": "search_box",
+              "settings": {
+              }
+            },
+            "1603134294387": {
+              "type": "social_icons",
+              "settings": {
+                "icon_color": "#000000",
+                "icon_hover_color": "#313131"
+              }
+            },
+            "1603134297258": {
+              "type": "featured_text",
+              "settings": {
+                "featured_text": "<p><b>Featured Text<\/b><\/p><p><em>A great place to share about a sale!<\/em><\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1603134279730",
+            "1603134282065",
+            "1603134286633",
+            "1603134294387",
+            "1603134297258"
+          ],
+          "settings": {
+            "background_color": "#ffffff",
+            "link_color": "#000000",
+            "border_color": "#000000"
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo_position": "inline_left",
+            "full_width": false,
+            "absolute_header": false,
+            "nav_top_border": false,
+            "nav_bottom_border": false,
+            "homepage_nav_color": "#ffffff",
+            "nav_border_color": "#161616",
+            "logo": "",
+            "logo_max_width": 200,
+            "main_nav": "main-menu",
+            "nav_height": 50,
+            "nav_hover_effect": "bottom-border",
+            "nav_split": 2
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "1520914274198": {
+              "type": "text",
+              "settings": {
+                "title": "About",
+                "footer_text": "<p>Since 2013 Mr Parker has been providing the&nbsp;most on point fashion and lifestyle accessories.<\/p>"
+              }
+            },
+            "1520914258601": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "footer",
+                "title": "Our Collections"
+              }
+            },
+            "1520914306190": {
+              "type": "menu",
+              "settings": {
+                "footer_nav": "main-menu",
+                "title": "Explore"
+              }
+            },
+            "1520914313408": {
+              "type": "newsletter",
+              "settings": {
+                "title": "Connect",
+                "mailing_subheading": "<p>Join our mailing list for updates<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "1520914274198",
+            "1520914258601",
+            "1520914306190",
+            "1520914313408"
+          ],
+          "settings": {
+            "show_credit_cards": true
+          }
+        }
+      }
+    }
+  },
+  "current": {
+    "favicon": "shopify:\/\/shop_images\/SE_-_FAVICON.png",
+    "announcement_background": "#393939",
+    "announcement_text": "#ffffff",
+    "header_background": "#ffffff",
+    "header_text": "#393939",
+    "mobile_header_background": "#ffffff",
+    "mobile_header_text": "#393939",
+    "nav_color": "#000000",
+    "nav_hover_link_color": "#515151",
+    "nav_hover_accent_color": "#000000",
+    "nav_dropdown_text": "#000000",
+    "nav_dropdown_background": "#ffffff",
+    "secondary_color": "#ffffff",
+    "background": "#ffffff",
+    "text_color": "#393939",
+    "sale_color": "#eba1b8",
+    "so_color": "#f4cd6f",
+    "new_color": "#000000",
+    "dotted_color": "#d5d5d5",
+    "review_stars": "#f4cd6f",
+    "section_heading_text": "#393939",
+    "section_heading_primary": "rgba(0,0,0,0)",
+    "section_heading_primary_hover": "rgba(0,0,0,0)",
+    "section_heading_accent": "#000000",
+    "banner_text": "#f7af09",
+    "banner_caption_bg": "#ffffff",
+    "button_text": "#ffffff",
+    "button_color": "#000000",
+    "button_hover": "#393939",
+    "secondary_button_text": "#000000",
+    "secondary_button_color": "#d5d5d5",
+    "secondary_button_hover": "#d6d6d6",
+    "direction_color": "#000000",
+    "direction_background": "#ffffff",
+    "direction_hover": "#ffffff",
+    "swatch_color": "#000000",
+    "swatch_background": "#ffffff",
+    "swatch_border": "#d5d5d5",
+    "swatch_selected_color": "#ffffff",
+    "swatch_selected_background": "#000000",
+    "swatch_selected_border": "#000000",
+    "footer_background": "#ffffff",
+    "footer_text": "#000000",
+    "footer_icons": "#000000",
+    "main_font": "varela_round_n4",
+    "nav_font": "sans-serif",
+    "heading_font": "playfair_display_n4",
+    "font_size": 14,
+    "nav_size": 15,
+    "h1_size": 28,
+    "h2_size": 22,
+    "h3_size": 22,
+    "ultra_wide": false,
+    "scroll_animation": "none",
+    "rounded_buttons": true,
+    "header_border_weight": 3,
+    "header_border_width": 10,
+    "header_border_style": "solid",
+    "header_horizontal_alignment": "bottom",
+    "header_edges": "none",
+    "header_vertical_alignment": "center",
+    "keyboard_focus": "#747474",
+    "focus_border_style": "dotted",
+    "focus_border_weight": 2,
+    "collection_image_ratio": "original",
+    "collection_titles": "screen",
+    "collection_image_overlay": true,
+    "image_ratio": "vertical",
+    "display_options": "show-content",
+    "product_icon_position": "top-left",
+    "product_align": "center",
+    "price_bold": false,
+    "vendor": false,
+    "product_border": false,
+    "quickview": false,
+    "product_variants": "swatches",
+    "show_color_swatches": true,
+    "color_swatch_style": "default-color",
+    "show_quantity": true,
+    "cart_icon": "cart",
+    "show_cart_notes": true,
+    "show_shipping_calculator": false,
+    "shipping_calculator_default_country": "United States",
+    "show_shipping_countdown": true,
+    "free_shipping_threshold": "200",
+    "free_shipping_bg": "#9f9070",
+    "free_shipping_text": "#fff",
+    "twitter_url": "",
+    "facebook_url": "",
+    "pinterest_url": "",
+    "tumblr_url": "",
+    "youtube_url": "",
+    "instagram_url": "https:\/\/www.instagram.com\/salvage_europe\/",
+    "snapchat_id": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#b5b5b5",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#e32c2b",
+    "product_info": "sizes",
+    "weibo_id": "",
+    "show_notfication": true,
+    "notification_position": "above-footer",
+    "notification_bar_height": 62,
+    "notification_text": "<p>THANKS FOR STOPPING BY - TAKE 20% OFF WITH CODE&nbsp; <strong>SAVE20<\/strong><\/p>",
+    "notification_size": 14,
+    "notification_text_color": "#ffffff",
+    "notification_text_alignment": "center",
+    "notification_background_color": "#b19d75",
+    "accordion_header_bg": "#d5d5d5",
+    "accordion_content_text": "#ffffff",
+    "h4_size": 16,
+    "dropdown_transform": "none",
+    "link_decoration": "none",
+    "color_swatch_options": "custom-image",
+    "sections": {
+      "mobile-navigation": {
+        "type": "mobile-navigation",
+        "blocks": {
+          "1539296456419": {
+            "type": "search_box",
+            "settings": {
+            }
+          },
+          "1539296377499": {
+            "type": "navigation",
+            "settings": {
+              "main_nav": "primary-menu",
+              "customer_account_links": false,
+              "show_locale_selector": false,
+              "show_country_selector": false
+            }
+          },
+          "1539296479805": {
+            "type": "social_icons",
+            "settings": {
+              "icon_color": "",
+              "icon_hover_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "1539296456419",
+          "1539296377499",
+          "1539296479805"
+        ],
+        "settings": {
+          "background_color": "#ffffff",
+          "link_color": "#000000",
+          "border_color": "#000000"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_position": "above_center",
+          "full_width": false,
+          "absolute_header": false,
+          "nav_top_border": false,
+          "nav_bottom_border": false,
+          "homepage_nav_color": "#ffffff",
+          "nav_border_color": "#e4e4e4",
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo_max_width": 210,
+          "main_nav": "main-menu",
+          "nav_height": 70,
+          "nav_hover_effect": "hover-color",
+          "nav_split": 3
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1520914274198": {
+            "type": "text",
+            "settings": {
+              "title": "About",
+              "footer_text": "<p>Since 2013 Mr Parker has been providing the most on point fashion and lifestyle accessories.<\/p>"
+            }
+          },
+          "1520914258601": {
+            "type": "menu",
+            "settings": {
+              "footer_nav": "footer",
+              "title": "Our Collections"
+            }
+          },
+          "1520914306190": {
+            "type": "menu",
+            "settings": {
+              "footer_nav": "main-menu",
+              "title": "Explore"
+            }
+          },
+          "1520914313408": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Connect",
+              "mailing_subheading": "<p>Join our mailing list for updates<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1520914274198",
+          "1520914258601",
+          "1520914306190",
+          "1520914313408"
+        ],
+        "settings": {
+          "show_credit_cards": true,
+          "show_copyright": true,
+          "show_locale_selector": true
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "product_recommendations_heading": "Recommended products",
+          "grid": 4
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {
+          "full_width": false,
+          "icons_only": false,
+          "announcement_text_size": 15,
+          "show_locale_selector": false
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "popup": false,
+          "popup_delay": 5,
+          "popup_frequency": 7,
+          "newsletter_style": "image_left",
+          "mail_popup_title": "Join us and get nice things",
+          "mail_popup_text": "Free stuff and general goodness",
+          "mail_button_text": "Sign Up",
+          "mail_gdpr_text": "*By completing this form you're signing up to receive our emails and can unsubscribe at any time.",
+          "popup_h3_size": 22,
+          "popup_subheading_size": 17,
+          "popup_text_color": "#393939",
+          "popup_background_color": "#ffffff"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "6406956604159796213": {
+        "type": "shopify:\/\/apps\/smartseo\/blocks\/smartseo\/7b0a6064-ca2e-4392-9a1d-8c43c942357b",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "4976129024724438625": {
+        "type": "shopify:\/\/apps\/smartseo\/blocks\/brokenLinkDetection\/7b0a6064-ca2e-4392-9a1d-8c43c942357b",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

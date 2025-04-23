@@ -1,0 +1,126 @@
+{
+  "sections": {
+    "section_announcement_iifPfm": {
+      "type": "section-announcement",
+      "custom_css": [
+        "h2 {font-weight: bold;}",
+        "p {font-size: 39px;}"
+      ],
+      "settings": {
+        "bg_color": "#001e62",
+        "color": "#fcfcfc",
+        "text_size": 9,
+        "padding_top": 38,
+        "padding_bottom": 54
+      }
+    },
+    "section_hero_ye6wmN": {
+      "type": "section-hero",
+      "blocks": {
+        "heading_xK6B3Q": {
+          "type": "heading",
+          "settings": {
+            "title": "關於可持續",
+            "text_size": 10
+          }
+        }
+      },
+      "block_order": [
+        "heading_xK6B3Q"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1000052460.jpg",
+        "height": "use_screen_two_thirds",
+        "overlay_opacity": 45,
+        "overlay_color": "#000",
+        "enable_overlay_text": false,
+        "preload_image": false,
+        "content_width": 2000,
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "color_bg": "hero__content--transparent",
+        "width": "wrapper--none",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_icons_K8xgtN": {
+      "type": "section-icons",
+      "blocks": {
+        "icon_block_6wHH7R": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-basket-return",
+            "icon_alt": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-11T184910.390.png",
+            "icon_color": "#aaaaaa",
+            "title": "100% 可回收",
+            "text": "<p>HydroX 從蓋子到袋子均採用可回收 PE 材料，確保我們包裝的各個方面都是環保的，並且在使用後可以輕鬆回收。此外，所有使用的材料均經過FDA\/SGS認證，確保食品安全。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icon_block_nPr9GV": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-shipment-world",
+            "icon_alt": "shopify:\/\/shop_images\/Easy_Procedure_1.png",
+            "icon_color": "#aaaaaa",
+            "title": "可循環",
+            "text": "<p>與 Teltra Pak 等由多層紙、膠水、PE 和鋁箔組成（分解過程需要分離材料）的傳統牛奶紙盒不同，HydroX 的包裝簡化了回收過程。整袋可在 1 個程序內回收。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icon_block_iWKd3A": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-phone",
+            "icon_alt": "shopify:\/\/shop_images\/Easy_Procedure_3.png",
+            "icon_color": "#aaaaaa",
+            "title": "排放更少",
+            "text": "<p>雖然需要 26 卡車未填充的玻璃瓶才能承載與 1 卡車未填充的軟袋相同的產品體積，但 HydroX 的包裝最大限度地減少了運輸要求，從而減少了排放和環境影響。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icon_block_NGzerM": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-leaf",
+            "icon_alt": "shopify:\/\/shop_images\/Easy_Procedure_2.png",
+            "icon_color": "#aaaaaa",
+            "title": "創新解決方案",
+            "text": "<p>HydroX 致力於持續改善永續性。雖然我們目前的包裝袋代表著向前邁出的一步，但我們仍在不斷探索新的包裝選項，以進一步減少對環境的影響。我們的品牌仍然致力於尋找優先考慮永續發展的創新解決方案。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_block_6wHH7R",
+        "icon_block_nPr9GV",
+        "icon_block_iWKd3A",
+        "icon_block_NGzerM"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--light bg--neutral",
+        "icons_size": 80,
+        "icon_alignment": "icon--top",
+        "layout": "grid--stacked",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "section_announcement_iifPfm",
+    "section_hero_ye6wmN",
+    "section_icons_K8xgtN"
+  ]
+}

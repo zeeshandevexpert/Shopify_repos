@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_iwt_2_UKpYhA": {
+      "type": "custom-iwt-2",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_2000_x_2000_px_6.png",
+        "heading": "Outrage London Reviews",
+        "text": "<p>Welcome to our Reviews page, where real customers share their Outrage experiences. Discover how our jewellery has added a touch of luxury to everyday life or served as the perfect gift for special occasions.<\/p>",
+        "logo": "shopify:\/\/shop_images\/Outrage_LONDON_800_x_200_px_950_x_250_px_1200_x_300_px_1200_x_300_px.png",
+        "btn-label": "",
+        "btn-link": "",
+        "subheading": "Our Family:",
+        "bg": "#faf7f1",
+        "fg": "#000000"
+      }
+    },
+    "1712527592780a062c": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_carousel_section_xbezCT": {
+          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-carousel-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "max_width": 1920,
+            "text_color": "#000000",
+            "background_color": "#ffffff",
+            "arrows_color": "#000000",
+            "dots_color": "#000000",
+            "button_color": "#000000",
+            "show_more": true,
+            "only_photos": false,
+            "use_widget_font": true,
+            "product_handle": ""
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_carousel_section_xbezCT"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "17125752930406165c": {
+      "type": "apps",
+      "blocks": {
+        "loox_reviews_loox_agg_section_bhPH8A": {
+          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-agg-section\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "settings": {
+            "only_photos": false,
+            "hide_thumbnails": false,
+            "product_handle": "",
+            "aggregated": true,
+            "data-limit": 40,
+            "maxwidth": 1600,
+            "is_sample": true
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_agg_section_bhPH8A"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_iwt_2_UKpYhA",
+    "1712527592780a062c",
+    "17125752930406165c"
+  ]
+}

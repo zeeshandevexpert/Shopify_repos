@@ -1,0 +1,86 @@
+{% comment %}DO NOT MODIFY. Any changes made here may be overwritten by Hyperspeed.{% endcomment %}
+<!-- Hyperspeed:242903 -->
+<!-- hs-shared_id:None -->
+
+
+<script>customElements.define("hs-loader-root",class extends HTMLElement{constructor(){super(),this.shadow=this.attachShadow({mode:"open"}),this.shadow.innerHTML="\n            <style>\n            #hs-load-bar .hs-bar {\n                background: #bcbcbc;\n                position: fixed;\n                z-index: 1031;\n                top: 0;\n                left: 0;\n                width: 100%;\n                height: 2px;\n            }\n            #hs-load-bar .peg {\n                display: block;\n                position: absolute;\n                right: 0px;\n                width: 100px;\n                height: 100%;\n                box-shadow: 0 0 10px #bcbcbc, 0 0 5px #bcbcbc;\n                opacity: 1.0;\n                -webkit-transform: rotate(3deg) translate(0px, -4px);\n                -ms-transform: rotate(3deg) translate(0px, -4px);\n                transform: rotate(3deg) translate(0px, -4px);\n            }\n        "}connectedCallback(){!function(t){var n,e,r={},i=r.settings={minimum:.08,easing:"linear",positionUsing:"translate",speed:200,trickle:!0,trickleSpeed:200,barSelector:".hs-bar",parent:t.shadow,template:'<div class="hs-bar"><div class="peg"></div></div></div></div>'};function a(t,n,e){return t<n?n:t>e?e:t}function o(t){return 100*(-1+t)}r.status=null,r.set=function(t){var n=r.isStarted();t=a(t,i.minimum,1),r.status=1===t?null:t;var e=r.render(!n),u=e.querySelector(i.barSelector),l=i.speed,c=i.easing;return e.offsetWidth,s(function(n){""===i.positionUsing&&(i.positionUsing=r.getPositioningCSS()),d(u,function(t,n,e){var r;return(r="translate3d"===i.positionUsing?{transform:"translate3d("+o(t)+"%,0,0)"}:"translate"===i.positionUsing?{transform:"translate("+o(t)+"%,0)"}:{"margin-left":o(t)+"%"}).transition="all "+n+"ms "+e,r}(t,l,c)),1===t?(d(e,{transition:"none",opacity:1}),e.offsetWidth,setTimeout(function(){d(e,{transition:"all "+l+"ms linear",opacity:0}),setTimeout(function(){r.remove(),n()},l)},l)):setTimeout(n,l)}),this},r.isStarted=function(){return"number"==typeof r.status},r.start=function(){r.status||r.set(0);var t=function(){setTimeout(function(){r.status&&(r.trickle(),t())},i.trickleSpeed)};return i.trickle&&t(),this},r.done=function(t){return t||r.status?r.inc(.3+.5*Math.random()).set(1):this},r.inc=function(t){var n=r.status;return n?n>1?void 0:("number"!=typeof t&&(t=n>=0&&n<.2?.1:n>=.2&&n<.5?.04:n>=.5&&n<.8?.02:n>=.8&&n<.99?.005:0),n=a(n+t,0,.994),r.set(n)):r.start()},r.trickle=function(){return r.inc()},n=0,e=0,r.promise=function(t){return t&&"resolved"!==t.state()?(0===e&&r.start(),n++,e++,t.always(function(){0==--e?(n=0,r.done()):r.set((n-e)/n)}),this):this},r.render=function(n){if(r.isRendered())return t.shadow.getElementById("hs-load-bar");var e=document.createElement("div");e.id="hs-load-bar",e.innerHTML=i.template;var a=e.querySelector(i.barSelector),s=n?"-100":o(r.status||0),u=i.parent;return d(a,{transition:"all 0 linear",transform:"translate3d("+s+"%,0,0)"}),u.appendChild(e),e},r.remove=function(){var t,n=document.getElementById("hs-load-bar");n&&(t=n)&&t.parentNode&&t.parentNode.removeChild(t)},r.isRendered=function(){return!!t.shadow.getElementById("hs-load-bar")},r.getPositioningCSS=function(){var t={},n="WebkitTransform"in t?"Webkit":"MozTransform"in t?"Moz":"msTransform"in t?"ms":"OTransform"in t?"O":"";return n+"Perspective"in t?"translate3d":n+"Transform"in t?"translate":"margin"};var s=function(){var t=[];function n(){var e=t.shift();e&&e(n)}return function(e){t.push(e),1==t.length&&n()}}(),d=function(){var t=["Webkit","O","Moz","ms"],n={};function e(e){return e=e.replace(/^-ms-/,"ms-").replace(/-([\da-z])/gi,function(t,n){return n.toUpperCase()}),n[e]||(n[e]=function(n){var e={};if(n in e)return n;for(var r,i=t.length,a=n.charAt(0).toUpperCase()+n.slice(1);i--;)if((r=t[i]+a)in e)return r;return n}(e))}function r(t,n,r){n=e(n),t.style[n]=r}return function(t,n){var e,i=arguments;if(2==i.length)for(e in n)r(t,e,n[e]);else r(t,i[1],i[2])}}();r.start(),document.addEventListener("DOMContentLoaded",function(){r.set(1)})}(this)}}),document.head.insertAdjacentHTML("afterend","<hs-loader-root></hs-loader-root>");</script>
+
+
+
+
+<!-- Lazyload + Responsive Images-->
+<script defer src="{{ 'hs-lazysizes.min.js' | asset_url }}"></script>
+
+<link rel="stylesheet" href="{{ 'hs-image-blur.css' | asset_url }}" media="print" onload="this.media='all'; this.onload = null">
+<!-- Third party app optimization -->
+<!-- Is an app not updating? Just click Rebuild Cache in Hyperspeed. -->
+<!-- Or, stop deferring the app by clicking View Details on App Optimization in your Theme Optimization settings. -->
+<script hs-ignore>{% render 'hs-3p-optimize.js' %}</script>
+
+<!-- instant.load -->
+<script defer src="{{ 'hs-instantload.min.js' | asset_url }}"></script>
+
+<!-- defer JS until action -->
+<script async src="{{ 'hs-script-loader.min.js' | asset_url }}"></script>
+
+
+
+<style>
+    	body > * {
+          visibility: hidden;
+        }
+        header:first-of-type, nav:first-of-type, #shopify-section-header, #shopify-section-announcement, #shopify-section-AnnouncementBar, #shopify-section-header-template {
+          visibility: visible;
+        }
+</style>
+<noscript>
+  <style>body > *{visibility:visible;}</style>
+</noscript>
+<script>
+(function() {
+  window.addEventListener("DOMContentLoaded", function() {
+    var alteredNodes = [];
+    var timer = null;
+    
+    var options = {
+      attributes: true,
+      attributeFilter: ['class', 'id', 'style'],
+      subtree: true,
+      childlist: true
+    };
+    var observer = new MutationObserver(mCallback);
+
+    function mCallback (mutations, observer) {
+        for (let mutation of mutations) {
+          if (mutation.type === 'attributes') {
+            if (!alteredNodes.includes(mutation.target) && isAboveFold(mutation.target)) {
+              disconnectObserver(observer);
+            }
+            alteredNodes.push(mutation.target);
+          }
+        }
+    }
+
+    function disconnectObserver(observer) {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(function(){
+         document.body.insertAdjacentHTML("beforeend", `<style>body > *{visibility:visible;}</style>`);
+         observer.disconnect();
+      },300);
+    }
+
+    function isAboveFold(targetNode) {
+      var viewportHeight = window.innerHeight;
+      var viewportWidth = window.innerWidth;
+      var coords = targetNode.getBoundingClientRect();
+      return coords.top <= viewportHeight && coords.left <= viewportWidth;
+    }
+
+    observer.observe(document.body, options);
+    disconnectObserver(observer);
+  });
+ })();
+</script>
+

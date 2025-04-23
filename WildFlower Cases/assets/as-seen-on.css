@@ -1,0 +1,23 @@
+.as-seen-on {
+    background: #F6F6F6;
+    padding: 40px;
+}
+
+@media screen and (max-width: 749px) {
+  .as-seen-on {
+    padding: 40px 0;
+  }
+  .as-seen-on h4 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    font-weight: bold;
+  }
+  .as-seen-on .flex {
+    justify-content: center;
+  }
+  .as-seen-on svg {
+    margin: 5px 10px;
+  }
+}

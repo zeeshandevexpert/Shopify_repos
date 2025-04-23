@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": 80,
+        "pagelist": "",
+        "page_sidebar_title": "Page sidebar title"
+      }
+    },
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "712b6cd4-c835-4a38-a68d-1ebff2639da9": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Heading",
+            "content": "<p>Accordion pane content<\/p>"
+          }
+        },
+        "58153908-ee81-4b7c-8326-7ab8ebd77333": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Heading",
+            "content": "<p>Accordion pane content<\/p>"
+          }
+        },
+        "568d3d7d-411c-4846-b323-2b05ac98a8ca": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Heading",
+            "content": "<p>Accordion pane content<\/p>"
+          }
+        },
+        "b8481cd1-ba17-4e25-b4cf-68f545c99a33": {
+          "type": "accordion_pane",
+          "settings": {
+            "title": "Heading",
+            "content": "<p>Accordion pane content<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "712b6cd4-c835-4a38-a68d-1ebff2639da9",
+        "58153908-ee81-4b7c-8326-7ab8ebd77333",
+        "568d3d7d-411c-4846-b323-2b05ac98a8ca",
+        "b8481cd1-ba17-4e25-b4cf-68f545c99a33"
+      ],
+      "settings": {
+        "title": "Accordion",
+        "max_width": 65,
+        "allow_multiple": false
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main",
+    "accordion"
+  ]
+}

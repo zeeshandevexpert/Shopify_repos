@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "search-template",
+      "settings": {
+      }
+    },
+    "165528927152c9c80e": {
+      "type": "search-head",
+      "settings": {
+        "title": "search",
+        "button_title": "try another search"
+      }
+    },
+    "165528929067e4990f": {
+      "type": "search-results",
+      "settings": {
+        "title": "search",
+        "button_title": "try another search"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165528927152c9c80e",
+    "165528929067e4990f"
+  ]
+}

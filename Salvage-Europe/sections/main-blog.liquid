@@ -1,0 +1,476 @@
+{%- liquid
+
+  assign show_sidebar = false
+
+  if section.blocks.size > 0
+    assign show_sidebar = true
+  endif
+
+-%}
+
+<section class="blog-template main__section" data-section-id="{{ section.id }}" data-section-type="blog-section">
+  <div class="blog-content row">
+    {% paginate blog.articles by 14 %}
+      <div class="recent-posts {% if show_sidebar %}desktop-9 tablet-4{% else %}desktop-12 tablet-6{% endif %} mobile-3">
+
+        {% if current_tags %}
+          <div class="section-heading">
+            <h2>{{ 'blogs.article.tagged' | t }}: {{ current_tags }}</h2>
+            <span class="section-border">
+              {%- if settings.header_border_style == 'zigzag' -%}<div class="zigzag"></div>{% endif %}
+            </span>
+          </div>
+        {% else %}
+            {% if section.settings.recent_posts_heading != blank %}
+              {% render 'section-headings', type: section.settings.recent_posts_heading %}
+            {% endif %}
+        {% endif %}
+        {% assign products = collections.european-limestone.products %}
+
+  
+
+          <ul id="blog-articles" class="{% if section.settings.recent_posts_layout == 'grid' %}grid-layout{% else %}list-layout{% endif %}">
+            {% for article in blog.articles  %}
+              {% assign is_even = forloop.index | modulo: 2 %}
+              {% if section.settings.recent_posts_layout == 'grid' %}
+                <li class="single-article desktop-4 tablet-6 mobile-3" data-aos="{{ settings.scroll_animation }}">
+                  <div class="article-body">
+                    {% if article.image %}
+                      <a href="{{ article.url }}">
+                        {%- render 'Blog-page',
+                          type: article.image,
+                          width: 800
+                        -%}
+                      </a>
+                    {% endif %}
+                    {% if section.settings.show_tag %}
+                    <span class="article-tags">{% for tag in article.tags %}
+                      <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}•{% endunless %}{% endfor %}</span>
+                    {% endif %}
+                    <h2>
+                      <a href="{{ article.url }}">
+                        {{ article.title }}
+                      </a>
+                    </h2>
+                    {% if article.excerpt == blank %}
+                      <p>{{ article.content | strip_html | truncate: 90 }}</p>
+                    {% else %}
+                      <p>{{ article.excerpt }}</p>
+                    {% endif %}
+
+                    {% assign show_bullet = false %}
+                    {% if section.settings.show_date or section.settings.show_author %}
+                      <div class="article-meta">
+                        <div class="article-meta-inner">
+                          <div class="article-data">
+                            {% if section.settings.show_date %}
+                            {% assign show_bullet = true %}
+                              <span class="date">{{ article.created_at | date: "%b %d, %y" }} &nbsp;</span>
+                            {% endif %}
+                            {% if section.settings.show_author %}
+                              <span class="author">{% if show_bullet %}•&nbsp;&nbsp;{% endif %}By {{ article.user.first_name }}</span>
+                            {% endif %}
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+                </li>
+              {% elsif section.settings.recent_posts_layout == 'list' %}
+                <li class="single-article desktop-10 tablet-6 mobile-3{% if is_even == 0 %} column-view{% else %} list-view{% endif %}" data-aos="{{ settings.scroll_animation }}">
+                  {% capture article_image %}
+                    {% if article.image %}
+                   
+                        {%- render 'Blog-page',
+                          type: article.image,
+                          width: 800
+                        -%}
+                    
+                    {% endif %}
+                  {% endcapture %}
+                  {% capture article_info %}
+                    <div class="article-content">
+                   
+                      <div class="wrap-title-block">
+                        <div class="heading">
+                          <h1>{{ article.title | truncatewords: 6 }}</h1>
+                          {% if section.settings.show_tag %}
+                            <div class="article-tags">{% for tag in article.tags %}
+                              <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %}•{% endunless %}{% endfor %}</div>
+                            {% endif %}
+                          </div>
+                        <div class="content-block">
+                          <p>{{ article.excerpt_or_content | strip_html | truncatewords: 30 }}</p>
+                          <a class="view-btn" href="{{ article.url}}">View full project <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9.83709e-09 4.98879H14.2946L10.1497 0.729566L10.8547 0L15.8546 5.13779C15.9477 5.23405 16 5.36427 16 5.5C16 5.63573 15.9477 5.76595 15.8546 5.86221L10.8547 11L10.1497 10.2756L14.2946 6.01635H9.83709e-09V4.98879Z" fill="black"/>
+                          </svg>
+                           </a>
+                        </div>
+                      </div>
+                    </div>
+                      {% comment %} <div class="article-meta">
+                        <div class="article-meta-inner">
+                          <div class="article-data">
+                            {% assign show_bullet = false %}
+                            {% if section.settings.show_date %}
+                            {% assign show_bullet = true %}
+                              <span class="date">{{ article.created_at | date: "%b %d, %y" }} &nbsp;</span>
+                            {% endif %}
+                            {% if section.settings.show_author %}
+                              <span class="author">{% if show_bullet %}•&nbsp;&nbsp;{% endif %}By {{ article.user.first_name }}</span>
+                            {% endif %}
+                          </div>
+                          <span class="article-share">{% render 'social' with article %}</span>
+
+                          {% if blog.comments_enabled? == true %}
+                            <span class="comments-count">
+                              <a href="{{ article.comment_post_url }}">{{ article.comments_count }} <span class="comments"{% if section.settings.show_sidebar %}style="display: none;"{% endif %}>{{ 'blogs.article.comments' | t }}</span></a>
+                            </span>
+                          {% endif %}
+
+                          </div>
+                      </div> {% endcomment %}
+                    {% endcapture %}
+
+                    <div class="article-left desktop-6 tablet-6 mobile-3">
+                      {% cycle article_image, article_info %}
+                    </div>
+                    <div class="article-right desktop-6 tablet-6 mobile-3">
+                      {% cycle article_info, article_image %}
+                    </div>
+                  </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+
+        {% render 'pagination', paginate: paginate %}
+      </div>
+
+      {% if show_sidebar %}
+        <aside id="sidebar" class="desktop-3 tablet-2 mobile-3">
+          {% for block in section.blocks %}
+             {% case block.type %}
+               {% when 'bio' %}
+                 <div class="sidebar-item blog-bio" {{ block.shopify_attributes }}>
+                   <div class="bio-image">
+                     <a href="{{ block.settings.blog_bio_link}}">
+                       {%- render 'Blog-page',
+                         type: block.settings.blog_bio_image,
+                         width: 500
+                       -%}
+                     </a>
+                   </div>
+                   <div class="bio rte">
+                     {{ block.settings.blog_bio_text }}
+                   </div>
+                 </div>
+               {% when 'social' %}
+                 <div class="sidebar-item blog-social" {{ block.shopify_attributes }}>
+                   <h5 class="sidebar-heading">{{ block.settings.share_text }}</h5>
+                   <ul id="social">
+                     {% render 'social-icons', fill_color: 'var(--text-color)', wrapper: '.sidebar-item' %}
+                   </ul>
+                 </div>
+               {% when 'subscribe' %}
+                 <div class="sidebar-item" {{ block.shopify_attributes }}>
+                   <div class="blog-subscribe">
+                     <h4>{{ block.settings.subscribe_heading }}</h4>
+                     <p>{{ block.settings.subscribe_subheading }}</p>
+                     {% form 'customer' %}
+                       {% if form.posted_successfully? %}
+                         <p class="note-success success">{{ 'general.password_page.thanks' | t }}</p>
+                       {% else %}
+                         <input type="hidden" name="contact[tags]" value="prospect, newsletter">
+                         <label class="visually-hidden" for="main-blog-email">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+                         <input type="email" name="contact[email]" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" id="main-blog-email">
+                         <input type="submit" value="{{ 'general.newsletter_form.submit' | t }}" style="width: 100%; text-align: center; margin-bottom: 0;">
+                       {% endif %}
+                       {%- if form.errors -%}
+                         <div class="note-error">
+                           {{ form.errors | default_errors }}
+                         </div>
+                       {%- endif -%}
+                     {% endform %}
+                   </div>
+                 </div>
+               {% when 'promo' %}
+                 <div class="sidebar-item" {{ block.shopify_attributes }}>
+                   <div class="blog-promo">
+                     <a class="promo" href="{{ block.settings.promo_link }}">
+                       <div class="ad-inner">
+                         {% if block.settings.adsense_code != blank %}
+                           {{ block.settings.adsense_code }}
+                         {% elsif block.settings.promo_image %}
+                           {%- render 'Blog-page',
+                             type: block.settings.promo_image,
+                             width: 500
+                           -%}
+                        {% else %}
+                          {{ 'collection-3' | placeholder_svg_tag: 'promo-ad' }}
+                        {% endif %}
+
+                       </div>
+                     </a>
+                   </div>
+                 </div>
+               {% when 'latest_post' %}
+                <div class="sidebar-item blog-latest" {{ block.shopify_attributes }}>
+                  <h5 class="sidebar-heading">{{ block.settings.latest_post_heading }}</h5>
+
+                  {% for article in blog.articles limit: 3 %}
+                    {% if article.image %}
+                      <div class="featured-article">
+                        <div class="article-image">
+                          {%- render 'Blog-page',
+                            type: article.image,
+                            width: 500
+                          -%}
+                        </div>
+                        <div class="article-caption">
+                          <a href="{{ article.url}}"><h4>{{ article.title | truncate: 18 }}</h4></a>
+                          <span>{{ article.created_at | date: "%b %d, %y" }}</span>
+                        </div>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+               {% when 'filter_tags' %}
+                 <div class="sidebar-item" {{ block.shopify_attributes }}>
+                   <div class="filter js-col-filter">
+                     <h5 class="sidebar-heading">{{ block.settings.filter_by_heading }}</h5>
+                     <ul class="filter-list collection__filters--filter-list js-col-filter-list">
+                       {% for tag in blog.all_tags %}
+                         <li><a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a></li>
+                       {% endfor %}
+                      </ul>
+                   </div>
+                 </div>
+             {% endcase %}
+           {% endfor %}
+        </aside>
+      {% endif %}
+
+      <div class="clear"></div>
+
+    {% endpaginate %}
+  </div>
+
+</section>
+<style media="screen">
+{%- if section.settings.recent_posts_layout == 'grid' -%}
+  @supports (display: grid) {
+    .blog-template ul#blog-articles .single-article {
+      grid-column: auto / span 3;
+      float: none !important;
+      margin: 0 !important;
+      width: 100% !important;
+    }
+  }
+{%- elsif section.settings.recent_posts_layout == 'list' -%}
+@supports (display: grid) {
+  .blog-template ul#blog-articles .single-article {
+    grid-column: auto / span 6;
+    grid-template-columns: repeat(6, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    display: grid;
+  }
+  .blog-template .article-left {
+    grid-column: 1 / span 3;
+    align-self: center;
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+  .blog-template .article-right {
+    grid-column: 4 / span 3;
+    align-self: center;
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+  }
+  .blog-template .article-content {
+    padding: 30px;
+  }
+  .blog-template .article-left .article-content {
+    text-align: right;
+  }
+  @media only screen and (max-width: 980px) {
+    .blog-template .article-left {
+      grid-column: 1 / span 6;
+      align-self: center;
+      width: 100% !important;
+      float: none !important;
+      margin: 0 !important;
+    }
+    .blog-template .article-right {
+      grid-column: 1 / span 6;
+      align-self: center;
+      width: 100% !important;
+      float: none !important;
+      margin: 0 !important;
+    }
+  }
+}
+{%- endif -%}
+  .bio-image .box-ratio {
+    background-color: transparent;
+  }
+</style>
+{% schema %}
+  {
+    "name": "Blog section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Recent Posts"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_date",
+        "label": "Show published date",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_tag",
+        "label": "Show article tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_author",
+        "label": "Show author",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "recent_posts_layout",
+        "label": "Layout",
+        "options": [
+          {
+            "value": "grid",
+            "label": "Grid"
+          },
+          {
+            "value": "list",
+            "label": "List"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "recent_posts_heading",
+        "label": "Heading"
+      }
+    ],
+    "max_blocks": 10,
+    "blocks": [
+      {
+       "type": "bio",
+       "name": "Bio",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "blog_bio_image",
+           "label": "Image",
+           "info" : "400px x 400px recommended"
+         },
+         {
+           "type": "url",
+           "id": "blog_bio_link",
+           "label": "Link"
+         },
+         {
+           "type": "richtext",
+           "id": "blog_bio_text",
+           "label": "Text",
+           "default": "<p><b>Meet the Author</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+         }
+       ]
+     },
+     {
+       "type": "social",
+       "name": "Social icons",
+       "settings": [
+         {
+           "type": "text",
+           "id": "share_text",
+           "label": "Heading",
+           "default": "Subscribe & Follow"
+         }
+       ]
+     },
+     {
+       "type": "subscribe",
+       "name": "Subscribe Box",
+       "settings": [
+         {
+           "type": "text",
+           "id": "subscribe_heading",
+           "label": "Heading",
+           "default": "Join the Club"
+         },
+         {
+           "type": "text",
+           "id": "subscribe_subheading",
+           "label": "Subheading",
+           "default": "Sign up and receive the latest tips via email."
+         }
+       ]
+     },
+     {
+       "type": "promo",
+       "name": "Promo Ad",
+       "settings": [
+        {
+         "type": "image_picker",
+         "id": "promo_image",
+         "label": "Image",
+         "info" : "400px x 400px recommended"
+        },
+        {
+          "type": "url",
+          "id": "promo_link",
+          "label": "Link"
+        },
+        {
+         "type": "html",
+         "id": "adsense_code",
+         "label": "Adsense Code",
+         "info": "Paste code block for advertising."
+        }
+       ]
+     },
+     {
+       "type": "latest_post",
+       "name": "Latest Posts",
+       "settings": [
+         {
+           "type": "text",
+           "id": "latest_post_heading",
+           "label": "Heading"
+         }
+       ]
+     },
+     {
+       "type": "filter_tags",
+       "name": "Filter by Tags",
+       "settings": [
+          {
+            "type": "paragraph",
+            "content": "Add tags to your blog articles to use the tag filter."
+          },
+         {
+           "type": "text",
+           "id": "filter_by_heading",
+           "label": "Heading",
+           "default": "Filter by"
+         }
+       ]
+     }
+    ]
+  }
+{% endschema %}

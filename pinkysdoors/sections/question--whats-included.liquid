@@ -1,0 +1,15 @@
+{%- liquid
+  assign product_handle = request.path | split: '&product=' | last
+  assign product_handle = request.path | split: '/products/' | last
+  assign product = all_products[product_handle]
+-%}
+<div id="question--whats-included" class="regular-mfp-popup rte">
+{% include 'question-whats-included', type: product.type, product: product %}
+</div>
+
+{% schema %}
+  {
+    "name": "PDP - What's Included",
+    "settings": []
+  }
+{% endschema %}

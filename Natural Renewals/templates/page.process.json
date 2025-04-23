@@ -1,0 +1,126 @@
+{
+  "sections": {
+    "11a22c89-64e8-4c25-b512-7a122e77657e": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "fc5e571b-b2eb-48b1-9230-26d4d559cb85": {
+      "type": "index-process",
+      "settings": {
+        "text_color": "#ffffff",
+        "title": "using textiles of the past to make the clothing of the future",
+        "media_type": "video_file",
+        "image": "shopify:\/\/shop_images\/orange_is_the_new_cycora.png",
+        "image_mobile": "shopify:\/\/shop_images\/orange_is_the_new_cycora.png",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/731444637",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3461903a543a41f0be42da1402bc55f6.mp4"
+      }
+    },
+    "9659c601-13cc-4f44-91a1-e9360c01805f": {
+      "type": "our-process-text-block",
+      "settings": {
+        "text_color": "",
+        "gradient": true,
+        "text": "powered by molecular regeneration technology, cycora<sup>®<\/sup> is made from end-of-life textiles in order to keep our clothing in the loop and out of landfills",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "95702b54-ad46-45b9-9aec-f0cc4835106e": {
+      "type": "past-preset-future-section",
+      "blocks": {
+        "07b0b8f5-e13f-454f-a228-023db74708cf": {
+          "type": "item",
+          "settings": {
+            "media_type": "video_file",
+            "image_normal": "shopify:\/\/shop_images\/Rectangle_6.png",
+            "vimeo_youtube_video": "",
+            "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c31dd42f4bc748c69a7a27ab26a7737b.mp4",
+            "title": "past",
+            "description": "end-of-life textiles are sorted, consolidated, and diverted from landfill or incineration."
+          }
+        },
+        "f41fc554-8f44-4273-bd6d-8484a3921dc5": {
+          "type": "item",
+          "settings": {
+            "media_type": "video_file",
+            "image_normal": "shopify:\/\/shop_images\/Rectangle_7.png",
+            "vimeo_youtube_video": "",
+            "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/335f0d90eda04442a417fe7024f72c7c.mp4",
+            "title": "present",
+            "description": "textiles go through molecular regeneration, where mixed fibers are separated out and dyes, additive and other impurities are removed."
+          }
+        },
+        "fe7e76b7-f917-4f2f-905d-453b00657184": {
+          "type": "item",
+          "settings": {
+            "media_type": "video_file",
+            "image_normal": "shopify:\/\/shop_images\/Rectangle_5.png",
+            "vimeo_youtube_video": "",
+            "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5106b9047ecb40cf9560f87b97ff9589.mp4",
+            "title": "future",
+            "description": "regenerated material is reconstituted into new virgin-grade cycora® pellets, yarns and fabrics to perform at the highest quality at a fraction of the environmental impact"
+          }
+        }
+      },
+      "block_order": [
+        "07b0b8f5-e13f-454f-a228-023db74708cf",
+        "f41fc554-8f44-4273-bd6d-8484a3921dc5",
+        "fe7e76b7-f917-4f2f-905d-453b00657184"
+      ],
+      "settings": {
+        "heading": "performing modern day alchemy"
+      }
+    },
+    "c18963bc-ff60-4c2a-b998-600ff17f27e5": {
+      "type": "our-process-text-block",
+      "settings": {
+        "text_color": "",
+        "gradient": false,
+        "text": "cycora<sup>®<\/sup> material upholds the highest quality to ensure circularity is achieved in performance throughout it’s past, present, and future",
+        "button_title": "digital swatchbook",
+        "button_link": ""
+      }
+    },
+    "e4120dcd-60d7-4fca-99cb-67103e12c54d": {
+      "type": "implement-block",
+      "settings": {
+        "heading": "big impact that’s seamless to implement",
+        "sub_heading": "cycora<sup>®<\/sup> runs on existing industry processes which make it easy to integrate into fashion’s existing supply chain",
+        "media_type": "video_file",
+        "vimeo_youtube_video": "",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e5fb171171364b6fadb1f07ddc0f861c.mp4"
+      }
+    },
+    "ec0b1d7e-6186-49a8-b808-46cd79eff854": {
+      "type": "impact-section",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_2.png",
+        "heading": "we want to live in a beautiful world",
+        "left_title": "3.5 million",
+        "left_text": "pounds of textile waste diverted from landfills",
+        "right_title": "~50% CO2",
+        "right_text": "reduction compared to virgin polyester production"
+      }
+    }
+  },
+  "order": [
+    "11a22c89-64e8-4c25-b512-7a122e77657e",
+    "main",
+    "fc5e571b-b2eb-48b1-9230-26d4d559cb85",
+    "9659c601-13cc-4f44-91a1-e9360c01805f",
+    "95702b54-ad46-45b9-9aec-f0cc4835106e",
+    "c18963bc-ff60-4c2a-b998-600ff17f27e5",
+    "e4120dcd-60d7-4fca-99cb-67103e12c54d",
+    "ec0b1d7e-6186-49a8-b808-46cd79eff854"
+  ]
+}

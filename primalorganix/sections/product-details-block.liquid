@@ -1,0 +1,78 @@
+<section class="product-details-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+    <div class="wrap-product-details-block">
+    <h2 class="heading">{{ section.settings.heading }}</h2>
+    <div class="text">
+      {{ section.settings.description }}
+    </div>
+    <div class="product-block">
+        <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+
+        <div class="button-wrapper"><a href="{{ section.settings.btn_link }}"><button class="button-label" style="background-image: url({{ 'button-bg.png' |  asset_url }});">{{ section.settings.btn_text }}</button></a></div>
+    </div>
+
+    <div class="label-letter-block" style="background-image: url({{ 'letter-bg-image.png' |  asset_url }});">
+        <div class="wrap-letter-block">
+            <div class="icon-text">
+                <div class="icon"><img src="{{ 'microscope.png' |  asset_url }}" alt=""></div>
+                <div class="text">{{ section.settings.letter_text }}</div>
+            </div>
+            <button class="btn-normal"> <img src="{{ 'paper.png' |  asset_url }}" alt=""> {{ section.settings.letter_btn_text }}</button>
+        </div>
+    </div>        
+
+    </div>
+</section> 
+
+{% schema %}
+    {
+        "name": "Product Details Block",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Product Image"
+            },
+            {
+                "type": "url",
+                "id": "btn_link",
+                "label": "Button Link"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text"
+            },
+            {
+                "type": "text",
+                "id": "letter_text",
+                "label": "Label Text"
+            },
+            {
+                "type": "text",
+                "id": "letter_btn_text",
+                "label": "Letter Button Text"
+            }
+            
+            ],
+            "presets": [
+                {
+                    "name": "Product Details Block"
+                }
+            ]
+    }
+    {% endschema %}

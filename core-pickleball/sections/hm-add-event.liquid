@@ -1,0 +1,131 @@
+<!-- SECTION--ADD--EVENT -->
+    <section class="add-event" style="background-image: linear-gradient(
+                    #202020E5,
+                    #202020E5),url(https://cdn.shopify.com/s/files/1/0908/1513/6050/files/event-bg.png?v=1731620872);">
+        <div class="primary-container">
+            <div class="event-inner-flex d-flex flex-justify-space flex-align-end">
+                <div class="event-content">
+                    <a href="{{ section.settings.event-ons-ancher-url }}" class="add-on-btn ff-proxima white-c">{{ section.settings.event-ons-ancher-text }}</a>
+                    <h3 class="ff-helvetica white-c t-uppercase primary-heading">{{ section.settings.event-main-heading }}</h3>
+                    <p class="ff-proxima fw-400 white-c">{{ section.settings.event-main-paragraph }}</p>
+                </div>
+                <div class="event-btns">
+                    <div class="">
+                        <a href="{{ section.settings.event-btn-1-url }}" class="secondary-btn ff-proxima black-c t-uppercase">{{ section.settings.event-btn-1-text }}</a>
+                    </div>
+                    <div class="">
+                        <a href="{{ section.settings.event-btn-2-url }}" class="secondary-btn ff-proxima black-c t-uppercases">{{ section.settings.event-btn-2-text }}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="event-card-flex d-flex flex-wrap">
+              {% for event_cards in section.blocks %}
+                {% if event_cards.type == 'event-cards-block' %}
+                  <div class="event-card-1">
+                    <div class="event-card-icon">
+                        <img src="{{ event_cards.settings.event-cards-img | img_url: 'master' }}" alt="" width="" height="">
+                    </div>
+                    <div class="event-card-cont">
+                        <h4 class="ff-proxima t-uppercase black-c">{{ event_cards.settings.event-cards-heading }}</h4>
+                        <p class="ff-proxima-reg black-c">{{ event_cards.settings.event-cards-paragraph }}</p>
+                    </div>
+                </div>
+                {% endif %}
+              {% endfor %}
+              {% comment %}
+                <div class="event-card-logo">
+                    <img src="{{ section.settings.event-card-logo-img | img_url: 'master' }}" alt="" width="" height="">
+                </div>
+              {% endcomment %}
+                
+            </div>
+        </div>
+    </section>
+    <!-- SECTION--ADD--EVENT--END -->
+
+
+{% schema %}
+  {
+    "name": "HM Add Event",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "event-bg-img",
+        "label": "Select Event Background Image"
+      },
+      {
+        "type": "url",
+        "id": "event-ons-ancher-url",
+        "label": "Enter Event Ons Ancher URL"
+      },
+      {
+        "type": "text",
+        "id": "event-ons-ancher-text",
+        "label": "Enter Event Ons Ancher Text"
+      },
+      {
+        "type": "text",
+        "id": "event-main-heading",
+        "label": "Enter Event Main Heading"
+      },
+      {
+        "type": "text",
+        "id": "event-main-paragraph",
+        "label": "Enter Event Main Paragraph"
+      },
+      {
+        "type": "url",
+        "id": "event-btn-1-url",
+        "label": "Enter Event Button 1 URL"
+      },
+      {
+        "type": "text",
+        "id": "event-btn-1-text",
+        "label": "Enter Event Button 1 Text"
+      },
+      {
+        "type": "url",
+        "id": "event-btn-2-url",
+        "label": "Enter Event Button 2 URL"
+      },
+      {
+        "type": "text",
+        "id": "event-btn-2-text",
+        "label": "Enter Event Button 2 Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "event-card-logo-img",
+        "label": "Select Event Card Logo Image"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "event-cards-block",
+        "name": "Event Cards Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "event-cards-img",
+            "label": "Select Event Cards Image"
+          },
+          {
+            "type": "text",
+            "id": "event-cards-heading",
+            "label": "Enter Event Cards Heading"
+          },
+          {
+            "type": "text",
+            "id": "event-cards-paragraph",
+            "label": "Enter Event Cards Paragraph"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HM Add Event"
+      }
+    ]
+  }
+{% endschema %}

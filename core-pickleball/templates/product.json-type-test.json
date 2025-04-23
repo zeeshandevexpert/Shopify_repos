@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "upgrade_order": {
+      "type": "upgrade-order",
+      "settings": {
+        "tab-text1": "FTF BEGINNER BOOTCAMP",
+        "tab-content1": "",
+        "tab-text2": "UPGRADE YOUR ORDER",
+        "tab-content2": "",
+        "tab-text3": "ORDER COMPLETE",
+        "tab-content3": ""
+      }
+    },
+    "featured_product_BU4kXg": {
+      "type": "featured-product",
+      "settings": {
+        "featured_product": "sample-pack-of-3",
+        "image_layout": "stacked",
+        "product_photo_alignement": "left",
+        "enable_zoom": true,
+        "product_vendor": false,
+        "product_title_size": false,
+        "product_header_alignement": "",
+        "product_selector": "radio",
+        "quantity_enabled": false,
+        "button_cart_icon": true,
+        "enable_payment_button": false,
+        "show_description": true,
+        "social_sharing_products": true,
+        "show_product_tags": true,
+        "dbtfy_product_tabs_first": true,
+        "amazon_enable": false,
+        "amazon_link": "",
+        "amazon_button_label": "",
+        "ticktextclass": ""
+      }
+    }
+  },
+  "order": [
+    "upgrade_order",
+    "featured_product_BU4kXg"
+  ]
+}

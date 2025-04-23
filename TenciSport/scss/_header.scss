@@ -1,0 +1,178 @@
+sticky-header{
+    border: 0 !important;
+   
+    header{
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.3s ease;
+        &.header{
+            background-color: transparent;
+            padding: 0 !important;
+            @media screen and (max-width:767px) {
+                background: $green;
+            }
+            &.scrolled{
+                background: $green;
+            }
+            &.active-default{
+                background: #92c020;
+            }
+            header-drawer{
+                margin-left: 0;
+                height: 100%;
+            }
+
+            .header__heading-link{
+                .header__heading-logo-wrapper{
+                    display: none;
+                    &.white-logo{
+                        display: block;
+                    }
+                    &.active{
+                        display: block;
+                    }
+                    &.in-active{
+                        display: none;
+                    }
+                }
+            }
+
+            .menu-drawer-container{
+                height: 100%;
+                .toggle-menu{
+                    padding: 30px;
+                    background: $green;
+                    width: 110px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    .toggle-menu-wrap{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 6px;
+                        background: $green;
+                        cursor: pointer;
+                        .line{
+                            width: 50px;
+                            height: 4px;
+                            background: $whitealt;
+                            display: block;
+                        }      
+                    } 
+                    .close-menu{
+                        display: none;
+                    }
+                    &[aria-expanded=true]{
+                        .toggle-menu-wrap{
+                            display: none;
+                        }
+                        .icon-hamburger{
+                            display: none;
+                        }
+                        .close-menu{
+                            display: block;
+                        }
+                    }
+                }
+                .menu-drawer{
+                    .menu-drawer__inner-container{
+                        background-color: #E3E3DD;
+                        .menu-drawer__navigation-container{
+                            .menu-drawer__navigation{
+                                .menu-drawer__menu{
+                                    &.submenu-open{
+                                        visibility: visible;
+                                    }
+                                    li{
+                                        .list-menu__item{
+                                            font-size: 26px;
+                                            font-family: $sportingbold; 
+                                            justify-content: space-between;
+                                            text-transform: uppercase;
+                                        }
+                                        details{
+                                            .menu-drawer__submenu{
+                                                background-color: #E3E3DD;
+                                                position: unset;
+                                                transition: none;
+                                                .menu-drawer__inner-submenu{
+                                                    .menu-drawer__menu{
+                                                        li{
+                                                            .list-menu__item{
+                                                                font-size: 20px;
+                                                                font-family: $sportingbold; 
+                                                                justify-content: space-between;
+                                                                text-transform: uppercase;
+                                                            }
+                                                          details{
+                                                            .menu-drawer__submenu{
+                                                                .menu-drawer__menu{
+                                                                    .list-menu__item{
+                                                                        font-size: 16px;
+                                                                        text-transform: uppercase;
+                                                                    }
+                                                                }
+                                                            }
+                                                          }
+                                                        }
+                                                    }
+                                                    .menu-drawer__close-button{
+                                                        font-size: 22px;
+                                                        font-family: $sportingbold; 
+                                                    }
+                                                }
+                                            }
+                                       
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header__icons{
+                padding: 0;
+                height: 100%;
+                align-items: center;
+                .icon{
+                    path{
+                        fill:#fff;
+                    }
+                }
+                .header__icon--cart{
+                    padding: 30px 25px;
+                    background: $green;
+                    width: 110px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0;
+                    height: auto;
+                    margin-left: 2rem;
+                    @media screen and (max-width:767px) {
+                        padding: 10px;
+                        width: 60px;
+                        svg{
+                            width: 25px;
+                        }
+                    }
+                }
+                .header__search{
+                    display: flex;
+                    align-items: center;
+                    .header-search-wrapper{
+
+                    }
+                }
+                &.active{
+                    background-color: $green;
+                    padding: 5px 15px;
+                }
+            }
+        }
+    }
+}

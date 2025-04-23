@@ -1,0 +1,144 @@
+{%- assign heading = block.settings.heading | default: "Add Accessories" -%}
+
+<style>
+  .product-upsells-container {
+    border-top: 1px solid #000000;
+    margin-top: 3rem;
+  }
+
+  .product-upsells-heading {
+    font-family: var(--font-body-family);
+    font-weight: 700;
+    font-size: calc(var(--font-heading-scale) * 1.6rem);
+    text-align: left;
+    margin: 1rem 0;
+  }
+
+  .product-upsells-heading:has(+ .product-upsells:empty) {
+    display: none;
+  }
+
+  .product-upsells > * + * {
+    margin-block-start: 1.5rem;
+  }
+
+  .product-upsell {
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+  }
+
+  .product-upsell-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr .75fr;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .product-upsell-image {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    max-width: 100px;
+  }
+
+  .product-upsell-image img {
+    max-width: 100%;
+  }
+
+  .product-upsell-heading {
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .product-upsell-price {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .product-upsell-select {
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-top: 4px;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .product-upsell-button {
+    font-weight: 400;
+    font-size: 1.4rem;
+    min-height: 34px;
+    min-width: 40px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+</style>
+
+<div class="product-upsells-container">
+  <h2 class="product-upsells-heading">
+    {{ heading }}
+  </h2>
+
+  <div id="ProductUpsells" class="product-upsells">
+    {%- render "product-upsells" -%}
+  </div>
+</div>
+
+<script>
+  (function () {
+    const elements = {
+      container: document.getElementById("ProductUpsells")
+    };
+
+    document.addEventListener("variant:changed", function (event) {
+      const url = event.detail.product.url + "?variant=" + event.detail.variant.id + "&view=pjax-product-upsells";
+      render(url);
+    });
+
+    function render(url) {
+      fetch(url)
+        .then((response) => response.text())
+        .then((response) => {
+          elements.container.innerHTML = response;
+        });
+    }
+
+    class ProductUpsell extends HTMLElement {
+      constructor() {
+        super();
+
+        const component = this;
+
+        const elements = {
+          select: component.querySelector("select"),
+          button: component.querySelector("button")
+        };
+
+        component.data = JSON.parse(component.querySelector(":scope > script").innerHTML);
+
+        elements.button.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          addToCart(component.data.id, component.data.quantity, {}, function () {
+            document.dispatchEvent(new CustomEvent("addtocart"));
+          });
+        });
+
+        if (!elements.select) {
+          return;
+        }
+
+        component.data.id = elements.select.value;
+
+        elements.select.addEventListener("change", function (event) {
+          component.data.id = elements.select.value;
+        });
+      }
+    }
+
+    customElements.define("product-upsell", ProductUpsell);
+  })();
+</script>

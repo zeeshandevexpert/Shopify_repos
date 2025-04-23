@@ -1,0 +1,47 @@
+<details class="disclosure-has-popup facets__disclosure js-filter" data-index="{{ forloop.index }}">
+  <summary class="facets__summary">
+    <div>
+      <span>{{ filter.label | escape }}</span>
+      <span class="count-bubble">{%- if filter.active_values.size > 0 -%}{{ filter.active_values.size }}{%- endif -%}</span>
+      {% render 'icon-caret' %}
+    </div>
+  </summary>
+  <div class="facets__display">
+    <div class="facets__header">
+      <span class="facets__selected no-js-hidden">{{ 'sections.collection_template.filters_selected' | t: count: filter.active_values.size }}</span>
+      <a href="{{ filter.url_to_remove }}" class="facets__reset link underlined-link js-facet-remove" >{{ 'sections.collection_template.reset' | t }}</a>
+    </div>
+
+    <ul class="facets__list list-unstyled facets__list--{{ filter.label | handle }}" role="list">
+      {%- for value in filter.values -%}
+      <li class="list-menu__item facets__item" data-value="{{ value.value | handle }}">
+        <input type="checkbox"
+               name="{{ value.param_name }}"
+               value="{{ value.value }}"
+               id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
+               {% if value.active %}checked{% endif %}
+               {% if value.count == 0 and value.active == false %}disabled{% endif %}
+               >
+        <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
+
+
+          <span {% if filter.label == 'Color' %}class="visually-hidden"{% endif %}>
+            {{ value.label | escape }} ({{ value.count }})
+          </span>
+
+          {% comment %}
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+            <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
+          </svg>
+
+          <svg class="icon icon-checkmark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 9" fill="none" width="10px" height="10px">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.35.643a.5.5 0 01.006.707l-6.77 6.886a.5.5 0 01-.719-.006L.638 4.845a.5.5 0 11.724-.69l2.872 3.011 6.41-6.517a.5.5 0 01.707-.006h-.001z" fill="currentColor"/>
+          </svg>
+          {% endcomment %}
+
+        </label>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</details>

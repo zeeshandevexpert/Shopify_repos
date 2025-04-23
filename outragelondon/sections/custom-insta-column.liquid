@@ -1,0 +1,140 @@
+<section id="custom-icons-list">
+  <div class="custom-icons-list">
+   {%if section.settings.sec-head != blank %} <h2 class="il--headd">{{section.settings.sec-head}} </h2> {%endif%}
+    
+    <div class="custom-icons-inner">
+      {% for block in section.blocks %}
+      <div class="custom-il-box">
+       <div class="custom-icons-mob">
+         {%if block.settings.il-head != blank %} <h2 class="il-heading">{{block.settings.il-head}} </h2>{%endif%}
+         {%if block.settings.il-para != blank %} <div class="il-paragraph"> {{block.settings.il-para}} </div>{%endif%}
+        </div>
+      </div>
+      {%endfor%}
+
+    </div>
+    
+    
+  </div>
+</section>
+
+
+
+<style>
+  .custom-icons-list{
+    width: 100%;
+    display: block;
+    padding: 0 3.33vw;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .custom-il-box{
+    width:33.33%;
+     padding: 15px;
+  }
+
+  .custom-icons-inner{
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    margin-top:30px;
+  }
+  
+  h2.il-heading {
+    font-size: 22px;
+    color: black;
+    margin: 0;
+    font-family: futura;
+}
+  .il-paragraph {
+    font-size: 13px;
+    text-align: left;
+    margin-top:8px;
+    color: black;
+  }
+  h2.il--headd {
+text-align:center;
+        font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+    color:{{section.settings.sec-head-color}};
+    margin: 0;
+  }
+
+
+  
+  @media screen and (max-width:550px){
+  .custom-il-box {
+      display:block;
+      width:auto;
+    } 
+  .custom-il-box {
+      width: auto;
+  }
+  }
+  
+
+</style>
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Column Text",
+	"max_blocks":3,
+    "settings": [     
+        {
+        "id": "sec-head",
+        "type": "text",
+        "label": "Section Title"
+        },
+        {
+        "id": "sec-head-color",
+        "type": "color",
+        "label": "Section Title Color",
+		"default":"#000"
+        },
+        {
+        "id": "bk-colr",
+        "type": "color",
+        "label": "Select Section Background"
+        }
+],
+"blocks": [
+    {
+      "type": "select",
+      "name": "Category Section",
+      "settings": [
+
+        {
+          "id": "il-head",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "id": "il-para",
+          "type": "richtext",
+          "label": "Paragraph"
+        }
+      ]
+    }
+  ],
+ "presets": [
+    {
+      "name": "column text",
+      "category": "Custom work"
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "text_section_exMTcG": {
+      "type": "text-section",
+      "disabled": true,
+      "settings": {
+        "description": "<p>YOUR EXCLUSIVE CONNECTION TO A SHARP CURATION OF<br\/><strong>DESIGNER ARCHIVE SALES<\/strong><\/p>"
+      }
+    },
+    "image_column_section_7MzHDc": {
+      "type": "image-column-section",
+      "settings": {
+        "reverse": true,
+        "image": "shopify:\/\/shop_images\/Group_1_464510f7-be5f-47d9-a2ac-42462f92380a.png",
+        "heading": "ABOUT",
+        "description": "<p>Our FIRST LANGUAGE is a spoken act. The verbal way that we communicate. <br\/><br\/>Our SECOND LANGUAGE can be considered our attire and the artful choices we make when we present our true, aesthetic selves.<br\/><br\/>SECOND LANGUAGE is a culture of creative self expression. We inspire a community of sartorial seekers to embrace and nurture their individual style by connecting them with a network of independent designers known for their distinct creative vision and aesthetic.<\/p>",
+        "btn_text": "",
+        "btn_link": ""
+      }
+    },
+    "image_column_section_yQBx9y": {
+      "type": "image-column-section",
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/Group_1_1.png",
+        "heading": "OUR VALUES",
+        "description": "<h3>ORIGINAL DESIGN<\/h3><p> We focus on nurturing relationships with high-caliber womenswear brands including handbags, shoes, and jewelry, prioritizing those that embody the essence of true luxury. <\/p><h3>QUALITY<\/h3><p>Our goal is to collaborate with brands that uphold expert craftsmanship, employ high-quality materials,and prioritize sustainable practices.<\/p><h3>CONSCIOUS CONSUMPTION<\/h3><p>By giving previous season collections a second chance, we aim to shift the consumer mindset by encouraging consumers to embrace a more mindful and sustainable approach.<\/p>",
+        "btn_text": "",
+        "btn_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "text_section_exMTcG",
+    "image_column_section_7MzHDc",
+    "image_column_section_yQBx9y"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "16589554780bc528ef": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default"
+      }
+    },
+    "main": {
+      "type": "collection-template",
+      "settings": {
+        "bottom_description": "interested in partnering with us to<br> create a collection?",
+        "link": "shopify:\/\/pages\/overview"
+      }
+    }
+  },
+  "order": [
+    "16589554780bc528ef",
+    "main"
+  ]
+}

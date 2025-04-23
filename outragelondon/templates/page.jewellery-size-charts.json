@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-size-cards",
+      "blocks": {
+        "image_zqxn8E": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-14T204714.362.png",
+            "title": "RING SIZE GUIDE",
+            "text": "Explore our methods that will help you to figure out your perfect ring size.",
+            "link_text": "FIND YOUR SIZE",
+            "link": "shopify:\/\/pages\/jewellery-sizes"
+          }
+        },
+        "image_77LkU8": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-14T220536.823.png",
+            "title": "BRACELET SIZE GUIDE",
+            "text": "Ensure the perfect fit for that bracelet you've set your eyes on! With this simple method, you'll be certain whether it's the right size for you.",
+            "link_text": "FIND YOUR SIZE",
+            "link": "shopify:\/\/pages\/bracelet-size-guide-1"
+          }
+        },
+        "image_fFk7EM": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-14T221058.592.png",
+            "title": "CHAIN SIZE GUIDE",
+            "text": "Take the guesswork out of choosing the perfect chain length! Use this method to determine which length suits you best and find the ideal fit for your style.",
+            "link_text": "FIND YOUR SIZE",
+            "link": "shopify:\/\/pages\/chain-size-guide"
+          }
+        }
+      },
+      "block_order": [
+        "image_zqxn8E",
+        "image_77LkU8",
+        "image_fFk7EM"
+      ],
+      "settings": {
+        "heading": "Size Guides",
+        "fg": "#000000"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

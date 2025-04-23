@@ -1,0 +1,19 @@
+.ProductMeta__Options variant-selects .Select select{
+    min-width: 100%;
+    padding: 16px;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 14px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #fff;
+    color: #a264a9;
+    margin-bottom: 0;
+    font-weight: 900;
+    font-family: var(--header-font-stack);
+    font-size: 24px;
+}

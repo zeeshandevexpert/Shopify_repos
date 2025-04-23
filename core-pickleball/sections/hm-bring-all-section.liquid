@@ -1,0 +1,46 @@
+<!-- SECTION--BRING--BALL -->
+    <section class="bring-ball">
+        <div class="primary-container">
+            <div class="bring-ball-inner-cont">
+                <h3 class="primary-heading black-c ff-helvetica t-uppercase">{{ section.settings.hm-bring-heading }}</h3>
+                <p class="para-size black-c ff-proxima fw-600 para-lh">{{ section.settings.hm-bring-paragrah }}</p>
+                <div class="">
+                    <a href="{{ section.settings.hm-bring-ancher-url }}" class="ff-proxima white-c primary-btn">{{ section.settings.hm-bring-ancher-text }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION--BRING--BALL--END -->
+
+{% schema %}
+  {
+    "name": "HM Bring All Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hm-bring-heading",
+        "label": "Enter Bring All Section Heading"
+      },
+      {
+        "type": "text",
+        "id": "hm-bring-paragrah",
+        "label": "Enter Bring All Section Paragraph"
+      },
+      {
+        "type": "url",
+        "id": "hm-bring-ancher-url",
+        "label": "Enter Bring All Section Ancher URL"
+      },
+      {
+        "type": "text",
+        "id": "hm-bring-ancher-text",
+        "label": "Enter Bring All Section Ancher Text"
+      }
+    ],
+    "presets": [
+      {
+        "name": "HM Bring All Section"
+      }
+    ]
+  }
+{% endschema %}

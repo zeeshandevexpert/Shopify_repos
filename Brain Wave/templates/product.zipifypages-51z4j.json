@@ -1,0 +1,28 @@
+{
+  "layout": "theme.zipifypages",
+  "sections": {
+    "173159004842e03115": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_preview_badge_Cg47Yg": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_preview_badge_Cg47Yg"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "content": {
+      "type": "product-content-zipifypages-51z4j",
+      "settings": {}
+    }
+  },
+  "order": [
+    "173159004842e03115",
+    "content"
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "sections": {
+    "banner_block_nnpMcj": {
+      "type": "banner-block",
+      "blocks": {
+        "item_RTfbfK": {
+          "type": "Item",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/DSC1159.webp",
+            "heading": "",
+            "sub_heading": "Gear up, and experience the thrill of the fastest-growing racket sport in the world",
+            "font_size": 40,
+            "content": "<p>Find your perfect equipment and get on the court today.<\/p>",
+            "btn_text": "Shop Now",
+            "btn_link": ""
+          }
+        },
+        "item_REdgjE": {
+          "type": "Item",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/Group_2.webp",
+            "heading": "",
+            "sub_heading": "Gear up, and experience the thrill of the fastest-growing racket sport in the world",
+            "font_size": 30,
+            "content": "<p>Find your perfect equipment and get on the court today.<\/p>",
+            "btn_text": "Shop Now",
+            "btn_link": ""
+          }
+        },
+        "item_bHC9TN": {
+          "type": "Item",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/Group_2.webp",
+            "heading": "",
+            "sub_heading": "Gear up, and experience the thrill of the fastest-growing racket sport in the world",
+            "font_size": 30,
+            "content": "<p>Find your perfect equipment and get on the court today.<\/p>",
+            "btn_text": "Shop Now",
+            "btn_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_RTfbfK",
+        "item_REdgjE",
+        "item_bHC9TN"
+      ],
+      "settings": {
+      }
+    },
+    "content_block_U3CCqa": {
+      "type": "content-block",
+      "settings": {
+        "heading": "Your One-Stop Padel Shop",
+        "sub_text": "We're passionate about padel, and we've curated the finest selection of brands and gear to fuel your game. Whether you're a seasoned pro or just starting out, find everything you need to elevate your padel experience. "
+      }
+    },
+    "partner_block_kcyCXT": {
+      "type": "partner-block",
+      "blocks": {
+        "item_BYhb89": {
+          "type": "Item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/image_10.png",
+            "link": "#"
+          }
+        },
+        "item_aYyNAc": {
+          "type": "Item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/image_11.png",
+            "link": ""
+          }
+        },
+        "item_9gXeh6": {
+          "type": "Item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/image_12.png",
+            "link": ""
+          }
+        },
+        "item_PkttAf": {
+          "type": "Item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/image_13.png",
+            "link": ""
+          }
+        },
+        "item_iG3pLw": {
+          "type": "Item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/image_14.png",
+            "link": ""
+          }
+        },
+        "item_jkWd8z": {
+          "type": "Item",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Group_178_e39fbac8-9c28-4092-a627-093798a3ded0.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_BYhb89",
+        "item_aYyNAc",
+        "item_9gXeh6",
+        "item_PkttAf",
+        "item_iG3pLw",
+        "item_jkWd8z"
+      ],
+      "settings": {
+      }
+    },
+    "content_block_6FE8bF": {
+      "type": "content-block",
+      "settings": {
+        "heading": "Discover the Padel Phenomenon",
+        "sub_text": "Padel is the perfect blend of tennis and squash, offering fast-paced action, social fun, and a fantastic workout. It's easy to learn, making it ideal for players of all ages and skill levels."
+      }
+    },
+    "collection_block_KC99gV": {
+      "type": "collection-block",
+      "blocks": {
+        "item_W6tBMW": {
+          "type": "Item",
+          "settings": {
+            "collection": "padel"
+          }
+        },
+        "item_h7zTMV": {
+          "type": "Item",
+          "settings": {
+            "collection": "squash"
+          }
+        },
+        "item_GkNMhi": {
+          "type": "Item",
+          "settings": {
+            "collection": "tennis"
+          }
+        },
+        "item_3ENkUe": {
+          "type": "Item",
+          "settings": {
+            "collection": "padel"
+          }
+        }
+      },
+      "block_order": [
+        "item_W6tBMW",
+        "item_h7zTMV",
+        "item_GkNMhi",
+        "item_3ENkUe"
+      ],
+      "settings": {
+        "sub_heading": "EXPLORE OUR WORLD",
+        "heading": "CATEGORIES"
+      }
+    },
+    "image_text_blurb_block_fNUWPr": {
+      "type": "image-text-blurb-block",
+      "blocks": {
+        "item_VMwepi": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group.png",
+            "title": "FREE SHIPPING OVER $150"
+          }
+        },
+        "item_iNALLw": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group-1.png",
+            "title": "FREE SHIPPING OVER $150"
+          }
+        },
+        "item_HYjyzx": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group-2.png",
+            "title": "FREE SHIPPING OVER $150"
+          }
+        }
+      },
+      "block_order": [
+        "item_VMwepi",
+        "item_iNALLw",
+        "item_HYjyzx"
+      ],
+      "settings": {
+        "reverse": false,
+        "sub_heading": "",
+        "heading": "Your Ultimate Padel Destination",
+        "content": "<p>We're passionate about padel, and we've curated the finest selection of brands and gear to fuel your game. Whether you're a seasoned pro or just starting out, find everything you need to elevate your padel experience.<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_29.png",
+        "title": "Rackets",
+        "btn_text": "Shop Now",
+        "btn_link": ""
+      }
+    },
+    "image_text_blurb_block_awxcNY": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": true,
+        "sub_heading": "",
+        "heading": "Discover the Padel Phenomenon",
+        "content": "<p>Padel is the perfect blend of tennis and squash, offering fast-paced action, social fun, and a fantastic workout. It's easy to learn, making it ideal for players of all ages and skill levels.<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_102.png",
+        "title": "Apparel",
+        "btn_text": "Shop Now",
+        "btn_link": ""
+      }
+    },
+    "image_text_blurb_block_AK3Qzw": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": false,
+        "sub_heading": "",
+        "heading": "Gear Up and Play!",
+        "content": "<p>Shop our wide selection of top-quality padel rackets, balls, shoes, and apparel. Get ready to experience the thrill of the fastest-growing racket sport in the world.<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_29.png",
+        "title": "Acessories",
+        "btn_text": "Shop Now",
+        "btn_link": "#"
+      }
+    },
+    "collection_tab_fQjca3": {
+      "type": "collection-tab",
+      "blocks": {
+        "tab_Egm4qi": {
+          "type": "tab",
+          "settings": {
+            "collection": "padel",
+            "viewall": true
+          }
+        },
+        "tab_wDeTn6": {
+          "type": "tab",
+          "settings": {
+            "collection": "squash",
+            "viewall": true
+          }
+        },
+        "tab_9ktD9G": {
+          "type": "tab",
+          "settings": {
+            "collection": "tennis",
+            "viewall": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_Egm4qi",
+        "tab_wDeTn6",
+        "tab_9ktD9G"
+      ],
+      "settings": {
+        "title": "Nothing",
+        "useslider": false,
+        "limit": 3,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false
+      }
+    },
+    "video_block_U4jXwp": {
+      "type": "video-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_54.png",
+        "sub_heading": "LOREM IPSUM",
+        "heading": "WHAT IS LOREM IPSUM",
+        "btn_text": "Watch Now",
+        "btn_link": ""
+      }
+    },
+    "featured_blog_TXyFMX": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Blog posts",
+        "sub_title": "Lorem Ipsum",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "testimonial_block_4796rp": {
+      "type": "testimonial-block",
+      "blocks": {
+        "item_BYPcEb": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.webp",
+            "name": "Client Name"
+          }
+        },
+        "item_TwCMCd": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.webp",
+            "name": "Client Name"
+          }
+        },
+        "item_6qYRWz": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.webp",
+            "name": "Client Name"
+          }
+        }
+      },
+      "block_order": [
+        "item_BYPcEb",
+        "item_TwCMCd",
+        "item_6qYRWz"
+      ],
+      "settings": {
+        "sub_heading": "LOREM IPSUM",
+        "heading": "WHAT IS LOREM IPSUM"
+      }
+    }
+  },
+  "order": [
+    "banner_block_nnpMcj",
+    "content_block_U3CCqa",
+    "partner_block_kcyCXT",
+    "content_block_6FE8bF",
+    "collection_block_KC99gV",
+    "image_text_blurb_block_fNUWPr",
+    "image_text_blurb_block_awxcNY",
+    "image_text_blurb_block_AK3Qzw",
+    "collection_tab_fQjca3",
+    "video_block_U4jXwp",
+    "featured_blog_TXyFMX",
+    "testimonial_block_4796rp"
+  ]
+}

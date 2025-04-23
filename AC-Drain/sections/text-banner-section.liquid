@@ -1,0 +1,84 @@
+<section class="order-section">
+    <div class="order-container">
+        <div class="text-column">
+            <div class="heading">
+                <h2>{{ section.settings.heading }}</h2>
+            </div>
+            <div class="subtext">
+               {{ section.settings.description }}
+            </div>
+            <div class="wrap-icon-box">
+            {% for block in section.blocks %}
+              <div class="icon-box">
+                  <div class="img">
+                      <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                  </div>
+                  <div class="title">
+                      <p>{{ block.settings.title }}</p>
+                  </div>
+                 
+              </div>
+            {% endfor %}
+            </div>
+        </div>
+        {% if section.settings.button_title != blank %}
+            <div class="button-column">
+                <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+            </div>
+        {% endif %}
+      
+    </div>
+</section>
+
+
+{% schema %}
+    {
+      "name": "Text Banner Section",
+      "settings": [
+    
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "Icon Box",
+          "type": "icon",
+          "settings":[
+            {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Icon"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+            "name": "Text Banner Section"
+        }
+      ]
+    }
+    {% endschema %}

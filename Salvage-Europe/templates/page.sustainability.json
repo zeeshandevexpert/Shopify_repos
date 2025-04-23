@@ -1,0 +1,215 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "disabled": true,
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": 80,
+        "pagelist": "",
+        "page_sidebar_title": "Page sidebar title"
+      }
+    },
+    "61303c68-2f7b-45ad-8fe6-ea25a259534c": {
+      "type": "slideshow",
+      "blocks": {
+        "template--19118988689694__61303c68-2f7b-45ad-8fe6-ea25a259534c-168497208714d0a6af-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/OGGOODSHOTUSE.jpg",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "caption_position": "middle_center",
+            "hide_caption_background": false,
+            "heading": "COMMITMENT TO THE PLANET",
+            "subheading": "",
+            "link": "",
+            "button_text": "Add a button",
+            "second_link": "",
+            "second_button_text": "Button 2 text",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "template--19118988689694__61303c68-2f7b-45ad-8fe6-ea25a259534c-168497208714d0a6af-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_wide": true,
+        "slideshow_size": "fixed_height",
+        "desktop_height": 600,
+        "mobile_height": 600,
+        "caption_below": false,
+        "pager": "dots",
+        "transition": "fade",
+        "slider_speed": 5,
+        "video_audio": "off",
+        "slide_heading_size": 22,
+        "subheading_size": 14,
+        "no_bottom_margin": false
+      }
+    },
+    "43485bd6-1477-41e7-99ac-b2443b7f2f58": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19118988689694__43485bd6-1477-41e7-99ac-b2443b7f2f58-16850538170f4ce523-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/12ed5adb-6b2f-4084-98a2-ea8ddd842f39.png"
+          }
+        }
+      },
+      "block_order": [
+        "template--19118988689694__43485bd6-1477-41e7-99ac-b2443b7f2f58-16850538170f4ce523-1"
+      ],
+      "settings": {
+        "layout": "left",
+        "main_heading": "",
+        "image_width": "50%",
+        "text_align": "left",
+        "title": "Renewable practices",
+        "text": "<p><em>We recognize the significance of responsible sourcing and sustainable practices.<\/em><\/p><p>We supply our materials from sources that adhere to strict environmental laws and promote sustainable forestry practices. By working with reputable suppliers who share our commitment to sustainability, we can ensure that every product we offer has been responsibly sourced and is of the highest quality. <\/p><p>At Salvage Europe, we are dedicated to doing our part to preserve our planet for future generations. By choosing our products, you can feel confident that you are making a responsible choice and contributing to a more sustainable future.<\/p>",
+        "link": "",
+        "button": "",
+        "color": "#000000",
+        "background": "#ffffff",
+        "no_bottom_margin": false
+      }
+    },
+    "86fc0816-3c1d-4964-93cc-ecebb45dfff5": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "title": "Lorem Ipsum",
+        "rich_text": "<p>Lorem Ipsum<strong> <\/strong>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.<\/p>",
+        "alignment": "left",
+        "text_width": 80,
+        "text_size": 15,
+        "padding": 80,
+        "color": "#ffffff",
+        "background": "#000000",
+        "no_bottom_margin": false
+      }
+    },
+    "443a48ea-c9fd-4fc4-9194-edbcba7bbd82": {
+      "type": "gallery",
+      "blocks": {
+        "template--19118988689694__443a48ea-c9fd-4fc4-9194-edbcba7bbd82-168505575806e6672f-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/B83004B4-503E-40ED-9894-2873BF606AE7.jpg",
+            "title_text": "",
+            "text": "",
+            "button_text": "",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "column_size": 2
+          }
+        },
+        "template--19118988689694__443a48ea-c9fd-4fc4-9194-edbcba7bbd82-168505575806e6672f-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bronte-17-hires-5_4.jpg",
+            "title_text": "",
+            "text": "",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19118988689694__443a48ea-c9fd-4fc4-9194-edbcba7bbd82-168505575806e6672f-0",
+        "template--19118988689694__443a48ea-c9fd-4fc4-9194-edbcba7bbd82-168505575806e6672f-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "no_space": false,
+        "heading": "",
+        "mobile_scroll": true,
+        "image_height": 650,
+        "mobile_image_height": 400,
+        "heading_size": 15,
+        "text_size": 15
+      }
+    },
+    "5d9a2095-c95e-4507-93ad-65aa1efa2347": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--19118988689694__5d9a2095-c95e-4507-93ad-65aa1efa2347-16878278450d6c0b37-0": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/B83004B4-503E-40ED-9894-2873BF606AE7_11985752-1f87-4b31-aad8-16bc9f5a5225.jpg",
+            "title": "",
+            "richtext": "",
+            "button_text": "",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--19118988689694__5d9a2095-c95e-4507-93ad-65aa1efa2347-16878278450d6c0b37-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/bronte-17-hires-5_4_7a8083c9-85d2-48e2-9ca1-44e9cb069b8b.jpg",
+            "title": "",
+            "richtext": "",
+            "button_text": "",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19118988689694__5d9a2095-c95e-4507-93ad-65aa1efa2347-16878278450d6c0b37-0",
+        "template--19118988689694__5d9a2095-c95e-4507-93ad-65aa1efa2347-16878278450d6c0b37-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "rich_text": "",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "",
+        "padding": 30
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main",
+    "61303c68-2f7b-45ad-8fe6-ea25a259534c",
+    "43485bd6-1477-41e7-99ac-b2443b7f2f58",
+    "86fc0816-3c1d-4964-93cc-ecebb45dfff5",
+    "443a48ea-c9fd-4fc4-9194-edbcba7bbd82",
+    "5d9a2095-c95e-4507-93ad-65aa1efa2347"
+  ]
+}

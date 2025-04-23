@@ -1,0 +1,73 @@
+
+    <div class="experiments-details-left" style="background-image:url('{{ section.settings.image_bg | img_url: "master" }}');">
+        <span class="experiments-details-top">{{ section.settings.subtitle2 }}</span>
+        <div class="experiments-details-left-content">
+            <h2>{{ section.settings.title }}</h2>
+            <span class="experiments-details-bottom">{{ section.settings.subtitle }}</span>
+        </div>
+    </div>
+    <div class="experiments-details-right">
+        <img src="{{ section.settings.image | img_url: '10x' }}"
+             class="lazyload"
+             data-src="{{ section.settings.image | img_url: '900x' }}"
+             data-widths="[900]"
+             data-sizes="auto"
+             tabindex="-1"
+        />
+        {{ section.settings.description }}
+    </div>
+
+{% schema %}
+{
+  "name": "Experiments - Details",
+  "tag": "section",
+  "class": "experiments-details-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle2",
+      "label": "Top Left Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Bottom Left Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bg",
+      "label": "Image Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experiments - Details"
+    }
+  ]
+}
+{% endschema %}

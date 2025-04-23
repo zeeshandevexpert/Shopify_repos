@@ -1,0 +1,205 @@
+<!-- Slick Slider CSS -->
+
+{{ 'custom-product.css' |  asset_url |  stylesheet_tag }}
+
+
+<section class="product-block">
+    <div class="wrap-product-block">
+        <div class="image-block">
+        <div class="product-gallery">
+            <!-- Main image slider -->
+            <div class="main-slider">
+            {% for product in collections['vintage-collection'].products %}
+                <div class="image">
+                    <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                </div>
+            {% endfor %}
+            </div>
+          
+            <!-- Thumbnails slider -->
+            <div class="thumbnail-slider">
+            {% for product in collections['vintage-collection'].products %}
+                  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="thumbnail">
+              {% endfor %}
+          
+            </div>
+          </div>
+          
+              
+        </div>
+        <div class="content-block">
+              <div class="wrap-title-price">
+                <h2 class="product-title">
+                  {{ section.settings.title }}
+                </h2>
+                <div class="price">
+                  ${{ section.settings.price }} USD
+                </div>  
+              </div>
+              <h2 class="product-description">
+                {{ section.settings.description }}
+              </h2>
+
+                <div class="buy-two-get-one">
+                  <form id="addon-products-form">
+                    <h3><strong>Pick Your Vintage Watches -</strong>Buy 2, Get 1 Free</h3>
+                    <div class="products">
+                      {% for product in collections['vintage-collection'].products %}
+                        <label class="product-box">
+                          <input type="checkbox" class="addon-checkbox" data-product-id="{{ product.selected_or_first_available_variant.id }}"> 
+                          <div class="product">
+                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                            <h2 class="title">{{ product.title | split: ' ' | first }}</h2>
+                            <p class="price">{{ product.price | money }}</p>
+                          </div>
+                        </label>
+                      {% endfor %}
+                    </div>
+                  </form>
+                <!-- Section 2: Free product selection (always visible) -->
+                <div id="addon-products-form">
+                    <h3>Select Free product:</h3>
+                    <div class="products">
+                      {% for product in collections['vintage-collection'].products %}
+                        <label class="product-box">
+                          <input type="checkbox" class="free-product-checkbox" data-product-id="{{ product.variants.first.id }}">
+                          <div class="product">
+                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                            <h2 class="title">{{ product.title | split: ' ' | first }}</h2>
+                            <p class="price">{{ product.price | money }}</p>
+                          </div>
+                        </label>
+                      {% endfor %}
+                    </div>
+                    <div class="error-message" style="color: red; display: none;">Please select 2 products from the first section before selecting a free product.</div>
+                </div>
+                </div>
+                  <!-- Add to cart button -->
+                    <button id="add-to-cart-btn" >Add to Cart</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('.addon-checkbox');
+      const freeProductCheckboxes = document.querySelectorAll('.free-product-checkbox');
+      const addToCartButton = document.getElementById('add-to-cart-btn');
+      const errorMessage = document.querySelector('.error-message');
+      
+      let selectedProducts = []; // Selected main product IDs
+      let selectedFreeProduct = null; // Selected free product ID
+
+      // Function to update the selected products and button state
+      function updateSelection() {
+          selectedProducts = Array.from(checkboxes)
+              .filter(checkbox => checkbox.checked)
+              .map(checkbox => checkbox.dataset.productId);
+
+          // Enable the button if 2 main products are selected and a free product is selected
+          addToCartButton.disabled = !(selectedProducts.length === 2 && selectedFreeProduct);
+      }
+
+      // Add event listeners for the main product checkboxes
+      checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+              // Prevent selecting more than 2 main products
+              if (this.checked && selectedProducts.length >= 2) {
+                  this.checked = false;
+              }
+              updateSelection();
+          });
+      });
+
+      // Add event listener for free product selection
+      freeProductCheckboxes.forEach(freeCheckbox => {
+          freeCheckbox.addEventListener('change', function() {
+              // Ensure 2 products from the first section are selected before selecting a free product
+              if (selectedProducts.length < 2) {
+                  errorMessage.style.display = 'block'; // Show error message
+                  this.checked = false; // Prevent free product selection
+              } else {
+                  errorMessage.style.display = 'none'; // Hide error message
+                  // Only allow one free product selection
+                  freeProductCheckboxes.forEach(checkbox => checkbox.checked = false);
+                  this.checked = true; // Select current checkbox
+                  selectedFreeProduct = this.dataset.productId;
+                  updateSelection();
+              }
+          });
+      });
+
+      // Handle the Add to Cart functionality
+      addToCartButton.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          if (selectedProducts.length === 2 && selectedFreeProduct) {
+              const items = [
+                  ...selectedProducts.map(productId => ({ id: productId, quantity: 1 })),
+                  { id: selectedFreeProduct, quantity: 1 }  // Free product added
+              ];
+
+              // Log items to verify
+              console.log('Adding to cart:', JSON.stringify(items, null, 2));
+
+              // Add items to cart
+              fetch('/cart/add.js', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ items })
+              })
+              .then(response => {
+                  if (!response.ok) {
+                      return response.json().then(errorData => {
+                          throw new Error(`Error ${response.status}: ${errorData.message}`);
+                      });
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                  console.log('Products added to cart:', data);
+                  // Apply the discount code to the free product
+                  // window.location.href = '/cart?discount=9PPHY33JZAHK'; // Replace with your actual discount code
+                  window.location.href = '/checkout?discount=GS6MB2NMFEER';
+              })
+              .catch(error => {
+                  console.error('Error adding products to cart:', error);
+                  alert(`There was an error adding products to the cart: ${error.message}`);
+              });
+          }
+      });
+  });
+</script>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+{% schema %}
+{
+    "name": "Product Section",
+    "settings": [
+        {
+          "type": "text",
+          "label": "Product Title",
+          "id": "title"
+        },
+        {
+          "type": "text",
+          "label": "Product Price",
+          "id": "price"
+        },
+        {
+          "type": "textarea",
+          "label": "Product Description",
+          "id": "description"
+        }
+        ],
+        "presets": [
+            {"name": "Product Section"}
+        ]
+}
+{% endschema %}
+

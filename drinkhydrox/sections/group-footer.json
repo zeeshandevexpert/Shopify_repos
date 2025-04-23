@@ -1,0 +1,95 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "linklist-1": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "main-menu",
+            "title": "關於我們",
+            "accordion_default": ""
+          }
+        },
+        "linklist-2": {
+          "type": "linklist",
+          "settings": {
+            "linklist": "footer",
+            "title": "更多資訊",
+            "accordion_default": ""
+          }
+        },
+        "text_GUydXY": {
+          "type": "text",
+          "settings": {
+            "title": "聯絡我們",
+            "text": "<p>公司地址: 香港希慎道1號希慎一期17樓<br\/>電話: (852) 5931 1848<br\/>服務時間: 09:00 - 18:00 (星期六, 日及公眾假期休息)<br\/>電郵地址: hello@drinkhydrox.com<\/p>",
+            "text_size": 4,
+            "accordion_default": ""
+          }
+        },
+        "social": {
+          "type": "social",
+          "settings": {
+            "title": "保持聯繫。",
+            "text_size": 8,
+            "enable_follow_on_shop": true
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "show_image": false,
+            "wh_ratio": 2,
+            "newsletter_enable": true,
+            "recaptcha_enabled": false,
+            "kicker": "",
+            "heading": "獨家優惠直接發送至您的收件匣",
+            "richtext": "<p>加入即可獲得特別優惠、免費贈品和千載難逢的優惠。<\/p>",
+            "text_size": 4,
+            "background_color": "#4f4f4f",
+            "text_color_value": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "linklist-1",
+        "linklist-2",
+        "text_GUydXY",
+        "social",
+        "newsletter"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}",
+        ".footer__quicklinks a {font-size: 17px;}",
+        "h3 {font-size: 39px;}"
+      ],
+      "settings": {
+        "menu_position": "left",
+        "logo_max_limit": 120,
+        "width": "wrapper--full",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "subfooter": {
+      "type": "subfooter",
+      "settings": {
+        "footer_secondary_linklist": "footer",
+        "footer_payment_enable": true,
+        "footer_social_enable": false,
+        "show_locale_selector": true,
+        "show_currency_selector": true,
+        "width": "wrapper--full",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer",
+    "subfooter"
+  ]
+}

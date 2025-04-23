@@ -1,0 +1,279 @@
+
+<script src="{{ 'ajaxinate.js' | asset_url }}"></script>
+{% liquid
+  if collection.products
+    assign count = collection.products_count
+    assign count_label = 'collections.general.items_with_count'
+  endif
+
+  if collection.results
+    assign count = collection.results_count
+    assign count_label = 'general.search.result_count'
+  endif
+
+  assign filters = collection.filters
+  assign sort_by = collection.sort_by
+  assign default_sort_by = collection.default_sort_by
+  assign sort_options = collection.sort_options
+  assign current_filter_size = 0
+
+  for filter in filters
+    assign current_filter_size = current_filter_size | plus: filter.active_values.size
+  endfor
+%}
+
+<div class="main-collection-banner">
+    <div class="custom-main-collection-header{% if collection.image %} have-image{% endif %}">
+      <div class="custom-main-collection-header-wrapper{% if collection.image %} have-image{% endif %}">
+        {% render 'collection-breadcrumbs' %}
+        <h2 class="custom-main-collection-heading">{{ collection.title }}</h2>
+        {% if collection.description != blank %}
+          <div class="custom-main-collection-description">{{ collection.description }}</div>
+        {% endif %}
+      </div>
+      {% if collection.image %}
+        <div class="collection-image-right for-desktop">
+      <img src="{{ collection.image | img_url: 'master' }}" class="custom-main-collection-img" />
+        </div>
+        {% endif %}
+
+      {% assign mobile_image = collection.metafields.custom.collection_image_mobile.value %}
+      {% if mobile_image %}
+<div class="collection-image-right for-mobile">
+      <img src="{{ mobile_image | image_url }}" class="custom-main-collection-img" />
+        </div>
+      {% endif %}
+        
+        
+    </div>
+  </div>
+{% if section.settings.enable_banner %}
+  <div class="collection-banner-main">
+    
+    <div class="collection-banner"{% if section.settings.collection_banner_image != blank %} style="background-image: url('{{ section.settings.collection_banner_image | img_url: 'master' }}');"{% endif %}>
+      <div class="collection-banner-inner">
+        {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+          {% endif %}
+        {% if section.settings.banner_text != blank %}
+        <p>{{ section.settings.banner_text }}</p>
+          {% endif %}
+        {% if section.settings.banner_btn_text != blank %}
+        <div class="banner-btn">
+          <a href="{{ section.settings.banner_btn_link }}">{{ section.settings.banner_btn_text }}</a>
+        </div>
+          {% endif %}
+      </div>
+    </div>
+  
+  </div>
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <div class="collection-custom-freebanner">
+     
+      {% for block in section.blocks %}
+      <div class="custom-free-banner"{% if block.settings.bgclr != blank %} style="background-color: {{ block.settings.bgclr }};"{% endif %}>
+      <div class="freebanner-inner">
+        {% if block.settings.title != blank %}
+        <h4>{{ block.settings.title }}</h4>
+          {% endif %}
+        {% if block.settings.text != blank %}
+        <p>{{ block.settings.text }}</p>
+          {% endif %}
+      </div>
+      </div>
+        {% endfor %}
+    
+    </div>
+    {% endif %}
+    
+  <div class="custom-main-collection">
+ 
+  <div class="custom-main-collection-wrapper"> 
+   <!-- <div class="collection-filter-area"> -->
+
+  
+  <div class="collection-filter">
+
+     <div class="collection-filter__item collection-filter__item--drawer">
+       
+ 
+      <!-- <button
+        type="button"
+        class="js-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
+        aria-controls="FilterDrawer">
+          <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" viewBox="0 0 64 64"><title>icon-filter</title><path d="M48 42h10m-10 0a5 5 0 1 1-5-5 5 5 0 0 1 5 5ZM7 42h31M16 22H6m10 0a5 5 0 1 1 5 5 5 5 0 0 1-5-5Zm41 0H26"/></svg>
+          {{ 'collections.filters.title_tags' | t }}
+          {%- if current_filter_size > 0 -%}
+              ({{ current_filter_size }})
+          {%- endif -%}
+      </button> -->
+    </div> 
+
+    <div class="collection-filter__item collection-filter__item--count small--hide" style="display:none;">
+{{ collection.title }}
+      
+    </div>
+
+     <div class="collection-filter__item collection-filter__item--sort">
+        <div class="collection-filter__sort-container">
+        {%- assign sort_by = sort_by | default: default_sort_by -%}
+        <!-- <label for="SortBy" class="label">{{ 'collections.sorting.title' | t }}</label> -->
+          <!-- <button type="button" class="sorting-button">
+            <label for="SortBy" class="label">{{ 'collections.sorting.title' | t }}</label>
+            <svg aria-hidden="true" focusable="false" fill="none" width="10" class="icon icon-chevron-down" viewBox="0 0 10 10">
+      <path d="m1 3 4 4 4-4" stroke="currentColor" stroke-linecap="square"></path>
+    </svg>
+          </button> -->
+          
+        <select name="SortBy" id="SortBy" data-default-sortby="{{ 'collections.sorting.title' | t }}">
+          <option value="title-ascending"{% if sort_by == default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+          {%- for option in sort_options -%}
+          <option value="{{ option.value }}">{{ option.name }}</option>
+          {%- endfor -%}
+        </select>
+        </div>
+    </div> 
+ 
+      </div>
+   <!-- </div> -->
+    <div id="custom-coltest">
+    {% paginate collection.products by 16 %}
+      <div id="AjaxinateContainer" class="custom-main-collection-flex">
+        {% for product in collection.products %}
+          {% render 'custom-product-grid', product: product %}
+        {% endfor %}
+      </div>
+      <div id="AjaxinatePagination">
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}">Loading More</a>
+        {%- endif -%}
+      </div>
+    {% endpaginate %}
+    </div>
+  </div>
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  var endlessScroll = new Ajaxinate({
+    container: '#AjaxinateContainer',
+    pagination: '#AjaxinatePagination',
+    offset: 1000,
+    callback: function(){
+      console.log("testtt");
+      document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+    }
+  });
+  document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+});
+
+
+//   document.addEventListener("DOMContentLoaded", function() {
+//     var endlessScroll = new Ajaxinate({
+//       container: '#AjaxinateContainer',
+//       pagination: '#AjaxinatePagination'
+//     }, function(){
+//       console.log("workinggg");
+//     });
+//     document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+
+//         document.querySelector("#AjaxinateContainer").addEventListener("DOMNodeInserted", function (ev) {
+// document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+// }, false);
+//   });
+  
+  // var timer;
+  // var active = false;
+  // $(".custom-main-collection-grid-image-wrapper").hover(function(){
+  //   console.log("mouseenter");
+  //   let totalImages = parseInt($(this).attr("data-images"));
+  //   let delay = 1000;
+  //   timer = null;
+  //   active = true;
+  //   $(this).find(".custom-main-collection-grid-image").each(function(index){
+  //     let $this = $(this);
+  //     timer = setTimeout(function(){
+  //       if(active){
+  //         $this.addClass("active");
+  //       }
+  //     }, delay * index)
+  //   });
+  // }, function(){
+  //   console.log("mouseleave", $(this));
+  //   active = false;
+  //   clearTimeout(timer);
+  //   $(this).find(".custom-main-collection-grid-image").removeClass("active");
+  //   $(this).find(".custom-main-collection-grid-image").eq(0).addClass("active");
+  // });
+
+
+
+</script>
+
+{% schema %}
+  {
+    "name": "Collection",
+    "class": "collection-page-section custom-main-collection-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Collection Banner"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_banner",
+        "label": "Enable Collection Banner"
+      },
+      {
+        "type": "image_picker",
+        "id": "collection_banner_image",
+        "label": "Collection Banner Image"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Banner Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "banner_text",
+        "label": "Banner Text"
+      },
+      {
+        "type": "text",
+        "id": "banner_btn_text",
+        "label": "Button Text"
+      },
+      {
+        "type": "url",
+        "id": "banner_btn_link",
+        "label": "Button Link"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "custom_banner",
+        "name": "Free Banner",
+        "settings": [
+          {
+            "type": "color",
+            "id": "bgclr",
+            "label": "Background Color"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

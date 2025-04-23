@@ -1,0 +1,88 @@
+<section class="banner">
+    {% if section.settings.bg_image1 %}
+        <div class="banner-bg-img1">
+        <img src="{{ section.settings.bg_image1 |  img_url: 'master' }}" alt="">
+    </div>    
+    {% endif %}
+    
+    {% if section.settings.bg_image2 %}
+        <div class="banner-bg-img2">
+            <img src="{{ section.settings.bg_image2 |  img_url: 'master' }}" alt="">
+        </div>        
+    {% endif %}
+
+    <div class="banner-container">
+        <div class="banner-content">
+            <div class="banner-heading">
+                <h1>{{ section.settings.heading }}</h1>
+            </div>
+            <div class="banner-subtext">
+                {{ section.settings.description }}
+            </div>
+           {% if section.settings.button_title != blank %}
+            <div class="banner-button">
+                    <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+                </div>
+           {% endif %}
+        </div>
+        <div class="banner-image">
+           {% if section.settings.image %}
+            <div class="image-wrap">
+                <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+                </div>
+           {% endif %}
+                
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+      "name": "Banner Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image1",
+          "label": "Background Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_image2",
+          "label": "Background Image 2"
+        },
+       
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Banner Image"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Banner Block"
+        }
+      ]
+    }
+    {% endschema %}

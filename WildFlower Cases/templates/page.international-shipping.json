@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "page_width": "page-width--narrow"
+      }
+    },
+    "a9320e6c-858a-4ca5-a78f-d44f4a84481e": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14944250069040__a9320e6c-858a-4ca5-a78f-d44f4a84481e-16655154294346cd24-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Online Retailers",
+            "heading_size": "h1"
+          }
+        },
+        "template--14944250069040__a9320e6c-858a-4ca5-a78f-d44f4a84481e-16655154294346cd24-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Please shop Wildflower Cases at:</strong></p><p><strong>Amazon:</strong></p><p><a href=\"https://www.amazon.com.au/wildflowercases\"><strong>Amazon (AUSTRALIA)</strong></a><br/><a href=\"https://www.amazon.co.jp/wildflower\"><strong>Amazon (JAPAN)<br/></strong></a><a href=\"https://www.amazon.co.uk/wildflowercases\"><strong>Amazon (UK)<br/></strong></a><a href=\"https://www.amazon.ca/wildflowercases\"><strong>Amazon (CANADA)<br/></strong></a><a href=\"https://www.amazon.com/wildflower_cases%20%20\"><strong>Amazon US </strong></a></p><p><strong>Other International Retailers:</strong></p><p><a href=\"https://www.aritzia.com/en/brands/wildflower\"><strong>Aritzia (CANADA)</strong></a><br/><a href=\"https://shopcollide.com/brand/wildflower-cases/\" title=\"collide\"><strong>Collide (Middle East/International)</strong></a><br/><a href=\"https://www.showpo.com/us/accessories/refineby/wildflower/\"><strong>ShowPO (AUSTRALIA)<br/></strong></a><a href=\"https://www.revolve.com/wildflower/br/6a3361/?dessrc=myindex\"><strong>Revolve (International)</strong></a><br/><a href=\"https://www.selfridges.com/GB/en/cat/wildflower/%20\"><strong>SelfRidges (UK)</strong></a><br/><a href=\"https://www.ssense.com/en-us/everything-else?q=wildflower%20cases\" title=\"SSENSE Wildflower\"><strong>SSENSE (CANADA) </strong></a></p><p><a href=\"https://www.sweekli.com/vendors/wildflower\" title=\"https://www.sweekli.com/vendors/wildflower\"><strong>SWEEKLI (CHINA)</strong></a></p><p><a href=\"https://wildflowersm.tmall.com/\" title=\"https://wildflowersm.tmall.com/\"><strong>TMALL (CHINA)</strong></a></p><p></p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14944250069040__a9320e6c-858a-4ca5-a78f-d44f4a84481e-16655154294346cd24-0",
+        "template--14944250069040__a9320e6c-858a-4ca5-a78f-d44f4a84481e-16655154294346cd24-1"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Devon_and_Sydney_900x_3e181ef0-bc5b-4309-afa7-f30400607cfc.jpg",
+        "border_top": false,
+        "page_width": "page-width--narrow",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a9320e6c-858a-4ca5-a78f-d44f4a84481e"
+  ]
+}

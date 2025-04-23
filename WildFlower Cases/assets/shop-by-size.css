@@ -1,0 +1,71 @@
+.shop-by-size {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 2rem;
+}
+.shop-by-size__item:first-child {
+    margin-left: auto;
+}
+.shop-by-size__item:last-child {
+    margin-right: auto;
+}
+.shop-by-size__item {
+    flex: 0 0 auto;
+    width: 35px;
+    
+    text-align: center;
+}
+.shop-by-size__item + .shop-by-size__item {
+    margin-left: 3.1rem;
+}
+
+.shop-by-size__title {
+    font-size: 1.2rem;
+}
+
+.shop-by-size__item .icon {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: contain;
+    width: 35px;
+    height: 75px;
+}
+
+.shop-by-size__item.active:after {
+    content: '';
+    border-bottom: 2px solid var(--gradient-base-accent-2);
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+}
+.icon-version {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    padding: 0 1rem;
+    line-height: normal;
+    word-wrap: break-word;
+}
+
+.shop-by-size .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    transform: opacity .3s ease-in-out;
+}
+
+.shop-by-size__item:hover img {
+    opacity: 0.75;
+}
+/*
+.shop-by-size__item.active .icon img {
+    filter: invert(.5) sepia(1) saturate(5) hue-rotate(280deg);
+}
+*/

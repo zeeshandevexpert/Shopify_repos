@@ -1,0 +1,114 @@
+<div class="image-text-blurb">
+    <div class="blurb-container{% if section.settings.reverse %} reverse{% endif %}" >
+        
+        <div class="text-column">
+            <div class="text-wrapper">
+                <div class="subheading">
+                    <h4>{{ section.settings.sub_heading }}</h4>
+                </div>
+                <div class="heading">
+                    <h2>{{ section.settings.heading }}</h2>
+                </div>
+                <div class="subtext">
+                    {{ section.settings.content }}
+                </div>
+                {% if section.blocks != blank %}
+                    <div class="icon-list">
+                    {% for block in section.blocks %}
+                        <div class="list-item">
+                            <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+                            <p class="title">{{ block.settings.title }}</p>
+                        </div>      
+                    {% endfor %}
+                </div>        
+                {% endif %}
+            
+                {% comment %} <a href="#" class="button">Shop Now</a> {% endcomment %}
+                {% if section.settings.btn_text != blank %}
+                    <a href="{{ section.settings.btn_link }}" class="button-link">{{ section.settings.btn_text }}</a>    
+                {% endif %}
+            </div>
+        </div>
+        <div class="image-column">
+            <div class="overlay">
+                <div class="title">{{ section.settings.title }}</div>
+            </div>
+            <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Image with Text Blurb",
+        "settings": [
+
+            { 
+                "type": "checkbox",
+                "id": "reverse",
+                "label": "Column Reverse",
+                "default": false
+            },
+            { 
+                "type": "text",
+                "id": "sub_heading",
+                "label": "Sub Heading"
+            },
+            { 
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            { 
+                "type": "richtext",
+                "id": "content",
+                "label": "Content"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "image"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text"
+            },
+            {
+                "type": "url",
+                "id": "btn_link",
+                "label": "Button Link"
+            }
+            ],
+            "blocks": [
+                {
+                "type": "Item",
+                "name": "Partner Logo",
+                "settings": [
+                    {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                    },
+                    {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                    }
+                ]
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Image with Text Blurb"
+                }
+            ]
+    }
+    {% endschema %}

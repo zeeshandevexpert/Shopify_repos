@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Helvetica-Light';
+    src: url('Helvetica-Light.woff2') format('woff2'),
+    url('Helvetica-Light.woff') format('woff'),
+    url('Helvetica-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica-Regular';
+    src: url('Helvetica.woff2') format('woff2'),
+        url('Helvetica.woff') format('woff'),
+        url('Helvetica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* @font-face {
+    font-family: 'BasisGrotesquePro-Off-White';
+    src: url('BasisGrotesquePro-Off-White.woff2') format('woff2'),
+        url('BasisGrotesquePro-Off-White.woff') format('woff'),
+        url('BasisGrotesquePro-Off-White.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: 'Helvetica-Bold';
+    src: url('Helvetica-Bold.woff2') format('woff2'),
+        url('Helvetica-Bold.woff') format('woff'),
+        url('Helvetica-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica-Medium';
+    src: url('HelveticaMedium.woff2') format('woff2'),
+        url('HelveticaMedium.woff') format('woff'),
+        url('HelveticaMedium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

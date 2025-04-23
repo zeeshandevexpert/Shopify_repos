@@ -1,0 +1,78 @@
+{% comment %}
+snippets/pros_and_cons.liquid
+
+Renders a pros and cons list.
+
+Accepts:
+- block: {Object} Block liquid object
+
+Usage:
+{% render 'pros-and-cons', block: block %}
+
+{% endcomment %}
+
+<div class="grid__wrapper edge pros-cons pros-cons--{{ block.id }}"">
+  <section class="sm-span-12 md-span-12 span-6 auto pros-cons__inner pros-cons__inner--pros">
+  {% if block.settings.pros.size > 0 %}
+    <header class="pros-cons__header">
+      <h3 class="h4">{{ block.settings.pros_heading }}</h3>
+      {% if block.settings.show_pros_icon %}
+      {% render 'snip-icons',
+         wrapper: '.pros-cons__icon',
+         type: 'apollo',
+         icon: 'checkmark',
+         classes: 'vib-center',
+         size: '14px',
+         fill: 'var(--success-color)',
+         hover: 'var(--success-color)' %}
+      {% endif %}
+    </header>
+    {% assign pros_list = block.settings.pros | split: ',' %}
+    <ul>
+      {% for pro in pros_list %}
+        <li>
+          {% if forloop.last %}
+            {{ pro | remove_first: 'and ' }}
+          {% else %}
+            {{ pro }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </section>
+  <section class="sm-span-12 md-span-12 span-6 auto pros-cons__inner pros-cons__inner--cons">
+  {% if block.settings.cons.size > 0 %}
+    <header class="pros-cons__header">
+      <h3 class="h4">{{ block.settings.cons_heading }}</h3>
+      {% if block.settings.show_cons_icon %}
+      {% render 'snip-icons',
+         wrapper: '.pros-cons__icon',
+         type: 'apollo',
+         icon: 'close',
+         classes: 'vib-center',
+         size: '14px',
+         fill: 'var(--error-msg-dark)',
+         hover: 'var(--error-msg-dark)' %}
+      {% endif %}
+    </header>
+    {% assign cons_list = block.settings.cons | split: ',' %}
+    <ul>
+      {% for con in cons_list %}
+        <li>
+          {% if forloop.last %}
+            {{ con | remove_first: 'and ' }}
+          {% else %}
+            {{ con }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  </section>
+</div><!-- /.grid__wrapper -->
+<style type="text/css">
+  .pros-cons--{{ block.id }} ul {
+    list-style-type: {{ block.settings.list_style }};
+  }
+</style>

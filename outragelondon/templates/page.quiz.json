@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "rich_text_bLBhAU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_TXcrWi": {
+          "type": "heading",
+          "settings": {
+            "title": "Quiz"
+          }
+        }
+      },
+      "block_order": [
+        "heading_TXcrWi"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "quiz_KEVAFK": {
+      "type": "quiz",
+      "settings": {
+        "start_heading": "Want to Find Out your Jewellery colour?",
+        "start_content": "Answer 5 Lifestyle quick questions and we will let you know which colour you suit more <b> (SILVER\/GOLD) <\/b>.",
+        "start_text": "",
+        "question1_image": "Question 1: Speed boat or Classic Car?",
+        "question1_option1_image": "shopify:\/\/shop_images\/1_0c715775-3fd7-40e9-9df1-ae8d33d6b3f8.png",
+        "question1_option2_image": "shopify:\/\/shop_images\/2_ad6acfec-0db8-4ef7-aee3-81da4f7888b3.png",
+        "bottom_image1": "shopify:\/\/shop_images\/IMG_5906_2_cabf376c-b5f4-4b06-bd72-7cfd4a340f0c.jpg",
+        "bottom_text1": "determining your lifestyle trends gives us a great idea on how to tailor your preferred jewellery colour. Please note this quiz is to give you an idea of what we think will suit you best.",
+        "question2_image": "Question 2: What style house do you like more?",
+        "question2_option1_image": "shopify:\/\/shop_images\/1_1.png",
+        "question2_option2_image": "shopify:\/\/shop_images\/2_1.png",
+        "bottom_image2": "shopify:\/\/shop_images\/IMG_5906_2_cabf376c-b5f4-4b06-bd72-7cfd4a340f0c.jpg",
+        "bottom_text2": "An idea on what style you like more also gives us a great idea on how to tailor your preferred jewellery colour. Please note this quiz is to give you an idea of what we think will suit you best.",
+        "question3_image": "Question 3: Money or luxury goods?",
+        "question3_option1_image": "shopify:\/\/shop_images\/1_2.png",
+        "question3_option2_image": "shopify:\/\/shop_images\/2_2.png",
+        "bottom_image3": "shopify:\/\/shop_images\/IMG_5906_2_cabf376c-b5f4-4b06-bd72-7cfd4a340f0c.jpg",
+        "bottom_text3": "This helps us determine what lifestyle trends you like.",
+        "question4_image": "Question 4: Evening Drinks Or Evening Chills?",
+        "question4_option1_image": "shopify:\/\/shop_images\/1_3.png",
+        "question4_option2_image": "shopify:\/\/shop_images\/2_3.png",
+        "bottom_image4": "shopify:\/\/shop_images\/IMG_5906_2_cabf376c-b5f4-4b06-bd72-7cfd4a340f0c.jpg",
+        "bottom_text4": "An idea on what style you like more also gives us a great idea on how to tailor your preferred jewellery colour. Please note this quiz is to give you an idea of what we think will suit you best.",
+        "question5_image": "Question 5: Travel Or Adventure?",
+        "question5_option1_image": "shopify:\/\/shop_images\/1_4.png",
+        "question5_option2_image": "shopify:\/\/shop_images\/2_4.png",
+        "bottom_image5": "shopify:\/\/shop_images\/IMG_5906_2_cabf376c-b5f4-4b06-bd72-7cfd4a340f0c.jpg",
+        "bottom_text5": "An idea on your lifestyle gives us a great idea on how to tailor your preferred jewellery colour. Please note this quiz is to give you an idea of what we think will suit you best.",
+        "form_heading": "You've completed the quiz!",
+        "form_text": "We just calculating your go to colour. To get your results fill the form in and we will send it over to you in around 5 minutes. We will also attach a mystery discount code inside the email.",
+        "blank_form_content": "You've already submitted a Form."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_bLBhAU",
+    "quiz_KEVAFK"
+  ]
+}

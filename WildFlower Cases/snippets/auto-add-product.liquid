@@ -1,0 +1,95 @@
+
+<script defer>
+
+	var myCart = {{ cart | json }};
+
+	/*
+		Auto-adds a given variant to the cart via URL paramter if it
+		isn't already present in the cart. URL can include a discount
+		code, quantity, and/or redirect path. 
+
+		URL should depend on native Shopify structure for auto-applying
+		discounts and handling redirects. (Shopify supports and powers
+		both of those functionalities)
+
+		Rules for the system are as follows:
+
+		- At minimum, the URL should contain the "add" parameter where its
+		  value is the variant ID.
+		- If the product is in the cart but quantity is less than what we
+		  want to add, add the difference between the two.
+		- If the product is not in the cart, add it according to quantity
+		  set in the parameter. If no quantity parameter, default to 1.
+		- Show the cart no matter what.
+
+		URL structure is as follows:
+		https://www.site.com/discount/DISCOUNT_CODE?add=VARIANT_ID&quantity=1&redirect=REDIRECT_PAGE_PATH
+	*/
+
+	/******************************************************
+	 * Functions
+	 ******************************************************/
+
+	/**
+	 * Checks to see if the product and quantity are already
+	 * in the cart.
+	 * 
+	 * @param {Integer} addVariantId 
+	 * @param {Integer} quantity 
+	 * @returns {Object} Whether or not an update is needed, and the quantity to add
+	 */
+
+	function checkForProductAndQtyInCart(addVariantId, quantity) {
+		var quantityToAdd = quantity
+		var itemAndQtyInCart = myCart.items.find(function(item) {
+			if (item.variant_id !== addVariantId) return false
+
+			// Item is in cart
+			if (item.quantity >= quantityToAdd) {
+				// Quantity is greater than or equal to what we want to add
+				return true
+			} else {
+				// Quantity is less than what we want to add
+				quantityToAdd = quantityToAdd - item.quantity
+				return false
+			}
+		})
+
+		// Return object with all data
+		return {
+			updateNeeded: !itemAndQtyInCart,
+			quantityToAdd: quantityToAdd
+		}
+	}
+
+	/**
+	 * Handles the auto-adding of a product via URL
+	 * parameters.
+	 */
+
+	function handleAutoAddProduct() {
+		var url = new URL(location.href)
+		var addVariantId = url.searchParams.get("add")
+		var quantityToAdd = url.searchParams.get("quantity") || 1
+
+		if (!addVariantId) return
+
+		addVariantId = parseInt(addVariantId)
+		quantityToAdd = parseInt(quantityToAdd)
+
+		// Check to see if the product and required quantity
+		// are already in the cart
+		var data = checkForProductAndQtyInCart(addVariantId, quantityToAdd)
+
+		// Add the product if it isn't already in the cart,
+		// or if the quantity is less than what we want to add
+		if (data.updateNeeded) {
+			setTimeout(function() {
+				var event = new CustomEvent('cartItemAdd', {detail: { id: addVariantId, quantity: data.quantityToAdd }})
+				window.dispatchEvent(event)
+			}, 1000);
+		}
+	}
+
+	handleAutoAddProduct();
+</script>

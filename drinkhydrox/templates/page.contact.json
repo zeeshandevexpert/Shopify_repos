@@ -1,0 +1,254 @@
+{
+  "sections": {
+    "hero": {
+      "type": "section-hero",
+      "blocks": {
+        "contact-block-kicker": {
+          "type": "kicker",
+          "disabled": true,
+          "settings": {
+            "kicker": "<p>Introducing<\/p>",
+            "enable_line": false,
+            "text_size": 3
+          }
+        },
+        "contact-block-heading": {
+          "type": "heading",
+          "settings": {
+            "title": "聯絡我們",
+            "text_size": 10
+          }
+        }
+      },
+      "block_order": [
+        "contact-block-kicker",
+        "contact-block-heading"
+      ],
+      "custom_css": [
+        "p {font-size: 39px;}"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1000051675.png",
+        "height": "use_screen_one_fifth",
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "enable_overlay_text": false,
+        "preload_image": true,
+        "content_width": 2000,
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "color_bg": "hero__content--transparent",
+        "width": "wrapper--none",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_richtext_bVeYqx": {
+      "type": "section-richtext",
+      "blocks": {
+        "heading_RcWaFi": {
+          "type": "heading",
+          "settings": {
+            "heading": "訂購計劃",
+            "text_size": 8
+          }
+        },
+        "text_LaPnNz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>+852 5378 3076<\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        },
+        "text_kqURjP": {
+          "type": "text",
+          "settings": {
+            "text": "<p>如有任何疑問，請聯絡 Wholesale@drinkHydrox.com。<\/p>",
+            "text_size": 6,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "heading_RcWaFi",
+        "text_LaPnNz",
+        "text_kqURjP"
+      ],
+      "custom_css": [
+        "div.wrapper.section-padding {background: #001e62;}",
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "text_color": "text--white",
+        "bg": "palette--dark bg--invert",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "page",
+      "settings": {
+        "kicker": "",
+        "kicker_size": 3,
+        "show_title": false,
+        "title_size": 8,
+        "show_content": true,
+        "content_size": 5,
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper--narrow",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_richtext_8e4QLb": {
+      "type": "section-richtext",
+      "blocks": {
+        "heading_weUgWa": {
+          "type": "heading",
+          "settings": {
+            "heading": "<span style=\"font-size: 39px\">CONTACT US<\/span>",
+            "text_size": 8
+          }
+        },
+        "text_WeVqyC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>hello@drinkhydrox.com<br\/>17\/F, One Hysan, 1 Hysan Avenue, Causewaybay, Hong Kong<\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "heading_weUgWa",
+        "text_WeVqyC"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "contact": {
+      "type": "section-contact",
+      "blocks": {
+        "name": {
+          "type": "text",
+          "settings": {
+            "title": "Full Name"
+          }
+        },
+        "email": {
+          "type": "email",
+          "settings": {
+            "title": "Email"
+          }
+        },
+        "message": {
+          "type": "body",
+          "settings": {
+            "title": "Message"
+          }
+        }
+      },
+      "block_order": [
+        "name",
+        "email",
+        "message"
+      ],
+      "custom_css": [
+        "#Form-template--16729446088756__contact-0 {border-radius: 20px; border: 1px solid #7b829d;}",
+        "#Form-template--16729446088756__contact-1 {border-radius: 20px; border: 1px solid #7b829d;}",
+        "#Form-template--16729446088756__contact-2 {border-radius: 20px; border: 1px solid #7b829d;}",
+        "button.btn--neutral.btn--long.btn--outline {border-radius: 20px; padding-bottom: 20px; padding-top: 20px; padding-right: 15px; padding-left: 15px; background: #0072ce; font-size: 15px; color: white; border: 1px solid white;}"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "text-left",
+        "button_size": "btn--long",
+        "button_color": "btn--neutral",
+        "button_style": "btn--outline",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper--narrow",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "icons": {
+      "type": "section-icons",
+      "blocks": {
+        "icons-0": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-award",
+            "icon_color": "#aaaaaa",
+            "title": "香港品牌",
+            "text": "<p>全球領先的活性氫水的香港品牌<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icons-1": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-shipment-world",
+            "icon_color": "#aaaaaa",
+            "title": "FDA認證",
+            "text": "<p>獲取國際食品安全認證，<br\/>品質高，安全可靠。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icons-2": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-phone",
+            "icon_color": "#aaaaaa",
+            "title": "24\/7 支持",
+            "text": "<p>請隨時致電 +85259311848與我們聯絡。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "icons-0",
+        "icons-1",
+        "icons-2"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--light bg--accent",
+        "icons_size": 30,
+        "icon_alignment": "icon--top",
+        "layout": "grid--stacked",
+        "align_text": "text-left",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "section_richtext_bVeYqx",
+    "main",
+    "section_richtext_8e4QLb",
+    "contact",
+    "icons"
+  ]
+}

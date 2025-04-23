@@ -1,0 +1,76 @@
+<section class="blurb-section">
+
+<div class="wrap-blurb-section">
+    <div class="container-fluid">
+        <div class="image-block">
+            <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+        </div>
+        <div class="content-block">
+            <div class="content">
+                <h2 class="heading">{{ section.settings.heading }}</h2>
+                <div class="description">{{ section.settings.desc }}</div>
+                <table class="full-table" style="width: 100%">
+                  <tbody>
+                    <tr>
+                        {% for  block in section.blocks %}
+                            <th>{{ block.settings.tab_data }}</th>
+                        {% endfor %}
+                    </tr>
+                  </tbody>
+                </table>
+              
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "Blurb section",
+        "settings": [
+            
+            {
+                "type":"image_picker",
+                "id":"image",
+                "label":"Image"
+      
+        },
+            {
+                "type":"text",
+                "id":"heading",
+                "label":"Main Heading"
+      
+        },
+            {
+                "type":"richtext",
+                "id":"desc",
+                "label":"Description"
+      
+        }
+       
+    
+            ],
+            "blocks": [
+              {
+                "type": "item",
+                "name": "Item",
+                "settings": [
+                  {
+                    "id": "tab_data",
+                    "type": "richtext",
+                    "label": "Tab Data"
+                  }
+                ]
+              }
+          ],
+            "presets": [
+                {
+                    "name": "Blurb section"
+                }   
+            ]
+    }
+    {% endschema %}

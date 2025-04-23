@@ -1,0 +1,32 @@
+.mpt-image-with-text__wrap {
+    --gap: 11px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(4 * var(--gap));
+    align-items: center;
+}
+
+@media screen and (min-width: 749px) {
+    .mpt-image-with-text__wrap {
+        grid-template-columns: calc(100% - 444px) 400px;
+    }
+}
+
+
+.mpt-image-with-text__wrap .image__wrap {
+    position: relative;
+}
+
+.mpt-image-with-text__wrap img {
+    display: block;
+    width: 100%;
+}
+
+.mpt-image-with-text__wrap .overlap_image {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-30%) translateX(-30%);
+    max-width: 236px;
+    width: 100%;
+}

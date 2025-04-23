@@ -1,0 +1,1351 @@
+{% assign hs_product_description = product.description | replace: ' src="', ' loading="lazy" src="' %}
+{% include 'breadcrumbs' %}
+{%- liquid
+  assign specialOrder = false
+  assign glass = false
+  assign swing = false
+  assign color = false
+  assign jamb = false
+  assign presale = false
+  assign product_title = product.title | split: settings.split_value
+  assign selected_color = false
+  assign product_tags = product.tags | join: ","
+  assign related_lock = false 
+  assign uses_bore_holes = false
+  assign noJamb = false
+
+  unless product.title contains 'Handle' or product_tags contains 'Handle' or product.title contains 'Barn Door'
+    if product.type contains 'Door' or product_tags contains 'Door'
+      assign show_for_doors = true
+    endif
+  endunless
+
+  if product.type contains 'Locks'
+    assign show_for_locks = true 
+  endif 
+
+  if product.type == "Fence" or product.type == "Gate" or product_tags contains 'Fence' or product_tags contains 'Gate'
+    assign show_for_fences = true
+  endif 
+
+  if product.title contains 'Double'
+    assign door_size = 'Double'
+    assign special_version = 'double-door-special-order'
+  else
+    assign door_size = 'Single'
+    assign special_version = 'single-door-special-order'
+  endif
+
+  assign special_version = product.handle | append: '-special-order'
+  
+  if product.metafields.pinkys.special_order_product != blank
+    assign special_version = product.metafields.pinkys.special_order_product
+  endif
+  
+  
+  assign price_only = false 
+  assign show_screen_option = true 
+  for tag in product.tags
+  	if tag contains 'video:' 
+      assign videoID = tag | remove:'video:'
+    endif
+
+    if tag == 'special-order'
+      assign specialOrder = true
+    endif
+
+    if tag contains 'LOCK:'
+      assign related_lock = tag | remove: 'LOCK:'
+      assign related_lock = all_products[related_lock]
+    endif
+
+    if tag contains 'NO_SCREEN'
+      assign show_screen_option = false
+    endif
+
+    if tag contains 'color:'
+      assign color = tag | remove: 'color:'
+    endif
+
+    if tag == 'Pre-Sale'
+      assign presale = true
+    endif 
+
+    if tag contains 'ETA:'
+      assign presale_enddate = tag | remove: 'ETA:'
+    endif 
+
+    if tag contains 'ribbon'
+      assign ribbon = tag | split: ':' | last
+    endif
+
+    if tag contains 'selected-color:'
+      assign selected_color = tag | remove: 'selected-color:'
+    endif 
+
+    if tag == 'PRICE_ONLY'
+      assign price_only = true
+    endif
+    
+    if tag == 'ADD_BORE_HOLES' 
+      assign uses_bore_holes = true
+    endif
+
+   if tag == 'no-lock'
+     assign no_lock = true
+   endif
+
+  endfor 
+  
+  assign product_collections = product.collections | map: 'handle' | join: ','
+	assign interior_door_special = false
+
+    assign force_jamb  = false
+    if product.title contains 'Special Order'
+    
+      assign force_jamb = true
+      assign jamb_size = 6
+    
+    
+      if product.title contains 'Air 4' or product.title contains 'Air 5' or product.title contains 'Air Lite' or product.title contains 'Getty' 
+        assign force_jamb = true
+        assign jamb_size = 6
+      endif
+      
+      
+
+    endif 
+
+    for link in linklists.interior-doors-special-order-collections.links
+      if product_collections contains link.object.handle
+        assign interior_door_special = true
+        break
+      endif
+    endfor
+
+    assign special_jambs = 'office-doors-special-order,wine-cellar-doors-special-order,interior-doors-with-sidelight-transoms-special-order,passage-doors-special-order,pantry-doors-special-order' | split: ','
+
+    assign use_jamb_2_4 = false 
+
+    for special_jamb in special_jambs
+      if product_collections contains special_jamb
+        assign use_jamb_2_4 = false 
+      endif
+    endfor 
+
+    if interior_door_special
+      assign jamb_size = 2
+      assign force_jamb = true
+    endif 
+
+    if product.title contains 'Pantry' and product.title contains 'Special Order'
+      assign use_jamb_2_4 = false
+      assign jamb_size = 1
+    endif
+
+    if product.title contains 'Barn Door' and product.title contains 'Special Order'
+      assign force_jamb = false
+      assign use_jamb_2_4 = false
+    endif
+    
+    assign specialLock = false
+    if product.type contains 'Lock' and product.tags contains 'special-order' 
+      assign specialLock = true
+    endif
+
+    
+
+-%}
+{% for tag in product.tags %}
+{% if tag contains 'glass' %}{% capture glass %}{% if glass %}{{glass}},{% endif %}{{ tag | remove: 'glass:' | handle }}{% endcapture %}{% endif %}
+{% if tag contains 'Swing' %}{% capture swing %}{% if swing %}{{swing}},{% endif %}{{ tag | remove: 'Swing:' | strip }}{% endcapture %}{% endif %}
+{% if tag contains 'swing:' %}{% capture swing %}{% if swing %}{{swing}},{% endif %}{{ tag | remove: 'swing:' | strip }}{% endcapture %}{% endif %}
+  
+{% if tag == 'remove-swing' %}
+  {% assign removeSwing = true %}
+{% endif %}
+{% if tag contains 'no-jamb' %}
+  {% assign noJamb = true %}
+  {% assign force_jamb = false %}
+{% endif %}
+{% if tag contains 'jamb:' %}
+   {% assign jamb = tag | remove: 'jamb:' | append: '' %}
+   {% assign jamb_size = tag | remove: 'jamb:' | remove: '" Jamb' %}
+   {% assign force_jamb = true %}
+{% endif %}
+{% if tag == 'NO_CUSTOM_PROPERTIES' %}
+	{% assign specialOrder = false %}
+{% endif %}
+
+{% endfor %}
+
+
+<script>
+  var selectedColor = '{{ selected_color }}';
+  var productCollections = {{ product_collections | json }};
+  var priceOnly = {{ price_only | json }};  
+  var relatedLock = {{ related_lock | default: false | json }};
+</script>
+
+{%- capture lock_content -%}
+{% if related_lock %}
+{%- liquid 
+for variant in related_lock.variants
+  if variant.title contains door_size 
+    assign variant_id = variant.id
+  endif 
+endfor 
+-%}
+<div class="related-lock flex flex--align-center">
+  <div class="related-lock__image">
+    {% include 'hs-image-responsive' with image: related_lock.featured_image %}<img alt="{{ img.alt }}" class="hs-lazyload hs-id-b310f7a9" sizes="{{ hs_sizes }}" src="{{ related_lock.featured_image | img_url: '300x' }}" srcset="{{ hs_srcset }}">
+  </div>
+  <div class="related-lock__text">
+    <p>Lock in photograph is the {{ related_lock.title }}.<br>
+      <a href="#" class="related-lock__add quick-add" data-variant-id="{{ variant_id }}">Add Lock To Cart</a>
+    </p>
+  </div>
+</div>
+{% endif %}
+{%- endcapture -%}
+
+<!-- Zoho -->      
+<!-- <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siqf376da2ccaf119813f3f4714d998919e1c03bc2bd3e6d2412586f85a6597d5e0", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zohopublic.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>     -->
+<!-- Zoho --> 
+
+<div class="product-single__{{ product.handle }} product-template__container page-width small--full-width {% if specialOrder %}product-single__special-order{% endif %}"
+     id="ProductSection-{{ section.id }}"
+     data-section-id="{{ section.id }}"
+     data-section-type="product"
+     data-enable-history-state="true"
+     data-full-title="{{product.title}}"
+     data-preorder="{{presale}}"
+     data-preorder-variants=""
+     data-preorder-end="{{presale_enddate}}"
+     {% if specialOrder %}
+     data-normal-version="/products/{{product.handle | remove: '-special-order'}}"
+     {% else %}
+     data-product-handle="{{product.handle}}"
+     data-special-version="/products/{{special_version}}?name={{product.title}}"
+    data-force-jamb="{{  force_jamb }}"
+     {% endif %}
+     >
+  {% if hs_product_description contains '<!--split-->' %}
+  {% assign pd = hs_product_description | split: '<!--split-->'  %}
+  {% assign description = pd[0] %}
+  {% assign special_info = pd[1] %}
+  {% else %}
+  {% assign description = hs_product_description %}
+  {% endif %}
+  
+  {% if product.metafields.pinkys.under_image != blank %}
+  {% assign special_info = product.metafields.pinkys.under_image %}
+  {% endif %}
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign product_image_zoom_size = '1024x1024' -%}
+  {%- assign product_image_scale = '2' -%}
+  {%- assign enable_zoom = section.settings.enable_zoom -%}
+  {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = current_variant.price -%}
+  {%- assign product_image_width = 'medium-up--one-half' -%}
+  {%- assign product_description_width = 'medium-up--one-half' -%}
+  {%- assign product_thumbnail_width = 'medium-up--one-quarter' -%}
+  {%- assign height = 530 -%}
+
+  {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
+
+  <script>
+    console.log({{ variant_images | json }});
+  </script>
+
+
+  <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.image_size }}-image{% endif %}">
+    <div class="grid__item product-single__photos {{ product_image_width }}{% if section.settings.image_size == 'full' %} product-single__photos--full{% endif %}">
+      <div class="flex small--flex-column__reverse">
+        {% if product.media.size >= 1 %}
+        <div class="thumbnails-wrapper medium-up--one-fifth small--hide">
+          <ul class="product-single__thumbnails product-single__thumbnails-{{ section.id }}">
+            {% assign idx = 0 %}
+            {% for media in product.media %}
+              {% if media.attached_to_variant %}{% continue %}{% endif %}
+              {% if variant_images contains media.src %}{% continue %}{% endif %}
+              {% if media.media_type == 'model' %}{% continue %}{% endif %}
+              {% if media.media_type != 'image' %}{% continue %}{% endif %}
+            {% unless media.alt contains 'slideshow' or media.alt contains 'no-watermark' %}
+            <li class="product-single__thumbnails-item js" >
+              <a href="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
+                 class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }} product-single__thumbnail--{{ media.media_type | handle }}"
+                 data-slide-index="{{idx}}"
+                 data-thumbnail-id="{{ media.id }}"
+                 {% if enable_zoom %}data-zoom="{{ media.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                <img class="product-single__thumbnail-image" src="{{ media | img_url: '110x110', scale: 2 }}" alt="{{ 'sections.featured_product.gallery_thumbnail_alt' | t: imageAlt: media.alt | escape }}">
+              </a>
+            </li>
+            {% assign idx = idx | plus: 1 %}
+            {% else %}
+            {% assign has_slideshow_images = true %}
+            {% endunless %}
+            {% endfor %}
+            {% if videoID %}
+            <li class="product-single__review-item lazyload lazyfade product-youtube-thumbnail grab-youtube-thumbnail" data-youtube-id="{{videoID}}" data-bg="//img.youtube.com/vi/{{videoID}}/mqdefault.jpg" style="background-image: url(//img.youtube.com/vi/{{videoID}}/mqdefault.jpg);">
+              <a href="https://youtube.com/watch?v={{ videoID }}" class="mfp-iframe">{% include 'icon-play-video' %}</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+        {% endif %}
+        <div class="medium-up--four-fifths small--one-whole relative overflow--hidden">
+            <div id="product-slick" class="slick-slider">
+              {% for media in product.media %}
+                {% if media.attached_to_variant %}{% continue %}{%  endif %}
+                {% if variant_images contains media.src %}{% continue %}{% endif %}
+              {% unless media.alt contains 'slideshow' or media.alt contains 'no-watermark' %}
+              {% if media.media_type == 'image' %}
+              {% capture img_id %}FeaturedImage-{{ section.id }}-{{ image.id }}{% endcapture %}
+              {%- assign img_url = media | img_url: '1x1', format: 'jpg' | replace: '_1x1.', '_{width}x.' -%}
+              <div {% unless media.alt == product.title %}data-color="{{media.alt}}"{% endunless %} class="filter-{{media.alt | handle}} {% if enable_zoom %}js-zoom-enabled{% endif %}" data-image-id="{{ media.id }}"{% if enable_zoom %} data-zoom="{{ media | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                <img id="{{ img_id }}"
+                     class="lazyload"
+                     loading="lazy"
+                     src="{{ media | img_url: '300x', format: 'jpg' }}"
+                     data-src="{{ img_url }}"
+                     data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                     data-aspectratio="{{ media.aspect_ratio }}"
+                     data-sizes="auto"
+                     width="100%"
+                     alt="{{ media.alt | escape }}">
+              </div>
+              {% elsif media.media_type == 'model' %}
+                {% continue %}
+              <div class="product-single__media product-single__model" data-media-id="{{ media.id }}">
+                {{ media | model_viewer_tag }}
+              </div>	
+              {% endif %}
+              {% endunless %}
+
+              {% else %}
+              {{'image' | placeholder_svg_tag}}
+              {% endfor %}
+
+              {% if videoID %}
+              <div>
+                <div class="video-flex-wrapper">
+                  <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="lazyload hs-id-07291487" data-src="https://www.youtube.com/embed/{{videoID}}?playsinline=1&amp;enablejsapi=1" frameborder="0" height="238" width="424">
+</iframe>
+                </div>
+              </div>
+              {% endif %}
+
+            </div>
+            {% if product.metafields.pinkys.under_image != blank %}
+            <div class="product-single__below-main-photo text-center rte small--hide">
+              {{special_info}}
+            </div>
+            {% elsif special_info %}
+              <div class="product-single__below-main-photo text-center rte small--hide">
+              {{special_info}}
+            </div>
+            {% endif %}
+
+            <a href="#" class="product-single__zoom small--hide">{% include 'icon-zoom' %}</a>
+            {% if lock_content %}
+            <div class="small--hide">{{ lock_content }}</div>
+            {% endif %}
+          </div>
+          <noscript>
+            {% capture product_image_size %}{{ height }}x{% endcapture %}
+            <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: {{ height }}px;">
+          </noscript>
+        </div>
+      </div>
+
+      <div class="grid__item {{ product_description_width }} small--full-width">
+        <div class="product-single__meta">
+
+
+          {% if product.handle contains 'special-order' %}
+          	{% unless product.tags contains 'NO_CUSTOM_PROPERTIES' %}
+            {% assign specialOrder = true %}
+          	{% endunless %}
+            {% assign normal_handle = product.handle | remove: '-special-order' %}
+            {% assign presale_handle = product.handle | remove: '-special-order' | append: '-pre-sale' %}
+            {% assign special_handle = product.handle %}
+
+
+            {% if collection %}
+            {% assign normal_collection_handle = collection.handle | remove: '-special-order' %}
+            {% assign presale_collection_handle = collection.handle | remove: '-special-order' | append: '-pre-sale' %}
+            {% assign special_collection_handle = collection.handle %}
+            {% endif %}
+
+          {% elsif product.handle contains 'standard-sizes' %}
+            {% unless product.tags contains 'NO_CUSTOM_PROPERTIES' %}
+            {% assign specialOrder = true %}
+          	{% endunless %}
+            {% assign normal_handle = product.handle | remove: '-standard-sizes' %}
+            {% assign presale_handle = product.handle | remove: '-standard-sizes' | append: '-pre-sale' %}
+            {% assign special_handle = product.handle %}
+
+          {% elsif product.handle contains 'pre-sale' %}
+            {% assign presale = true %}
+            {% assign presale_handle = product.title | split: ' | ' | first | handle %}
+            {% assign normal_handle = presale_handle | remove: '-pre-sale' %}
+            {% assign special_handle = normal_handle | append: '-special-order' %}
+           
+            {% if collection %}
+            {% assign normal_collection_handle = collection.handle | remove: '-pre-sale' %}
+            {% assign presale_collection_handle = collection.handle %}
+            {% assign special_collection_handle = collection.handle | remove: '-pre-sale' | append: '-special-order' %}
+            {% endif %}
+
+            {% if all_products[special_handle].title == blank %}
+              {% assign special_handle = normal_handle | append: '-standard-sizes' %}
+            {%  endif %}
+
+          {% else %}
+            {% assign instock = true %}
+            {% assign normal_handle = product.handle %}
+            {% assign presale_handle = product.handle | append: '-pre-sale' %}
+            {% assign special_handle = product.handle | append: '-special-order' %}
+
+            {% if collection %}
+            {% assign normal_collection_handle = collection.handle %}
+            {% assign presale_collection_handle = collection.handle | append: '-pre-sale' %}
+            {% assign special_collection_handle = collection.handle | append: '-special-order' %}
+            {% endif %}
+            {% endif %}
+
+            {% if all_products[special_handle].title == blank %}
+              {% assign special_handle = normal_handle | append: '-standard-sizes' %}
+            {%  endif %}
+
+
+          {% if all_products[normal_handle].title.size > 0 %}
+            {% assign has_normal = true %}
+            {% assign normal_product = all_products[normal_handle] %}
+          {% endif %}
+
+          {% if collections[presale_handle].products.size > 0 %}
+          	{% assign has_presale = true %}
+          	{% assign presale_product = all_products[presale_handle] %}
+          {% endif %}
+
+          {% if all_products[special_handle].title.size > 0 %}
+            {% assign has_special = true %}
+            {% assign special_product = all_products[special_handle] %}
+          {% endif %}
+
+         
+
+          {% comment %}Special: {{all_products[special_handle].title}}{% endcomment %}
+
+          {% include 'shipping-time' %}
+
+          {% if has_normal or has_special or has_presale %}
+          <div class="select-type__wrapper">
+            <div class="select-type__heading text-left small--hide">Select Type:</div>
+            <div class="select-type__links flex flex--align-center">
+              {% if has_normal %}
+              {% assign normal_product = all_products[normal_handle] %}
+              {% capture normal_tooltip %}
+              {% if normal_product.type == 'Locks' %}
+              Locks ship between 1-2 days.
+              {% elsif normal_product.type == 'Door Handles' %}
+              Ships within 6-8 weeks
+              {% else %}
+              ESTIMATED TO SHIP within {{ 'shipping.in_stock' | t }}.{% comment %} Product is ready to be picked up.{% endcomment %}
+              {% endif %}
+              {% endcapture %}
+              <div class="select-type__link--wrapper" {% comment %}data-tooltip="{{ normal_tooltip }}"{% endcomment %}>
+                <div class="select-type__link in-stock--link {% if instock %}active{% endif %}" >
+                  <a href="{% if collection %}/collections/{{normal_collection_handle}}{% endif %}/products/{{normal_handle}}">
+                    <span>In Stock</span>
+                  </a>
+                </div>
+              </div>
+              {% endif %}
+              {% if has_presale %}
+              <div class="select-type__link--wrapper">
+                <div class="select-type__link presale--link {% if presale %}active{% endif %}">
+                  <a href="/collections/{{presale_handle}}" ><span>{{ 'general.presale.presale' | t }}</span></a>
+                </div>
+              </div>
+              {% endif %}
+              {% if has_special %}
+              <div class="select-type__link--wrapper">
+                <script type="text/javascript">
+                  console.log('special',{{ special_product | json }});
+                </script>
+                <div class="select-type__link special-order--link {% if specialOrder %}active{% endif %}" {% comment %}data-tooltip=""{% endcomment %}>
+                  <a href="{% if collection %}/collections/{{special_collection_handle}}{% endif %}/products/{{special_handle}}" ><span>Special Order</span></a>
+                </div>
+              </div>
+              {% endif %}
+              {% unless has_special %}
+                {% if product.selected_or_first_available_variant.price > 10000 %}
+                  {% assign has_special = true %}
+                {% endif %}
+              {% endunless %}
+              {% if has_normal and has_special %}
+              <div class="select-type__link--wrapper">
+                <div class="select-type__link special-order--link" >
+                  <a href="/pages/customize-anything/{{product.type | handle}}"><span>Customize</span></a>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+
+          {% endif %}
+
+          <div class="small--page-width">
+            <h1 class="product-single__title flex flex--wrap">
+            <span class="product-title__actual">{{ product_title[0] | replace: 'Pre-Sale','<span class="pink">Pre-Sale</span>' }}</span>
+            {% if ribbon and google_says_so %}
+            <div class="ribbon top-left sticky red shadow">{{ribbon | strip}}</div>
+            {% endif %}
+            <span class="product__price">
+              {% include 'product-price', variant: current_variant %}
+            </span>
+            <div class="shipping_notification product-form__group">
+              <span class="shipping-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="51" height="22" role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 51.25 22.77"><path d="M20.81 15.42a3.85 3.85 0 0 1 3.36 1.64h11.46V1.73H15.15v15.33l2.89-.15a3.74 3.74 0 0 1 2.44-1.46Zm22.28 2a1.83 1.83 0 1 0 1.83 1.82 1.82 1.82 0 0 0-1.83-1.82Zm-5.81-6.89-.11 6.58h2.81a3.77 3.77 0 0 1 6.23 0h2.39v-4.28l-5-2.3Zm.09-5-.06 3.25h5.48l-.55-3.25ZM21.06 21.06a1.83 1.83 0 1 0-1.83-1.83 1.83 1.83 0 0 0 1.83 1.79ZM25.13 20h-.6a3.57 3.57 0 0 1-7-.48l-4.07-.05V0h24v3.64h6.34l.27 1.85.62 3.52 5.74 2.65v5.4h.91v2.9h-4.67a3.57 3.57 0 0 1-7 0ZM2.55 12.96h8.13a.87.87 0 0 1 0 1.74H2.55a.87.87 0 0 1 0-1.74M.87 8.47H9a.88.88 0 0 1 0 1.75H.87a.88.88 0 0 1 0-1.75m9-2.63H1.74a.87.87 0 0 1 0-1.74h8.13a.87.87 0 0 1 .84.9.86.86 0 0 1-.84.84" fill="#ff5c4e" fill-rule="evenodd"/></svg>
+              </span>
+              <span class="shipping-text">{{ shipping_time }}</span>
+            </div>
+            </h1>  
+          </div>
+          
+          {% assign hasArrvialDate = false %}
+          {% for variant in product.variants %}
+            {% if variant.metafields.custom.arrival_date != blank %}
+              {% assign hasArrvialDate = true %}
+              <div class="product-single__presale-clock__wrapper product-single__presale-clock-{{ variant.id }}{% if variant.id == current_variant.id %}{% else %} hide{% endif %}">
+                <div class="product-single__presale-clock flex flex--align-center" >
+                  <h5 class="h4">{{ 'general.presale.heading' | t }}</h5>
+                  {% include 'presale-clock', date: variant.metafields.custom.arrival_date %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% unless hasArrvialDate %}
+            {% if presale %}
+            <div class="product-single__presale-clock__wrapper">
+              <div class="product-single__presale-clock flex flex--align-center" >
+                <h5 class="h4">{{ 'general.presale.heading' | t }}</h5>
+                {% include 'presale-clock', date: presale_enddate %}
+              </div>
+            </div>
+            {% endif %}
+          {% endunless %}
+          
+          {% if presale %}
+          <div class="product-single__stock-notice small--one-whole small--text-center">
+            <div class="in-stock stock-notice__inner">
+              <p><b>PRE-SALE. </b>Only <b class="variant-inventory">{{ variant.inventory_quantity }}</b> arriving. <b>Act now!</b></p>
+            </div>
+          </div>
+          {% elsif specialOrder %}
+          <div class="product-single__special-shipping flex flex--align-center small--text-center">
+            <div class="stock-notice__inner special-order">
+              <p><b>SPECIAL ORDER. </b><span class="shipping-text">{% include 'special-order-shipping-time' %}</span></p>
+            </div>
+          </div>
+          {% else %}
+            {% include 'stock-notice', variant: current_variant %}
+          {% endif %}
+          {% comment %}
+          {% endcomment %}
+          <div class="elfsight-review-badge" style="display:none;">
+            <script data-use-service-core="" defer src="https://static.elfsight.com/platform/platform.js"></script>
+            <div class="elfsight-app-b1d188cb-585a-46d6-bf7c-d2170635231b"></div>
+          </div>
+          {% unless product.available %}
+          <p class="sold-out--text">
+            This product is out of stock.
+            {% comment %}
+            <br>
+            <b>Don't worry! Select special order or customize above.</b>
+            {% endcomment %}
+          </p>
+          {% endunless %}
+
+
+
+          {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+          <div class="product__policies rte" style="display:none;">
+            {%- if shop.taxes_included -%}
+            {{ 'products.product.include_taxes' | t }}
+            {%- endif -%}
+            {%- if shop.shipping_policy.body != blank -%}
+            {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+            {%- endif -%}
+          </div>
+          {%- endif -%}
+
+          {% if section.settings.show_quantity_selector %}
+          <div id="error-quantity-{{ section.id }}" class="form-message form-message--error product__quantity-error hide" tabindex="-1">
+            {% include 'icon-error' %} {{ 'products.product.quantity_minimum_message' | t }}
+          </div>
+          {% endif %}
+
+          {% capture "form_classes" -%}
+          product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
+          {%- endcapture %}
+
+          {% form 'product', product, class:form_classes, novalidate: 'novalidate' %}
+
+
+
+          {% unless product.has_only_default_variant %}
+          <div class="product-single__swatches {% if section.settings.variant_style == "dropdown"%} flex flex--wrap product-form__group{% endif %}">
+            {% if show_for_doors %} 
+            {% if specialOrder %}
+            <h4 class="one-whole">Please customize your product below:</h4>
+            {% else %}
+            <h4 class="one-whole">Please select options below:</h4>
+            {% endif %}
+            {% endif %}
+
+
+            {% comment %}Size, Swing, Glass, Color, Jamb{% endcomment %}
+            
+            {%- liquid
+            
+            assign question_text = 'Learn more here'
+            assign disableSwing = false
+            
+            -%}
+
+            {% for option in product.options_with_values %}
+            
+            {%- liquid
+            
+            if option.name == "Size" 
+              assign reorder_index = 1 
+            
+            elsif option.name == "Jamb" 
+              assign reorder_index = 5 
+            
+            elsif option.name == "Screen" 
+              assign reorder_index = 6 
+            
+            elsif option.name == "Swing" 
+              assign reorder_index = 2 
+              assign disableSwing = true 
+            
+            endif 
+            
+            assign see_options_array = 'Swing,Glass,Color' 
+            
+            -%}
+            
+
+            {% if see_options_array contains option.name %}
+            {% capture question_text %}See {{option.name | downcase}} options{% endcapture %}
+            {% else %}
+            {% assign question_text = 'See options' %}
+            {% endif %}
+            
+            {% capture question_text %}{{ 'option_popups' }}.{{ option.name | handle }}{% endcapture %}
+			{% capture question_alt %}{{ 'option_popups' }}.{{ option.name | handle }}_alt{% endcapture %}
+            {% assign selectorWrapperClass = '' %}
+            {% if product.handle == 'touch-up-paint' and option.name == 'Type' %}
+              {% assign selectorWrapperClass = ' hide' %}
+            {% endif %}
+            <div class="selector-wrapper selector-wrapper--{{ option.name | handle }} js product-form__item{{ selectorWrapperClass }}" {% unless section.settings.variant_style == "dropdown" %} style="display: none;"{% endunless %} data-reorder-index="{{reorder_index}}">
+              <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}: 
+                {% if product.handle == 'touch-up-paint' and option.name == 'Type' %}
+                {% else %}
+                <a data-alt-text="{{ question_alt | t }}" data-div="question--{{ option.name | handle | remove: 'sdl-' }}" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax">
+                  <span class="question-circle"></span> {{ question_text | t }}
+                </a>
+                {% endif %}
+              </label>
+              <div class="selector-box">
+                <select data-for-david="{{  option.values[0] | join: ',' | split: '|' | first | strip }}" data-has-pipe="{% if option.values[0] contains '|' %}true{% else %}false{% endif %}" class="real-option-selector single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                  {% for value in option.values %}
+                  <option data-real-value='{{ value | split: '|' | first | strip }}' value='{{ value | split: '|' | first | strip }}'{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value | split: '|' | first }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+
+            </div>
+            {% endfor %}
+
+            {% if product.available and product.variants.size > 1 and section.settings.variant_style == 'swatch' %}
+            {% for option in product.options %}
+            {% include 'swatch' with option %}
+            {% endfor %}
+            {% endif %}
+
+            <input type="hidden" id="ZapietId" name="properties['_ZapietId']">
+            <input type="hidden" name="properties[_intuitive_cid]" value="{{ customer.id }}"> 
+
+            {% if shipping_time %}
+              {% if product.metafields.pinkys.ships_in != blank %}
+                {% assign shipping_time = product.metafields.pinkys.ships_in %}	
+              {% endif %}
+              <input data-special-time="{% include 'special-order-shipping-time' %}" id="shipping-time" class="shipping-time item-property" type="hidden" name="properties[Ships within]" value="{{ shipping_val | replace: '. Product is ready to be picked up','' }}">
+              <div class="selector-wrapper js product-form__item visually-hidden" data-reorder-index="3">
+                <label for="shipping-time">{{ shipping_time | split: 'within' | first | strip | append: ' within' }}</label>            
+              </div>
+            {% endif %}
+
+            {% comment %} Custom Line Item Properties {% endcomment %}
+
+            {% comment %} If Dropdowns{% endcomment %}
+            
+
+            
+            
+            {% unless product.title contains 'Handle' or specialLock %}
+
+            {% if section.settings.variant_style == "dropdown" and specialOrder %}
+
+            {% assign glass_option_list = 'glass-options' %}
+
+            {% if product_collections contains "Passage Doors - Special Order" %}
+            {% assign glass_option_list = 'passage-door-glass-options' %}
+            {% endif %}
+
+            {% if product_collections contains 'Wine Cellar Doors - Special Order' %}
+            {% assign wine_cellar_doors_special_order = true %}
+            {% endif %}
+
+            {% if product.title contains "Pantry" and product.title contains "Special Order" %}
+            {% assign glass_option_list = 'pantry-door-glass-options' %}
+            {% endif %}
+            
+            {% if interior_door_special %}
+            {% assign glass_option_list = 'interior-door-glass' %}
+            {% endif %}
+            
+           
+            {% if uses_bore_holes %}
+            <div class="selector-wrapper js product-form__item" data-reorder-index="2">
+              <label for="SingleOptionBoreHoleSelector"># of Bore Holes 
+                {% comment %}<a data-alt-text="{{ 'option_popups.glass_alt' | t }}" data-div="question--glass" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> See options</a>{% endcomment %}
+              </label>
+              <div class="selector-box">
+                <select name="properties[# of Bore Holes]" class="line-item--selector product-form__input" id="SingleOptionBoreHoleSelector">
+                  <option value="One Bore Hole">One Bore Hole Per Door</option>
+                  <option value="Two Bore Holes">Two Bore Holes Per Door</option>
+                </select>
+              </div>
+            </div>
+            {% endif %}
+
+            
+            {% assign glass_label = 'Glass: ' %}
+            {% if product.handle contains 'special-order' %}
+              {% if product.title contains 'Thermally Broken' or product.type contains 'Thermally Broken' %}
+                  {% assign glass_label = 'SDL Glass:' %}
+              {% endif %}
+            {% endif %}
+            
+            <div class="selector-wrapper js product-form__item" data-reorder-index="2">
+              <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionGlassSelector">{{ glass_label }} <a data-alt-text="{{ 'option_popups.glass_alt' | t }}" data-div="question--glass" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> See options</a></label>
+              <div class="selector-box">
+                <select id="glass-option" name="properties[Glass]" class="line-item--selector product-form__input" id="SingleOptionGlassSelector">
+                  {% for link in linklists[glass_option_list].links %}
+                  {% assign lh = link.title | handle %}
+                  {% if glass contains lh or specialOrder %}
+                  {% if wine_cellar_doors_special_order and lh contains 'low-e' %}
+                  <option value="Clear Glass" class="clear" data-image="{{'Clear' | handle | prepend: 'glass-' | append: '.jpg' | asset_img_url: '80x'}}">Clear Glass</option>
+                  {% else %}
+                  <option value="{{link.title | escape }}" 
+                          class="{{link.title | handle}}" 
+                          data-image="{{link.title | handle | prepend: 'glass-' | append: '.jpg' | asset_img_url: '80x'}}">
+                    {% if product.title contains "Air 4" or product.title contains "Air 5" %}
+                    {{ link.title }}
+                    {% else %}
+                    {{ link.title }}
+                    {% comment %}{{ link.title | split: '-' | first | strip }}{% endcomment %}
+                    {% endif %}
+                  </option>
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+
+            {% if disableSwing == false %}
+            
+            {% unless product.type == 'Transoms' or product.title contains 'Barn Door' or removeSwing %}
+            <div class="selector-wrapper js product-form__item" data-reorder-index="3">
+              <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSwingSelector">Swing: <a data-alt-text="{{ 'option_popups.swing_alt' | t }}" data-div="question--swing" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> See swing options</a></label>
+              <div class="selector-box">
+                <select id="swing-option" name="properties[Swing]" class="product-form__input line-item--selector" id="SingleOptionSwingSelector">
+				  {% if swing %}
+                  {% assign swing_values = swing | split: ',' %}
+                  {% for swing_value in swing_values %}
+                  <option value="{{ swing_value }}">{{ swing_value }}</option>
+                  {% endfor %}
+                  {% else %}
+                  {% for link in linklists.door-swing.links %}
+                  {% assign lh = link.title | handle %}
+                  {% if swing contains lh or specialOrder %}
+                  <option value="{{link.title}}">{{link.title}}</option>
+                  {% endif %}
+                  {% endfor %}
+                  {% endif %}
+                </select>
+              </div>
+            </div>
+            {% endunless %}
+            
+            {% endif %}
+
+            <div class="selector-wrapper js product-form__item" data-reorder-index="4">
+              <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionColorSelector">Color: <a data-alt-text="{{ 'option_popups.color_alt' | t }}" data-div="question--color" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> See color options</a></label>
+              <div class="selector-box">
+                <select id="color-option" name="properties[Color]" class="product-form__input line-item--selector" id="SingleOptionColorSelector">
+                  {% for link in linklists.color-options.links %}
+                  {% assign lh = link.title | handle %}
+                  {% if color contains lh or specialOrder %}
+                  <option {% if selected_color == link.title %}selected="selected"{% endif %} value="{{link.title}}">{{link.title}}</option>
+                  {% endif %}
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+
+
+            {% if use_jamb_2_4 %}
+
+            <div class="selector-wrapper js product-form__item" data-reorder-index="5">
+              <label for="SingleOptionJambSelector-forced">Jamb: <a data-alt-text="{{ 'option_popups.jamb_alt' | t }}" data-div="question--jamb" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> Learn more here</a></label>
+              <div class="selector-box">
+
+                <select name="properties[Jamb]" class="line-item--selector product-form__input" id="SingleOptionJambSelector-forced" >
+                  <option value="2&quot; Jamb">2" Jamb</option>
+                  {% comment %}<option value="4&quot; Jamb">4" Jamb</option>{% endcomment %}
+                </select>
+              </div>
+            </div>
+
+            {% elsif force_jamb %}
+            {% assign label_text = "Jamb:" %}
+            {% if product.handle contains "thermally-broken" %}
+              {% if product.handle contains "pre-sale" or product.handle contains "special-order" %}
+                {% assign label_text = 'Jamb (Includes 3" Nailing fin all around):' %}
+              {% endif %}
+            {% endif %}
+            <div data-force-jamb class="selector-wrapper js product-form__item" data-reorder-index="5">
+              <label for="SingleOptionJambSelector-forced">{{ label_text }} <a data-alt-text="{{ 'option_popups.jamb_alt' | t }}" data-div="question--jamb" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> Learn more here</a></label>
+              <div class="selector-box">
+                <select name="properties[Jamb]" class="line-item--selector product-form__input" id="SingleOptionJambSelector-forced" >
+                  <option value="{{ jamb_size }}">{{ jamb_size }}&quot; Jamb</option>
+                </select>
+              </div>
+            </div>
+            {% endif %}
+
+
+            {% else %}
+
+            {% if color %}{% include 'pdp-select-item', name: 'Color', value: color, order: 4 %}{% endif %}
+            
+            {% unless noJamb %}
+              {% if jamb %}
+                {% include 'pdp-select-item', name: 'Jamb', value: jamb, order: 5 %}
+              {% endif %}
+            {% endunless %}
+
+            {% endif %}
+            {% endunless %}
+
+            {% comment %} If Swatches{% endcomment %}
+
+
+            {% if section.settings.variant_style == "swatch" and specialOrder %}
+            <div class="swatch swatch--line-properties Glass" data-option-index="10" data-reorder-index="2">
+              <div class="header">Glass: <span class="selected">{{linklists.glass-options.links.first.title}}</span></div>
+              {% for link in linklists.glass-options.links %}
+              {% assign lh = link.title | handle %}
+              {% if glass contains lh or specialOrder %}
+              <div class="swatch-element">
+                <input id="{{link.title | handle}}" type="radio" name="properties[Glass]" value="{{link.title}}" {% if forloop.first %}checked="checked"{% endif %} />
+                <label for="{{link.title | handle}}">{{link.title}}</label>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+
+
+            <div class="swatch swatch--line-properties Swing" data-option-index="11" data-reorder-index="3">
+              <div class="header">Swing: <span class="selected">{{linklists.swing-options.links.first.title}}</span></div>
+              {% for link in linklists.swing-options.links %}
+              {% assign lh = link.title | handle %}
+              {% if swing contains lh or specialOrder %}
+              <div class="swatch-element">
+                <input id="{{link.title | handle}}" type="radio" name="properties[Swing]" value="{{link.title}}" {% if forloop.first %}checked="checked"{% endif %} />
+                <label for="{{link.title | handle}}">{{link.title}}</label>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="swatch swatch--line-properties Color" data-option-index="12" data-reorder-index="4">
+              <div class="header">Color: <span class="selected">{{linklists.color-options.links.first.title}}</span></div>
+              {% for link in linklists.color-options.links %}
+              {% assign lh = link.title | handle %}
+              {% if color contains lh or specialOrder %}
+              <div class="swatch-element">
+                <input id="{{link.title | handle}}" type="radio" name="properties[Color]" value="{{link.title}}" {% if forloop.first %}checked="checked"{% endif %} />
+                <label for="{{link.title | handle}}">{{link.title}}</label>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endunless %}
+
+          <select name="id" id="ProductSelect-{{ section.id }}" class="" style="display: none;">
+            {% for variant in product.variants %}
+            {% if variant.available %}
+            <option data-title="{{variant.title | replace: '"','$' }}" data-price="{{variant.price}}" data-compare-at-price="{{variant.compare_at_price}}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-quantity="{{variant.inventory_quantity}}" value="{{ variant.id }}">{{ variant.title | escape }}</option>
+            {% else %}
+            <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+
+
+          {% if has_special %}
+          <div class="product-form__group" style="display: none;">
+            {% assign special_product = all_products[special_handle] %}
+            <label>Special Order Version</label><br/>
+            <select id="SpecialSelect-{{ section.id }}" style="width: 100%;">
+              {% for variant in special_product.variants %}
+              {% if variant.title contains '6" Jamb / No Screen'%}
+              <option data-title="{{variant.title | escape }}" data-price="{{variant.price}}" data-compare-at-price="{{variant.compare_at_price}}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-quantity="{{variant.inventory_quantity}}" value="{{ variant.id }}">{{ variant.title | escape }}</option>
+              {% elsif variant.title contains '6" Jamb' %}
+              <option data-title="{{variant.title | escape }}" data-price="{{variant.price}}" data-compare-at-price="{{variant.compare_at_price}}" {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-quantity="{{variant.inventory_quantity}}" value="{{ variant.id }}">{{ variant.title | escape }}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          {% endif %}
+
+
+          <div class="product-single__errors"></div>
+          {% if settings.enable_chat %}
+          <div class="product-chat-now-row">
+            <span class="product-chat-now-btn" onclick="javascript:$zoho.salesiq.chat.start()"><span>&#8505;</span>Live Chat</span>
+          </div>
+          {% endif %}
+          <div class="product-form__groupz flex product-add-row">
+            {% if section.settings.show_quantity_selector %}
+            <div class="product-form__item product-form__item--quantity">
+              <label for="Quantity-{{ section.id }}" class="visually-hidden">{{ 'products.product.quantity' | t }}</label>
+              <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" class="product-form__input" pattern="[0-9]*">
+            </div>
+            {% endif %}
+            <div class="product-form__item product-form__item--submit{% if section.settings.enable_payment_button %} product-form__item--payment-button{% endif %}{% if product.has_only_default_variant %} product-form__item--no-variants{% endif %}">
+              <button data-variant-id="{{current_variant.id}}" type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}">
+                <span id="AddToCartText-{{ section.id }}" class="add-to-cart-text">
+                  {% unless current_variant.available %}
+                  {{ 'products.product.sold_out' | t }}
+                  {% else %}
+                  {{ 'products.product.add_to_cart' | t }}
+                  {% endunless %}
+                </span>
+                <span class="add-to-cart-loader" >{% include 'icon-preloader' %}</span>
+              </button>
+
+              {% if section.settings.enable_payment_button %}
+              {{ form | payment_button }}
+              {% endif %}
+            </div>
+          </div>
+
+          {% endform %}
+        </div>
+
+        <div class="medium-up--hide">
+          {{ lock_content }}
+        </div>
+        {% comment %}
+        <div class="shipping_notification product-form__group">
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="22" role="presentation" aria-hidden="true" focusable="false" viewBox="0 0 51.25 22.77"><path d="M20.81 15.42a3.85 3.85 0 0 1 3.36 1.64h11.46V1.73H15.15v15.33l2.89-.15a3.74 3.74 0 0 1 2.44-1.46Zm22.28 2a1.83 1.83 0 1 0 1.83 1.82 1.82 1.82 0 0 0-1.83-1.82Zm-5.81-6.89-.11 6.58h2.81a3.77 3.77 0 0 1 6.23 0h2.39v-4.28l-5-2.3Zm.09-5-.06 3.25h5.48l-.55-3.25ZM21.06 21.06a1.83 1.83 0 1 0-1.83-1.83 1.83 1.83 0 0 0 1.83 1.79ZM25.13 20h-.6a3.57 3.57 0 0 1-7-.48l-4.07-.05V0h24v3.64h6.34l.27 1.85.62 3.52 5.74 2.65v5.4h.91v2.9h-4.67a3.57 3.57 0 0 1-7 0ZM2.55 12.96h8.13a.87.87 0 0 1 0 1.74H2.55a.87.87 0 0 1 0-1.74M.87 8.47H9a.88.88 0 0 1 0 1.75H.87a.88.88 0 0 1 0-1.75m9-2.63H1.74a.87.87 0 0 1 0-1.74h8.13a.87.87 0 0 1 .84.9.86.86 0 0 1-.84.84" fill="#ff5c4e" fill-rule="evenodd"/></svg>
+          </span>
+          <span class="shipping-text">{{ shipping_time }}</span>
+        </div>
+        {% endcomment %}
+
+        {%- comment -%}
+        Live region for announcing updated price and availability to screen readers
+        {%- endcomment -%}
+        <p class="visually-hidden" data-product-status
+           aria-live="polite"
+           role="status"
+           ></p>
+
+        {% include 'payment-plans' %}
+
+
+        <div class="flex links-below-add-button small--flex-columns flex--wrap">
+
+          <a class="mfp-ajax" data-div="question--whats-included" href="/products/{{ product.handle }}?view=popups">Details - What's Included</a>
+          <a class="mfp-ajax" data-div="question--description" href="/products/{{ product.handle }}?view=popups">Description</a>
+          {% unless no_lock %}
+          {% if show_for_doors or show_for_locks %}
+          <a class="mfp-ajax" data-div="question--lock-compatibility" href="/products/{{ product.handle }}?view=popups">Lock Compatibility</a>
+          {% endif %}
+          {% endunless %}
+          {% if show_for_fences %}
+          <a class="mfp-inline" href="#fence-hardware-popup">What Hardware You Need</a>
+          {% endif %}
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="pdp-section-2">
+    <div class="flex small--flex-columns flex--align-center flex--justify-center">
+      <div class="small--one-whole medium-up--one-half">
+        <div class="product-single__shipping-wrapper">
+          <h4>Shipping Calculator</h4>
+          {% include 'db-shipping-calculator' %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% unless product == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+  
+  <script type="text/javascript">
+    var currentVariant = {{ product.selected_or_first_available_variant | json  }};
+    var currentProduct = {{ product | json }};
+    var specialVersion = {{ all_products[special_version] | json }};
+    var arrivalDates = [];
+    var arrivalDatesByTitles = [];
+    var hasArrvialDate = {{ hasArrvialDate }};
+  {% for variant in product.variants %}
+    {% assign idx = forloop.index0 %}
+    currentProduct.variants[{{ idx }}].ships_in = {{ shipping_time | json }};
+    {% if variant.metafields.pinkys.ships_in != blank %}
+    currentProduct.variants[{{ idx }}].ships_in = {{ variant.metafields.pinkys.ships_in | json }};
+    {% endif %}
+    
+    {% if variant.id == product.selected_or_first_available_variant.id %}
+      currentVariant.ships_in = {{ shipping_time | json }};
+      {% if variant.metafields.pinkys.ships_in != blank %}
+      currentVariant.ships_in = {{ variant.metafields.pinkys.ships_in | json }};
+      {% endif %}
+    {% endif %}
+    arrivalDates[{{ variant.id }}] = null;
+    {% if variant.metafields.custom.arrival_date != blank %}
+      arrivalDates[{{ variant.id }}] = '{{ variant.metafields.custom.arrival_date | date: "%m-%d-%Y" }}';
+      arrivalDatesByTitles[{{ variant.title | json }}] = '{{ variant.metafields.custom.arrival_date | date: "%m-%d-%Y" }}';
+    {% endif %}
+  {% endfor %}
+  </script>
+
+  {% endunless %}
+
+  <script type="text/javascript">
+    var inv_qty = {};
+    {% for variant in product.variants %}
+    inv_qty[{{- variant.id -}}] = {{ variant.inventory_quantity | default: 0 }};
+    {% endfor %}
+ 
+    theme.strings = {
+      shippingCalcSubmitButton: {{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' | json }},
+      shippingCalcSubmitButtonDisabled: {{ settings.shipping_calculator_submit_button_label_disabled | default: 'Calculating...' | json }},
+      {% if customer %}shippingCalcCustomerIsLoggedIn: true,{% endif %}
+      shippingCalcMoneyFormat: {{ shop.money_with_currency_format | json }}
+    }
+
+    var shippingTime = {{ shipping_time | strip | json }};
+    var shippingTimeSpecial = {{ special_order_value | json }};
+    var shippingTimeElements = document.querySelectorAll('.shipping-text');
+    shippingTimeElements.forEach(function(el) {
+      el.textContent = shippingTime;
+    });
+    var specialOrderLink = document.querySelector('.special-order--link');
+//     specialOrderLink.setAttribute('data-tooltip', shippingTime);
+    
+  </script>
+  
+  
+
+  {% capture fill_text %}<p>Narwhal vinyl vaporware, cray glossier twee tacos franzen taxidermy mustache 90's pug neutra. Lumbersexual godard kale chips roof party freegan, af artisan enamel pin dreamcatcher. Yuccie microdosing palo santo, artisan pug poutine letterpress disrupt cred migas health goth hot chicken. Intelligentsia kombucha hell of taiyaki bespoke, tilde gochujang celiac fingerstache. Affogato VHS retro austin flannel heirloom.</p>{% endcapture %}
+
+  {% if product.title contains 'Clearance' %}
+  <style>
+    .select-type {
+      display: none;
+    }
+  </style>
+  {% endif %}
+
+  {% if product.type == 'Sidelights' and product.title contains 'Special Order' %}
+  <style>
+    .selector-wrapper[data-reorder-index="3"] {
+      display: none;
+    }
+  </style>
+  {% endif %}
+
+
+  {% if customer and customer.tags contains 'wholesale' and compare_at_price > price %}
+  <style>
+    .product-single__meta .price__regular {
+      /*     display: none !important; */
+    } 
+  </style>
+  {% endif %}
+
+  {% if force_jamb or use_jamb_2_4 %}  
+  <style>
+    .selector-wrapper--jamb {
+      display: none;
+    }
+  </style>
+  {% endif %}
+
+ {% unless product.available %}
+   <style>
+   .product-form {
+     position: relative;
+    }
+  .product-form:after {
+              content:'';
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              cursor: default;
+              z-index: 2;
+              background: rgba(255,255,255,0.5);
+  }
+     </style>
+{% endunless %}
+  
+  <script>
+    const productJSON = {{ product | json }};
+
+  </script>
+
+<style>
+  .learn-more--link[data-div="question--deadbolt-shape"] {
+    display: none;
+  }
+  {% if product.type == 'Windows' %}
+  .mfp-ajax[data-div="question--description"],
+  .mfp-ajax[data-div="question--whats-included"]{
+    display: none;
+  }
+  {% endif %}
+
+  {% if product.tags contains 'Details: Hidden' %}
+  .mfp-ajax[data-div="question--whats-included"] {
+    display: none;
+  }
+  {% endif %}
+  
+  
+</style>
+  {% schema %}
+  {
+  "name": {
+  "de": "Produktseiten",
+  "en": "Product pages",
+  "es": "Páginas de productos",
+  "fr": "Pages de produits",
+  "it": "Pagine di prodotto",
+  "ja": "商品ページ",
+  "pt-BR": "Páginas de produtos"
+  },
+  "settings": [
+  {
+  "type": "select",
+  "id": "image_size",
+  "label": {
+  "de": "Foto-Größe",
+  "en": "Image size",
+  "es": "Tamaño de la imagen",
+  "fr": "Taille des images",
+  "it": "Dimensione immagine",
+  "ja": "画像のサイズ",
+  "pt-BR": "Tamanho da imagem"
+  },
+  "options": [
+  {
+  "value": "small",
+  "label": {
+  "de": "Klein",
+  "en": "Small",
+  "es": "Pequeña",
+  "fr": "Petite",
+  "it": "Piccolo",
+  "ja": "小",
+  "pt-BR": "Pequeno"
+  }
+  },
+  {
+  "value": "medium",
+  "label": {
+  "de": "Mittel",
+  "en": "Medium",
+  "es": "Mediana",
+  "fr": "Moyenne",
+  "it": "Medio",
+  "ja": "中",
+  "pt-BR": "Médio"
+  }
+  },
+  {
+  "value": "large",
+  "label": {
+  "de": "Groß",
+  "en": "Large",
+  "es": "Grande",
+  "fr": "Grande",
+  "it": "Grande",
+  "ja": "大",
+  "pt-BR": "Grande"
+  }
+  },
+  {
+  "value": "full",
+  "label": {
+  "de": "Volle Breite",
+  "en": "Full-width",
+  "es": "Ancho completo",
+  "fr": "Pleine largeur",
+  "it": "Intera larghezza",
+  "ja": "全幅",
+  "pt-BR": "Largura completa"
+  }
+  }
+  ],
+  "default": "medium"
+  },
+  {
+  "type": "checkbox",
+  "id": "show_quantity_selector",
+  "label": {
+  "de": "Quantitäts-Auswahl anzeigen",
+  "en": "Show quantity selector",
+  "es": "Mostrar selector de cantidad",
+  "fr": "Afficher le sélecteur de quantité",
+  "it": "Mostra selettore quantità",
+  "ja": "数量セレクターを表示する",
+  "pt-BR": "Exibir seletor de quantidade"
+  },
+  "default": false
+  },
+  {
+  "type": "checkbox",
+  "id": "show_variant_labels",
+  "label": {
+  "de": "Varianten-Etiketten anzeigen",
+  "en": "Show variant labels",
+  "es": "Mostrar etiquetas de variantes",
+  "fr": "Afficher le nom des variantes",
+  "it": "Mostra etichette varianti",
+  "ja": "バリエーションのラベルを表示する",
+  "pt-BR": "Exibir etiquetas de variantes"
+  },
+  "default": true
+  },
+  {
+  "type": "checkbox",
+  "id": "show_vendor",
+  "label": {
+  "de": "Lieferanten anzeigen",
+  "en": "Show vendor",
+  "es": "Mostrar proveedor",
+  "fr": "Afficher les vendeurs",
+  "it": "Mostra fornitore",
+  "ja": "販売元を表示する",
+  "pt-BR": "Exibir fornecedor"
+  },
+  "default": false
+  },
+  {
+  "type": "checkbox",
+  "id": "enable_zoom",
+  "label": {
+  "de": "Foto-Zoom zulassen",
+  "en": "Enable image zoom",
+  "es": "Habilitar zoom de imagen",
+  "fr": "Activer le zoom d'image",
+  "it": "Abilita lo zoom dell'immagine",
+  "ja": "画像ズームを有効にする",
+  "pt-BR": "Ativar o zoom da imagem"
+  },
+  "default": true
+  },
+  {
+  "type": "checkbox",
+  "id": "enable_payment_button",
+  "label": {
+  "de": "Dynamischen Checkout Button anzeigen",
+  "en": "Show dynamic checkout button",
+  "es": "Mostrar botón de pago dinámico",
+  "fr": "Afficher le bouton de passage à la caisse dynamique",
+  "it": "Mostra pulsante di check-out dinamico",
+  "ja": "ダイナミックチェックアウトボタンを表示する",
+  "pt-BR": "Exibir botão dinâmico de finalização da compra"
+  },
+  "info": {
+  "de": "Jeder Kunde sieht seine bevorzugte Zahlungsmethode aus den in Ihrem Shop verfügbaren Zahlungsmethoden wie PayPal oder Apple Pay. [Mehr Infos](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+  "en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+  "es": "Cada cliente verá su forma de pago preferida entre las disponibles en tu tienda, como PayPal o Apple Pay. [Más información](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+  "fr": "Chaque client verra son moyen de paiement préféré parmi ceux qui sont proposés sur votre boutique, tels que PayPal ou Apple Pay. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+  "it": "Ogni cliente vedrà il suo metodo di pagamento preferito tra quelli disponibili nel tuo negozio, come PayPal o Apple Pay. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+  "ja": "PayPalやApple Payなど、ストアで利用可能な希望の決済方法がお客様に表示されます。[もっと詳しく] (https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+  "pt-BR": "Cada cliente verá seu método de pagamento preferido dentre os disponíveis na loja, como PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+  },
+  "default": true
+  },
+  {
+  "type": "checkbox",
+  "id": "show_share_buttons",
+  "label": {
+  "de": "Buttons für Social Media anzeigen",
+  "en": "Show social sharing buttons",
+  "es": "Mostrar botones para compartir en redes sociales",
+  "fr": "Affichez les boutons de partage sur les médias sociaux",
+  "it": "Mostra i pulsanti per la condivisione sui social",
+  "ja": "ソーシャル共有ボタンを表示する",
+  "pt-BR": "Exibir botões de compartilhamento em redes sociais"
+  },
+  "default": true
+  },
+  {
+  "type":"select",
+  "id":"variant_style",
+  "label":"Variant Style",
+  "options" : [
+  {
+  "value":"dropdown",
+  "label":"Dropdown"
+  },
+  {
+  "value":"swatch",
+  "label":"Swatch"
+  }
+  ],
+  "default":"swatch"
+  }
+  ]
+  }
+  {% endschema %}

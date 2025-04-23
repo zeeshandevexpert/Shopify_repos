@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "16589555084b846578": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default"
+      }
+    },
+    "1654076973e7d651c6": {
+      "type": "schedule-template",
+      "settings": {
+        "title": "get in touch",
+        "description": "reach out to our team to learn more about how to work with cycora®",
+        "form_title": "we'll be in touch shortly upon submission of this form"
+      }
+    }
+  },
+  "order": [
+    "16589555084b846578",
+    "1654076973e7d651c6"
+  ]
+}

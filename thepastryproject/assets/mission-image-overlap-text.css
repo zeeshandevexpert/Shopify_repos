@@ -1,0 +1,38 @@
+.image-overlap__wrap {
+    --gap: 11px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: calc(4 * var(--gap));
+    column-gap: calc(4 * var(--gap));
+}
+
+@media screen and (min-width: 991px) {
+    .image-overlap__wrap {
+        grid-template-columns: 400px calc(100% - 400px);
+    }
+}
+
+.image-overlap__wrap .image__wrap {
+    position: relative;
+}
+
+.image-overlap__wrap .overlap_image {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+}
+
+.image-overlap__wrap .overlap_image img {
+    display: block;
+    width: 100%;
+}
+
+.image-overlap__wrap .main__image img {
+    display: block;
+    width: 100%;
+}

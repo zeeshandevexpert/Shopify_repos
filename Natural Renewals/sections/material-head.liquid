@@ -1,0 +1,51 @@
+<section class="material-detail-top-section">
+    <div class="container-style container-large">
+        <div class="material-detail-top-row">
+            <div class="material-detail-top-left">
+                <h1>{{ article.title }}</h1>
+            </div>
+            <div class="material-detail-top-right">
+                <h2>{{ article.excerpt | strip_html }}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="material-detail-about-section">
+    <div class="container-style container-large">
+        <div class="material-detail-about-middle">
+            <div class="material-detail-about-middle-left">
+                {% if article.image %}
+                    <span>microscopic view</span>
+                    <div class="image-cover">
+                        <img src="{{ article.image | img_url: '10x' }}"
+                             class="lazyload"
+                             data-src="{{ article.image | img_url: '800x' }}"
+                             data-widths="[800]"
+                             data-sizes="auto"
+                             tabindex="-1"
+                        />
+                    </div>
+                {% endif %}
+            </div>
+            <div class="material-detail-about-middle-right">
+                <span>about the material</span>
+                {{ article.content }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Material Details - Head",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "name": "Material Details - Head"
+    }
+  ]
+}
+{% endschema %}

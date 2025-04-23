@@ -1,0 +1,37 @@
+<section class="product-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+<div class="wrap-product-block">
+        <h2 class="main-heading">{{ section.settings.heading }}</h2>
+    <div class="image">
+        <img src="{{ section.settings.image | img_url: 'master' }}" alt="">
+    </div>
+</div>
+</section> 
+
+{% schema %}
+    {
+        "name": "Product Intro Block",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Product Image"
+            }
+           
+            ],
+            "presets": [
+                {
+                    "name": "Product Intro Block"
+                }
+            ]
+    }
+    {% endschema %}

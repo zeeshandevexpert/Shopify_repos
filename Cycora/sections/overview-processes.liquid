@@ -1,0 +1,162 @@
+<div class="wrapper-processess-section{% if section.settings.mode == 'dark-mode'  %} dark-mode{% elsif section.settings.mode == 'light-mode' %} light-mode{% endif %}">
+  <div class="overview-processes-top" id="section_process">
+    
+  <div class="top-content-block">
+      <div class="heading"> {{ section.settings.title }}</div>
+      <div class="text">{{ section.settings.description }}</div>
+  </div>
+
+  {% comment %} <span>{{ section.settings.subtitle }}</span> {% endcomment %}
+  {% comment %} <h2>{{ section.settings.title }}</h2>
+  {{ section.settings.description }} {% endcomment %}
+  <div class="overview-processes-top-link">
+      <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+  </div>
+</div>
+<div class="swiper slider-processes">
+  <div class="swiper-wrapper">
+      {% assign counter = 1 %}
+      {% for block in section.blocks %}
+          <div class="swiper-slide">
+              <div class="swiper-slider-content">
+                  <div class="swiper-slider-col-left">
+                      <div class="standard-cover">
+                          {% include "media-block", block_type:1 %}
+                      </div>
+                  </div>
+                  <div class="swiper-slider-col-right">
+                      {% comment %} <span>{{ counter }}</span> {% endcomment %}
+                      <div class="slide-content">{{ block.settings.title }}</div>
+                      {{ block.settings.description }}
+                  </div>
+              </div>
+          </div>
+          {% assign counter = counter | plus: 1 %}
+      {% endfor %}
+  </div>
+  <div class="swiper-scrollbar"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+</div>
+
+
+
+
+{% schema %}
+{
+  "name": "Overview - Processes",
+  "tag": "section",
+  "class": "overview-processes-section",
+  "settings": [
+    {
+          "type": "select",
+          "id": "mode",
+          "label": "Layout Color",
+          "options": [
+            {
+              "value": "dark-mode",
+              "label": "Dark Mode"
+            },
+            {
+              "value": "light-mode",
+              "label": "Light Mode"
+            }
+          ],
+          "default": "dark-mode"
+        },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sub Title"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings":[
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "header",
+          "content": "Media Block"
+        },
+        {
+          "type": "select",
+          "id": "media_type",
+          "label": "Media Type",
+          "options": [
+            {
+              "value": "image",
+              "label": "image"
+            },
+            {
+              "value": "vimeo_youtube_video",
+              "label": "YouTube or Vimeo Video"
+            },
+            {
+              "value": "video_file",
+              "label": "HTML5 Video"
+            }
+          ],
+          "default": "image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "video_url",
+          "id": "vimeo_youtube_video",
+          "label": "YouTube or Vimeo Video",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        },
+        {
+          "type": "text",
+          "id": "video_file",
+          "label": "HTML5 Video File URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Overview - Processes"
+    }
+  ]
+}
+{% endschema %}

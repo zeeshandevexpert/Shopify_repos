@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "1660755853d0fb13f3": {
+      "type": "text--rich-text",
+      "disabled": true,
+      "settings": {
+        "width": "full-width",
+        "subheading": "",
+        "title": "stockists",
+        "text": "<p>Where in the world you can find our dough!</p>",
+        "button_link": "",
+        "button_label": ""
+      }
+    },
+    "main": {
+      "type": "template--page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "6c58e2bb-863d-47f8-8710-af2ae55b714d": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "template--14987839668339__6c58e2bb-863d-47f8-8710-af2ae55b714d-1667508929274f2b14-0": {
+          "type": "html",
+          "settings": {
+            "code": "<style>\nspan {\n    display: inline-block; /* change the display type           */\n    margin: 0px 30px;       \n\n}\n.marquee {\n  background-color: #f7eee7;\n  color: #ff8ac4;\n}\n.marquee img {\n  justify-content: space-between;\n\n</style>\n\n<div class=\"marquee flex\">\n    \n    <div class=\"marquee_list flex\" style=\"animation-duration: 25s\">\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n</div>\n\n    <div class=\"marquee_list flex\" style=\"animation-duration: 25s\">\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n</div>\n\n    <div class=\"marquee_list flex\" style=\"animation-duration: 25s\">\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n</div>\n\n    <div class=\"marquee_list flex\" style=\"animation-duration: 25s\">\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-mag.svg?v=1660245486\" height=\"25px\">\n        </span>\n\n        <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-lav.svg?v=1660245486\" height=\"25px\">\n        </span>\n</div>\n\n</div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "template--14987839668339__6c58e2bb-863d-47f8-8710-af2ae55b714d-1667508929274f2b14-0"
+      ],
+      "settings": {
+      }
+    },
+    "7f17e84d-4471-4dc7-b20e-3d5c592a0511": {
+      "type": "image--logo-list",
+      "blocks": {
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-0": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify://shop_images/PCC_COMMUNITY_MARKETS_copy.png",
+            "link": ""
+          }
+        },
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-1": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-2": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "link": ""
+          }
+        },
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-3": {
+          "type": "logo_image",
+          "disabled": true,
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-0",
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-1",
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-2",
+        "template--14987839668339__7f17e84d-4471-4dc7-b20e-3d5c592a0511-166750856291f0099a-3"
+      ],
+      "settings": {
+        "width": 190,
+        "subheading": "where in the world you can find our dough",
+        "title": "our stockists"
+      }
+    },
+    "165999228713fe1293": {
+      "type": "image--image",
+      "settings": {
+        "image": "shopify://shop_images/PastryProject-PerfectCookie-487.jpg",
+        "parallax": true,
+        "hero_size": "medium",
+        "text-over-image-width": "full-width"
+      }
+    }
+  },
+  "order": [
+    "1660755853d0fb13f3",
+    "main",
+    "6c58e2bb-863d-47f8-8710-af2ae55b714d",
+    "7f17e84d-4471-4dc7-b20e-3d5c592a0511",
+    "165999228713fe1293"
+  ]
+}

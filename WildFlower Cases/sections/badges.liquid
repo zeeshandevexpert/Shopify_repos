@@ -1,0 +1,122 @@
+<style>
+    .badge {
+        font-size: {{ section.settings.font_size | append: 'px' }};
+        display: inline-block;
+        padding: 0.25em 0.5em;
+        border-radius: {{ section.settings.border_radius | append: 'px' }};
+        {% if section.settings.uppercase %}text-transform: uppercase;{% endif %}
+    }
+    {%- for block in section.blocks -%}
+        {% if block.type == 'badge' %}
+        .badge--{{- block.settings.tag | handle -}} {
+            background-color: {{ block.settings.color_bg }};
+            color: {{ block.settings.color_text }};
+            border: 1px solid {{ block.settings.color_text | color_modify: 'alpha', 0.25 }};
+        }
+        {% endif %}
+        {% if block.type == 'final_sale' %}
+        .badge--final-sale {
+            background-color: {{ block.settings.color_bg }};
+            color: {{ block.settings.color_text }};
+            border: 1px solid {{ block.settings.color_text | color_modify: 'alpha', 0.25 }};
+        }
+        {% endif %}
+        {% if block.type == 'low_stock' %}
+            .badge--low-stock {
+                background-color: {{ block.settings.color_bg }};
+                color: {{ block.settings.color_text }};
+                border: 1px solid {{ block.settings.color_text | color_modify: 'alpha', 0.25 }};
+            }
+            {% endif %}
+    {%- endfor -%}
+</style>
+
+{% schema %}
+{
+  "name": "Badges",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "number",
+      "id": "font_size",
+      "label": "Font size",
+      "info": "The font size of the badges (in pixels)",
+      "default": 12
+    },
+    {
+      "type": "number",
+      "id": "border_radius",
+      "label": "Font size",
+      "info": "The font size of the badges (in pixels)",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "uppercase",
+      "label": "Uppercase",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Product tag",
+          "info": "The product tag to display, use the format badge:Text to show"
+        },
+        {
+          "type": "color",
+          "id": "color_bg",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Text color"
+        }
+      ]
+    },
+    {
+      "type": "final_sale",
+      "name": "Final sale",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color_bg",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Text color"
+        }
+      ]
+    },
+    {
+      "type": "low_stock",
+      "name": "Low stock",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color_bg",
+          "label": "Background color"
+        },
+        {
+          "type": "color",
+          "id": "color_text",
+          "label": "Text color"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Badges"
+    }
+  ]
+}
+{% endschema %}

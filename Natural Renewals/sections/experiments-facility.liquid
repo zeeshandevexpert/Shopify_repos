@@ -1,0 +1,31 @@
+<section class="experiments-facility-section" style="background-image:url('{{ section.settings.image | img_url: 'master' }}');">
+    <h2>{{ section.settings.title }}</h2>
+    <h2>{{ section.settings.title2 }}</h2>
+</section>
+{% schema %}
+{
+  "name": "Experiments - Facility",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "title2",
+      "label": "Title 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experiments - Facility"
+    }
+  ]
+}
+{% endschema %}

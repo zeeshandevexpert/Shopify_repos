@@ -1,0 +1,128 @@
+.login-page{
+    margin-top: 100px;
+    padding: 0 40px;
+        width: 92%;
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1200px;
+        .main-heading{
+            text-align: center;
+            font-family: $sportingbold;
+            font-size: 46px;
+            @media (max-width:576px) {
+                font-size: 30px;
+            }
+        }
+        .sub-description{
+            font-family: $sportingregular;
+            font-size: 18px;
+            text-align: center;
+        }
+        .login-form{
+            display: flex;
+            margin-top: 50px;
+            gap: 50px;
+            @media (max-width:991px) {
+                flex-wrap: wrap;
+            }
+            .column-block{
+                flex: 50%;
+                padding: 30px;
+                border: 1px solid #92C020;
+                .row{
+                    .heading{
+                        font-family: $sportingbold;
+                        font-size: 22px;
+                        margin-bottom: 15px;
+                        @media (max-width:576px) {
+                            font-size: 20px;
+                        }
+                    }
+                    .content{
+                        font-family: $sportingregular;
+                        font-size: 16px;
+                    }
+                }
+                .login-block{
+                    .tt-title{
+                        font-size: 14px;
+                        font-family: $sportingregular;
+                       
+
+                        h2{
+                            font-size: 22px;
+                            font-family: $sportingbold;
+                        }
+                    }
+                    #customer_login{
+                        margin-top: 20px;
+                        .form-group{
+                            margin-bottom: 20px;
+                            label{
+                                font-size: 16px;
+                                color: #191919;
+                                padding-bottom: 4px;
+                                letter-spacing: 0.02em;
+                                font-weight: 500;
+                                font-family: $sportingbold;
+                                sup{
+                                    top: 0em;
+                                    color: red;
+                                }
+                            }
+                            .tt-required{
+                                display: inline-block;
+                                float: right;
+                                color: #191919;
+                                padding-left: 5px;
+                            }
+                            .form-control{
+                                background: #f7f8fa;
+                                font-size: 16px;
+                                border: 1px solid #f7f8fa;
+                                padding: 11px 12px 10px 15px;
+                                box-shadow: none;
+                                outline: none;
+                                color: #191919;
+                                border-radius: 0;
+                                transition: all 0.2s linear;
+                                width: 100%;
+                                margin-top: 5px;
+                            }
+                        }
+                        .button-wrapper{
+                            display: flex;
+                            justify-content: space-between;
+                            .submit-btn{
+                                text-align: center;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 10px 30px;
+                                border: 2px solid #92C020;
+                                font-size: 18px;
+                                font-family: Sporting Grotesque Regular;
+                                color: #e3e3dd;
+                                background: #92c020;
+                                transition: all .3s ease;
+                                cursor: pointer;
+                                &:hover{
+                                    background: transparent;
+                                    color: #000;
+                                }
+                            }
+                            .recover-pass-link{
+                                display: flex;
+                                align-items: flex-end;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+}
+
+

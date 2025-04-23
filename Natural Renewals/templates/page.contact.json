@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "16552150111ff55d09": {
+      "type": "contact-template",
+      "settings": {
+        "sliders_title": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16552150111ff55d09"
+  ]
+}

@@ -1,0 +1,33 @@
+
+	{{ 'bss-b2b-state.js' | asset_url | script_tag }}
+	<script id="bss-b2b-wholesaler-form">
+    if (typeof BSS_B2B == 'undefined') {
+      var BSS_B2B = {};
+    }
+    BSS_B2B.formDataRender = [{"type":"text","required":false,"label":"Company","className":"form-control company-field","name":"company-field","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Accounting Phone","className":"form-control phone-field","name":"phone-field","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Accounting Name","className":"form-control","name":"text-1677499737594-0","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Accounting Email","className":"form-control","name":"text-1677499800816-0","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Accounting Phone","className":"form-control","name":"text-1677499929864-0","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Shipping Address","className":"form-control address-field","name":"address-field","access":false,"subtype":"text","placement":"bottom"},{"type":"text","required":false,"label":"Billing Address","className":"form-control","name":"text-1677500018846-0","access":false,"subtype":"text","placement":"bottom"},{"type":"select","required":false,"label":"Product Selling Location","className":"form-control","name":"select-1677500235607-0","access":false,"values":[{"label":"Store/Pro Shop","value":"store-proshop","selected":true},{"label":"Website","value":"website","selected":false},{"label":"Other","value":"other","selected":false}],"placement":"bottom"},{"type":"textarea","required":false,"label":"Please enter website or explain \"Other option below","className":"form-control","name":"textarea-1677500336686-0","access":false,"subtype":"textarea","placement":"bottom"}];
+    BSS_B2B.formId = 11826;
+    BSS_B2B.reCAPCHA = 0;
+    BSS_B2B.CAPCHA_SITE_KEY = "6LcYPEgbAAAAAKEQdimI1PPA4vuOJHxNb5p6eLUo";
+    BSS_B2B.status = 1;
+    BSS_B2B.created_account = 0;
+    BSS_B2B.redirect_url = "/pages/thank-you-for-registering";
+    BSS_B2B.taxExempt = 0;
+    BSS_B2B.formPrivacyPolicyStatus = 0;
+    BSS_B2B.formPrivacyPolicyContent = `<p>By clicking Create, I confirm that I have read and accepted the <a href="/">privacy policy</a></p>`;
+    </script>
+	<style>null</style>
+	
+    {% assign bss-b2b-include-password = true %}
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div>
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+    {% section 'bss-b2b-wholesaler-form-11826' %}
+  </div>
+</div>

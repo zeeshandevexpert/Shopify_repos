@@ -1,0 +1,34 @@
+.seo-tabs__headings {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.seo-tabs__heading {
+    font-size: 25px;
+    white-space: nowrap;
+    padding: 1rem;
+    transition: color .3s ease;
+    cursor: pointer;
+  background: none;
+  border: 0;
+  text-decoration: none;
+}
+.seo-tabs__heading:hover {
+    color: var(--pink);
+}
+
+.seo-tabs__heading[aria-expanded="true"] {
+    text-decoration: underline;
+}
+
+.seo-tabs__headings .seo-tabs__heading:first-of-type {
+    margin-left: 2rem;
+}
+.seo-tabs__heading + .seo-tabs__heading {
+    margin-left: 3rem;
+}
+
+
+.seo-tabs__tabs {
+    padding: 1.5rem 3rem;
+}

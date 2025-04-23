@@ -1,0 +1,15 @@
+{
+  "layout": "theme.zipifypages",
+  "sections": {
+    "content": {
+      "type": "index-content-zipifypages",
+      "custom_css": [
+        "@media (min-width: 769px) {.ntg-benefit-section .ntg-img-holder {width: 40%; z-index: -1; height: 100%; } .ntg-benefit-section .ntg-img-holder img {width: 100%; max-width: none; height: 100%; object-fit: cover; } .ntg-benefit-section {background: #d5cece; }}"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "content"
+  ]
+}

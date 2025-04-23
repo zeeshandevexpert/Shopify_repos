@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "search_section_BRCPdU": {
+      "type": "search-section",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "rich_text": "",
+        "products_only": true,
+        "padding": 0,
+        "color": "#000000",
+        "background": "",
+        "no_bottom_margin": true
+      }
+    },
+    "banner-header": {
+      "type": "banner-header",
+      "disabled": true,
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "Reclaimed Flooring Material.",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": 80,
+        "pagelist": "",
+        "page_sidebar_title": "Page sidebar title"
+      }
+    },
+    "featured_collection_all_YBTFfy": {
+      "type": "featured-collection-all",
+      "settings": {
+        "collection": "reclaimed",
+        "featured_product": "out-hout",
+        "show_all": false,
+        "show_more_text": "View all",
+        "carousel": false,
+        "grid": 4,
+        "products_shown": 30
+      }
+    },
+    "featured_collection_all_EYFzBN": {
+      "type": "featured-collection-all",
+      "settings": {
+        "collection": "french-oak",
+        "featured_product": "kdr-brown",
+        "show_all": false,
+        "show_more_text": "View all",
+        "carousel": false,
+        "grid": 4,
+        "products_shown": 4
+      }
+    },
+    "featured_collection_all_hrChzK": {
+      "type": "featured-collection-all",
+      "settings": {
+        "collection": "unfinished",
+        "featured_product": "old-growth-french-oak-herringbone",
+        "show_all": false,
+        "show_more_text": "View all",
+        "carousel": false,
+        "grid": 4,
+        "products_shown": 4
+      }
+    }
+  },
+  "order": [
+    "search_section_BRCPdU",
+    "banner-header",
+    "main",
+    "featured_collection_all_YBTFfy",
+    "featured_collection_all_EYFzBN",
+    "featured_collection_all_hrChzK"
+  ]
+}

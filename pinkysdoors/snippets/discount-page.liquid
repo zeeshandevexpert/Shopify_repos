@@ -1,0 +1,110 @@
+<div class="discount-page">
+  <div class="discount-hero" style="background-color: {{ settings.color_hero_bg }};">
+    <div class="discount-hero__image small--hide">
+      <img class="lazyload hs-lazyload hs-id-03b71ae8" data-src="{{ settings.image_hero_desktop | img_url: 'master' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    </div>
+    <div class="discount-hero__image medium-up--hide">
+      <img class="lazyload hs-lazyload hs-id-bb72dcc8" data-src="{{ settings.image_hero_mobile | img_url: 'master' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    </div>
+    <div class="discount-hero__text">
+      {% if settings.text_hero_heading %}
+      <h1 class="discount-hero__h1">{{ settings.text_hero_heading }}<br>Get <b>{{ settings.text_hero_percentage }}</b></h1>
+      {% endif %}
+      {% if settings.text_hero_paragraph %}
+      <div class="rte">{{ settings.text_hero_paragraph }}</div>
+      {% endif %}
+      {% if settings.text_hero_btn %}
+      <p>
+        <a href="#" onclick="displayVerification()" class="discount-hero__btn btn">{{ settings.text_hero_btn }}</a>
+      </p>
+      {% endif %}
+      {% if settings.text_hero_below_btn %}
+      <p>{{ settings.text_hero_below_btn }}</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="discount-2 text-center">
+    <div class="discount-2__inner">
+      {% if settings.text_section2_heading %}
+      <h2 class="h1">{{ settings.text_section2_heading }}</h2>
+      {% endif %}
+      {% if settings.text_section2_paragraph %}
+      <div class="rte">
+        {{ settings.text_section2_paragraph }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="discount-3" style="background-color: {{ settings.color_section3_bg }}">
+    <div class="flex">
+      <div class="one-half small--one-whole discount-3__text">
+        {% if settings.text_section3_heading %}
+        <h3 class="h1">{{ settings.text_section3_heading }}</h3>
+        {% endif %}
+        {% if settings.text_section3_paragraph %}
+        <div class="rte">{{ settings.text_section3_paragraph }}</div>
+        {% endif %}
+        {% if settings.text_section3_btn and settings.link_section3_btn %}
+        <a class="discount-3__btn btn" href="{{ settings.link_section3_btn }}">{{ settings.text_section3_btn }}</a>
+        {% endif %}
+      </div>
+      {% if settings.image_section3 %}
+      <div class="one-half small--one-whole discount-3__image">
+        <img class="lazyload hs-lazyload hs-id-2486217a" data-src="{{ settings.image_section3 | img_url: 'master' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+
+  <div class="discount-4 text-center ">
+    <div class="discount-4__inner">
+      <h4 class="h1">{{ settings.text_section4_heading }}</h4>
+      <div class="faqs faq-accordion">
+        {% for block in blocks %}
+        <div class="accordion-item">
+          <button class="accordion-heading"
+                  aria-expanded="false"
+                  aria-controls="accordion-{{ forloop.index }}"
+                  id="accordion-heading--{{ forloop.index }}">
+            {{ block.settings.title }}
+          </button>
+          <div id="accordion-{{ forloop.index }}" 
+               role="region"
+               class="accordion-content"
+               aria-labeled-by="accordion-heading--{{ forloop.index }}"
+               >
+            {{ block.settings.answer }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if settings.text_section4_paragraph %}
+      <div class="rte small">{{ settings.text_section4_paragraph }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style type='text/css'>
+  .discount-3 {
+    background-color: {{ settings.color_section3_bg }};
+    color: {{ settings.color_section3_text }};
+  }
+  .discount-3 p,
+  .discount-3 a{
+    color: {{ settings.color_section3_text }};
+  }
+  .discount-3 .btn {
+    background: transparent;
+    border-color: {{ settings.color_section3_text }};
+    color: {{ settings.color_section3_text }};
+  }
+</style>
+
+{% render 'hs-defer-css' with filename: 'discount-page.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}
+
+{{ settings.sheer_id_embed }}

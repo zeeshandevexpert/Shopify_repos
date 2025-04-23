@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "featured_content_yH8gKK": {
+      "type": "featured-content",
+      "settings": {
+        "title": "CORE Pickleball Camps",
+        "text": "",
+        "section_style": "",
+        "text_size": "large",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "button_block_bMRwxP": {
+      "type": "button-block",
+      "disabled": true,
+      "settings": {
+        "btn_text": "Back",
+        "btn_link": "shopify:\/\/pages\/camp"
+      }
+    },
+    "replo_custom_core_camps_colls_mYBe8x": {
+      "type": "replo-custom-core-camps-colls",
+      "settings": {
+        "replo_text_dcd1969f-3cbc-4d3b-b8a0-4d8f44b8c540": "<p>Why CORE Camps?<\/p>",
+        "replo_text_b53e5b14-bf03-415e-b807-7e9c74b6bc33": "<p>Browse By State<\/p>",
+        "replo_text_f4c36b5d-9d99-42ed-94b2-f18e0207769d": "<p>BY LEVEL<\/p>",
+        "replo_text_a1b51c5c-5b4e-4cf0-be2c-16d86738578d": "<p>BY STATE<\/p>",
+        "replo_url_4845cb76-a306-4a39-87ce-d852c635a20d": "",
+        "replo_text_d07787d7-f5bf-4a6e-a11c-a124191a4792": "<p>WHY CORE&nbsp;PICKLEBALL ?<\/p>",
+        "replo_text_77ba195d-4022-4636-9e2f-28d4c14e2225": "<p>BY LEVEL<\/p>",
+        "replo_text_cec5f2f1-4279-43f0-abef-d12cd6e36b37": "<p>BY STATE<\/p>",
+        "replo_url_f5044002-da8d-4630-a412-5bb751f014f6": "",
+        "replo_text_5029a71d-7a11-4c83-a447-5feaf300cf74": "<p>WHY CORE&nbsp;PICKLEBALL ?<\/p>"
+      }
+    },
+    "collection-section": {
+      "type": "collection-template",
+      "settings": {
+        "collection_tags_enable": false,
+        "collection_sort_enable": false,
+        "show_label": false,
+        "show_collection_title": false,
+        "tag_selector": "select",
+        "rows": "6",
+        "desktop_grid": "3",
+        "mobile_grid": "2"
+      }
+    },
+    "custom_liquid_8MzJHp": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% comment %} \nCSS to set the contact form across from the contact info\n{% endcomment %}\n\n<style>\n@media screen and (min-width: 768px) {\n\ndiv.box {\npadding-top: 0px !important;\n}\n\nmain > .wrapper {\ndisplay: flex;\nflex-direction: row;\nflex-wrap: wrap;\n}\n\nmain .shopify-section.section, .shopify-section {\nwidth: 100%;\n}\n\n#shopify-section-template--18625049264346__replo_custom_core_camps_colls_mYBe8x {\n width:25%;\n display:block;\n}\n\n#shopify-section-template--18625049264346__collection-section {\n width:75%;\n}\n\n}\n<\/style>",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_CaYAaa": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "{% if collection.all_tags.size > 0 %}\n{% assign sorted_tags = collection.all_tags | sort %}\n  <ul class=\"tag-filters\">\n    {% for tag in collection.all_tags %}\n      {% if tag contains \"lvl\" %}\n\n        {% assign tag_short_name = tag| split: '_' | last %}\n\n        {% assign add_html_string = \"\" %}\n        {% assign add_html_string = tag | link_to_add_tag: tag %}\n\n        {% assign remove_html_string = \"\" %}\n        {% assign remove_html_string = tag | link_to_remove_tag: tag %}\n\n\n        {% if current_tags contains tag %}\n\n          <li class=\"tag-filters__item active\">\n\n          {% assign href_start = remove_html_string | split: 'href=\"' %}\n          {% assign href_end = href_start[1] | split: '\"' %}\n          {% assign url_content = href_end[0] %}\n\n            <a href=\"{{ url_content }}\">\n              <span style=\"font-style: italic;\">Remove Tag:<\/span> {{tag_short_name}}\n            <\/a>\n          <\/li>\n        {% else %}\n          {% assign href_start = add_html_string | split: 'href=\"' %}\n          {% assign href_end = href_start[1] | split: '\"' %}\n          {% assign url_content = href_end[0] %}\n          <li>\n            <a href=\"{{ url_content }}\">\n              {{tag_short_name}}\n            <\/a>\n          <\/li>\n        {% endif %}\n      {% endif %}\n    {% endfor %}\n  <\/ul>\n{% endif %}",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "featured_content_yH8gKK",
+    "button_block_bMRwxP",
+    "replo_custom_core_camps_colls_mYBe8x",
+    "collection-section",
+    "custom_liquid_8MzJHp",
+    "custom_liquid_CaYAaa"
+  ]
+}

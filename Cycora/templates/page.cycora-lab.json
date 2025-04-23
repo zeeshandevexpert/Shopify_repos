@@ -1,0 +1,122 @@
+{
+  "sections": {
+    "header_skin_BBmzWq": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "default",
+        "sticky_header": false
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "video_banner_KQjtpR": {
+      "type": "video-banner",
+      "settings": {
+        "text_color": "#dbedf5",
+        "title": "introducing:",
+        "icon": "shopify:\/\/shop_images\/cycora-lab-blue.png",
+        "text": "",
+        "description": "",
+        "media_type": "video_file",
+        "vimeo_youtube_video": "",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/afe0875f21ff4a899e15caf77106b62e.mp4"
+      }
+    },
+    "two_column_block_yjUWTG": {
+      "type": "two-column-block",
+      "settings": {
+        "text_color": "#dbedf5",
+        "sub_title": "experiment_001",
+        "title": "twill jacket",
+        "description": "<p>cycora.lab merges innovation, nature, and materials into one. made through the process of molecular regeneration, the cycora.lab experiment_001 works in harmony with circular ecosystems<\/p>",
+        "button_title": "shop now",
+        "button_link": "shopify:\/\/products\/twill-jacket",
+        "image": "shopify:\/\/shop_images\/cycora-lab-about.jpg"
+      }
+    },
+    "one_line_block_4n6xMY": {
+      "type": "one-line-block",
+      "settings": {
+        "button_title": "explore the story",
+        "button_link": "shopify:\/\/blogs\/zine\/experiment_001-twill-jacket"
+      }
+    },
+    "image_carousel_section_NYxgNp": {
+      "type": "image-carousel-section",
+      "blocks": {
+        "slide_fmm4Kc": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00_cycora.lab_FINAL2.jpg",
+            "mob_image": "shopify:\/\/shop_images\/cropped-lookbook-03.jpg"
+          }
+        },
+        "slide_hCHqFV": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00_cycora.lab_FINAL3.jpg",
+            "mob_image": "shopify:\/\/shop_images\/cropped-lookbook-02.jpg"
+          }
+        },
+        "slide_wRcxaW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00_cycora.lab_FINAL4.jpg",
+            "mob_image": "shopify:\/\/shop_images\/cropped-lookbook-04.jpg"
+          }
+        },
+        "slide_HqcEeg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00_cycora.lab_FINAL5.jpg",
+            "mob_image": "shopify:\/\/shop_images\/cropped-lookbook-06.jpg"
+          }
+        },
+        "slide_Ki8pKH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00_cycora.lab_FINAL6.jpg",
+            "mob_image": "shopify:\/\/shop_images\/cropped-lookbook-08.jpg"
+          }
+        },
+        "slide_eiVaLE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/00_cycora.lab_FINAL7.jpg",
+            "mob_image": "shopify:\/\/shop_images\/cropped-lookbook-09.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_fmm4Kc",
+        "slide_hCHqFV",
+        "slide_wRcxaW",
+        "slide_HqcEeg",
+        "slide_Ki8pKH",
+        "slide_eiVaLE"
+      ],
+      "settings": {
+      }
+    },
+    "newsletter_section_hMP8gn": {
+      "type": "newsletter-section",
+      "settings": {
+        "footer_title": "join our newsletter to hear about future drops",
+        "email_subscribe_code": "<div class=\"klaviyo-form-YpBreH\"><\/div>"
+      }
+    }
+  },
+  "order": [
+    "header_skin_BBmzWq",
+    "main",
+    "video_banner_KQjtpR",
+    "two_column_block_yjUWTG",
+    "one_line_block_4n6xMY",
+    "image_carousel_section_NYxgNp",
+    "newsletter_section_hMP8gn"
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "sections": {
+    "heading_banner_mXA8hJ": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_2_e99ff15c-8b06-48de-b07f-20a28c95ab54.png",
+        "heading": "Explore Our Collection",
+        "sub_heading": "",
+        "font_size": 30,
+        "content": ""
+      }
+    },
+    "image_text_blurb_block_awxcNY": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": false,
+        "sub_heading": "",
+        "heading": "About us",
+        "content": "<p>Our story is simple but fueled by a shared enthusiasm. Two friends, united by a love for the exhilarating sport of padel, saw an opportunity to make a difference. Witnessing the sport's rapid growth and recognizing the need for a dedicated space to cater to players of all levels, we embarked on this exciting journey.<\/p><p><\/p><p>We're more than just a retail store. We're a community hub for padel enthusiasts. We meticulously curate the best brands and products, ensuring you have access to top-quality gear that elevates your game. But our mission goes beyond providing equipment; we aim to foster a vibrant padel culture, connecting players, sharing knowledge, and inspiring everyone to embrace this fantastic sport.<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_29.png",
+        "btn_text": "Shop Now",
+        "btn_link": ""
+      }
+    },
+    "image_text_blurb_block_AK3Qzw": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": true,
+        "sub_heading": "",
+        "heading": "Mission",
+        "content": "<ul><li>To fuel your passion: By offering a comprehensive selection of premium padel equipment and apparel.<\/li><li>To foster community: By creating a welcoming space for players to connect, learn, and grow.<\/li><li>To make an impact: By championing the sport of padel and contributing to its continued expansion.<\/li><\/ul><p><\/p><p>We may be new to the scene, but our commitment to quality, community, and the growth of padel is unwavering. <\/p><p><\/p><p>Join us on this exciting adventure as we strive to make a positive impact on the sport we love.<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_102.png",
+        "btn_text": "",
+        "btn_link": ""
+      }
+    },
+    "image_text_blurb_block_7kyheb": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": false,
+        "sub_heading": "",
+        "heading": "Our vision",
+        "content": "<p>We aim to be the leading destination for padel enthusiasts, renowned for our exceptional selection, unwavering commitment to quality, and vibrant community spirit. We envision a future where padel is accessible to all, fostering a healthier, more connected society. We strive to be at the forefront of this movement, inspiring and empowering players to reach their full potential on and off the court.<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_29.png",
+        "btn_text": "Shop Now",
+        "btn_link": "#"
+      }
+    },
+    "image_text_blurb_block_xRQg7w": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": true,
+        "sub_heading": "",
+        "heading": "Membership",
+        "content": "<p><strong>Get Ready to Transform Your Padel Game <\/strong><\/p><p>Exclusive Perks Await with Our Upcoming Membership Program <\/p><p>We're thrilled to announce that we're launching a membership program soon! As a member, you'll unlock a world of benefits, including:<\/p><ul><li>Early Access to New Products: Be the first to shop the latest padel gear and get your hands on limited-edition releases.<\/li><li>Exclusive Discounts: Enjoy special member-only pricing on all your favorite brands.<\/li><li>Priority Court Bookings: Secure your court time with ease, even during peak hours.<\/li><li>Community Events: Connect with fellow padel enthusiasts at exclusive member events and tournaments.<\/li><li>Personalized Coaching: Receive expert guidance to take your game to the next level.<\/li><\/ul><p><\/p><p>Sign up for our newsletter now to stay informed about the launch date and be among the first to enjoy the perks of membership!<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_102.png",
+        "btn_text": "",
+        "btn_link": ""
+      }
+    },
+    "collection_tab_fQjca3": {
+      "type": "collection-tab",
+      "blocks": {
+        "tab_Egm4qi": {
+          "type": "tab",
+          "settings": {
+            "collection": "padel",
+            "viewall": true
+          }
+        },
+        "tab_wDeTn6": {
+          "type": "tab",
+          "settings": {
+            "collection": "squash",
+            "viewall": true
+          }
+        },
+        "tab_9ktD9G": {
+          "type": "tab",
+          "settings": {
+            "collection": "tennis",
+            "viewall": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_Egm4qi",
+        "tab_wDeTn6",
+        "tab_9ktD9G"
+      ],
+      "settings": {
+        "title": "Nothing",
+        "useslider": false,
+        "limit": 3,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false
+      }
+    },
+    "testimonial_block_4796rp": {
+      "type": "testimonial-block",
+      "blocks": {
+        "item_BYPcEb": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.png",
+            "name": "Client Name"
+          }
+        },
+        "item_TwCMCd": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.png",
+            "name": "Client Name"
+          }
+        },
+        "item_6qYRWz": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.png",
+            "name": "Client Name"
+          }
+        }
+      },
+      "block_order": [
+        "item_BYPcEb",
+        "item_TwCMCd",
+        "item_6qYRWz"
+      ],
+      "settings": {
+        "sub_heading": "LOREM IPSUM",
+        "heading": "WHAT IS LOREM IPSUM"
+      }
+    }
+  },
+  "order": [
+    "heading_banner_mXA8hJ",
+    "image_text_blurb_block_awxcNY",
+    "image_text_blurb_block_AK3Qzw",
+    "image_text_blurb_block_7kyheb",
+    "image_text_blurb_block_xRQg7w",
+    "collection_tab_fQjca3",
+    "testimonial_block_4796rp"
+  ]
+}

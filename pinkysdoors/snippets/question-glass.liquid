@@ -1,0 +1,47 @@
+{%- liquid
+assign interior_door = false 
+assign interior_doors = 'office-doors,wine-cellar-doors,interior-doors-with-sidelight-transoms,room-dividers,pocket-doors,sliding-doors,barn-doors,passage-doors' | split: ','
+assign product_collections = product.collections | map: 'handle' | join: ','
+
+for door in interior_doors
+ if product_collections contains door
+   assign interior_door = true 
+ endif
+endfor 
+
+if product.title contains "Thermally Broken" or product.type contains "Thermally Broken"
+  assign type_text = 'All Air series Thermally Broken doors have (SDL) simulated divided light glass with 3/4" mullions'
+elsif product.title contains 'Pantry'
+  assign type_text = 'Our Interior Pantry doors have 3/4" T-Bar'
+elsif interior_door
+  assign type_text = 'Our interior single pane tempered glass doors come with 3/4” T-Bar'
+else
+  assign type_text = 'Our dual pane tempered glass doors come with 1” T-Bar'
+endif
+
+assign product_tags = product.tags | join:','
+if product_tags contains 'special-order'
+  assign special_order = true
+endif
+
+-%}
+
+<p><strong>Type</strong></p>
+<p>{{ type_text }}</p>
+
+
+{% case type %}
+
+{% when 'Passage Doors' %}
+
+{% include 'shortcode' load: pages.pdp-glass-designs-passage-doors.content %}
+
+{% unless special_order %}
+<style>.special-order--only {display: none;}</style>
+{% endunless %}
+
+{% else %}
+
+{% include 'shortcode' load: pages.pdp-glass-designs.content %}
+
+{% endcase %}

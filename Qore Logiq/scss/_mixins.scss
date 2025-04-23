@@ -1,0 +1,27 @@
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin responsive($breakpoint) {
+    @if map-has-key($custom-breakpoints, $breakpoint) {
+        @media (max-width: #{map-get(map-get($custom-breakpoints, $breakpoint), maxSize)}) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint `#{$breakpoint}` does not exist. Check case sensitivity.";
+    }
+}
+
+
+@mixin Text($family, $weight, $size, $color, $important: false) {
+    $important-declaration: if($important, " !important", "");
+
+    font-family: $family#{$important-declaration};
+    font-weight: $weight#{$important-declaration};
+    font-size: $size#{$important-declaration};
+    color: $color#{$important-declaration};
+}

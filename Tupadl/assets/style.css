@@ -1,0 +1,2494 @@
+/*
+Theme Name: THEME_NAME
+Theme URI: 
+Author: THEME_AUTHOR
+Description: THEME_DESCRIPTION
+Version: THEME_VERSION
+*/
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lunasima:wght@400;700&display=swap");
+@font-face {
+  font-family: "Sporting Grotesque Bold";
+  src: url("SportingGrotesque-Bold.woff2") format("woff2"), url("SportingGrotesque-Bold.woff") format("woff"), url("SportingGrotesque-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Sporting Grotesque Regular";
+  src: url("SportingGrotesque-Regular.woff2") format("woff2"), url("SportingGrotesque-Regular.woff") format("woff"), url("SportingGrotesque-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.debug {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  color: crimson;
+  margin: 0;
+  padding: 3px;
+  font-size: 12px;
+  line-height: 12px;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 99999;
+}
+.debug .debug-currentBreakpoint::after {
+  content: "Breakpoint: MAX";
+}
+.debug .debug-breakpointRange::after {
+  content: "Range: 1500px - Unlimited";
+}
+
+@media (max-width: 0px) {
+  .debug .debug-currentBreakpoint::after {
+    content: "Breakpoint: MAX";
+  }
+  .debug .debug-breakpointRange::after {
+    content: "Range: 1500px - 0px";
+  }
+}
+@media (max-width: 1499px) {
+  .debug .debug-currentBreakpoint::after {
+    content: "Breakpoint: XL";
+  }
+  .debug .debug-breakpointRange::after {
+    content: "Range: 1250px - 1499px";
+  }
+}
+@media (max-width: 1249px) {
+  .debug .debug-currentBreakpoint::after {
+    content: "Breakpoint: LG";
+  }
+  .debug .debug-breakpointRange::after {
+    content: "Range: 992px - 1249px";
+  }
+}
+@media (max-width: 991px) {
+  .debug .debug-currentBreakpoint::after {
+    content: "Breakpoint: MD";
+  }
+  .debug .debug-breakpointRange::after {
+    content: "Range: 768px - 991px";
+  }
+}
+@media (max-width: 767px) {
+  .debug .debug-currentBreakpoint::after {
+    content: "Breakpoint: SM";
+  }
+  .debug .debug-breakpointRange::after {
+    content: "Range: 576px - 767px";
+  }
+}
+@media (max-width: 575px) {
+  .debug .debug-currentBreakpoint::after {
+    content: "Breakpoint: XS";
+  }
+  .debug .debug-breakpointRange::after {
+    content: "Range: 0px - 575px";
+  }
+}
+.adminbar .debug {
+  top: 32px;
+}
+@media (max-width: 991px) {
+  .adminbar .debug {
+    top: 0px;
+    left: 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  #wpadminbar {
+    display: none;
+  }
+  html#no {
+    margin-top: 0 !important;
+  }
+}
+* {
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub {
+  top: 0.4em;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.richtext-block {
+  max-width: 1550px;
+  margin: 0 auto;
+  margin-top: calc(5rem + var(--page-width-margin));
+  padding: 40px;
+}
+.richtext-block .wrap-content h3 {
+  font-size: 50px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+@media (max-width: 991px) {
+  .richtext-block .wrap-content h3 {
+    font-size: 38px;
+  }
+}
+.richtext-block .wrap-content ul {
+  padding: 25px;
+}
+.richtext-block .wrap-content ul li {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 0px;
+}
+@media (max-width: 767px) {
+  .richtext-block .wrap-content ul li {
+    font-size: 16px;
+  }
+}
+.richtext-block .wrap-content p {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .richtext-block .wrap-content p {
+    font-size: 16px;
+  }
+}
+
+footer {
+  padding: 30px 20px;
+  background: #000000 !important;
+}
+footer .footer__content-top {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 0;
+}
+footer .footer__content-top .footer__blocks-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  border-top: 2px solid #E3E3DD;
+  border-bottom: 2px solid #E3E3DD;
+}
+@media screen and (max-width: 767px) {
+  footer .footer__content-top .footer__blocks-wrapper {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+footer .footer__content-top .footer__blocks-wrapper .footer-block .footer-block__heading {
+  font-size: 16px;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+  text-transform: uppercase;
+}
+footer .footer__content-top .footer__blocks-wrapper .footer-block .footer-block__details-content {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer__content-top .footer__blocks-wrapper .footer-block .footer-block__details-content li a {
+  font-size: 12px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  line-height: 36px;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+}
+footer .footer__content-top .footer__blocks-wrapper .footer-block .footer-block__details-content li a:hover {
+  opacity: 1;
+}
+footer .footer-wrapper-bottom {
+  display: flex;
+  padding: 30px 0 0;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 567px) {
+  footer .footer-wrapper-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+footer .footer-wrapper-bottom .copyright {
+  font-size: 16px;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+}
+@media screen and (max-width: 567px) {
+  footer .footer-wrapper-bottom .copyright {
+    text-align: center;
+  }
+}
+footer .footer-wrapper-bottom .copyright a {
+  color: #E3E3DD;
+}
+footer .footer-wrapper-bottom .footer-socials {
+  display: flex;
+  gap: 20px;
+}
+sticky-header {
+  border: 0 !important;
+}
+sticky-header header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  transition: all 0.3s ease;
+}
+sticky-header header.header {
+  background-color: transparent;
+  padding: 0 !important;
+}
+@media screen and (max-width: 767px) {
+  sticky-header header.header {
+    background: #000000;
+  }
+}
+sticky-header header.header.scrolled {
+  background: #000000;
+}
+sticky-header header.header header-drawer {
+  margin-left: 0;
+  height: 100%;
+}
+sticky-header header.header .header__heading-link .header__heading-logo-wrapper {
+  display: none;
+}
+sticky-header header.header .header__heading-link .header__heading-logo-wrapper.active {
+  display: block;
+}
+sticky-header header.header .menu-drawer-container {
+  height: 100%;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu {
+  padding: 30px;
+  background: #000000;
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu .toggle-menu-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #000000;
+  cursor: pointer;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu .toggle-menu-wrap .line {
+  width: 50px;
+  height: 4px;
+  background: #E3E3DD;
+  display: block;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu .close-menu {
+  display: none;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu[aria-expanded=true] .toggle-menu-wrap {
+  display: none;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu[aria-expanded=true] .icon-hamburger {
+  display: none;
+}
+sticky-header header.header .menu-drawer-container .toggle-menu[aria-expanded=true] .close-menu {
+  display: block;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container {
+  background-color: #E3E3DD;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container .menu-drawer__navigation-container .menu-drawer__navigation .menu-drawer__menu.submenu-open {
+  visibility: visible;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container .menu-drawer__navigation-container .menu-drawer__navigation .menu-drawer__menu li .list-menu__item {
+  font-size: 26px;
+  font-family: "Sporting Grotesque Bold";
+  justify-content: space-between;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container .menu-drawer__navigation-container .menu-drawer__navigation .menu-drawer__menu li details .menu-drawer__submenu {
+  background-color: #E3E3DD;
+  position: unset;
+  transition: none;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container .menu-drawer__navigation-container .menu-drawer__navigation .menu-drawer__menu li details .menu-drawer__submenu .menu-drawer__inner-submenu .menu-drawer__menu li .list-menu__item {
+  font-size: 20px;
+  font-family: "Sporting Grotesque Bold";
+  justify-content: space-between;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container .menu-drawer__navigation-container .menu-drawer__navigation .menu-drawer__menu li details .menu-drawer__submenu .menu-drawer__inner-submenu .menu-drawer__menu li details .menu-drawer__submenu .menu-drawer__menu .list-menu__item {
+  font-size: 16px;
+}
+sticky-header header.header .menu-drawer-container .menu-drawer .menu-drawer__inner-container .menu-drawer__navigation-container .menu-drawer__navigation .menu-drawer__menu li details .menu-drawer__submenu .menu-drawer__inner-submenu .menu-drawer__close-button {
+  font-size: 22px;
+  font-family: "Sporting Grotesque Bold";
+}
+sticky-header header.header .header__icons {
+  padding: 0;
+  height: 100%;
+}
+sticky-header header.header .header__icons .header__icon--cart {
+  padding: 30px 25px;
+  background: #000000;
+  width: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: auto;
+  margin-left: 2rem;
+}
+@media screen and (max-width: 767px) {
+  sticky-header header.header .header__icons .header__icon--cart {
+    padding: 10px;
+    width: 60px;
+  }
+  sticky-header header.header .header__icons .header__icon--cart svg {
+    width: 25px;
+  }
+}
+sticky-header header.header .header__icons .header__search {
+  display: flex;
+  align-items: center;
+}
+.newsletter-block {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #FFFFFF 50%, #000000 50%);
+  margin-top: 70px;
+}
+.newsletter-block .container {
+  max-width: 1280px;
+  background: #000000;
+  margin: 0 auto;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media screen and (max-width: 991px) {
+  .newsletter-block .container {
+    flex-direction: column;
+  }
+}
+.newsletter-block .container .newsletter-left-col {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 50%;
+}
+@media screen and (max-width: 991px) {
+  .newsletter-block .container .newsletter-left-col {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-left-col {
+    flex-direction: column;
+  }
+}
+.newsletter-block .container .newsletter-left-col .text h4 {
+  font-size: 20px;
+  line-height: 27px;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 991px) {
+  .newsletter-block .container .newsletter-left-col .text h4 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-left-col .text h4 {
+    text-align: center;
+  }
+}
+.newsletter-block .container .newsletter-left-col .text p {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-left-col .text p {
+    text-align: center;
+  }
+}
+.newsletter-block .container .newsletter-right-col form {
+  background: #E3E3DD;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-right-col form {
+    flex-direction: column;
+  }
+}
+.newsletter-block .container .newsletter-right-col form .newsletter-form__field-wrappers {
+  width: 100%;
+}
+.newsletter-block .container .newsletter-right-col form .newsletter-form__field-wrappers .fields {
+  display: flex;
+}
+.newsletter-block .container .newsletter-right-col form input {
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-right-col form input {
+    padding: 20px 0;
+  }
+}
+.newsletter-block .container .newsletter-right-col form input::placeholder {
+  font-size: 18px;
+  color: #000000;
+}
+.newsletter-block .container .newsletter-right-col form button {
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  background: #000000;
+  border: 2px solid #000000;
+  color: #E3E3DD;
+  text-transform: uppercase;
+  font-family: "Sporting Grotesque Bold";
+  font-size: 14px;
+  cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-right-col form button {
+    width: 100%;
+  }
+}
+.newsletter-block .container .newsletter-right-col p {
+  margin-top: 10px;
+  font-family: "Sporting Grotesque Regular";
+  font-size: 12px;
+  line-height: 21px;
+  color: #E3E3DD;
+}
+@media screen and (max-width: 500px) {
+  .newsletter-block .container .newsletter-right-col p {
+    text-align: center;
+  }
+}
+
+.footer-icon-box {
+  background-color: #000;
+  padding: 30px 20px;
+}
+.footer-icon-box .wrapper-box {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 991px) {
+  .footer-icon-box .wrapper-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .footer-icon-box .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.footer-icon-box .footer-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 70%;
+  gap: 40px;
+}
+@media screen and (max-width: 1300px) {
+  .footer-icon-box .footer-features {
+    flex-basis: 85%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .footer-icon-box .footer-features {
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+.footer-icon-box .footer-features .feature {
+  flex-basis: 33.3333333333%;
+  display: flex;
+  gap: 30px;
+}
+@media screen and (max-width: 991px) {
+  .footer-icon-box .footer-features .feature {
+    gap: 15px;
+    flex-basis: 48%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .footer-icon-box .footer-features .feature {
+    gap: 15px;
+    flex-basis: 100%;
+  }
+}
+.footer-icon-box .footer-features .feature p {
+  font-size: 16px;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+}
+
+.contact-features {
+  padding: 100px 20px;
+}
+.contact-features .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 100px;
+  grid-row-gap: 20px;
+}
+@media screen and (max-width: 991px) {
+  .contact-features .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .contact-features .container {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-features .container .icon {
+  margin-bottom: 20px;
+}
+.contact-features .container .title {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 28px;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 1200px) {
+  .contact-features .container .title {
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact-features .container .title {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .contact-features .container .title {
+    font-size: 18px;
+  }
+}
+.contact-features .container .subtext {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+  opacity: 0.7;
+  grid-area: 2/1/3/3;
+}
+
+.google-map {
+  padding: 0 20px;
+}
+.google-map .container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.contact-form {
+  padding: 50px 20px;
+  margin-bottom: 50px;
+}
+.contact-form .container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 70px;
+}
+@media screen and (max-width: 991px) {
+  .contact-form .container {
+    display: block;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact-form .container .text-col {
+    margin-bottom: 50px;
+  }
+}
+.contact-form .container .text-col .heading {
+  margin-bottom: 30px;
+}
+.contact-form .container .text-col .heading h2 {
+  font-size: 45px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+}
+@media screen and (max-width: 1200px) {
+  .contact-form .container .text-col .heading h2 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contact-form .container .text-col .heading h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .contact-form .container .text-col .heading h2 {
+    font-size: 30px;
+  }
+}
+.contact-form .container .text-col .subtext p {
+  font-size: 14px;
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  line-height: 23px;
+}
+.contact-form .container .text-col .icons-wrapper {
+  margin-top: 100px;
+}
+.contact-form .container .text-col .icons-wrapper .icon-box {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.contact-form .container .text-col .icons-wrapper .icon-box .text {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.contact-form .container .form-col form .contact-intro-input-row .wrapper-field {
+  display: flex;
+  gap: 50px;
+}
+.contact-form .container .form-col form .contact-intro-input-row .wrapper-field .input__field {
+  flex: 50%;
+}
+.contact-form .container .form-col form .contact-intro-input-row .input__field input,
+.contact-form .container .form-col form .contact-intro-input-row .input__field textarea {
+  border: none;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 50px;
+  width: 100%;
+  padding: 10px 0;
+  font-family: "Sporting Grotesque Regular";
+  font-size: 18px;
+  color: #000000;
+  opacity: 0.8;
+  outline: none;
+  box-shadow: none;
+}
+@media screen and (max-width: 1300px) {
+  .contact-form .container .form-col form .contact-intro-input-row .input__field input,
+  .contact-form .container .form-col form .contact-intro-input-row .input__field textarea {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .contact-form .container .form-col form .contact-intro-input-row .input__field input,
+  .contact-form .container .form-col form .contact-intro-input-row .input__field textarea {
+    width: 100%;
+  }
+}
+.contact-form .container .form-col form .contact-intro-input-row .input__field input::focus,
+.contact-form .container .form-col form .contact-intro-input-row .input__field textarea::focus {
+  border: none !important;
+}
+.contact-form .container .form-col form .contact-intro-input-row .input__field input.message,
+.contact-form .container .form-col form .contact-intro-input-row .input__field textarea.message {
+  height: 70px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+.contact-form .container .form-col form .contact-intro-input-row .input__field input.email,
+.contact-form .container .form-col form .contact-intro-input-row .input__field textarea.email {
+  margin-left: 30px;
+}
+@media screen and (max-width: 567px) {
+  .contact-form .container .form-col form .contact-intro-input-row .input__field input.email,
+  .contact-form .container .form-col form .contact-intro-input-row .input__field textarea.email {
+    margin-left: 0px;
+  }
+}
+.contact-form .container .form-col form .contact-intro-input-submit input {
+  display: block;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  border: 2px solid #000000;
+  font-size: 22px;
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  background: #FFFFFF;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.contact-form .container .form-col form .contact-intro-input-submit input:hover {
+  background: #000000;
+  color: #E3E3DD;
+}
+@media screen and (max-width: 567px) {
+  .contact-form .container .form-col form .contact-intro-input-submit input {
+    width: 100%;
+  }
+}
+
+.related-product-block .collection,
+.product-grid-container .collection {
+  display: block;
+}
+@media (max-width: 767px) {
+  .related-product-block .collection,
+  .product-grid-container .collection {
+    padding: 20px;
+  }
+}
+.related-product-block .collection .collection__title .collection__description,
+.product-grid-container .collection .collection__title .collection__description {
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.related-product-block .collection .collection__title .title,
+.product-grid-container .collection .collection__title .title {
+  font-size: 50px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1200px) {
+  .related-product-block .collection .collection__title .title,
+  .product-grid-container .collection .collection__title .title {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .related-product-block .collection .collection__title .title,
+  .product-grid-container .collection .collection__title .title {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .related-product-block .collection .collection__title .title,
+  .product-grid-container .collection .collection__title .title {
+    font-size: 30px;
+  }
+}
+.related-product-block .collection .related-products__sub_heading,
+.product-grid-container .collection .related-products__sub_heading {
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.related-product-block .collection .related-products__heading,
+.product-grid-container .collection .related-products__heading {
+  font-size: 50px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1200px) {
+  .related-product-block .collection .related-products__heading,
+  .product-grid-container .collection .related-products__heading {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .related-product-block .collection .related-products__heading,
+  .product-grid-container .collection .related-products__heading {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .related-product-block .collection .related-products__heading,
+  .product-grid-container .collection .related-products__heading {
+    font-size: 30px;
+  }
+}
+.related-product-block .collection .collection-products,
+.product-grid-container .collection .collection-products {
+  gap: 50px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  max-width: 1550px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 3fr 3fr;
+}
+@media (max-width: 1430px) {
+  .related-product-block .collection .collection-products,
+  .product-grid-container .collection .collection-products {
+    grid-template-columns: 2fr 2fr;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .related-product-block .collection .collection-products,
+  .product-grid-container .collection .collection-products {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .related-product-block .collection .collection-products,
+  .product-grid-container .collection .collection-products {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .related-product-block .collection .collection-products,
+  .product-grid-container .collection .collection-products {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 800px) {
+  .related-product-block .collection .collection-products,
+  .product-grid-container .collection .collection-products {
+    gap: 20px;
+  }
+}
+.related-product-block .collection .collection-products .collection-product,
+.product-grid-container .collection .collection-products .collection-product {
+  flex: 0 0 33.33%;
+  flex-basis: calc(33.33% - 34px);
+  border: 2px solid #000000;
+  padding: 25px 20px;
+}
+@media screen and (max-width: 991px) {
+  .related-product-block .collection .collection-products .collection-product,
+  .product-grid-container .collection .collection-products .collection-product {
+    flex-basis: 48%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .related-product-block .collection .collection-products .collection-product,
+  .product-grid-container .collection .collection-products .collection-product {
+    flex-basis: 47%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .related-product-block .collection .collection-products .collection-product,
+  .product-grid-container .collection .collection-products .collection-product {
+    flex-basis: 100%;
+  }
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .top-wrapper .product-form button,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .top-wrapper .product-form button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .top-wrapper .product-form button svg path,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .top-wrapper .product-form button svg path {
+  fill: #000000;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .wrap-bottomwrapper,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .wrap-bottomwrapper {
+  text-decoration: none;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__inner .product-media .product-img,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__inner .product-media .product-img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__inner .product-media .product-img img,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__inner .product-media .product-img img {
+  width: 100%;
+  height: 100%;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content {
+  display: block;
+  padding: 0;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 991px) {
+  .related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information,
+  .product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name span,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name span {
+  font-size: 14px;
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name p,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name p {
+  font-size: 22px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name p,
+  .product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name p {
+    font-size: 20px;
+  }
+}
+.related-product-block .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-price .price .price__container .price-item,
+.product-grid-container .collection .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-price .price .price__container .price-item {
+  font-size: 20px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+}
+
+.collection-lists {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  max-width: 1550px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+@media screen and (max-width: 1200px) {
+  .collection-lists {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .collection-lists {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .collection-lists {
+    gap: 20px;
+  }
+}
+.collection-lists .collection-list__item {
+  list-style: none;
+  flex: 0 0 33.33%;
+  flex-basis: calc(33.33% - 67px);
+  border: 2px solid #000000;
+  padding: 25px 20px;
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__inner .product-media .media {
+  display: flex;
+  justify-content: center;
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__inner .product-media .media img {
+  width: 100%;
+  height: 100%;
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__content {
+  display: block;
+  padding: 0;
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__content .card__information {
+  padding-bottom: 0;
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__content .card__information .card__heading a {
+  font-size: 22px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .collection-lists .collection-list__item .card-wrapper .card .card__content .card__information .card__heading a {
+    font-size: 20px;
+  }
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__content .product-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (max-width: 991px) {
+  .collection-lists .collection-list__item .card-wrapper .card .card__content .product-information {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.collection-lists .collection-list__item .card-wrapper .card .card__content .product-information .product-price .price .price__container .price-item {
+  font-size: 20px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+}
+
+.article-template {
+  padding: 0 40px;
+}
+@media (max-width: 767px) {
+  .article-template {
+    padding: 0 20px;
+  }
+}
+.article-template .article-template__content {
+  max-width: 1550px;
+  margin: 0 auto;
+}
+.article-template .article-template__content h2 {
+  font-size: 50px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .article-template .article-template__content h2 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 450px) {
+  .article-template .article-template__content h2 {
+    font-size: 28px;
+  }
+}
+.article-template .article-template__content p {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+@media (max-width: 767px) {
+  .article-template .article-template__content p {
+    font-size: 16px;
+  }
+}
+
+.main-blog {
+  padding: 20px !important;
+  margin-top: 70px !important;
+}
+.main-blog .title-wrapper-with-link {
+  justify-content: center;
+  display: block;
+}
+.main-blog .title-wrapper-with-link .sub_title {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 14px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.main-blog .title-wrapper-with-link .blog__title {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 40px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .main-blog .title-wrapper-with-link .blog__title {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .main-blog .title-wrapper-with-link .blog__title {
+    font-size: 28px;
+  }
+}
+.main-blog .blog-articles {
+  column-gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 80px;
+  display: grid;
+}
+@media (max-width: 991px) {
+  .main-blog .blog-articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .main-blog .blog-articles {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.main-blog .blog-articles.contains-card {
+  margin-top: 20px;
+}
+.main-blog .blog-articles .blog-articles__article .article-card-wrapper .article-card .card__inner-wrap .article-card__image-wrapper .article-card__image {
+  position: relative;
+}
+.main-blog .blog-articles .blog-articles__article .article-card-wrapper .article-card .card__inner-wrap .article-card__image-wrapper .article-card__image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  height: 100%;
+}
+.main-blog .blog-articles .blog-articles__article .article-card-wrapper .article-card .card__inner-wrap .article-card__image-wrapper .article-card__image:before {
+  content: "";
+  width: 3px;
+  height: 90%;
+  display: block;
+  position: absolute;
+  left: -27px;
+  top: 50%;
+  background: #808080;
+  transform: translateY(-50%);
+}
+.main-blog .blog-articles .blog-articles__article .article-card-wrapper .article-card .card__content .card__information .card__heading a {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 22px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.main-blog .blog-articles .blog-articles__article:nth-child(3n+1) .article-card-wrapper .article-card .card__inner-wrap .article-card__image-wrapper .article-card__image:before {
+  content: none;
+}
+
+.single-product-page {
+  margin-top: 100px;
+  padding: 0 40px;
+}
+.single-product-page .product {
+  max-width: 1550px;
+  margin: 0 auto;
+  gap: 90px !important;
+}
+@media (max-width: 1200px) {
+  .single-product-page .product {
+    gap: 40px !important;
+  }
+}
+.single-product-page .product .grid__item {
+  width: calc(50% - 45px);
+}
+@media (max-width: 991px) {
+  .single-product-page .product .grid__item {
+    width: 100%;
+  }
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .slider-mobile-gutter .product__media-list {
+  margin-bottom: 0;
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .slider-mobile-gutter .product__media-list .product__media-item {
+  margin: 0;
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .slider-mobile-gutter .product__media-list .product__media-item .product-media-container {
+  border: 0;
+  width: 100%;
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .slider-mobile-gutter .product__media-list .product__media-item .product-media-container .product__modal-opener .product__media {
+  border: 2px solid #000;
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .slider-mobile-gutter .product__media-list .product__media-item .product-media-container .product__modal-opener .product__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .thumbnail-slider .thumbnail-list {
+  padding: 0;
+}
+.single-product-page .product .grid__item.product__media-wrap media-gallery .thumbnail-slider .thumbnail-list .thumbnail-list__item .thumbnail {
+  border: 2px solid #000;
+  border-top: 0;
+  box-shadow: none;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .product__title h1 {
+  font-size: 50px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .product__title h1 {
+    font-size: 40px;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .caption-with-letter-spacing {
+  font-size: 26px;
+  color: #000000;
+  font-family: "Sporting Grotesque Regular";
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .caption-with-letter-spacing {
+    font-size: 20px;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .pricing .price .price__container .price-item {
+  font-size: 20px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .product__description {
+  font-size: 16px;
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn {
+  display: flex;
+}
+@media (max-width: 500px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn {
+    flex-wrap: wrap;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper {
+  margin-right: 25px;
+}
+@media (max-width: 500px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper .product-form__input .quantity__label {
+  display: none;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper .product-form__input .price-per-item__container .quantity {
+  min-height: calc(var(--inputs-border-width) * 2 + 6.5rem);
+}
+@media (max-width: 500px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper .product-form__input .price-per-item__container .quantity {
+    width: 100%;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper .product-form__input .price-per-item__container .quantity .minus {
+  justify-content: flex-end;
+  font-family: "Sporting Grotesque Regular";
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper .product-form__input .price-per-item__container .quantity .quantity__input {
+  font-family: "Sporting Grotesque Regular";
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .quantity-btn-wrapper .product-form__input .price-per-item__container .quantity .plus {
+  justify-content: flex-start;
+  font-family: "Sporting Grotesque Regular";
+}
+@media (max-width: 500px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .add-tocart {
+    width: 100%;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .add-tocart .add-to-cart-btn .product-form {
+  margin: 0;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .add-tocart .add-to-cart-btn .product-form .form .product-form__buttons .product-form__submit {
+  margin: 0;
+  padding: 20px 25px;
+  background-color: #000000;
+  width: 255px;
+}
+@media (max-width: 500px) {
+  .single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .add-tocart .add-to-cart-btn .product-form .form .product-form__buttons .product-form__submit {
+    width: 100%;
+  }
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .wrapper-quantity-add-btn .add-tocart .add-to-cart-btn .product-form .form .product-form__buttons .product-form__submit span {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 22px;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .product-icon-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 350px;
+  margin: 0;
+  margin-top: 30px;
+}
+.single-product-page .product .grid__item.product__info-wrap .product__info-container .product-icon-box .text {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 16px;
+  color: #000000;
+}
+
+.shopify-section .wrap-product-tab-desc {
+  max-width: 1550px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  padding: 0 40px;
+}
+@media (max-width: 767px) {
+  .shopify-section .wrap-product-tab-desc {
+    padding: 10px 20px;
+  }
+}
+.shopify-section .wrap-product-tab-desc .custom--tabs {
+  list-style-type: none;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+@media (max-width: 576px) {
+  .shopify-section .wrap-product-tab-desc .custom--tabs {
+    flex-direction: column;
+  }
+}
+.shopify-section .wrap-product-tab-desc .custom--tabs .tab__list {
+  display: inline-block;
+}
+.shopify-section .wrap-product-tab-desc .custom--tabs .tab__list .custom-tab {
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: "Sporting Grotesque Bold";
+  font-size: 20px;
+  color: #000000;
+  text-transform: uppercase;
+  margin: 0;
+}
+@media (max-width: 576px) {
+  .shopify-section .wrap-product-tab-desc .custom--tabs .tab__list .custom-tab {
+    margin: 0;
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 0;
+  }
+}
+.shopify-section .wrap-product-tab-desc .custom--tabs .tab__list .custom-tab.active {
+  border-bottom: 1px solid #000;
+  padding-bottom: 0;
+}
+.shopify-section .wrap-product-tab-desc .custom__tab-content {
+  display: none;
+  margin-top: 30px;
+}
+.shopify-section .wrap-product-tab-desc .custom__tab-content .metafield-rich_text_field {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 18px;
+  color: #000000;
+}
+.shopify-section .wrap-product-tab-desc .custom__tab-content.active {
+  display: block;
+}
+@media (max-width: 576px) {
+  .shopify-section .wrap-product-tab-desc .custom__tab-content.active {
+    padding: 0 15px;
+  }
+}
+
+.banner-slider {
+  position: relative;
+}
+.banner-slider .slick-dots {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: -30px;
+}
+.banner-slider .slick-dots li button {
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.banner-slider .slick-dots li button::before {
+  font-size: 8px;
+  opacity: 1;
+  position: unset;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000;
+}
+.banner-slider .slick-dots li.slick-active button::before {
+  width: 12px;
+  height: 12px;
+}
+
+.banner-block {
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.banner-block .banner-container {
+  max-width: 1530px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 1300px) {
+  .banner-block .banner-container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1249px) {
+  .banner-block .banner-container {
+    max-width: 1000px;
+  }
+}
+.banner-block .banner-container .heading {
+  margin-bottom: 10px;
+}
+.banner-block .banner-container .heading h1 {
+  text-align: center;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+  font-size: 60px;
+}
+@media (max-width: 1249px) {
+  .banner-block .banner-container .heading h1 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .banner-block .banner-container .heading h1 {
+    font-size: 36px;
+  }
+}
+.banner-block .banner-container .sub-heading {
+  text-align: center;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+  text-transform: uppercase;
+}
+@media (max-width: 1249px) {
+  .banner-block .banner-container .sub-heading {
+    font-size: 32px !important;
+  }
+}
+@media (max-width: 767px) {
+  .banner-block .banner-container .sub-heading {
+    font-size: 26px !important;
+  }
+}
+.banner-block .banner-container .subtext {
+  margin-bottom: 50px;
+}
+.banner-block .banner-container .subtext p {
+  text-align: center;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  font-weight: 400;
+  font-size: 18px;
+}
+@media (max-width: 767px) {
+  .banner-block .banner-container .subtext p {
+    font-size: 16px;
+  }
+}
+.banner-block .banner-container .button-link {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  border: 2px solid #E3E3DD;
+  font-size: 22px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  transition: all 0.3s ease;
+}
+.banner-block .banner-container .button-link:hover {
+  background: #E3E3DD;
+  color: #000000;
+}
+.banner-block .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
+  display: block;
+}
+
+.heading-banner {
+  height: 85vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+}
+.heading-banner .container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 1300px) {
+  .heading-banner .container {
+    max-width: 1200px;
+  }
+}
+@media (max-width: 1249px) {
+  .heading-banner .container {
+    max-width: 1000px;
+  }
+}
+.heading-banner .container .heading h1 {
+  text-align: center;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+@media (max-width: 1249px) {
+  .heading-banner .container .heading h1 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .heading-banner .container .heading h1 {
+    font-size: 36px;
+  }
+}
+.heading-banner .container .sub-heading {
+  text-align: center;
+  font-family: "Sporting Grotesque Bold";
+  color: #E3E3DD;
+  text-transform: uppercase;
+}
+@media (max-width: 1249px) {
+  .heading-banner .container .sub-heading {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .heading-banner .container .sub-heading {
+    font-size: 26px;
+  }
+}
+.heading-banner .container .subtext {
+  margin-bottom: 50px;
+}
+.heading-banner .container .subtext p {
+  text-align: center;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  font-weight: 400;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .heading-banner .container .subtext p {
+    font-size: 16px;
+  }
+}
+.heading-banner .overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+  display: block;
+}
+
+.partners-block {
+  padding: 50px 20px;
+}
+.partners-block .partners-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+}
+@media screen and (max-width: 991px) {
+  .partners-block .partners-container {
+    flex-wrap: wrap;
+  }
+}
+.partners-block .partners-container .partners-logo {
+  flex-basis: 16.6666666667%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+@media screen and (max-width: 991px) {
+  .partners-block .partners-container .partners-logo {
+    flex-basis: 33.3333333333%;
+  }
+  .partners-block .partners-container .partners-logo:nth-child(3) {
+    border-right: 1px solid #000000;
+  }
+}
+@media screen and (max-width: 991px) and (max-width: 567px) {
+  .partners-block .partners-container .partners-logo:nth-child(3) {
+    border: 1px solid #000000 !important;
+  }
+}
+@media screen and (max-width: 567px) {
+  .partners-block .partners-container .partners-logo {
+    flex-basis: 50%;
+    padding: 20px;
+    border: 1px solid #000000 !important;
+  }
+}
+.partners-block .partners-container .partners-logo:last-child {
+  border-right: 1px solid #000000;
+}
+@media screen and (max-width: 567px) {
+  .partners-block .partners-container .partners-logo:last-child {
+    border: 1px solid #000000 !important;
+  }
+}
+.partners-block .partners-container .partners-logo img {
+  height: auto;
+  object-fit: scale-down;
+}
+@media screen and (max-width: 567px) {
+  .partners-block .partners-container .partners-logo img {
+    width: 100%;
+  }
+}
+
+.collection {
+  padding: 50px 20px;
+}
+.collection .collection-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.collection .collection-container .subheading {
+  margin-bottom: 10px;
+}
+.collection .collection-container .subheading h4 {
+  text-align: center;
+  font-family: "Sporting Grotesque Regular";
+  font-size: 14px;
+  color: #000000;
+}
+.collection .collection-container .heading {
+  margin-bottom: 30px;
+}
+.collection .collection-container .heading h2 {
+  text-align: center;
+  font-family: "Sporting Grotesque Bold";
+  font-size: 50px;
+  color: #000000;
+  color: #000000;
+}
+@media screen and (max-width: 991px) {
+  .collection .collection-container .heading h2 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .collection .collection-container .heading h2 {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .collection .collection-container .collection-wrap {
+    height: 70vh;
+  }
+}
+.collection .collection-container .collection-wrap .inner {
+  display: flex;
+  height: 100% !important;
+}
+.collection .collection-container .collection-wrap .inner .slick-track {
+  height: 100%;
+}
+.collection .collection-container .collection-wrap .inner .collection-item {
+  flex-basis: 33.3333333333%;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+.collection .collection-container .collection-wrap .inner .collection-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.collection .collection-container .collection-wrap .inner .collection-item .wrap-title-line {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  bottom: 0px;
+  width: 100%;
+}
+.collection .collection-container .collection-wrap .inner .collection-item .category-name {
+  font-size: 35px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1024px) {
+  .collection .collection-container .collection-wrap .inner .collection-item .category-name {
+    font-size: 26px;
+    bottom: 100px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .collection .collection-container .collection-wrap .inner .collection-item .category-name {
+    bottom: 120px;
+  }
+}
+.collection .collection-container .collection-wrap .inner .collection-item .line {
+  flex-grow: 1;
+  border: 4px solid #E3E3DD;
+  display: block;
+  margin-bottom: 5px;
+}
+.collection .collection-container .collection-wrap .inner .slick-dots {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: -30px;
+}
+.collection .collection-container .collection-wrap .inner .slick-dots li button {
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.collection .collection-container .collection-wrap .inner .slick-dots li button::before {
+  font-size: 8px;
+  opacity: 1;
+  position: unset;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #000;
+}
+.collection .collection-container .collection-wrap .inner .slick-dots li.slick-active button::before {
+  width: 12px;
+  height: 12px;
+}
+
+.image-text-blurb {
+  background: #000000;
+  height: 100vh;
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb {
+    height: auto;
+  }
+}
+.image-text-blurb .blurb-container {
+  display: flex;
+  height: 100%;
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb .blurb-container {
+    flex-direction: column-reverse;
+    height: auto;
+    padding: 50px 0px;
+  }
+}
+.image-text-blurb .blurb-container .text-column {
+  width: 50%;
+  padding: 30px 0px 30px 70px;
+}
+@media screen and (max-width: 1280px) {
+  .image-text-blurb .blurb-container .text-column {
+    padding: 30px 0px 30px 20px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb .blurb-container .text-column {
+    width: 100%;
+  }
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper {
+  border-left: 3px solid #E3E3DD;
+  border-top: 3px solid #E3E3DD;
+  border-bottom: 3px solid #E3E3DD;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 95px;
+}
+@media screen and (max-width: 1600px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper {
+    padding: 0 60px;
+  }
+}
+@media screen and (max-width: 1370px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper {
+    padding: 20px;
+  }
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .subheading {
+  margin-bottom: 10px;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .subheading h4 {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 14px;
+  color: #E3E3DD;
+  text-transform: uppercase;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .heading {
+  margin-bottom: 30px;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .heading h2 {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 40px;
+  color: #E3E3DD;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .heading h2 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .heading h2 {
+    font-size: 28px;
+  }
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .subtext {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 16px;
+  color: #E3E3DD;
+  margin-bottom: 50px;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .subtext p {
+  margin-bottom: 25px;
+  display: block;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .icon-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 1600px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list {
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list {
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item img {
+  width: fit-content;
+  height: fit-content;
+}
+@media screen and (max-width: 1600px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 1180px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item img {
+    width: 60px;
+    object-fit: scale-down;
+  }
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item .title {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 16px;
+  color: #E3E3DD;
+  text-transform: uppercase;
+  width: 65%;
+  margin: 0;
+}
+@media screen and (max-width: 1180px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .icon-list .list-item .title {
+    font-size: 14px;
+  }
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .button-link {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  border: 2px solid #E3E3DD;
+  font-size: 22px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  transition: all 0.3s ease;
+}
+.image-text-blurb .blurb-container .text-column .text-wrapper .button-link:hover {
+  background: #E3E3DD;
+  color: #000000;
+}
+@media screen and (max-width: 767px) {
+  .image-text-blurb .blurb-container .text-column .text-wrapper .button-link {
+    width: 220px;
+  }
+}
+.image-text-blurb .blurb-container .image-column {
+  width: 50%;
+  height: 100%;
+  position: relative;
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb .blurb-container .image-column {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .image-text-blurb .blurb-container .image-column {
+    height: 50vh;
+  }
+}
+.image-text-blurb .blurb-container .image-column .overlay {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-color: rgba(0, 0, 0, 0.5019607843);
+}
+.image-text-blurb .blurb-container .image-column .overlay .title {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 40px;
+  color: #E3E3DD;
+  margin-bottom: 0;
+  padding-left: 25px;
+}
+.image-text-blurb .blurb-container .image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media screen and (max-width: 991px) {
+  .image-text-blurb .blurb-container .image-column img {
+    width: 50%;
+    height: 60vh;
+  }
+}
+@media screen and (max-width: 767px) {
+  .image-text-blurb .blurb-container .image-column img {
+    width: 80%;
+    height: auto;
+  }
+}
+.image-text-blurb .blurb-container.reverse {
+  flex-direction: row-reverse;
+}
+@media (max-width: 991px) {
+  .image-text-blurb .blurb-container.reverse {
+    flex-direction: column-reverse;
+  }
+}
+.image-text-blurb .blurb-container.reverse .text-column {
+  padding: 30px 70px 30px 0px;
+}
+.image-text-blurb .blurb-container.reverse .text-column .text-wrapper {
+  border-left: 0;
+  border-right: 3px solid #E3E3DD;
+}
+
+.collections-tab-section {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 50px;
+}
+.collections-tab-section .tabs .ui-tabs-nav {
+  display: flex;
+  justify-content: center;
+}
+.collections-tab-section .tabs .ui-tabs-nav .ui-tabs-tab {
+  margin: 30px 20px;
+  list-style: none;
+}
+.collections-tab-section .tabs .ui-tabs-nav .ui-tabs-tab a {
+  display: block;
+  background: transparent;
+  color: #000;
+  border: 0px;
+  position: relative;
+  font-family: "Sporting Grotesque Bold";
+  font-size: 12px;
+}
+.collections-tab-section .tabs .ui-tabs-nav .ui-tabs-tab a:after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 16%;
+  background: #000000;
+  width: 60%;
+  height: 2px;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products {
+  display: flex;
+  gap: 100px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products {
+    gap: 50px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products {
+    gap: 20px;
+  }
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product {
+  flex: 0 0 33.33%;
+  flex-basis: calc(33.33% - 67px);
+  border: 2px solid #000000;
+  padding: 25px 20px;
+}
+@media screen and (max-width: 991px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product {
+    flex-basis: 48%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product {
+    flex-basis: 47%;
+  }
+}
+@media screen and (max-width: 567px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product {
+    flex-basis: 100%;
+  }
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .top-wrapper .product-form button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .wrap-bottomwrapper {
+  text-decoration: none;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__inner .product-media .product-img {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__inner .product-media .product-img img {
+  width: 100%;
+  height: 100%;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content {
+  display: block;
+  padding: 0;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content .product-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+@media screen and (max-width: 991px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content .product-information {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name span {
+  font-size: 14px;
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name p {
+  font-size: 26px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-name p {
+    font-size: 20px;
+  }
+}
+.collections-tab-section .tabs .ui-tabs-panel .collection-products .collection-product .card-wrapper .card .card__content .product-information .product-price .price .price__container .price-item {
+  font-size: 20px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+}
+.collections-tab-section .tabs .ui-tabs-panel .button-link {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  border: 2px solid #000000;
+  font-size: 22px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  background: #000000;
+  transition: all 0.3s ease;
+  margin-top: 50px;
+}
+.collections-tab-section .tabs .ui-tabs-panel .button-link:hover {
+  background: #E3E3DD;
+  color: #000000;
+}
+@media screen and (max-width: 767px) {
+  .collections-tab-section .tabs .ui-tabs-panel .button-link {
+    width: 220px;
+  }
+}
+
+.video-link-section {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+@media screen and (max-width: 991px) {
+  .video-link-section {
+    height: 60vh;
+  }
+}
+.video-link-section .container .subheading {
+  margin-bottom: 10px;
+}
+.video-link-section .container .subheading h4 {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 14px;
+  text-align: center;
+  color: #E3E3DD;
+  text-transform: uppercase;
+}
+.video-link-section .container .heading {
+  margin-bottom: 30px;
+}
+.video-link-section .container .heading h2 {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 40px;
+  color: #E3E3DD;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .video-link-section .container .heading h2 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .video-link-section .container .heading h2 {
+    font-size: 28px;
+  }
+}
+.video-link-section .container .button-link {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  border: 2px solid #E3E3DD;
+  font-size: 22px;
+  font-family: "Sporting Grotesque Regular";
+  color: #E3E3DD;
+  transition: all 0.3s ease;
+}
+.video-link-section .container .button-link:hover {
+  background: #E3E3DD;
+  color: #000000;
+}
+@media screen and (max-width: 767px) {
+  .video-link-section .container .button-link {
+    width: 220px;
+  }
+}
+
+.testimonial-section {
+  padding: 100px 20px;
+  background-size: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.testimonial-section .testimonials-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.testimonial-section .testimonials-container .subheading {
+  margin-bottom: 10px;
+}
+.testimonial-section .testimonials-container .subheading h4 {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 14px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+}
+.testimonial-section .testimonials-container .heading {
+  margin-bottom: 30px;
+}
+.testimonial-section .testimonials-container .heading h2 {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 40px;
+  color: #000000;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+  .testimonial-section .testimonials-container .heading h2 {
+    font-size: 38px;
+  }
+}
+@media screen and (max-width: 567px) {
+  .testimonial-section .testimonials-container .heading h2 {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .testimonial-section .testimonials-container .testimonial .single-testimonial {
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .testimonial-section .testimonials-container .testimonial .single-testimonial {
+    padding: 0 0px;
+  }
+}
+.testimonial-section .testimonials-container .testimonial .single-testimonial .testimonial-wrapper .client-text {
+  margin-bottom: 50px;
+}
+.testimonial-section .testimonials-container .testimonial .single-testimonial .testimonial-wrapper .client-text p {
+  font-size: 26px;
+  line-height: 49px;
+  font-family: "Sporting Grotesque Regular";
+  color: #000000;
+  text-align: center;
+}
+@media screen and (max-width: 991px) {
+  .testimonial-section .testimonials-container .testimonial .single-testimonial .testimonial-wrapper .client-text p {
+    font-size: 18px;
+    line-height: 35px;
+  }
+}
+.testimonial-section .testimonials-container .testimonial .single-testimonial .testimonial-wrapper .client-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.testimonial-section .testimonials-container .testimonial .single-testimonial .testimonial-wrapper .client-name p {
+  font-size: 26px;
+  line-height: 49px;
+  font-family: "Sporting Grotesque Bold";
+  color: #000000;
+  text-align: center;
+}
+.testimonial-section .testimonials-container .testimonial .slick-prev {
+  left: -18%;
+}
+@media screen and (max-width: 1500px) {
+  .testimonial-section .testimonials-container .testimonial .slick-prev {
+    left: -8%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .testimonial-section .testimonials-container .testimonial .slick-prev {
+    left: -2%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .testimonial-section .testimonials-container .testimonial .slick-prev {
+    left: 10%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .testimonial-section .testimonials-container .testimonial .slick-prev {
+    top: 65% !important;
+  }
+}
+.testimonial-section .testimonials-container .testimonial .slick-next {
+  right: -18%;
+}
+@media screen and (max-width: 1500px) {
+  .testimonial-section .testimonials-container .testimonial .slick-next {
+    right: -8%;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .testimonial-section .testimonials-container .testimonial .slick-next {
+    right: -2%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .testimonial-section .testimonials-container .testimonial .slick-next {
+    right: 10%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .testimonial-section .testimonials-container .testimonial .slick-next {
+    top: 65% !important;
+  }
+}
+
+.content-block {
+  padding: 50px 20px;
+}
+.content-block .wrap-content-block {
+  max-width: 1150px;
+  margin: 0 auto;
+}
+.content-block .wrap-content-block .wrapper {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.content-block .wrap-content-block .wrapper .heading {
+  font-family: "Sporting Grotesque Bold";
+  font-size: 40px;
+  color: #000000;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+.content-block .wrap-content-block .wrapper .content {
+  font-family: "Sporting Grotesque Regular";
+  font-size: 16px;
+  color: #000000;
+  padding-bottom: 50px;
+}
+.content-block .wrap-content-block .wrapper .border {
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: black;
+  border-radius: 15px;
+  margin: 0 auto;
+}
+.content-block .wrap-content-block .wrapper:last-child {
+  margin-bottom: 0;
+}
+.content-block .wrap-content-block .wrapper:last-child .content {
+  padding-bottom: 0;
+}
+.content-block .wrap-content-block .wrapper:last-child .border {
+  display: none;
+}
+
+table.xdebug-error.xe-warning {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,83 @@
+{
+  "sections": {
+    "main": {
+      "type": "template--collections-list",
+      "blocks": {
+        "product_vendor": {
+          "type": "product-card-vendor",
+          "settings": {
+          }
+        },
+        "product_title": {
+          "type": "product-card-title",
+          "settings": {
+          }
+        },
+        "product_price": {
+          "type": "product-card-price",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "product_vendor",
+        "product_title",
+        "product_price"
+      ],
+      "settings": {
+        "products-per-collection": 3
+      }
+    },
+    "logo-list": {
+      "type": "image--logo-list",
+      "blocks": {
+        "logo-list-0": {
+          "type": "logo_image",
+          "settings": {
+          }
+        },
+        "logo-list-1": {
+          "type": "logo_image",
+          "settings": {
+          }
+        },
+        "logo-list-2": {
+          "type": "logo_image",
+          "settings": {
+          }
+        },
+        "logo-list-3": {
+          "type": "logo_image",
+          "settings": {
+          }
+        },
+        "logo-list-4": {
+          "type": "logo_image",
+          "settings": {
+          }
+        },
+        "logo-list-5": {
+          "type": "logo_image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "logo-list-0",
+        "logo-list-1",
+        "logo-list-2",
+        "logo-list-3",
+        "logo-list-4",
+        "logo-list-5"
+      ],
+      "settings": {
+        "width": 150,
+        "subheading": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "logo-list"
+  ]
+}

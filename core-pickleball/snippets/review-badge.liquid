@@ -1,0 +1,13 @@
+{% comment %} <div class="review-badge">
+  {% if badge_template == "product" %}
+    <!-- INSERT [PRODUCT PAGE] REVIEW BADGE HERE -->
+    <a href="#shopify-product-reviews">
+      <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+  </a>
+  {% elsif badge_template == "grid" %}
+   <a href="#shopify-product-reviews">
+    <!-- INSERT [PRODUCT GRID] REVIEW BADGE HERE -->
+    <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+</a>
+  {% endif %}
+</div> {% endcomment %}

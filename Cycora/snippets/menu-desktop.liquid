@@ -1,0 +1,39 @@
+{% assign counter = 1 %}
+{% for link in linklists['main-menu'].links %}
+    <div class="header-menu-element">
+        <div class="header-menu-element-left">
+            {% if counter == 1 %}
+                <img class="light-menu-icon" src="{{ "menu-about-light.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+                <img class="dark-menu-icon" src="{{ "menu-about-dark.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+            {% endif %}
+            {% if counter == 2 %}
+                <img class="light-menu-icon" src="{{ "menu-products-light.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+                <img class="dark-menu-icon" src="{{ "menu-products-dark.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+            {% endif %}
+            {% if counter == 3 %}
+                <img class="light-menu-icon" src="{{ "menu-lab-light.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+                <img class="dark-menu-icon" src="{{ "menu-lab-dark.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+            {% endif %}
+            {% if counter == 4 %}
+                <img class="light-menu-icon" src="{{ "menu-partnerships-light.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+                <img class="dark-menu-icon" src="{{ "menu-partnerships-dark.svg" | asset_url }}" alt="{{ link.title | escape }}" />
+            {% endif %}
+        </div>
+        <div class="header-menu-element-right">
+            <h3>{{ link.title }}</h3>
+            {% if link.links %}
+                {% for sublink in link.links %}
+                    {% if sublink.url == '#cart' %}
+                        <span><a href="javascript:void(0)" class="cart-menu">cart <i id="header_cart_quantity"></i></a>
+                            {% include "small-cart" %}
+                        </span>
+                    {% else %}
+                        <span><a href="{{ sublink.url }}">{{ sublink.title }}</a></span>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+        </div>
+    </div>
+    {% assign counter = counter | plus: 1 %}
+{% endfor %}

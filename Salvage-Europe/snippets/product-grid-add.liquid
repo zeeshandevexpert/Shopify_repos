@@ -1,0 +1,40 @@
+<div class="quick-add-to-cart js-quick-add" data-quick-add>
+  {% if product.variants.size <= 1 and product.available %}
+  {% capture product_form_config %}
+    {
+      "money_format": {{ shop.money_format | json }},
+      "enable_history": true,
+      "quickview": false,
+      "featured_product": false,
+      "swatches": {{ settings.product_variants | json }}
+    }
+  {% endcapture %}
+  {%
+    form 'product',
+    product,
+    id: product_form_id,
+    class: "product_form",
+    data-product-form: product_form_config,
+    data-product-id: product.id
+  %}
+      <div class="product-variants"></div><!-- product variants -->
+      <input  type="hidden" id="{{ variant.id }}" name="id" data-sku="{{ variant.sku }}" value="{{ product.variants[0].id }}" />
+      <div class="product-add">
+
+        <div class="note note-success mt3 js-added-msg" style="display: none">
+          <b>{{ 'products.product.added' | t }}</b>&nbsp;&nbsp;&nbsp;<a class="underline" href="{{ routes.cart_url }}">{{ 'products.product.view_cart' | t }}</a> {{ 'products.product.or' | t }} <a class="underline" href="{{ routes.all_products_collection_url }}">{{ 'products.product.continue' | t }}</a>.
+        </div>
+        <div class="note note-error js-error-msg" style="display: none">
+          <b>{{ 'cart.general.cart_error' | t }}</b>&nbsp;&nbsp;&nbsp;{{ 'cart.general.update_qty_error' | t }}
+        </div>
+
+        <input type="submit" name="button" class="product__add-button add AddtoCart js-ajax-submit" value="{{ 'products.product.add_to_cart' | t }}"/>
+      </div>
+      <p class="product__add-msg add-to-cart-msg"></p>
+   {% endform %}
+  {% else %}
+    <div class="product-add">
+      <a class="add options button clearfix" href="{{ product.url | within: collection }}">{{ 'products.product.select_option' | t }}</a>
+    </div>
+  {% endif %}
+</div>

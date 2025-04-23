@@ -1,0 +1,145 @@
+.legal-top-section {
+    background: #f0f4f5;
+    padding: 220px 0 88px 0;
+}
+
+.legal-top-section-row {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.legal-top-section-col-left,.legal-top-section-col-right {
+	width:50%;
+}
+
+.legal-top-section-row h1, .legal-top-section-row h2 {
+	font-size:60px;
+	line-height: 1.1em;
+	letter-spacing: -0.04em;
+	color:var(--colorlightblack);
+	margin:0;
+}
+
+.legal-main-header-row {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.legal-main-header-col-left, .legal-main-header-col-right {
+	width:50%;
+}
+
+.legal-main-section {
+	padding-bottom:97px;
+}
+
+.legal-main-section h2 {
+    color: #000;
+    font-size: 14px;
+    line-height: 40px;
+    height: 40px;
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    padding-right: 18px;
+    background: url(arrow-bottom.svg) center right no-repeat;
+    margin: 0;
+}
+
+.legal-main-section h3 {
+    font-size: 45px;
+    line-height: 0.9em;
+    letter-spacing: -0.04em;
+    color: #000;
+    margin: 17px 0 0 0;
+}
+
+.legal-main-section p {
+	font-size: 14px;
+    line-height: 1.5em;
+    color: var(--colorlightblack);
+    margin: 17px 0 0 0;
+}
+
+.legal-main-row {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding-bottom:59px;
+}
+
+.legal-main-section .container-large .legal-main-row:not(:first-child) {
+	border-top:1px solid #DAE4E7;
+}
+
+.legal-main-col-left {
+	width:50%;
+}
+
+.legal-main-col-right {
+	width:50%;
+}
+
+.legal-main-title {
+	border-bottom:1px solid #DAE4E7;
+}
+
+.legal-main-col-right .legal-main-title:not(:first-child) {
+	margin-top:52px;
+}
+
+@media (max-width:991px) {
+	.legal-top-section {
+		padding:150px 0 69px 0;
+	}
+
+	.legal-top-section-col-left {
+		width:100%;
+	}
+
+	.legal-top-section-col-right {
+		width:100%;
+	}
+
+	.legal-top-section-row h1, .legal-top-section-row h2 { 
+		font-size:45px;
+		line-height: 1em;
+	}
+
+	.legal-top-section-row h1 {
+		margin-bottom: 35px;
+	}
+
+	.legal-main-col-left .legal-main-title {
+		display: none;
+	}
+
+	.legal-main-section {
+		padding-bottom:48px;
+	}
+
+	.legal-main-col-left {
+		width:100%;
+	}
+
+	.legal-main-col-right {
+		width:100%;
+	}
+
+	.legal-main-section h3 {
+		margin:22px 0 28px 0;
+	}
+
+	.legal-main-section p {
+		margin-top:28px;
+	}
+
+	.legal-main-section .container-large .legal-main-row:not(:first-child) {
+		border-top:none;
+	}
+
+	.legal-main-row  {
+		padding-bottom:52px;
+	}
+}

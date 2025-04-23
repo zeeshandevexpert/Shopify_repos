@@ -1,0 +1,390 @@
+<style>
+   .testimonial-section-outer{
+    background-color: {{ section.settings.testimonial--background-color }};
+  }
+  .btn{
+    /* color: {{ section.settings.testimonial-background-text-color }} !important;
+    background-color: {{ section.settings.button--background-color }}; */
+  }
+
+  .testimonial-section-outer{
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+
+  .pdpReviewSectiona-section-padding{
+      padding-top: 70px;
+      /* padding-bottom: 0; */
+  }
+
+  .homepage-sections-wrapper.newsletter_content_section{
+    margin-top: -150px;
+    background: none;
+    margin-bottom: 40px;
+    position:relative;
+    z-index: 10;
+  }
+
+  .instagramOuter {
+    background: #F389B8;
+    padding: 100px 0 350px;
+    text-align: center;
+  }
+
+  .testimonialInnerContent-Outer {
+    max-width: 470px;
+  }
+
+  .bottomSectionImage {
+      top: -60px;
+      z-index: 99;
+      left: 30px;
+  }
+
+  @media(max-width:1359px){
+    .testimonial-section-outer {
+      padding-top: 90px;
+      padding-bottom: 90px;
+    }
+  }
+   @media(max-width: 991px){
+
+     .testimonial-section-outer {
+        padding-top: 60px;
+        padding-bottom: 90px;
+    }
+
+    .bottomSectionImage {
+      max-width: 130px;
+      max-height: 130px;
+      top: -40px;
+    }
+
+    .sepratorOuter img {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
+
+
+
+   }
+    @media(max-width: 575px){
+        .testimonialInnerContent-Outer {
+          max-width: 100%;
+        }
+        .testimonialInnerContent-Outer + .testimonialInnerContent-Outer{
+          margin-top: 50px;
+        }
+    }
+
+
+  .testimonialInnerContent-review .yotpo-header-container{
+      background: none !important;
+  }
+
+   .testimonialInnerContent-review .yotpo-layout-header-wrapper{
+      padding: 0 !important;
+      background: none;
+      min-width: initial !important;
+  }
+
+   .testimonialInnerContent-review .yotpo-widget-instance {
+      width: 100%;
+      flex: 1 0 auto;
+    }
+
+    .testimonialInnerContent-review .yotpo-base-layout {
+      margin: 0 auto;
+      margin: 0;
+      width: 100% !important;
+    }
+
+    .testimonialInnerContent-review .yotpo-head{
+      display: none !important;
+    }
+
+    .testimonialInnerContent-review .yotpo-review-card {
+        padding: 0 15px;
+        flex: 0 0 50%;
+        max-width: 50%;
+        position: static !important;
+    }
+
+    .testimonialInnerContent-review .yotpo-review-card .card-container {
+        background: #FFFAF1 !important;
+        padding: 50px 30px 40px;
+        border: 3px solid #CF6A28;
+        border-radius: 30px;
+        height:100%;
+    }
+
+  .testimonialInnerContent-review [item-selector=".yotpo-review-card"] {
+      display: flex;
+      /* align-items: center; */
+      height: auto !important;
+    flex-wrap:wrap;
+  }
+
+  .testimonialInnerContent-review  .content-container {
+      padding: 0;
+    }
+
+  .testimonialInnerContent-review .yotpo-review-title, .testimonialInnerContent-review .yotpo-star-rating{
+    display:none;
+  }
+
+  .testimonialInnerContent-review .content-header{
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='35' viewBox='0 0 50 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M36.9761 12.1309C38.8862 12.421 40.7238 12.4935 42.4162 13.0255C45.4385 13.9442 47.4211 16.0477 48.896 18.9008C51.2655 23.4946 49.5972 29.3699 46.0188 32.2471C42.658 34.9551 38.862 35.6563 34.8243 34.1572C30.6898 32.5856 28.2478 29.515 27.6434 25.0904C26.6762 18.1271 29.1666 12.3001 33.7604 7.22269C36.2992 4.41802 39.3214 2.21781 42.5855 0.356086C43.2867 -0.0307661 43.9878 -0.200013 44.5197 0.501155C45.1 1.25068 44.7615 1.90349 44.1329 2.50794C41.4491 5.04665 39.0796 7.80297 37.4113 11.1396C37.2421 11.4781 37.097 11.8407 36.9761 12.1309Z' fill='%23CF6A28'/%3E%3Cpath d='M9.5097 12.1066C11.5407 12.4693 13.5233 12.5419 15.2883 13.1705C20.1481 14.863 23.0495 19.7228 22.5176 24.8727C22.0098 29.7809 18.093 33.9637 13.1606 34.7858C6.70502 35.8738 0.587939 31.0865 0.0801954 24.631C-0.596792 16.096 3.05412 9.54375 9.43716 4.2729C11.1538 2.84639 13.1364 1.71002 14.9981 0.428573C15.6993 -0.0308119 16.4488 -0.272595 17.0533 0.50111C17.6819 1.29899 17.2709 1.97598 16.6181 2.60461C14.1761 4.90154 12.0001 7.44025 10.3801 10.39C10.0174 10.9461 9.75148 11.5747 9.5097 12.1066Z' fill='%23CF6A28'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 0 30px;
+    height:35px;
+  }
+
+  .testimonialInnerContent-review .yotpo-read-more-text {
+    text-align: center;
+    display: block;
+    color: #CF6A28;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--body-font-stack);
+  }
+
+    .testimonialInnerContent-review .yotpo-reviewer .yotpo-reviewer-name {
+      font-family: var(--body-font-stack);
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 500;
+      flex-grow: 1;
+  }
+
+  .testimonialInnerContent-review .yotpo-layout-header-wrapper {
+    justify-content: flex-end !important;
+    padding: 0 20px !important;
+  }
+
+  .testimonialInnerContent-review #yotpo-main-widget-btn {
+      padding: 10px 0;
+      border: none;
+  }
+    @media(max-width:991px){
+        .testimonialInnerContent-review .yotpo-layout-header-wrapper{
+          align-items: flex-end !important;
+        }
+    }
+</style>
+<div class="sepratorOuter"></div>
+
+<div
+  class="testimonial-section-outer  {% if template.name != "index" %}pdpReviewSection{% endif %}{% if section.settings.testimonial_padding != blank %}a-section-padding{% endif %}"
+  style="background-color: {{ section.settings.getSection--background-color }};"
+>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-4">
+        <div class="col-12 p-0">
+          <div class="testimonial-right-content">
+            {% if section.settings.testimonial_heading != blank %}
+              <h3 class="sectionSubheading">{{ section.settings.testimonial_heading }}</h3>
+            {% endif %}
+            {% if section.settings.testimonial_subheading != blank %}
+              <h2 class="sectionHeading">{{ section.settings.testimonial_subheading }}</h2>
+            {% endif %}
+          </div>
+          <div class="testimonial-right-button">
+            <a class="btn btn-primary" href="{{ section.settings.link }}">
+              {{ section.settings.linktext }}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8 col-12">
+        <div class="row justify-content-between mt-lg-0 mt-5 testimonialInnerContent-review">
+          {% if template.name == 'index' %}
+            {% for block in section.blocks %}
+              <div class="col-12 col-sm-6 testimonialInnerContent-Outer">
+                <div class="testimonialInnerContent">
+                  {% if block.settings.testimonial_quotes != blank %}
+                    <p>{{ block.settings.testimonial_quotes }}</p>
+                  {% else %}
+                    <p>{% render 'testimonial-quote-icon' %}</p>
+                  {% endif %}
+
+                  {% if block.settings['testimonial-text'] != blank %}
+                    <p>{{ block.settings['testimonial-text'] }}</p>
+                  {% endif %}
+                  {% if block.settings['testimonial-author'] != blank %}
+                    <p>{{ block.settings['testimonial-author'] }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let appOuter = document.querySelector('.yotpo-widget-instance');
+    let showReview = document.querySelector('.testimonialInnerContent-review');
+    let pageName = document.querySelector('#pastry-kit-subscription');
+    if (pageName) {
+      showReview.append(appOuter);
+    }
+  </script>
+</div>
+
+<div class="sepratorOuter position-relative">
+  {% if section.settings['bottomSection--image'] != blank %}
+    <div class="bottomSectionImage position-absolute">
+      <img
+        class=""
+        alt=""
+        src="{{ section.settings.bottomSection--image | img_url: ' ' }}"
+        loading="lazy"
+        height="195"
+        width="195"
+      >
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial Home",
+  "settings": [
+    {
+      "type": "range",
+      "id": "testimonial_padding",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "testimonial--background-color",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    },
+    {
+      "id": "testimonial_heading",
+      "type": "text",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_subheading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Link URL"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Link text",
+      "default": "Click here"
+    },
+    {
+      "type": "color",
+      "id": "button--background-color",
+      "label": "Button color",
+      "default": "#2D2D2D"
+    },
+    {
+      "type": "color",
+      "id": "testimonial--background-text-color",
+      "label": "Text color",
+      "default": "#2D2D2D"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottomSection--image",
+      "label": "Bottom image "
+    }
+  ],
+  "blocks": [
+    {
+      "type": "textarea",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "html",
+          "id": "testimonial_quotes",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "testimonial-text",
+          "label": {
+            "en": "Text",
+            "de": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "pt-PT": "Texto"
+          },
+          "default": {
+            "en": "<p>Show off incredible feedback from your customers</p>",
+            "de": "<p>Stellen Sie das unglaubliche Feedback Ihrer Kunden zur Schau</p>",
+            "es": "<p>Muestra comentarios increíbles de tus clientes</p>",
+            "fr": "<p>Mettre en avant les retours incroyables de vos clients</p>",
+            "pt-PT": "<p>Exiba as opiniões maravilhosas dos seus clientes</p>"
+          }
+        },
+        {
+          "type": "text",
+          "id": "testimonial-author",
+          "label": {
+            "en": "Author",
+            "de": "Autor",
+            "es": "Autor",
+            "fr": "Auteur",
+            "pt-PT": "Autor"
+          },
+          "default": {
+            "en": "John Doe",
+            "de": "John Doe",
+            "es": "John Doe",
+            "fr": "John Doe",
+            "pt-PT": "John Doe"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link",
+            "de": "Link",
+            "es": "Enlace",
+            "fr": "Lien",
+            "pt-PT": "Ligação"
+          },
+          "info": {
+            "en": "Optional",
+            "de": "Optional",
+            "es": "Opcional",
+            "fr": "Facultatif",
+            "pt-PT": "Opcional"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Home"
+    }
+  ]
+}
+{% endschema %}

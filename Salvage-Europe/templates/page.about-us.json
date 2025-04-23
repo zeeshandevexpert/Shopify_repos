@@ -1,0 +1,258 @@
+{
+  "sections": {
+    "banner_image_nYM4pd": {
+      "type": "banner-image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/CarrelageLyonterrecuiteterracotta.jpg",
+        "heading": "Our Story",
+        "content": "<p>Welcome to Salvage Europe, where history and craftsmanship meet innovation and design. Our passion lies in unearthing the finest, most unique reclaimed materials from across Europe, breathing new life into architectural projects with a sense of heritage and authenticity that’s second to none.<\/p><p><strong>Our Journey<\/strong><\/p><p>Our journey takes us to the hidden corners and forgotten treasures of Europe, from centuries-old barns in the French countryside to historic buildings in the heart of Italy. Every piece we discover tells a story of its own, steeped in tradition and character, waiting to be repurposed into something extraordinary.<\/p><p><strong>Our Commitment<\/strong><\/p><p>At Salvage Europe, we pride ourselves on being honest dealers, providing only the best reclaimed materials directly from the source. Our dedicated team meticulously inspects and selects each item, ensuring it meets our high standards of quality and integrity. This direct approach allows us to offer competitive wholesale prices to retailers, builders, and designers, fostering long-term relationships built on trust and mutual respect.<\/p><p><strong>Our Offerings<\/strong><\/p><p>Our extensive collection includes reclaimed beams, French oak flooring, stone and a myriad of other architectural elements. Each piece is carefully curated to add a unique, historical touch to your projects, blending seamlessly into both modern and traditional designs. We offer our materials in their natural, weathered state, or can customize finishes to align with your vision.<\/p><p><strong>Our Vision<\/strong><\/p><p>We believe in the beauty of sustainability and the art of reimagining the past. By preserving and repurposing these remarkable materials, we not only honor their history but also contribute to a more sustainable future. Our mission is to inspire and support architects, designers, and builders in creating spaces that are as environmentally responsible as they are aesthetically stunning.<\/p><p>Join us on our journey to discover the timeless allure of reclaimed materials. At Salvage Europe, we’re not just salvaging wood and stone; we’re salvaging stories, memories, and a piece of Europe’s rich architectural heritage.<\/p><p>Explore our collection and let us help you bring a touch of history and elegance to your next project.<\/p>"
+      }
+    },
+    "banner-header": {
+      "type": "banner-header",
+      "disabled": true,
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "MEET THE TEAM",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "4ee6b855-396c-4bf8-9459-56b353a6a672": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19133072343326__4ee6b855-396c-4bf8-9459-56b353a6a672-1685057097bb96cb6c-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1_03a442e7-bcc3-40a7-b2dd-6e6721799599.png"
+          }
+        },
+        "template--19133072343326__4ee6b855-396c-4bf8-9459-56b353a6a672-1685057097bb96cb6c-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_9639.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--19133072343326__4ee6b855-396c-4bf8-9459-56b353a6a672-1685057097bb96cb6c-0",
+        "template--19133072343326__4ee6b855-396c-4bf8-9459-56b353a6a672-1685057097bb96cb6c-1"
+      ],
+      "settings": {
+        "layout": "left",
+        "main_heading": "ABOUT US",
+        "image_width": "50%",
+        "text_align": "left",
+        "title": "",
+        "text": "<p><strong>Salvage Europe specializes in sourcing and importing new and reclaimed French Oak, Stone, and Terracotta products from Europe. <\/strong><br\/><\/p><p>We are dedicated to providing high-quality, authentic, and sustainable materials to our customers. As a team of trusted design professionals, we take pride in sourcing only the highest quality and most unique products to offer our customers.<\/p><p><\/p><p>Our passion for quality and authenticity means that we work only with reputable suppliers and we strive to ensure that each piece is of the highest standard. <\/p><p><\/p><p>Whether you are looking for products to enhance the beauty of your home, office, or any other space, our team is dedicated to delivering customized solutions that fit your specific needs.<\/p>",
+        "link": "",
+        "button": "",
+        "color": "#000000",
+        "background": "#ffffff",
+        "no_bottom_margin": false
+      }
+    },
+    "ae3c7a73-7544-4597-830e-05ee2c704f5c": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--19133072343326__ae3c7a73-7544-4597-830e-05ee2c704f5c-1685057957910d9ac7-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/B6ECF07C-A7AB-4385-A8D8-7C4D412B1DB4.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--19133072343326__ae3c7a73-7544-4597-830e-05ee2c704f5c-1685057957910d9ac7-1"
+      ],
+      "settings": {
+        "layout": "left",
+        "main_heading": "",
+        "image_width": "50%",
+        "text_align": "left",
+        "title": "Evan Shay",
+        "text": "<p>Drawing from a heritage rooted in Australia's timber industry, Evan and James now stand as co-owners. Evan's successful ventures in the hospitality sector, where he has established and expanded hotels and restaurants in multiple countries, contribute invaluable expertise in client-centric operations to Salvage of Europe. Their shared enthusiasm for the industry, comprehensive understanding of the products, and steadfast dedication to customer satisfaction form the driving force behind their partnership.<\/p>",
+        "link": "",
+        "button": "",
+        "color": "#000000",
+        "background": "#ffffff",
+        "no_bottom_margin": false
+      }
+    },
+    "61fc4a13-7075-4145-bd65-af8837521b1a": {
+      "type": "slideshow",
+      "blocks": {
+        "template--19133072343326__61fc4a13-7075-4145-bd65-af8837521b1a-16850573680fd811c0-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FBACF212-F513-40D1-92A5-150A0D0DBF2E.jpg",
+            "overlay_color": "#000000",
+            "overlay_opacity": 35,
+            "caption_position": "middle_center",
+            "hide_caption_background": false,
+            "heading": "FROM THE SOURCE",
+            "subheading": "",
+            "link": "",
+            "button_text": "Add a button",
+            "second_link": "",
+            "second_button_text": "Button 2 text",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "template--19133072343326__61fc4a13-7075-4145-bd65-af8837521b1a-16850573680fd811c0-0"
+      ],
+      "settings": {
+        "display_wide": false,
+        "slideshow_size": "fixed_height",
+        "desktop_height": 600,
+        "mobile_height": 300,
+        "caption_below": false,
+        "pager": "dots",
+        "transition": "fade",
+        "slider_speed": 5,
+        "video_audio": "off",
+        "slide_heading_size": 22,
+        "subheading_size": 14,
+        "no_bottom_margin": false
+      }
+    },
+    "4b92e375-b0eb-4d33-a6c2-255853825551": {
+      "type": "meet-the-team-section",
+      "blocks": {
+        "ffa6c2d2-bf50-44b4-8d15-a8222a8063ea": {
+          "type": "icon",
+          "settings": {
+            "reverse_row": false,
+            "profile": "shopify:\/\/shop_images\/2_226d8f81-b23d-4dcb-8ba2-3a3e1b982e79.png",
+            "year": "2021",
+            "name": "Evan Shay",
+            "description": "<p>With a rich family history in Australia's logging industry, has joined forces with James as co-owners of Salvage Europe. Evan's prosperous background in the hospitality sector, founding and expanding hotels and restaurants across various countries, brings valuable client-focused and operational expertise to Salvage Europe. Together, they share a deep passion for the industry, extensive product knowledge, and an unwavering commitment to customer success.<\/p>",
+            "email": ""
+          }
+        },
+        "9a1b5fdd-ff05-4c18-a5fd-d75dd3dc97b2": {
+          "type": "icon",
+          "settings": {
+            "reverse_row": true,
+            "profile": "shopify:\/\/shop_images\/1.jpg",
+            "year": "2023",
+            "name": "James Ruig:",
+            "description": "<p>Over the course of 35 years, James established Salvage Europe as the largest reclaimed wood company in the Southern Hemisphere, operating in Australia, Texas, Malibu, and California Wine Country. James's lifelong journey has taken him across the globe in search of the most exceptional and beautiful salvageable elements. With a wealth of knowledge and extensive industry contacts, he possesses an unmatched passion for his craft.<\/p>",
+            "email": ""
+          }
+        }
+      },
+      "block_order": [
+        "ffa6c2d2-bf50-44b4-8d15-a8222a8063ea",
+        "9a1b5fdd-ff05-4c18-a5fd-d75dd3dc97b2"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg_color": "#ffffff",
+        "color": "#000000",
+        "main_heading": ""
+      }
+    },
+    "340b3515-9055-4704-9290-842fdd87ef49": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-0": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.jpg",
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-0",
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-1",
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Spotlight on",
+        "rich_text": "<p>Add some editorial columns to your page<\/p>",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#f8f8f8",
+        "background": "#000000",
+        "padding": 30
+      }
+    },
+    "image_with_text_myXzLT": {
+      "type": "image-with-text",
+      "blocks": {
+        "image_BLURtf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/JR.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_BLURtf"
+      ],
+      "settings": {
+        "layout": "right",
+        "main_heading": "",
+        "image_width": "50%",
+        "text_align": "left",
+        "title": "James Ruig",
+        "text": "<p>Over the course of 35 years, James established Salvage of Europe as the largest reclaimed wood company in the Southern Hemisphere, operating across the world. James's lifelong journey has taken him across the globe in search of the most exceptional and beautiful salvageable elements. With a wealth of knowledge and extensive industry contacts, he possesses an unmatched passion for his craft.<\/p>",
+        "link": "",
+        "button": "",
+        "color": "#000000",
+        "background": "#ffffff",
+        "no_bottom_margin": false
+      }
+    }
+  },
+  "order": [
+    "banner_image_nYM4pd",
+    "banner-header",
+    "4ee6b855-396c-4bf8-9459-56b353a6a672",
+    "ae3c7a73-7544-4597-830e-05ee2c704f5c",
+    "61fc4a13-7075-4145-bd65-af8837521b1a",
+    "4b92e375-b0eb-4d33-a6c2-255853825551",
+    "340b3515-9055-4704-9290-842fdd87ef49",
+    "image_with_text_myXzLT"
+  ]
+}

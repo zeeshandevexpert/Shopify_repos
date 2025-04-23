@@ -1,0 +1,459 @@
+{% liquid
+
+  if section.settings.full_width
+    assign full_width = 'full'
+  else
+    assign full_width = ''
+  endif
+
+  assign if_absolute = ''
+  if section.settings.absolute_header
+    assign if_absolute = 'absolute'
+  endif
+
+  case section.settings.logo_position
+  when 'inline_left'
+    assign nav_layout = 'inline_left'
+  when 'inline_left_right'
+    assign nav_layout = 'inline_left_right'
+  when 'inline_center'
+    assign nav_layout = 'inline_center'
+    assign split = section.settings.nav_split | plus:0
+    assign inline_centered = true
+  when 'above_left'
+    assign nav_layout = 'above_left'
+  when 'above_center'
+    assign nav_layout = 'above_center'
+  endcase
+
+  assign top_border = ''
+  assign bottom_border = ''
+  if section.settings.nav_top_border
+    assign top_border = 'border-top'
+  endif
+  if section.settings.nav_bottom_border
+    assign bottom_border = 'border-bottom'
+  endif
+
+  assign hover_effect = section.settings.nav_hover_effect
+
+%}
+<theme-header>
+<header class="header__wrapper {{ if_absolute }} {{ nav_layout }} js-theme-header stickynav" data-section-id="{{ section.id }}" data-section-type="header-section" data-overlay-header-enabled="{{ section.settings.absolute_header }}">
+    {% comment %}Capture the logo as we will use it again in the navigation snippet{% endcomment %}
+    {% capture logo %}
+      {% if section.settings.logo != blank %}
+        <div id="logo" class="header__logo-image">
+          <a href="{{ routes.root_url }}">
+            {{ section.settings.logo | image_url: width: 600 | image_tag: loading: 'eager' }}
+          </a>
+        </div>
+      {% else %}
+        <div id="logo" class="header__logo-text">
+          <a href="{{ routes.root_url }}">{{ shop.name }}</a>
+        </div>
+      {% endif %}
+    {% endcapture %}
+
+  <nav class="header__nav-container {{ top_border }} {{ bottom_border }} {{ hover_effect }} js-nav">
+    {% comment %}If the logo is not inline and centered{% endcomment %}
+    {% if nav_layout contains 'above' %}
+      <div class="header__nav-above grid__wrapper {{ full_width }} device-hide">
+        <div class="{% if nav_layout == 'above_left' %}span-12 a-left{% elsif nav_layout == 'above_center' %}span-6 push-3 a-center{% endif %} v-center">
+          {{ logo }}
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="header__nav-below grid__wrapper {{ full_width }} device-hide">
+      {% if nav_layout contains 'inline_left' %}
+        <div class="{% if nav_layout == 'inline_left' %}span-2{% elsif nav_layout == 'inline_left_right' %}span-3{% endif %} auto v-center a-left">
+          {{ logo }}
+        </div>
+
+        <div class="{% if nav_layout == 'inline_left' %}span-8  a-center{% elsif nav_layout == 'inline_left_right' %}span-9 a-right{% endif %} auto v-center">
+          {% render 'navigation' %}
+        </div>
+      {% endif %}
+
+      {% if nav_layout contains 'above' %}
+        <div class="span-12 auto v-center {% if nav_layout == 'above_left' %}a-left{% elsif nav_layout == 'above_center' %}a-center{% endif %}">
+          {% render 'navigation' %}
+        </div>
+      {% endif %}
+
+      {% comment %}If the logo is inline and centered split it to either side of the logo{% endcomment %}
+      {% if inline_centered == true %}
+        <div class="span-5 auto v-center a-left">
+          {% render 'navigation', start:split, offset:0, position: 'left-side' %}
+        </div>
+        <div class="span-2 auto v-center a-center">
+          {{ logo }}
+        </div>
+        <div class="span-5 auto v-center a-right">
+          {% render 'navigation', start:, offset:split, position: 'right-side' %}
+        </div>
+      {% endif %}
+
+    </div>
+
+    <div class="header__mobile-wrapper grid__wrapper full desktop-hide">
+      <div class="mobile-menu__trigger span-3 auto v-center a-left">
+        <div class="slideout__trigger--open text-left">
+          <button class="slideout__trigger-mobile-menu js-slideout-open text-left" data-wau-slideout-target="mobile-navigation" data-slideout-direction="left" aria-label="Open navigation" tabindex="0" type="button" name="button">
+            {% render 'snip-icons',
+             wrapper: '.slideout__trigger-mobile-menu',
+             type: 'mrparker',
+             icon: 'menu-bars',
+             classes: 'slideout__trigger-mobile-menu--icon vib-center',
+             size: '18px',
+             fill: 'var(--mobile-header-text)',
+             hover: 'var(--mobile-header-text)' %}
+          </button>
+        </div>
+      </div>
+
+      <div class="header__mobile__logo-wrapper span-6 auto v-center a-center">
+        {{ logo }}
+      </div>
+
+      <div class="header__mobile__cart-links-container span-3 auto a-right v-center">
+        {% render 'header-cart-links',
+          icons_only: section.settings.icons_only,
+          hd_locale_selector: hd_locale_selector,
+          hd_currency_selector: hd_currency_selector,
+          cart_icon: settings.cart_icon,
+          fill_color: 'var(--mobile-header-text)',
+          wrapper: '.header__mobile__cart-links-container' %}
+      </div>
+    </div>
+  </nav>
+  <style media="screen">
+    .header__nav-container:before,
+    .header__nav-container:after  {
+      border-color: {{ section.settings.nav_border_color }} !important;
+    }
+    @media screen and (min-width: 740px) {
+      body.index header.header__wrapper.absolute .header__logo-text a,
+      body.index header.header__wrapper.absolute .header__nav__link.dlink,
+      body.index header.header__wrapper.absolute .header__nav__link.dlink:visited,
+      body.index header.header__wrapper.absolute .header__nav__link.dlink:before {
+        color: {{ section.settings.homepage_nav_color }} !important;
+      }
+    }
+    body.index header.header__wrapper.absolute .header__nav__link.dlink svg g {
+      fill: {{ section.settings.homepage_nav_color }} !important;
+    }
+    .header__logo-image {
+      max-width: {{ section.settings.logo_max_width }}px;
+    }
+    .header__logo-text {
+      font-size: var(--h1-size);
+    }
+    .header__nav-below {
+      min-height: {{ section.settings.nav_height }}px;
+    }
+    .header__nav__link.dlink {
+      line-height: calc({{ section.settings.nav_height }}px - 20px);
+    }
+    .header__mobile__cart-links-container svg .hover-fill,
+    .header__mobile__cart-links-container svg:hover .hover-fill, {
+      fill: var(--mobile-header-text);
+    }
+    {% if section.settings.absolute_header %}
+    body.template-index .store__messages-section,
+    body.template-index .js-header-group [data-section-type="custom-liquid"] {
+      display: none;
+    }
+    {% endif %}
+  </style>
+</header>
+<div class="clear js-clear-element"></div>
+</theme-header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "js-site-header",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "select",
+      "id": "logo_position",
+      "label": "Header layout",
+      "default": "inline_center",
+      "options": [
+        {
+          "value": "inline_left",
+          "label": "Logo inline left, navigation centered"
+        },
+        {
+          "value": "inline_left_right",
+          "label": "Logo inline left, navigation right aligned"
+        },
+        {
+          "value": "inline_center",
+          "label": "Logo inline centered"
+        },
+        {
+          "value": "above_left",
+          "label": "Logo above navigation, left aligned"
+        },
+        {
+          "value": "above_center",
+          "label": "Logo above navigation, center aligned"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enable full width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "absolute_header",
+      "label": "Overlay header on Homepage",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "nav_top_border",
+      "label": "Enable top border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "nav_bottom_border",
+      "label": "Enable bottom border",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "homepage_nav_color",
+      "label": "Header overlay text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "nav_border_color",
+      "label": "Borders",
+      "default": "#f0f0f0"
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Image",
+      "info" : "250px x 80px recommended"
+    },
+    {
+      "type": "range",
+      "id": "logo_max_width",
+      "min": 100,
+      "max": 250,
+      "step": 5,
+      "unit": "px",
+      "label": "Image width",
+      "default": 200
+    },
+    {
+      "type": "header",
+      "content": "Desktop Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "main_nav",
+      "label": "Choose main menu",
+      "default":"main-menu",
+      "info": "It is best practice to select the same menu used in the Mobile Nav. [Learn More](https://developers.google.com/search/mobile-sites/mobile-first-indexing)"
+    },
+    {
+      "type": "range",
+      "id": "nav_height",
+      "min": 50,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Height",
+      "default": 60
+    },
+    {
+      "type": "select",
+      "id": "nav_hover_effect",
+      "label": "Hover effect",
+      "default": "bottom-border",
+      "options": [
+        {
+          "value": "hover-color",
+          "label": "Hover Color Only"
+        },
+        {
+          "value": "bottom-border",
+          "label": "Bottom Border"
+        },
+        {
+          "value": "underline-box",
+          "label": "Underline Box"
+        },
+        {
+          "value": "shift-box",
+          "label": "Shift Box"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "nav_split",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Split navigation",
+      "default": 3,
+      "info":"Split your navigation to each side using the logo, inline centered option"
+    }
+  ],
+  "blocks": [
+    {
+     "type": "collections_mega_menu",
+      "name": "Collections mega dropdown",
+      "settings": [
+        {
+          "type":"text",
+          "id":"collection_item",
+          "label":"Navigation item",
+          "info":"Enter navigation item to apply a dropdown"
+        },
+        {
+          "type": "select",
+          "id": "image_ratio",
+          "options": [
+             { "value": "vertical", "label": "Vertical Images"},
+             { "value": "horizontal", "label": "Horizontal Images"},
+             { "value": "square", "label": "Square Images"}
+          ],
+          "label": "Image Ratio"
+        },
+        {
+          "type": "collection",
+          "id": "collection_1",
+          "label": "Collection One"
+        },
+        {
+          "type": "collection",
+          "id": "collection_2",
+          "label": "Collection Two"
+        },
+        {
+          "type": "collection",
+          "id": "collection_3",
+          "label": "Collection Three"
+        },
+        {
+          "type": "collection",
+          "id": "collection_4",
+          "label": "Collection Four"
+        },
+        {
+          "type": "collection",
+          "id": "collection_5",
+          "label": "Collection Five"
+        },
+        {
+          "type": "collection",
+          "id": "collection_6",
+          "label": "Collection Six"
+        }
+      ]
+     },
+    {
+      "type": "linklist_with_images",
+       "name": "Links with images",
+       "settings": [
+          {
+            "type":"text",
+            "id":"linklist_images_menu_item",
+            "label":"Menu item",
+            "info":"Select a menu item that will show up to 3 link columns and 3 images. Create menus in your [store navigation admin](\/admin\/menus)."
+          },
+          {
+            "type": "select",
+            "id": "image_ratio",
+            "default": "square",
+            "options": [
+               { "value": "vertical", "label": "Vertical Images"},
+               { "value": "horizontal", "label": "Horizontal Images"},
+               { "value": "square", "label": "Square Images"}
+            ],
+            "label": "Image Ratio"
+         },
+          {
+            "type": "image_picker",
+            "id": "featured_image_1",
+            "label": "Select a featured image #1",
+            "info" : "300px x 300px recommended"
+          },
+          {
+            "type": "text",
+            "id": "featured_image_label_1",
+            "label": "Featured image label #1"
+         },
+         {
+          "id": "image_url_1",
+          "type": "url",
+          "label": "Image link #1"
+        },
+          {
+            "type": "image_picker",
+            "id": "featured_image_2",
+            "label": "Select a featured image #2",
+            "info" : "300px x 300px recommended"
+          },
+          {
+            "type": "text",
+            "id": "featured_image_label_2",
+            "label": "Featured image label #2"
+         },
+         {
+          "id": "image_url_2",
+          "type": "url",
+          "label": "Image link #2"
+        },
+          {
+            "type": "image_picker",
+            "id": "featured_image_3",
+            "label": "Select a featured image #3",
+            "info" : "300px x 300px recommended"
+          },
+          {
+            "type": "text",
+            "id": "featured_image_label_3",
+            "label": "Featured image label #3"
+         },
+         {
+          "id": "image_url_3",
+          "type": "url",
+          "label": "Image link #3"
+        }
+        ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "collections_mega_menu"
+      },
+      {
+        "type": "linklist_with_images"
+      }
+    ]
+  }
+}
+{% endschema %}

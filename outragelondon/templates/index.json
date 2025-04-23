@@ -1,0 +1,111 @@
+{
+  "sections": {
+    "custom_iwto_w4EwVE": {
+      "type": "custom-iwto",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-10-21T113203.984.png",
+        "img_mob": "shopify:\/\/shop_images\/Untitled_design_-_2024-10-29T102609.361.png",
+        "Preheading": "",
+        "heading": "Christmas Gifts Made Simple.",
+        "link_text": "Shop now",
+        "link": "shopify:\/\/collections\/best-sellers",
+        "overlay": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "fg": "#ffffff",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwl_JX6tPp": {
+      "type": "custom-iwl",
+      "blocks": {
+        "image_4mEVL3": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-05T114426.142.png",
+            "title": "Bestselling Jewellery",
+            "link_text": "Explore the Selection",
+            "link": "shopify:\/\/collections\/shop-all"
+          }
+        },
+        "image_eDD73H": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitleddesign-2024-07-10T130837.170_06502039-356d-40ac-a250-dbe801acf3e5.png",
+            "title": "Essential Rings",
+            "link_text": "Explore the Selection",
+            "link": "shopify:\/\/collections\/rings"
+          }
+        },
+        "image_pGrg77": {
+          "type": "image",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-12T162736.863.png",
+            "title": "Trending Necklaces",
+            "link_text": "Explore the Selection",
+            "link": "shopify:\/\/collections\/necklaces"
+          }
+        }
+      },
+      "block_order": [
+        "image_4mEVL3",
+        "image_eDD73H",
+        "image_pGrg77"
+      ],
+      "settings": {
+        "fg": "#000000"
+      }
+    },
+    "custom_iwto_qfQTXR": {
+      "type": "custom-iwto",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-12T214312.580.png",
+        "img_mob": "shopify:\/\/shop_images\/Untitled_1152_x_2048_px_1.png",
+        "Preheading": "",
+        "heading": "The Art Of Gifting",
+        "link_text": "Explore gifts",
+        "link": "shopify:\/\/collections\/gift-ideas",
+        "overlay": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "fg": "#ffffff",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwto_Q9HrbB": {
+      "type": "custom-iwto",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Outrage_17.png",
+        "img_mob": "shopify:\/\/shop_images\/Untitled_1152_x_2048_px_4.png",
+        "Preheading": "How its made",
+        "heading": "The Process",
+        "link_text": "Read More",
+        "link": "shopify:\/\/pages\/how-its-made",
+        "overlay": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "fg": "#ffffff",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwto_b7EPhV": {
+      "type": "custom-iwto",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-12T104134.541.png",
+        "img_mob": "shopify:\/\/shop_images\/Untitled_1152_x_2048_px_2.png",
+        "Preheading": "",
+        "heading": "OUR HERITAGE",
+        "link_text": "Discover Our Herritage",
+        "link": "shopify:\/\/pages\/our-story-1",
+        "overlay": "linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 100%)",
+        "fg": "#ffffff",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "custom_iwto_w4EwVE",
+    "custom_iwl_JX6tPp",
+    "custom_iwto_qfQTXR",
+    "custom_iwto_Q9HrbB",
+    "custom_iwto_b7EPhV"
+  ]
+}

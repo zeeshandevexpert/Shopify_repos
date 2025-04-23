@@ -1,0 +1,17 @@
+{%- layout none -%}
+{%- if search.performed -%}
+{%- paginate search.results by 100 -%}
+<h5>{{ match }}</h5>
+{%- for result in search.results | limit: 50 -%}
+<li>{{result.handle}}</li>
+{%- if result.handle contains match -%}
+{
+  "found": true,
+  "title":"{{result.title}}",
+  "url":"{{result.url}}"
+}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endpaginate -%}
+{%- endif -%}

@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {
+        "kicker": "",
+        "kicker_size": 3,
+        "show_title": false,
+        "title_size": 8,
+        "show_content": true,
+        "content_size": 5,
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_richtext_Hy9CFt": {
+      "type": "section-richtext",
+      "blocks": {
+        "heading_NPGT6L": {
+          "type": "heading",
+          "settings": {
+            "heading": "<span style=\"font-size: 39px\">訂閱並儲存<\/span>",
+            "text_size": 8
+          }
+        }
+      },
+      "block_order": [
+        "heading_NPGT6L"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_double_qW4MDc": {
+      "type": "section-double",
+      "blocks": {
+        "text_DMHBfJ": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<span style=\"font-size: 39px\">步驟1<\/span>",
+            "text": "<p>選擇您最喜歡的 HydroX，選擇您想要接收它的頻率，然後下訂單。就是這麼簡單！<\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        },
+        "image_VBzE8a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1000051780_1.jpg",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        }
+      },
+      "block_order": [
+        "text_DMHBfJ",
+        "image_VBzE8a"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_double_td3ENM": {
+      "type": "section-double",
+      "blocks": {
+        "image_JFXgar": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1000051694.jpg",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        },
+        "text_hTmJcn": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<span style=\"font-size: 39px\">第2步<\/span>",
+            "text": "<p>隨時編輯您的訂閱。交換產品、新增促銷代碼、更改交貨日期或取消訂單。<\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_JFXgar",
+        "text_hTmJcn"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_double_gmj9cY": {
+      "type": "section-double",
+      "blocks": {
+        "text_wmfeDz": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "<span style=\"font-size: 39px\">步驟3<\/span>",
+            "text": "<p>享受專屬福利！訂閱後可獲得 25 點 HydrXoLove 獎勵積分，此後每出貨 3 次即可獲得 25 點 HydroX Love 獎勵積分。積分 = 未來出貨折扣 $$！<\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        },
+        "image_zKrYQU": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1000051693_1.jpg",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        }
+      },
+      "block_order": [
+        "text_wmfeDz",
+        "image_zKrYQU"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_richtext_Hy9CFt",
+    "section_double_qW4MDc",
+    "section_double_td3ENM",
+    "section_double_gmj9cY"
+  ]
+}

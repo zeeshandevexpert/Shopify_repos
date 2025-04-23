@@ -1,0 +1,70 @@
+{% assign filter_types = '' %}
+<div class="page--faq page-width--thin">
+  <div class="section-header">
+  	<h1 class="h3 page-title text-center">Frequently Asked Questions</h1>
+  </div>
+  <div class="faq-headers text-center">
+	{% assign first_block_type = '' %}
+    {% for link in linklists.faq-categories.links %} %}
+    	{% if forloop.first %}{% assign first_block_type = block.settings.category %}{% endif %}
+    	{% unless filter_types contains block.settings.category %}
+    	{% capture filter_types %}{% unless filter_types == '' %}{{filter_types}},{% endunless %}{{block.settings.category}}{% endcapture %}
+    	<a class="faq-header filter {% if forloop.first %}active{% endif %}" href="#" data-filter-by="{{block.settings.category | handle}}">{{block.settings.category}}</a>
+    	{% endunless %}
+    {% endfor %}
+  </div>
+  <div class="faq-accordion">
+    {% for block in section.blocks %}
+    <div class="faq__item {{block.settings.category | handle}}" {% unless block.settings.category == first_block_type %}style='display: none;'{% endunless %}>
+      <div class="faq__question">
+        {{block.settings.title}}
+      </div>
+      <div class="faq__answer">
+        
+       {{block.settings.answer}}
+        {% if block.settings.image %}
+        <div class="faq__image">
+        <img class="lazyload hs-lazyload hs-id-58a4121a" data-src="{{ block.settings.image | img_url: 'master' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "FAQs Page (new)",
+    "settings": [],
+    "blocks": [
+    {
+    "type":"faq",
+    "name":"faq",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Question"
+      },
+	  {
+        "type":"richtext",
+        "id":"answer",
+        "label":"Answer"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image",
+		"info":"Please combine any images desired into one image 'collage' file"
+      },
+	  {
+		"type":"text",
+		"id":"category",
+		"label":"Category",
+		"info":"(for filtering. Case-sensitive)"
+	  }
+    ]
+    }
+    ]
+  }
+{% endschema %}

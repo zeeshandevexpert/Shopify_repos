@@ -1,0 +1,85 @@
+{% if section.settings.skin != '' %}
+  <script>
+    $(document).ready(function() {
+      {% if section.settings.skin == 'light' %}
+          $('header').removeClass('header-dark-skin');
+          $('header').addClass('header-light-skin');
+      {% endif %}
+
+      {% if section.settings.skin == 'dark' %}
+        $('header').removeClass('header-light-skin');
+        $('header').addClass('header-dark-skin');
+      {% endif %}
+
+      {% assign header_type = section.settings.page_header_type %}
+
+      $('header').addClass('{{ header_type }}');
+      $('header').addClass('individual-header-type');
+
+      {% if section.settings.sticky_header != blank %}
+        $('header').addClass('sticky-header');
+      {% endif %}
+
+    });
+  </script>
+{% endif %}
+{% schema %}
+{
+  "name": "Header Skin",
+  "settings": [
+    {
+      "type": "select",
+      "id": "skin",
+      "label": "Skin",
+      "options": [
+        {
+          "value": "",
+          "label": "--select skin--"
+        },
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "id": "page_header_type",
+      "label": "Header type",
+      "options": [
+        {
+          "value": "shadow-gradient",
+          "label": "Shadow gradient"
+        },
+        {
+          "value": "floating-blur",
+          "label": "Floating blur"
+        },
+        {
+          "value": "full-bleed",
+          "label": "Full bleed"
+        },
+        {
+          "value": "default",
+          "label": "Default"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky_header",
+      "label": "Sticky Header"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header Skin"
+    }
+  ]
+}
+{% endschema %}

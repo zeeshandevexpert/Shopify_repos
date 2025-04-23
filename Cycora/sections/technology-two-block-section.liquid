@@ -1,0 +1,118 @@
+<section class="technology-two-block-section">
+    <div class="wrap-technology-block-section">
+        <div class="top-content-block">
+            <div class="heading">{{ section.settings.heading }}</div>
+            <div class="text">{{ section.settings.text }}</div>
+        </div>
+
+        <div class="column-block">
+            {% for block in section.blocks %}
+
+                <div class="wrapper">
+                    <div class="image">
+                        {% comment %} <img src="{{ block.settings.image |  img_url: 'master' }}" alt=""> {% endcomment %}
+                        {% include "loop-media-block" %}
+                    </div>
+                    <div class="content">
+                        <div class="count">fig.{{ forloop.index }}</div>
+                        <div class="text">{{ block.settings.text }}</div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+
+    {
+    "name": "Technology - Two Block",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+        }, 
+        {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+        } 
+    ],
+    "blocks": [
+    {
+      "name": "Block",
+      "type": "block",
+      "settings":[
+        {
+              "type": "header",
+              "content": "Media Block"
+            },
+            {
+              "type": "select",
+              "id": "media_type",
+              "label": "Media Type",
+              "options": [
+                {
+                  "value": "image",
+                  "label": "image"
+                },
+                {
+                  "value": "vimeo_youtube_video",
+                  "label": "YouTube or Vimeo Video"
+                },
+                {
+                  "value": "video_file",
+                  "label": "HTML5 Video"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_normal",
+              "label": "Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_mobile",
+              "label": "Image Mobile"
+            },
+            {
+              "type": "video_url",
+              "id": "vimeo_youtube_video",
+              "label": "YouTube or Vimeo Video",
+              "accept": [
+                "youtube",
+                "vimeo"
+              ]
+            },
+            {
+              "type": "text",
+              "id": "video_file",
+              "label": "HTML5 Video File URL"
+            },
+        {
+            "type": "text",
+            "id": "count",
+            "label": "Count"
+        },
+        {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+        "name": "Technology - Two Block"
+    }
+  ]
+}
+
+{% endschema %}

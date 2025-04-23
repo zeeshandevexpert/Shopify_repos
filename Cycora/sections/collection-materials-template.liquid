@@ -1,0 +1,53 @@
+
+    <div class="container-style container-large">
+        <div class="general-more-products-top-style2">
+            <h2>{{ section.settings.title }}</h2>
+            <ul>
+                <li {% if current_tags %}{% else %}class="active"{% endif %}><a href="{{ collection.url }}"><span>all</span></a></li>
+                {% for tag in collections['materials'].tags %}
+                    <li {% if current_tags contains tag %}class="active"{% endif %}><a href="{{ collection.url }}/{{ tag | replace: " ", "-" }}"><span>{{ tag }}</span></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class="general-more-products-row general-more-products-row-with-space">
+        {% for product in collection.products limit:1000 %}
+            {% include "product-grid" %}
+        {% endfor %}
+    </div>
+    <div class="general-more-products-bottom">
+        <h4>{{ section.settings.bottom_description }}</h4>
+        <a href="{{ section.settings.link }}">learn more</a>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Materials Products",
+  "tag": "section",
+  "class": "general-more-products-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default" : "view by garment"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_description",
+      "label": "Bottom Description"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Learn More link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Materials Products"
+    }
+  ]
+}
+{% endschema %}

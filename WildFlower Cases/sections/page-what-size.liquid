@@ -1,0 +1,190 @@
+{% render 'hs-defer-css', filename: 'page-what-size.css', pages: 'collection,index,product' | split: ',', local: true %}
+<div class="index-padding center page-width">
+    <h1>{{ section.settings.step1_title }}</h1>
+    <p>{{ section.settings.step1_p1 }}</p>
+  </div>
+  <div class="what-size__settings index-padding">
+    <div class="what-size__settings-blue" style="background: {{ section.settings.color_settings }};">
+      <div class="page-width small--page-width">
+        <div class="flex">
+          <div class="one-half small--one-whole relative">
+            {% comment %} <div loading="lazy" class="image lazyload hs-lazyload hs-id-e6d92e85" data-bgset="{{ section.settings.image_settings | image_url }}" style=""></div> {% endcomment %}
+            <div class="image" style="background-image: imageset(url('{{ section.settings.image_settings | image_url }}') 1x, url('{{ section.settings.image_settings | image_url | replace: '_1x.', '_2x.' }}') 2x);" loading="lazy"></div>
+
+          </div>
+          <div class="one-half text-column">
+            <h2 class="h1">{{ section.settings.step1_h2 }}</h2>
+            <div class="rte">
+              {{ section.settings.step1_p2 }}
+            </div>
+            
+          </div>
+        </div>
+        <div class="medium-up-hide what-size__settings-mobile-image">
+          <img loading="lazy" class="lazyload hs-lazyload hs-id-d7d7fdbf" data-src="{{ section.settings.image_settings | image_url: width: 600 }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width height/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="what-size__device index-padding bg-fill" style="background-image: url({{ section.settings.image_device | image_url }});">
+    <h2 class="h1 center">{{ section.settings.step1_h3 }}</h2>
+    <div class="page-width small--page-width">
+      <div class="flex align-center s4 small-flex-columns">
+        <div class="one-half small--one-whole text-column ">
+          <h4>{{ section.settings.step1_h4 }}</h4>
+          <div class="rte">
+            {{ section.settings.step1_p4 }}
+          </div>
+        </div>
+        <div class="one-half small--one-whole image">
+          <img loading="lazy" class="lazyload hs-lazyload hs-id-d730f8bf" data-src="{{ section.settings.image_i4 | image_url: width: 873 }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width height/>
+        </div>
+      </div>
+      <div class="flex align-center s5 small-flex-columns" >
+        <div class="one-half small--one-whole text-column  ">
+          <h4>{{ section.settings.step1_h5 }}</h4>
+          <div class="rte">
+            {{ section.settings.step1_p5 }}
+          </div>
+        </div>
+        <div class="one-half small--one-whole image">
+          <img loading="lazy" class="lazyload hs-lazyload hs-id-548a5243" data-src="{{ section.settings.image_i5 | image_url: width: 500 }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width height/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="index-padding">
+  <div class="page-width--narrow small--page-width center">
+    <h3 class="h1">Step 2: Identify iPhone Size</h3>
+    <br>
+    <form id="what-size-form" action="/" type="post">
+      <div class="flex">
+        <input class="what-size__input" type="text" value="" placeholder="Your Model Number" />
+        <button type="submit" class="btn btn--primary visually-hidden">Submit</button>
+      </div>
+    </form>
+    <div class="what-size__error" style="display: none;">
+      <h3 class="h2">Hmm...no results.</h3>
+      <h3 class="h4">Please check your model number and try again.</h3>
+    </div>
+    <div class="what-size__results" style="display: none;">
+      <h3 class="h1">You Have an <span class="what-size__model"></span></h3>
+      <div class="flex align-center small--flex-wrap">
+        <div class="one-half what-size__image-column small--one-whole text-center">
+            <img class="what-size__image lazyload hs-lazyload hs-id-332be170" data-src="{{ '1x1.png' | asset_url }}" height="1" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="1"/>
+        </div>
+        <div class="one-half what-size__text-column small--one-whole">
+          <p class="what-size__description"></p>
+          <a href="" class="button what-size__link">Shop Cases</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script defer src="{{ 'what-size.min.js' | asset_url }}"></script>
+  {% schema %}
+{
+  "name": "What size iPhone?",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Step 1"
+    },
+    {
+      "type": "text",
+      "id": "step1_title",
+      "label": "Title",
+      "default": "Step 1: Find Your Model Number"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_p1",
+      "label": "Subtitle",
+      "default": "You can find this by looking in your settings or by looking at your device."
+    },
+    {
+      "type": "header",
+      "content": "Look in settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_settings",
+      "label": "Image"
+    },
+    {
+      "type": "color",
+      "id": "color_settings",
+      "label": "Background Color"
+    },
+    {
+      "type": "text",
+      "id": "step1_h2",
+      "label": "Heading",
+      "default": "Look in settings"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_p2",
+      "label": "Subtitle",
+      "default": "Go to Settings > General > About. To the right of Model, you'll see the part number. To see the model number, tap the part number."
+    },
+    {
+      "type": "header",
+      "content": "Look on device"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_device",
+      "label": "Background Image"
+    },
+    {
+      "type": "text",
+      "id": "step1_h3",
+      "label": "Heading",
+      "default": "Look on your device"
+    },
+    {
+      "type": "header",
+      "content": "iPhone 8+"
+    },
+    {
+      "type": "text",
+      "id": "step1_h4",
+      "label": "Heading",
+      "default": "On an iPhone 8 or later"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_p4",
+      "label": "Heading",
+      "default": "To find the model number, remove the SIM tray and look in the SIM tray slot. Make sure that you're in a place with bright light overhead. The model number is on the upper side—the side with the display."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_i4",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "iPhone 7-"
+    },
+    {
+      "type": "text",
+      "id": "step1_h5",
+      "label": "Heading",
+      "default": "On an iPhone 7 or earlier"
+    },
+    {
+      "type": "textarea",
+      "id": "step1_p5",
+      "label": "Heading",
+      "default": "Find the model number on the back of your device."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_i5",
+      "label": "Image"
+    }
+  ]
+}
+{% endschema %}

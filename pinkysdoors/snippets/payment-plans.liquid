@@ -1,0 +1,35 @@
+{% assign price = product.selected_or_first_available_variant.price | divided_by: 4 | money %}
+<div class="payment-plans">
+  <div class="flex flex--align-center small--flex-wrap">
+    {%  comment %}
+    <div class="one-half small--one-whole text-center">
+      <div>{% include 'icon-klarna' %}</div>
+      <p>
+        {{ 'payment_plans.klarna.display_html' | t: price: price }}<br>
+        <small><i>{{ 'payment_plans.klarna.fine_print' | t }}</i></small>
+      </p>
+      
+      <a target="_blank" href="https://www.klarna.com/us/what-is-klarna/">
+        <u>{{ 'payment_plans.klarna.learn_more' | t }}</u>
+      </a>
+
+    </div>
+    {% endcomment %}
+    <div class="flex flex--align-top small--flex-wrap" style="gap: 10px;">
+      <div>{% include 'icon-affirm' %}</div>
+      <p style="margin-bottom: 0;">
+        {{ 'payment_plans.affirm.display_html' | t: price: price }} <br /><em>{{ 'payment_plans.affirm.fine_print' | t }}</em>
+      </p>
+      <a class="mfp-inline" href="#affirm-popup" style="white-space: nowrap;"><u>{{ 'payment_plans.affirm.learn_more' | t }}</u></a>
+    </div>
+  </div>
+</div>
+
+<div style="display: none;">
+  <div id="klarna-popup" class="regular-mfp-popup rte">
+    {{ pages.klarna-popup.content }}
+  </div>
+  <div id="affirm-popup" class="regular-mfp-popup rte">
+    {{ pages.affirm-popup.content }}
+  </div>
+</div>

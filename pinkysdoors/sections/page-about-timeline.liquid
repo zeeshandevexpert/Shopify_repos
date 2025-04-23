@@ -1,0 +1,96 @@
+{% render 'hs-defer-css' with filename: 'history.scss.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}
+
+<div class="title history-banner page-width">
+  <h1 style="text-align: center;">WE DREAM IN PINK</h1>
+  <!-- h2 style="text-align: center;">EST. 1948</h2 -->
+  <br>
+  <img class="lazyload hs-lazyload hs-id-71335328" data-src="{{ section.settings.banner_image | img_url: '1024x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+  <div style="width: 60%; padding-top: 35px; margin: 0 auto;">
+    <p class="p1" style="text-align: justify;">PINKYS celebrates the beauty of Southern California sunsets: Blush. Breathtaking. Ethereal. Expansive. </p>
+    <p class="p1" style="text-align: justify;">PINKYS is a company born and raised in Los Angeles, whose very success is a testament to the American Dream and to a family history of artistry and craftsmanship.</p>
+    <p class="p1" style="text-align: justify;"> We champion the creative lifestyle of Los Angeles, the light, the air, the palpable energy of the city, to create high-grade architectural elements that break down walls and create infinite opportunities wherever you see them. </p>
+  </div>
+</div>
+
+<div class="history-wrapper index-section page-width">
+  <div class="text-center">
+    <h3 class="h1">{{  page.title }}</h1>
+    <!-- h2 class="h3">OUR TIMELINE</h2 -->
+  </div>
+  <div class="text-left rte page-width--thin">
+    {{page.content}}
+  </div>
+  <div class="text-center">
+  <h3 class="h1">A brief history of PINKYS</h3>
+  <h4 class="h3">Our Timeline</h4>
+  </div>
+  
+  <table class="cd-container" id="cd-timeline">
+    <tbody>
+      {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+      <tr class="cd-timeline-block {% cycle 'odd','even' %}">
+        <td class="cd-timeline-img cd-picture is-hidden {% if block.settings.image %}lazyload lazyfade" data-bg="{{block.settings.image | img_url: '100x'}}{% else %} no-image{% endif %}">{% if block.settings.image %}<img class="lazyload hs-lazyload hs-id-22336e7d" data-src="{{ block.settings.image | img_url:'master' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">{% endif %}</td>
+        <td class="cd-timeline-content is-hidden">
+          <h2 class="h4">{{block.settings.title}}</h2>
+          <p>{{block.settings.info}}</p>
+        </td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      {% assign dates = ',1948,1950,1960,1970,1980,1990,2000,2005,2008,2010,2019' | split: ',' %}
+      {% for i in (1..10) %}
+      <tr class="cd-timeline-block {% cycle 'odd','even' %}">
+        <td class="cd-timeline-img cd-picture is-hidden lazyload lazyfade" data-bg="{{'olive-glasses.jpg' | img_url: '100x'}}">{{'olive-glasses.jpg' | file_url | img_tag}}</td>
+        <td class="cd-timeline-content is-hidden">
+          <h2 class="h4">{{dates[i]}}</h2>
+          <p>Lorem ipsum dolor amet sartorial cornhole palo santo adaptogen portland offal venmo fam unicorn man bun blog. </p>
+        </td>
+      </tr>
+      {% endfor %}
+      {% endif %}
+    </tbody>
+  </table>
+  
+  <div class="page-width--thin">
+    <img src="{{ '29-min.jpg' | file_url }}" width="100%" />
+  </div>
+</div>
+
+ <script defer src="{{ 'history.js' | asset_url }}"></script>
+
+{% schema %}
+{
+"name": "About Timeline",
+"settings": [
+  {
+    "type":"image_picker",
+	"id":"banner_image",
+    "label":"Banner Image"
+  }
+],
+"blocks": [
+ {
+   "type":"date",
+   "name":"date",
+	"settings": [
+		{
+			"type":"text",
+		    "id":"title",
+			"label":"Date"
+		},
+		{
+		  "type":"textarea",
+		  "id":"info",
+		  "label":"Info"
+		},
+		{
+		  "type":"image_picker",
+		  "id":"image",
+		  "label":"Image"
+		}
+	]
+ }
+]
+}
+{% endschema %}

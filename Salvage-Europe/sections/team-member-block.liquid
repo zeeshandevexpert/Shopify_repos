@@ -1,0 +1,80 @@
+<section class="team-member-block">
+    <div class="wrap-team-member-block">
+        <div class="column">
+            <div class="inner-column">
+                <div class="image-block">
+                    <div class="image">
+                        <img src="" alt="">
+                    </div>
+                </div>
+                <div class="text-block">
+                    <div class="text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+       "name": "Our Team Block",
+      "settings": [
+            {
+              "type": "color",
+              "id": "bg_color",
+              "label": "Background Color"
+          },
+            {
+              "type": "color",
+              "id": "color",
+              "label": "Text Color"
+          },
+            {
+              "type": "text",
+              "id": "main_heading",
+              "label": "Main Heading"
+          }
+      ],
+      "blocks": [
+      {
+        "name": "Team Member",
+        "type": "icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "profile",
+            "label": "Profile"
+          },
+          {
+              "type": "text",
+              "id": "name",
+              "label": "Name"
+          },
+          {
+              "type": "richtext",
+              "id": "description",
+              "label": "Member Bio"
+          },
+          {
+              "type": "text",
+              "id": "email",
+              "label": "Email Info"
+          }
+        ]
+      }
+    ],
+    "presets": [
+     {
+       "name": "Our Team Block",
+       "settings": {
+         
+        },
+       "blocks": [
+       
+       ]
+     }
+   ]
+    }
+    {% endschema %}

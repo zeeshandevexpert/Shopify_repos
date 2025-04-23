@@ -1,0 +1,14 @@
+{% comment %}
+snippets/product-sku.liquid
+
+- product
+- current_variant
+{% endcomment %}
+<div class="product__sku-container sku js-product-sku-container no-js-hidden {% unless product == empty %}{% if current_variant.sku == blank %} hide{% endif %}{% endunless %}">
+  <span class="product__sku-label">{{ 'customer.order.details.sku' | t }}:</span>
+  {% unless product == empty %}
+    <span class="product__sku-value js-product-sku">{{ current_variant.sku }}</span>
+  {% else %}
+    <span class="product__sku-value js-product-sku">ABC12345</span>
+  {% endunless %}
+</div><!-- /.product__sku-container -->

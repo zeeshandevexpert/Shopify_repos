@@ -1,0 +1,20 @@
+{%- liquid
+	assign pd = product.description | split: '<!--split-->' 
+	assign product_description = pd[0]
+-%}
+<div id="question--description" class="regular-mfp-popup rte">
+   {% include 'shortcode', load: product_description %}  
+</div>
+
+{% schema %}
+  {
+    "name": "Description Popup",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

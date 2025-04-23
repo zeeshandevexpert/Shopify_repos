@@ -1,0 +1,202 @@
+{{ 'mission-image-overlap-text.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+   padding-top: {{ section.settings.padding_top }}px;
+   padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  {% if section.settings.text_color != blank %}
+  .section-{{ section.id }}-padding {
+   color: {{ section.settings.text_color }};
+  }
+  {% endif %}
+{% endstyle %}
+
+<div
+  class="section-{{ section.id }}-padding"
+  {% if section.settings.background != blank %}
+    style="background-color: {{ section.settings.background }}"
+  {% endif %}
+>
+  <div class="container">
+    <div class="image-overlap__wrap">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'image' %}
+            {% if block.settings.image != blank %}
+              <div class="image__wrap">
+                {% if block.settings.image != blank %}
+                  <div class="main__image">
+                    {{ block.settings.image | image_url: width: 400 | image_tag }}
+                  </div>
+                {% endif %}
+                {% if block.settings.overlap_image != blank %}
+                  <div class="overlap_image">
+                    {{ block.settings.overlap_image | image_url: width: 400 | image_tag: height: null, width: null }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+
+          {% when 'content' %}
+            <div class="content_wrap">
+              {% if block.settings.title != blank %}
+                <h2 class="sectionHeading">{{ block.settings.title }}</h2>
+              {% endif %}
+
+              {% if block.settings.content != blank %}
+                <div class="content rte">
+                  {{ block.settings.content }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.button_text != blank %}
+                <div class="mw-100">
+                  <a
+                    href="{{ block.settings.button_link }}"
+                    class="btn btn-primary btn-image-text"
+                  >
+                    {{ block.settings.button_text }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Overlap Image & Text",
+  "class": "mission-image-overlap-text",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 10
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#f6ede6"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "overlap_image",
+          "label": "Overlap Image"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Heading",
+            "de": "Überschrift",
+            "es": "Encabezado",
+            "fr": "Rubrique",
+            "pt-PT": "Título"
+          },
+          "default": {
+            "en": "Share brand or product details",
+            "de": "Marken- oder Produktdetails teilen",
+            "es": "Compartir marca o detalles del producto",
+            "fr": "Partager les infos sur la marque ou le produit",
+            "pt-PT": "Partilhar detalhes da marca ou produto"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": {
+            "en": "Text",
+            "de": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "pt-PT": "Texto"
+          },
+          "default": {
+            "en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "de": "<p>Fügen Sie langen Texten ein Bild hinzu, um dem Produkt, der Kollektion oder dem Blogpost Ihrer Wahl Fokus zu verleihen. Fügen Sie Details bezüglich der Verfügbarkeit oder dem Stil hinzu oder stellen Sie sogar eine Rezension zur Verfügung.</p>",
+            "es": "<p> Combine texto grande con una imagen para focalizar la atención en su producto, colección o publicación del blog. Añada detalles sobre la disponibilidad, el estilo o, incluso, un comentario. </p>",
+            "fr": "<p>Associez un texte en gros caractères à une image pour mettre en valeur le produit, la collection ou l'article de blog que vous avez choisi. Ajoutez des détails sur la disponibilité et le style ou même fournissez un commentaire.</p>",
+            "pt-PT": "<p>Associe um texto de grandes dimensões a uma imagem para destacar o seu produto, coleção ou publicação no blog de eleição. Acrescente detalhes relativos à disponibilidade, estilo, ou até mesmo uma opinião.</p>"
+          }
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Overlap Image & Text",
+      "category": "Image"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "product",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "search"
+    ]
+  }
+}
+{% endschema %}

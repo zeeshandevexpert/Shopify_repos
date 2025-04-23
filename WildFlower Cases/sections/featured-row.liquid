@@ -1,0 +1,379 @@
+{% render 'hs-defer-css', filename: 'component-card.css', pages: 'collection,index,product' | split: ',', local: true %}
+
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-featured-row.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{% render 'hs-defer-css', filename: 'component-slider.css', pages: 'collection,index,product' | split: ',', local: true %}</noscript>
+<noscript>{% render 'hs-defer-css', filename: 'component-featured-row.css', pages: 'collection,index,product' | split: ',', local: true %}</noscript>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile
+    assign show_mobile_slider = true
+  endif
+
+  assign show_desktop_slider = false
+  if section.settings.enable_desktop_slider
+    assign show_desktop_slider = true
+  endif
+
+  assign heart_svg = '<svg width="40" height="41" xmlns="http://www.w3.org/2000/svg"><title>Fill 4</title><path d="M17.978 36.15c-.237.114-.255.265-.137.427.042.057.199.112.22.089.174-.188.006-.334-.083-.515m-7.924-31c-.345.021-.624.04-.9.06.003.026.004.053.006.081.335.15.709.125.894-.141m-.973-.267c-.51-.24-.878-.095-1.198.328a2.13 2.13 0 001.198-.328m8.534 29.296c-.317-.51-.608-.982-.905-1.448-.006-.01-.076.017-.103.023.191.426.385.834.553 1.25.078.193.195.229.455.175m1.923-.399v.508c.097-.034.166-.038.2-.075.105-.114.196-.24.292-.362-.109-.03-.221-.054-.33-.084-.036-.011-.07-.028-.188-.08.154-.077.252-.174.343-.167.334.027.475-.06.575-.37.031-.102.108-.188.173-.276.08-.104.175-.198.252-.304.212-.291.423-.58.623-.877.106-.157.19-.328.283-.493a2.512 2.512 0 01-.055-.066c-.085.034-.208.042-.245.103-.24.383-.487.725-1.024.548-.054-.017-.122.02-.253.045l.37.39c-.167.07-.333.211-.47.183-.298-.056-.409.113-.43.322-.027.246-.174.382-.304.558-.14.188-.22.42-.326.634l.085.065.43-.202m-6.007-6.943c.015-.001.086-.021.154-.012.072.01.168.028.208.078.253.328.484.676.744 1 .452.565.922 1.117 1.382 1.677.157.193.312.387.46.587.16.213.297.446.47.649.251.295.454.603.52.995.048.276.211.476.457.628.137.083.242.23.334.368.133.196.225.42.359.615.198.288.303.285.492-.022.282-.455.514-.941.823-1.377.402-.566.7-1.256 1.494-1.456-.054-.05-.103-.094-.122-.113.191-.192.383-.381.571-.578.03-.033.026-.094.05-.131.053-.074.104-.154.173-.21.303-.244.454-.593.622-.925.032-.063.004-.157.004-.173.143-.14.27-.244.371-.369.1-.121.179-.26.263-.395.068-.11.13-.223.196-.337a13.823 13.823 0 01-.363-.082c-.025-.006-.044-.032-.017-.012.124-.277.235-.535.353-.79.047-.093.091-.205.17-.262.609-.436.792-1.196 1.318-1.697.25-.24.356-.623.726-.762.077-.03.137-.135.177-.218.157-.316.285-.645.454-.951.245-.44.502-.874.783-1.292.208-.308.48-.571.69-.877a366.348 366.348 0 002.727-4c.97-1.445 1.886-2.923 2.625-4.503.484-1.039.823-2.111.795-3.288-.008-.35-.2-.73.039-1.082.023-.037-.02-.123-.04-.184-.045-.14-.128-.276-.134-.416-.02-.5-.176-.94-.526-1.297-.591-.603-1.279-1-2.156-1.058-.434-.03-.815.088-1.221.183-.985.23-1.76.794-2.467 1.48-.42.405-.826.826-1.235 1.239-.55.552-1.217.992-1.592 1.709-.054.104-.183.167-.256.267-.223.308-.44.617-.646.936-.243.374-.429.797-.717 1.13-.358.413-.787.767-1.204 1.124-.256.217-.799.177-1.057-.026-.171-.136-.357-.251-.53-.385-.57-.442-1.136-.894-1.552-1.492-.603-.873-1.287-1.667-2.163-2.276-.443-.307-.91-.581-1.364-.875-.262-.17-.599-.299-.754-.54-.214-.328-.471-.394-.805-.41-.11-.007-.214-.075-.321-.113-.31-.106-.553-.371-.925-.353-.139.008-.394-.018-.257-.378-.428-.042-.826-.097-1.223-.114-.926-.04-1.852-.068-2.777-.083a1.232 1.232 0 00-.52.117c-.562.257-1.115.537-1.59.768-.102.143-.155.227-.22.303-.092.109-.22.194-.284.315-.27.494-.51.979-.55 1.576-.038.626-.014 1.236.047 1.856a.506.506 0 01-.132.364c-.173.163-.139.258.02.39.06.051.103.162.097.242-.01.13-.063.254-.096.364.348.336.326.837.513 1.159-.023.18.004.345-.06.394-.231.183-.153.432-.194.655-.042.236.04.36.281.388.202.023.268.124.214.338-.035.142-.04.323.022.448.234.468.478.935.758 1.375.388.607.822 1.183 1.22 1.783.666 1 1.374 1.979 1.968 3.022.52.917 1.103 1.755 1.92 2.426.081.068.117.192.172.29.03.056.046.15.094.167.41.165.494.612.805.87-.047.055-.082.087-.107.124-.024.037-.038.083-.072.155.59.259 1.014.65 1.114 1.36m16.195-1.735c.1.08.17.132.254.197-.534.101-.703.23-.435.434l-.35.212c.16.232.111.435-.19.708-.41.369-.674.83-.925 1.307-.149.282-.318.553-.486.825-.026.04-.09.062-.141.082-.082.032-.165.058-.25.087l.182.259c-.062.254-.323.492-.47.483-.104.17-.162.327-.27.435-.194.192-.459.323-.619.537-.178.235-.269.534-.404.803-.063.123-.131.246-.216.356-.133.173-.281.335-.075.509l-.43.449c.112.03.164.043.287.074-.143.14-.255.248-.37.357-.018-.019-.038-.039-.06-.057.022-.05.042-.097.064-.152-.034-.005-.071-.022-.086-.01-.143.096-.21.214-.091.382l-.397.104c.15.067.218.096.312.137-.078.123-.157.239-.234.354l-.329-.187c-.026.03-.05.063-.078.095l.26.301c-.071.264-.27.402-.513.396-.037.143-.07.244-.089.346-.015.078-.05.186-.014.232.162.214.005.29-.14.368-.064.034-.149.032-.22.058-.078.027-.214.056-.223.1-.066.397-.512.467-.663.796-.083.18-.25.323-.4.51l.125.245-.583.168.192.12-.534.838c-.163.059-.357.271-.414.608-.009.065-.078.122-.127.177-.122.142-.248.28-.393.445-.301-.103-.386.172-.495.392-.16.332-.67.438-.94.185-.048-.045-.085-.124-.139-.137-.723-.177-1.036-.803-1.412-1.331-.964-1.35-1.886-2.73-2.834-4.094-.221-.32-.46-.63-.706-.93-.424-.527-.89-1.02-1.288-1.568-.61-.842-1.129-1.759-1.786-2.562-.45-.55-.903-1.098-1.301-1.69-1.113-1.647-2.225-3.295-3.328-4.947-.198-.298-.348-.63-.538-.93-.233-.37-.485-.727-.754-1.125a2.91 2.91 0 01.157-.07c-.053-.05-.065-.07-.077-.07-.273 0-.397-.19-.519-.393-1.101-1.838-2.052-3.746-2.75-5.78-.296-.86-.716-1.678-1.024-2.537-.163-.46-.226-.96-.29-1.449-.082-.614-.182-1.238-.156-1.854.028-.652.148-1.309.313-1.943a8.558 8.558 0 011.475-3.046c.72-.948 1.562-1.775 2.712-2.221.556-.216 1.096-.443 1.702-.465.097-.003.197-.065.29-.11.273-.128.507-.145.802.028.2.117.53.13.76.054.39-.124.734-.023 1.088.068 1.417.37 2.777.89 4.094 1.53 1.035.504 2.08.993 3.081 1.56.56.318 1.042.775 1.55 1.18.4.32.78.667 1.186.98.18.14.409.216.607.333a.903.903 0 01.25.222c.227.307.443.623.663.935.226.314.341.323.56.018 1.124-1.573 2.475-2.941 3.884-4.249a12.835 12.835 0 014.106-2.567C30.481.48 31.884.437 33.303.68a.84.84 0 01.194.053c.778.314 1.561.614 2.329.95.692.302 1.135.907 1.578 1.473.836 1.069 1.351 2.301 1.637 3.624.188.868.068 1.734-.049 2.596-.122.897-.242 1.798-.455 2.675-.16.659-.457 1.286-.716 1.917-.209.512-.467 1.003-.675 1.515-.34.84-.783 1.611-1.402 2.277-.038.042-.086.085-.103.134-.192.585-.615 1.01-1.026 1.428a17.983 17.983 0 00-2.152 2.674c-.374.563-.85 1.064-1.176 1.652-.198.357-.458.639-.712.935-.15.176-.27.396-.565.37-.076-.006-.16.081-.283.149" fill="#231F20" fill-rule="evenodd"></path></svg>'
+-%}
+
+<div class="color-{{ section.settings.color_scheme }} isolate gradient">
+  <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
+    <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}">
+      <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width page-width--narrow center{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | replace: '<3', heart_svg }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <div class="collection__description {{ section.settings.description_style }} rte">{{ section.settings.description }}</div>
+        {%- endif -%}
+      </div>
+
+      <ul id="Slider-{{ section.id }}" class="grid product-grid contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid--{{ section.settings.columns_desktop }}-col-desktop{% if section.settings.collection == blank %} grid--2-col-tablet-down{% else %} grid--{{ section.settings.columns_mobile }}-col-tablet-down{% endif %}{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}" role="list" aria-label="{{ 'sections.featured_collection.slider' | t }}" aria-labelledby="Slider-toggle-{{ block.id }}"  >
+      {% for block in section.blocks %}
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="relative featured-row__item grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}">
+            {% case block.type %}
+                {% when 'video' %}
+                <div class="media media--portrait">
+                    <video class="media__video" loop muted playsinline>
+                        <source src="{{ block.settings.video_url }}" type="video/mp4">
+                    </video>
+                    <img
+                        srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                          {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                          {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                          {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                          {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                          {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                          {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                        src="{{ block.settings.image | image_url: width: 533 }}"
+                        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                        alt="{{ block.settings.image.alt | escape }}"
+                        class="motion-reduce"
+                        loading="lazy"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                      >
+                    <button type="button" class="media--play-pause" aria-label="Play">
+                        <span class="media--play-pause-button">
+                            <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="#ffffff" d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+                        </span>
+                        <span class="visually-hidden">Play</span>
+                    </button>
+                </div>
+                {% when 'image' %}
+                    <div class="media media--portrait">
+                        <img
+                            srcset="{%- if block.settings.image.width >= 165 -%}{{ block.settings.image | image_url: width: 165 }} 165w,{%- endif -%}
+                              {%- if block.settings.image.width >= 360 -%}{{ block.settings.image | image_url: width: 360 }} 360w,{%- endif -%}
+                              {%- if block.settings.image.width >= 533 -%}{{ block.settings.image | image_url: width: 533 }} 533w,{%- endif -%}
+                              {%- if block.settings.image.width >= 720 -%}{{ block.settings.image | image_url: width: 720 }} 720w,{%- endif -%}
+                              {%- if block.settings.image.width >= 940 -%}{{ block.settings.image | image_url: width: 940 }} 940w,{%- endif -%}
+                              {%- if block.settings.image.width >= 1066 -%}{{ block.settings.image | image_url: width: 1066 }} 1066w,{%- endif -%}
+                              {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                            src="{{ block.settings.image | image_url: width: 533 }}"
+                            sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                            alt="{{ block.settings.image.alt | escape }}"
+                            class="motion-reduce"
+                            loading="lazy"
+                            width="{{ block.settings.image.width }}"
+                            height="{{ block.settings.image.height }}"
+                          >
+                    </div>
+
+                {% when 'product' %}
+            {% endcase %}
+            {% if block.settings.link != blank %}
+            <a href="{{ block.settings.link }}" class="featured-row__title">
+                {{ block.settings.heading }}
+            </a>
+            {% endif %}
+          </li>
+      {% endfor %}
+    </ul>
+    {%- if show_mobile_slider or show_desktop_slider -%}
+      <div id="slider-buttons-{{ block.id }}" class="slider-buttons no-js-hidden" data-slider="Slider-{{ block.id }}" >
+        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="Slider-{{ block.id }}">{% render 'icon-caret' %}</button>
+        <div class="slider-counter caption">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+          <span class="slider-counter--total">{{ section.blocks.size }}</span>
+        </div>
+        <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}" aria-controls="Slider-{{ block.id }}">{% render 'icon-caret' %}</button>
+      </div>
+    {%- endif -%}
+    </slider-component>
+  </div>
+</div>
+
+<script defer src="{{ 'featured-row.min.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "Featured row",
+  "tag": "section",
+  "class": "section section--featured-row",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Featured collection",
+      "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:sections.featured-collection.settings.show_description.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "description_style",
+      "label": "t:sections.featured-collection.settings.description_style.label",
+      "options": [
+        {
+          "value": "body",
+          "label": "t:sections.featured-collection.settings.description_style.options__1.label"
+        },
+        {
+          "value": "subtitle",
+          "label": "t:sections.featured-collection.settings.description_style.options__2.label"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:sections.featured-collection.settings.description_style.options__3.label"
+        }
+      ],
+      "default": "body"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.featured-collection.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:sections.featured-collection.settings.full_width.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.featured-collection.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.show_rating.label",
+      "info": "t:sections.featured-collection.settings.show_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_quick_add",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-collection.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.featured-collection.settings.columns_mobile.label",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.featured-collection.settings.columns_mobile.options__2.label"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Video URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured row"
+    }
+  ],
+  "templates": [
+    "index",
+    "page",
+    "blog",
+    "article",
+    "product",
+    "cart"
+  ]
+}
+{% endschema %}

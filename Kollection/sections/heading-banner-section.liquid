@@ -1,0 +1,32 @@
+<section class="heading-banner-block" style="background-image: url({% if section.settings.bg_image == blank %}https://cdn.shopify.com/s/files/1/0702/7775/9225/files/Group_7_3.png?v=1728669757 {% else %}{{ section.settings.bg_image |  img_url: 'master'}} {% endif %});">
+    <div class="wrap-banner-block">
+        <div class="item">
+            <div class="heading">{{ section.settings.heading }}</div>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Heading Banner Block",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"      
+        },
+        {
+            "type": "richtext",
+            "id": "heading",
+            "label": "Heading"
+        }
+       
+        ],
+        "presets": [
+            {
+                "name": "Heading Banner Block"
+            }
+        ]
+}
+{% endschema %}

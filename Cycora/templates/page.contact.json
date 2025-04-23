@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "header_skin_XtfMkK": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "16552150111ff55d09": {
+      "type": "contact-template",
+      "settings": {
+        "sliders_title": ""
+      }
+    }
+  },
+  "order": [
+    "header_skin_XtfMkK",
+    "main",
+    "16552150111ff55d09"
+  ]
+}

@@ -1,0 +1,83 @@
+{%- liquid
+
+  assign sidebar = false
+
+  if page.template_suffix == 'faq'
+    assign page_title = false
+  endif
+
+  if linklists[section.settings.pagelist] != blank
+    assign sidebar = true
+  endif
+
+-%}
+
+<div id="page" class="page__section row" data-section-id="{{ section.id }}">
+  <div id="page-content" class="grid__wrapper">
+
+
+    <div class="page__section-content {% if linklists[section.settings.pagelist] != blank %}span-9 auto md-span-12 sm-span-12{% else %}span-12{% endif %}">
+
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    </div>
+
+
+    {%- if sidebar -%}
+      <div class="page__section-sidebar span-3 device-hide auto">
+        <div class="sidebar__content-wrapper">
+          <h5>{{ section.settings.page_sidebar_title | escape }}</h5>
+          <ul class="page__sidebar-menu">
+            {% for link in linklists[section.settings.pagelist].links %}
+              <li>
+                {{ link.title | link_to: link.url }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+<style>
+@media screen and (min-width: 981px) {
+  #page-content {
+    max-width: {{ section.settings.content_width }}%;
+  }
+}
+</style>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Page content",
+  "settings": [
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 50,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Page content width",
+      "default": 80
+    },
+    {
+      "type": "link_list",
+      "id": "pagelist",
+      "label": "Sidebar menu",
+      "info":"Optionally add a sidebar menu which will be visible on all pages that use this template."
+    },
+    {
+      "type": "text",
+      "id": "page_sidebar_title",
+      "label": "Page sidebar title",
+      "default": "Page sidebar title",
+      "info": "When sidebar menu chosen"
+    }
+  ]
+}
+{% endschema %}

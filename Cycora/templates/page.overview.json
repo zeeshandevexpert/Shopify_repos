@@ -1,0 +1,137 @@
+{
+  "sections": {
+    "1657565162e21dbdca": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "165415468176e0ee52": {
+      "type": "overview-head",
+      "settings": {
+        "text_color": "#000000",
+        "title": "impactful partnerships",
+        "description": "<p>we're driving change through meaningful partnerships that bring our vision for circularity to life<\/p>",
+        "button_title": "schedule an intro",
+        "button_link": "shopify:\/\/pages\/schedule",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/Untitled_design-76.png",
+        "vimeo_youtube_video": "",
+        "video_file": ""
+      }
+    },
+    "16541546962f890120": {
+      "type": "overview-processes",
+      "blocks": {
+        "c18fcc78-133f-41d8-ab16-f1ab0f39c110": {
+          "type": "slide",
+          "settings": {
+            "title": "build a vision",
+            "description": "<p>every partnership starts by brainstorming how to utilize cycora® materials to unlock new developments while reducing environmental impact. <\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/2021206_CycoraxH_M_ML-97.jpg",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        },
+        "98f41f07-a8ad-4d6c-970d-c932542d9743": {
+          "type": "slide",
+          "settings": {
+            "title": "creative <br> blueprint",
+            "description": "<p>ideating on how we want to share our vision for our partnership through storytelling and inviting others to join our movement towards circularity <\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/2021206_CycoraxH_M_ML-45.jpg",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        },
+        "e988d328-873e-455a-98e5-fe817a118fd6": {
+          "type": "slide",
+          "settings": {
+            "title": "world class<br> partners",
+            "description": "<p>we form strategic partnerships with the best craftspeople across the globe to create beautiful intention-driven products. traceability is core to our way forward and we offer the true story behind every innovation we develop. <\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/Untitled_design-59.png",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        },
+        "a9102849-5097-42cb-94a0-62c694b133ec": {
+          "type": "slide",
+          "settings": {
+            "title": "activate & amplify",
+            "description": "<p>product launches are just the beginning of our circular journey. each launch is the nucleus of an infinitely expanding body of circular molecules.<\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/Untitled_design-44.png",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        }
+      },
+      "block_order": [
+        "c18fcc78-133f-41d8-ab16-f1ab0f39c110",
+        "98f41f07-a8ad-4d6c-970d-c932542d9743",
+        "e988d328-873e-455a-98e5-fe817a118fd6",
+        "a9102849-5097-42cb-94a0-62c694b133ec"
+      ],
+      "settings": {
+        "subtitle": "our workflow",
+        "title": "work with cycora®",
+        "description": "<p>we're collaborating with brands and designers that are eager to make change in the fashion industry. big or small, our team is always looking for creative ways to bring cycora® to market and tell compelling stories that inspire change. <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "16541547174f90d0c4": {
+      "type": "overview-partnership",
+      "settings": {
+        "title": "our partnerships",
+        "title_block_1": "Saucony x<br>\ncycora®",
+        "button_title_block_1": "explore",
+        "button_link_block_1": "shopify:\/\/blogs\/news\/saucony-x-cycora®-1",
+        "media_type_block_1": "image",
+        "image_block_1": "shopify:\/\/shop_images\/Screen_Shot_2022-08-29_at_10.42.59_AM.png",
+        "vimeo_youtube_video_block_1": "",
+        "video_file_block_1": "",
+        "title_block_2": "H&M x<br>\ncycora®",
+        "button_title_block_2": "explore",
+        "button_link_block_2": "https:\/\/www.vogue.com\/article\/h-m-circular-ambercycle-holiday-collection",
+        "media_type_block_2": "image",
+        "image_block_2": "shopify:\/\/shop_images\/Screen_Shot_2022-08-30_at_8.22.06_AM.png",
+        "vimeo_youtube_video_block_2": "",
+        "video_file_block_2": ""
+      }
+    },
+    "1654154701a2ab4b04": {
+      "type": "overview-facility",
+      "disabled": true,
+      "settings": {
+        "title": "<span>built<\/span><span>for<\/span><span>circularity<\/span>",
+        "button_title": "our facilities",
+        "button_link": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/facilites-section-back.jpg",
+        "vimeo_youtube_video": "",
+        "video_file": ""
+      }
+    },
+    "16541547237477ffeb": {
+      "type": "overview-schedule",
+      "settings": {
+        "title": "collaborate with us",
+        "button_title": "get in touch",
+        "button_link": "shopify:\/\/pages\/contact"
+      }
+    }
+  },
+  "order": [
+    "1657565162e21dbdca",
+    "165415468176e0ee52",
+    "16541546962f890120",
+    "16541547174f90d0c4",
+    "1654154701a2ab4b04",
+    "16541547237477ffeb"
+  ]
+}

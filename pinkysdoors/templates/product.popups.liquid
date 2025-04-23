@@ -1,0 +1,18 @@
+{% layout none %}
+<div id="popups">
+{% section 'question--color' %}
+{% section 'question--description' %}
+{% section 'question--glass' %}
+{% section 'question--jamb' %}
+{% section 'question--lock-compatibility' %}
+{% section 'question--screen' %}
+{% section 'question--size' %}
+{% section 'question--swing' %}
+{% section 'question--whats-included' %}
+{% include 'question-knob-shape' %}
+{% include 'question-single-or-double-set' %}
+<div id="question--is-this-lock-for-a-single-or-double-door" class="regular-mfp-popup rte">
+{% capture content %}{{pages.pdp-single-or-double-set.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+</div>
+</div>

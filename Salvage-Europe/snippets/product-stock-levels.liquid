@@ -1,0 +1,91 @@
+{% comment %}
+snippets/product-stock-levels.liquid
+{% endcomment %}
+{% if block.settings.threshold > 0 %}
+
+  {%- liquid
+
+    assign show_hidden_class = false
+    if current_variant.inventory_management and current_variant.inventory_quantity < block.settings.threshold and current_variant.inventory_quantity > 0
+      assign show_hidden_class = true
+    endif
+
+  -%}
+
+  {% capture variant_stock_levels_classes %}
+    variant-stock-levels js-variant-stock-levels variant-stock-levels--{{ section.id }} {% unless show_hidden_class or product == empty %}visually-hidden{% endunless %} no-js-hidden
+  {% endcapture %}
+
+  <div
+    id="variant-stock-levels--{{ section.id }}"
+    class="{{ variant_stock_levels_classes | strip }}"
+    data-stock-level-threshold="{{ block.settings.threshold }}"
+  >
+    <div class="variant-stock-levels__inner">
+      <div class="pulse__icon"></div>
+      <span class="js-variant-stock-levels__message">
+        {% unless product == empty %}
+        {{ 'products.product.only_left' | t: count: current_variant.inventory_quantity }}
+        {% else %}
+        {{ 'products.product.only_left' | t: count: 4 }}
+        {% endunless %}
+      </span>
+    </div>
+    <style>
+      #variant-stock-levels--{{ section.id }} .pulse__icon {
+        --pulse-color: {{ block.settings.pulse_color | default:  '#ffb042' }};
+      }
+    </style>
+  </div><!-- /#variant-stock-levels -->
+{% endif %}
+<style>
+  /* ---- variant stock levels ---- */
+
+  .variant-stock-levels__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .variant-stock-levels__svg {
+    margin-right: 5px;
+    min-width: 30px;
+  }
+  .variant-stock-levels {
+    margin-bottom: 10px;
+  }
+
+  .pulse__icon {
+    border-radius: 50%;
+    margin: 0 12px 0 2px;
+    height: 15px;
+    width: 15px;
+    background: var(--pulse-color, rgba(255, 177, 66, 1));
+    box-shadow: 0 0 0 0 var(--pulse-color, rgba(255, 177, 66, 1));
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 177, 66, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(255, 177, 66, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(255, 177, 66, 0);
+    }
+  }
+
+  @media screen and (max-width: 740px) {
+    .variant-stock-levels__inner,
+    .product-blocks__inner {
+        justify-content: flex-start;
+    }
+  }
+</style>

@@ -1,0 +1,73 @@
+<!-- SECTION--VIDEO--TESTIMONIALS -->
+    <section class="video-testimonial">
+        <div class="primary-container">
+            <div class="testimonial-heading">
+                <h3 class="primary-heading ff-helvetica black-c t-center t-uppercase">{{ section.settings.hm-testimonial-heading }}</h3>
+            </div>
+            <div class="testimonial-flex d-flex flex-wrap">
+                <div class="mh-testimonial-slider-container">
+                    <div class="mh-testimonial-slider">
+                        <!-- Slide 1 -->
+                      {% for block in section.blocks %}
+                        <div class="mh-testimonial-slide">
+                            <div class="mh-testimonial-video-wrapper">
+                                <video class="mh-testimonial-video" playsinline preload="none" poster="{{ block.settings.hm-video-thumbnail | img_url: "master" }}">
+                                    <source src="{{ block.settings.hm-block-testi-video }}" type="video/mp4">
+                                </video>
+                                <button class="mh-testimonial-play-button">
+                                  <img src="{{ block.settings.hm-block-testi-btn-img | img_url: "master" }}" >  
+                                </button>
+                            </div>
+                        </div>
+                       {% endfor %}
+                        <!-- Add more slides as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION--VIDEO--TESTIMONIALS--END -->
+
+  
+
+
+{% schema %}
+  {
+    "name": "HM Video Testimonial",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hm-testimonial-heading",
+        "label": "Enter Testimonial Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "testimonial-videos",
+        "name": "Testimonial Videos",
+        "settings": [
+          {
+            "type": "text",
+            "id": "hm-block-testi-video",
+            "label": "Enter Testimonial Videos SRC"
+          },
+          {
+            "type": "image_picker",
+            "id": "hm-video-thumbnail",
+            "label": "Select Video Thumbnail"
+          },
+          {
+            "type": "image_picker",
+            "id": "hm-block-testi-btn-img",
+            "label": "Select Testimonial Button Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HM Video Testimonial"
+      }
+    ]
+  }
+{% endschema %}

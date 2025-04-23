@@ -1,0 +1,25 @@
+<script defer>
+  window.paywhirl = window.paywhirl || {};
+
+  //set the selector for the single product price
+  window.paywhirl.productPriceSale = '.price-sticky_addtocart .product-single__price, .product-details .product-single__price';
+
+  //Setup ajax cart support, set css selectors for ajax cart
+  window.paywhirl.ajaxCartContainer = '.ajaxcart-draw';
+  window.paywhirl.ajaxCartProductName = '.ajaxcart__product-name';
+
+
+//left side is product id, right size is an list of variants which will allow customer to buy a subscirption
+//Please use all symbols []  '' : , like on example here '5270377463973' : ['6 Core Pickleballs', '200 Core Pickleballs'],
+  window.paywhirl.allow_product_variants = {
+	  '5270377463973' : ['6 Core Pickleballs'],
+  };
+
+</script>
+<script src="{{ 'paywhirl.js' | asset_url }}" defer></script>
+
+<style>
+	.selling-plan-option {
+		display: none;
+	}
+</style>

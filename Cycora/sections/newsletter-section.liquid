@@ -1,0 +1,35 @@
+<section class="newsletter-block">
+
+<div class="newsletter-content-wrap">
+    <h2>{{ section.settings.footer_title }}</h2>
+    {{ section.settings.email_subscribe_code }}
+</div>
+
+</section>
+
+
+{% schema %}
+    {
+        "name": "Newsletter Block",
+        "settings": [
+            {
+            "type": "text",
+            "id": "footer_title",
+            "label": "Title",
+            "default": "keep up with the footer"
+            },
+         
+            {
+                "type": "textarea",
+                "id": "email_subscribe_code",
+                "label": "Email Subscribe Code"
+            }
+         
+        ],
+        "presets": [
+            {
+                "name": "Newsletter Block"
+            }
+        ]
+    }
+{% endschema %}

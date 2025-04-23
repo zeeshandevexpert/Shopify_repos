@@ -1,0 +1,123 @@
+<section class="article-content-section" id="section2">
+
+    {% assign counter = 0 %}
+
+    {% for extra_blocks in article.metafields.arena.block_name %}
+
+        {% if article.metafields.arena.article_block_image_position[counter] == 'right' %}
+            <div class="article-content-style1-row">
+                <div class="article-content-style1-col-left">
+                    <div class="article-content-style1-col-left-text">
+                        {{ article.metafields.arena.article_block_text[counter] }}
+                    </div>
+                </div>
+                <div class="article-content-style1-col-right">
+                    <img src="{{ article.metafields.arena.article_block_image[counter]  }}" />
+                </div>
+            </div>
+        {% endif %}
+        {% if article.metafields.arena.article_block_image_position[counter] == 'left' %}
+            <div class="article-content-style2-row">
+                <div class="article-content-style2-col-left">
+                    <img src="{{ article.metafields.arena.article_block_image[counter]  }}" />
+                </div>
+                <div class="article-content-style2-col-right">
+                    <div class="article-content-style2-col-right-text">
+                        {{ article.metafields.arena.article_block_text[counter] }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if article.metafields.arena.article_block_image_position[counter] == 'center' %}
+            <div class="article-content-style2-row center">
+                <div class="article-content-style2-col-center">
+                    <img src="{{ article.metafields.arena.article_block_image[counter]  }}" />
+                </div>
+                <div class="article-content-style2-col-center-top">
+                    <div class="article-content-style2-col-center-text">
+                        {{ article.metafields.arena.article_block_text[counter] }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if article.metafields.arena.text_with_title_title[counter] != blank %}
+            <div class="article-content-top-title">
+                <span>{{ article.metafields.arena.text_with_title_title[counter] }}</span>
+            </div>
+        {% endif %}
+
+           {% if article.metafields.arena.text_with_title_text[counter] != blank %}
+            <div class="article-content-large-title" {% if article.metafields.arena.youtube_video_id[counter] == blank %}style="padding-bottom: 123px !important;" {% endif %}>
+                <h2>{{ article.metafields.arena.text_with_title_text[counter] | replace: "<p>", "" | replace: "</p>", "" }}</h2>
+            </div>
+        {% endif %}
+
+        {% if article.metafields.arena.youtube_video_id[counter] != blank %}
+            <div class="general-video-section">
+                <div class="general-video-cover">
+                    <img src="{{ article.metafields.arena.video_cover[counter] }}">
+                </div>
+                <div class="general-video-content">
+                    <span class="general-play-button">play</span>
+                </div>
+                <div class="general-video-iframe">
+                    <iframe youtube-id="{{ article.metafields.arena.youtube_video_id[counter] }}" frameborder="0" allow="autoplay; fullscreen" width="100%" height="100%"></iframe>
+                </div>
+            </div>
+        {% endif %}
+
+
+        {% if article.metafields.arena.article_block_image_2_position[counter] == 'right' %}
+            <div class="article-content-style1-row">
+                <div class="article-content-style1-col-left">
+                    <div class="article-content-style1-col-left-text">
+                        {{ article.metafields.arena.article_block_text2[counter] }}
+                    </div>
+                </div>
+                <div class="article-content-style1-col-right">
+                    <img src="{{ article.metafields.arena.article_block_image2[counter]  }}" />
+                </div>
+            </div>
+        {% endif %}
+
+     {% if  article.metafields.arena.article_block_image_2_position[counter] == 'center' %}
+            <div class="article-content-style2-row center">
+                <div class="article-content-style2-col-center">
+                    <img src="{{ article.metafields.arena.article_block_image2[counter]  }}" />
+                </div>
+                <div class="article-content-style2-col-center-top">
+                    <div class="article-content-style2-col-center-text">
+                        {{ article.metafields.arena.article_block_text2[counter] }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}  
+        {% if article.metafields.arena.article_block_image_2_position[counter] == 'left' %}
+            <div class="article-content-style2-row">
+                <div class="article-content-style2-col-left">
+                    <img src="{{ article.metafields.arena.article_block_image2[counter]  }}" />
+                </div>
+                <div class="article-content-style2-col-right">
+                    <div class="article-content-style2-col-right-text">
+                        {{ article.metafields.arena.article_block_text2[counter] }}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% assign counter = counter | plus: 1 %}
+    {% endfor %}
+
+</section>
+{% schema %}
+{
+  "name": "Article - Content",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Article - Content"
+    }
+  ]
+}
+{% endschema %}

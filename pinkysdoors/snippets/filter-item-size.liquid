@@ -1,0 +1,45 @@
+{% assign name_handle = name | handle %}
+{% assign menu_handle = menu | handle %}
+{% assign values = '' %}
+{% if name == 'Single Door Size' %}
+  {%- capture values -%}{%- render 'options-single-door' -%}{%- endcapture -%}
+  {%- assign values = values | strip_newlines -%}
+{% endif %}
+{% if name == 'Double Door Size' %}
+  {%- capture values -%}{%- render 'options-double-door' -%}{%- endcapture -%}
+  {%- assign values = values | strip_newlines -%}
+{% endif %}
+{% if values != '' %}
+  {% assign values = values | split: ',' %}
+{% endif %}
+
+{% assign hasFilter = false %}
+{% capture filter_html %}
+<div id="{{name_handle}}-filter" class="filter-group">
+  <h4 data-name="{{name}}">
+    <a href="#" class="remove" data-type="{{name_handle}}" >&times;</a>
+    <span class="fg-title" data-original-title="{{name | upcase}}">
+      {{name | upcase}}
+    </span>
+  </h4>
+  <div class="fg" data-menu="{{ menu_handle }}" data-values='{{ values }}' data-filter-values='{{ filter.values | map: 'label' | join: ',' }}'>
+    <div class="fg-inner" {{ menu_handle }}>
+      {%- for value in values -%}
+        {%- assign value = value | strip -%}
+        {%- for filter_value in filter.values -%}
+          {%- if value == filter_value.label -%}
+            {%- assign hasFilter = true -%}
+            <div class="filter-elem swatch-style" {% if filter_value.count == 0 and filter_value.active == false %}style="display:none;"{% endif %}>
+              <input id="filter-{{ name | handle }}-{{ filter_value.label | handle }}" type="radio" name="{{filter_value.param_name}}" value="{{filter_value.value}}" class="coll-filter"  {% if filter_value.active %}checked{% endif %} {% if filter_value.count == 0 and filter_value.active == false %}disabled{% endif %}  />
+              <label for="filter-{{ name | handle }}-{{ filter_value.label | handle }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">{{ filter_value.label }}</label>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% endcapture %}
+{% if hasFilter %}
+  {{ filter_html }}
+{% endif %}

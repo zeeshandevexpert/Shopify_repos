@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/HelveticaNeue-Heavy.woff2?v=1731689420') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/HelveticaNeue-Heavy.woff?v=1731689420') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica 65';
+    src: url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/HelveticaNeue-Heavy.ttf?v=1731708334') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Helvetica 65';
+    src: url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/HelveticaNeue-Heavy_1.ttf?v=1731708334') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Proxima Nova Alt Cn Lt';
+    src: url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/ProximaNovaACond-Semibold.woff2?v=1731622443') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/ProximaNovaACond-Semibold.woff?v=1731622444') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Proxima Nova Alt ExCn Rg';
+    src: url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/ProximaNovaACond-Regular.woff2?v=1731622510') format('woff2'),
+        url('https://cdn.shopify.com/s/files/1/0908/1513/6050/files/ProximaNovaACond-Regular.woff?v=1731622510') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Global Styling */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    scroll-behavior: smooth;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+a:hover,
+a:focus {
+    outline: none;
+    text-decoration: none;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    letter-spacing: normal;
+}
+
+/* Container */
+.primary-container{
+    width: 100%;
+    max-width: 1306px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Flexbox and Column*/
+.d-flex {
+    display: flex;
+}
+
+.c-flex {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-justify-space {
+    justify-content: space-between;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-align-start {
+    align-items: start;
+}
+
+.flex-align-end {
+    align-items: end;
+}
+
+
+/* Positions */
+.p-relative {
+    position: relative;
+}
+
+.p-absolute {
+    position: absolute;
+}
+
+
+/* Text Style */
+.t-uppercase {
+    text-transform: uppercase;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-end {
+    text-align: end;
+}
+
+.t-start {
+    text-align: start;
+}
+
+/* Text Style */
+.t-uppercase {
+    text-transform: uppercase;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-end {
+    text-align: end;
+}
+
+.t-start {
+    text-align: start;
+}
+
+/* Font-Family */
+.ff-helvetica{
+    font-family: 'Helvetica Neue';
+   font-family: 'Helvetica 65';
+}
+/* .ff-proxima{
+    font-family: 'Proxima Nova Alt Cn Lt';
+}
+.ff-proxima-reg{
+    font-family: 'Proxima Nova Alt ExCn Rg';
+} */
+.ff-proxima{
+   font-family: "Nunito Sans", sans-serif;
+}
+.ff-proxima-reg{
+    font-family: "Nunito Sans", sans-serif;
+}
+
+/* Font-Weight */
+.fw-400{
+    font-weight: 400;
+}
+.fw-500{
+    font-weight: 500;
+}
+.fw-600{
+    font-weight: 600;
+}
+.fw-700{
+  font-weight: 700;
+}
+.fw-900{
+    font-weight: 900;
+}
+
+/* Font--Sizes */
+.primary-heading{
+    font-size: clamp(32px, 2.917vw, 42px);
+}
+.secondary-heading{
+    font-size: clamp(24px, 1.806vw, 26px);
+}
+.para-size{
+    font-size: clamp(18px,1.528vw, 22px);
+}
+
+/* Line--Heights */
+.para-lh{
+    line-height: 145%;
+}
+
+/* Font---Colors */
+.black-c{
+    color: #000000;
+}
+.white-c{
+    color: #fff;
+}
+
+/* Button--Styling */
+.primary-btn {
+    background: #000;
+    border: 1px solid #000;
+    padding: clamp(14px, 1.389vw, 20px) clamp(40px, 4.167vw, 60px);
+    border-radius: 60px;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+   cursor: pointer;
+   line-height: 100%;
+}
+.secondary-btn{
+    background: #fff;
+    border: 1px solid #fff;
+        padding: clamp(14px, 1.389vw, 20px) clamp(40px, 4.167vw, 60px);
+        border-radius: 60px;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+  cursor: pointer;
+  line-height: 100%;
+}
+a.primary-btn {
+    font-weight: 700;
+   letter-spacing: normal;
+}
+a.secondary-btn {
+    font-weight: 700;
+  letter-spacing: normal;
+}
+.primary-btn:hover {
+    background: #CDED57;
+   border: 1px solid #CDED57;
+}
+.primary-btn:hover{
+    color: #000;
+}
+.secondary-btn:hover{
+    background: #CDED57;
+  border: 1px solid #CDED57;
+}
+.secondary-btn:hover{
+    color: #000;
+}
+
+#hm-landing-page div.wrapper {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+#hm-landing-page #shopify-section-footer {
+  display: none !important;
+}
+
+#hm-landing-page .main-content {
+  padding: 0 !important;
+}
+
+#hm-landing-page .footer-menu ul {
+  margin-left: 0 !important;
+}
+
+#hm-landing-page a:hover, #hm-landing-page button:hover, #hm-landing-page .btn:hover, #hm-landing-page input:hover, #hm-landing-page select:hover, #hm-landing-page textarea:hover {
+  opacity: 1 !important;
+}
+
+#pickleball-events,#pickleball-events-leaders-in-premium-activations div.wrapper {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
+
+#pickleball-events,#pickleball-events-leaders-in-premium-activations #shopify-section-footer {
+  display: none !important;
+}
+
+#pickleball-events,#pickleball-events-leaders-in-premium-activations .main-content {
+  padding: 0 !important;
+}
+
+#pickleball-events,#pickleball-events-leaders-in-premium-activations .footer-menu ul {
+  margin-left: 0 !important;
+}
+
+#pickleball-events,#pickleball-events-leaders-in-premium-activations a:hover, #pickleball-events,#pickleball-events-leaders-in-premium-activations button:hover, #pickleball-events,#pickleball-events-leaders-in-premium-activations .btn:hover, #pickleball-events,#pickleball-events-leaders-in-premium-activations input:hover, #pickleball-events,#pickleball-events-leaders-in-premium-activations select:hover, #pickleball-events,#pickleball-events-leaders-in-premium-activations textarea:hover {
+  opacity: 1 !important;
+}
+
+
+
+html {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative;
+}

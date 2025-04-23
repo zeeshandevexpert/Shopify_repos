@@ -1,0 +1,144 @@
+/*================ Quote slider ================*/
+.quote {
+    font-size: 1.4rem;
+}
+
+@media only screen and (min-width: 750px) {
+    .quote {
+        padding: 60px;
+    }
+}
+
+.quote p {
+    line-height: 1.2;
+}
+
+.quote-block {
+    position: relative;
+}
+
+.quote-customer {
+    display: flex;
+}
+
+.quote-customer__info,
+.quote-customer__image {
+    width: 50%;
+    position: relative;
+    height: auto;
+}
+
+@media screen and (min-width: 750px) {
+    .quote-customer {
+        align-items: center;
+    }
+}
+@media screen and (max-width: 749px) {
+    .quote-customer__image .media {
+        padding: 0 !important;
+        height: 100% !important;
+    }
+}
+    
+.quote-customer__image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.quote-customer__info {
+    padding: 2.4rem;
+}
+
+.quotes-wrapper .swiper-slide {
+    height: 100%;
+}
+
+.quotes-wrapper .swiper-pagination {
+    position: absolute;
+    bottom: 0 !important;
+    right: 0 !important;
+    padding-right: 1.5rem;
+    text-align: right;
+}
+
+
+.quotes-wrapper {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 0px;
+    padding: 50px;
+    height: 100%;
+}
+
+.quote-press__logo {
+    display: inline-block;
+    width: 200px;
+    height: 65px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.quote-customer__stars {
+    margin: 1rem 0;
+}
+
+
+.quote-text {
+    margin: 0px auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 1rem;
+}
+
+.quote cite {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.quote-block + .quote-block {
+    margin-top: 30px;
+}
+
+@media only screen and (max-width: 749px) {
+    
+
+    .quotes-wrapper {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 0px;
+
+    }
+}
+.quotes-slider__prev,
+.quotes-slider__next {
+    background: 0;
+    border: 0;
+}
+
+.quotes-slider__prev .icon-caret,
+.quotes-slider__next .icon-caret {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.quotes-slider__prev .icon-caret {
+    transform: rotate(90deg);
+}
+.quotes-slider__next .icon-caret {
+    transform: rotate(-90deg);
+}
+
+@media screen and (min-width: 750px) {
+    .quote-text {
+        margin: 1rem 0;
+        font-size: 1.8rem;
+    }
+    .quote-text.rte  p {
+        line-height: normal;
+    }
+}

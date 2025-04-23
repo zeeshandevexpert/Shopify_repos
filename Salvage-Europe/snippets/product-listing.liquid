@@ -1,0 +1,130 @@
+<a href="{{ product.url | within: collection }}" tabindex="-1">
+  <div class="reveal {% if settings.image_ratio == 'square' %}square-images{% elsif settings.image_ratio == 'vertical' %}vertical-images{% elsif settings.image_ratio == 'horizontal' %}horizontal-images{% endif %}">
+
+    {%- if product.media.size < 1 -%}
+      <div class="box-ratio" style="padding-bottom: 100%;">
+        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+        {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      </div>
+    {%- else -%}
+      {%- liquid
+
+        if settings.display_options == 'image-switch' and product.images.size > 1
+          assign class = 'first-image'
+          assign second_image = product.media[1]
+        endif
+
+        case grid
+          when 2
+            assign width = '1000'
+          when 3
+            assign width = '800'
+          when 4
+            assign width = '600'
+          else
+            assign width = '500'
+        endcase
+
+      %}
+
+      {% render 'basic-responsive-image',
+        type: product.featured_media.preview_image,
+        width: width
+      %}
+
+      {% if settings.display_options == 'image-switch' and product.media.size > 1 %}
+        <div class="hidden">
+          {% render 'basic-responsive-image',
+            type: product.media[1],
+            width: width,
+            class: class
+          %}
+        </div>
+      {% endif %}
+    {%- endif -%}
+
+    {% if product.available %}
+      {% for col in product.collections %}
+        {% if col.handle == 'new' %}
+          <div class="new icn">{{ 'products.general.new' | t }}</div>
+        {% endif %}
+      {% endfor %}
+      {% if product.price < product.compare_at_price %}
+        <div class="sale-item icn">{{ 'products.general.sale' | t }}</div>
+      {% endif %}
+    {% else %}
+      <div class="so icn">{{ 'products.general.sold' | t }}</div>
+    {% endif %}
+
+    {% if settings.quickview %}
+      <button class="quick-view-{{ product.id }} product-listing__quickview-trigger js-modal-open js-quickview-trigger"
+      type="button"
+      name="button"
+      title="{{ 'products.general.quick_view' | t }}"
+      data-wau-modal-target="quickview"
+      data-product-url="{{ product.url }}?view=quick">
+        {% render 'snip-icons',
+         wrapper: '.product-listing__quickview-trigger',
+         type: 'mrparker',
+         icon: 'search',
+         classes: 'vib-center',
+         size: '18px',
+         fill: 'var(--button-text)',
+         hover: 'var(--button-text)' %}
+    </button>
+    {% endif %}
+
+  </div>
+</a>
+<div class="product-info">
+  <a href="{{ product.url | within: collection }}">
+    {% if settings.vendor %}
+      <p><em>{{ product.vendor }}</em></p>
+    {% endif %}
+    <div class="prod-title">{{ product.title }}</div>
+  </a>
+
+  {% render 'product-price-listing', product: product %}
+
+  {%- if settings.show_rating and product.metafields.reviews.rating.value != blank -%}
+    <div class="product__section--rating-wrapper">
+      {% liquid
+        assign rating_decimal = 0
+        assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+        if decimal >= 0.3 and decimal <= 0.7
+          assign rating_decimal = 0.5
+        elsif decimal > 0.7
+          assign rating_decimal = 1
+        endif
+      %}
+      <div class="product__section-rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}">
+        <span aria-hidden="true" class="product__section-rating-star color-icon" style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
+      </div>
+      <p class="product__section-rating-text caption">
+        <span aria-hidden="true">{{ product.metafields.reviews.rating.value }} / {{ product.metafields.reviews.rating.value.scale_max }}</span>
+      </p>
+      <p class="product__section-rating-count caption">
+        <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
+        <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+      </p>
+    </div>
+  {%- endif -%}
+
+  {% if product.variants.size > 1 %}
+    {% if settings.show_sizes and product.available %}
+      {% render 'show-sizes',
+        product: product %}
+    {% endif %}
+    {% if settings.show_colors and product.available %}
+      {% render 'show-colors',
+        product: product,
+        color_swatch_style: settings.color_swatch_style %}
+    {% endif %}
+  {% endif %}
+
+  {% if settings.show_add_to_cart %}
+  	{% render 'product-grid-add',
+      product: product  %}
+  {% endif %}
+
+</div>

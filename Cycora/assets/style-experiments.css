@@ -1,0 +1,362 @@
+.lab-top-section {
+	position: relative;
+	height:800px;
+}
+
+.lab-top-desktop-only {
+	display: block;
+	width:100%;
+	height:100%;
+}
+
+.lab-top-mobile-only {
+	display: none;
+}
+
+.lab-top-section .img-holder {
+	display: block;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.lab-top-section .img-holder img {
+	display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+	object-position: bottom center;
+}
+
+.lab-top-section .img-holder:after {
+	content: "";
+	background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 50%);
+	z-index: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.lab-top-content {
+	position: absolute;
+	top:400px;
+	left:56%;
+	color:#FFF;
+}
+
+.lab-top-content h2 {
+	font-size:60px;
+	line-height: 1em;
+	letter-spacing: -0.04em;
+	margin: 0 0 28px 0;
+}
+
+.lab-top-content-align {
+	margin-left:140px;
+}
+
+.lab-top-content p {
+	position: relative;
+	font-size:20px;
+	line-height: 1.3em;
+	letter-spacing: -0.03em;
+	max-width: 300px;
+	margin: 0 0 28px 0;
+}
+
+.lab-top-content p:before {
+	content:"";
+	background:url('../assets/lab-arrow-before.svg') center center no-repeat;
+	width:26px;
+	height:28px;
+	position:absolute;
+	left:-30px;
+}
+
+.lab-top-content a {
+	color:#FFF;
+	font-size:14px;
+	letter-spacing:-0.01em;
+	line-height: 1.3em;
+	display:inline-block;
+	margin:0;
+	padding: 0 17px 0 0;
+    background: url('../assets/arrow-down-scroll.svg') center right no-repeat;
+}
+
+.experiments-details-section {
+	display: flex;
+    flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.experiments-details-left {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover !important;
+	width: 50%;
+	color: var(--colorwhite);
+	display: flex;
+	flex-direction: column;
+	padding:15px;
+}
+
+.experiments-details-left-content {
+    display: flex;
+    flex-direction: column;
+	height: 100%;
+    justify-content: space-between;
+	padding-left:20px;
+	padding-bottom:40px;
+}
+
+.experiments-details-top {
+	display:inline-flex;
+	font-size:14px;
+	line-height: 1.3em;
+	letter-spacing: -0.02em;
+	padding-right:16px;
+	background:url('arrow-bottom-white.svg') center right no-repeat;
+	width:max-content;
+}
+
+.experiments-details-left-content h2 {
+	font-size:45px;
+	line-height: 1em;
+	letter-spacing: -0.03em;
+	margin:30px 0 0 0;
+}
+
+.experiments-details-bottom {
+	display:inline-flex;
+	font-size:14px;
+	line-height: 1.3em;
+	letter-spacing: -0.02em;
+	padding-right:16px;
+	background:url('arrow-down-scroll.svg') center right no-repeat;
+	width:max-content;
+}
+
+.experiments-details-right {
+	width:50%;
+}
+
+.experiments-details-right {
+	width:50%;
+	padding:65px;
+	background: var(--colorlightgray);
+}
+
+.experiments-details-right img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.experiments-details-right p {
+	font-size:14px;
+	line-height: 1.5em;
+	letter-spacing: -0.03em;
+	text-align: center;
+	max-width: 460px;
+	margin:65px auto 0;
+}
+
+.experiments-facility-section {
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-size: cover !important;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height:760px;
+	padding:15px;
+	position: relative;
+}
+
+.experiments-facility-desktop-only {
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+.experiments-facility-mobile-only {
+	display:none;
+}
+
+.experiments-facility-section h2 {
+	font-size:130px;
+	color:#FFF;
+	margin:0;
+	line-height: 0.9em;
+	letter-spacing: -0.05em;
+	display: flex;
+	justify-content: space-between;
+}
+
+.experiments-process-section {
+	padding:200px 15px;
+	text-align: center;
+}
+
+.experiments-process-section h2 {
+	font-size:45px;
+	color:var(--colorlightblack);
+	line-height: 1.1em;
+	letter-spacing: -0.03em;
+	margin:0 0 35px 0;
+}
+
+.experiments-process-section a {
+	display: inline-flex;
+	align-items: center;
+	color: var(--colorlightblack);
+	font-size: 14px;
+	line-height: 1.3em;
+	letter-spacing: -0.01em;
+	padding-right: 32px;
+	background: url('button-more.svg') center right no-repeat;
+}
+
+@media (max-width:991px) {
+	.lab-top-section {
+		height:750px;
+	}
+
+	.lab-top-desktop-only {
+		display: none;
+	}
+	
+	.lab-top-mobile-only {
+		display: block;
+		width:100%;
+		height:100%;
+	}
+
+	.lab-top-section .img-holder img {
+		object-position: left bottom;
+	}
+
+	.lab-top-section .img-holder:after {
+		display:none;
+	}
+
+	.lab-top-content {
+		top:auto;
+		bottom:42px;
+		left:15px;
+		right:15px;
+	}
+
+	.lab-top-content-align {
+		margin:0;
+	}
+
+	.lab-top-content p {
+		font-size:18px;
+		margin: 0 0 28px 30px;
+	}
+
+	.experiments-details-left {
+		width:100%;
+		height:484px;
+	}
+
+	.experiments-details-left-content {
+		padding-left:0;
+		padding-bottom:25px;
+	}
+
+	.experiments-details-left-content h2 {
+		font-size:35px;
+		line-height: 41px;
+		letter-spacing: -0.03em;
+	}
+
+	.experiments-details-right {
+		width: 100%;
+	}
+
+	.experiments-details-right {
+		padding:40px 15px;
+	}
+
+	.experiments-details-right p {
+		margin-top:35px;
+	}
+
+	.general-video-section {
+		height:360px;
+		padding:55px 15px;
+	}
+
+	.general-video-content h2 {
+		font-size:38px;
+	}
+
+	.general-video-content .general-play-button {
+		font-size: 20px;
+		line-height: 105px;
+		height: 105px;
+		width: 105px;
+	}
+
+	.general-video-content p {
+		font-size:20px;
+	}
+
+	.experiments-facility-section {
+		padding:0 15px;
+		height:484px;
+	}
+
+	.experiments-facility-desktop-only {
+		display:none;
+	}
+	
+	.experiments-facility-mobile-only {
+		display:block;
+		width:100%;
+		height:100%;
+	}
+
+	.experiments-facility-section h2 {
+		font-size:45px;
+		line-height: 140px;
+		letter-spacing: -0.05em;
+		flex-wrap: wrap;
+		margin-top: -30px;
+	}
+
+	.experiments-facility-section h2 span {
+		width: 50%;
+	}
+
+	.experiments-facility-section h2 span:first-child {
+		text-align: left;
+	}
+
+	.experiments-facility-section h2:nth-child(2) {
+		width:60%;
+		text-align: right;
+		margin-left: auto;
+	}
+
+	.experiments-process-section {
+		padding:115px 15px;
+	}
+
+	.experiments-process-section h2 {
+		font-size:35px;
+		margin: 0 0 25px 0;
+	}
+
+	.experiments-process-section h2 br {
+		display:none;
+	}
+}

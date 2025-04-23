@@ -1,0 +1,20 @@
+.collab {
+  position: relative;
+}
+
+.collab__image .media:nth-child(2) {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity .3s ease;
+  z-index: 2
+}
+
+@media (min-width:767px) {
+  .collab:hover .media:nth-child(2) {
+    opacity: 1;
+  }  
+}
+

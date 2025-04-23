@@ -1,0 +1,82 @@
+{
+  "sections": {
+    "e433888d-7e65-4f06-af96-2c0eff354b95": {
+      "type": "custom-iwt3",
+      "settings": {
+        "switch": false,
+        "heading": "CREATE YOUR JEWELLERY BOX! 7 ITEMS FOR £95",
+        "text": "<p><\/p><p><strong>CHOOSE FROM ANY 7 ITEMS IN OUR STORE. EVERY PURCHASE COMES WITH COMPLIMENTARY FREE SHIPPING AND A PREMIUM QUALITY JEWELLERY BOX. SAVE AT LEAST £90+ ON INDIVIDUAL ITEMS.<\/strong><\/p>",
+        "link_text": "CHOOSE MY JEWELLERY",
+        "link": "#custom-box",
+        "img": "shopify:\/\/shop_images\/WhatsApp_Image_2023-12-01_at_2.02.06_AM.jpg"
+      }
+    },
+    "be327772-a145-4ce1-a220-2693736a5ade": {
+      "type": "custom-iwt3",
+      "settings": {
+        "switch": true,
+        "heading": "WHAT'S THE DEAL?",
+        "text": "<p><\/p><p><strong>GET READY TO SAVE BIG! WITH OUR EXCLUSIVE OFFER, YOU'RE GUARANTEED TO SAVE AT LEAST £90+ OFF OUR INDIVIDUAL JEWELLERY PRICES TAGS. OUR JEWELLERY BOX FEATURE, LETS YOU HANDPICK ANY FIVE OR SEVEN PIECES FROM OUR ENTIRE WEBSITE. PLUS, YOUR CHOSEN PIECES WILL BE DELIVERED IN A FREE PERSONALISED OUTRAGE LONDON JEWELLERY BOX WHICH IS PERFECT FOR TRAVELLING.<\/strong><\/p><p><strong>WHETHER YOU'RE LOOKING FOR A SPECTACULAR GIFT OR WANT TO ENHANCE YOUR YEAR-ROUND JEWELLERY COLLECTION, THE CHOICE IS YOURS. WHAT WILL YOU SELECT? JOIN US NOW AND ENJOY THE BEST OF LUXURY JEWELLERY AT UNBEATABLE PRICES!<\/strong><\/p>",
+        "link_text": "CHOOSE MY JEWELLERY",
+        "link": "#custom-box",
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-07-11T115241.687.png"
+      }
+    },
+    "6380ca50-0179-42c7-8f97-13f84665640e": {
+      "type": "custom-iwt3",
+      "settings": {
+        "switch": false,
+        "heading": "HOW TO ORDER?",
+        "text": "<p><\/p><p><strong>1) Access the 'Create Your Jewellery Box' page.<\/strong><\/p><p><strong>2) Choose your desired jewellery by clicking on 'Choose My Jewellery.'<\/strong><\/p><p><strong>3)Select your pieces by clicking 'Add To Box.'<\/strong><\/p><p><strong>4) Once your box is complete, click 'Add To Cart' and proceed to checkout as usual.<\/strong><\/p><p><strong>5) Enjoy your curated box WITH THAT SAVINGS - we're confident you'll love it!<\/strong><\/p>",
+        "link_text": "",
+        "link": ""
+      }
+    },
+    "c251b6f5-4325-407a-a74d-114cd05100c6": {
+      "type": "custom-iwt3",
+      "settings": {
+        "switch": true,
+        "heading": "WHAT THEY SAY ABOUT US",
+        "text": "<p><\/p><p><strong>TRUSTED BY 50,000 HAPPY CUSTOMERS. ITS TIME FOR YOU TO MAKE OUTRAGE LONDON YOUR ONE STOP JEWELLERY BRAND.<\/strong><\/p>",
+        "link_text": "",
+        "link": "",
+        "img": "shopify:\/\/shop_images\/WhatsApp_Image_2023-12-01_at_2.02.05_AM.jpg"
+      }
+    },
+    "007e99ba-67fd-4e52-a058-7d4e8d8bd60b": {
+      "type": "c-banner",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/WHY_CHOOSE_OUTRAGE_LONDON_981261a5-a62e-4c52-aaa2-0cd4938a4d82.png",
+        "mbl-img": "shopify:\/\/shop_images\/why-choose-mobile.jpg",
+        "text": "",
+        "btn-text": "",
+        "btn-link": "",
+        "t-color": "#ffffff",
+        "b-color": "#ffffff"
+      }
+    },
+    "main": {
+      "type": "mystery-box",
+      "settings": {
+        "main_product": "build-your-own-box",
+        "selected_text": "AMAZING! You've selected (selected) out of your (total) jewellery.",
+        "size_guide_btn_text": "Jewellery Size Guide",
+        "size_guide_page": "size-chart",
+        "heading": "CHOOSE YOUR 7 PIECES AND WE'LL DO THE REST.",
+        "limit": 7,
+        "show": true,
+        "coll": "mysterybox-products-on-build-box-page",
+        "atc_btn_text": "Add to box",
+        "note": "Upgrade your box to 7 pieces for +£20"
+      }
+    }
+  },
+  "order": [
+    "e433888d-7e65-4f06-af96-2c0eff354b95",
+    "be327772-a145-4ce1-a220-2693736a5ade",
+    "6380ca50-0179-42c7-8f97-13f84665640e",
+    "c251b6f5-4325-407a-a74d-114cd05100c6",
+    "007e99ba-67fd-4e52-a058-7d4e8d8bd60b",
+    "main"
+  ]
+}

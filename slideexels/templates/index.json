@@ -1,0 +1,240 @@
+{
+  "sections": {
+    "banner_section_AKaMik": {
+      "type": "banner-section",
+      "blocks": {
+        "link_ghU9Pp": {
+          "type": "link",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/powerpoint.svg"
+          }
+        },
+        "link_f3LAtt": {
+          "type": "link",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/cup.svg"
+          }
+        },
+        "link_anN7NM": {
+          "type": "link",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/doc.svg"
+          }
+        }
+      },
+      "block_order": [
+        "link_ghU9Pp",
+        "link_f3LAtt",
+        "link_anN7NM"
+      ],
+      "settings": {
+        "heading": "Get Your Presentations DONE in Lightning Speed!",
+        "sub_heading": "Create impactful pitch decks, business reports, and marketing visuals in minutes.",
+        "btn_text": "START NOW",
+        "btn_url": "shopify:\/\/pages\/contact",
+        "icon_heading": "Compatible with"
+      }
+    },
+    "slides_section_pkgL8R": {
+      "type": "slides-section",
+      "blocks": {
+        "slide_top_43K837": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Business_Model_Canvas_10_800x_647c3a0b-c2ee-432c-a72a-6cc85112cb08.webp"
+          }
+        },
+        "slide_top_iPbEwR": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Mockup_Devices_18_800x_062dc23d-dfc1-4d55-92f3-cfaf97952963.webp"
+          }
+        },
+        "slide_top_eVhRKf": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Progress_Infographic_18_800x_978c5a03-d2d1-4431-8fd9-f06a7a6f058e.webp"
+          }
+        },
+        "slide_top_AzDkFU": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Product_Life_Cycle_06_800x_720eadaf-3dfc-414f-b891-1c8dc0ffb844.webp"
+          }
+        },
+        "slide_top_mrHp8F": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Safety_Infographic_06_800x_260e6cac-73e3-4278-b5b8-ed8784c23959.webp"
+          }
+        },
+        "slide_top_QgJRWr": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/circle_cycle_4_options_infographic_powerpoint_template_slides_800x_585f34f6-cc1b-4b4e-9c48-d5bee93267a7.webp"
+          }
+        },
+        "slide_top_Aah9rb": {
+          "type": "slide-top",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/smile-rating-powerpoint-infographic-templates-07_800x_2584937e-9b23-440e-8e8e-5e2fa4d38267.webp"
+          }
+        },
+        "slide_bottom_kLMMkr": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Cloud_Slide_14_800x_4bd25b56-d842-4e7a-a182-1d868ce0c899.webp"
+          }
+        },
+        "slide_bottom_QVFecg": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/sales_mekko_chart_infographic_powerpoint_template_slides_800x_2a624e87-460e-4682-a914-a91adda24697.webp"
+          }
+        },
+        "slide_bottom_8CNUnb": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/KPI_Dashboard_18_800x_e4c636e7-e6d1-4e0f-a822-25c77487c3d2.webp"
+          }
+        },
+        "slide_bottom_JJWEnC": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/McKinsey_7S_Model_02_800x_0370399b-08c9-4081-8ccd-e426c0a3d25a.webp"
+          }
+        },
+        "slide_bottom_ktUGMA": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Medical-Infographic-templates_800x_214314af-c233-4393-a39b-4b6aeea5e38f.webp"
+          }
+        },
+        "slide_bottom_rgB3U3": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/Blue_Ocean_Strategy_15_800x_25e9515e-85ea-44f6-a602-333085b95279.webp"
+          }
+        },
+        "slide_bottom_LFETb8": {
+          "type": "slide-bottom",
+          "settings": {
+            "slide": "shopify:\/\/shop_images\/ven_abcd_infographic_powerpoint_template_slides_800x_1fd30f10-98c0-4d27-884c-c3d7283e4e3b.webp"
+          }
+        },
+        "icon_box_X49b9J": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/google_logo.svg"
+          }
+        },
+        "icon_box_NrnhPz": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/uber_logo.svg"
+          }
+        },
+        "icon_box_xBqwkU": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/disney_logo.svg"
+          }
+        },
+        "icon_box_WFwLwi": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/samsung_logo.svg"
+          }
+        }
+      },
+      "block_order": [
+        "slide_top_43K837",
+        "slide_top_iPbEwR",
+        "slide_top_eVhRKf",
+        "slide_top_AzDkFU",
+        "slide_top_mrHp8F",
+        "slide_top_QgJRWr",
+        "slide_top_Aah9rb",
+        "slide_bottom_kLMMkr",
+        "slide_bottom_QVFecg",
+        "slide_bottom_8CNUnb",
+        "slide_bottom_JJWEnC",
+        "slide_bottom_ktUGMA",
+        "slide_bottom_rgB3U3",
+        "slide_bottom_LFETb8",
+        "icon_box_X49b9J",
+        "icon_box_NrnhPz",
+        "icon_box_xBqwkU",
+        "icon_box_WFwLwi"
+      ],
+      "settings": {
+      }
+    },
+    "collection_tab_JWPQaM": {
+      "type": "collection-tab",
+      "blocks": {
+        "tab_Q9wFRE": {
+          "type": "tab",
+          "settings": {
+            "collection": "frontpage",
+            "viewall": false
+          }
+        },
+        "tab_j8iNTJ": {
+          "type": "tab",
+          "settings": {
+            "collection": "collection-2",
+            "viewall": false
+          }
+        }
+      },
+      "block_order": [
+        "tab_Q9wFRE",
+        "tab_j8iNTJ"
+      ],
+      "settings": {
+        "title": "All",
+        "useslider": false
+      }
+    },
+    "blurb_section_hqr8VP": {
+      "type": "blurb-section",
+      "blocks": {
+        "item_CmcP4U": {
+          "type": "item",
+          "settings": {
+            "tab_data": "<p>5,000+<\/p><p>SLIDES<\/p>"
+          }
+        },
+        "item_mDpxkG": {
+          "type": "item",
+          "settings": {
+            "tab_data": "<p>150 +<\/p><p>NICHES<\/p>"
+          }
+        },
+        "item_GY7mcM": {
+          "type": "item",
+          "settings": {
+            "tab_data": "<p>EASY TO <\/p><p>EDIT<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_CmcP4U",
+        "item_mDpxkG",
+        "item_GY7mcM"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ven_abcd_infographic_powerpoint_template_slides_800x_1fd30f10-98c0-4d27-884c-c3d7283e4e3b.webp",
+        "heading": "Get Lifetime Deal",
+        "desc": "<p>ONE-TIME PAYMENT. ZERO SUSCRIPTIONS<\/p>"
+      }
+    }
+  },
+  "order": [
+    "banner_section_AKaMik",
+    "slides_section_pkgL8R",
+    "collection_tab_JWPQaM",
+    "blurb_section_hqr8VP"
+  ]
+}

@@ -1,0 +1,48 @@
+{%- layout none -%}
+{%- assign total = 0 -%}
+{%- assign split_value = ' - ' %}
+{%- assign used_sizes = '' -%}
+{%- paginate search.results by 50 -%}
+{%- capture results -%}
+  {%- for item in search.results -%}
+    {%- assign product = item -%}
+    {%- assign pt = product.title | split: split_value -%}
+    {%- assign size = pt[1] | strip -%}
+    {%- assign ph = pt[1] | handle %}
+    {%- assign ph = product.handle %}
+    {%- assign size_image = false -%}
+    {%- assign size_value = false -%}
+    {%- assign size_vars = false %}
+    {%- assign search_terms_handle = search.terms | handle -%}
+    {%- assign product_title_handle = pt[0] | strip | handle -%}
+	{%- if product.title contains 'Flat' -%}
+	  {%- assign order = 1 -%}
+    {%- elsif product.title contains 'Full' -%}
+	  {%- assign order = 3 -%}
+	{%- else -%}
+	  {%- assign order = 2 -%}
+	{%- endif -%}
+    {%- unless used_sizes contains size or size contains 'Special' %}
+    {%- if pt[1] -%}{%- unless total == 0 -%},{%- endunless -%}
+    {%- capture used_sizes -%}{{used_sizes}}{%- unless used_sizes == '' -%},{%- endunless -%}{{size}}{%- endcapture -%}
+    {%- assign total = total | plus: 1 -%}
+    {
+      "title":"{{product.title | split: split_value | first | strip }}",
+	  "image":"{{product.images[0] | img_url:'master'}}",
+	  "image_hover":"{{product.images[1] | img_url:'master'}}",
+      "size":"{{ size | strip }}",
+      "order":"{{order}}",
+      "url":"{{ product.url }}"
+    }
+    {%- endif -%}
+    {%- endunless %}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- endpaginate -%}
+{
+  "results_count": {{ total }},
+  "search_term": "{{search.terms}}",
+  "used_sizes": "{{used_sizes}}",
+  "results": [{{ results }}],
+  "pages": "{{paginate.pages}}"
+}

@@ -1,0 +1,447 @@
+{
+  "sections": {
+    "section_double_wWdLt3": {
+      "type": "section-double",
+      "blocks": {
+        "image_NTikTH": {
+          "type": "image",
+          "settings": {
+            "width": "one-col",
+            "image": "shopify:\/\/shop_images\/1000051674_b1ff5134-a975-4821-b399-82f7158945cc.png",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        },
+        "text_pntPDE": {
+          "type": "text",
+          "settings": {
+            "width": "three-col",
+            "kicker": "",
+            "title": "尖端的醫療保健技術與原始補水的清爽功效相結合",
+            "text": "<p>這不僅僅是補充水分；更是一種全面的健康體驗。 HydroX 的產品具有強大的抗氧化特性，有助於緩解發炎引起的一系列健康症狀，從痛風和關節炎到過敏、皮膚刺激、運動恢復、精力不足等。來自我們原始水源的水還含有對人體至關重要的礦物質。鎂、鉀、鍶、偏矽酸和鋅是這種天然靈丹妙藥中發現的有益元素。這些礦物質在支持各種身體功能、促進整體健康和活力方面發揮著至關重要的作用。<\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_NTikTH",
+        "text_pntPDE"
+      ],
+      "custom_css": [
+        "h2 {font-size: 39px;}",
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "height": "use_screen_three_quarters",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 82,
+        "padding_bottom": 82
+      }
+    },
+    "section_double_9ePQWY": {
+      "type": "section-double",
+      "blocks": {
+        "text_kVCTgY": {
+          "type": "text",
+          "settings": {
+            "width": "width:50%",
+            "kicker": "Image with text",
+            "title": "",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        },
+        "image_Lkcypm": {
+          "type": "image",
+          "settings": {
+            "width": "width:50%",
+            "image": "shopify:\/\/shop_images\/IG_Billboard_Square.png",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "Shop Now",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        }
+      },
+      "block_order": [
+        "text_kVCTgY",
+        "image_Lkcypm"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_liquid_4HxX3k": {
+      "type": "section-liquid",
+      "settings": {
+        "custom_liquid": ""
+      }
+    },
+    "section_richtext_HzU7DQ": {
+      "type": "section-richtext",
+      "blocks": {
+        "text_bcGYx7": {
+          "type": "text",
+          "settings": {
+            "text": "<h1><strong>您喝的水很重要<\/strong><\/h1>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        },
+        "text_83EW3d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>我們相信優質水俱有改善健康狀況的變革力量。這就是為什麼我們的目標是讓人們認識到補水的重要性及其對整體健康的影響。<\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        },
+        "kicker_FdeQhG": {
+          "type": "kicker",
+          "settings": {
+            "kicker": "",
+            "enable_line": true,
+            "text_size": 4
+          }
+        },
+        "text_TfwPDB": {
+          "type": "text",
+          "settings": {
+            "text": "<h1><strong>事實證明，活性氫水有助於改善👇<\/strong><\/h1>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "text_bcGYx7",
+        "text_83EW3d",
+        "kicker_FdeQhG",
+        "text_TfwPDB"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}",
+        "div.wrapper.section-padding {background: #001e62;}"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "text_color": "text--white",
+        "bg": "palette--dark bg--invert",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_columns_CJaqQB": {
+      "type": "section-columns",
+      "blocks": {
+        "text_block_CCDXf4": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T201806.864.png",
+            "shape_class": "",
+            "title": "痛風與關節炎",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_diFhie": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T202029.899.png",
+            "shape_class": "",
+            "title": "運動恢復",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_WeMUN9": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T202149.094.png",
+            "shape_class": "",
+            "title": "舒緩肌膚",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_UhcQDF": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T202303.067.png",
+            "shape_class": "",
+            "title": "能階",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_t9jyFq": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T202432.692.png",
+            "shape_class": "",
+            "title": "宿醉症狀",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_bkAH4c": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T202605.538.png",
+            "shape_class": "",
+            "title": "認知表現",
+            "text": "",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_CCDXf4",
+        "text_block_diFhie",
+        "text_block_WeMUN9",
+        "text_block_UhcQDF",
+        "text_block_t9jyFq",
+        "text_block_bkAH4c"
+      ],
+      "custom_css": [
+        "div.wrapper.section-padding {background: #001e62;}"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--dark bg--invert",
+        "align_text": "text-center",
+        "scale_image": true,
+        "wh_ratio": 1,
+        "grid_large": 6,
+        "grid_medium": 3,
+        "grid_mobile": 1.2,
+        "progress_bar_mobile": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_richtext_xPhRLx": {
+      "type": "section-richtext",
+      "blocks": {
+        "heading_4hX78x": {
+          "type": "heading",
+          "settings": {
+            "heading": "產品線：",
+            "text_size": 8
+          }
+        }
+      },
+      "block_order": [
+        "heading_4hX78x"
+      ],
+      "custom_css": [
+        "p {font-size: 39px;}"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_columns_ixnxmf": {
+      "type": "section-columns",
+      "blocks": {
+        "text_block_XLngxq": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/1000051674_0ef8bc3d-1376-40f5-94c6-bb511f74c7a8.png",
+            "shape_class": "",
+            "title": "緩解痛風和關節炎",
+            "text": "<p>每天 1.5 公升。 持续2週。告別曾經困擾你的痛苦。讓您回到應有的生活，是我們不變的追求。<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_EqKk6b": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/1000051675_008c08dd-e7b2-416b-ad4d-83d439bd2c05.png",
+            "shape_class": "",
+            "title": "運動恢復",
+            "text": "<p>像運動員一樣訓練、饮水和恢復。活性氫水可以在提高運動表現上祝您一臂之力。<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_nwkcTf": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/1000051676.png",
+            "shape_class": "",
+            "title": "每日健康",
+            "text": "<p>更好的肌膚，更好的腸道，更好的睡眠。選擇饮正確的水让你容光煥發。<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_XLngxq",
+        "text_block_EqKk6b",
+        "text_block_nwkcTf"
+      ],
+      "custom_css": [
+        "div.accent-title-large.strong.mb-2 {font-size: 20px;}",
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--light bg--neutral",
+        "align_text": "text-left",
+        "scale_image": true,
+        "wh_ratio": 1,
+        "grid_large": 3,
+        "grid_medium": 3,
+        "grid_mobile": 1.2,
+        "progress_bar_mobile": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "page",
+      "settings": {
+        "kicker": "",
+        "kicker_size": 3,
+        "show_title": false,
+        "title_size": 8,
+        "show_content": true,
+        "content_size": 5,
+        "align_text": "text-center",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper--narrow",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": [
+    "section_double_wWdLt3",
+    "section_double_9ePQWY",
+    "section_liquid_4HxX3k",
+    "section_richtext_HzU7DQ",
+    "section_columns_CJaqQB",
+    "section_richtext_xPhRLx",
+    "section_columns_ixnxmf",
+    "main"
+  ]
+}

@@ -1,0 +1,43 @@
+{%- case type -%}
+  {%- when 'Iron Doors' -%}
+  	{% capture content %}{{ pages.pdp-lock-compatibility.content }}{% endcapture %}
+
+  {%- when 'Bi-Fold/Accordion' -%}
+  	{% capture content %}{{ pages.pdp-lock-compatibility-bi-fold-accordion.content }}{% endcapture %}
+
+  {% when 'Dutch Doors' %}
+  	{% capture content %}{{ pages.pdp-lock-compatibility-dutch-doors.content }}{% endcapture %}
+
+  {% else %}
+  	{% capture content %}{{ pages.pdp-lock-compatibility.content }}{% endcapture %}
+
+{%- endcase -%}
+
+{% unless product.title contains 'Barn Door' %} 
+{%- if product.title contains 'Air 4' or product.title contains 'Air 5' or product.title contains 'Air Lite' -%}
+  	{% capture content %}{{ pages.pdp-lock-compatibility-air-series.content }}{% endcapture %}
+{%- endif -%}
+{% endunless %}
+
+{% if product.title contains 'Thermally Broken' %}
+  {% assign content = pages.pdp-lock-compatibility-thermally-broken.content %}
+{% endif %}
+{% if product.title contains 'Thermally Broken' and product.title contains 'Air' %}
+  {% assign content = pages.pdp-lock-compatibility-air-series-thermally-broken.content %}
+{% endif %}
+{% assign dutch_doors = 'Air 4 Dutch,Air 5 Dutch,Air Lite Dutch' | split: ',' %}
+{% for dutch_door in dutch_doors %}
+{% if product.title contains dutch_door %}
+{% assign content = pages.pdp-lock-compatibility-dutch-doors-air-series.content %}
+{% endif %}
+{% endfor %}
+
+{%  if product.tags contains 'PDPLock: Interior-Air' %}
+  {% assign content = pages.pdp-lock-compatibility-interior-door-air-collection.content %}
+{% endif %}
+
+{%  if product.tags contains 'PDPLock: Pivot-Air' %}
+  {% assign content = pages.pdp-lock-compatibility-pivot-doors-air-collection.content %}
+{% endif %}
+
+{% include 'shortcode' load: content %}

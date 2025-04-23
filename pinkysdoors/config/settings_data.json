@@ -1,0 +1,2218 @@
+{
+  "current": {
+    "color_text": "#000000",
+    "color_body_text": "#3d3d3d",
+    "color_sale_text": "#bbbbbb",
+    "color_button": "#ce826d",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#3d4246",
+    "color_text_field_text": "#000000",
+    "color_text_field_border": "#c5c5c5",
+    "color_text_field": "#f9f9f9",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#3d4246",
+    "image_overlay_opacity": 40,
+    "color_borders": "#e8e9eb",
+    "color_body_bg": "#ffffff",
+    "type_header_font": "work_sans_n6",
+    "type_header_base_size": 26,
+    "type_base_font": "work_sans_n4",
+    "type_base_size": 16,
+    "type_bold_product_titles": false,
+    "share_image": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "https:\/\/twitter.com\/pinkysirondoors?lang=en",
+    "social_facebook_link": "https:\/\/www.facebook.com\/pinkysirondoors\/",
+    "social_pinterest_link": "https:\/\/www.pinterest.com\/pinkysirondoors\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/pinkysirondoors\/",
+    "social_tumblr_link": "https:\/\/pinkysirondoors.tumblr.com\/",
+    "social_snapchat_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCCg90-SJKzVi0vTmJVYsIlw",
+    "social_vimeo_link": "",
+    "social_houzz_link": "https:\/\/www.houzz.com\/pro\/pinkysirondoors\/pinkys-iron-doors",
+    "favicon": "shopify:\/\/shop_images\/favicon-32x32.png",
+    "shipping_calculator": "Enabled",
+    "shipping_calculator_heading": "Get shipping estimates",
+    "shipping_calculator_default_country": "United States",
+    "shipping_calculator_submit_button_label": "Calculate shipping",
+    "shipping_calculator_submit_button_label_disabled": "Calculating...",
+    "split_value": "|",
+    "upsell_product": "iron-door-spray",
+    "hide_telephone_number": false,
+    "app_wk_enabled": true,
+    "app_wk_login_required": false,
+    "app_wk_icon": "heart",
+    "app_wk_col_bg_shape": "square",
+    "app_wk_share_position": "top",
+    "app_wk_products_per_row": "4",
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/PINKY_LOGO_1_BLACK.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f5f5f5",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#ce826d",
+    "checkout_button_color": "#ce826d",
+    "checkout_error_color": "#ce826d",
+    "sections": {
+      "blog-slideshow": {
+        "type": "blog-slideshow",
+        "blocks": {
+          "1558393312855": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/angye.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/blog-1.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Pinky’s on TLC’s Nate & Jeremiah by Design",
+              "subheading": "Dedicated fans of Nate & Jeremiah by Design from the very beginning of the show",
+              "button_label": "READ MORE",
+              "button_link": "shopify:\/\/blogs\/news\/look-out-for-pinky-s-iron-doors-on-tlc-s-nate-jeremiah-by-design",
+              "clients": true,
+              "about": false,
+              "design": false,
+              "projects": true,
+              "more": false
+            }
+          },
+          "1558393337750": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/dadssdsd.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/blog-3.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Earvin “Magic” Johnson & Pinky’s Iron Doors",
+              "subheading": "Childhood hero twenty years later…",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/earvin-magic-johnson-pinky-s-iron-doors",
+              "clients": true,
+              "about": false,
+              "design": false,
+              "projects": false,
+              "more": false
+            }
+          },
+          "1558469892834": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Untitled-2_512f7fb6-69b2-4389-b286-b08c8c825d6b.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/blog-5.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Shavo Odadjian from System of a Down",
+              "subheading": "We worked closely with him throughout the design process…",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/custom-iron-doors-for-system-of-a-down-s-shavo-odadjian",
+              "clients": true,
+              "about": false,
+              "design": false,
+              "projects": false,
+              "more": false
+            }
+          },
+          "1558469999383": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/jjj-min.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/blog-4.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Dr. Woo X Pinky’s Iron Doors",
+              "subheading": "“The Hideaway is truly a unique space”",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/dr-woo",
+              "clients": true,
+              "about": false,
+              "design": false,
+              "projects": true,
+              "more": false
+            }
+          },
+          "1558469997993": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/kfksf-min.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/Screen_Shot_2019-06-06_at_5.00.10_PM.png",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "A Fusion of Convenience and Quality",
+              "subheading": "Family-owned and operated company based in the heart of Los Angeles…",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/a-fusion-of-convenience-and-quality",
+              "clients": false,
+              "about": true,
+              "design": false,
+              "projects": false,
+              "more": false
+            }
+          },
+          "1558470137823": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/dddd-min.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/dddd-min.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Gena",
+              "subheading": "So clean. So simple.",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/gena",
+              "clients": false,
+              "about": false,
+              "design": false,
+              "projects": true,
+              "more": false
+            }
+          },
+          "1558480102204": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/dd-min.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/blog-2.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Air Collection",
+              "subheading": "The stunning pieces within this modern collection are sleek, minimalistic and luxurious at the same time.",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/air-collection",
+              "clients": false,
+              "about": false,
+              "design": true,
+              "projects": false,
+              "more": false
+            }
+          },
+          "1558480264417": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/san_fran-min.jpg",
+              "image_mobile": "shopify:\/\/shop_images\/san_fran-min.jpg",
+              "text_color": "#000000",
+              "alignment": "right center",
+              "slide_title": "Travel with Pinky’s Iron Doors",
+              "subheading": "Our iron doors that were inspired by cities we love…",
+              "button_label": "READ MORE",
+              "button_link": "https:\/\/pinkysdoors.myshopify.com\/blogs\/news\/travel-with-pinky-s-iron-doors",
+              "clients": false,
+              "about": false,
+              "design": false,
+              "projects": false,
+              "more": true
+            }
+          }
+        },
+        "block_order": [
+          "1558393312855",
+          "1558393337750",
+          "1558469892834",
+          "1558469999383",
+          "1558469997993",
+          "1558470137823",
+          "1558480102204",
+          "1558480264417"
+        ],
+        "settings": {
+          "slideshow_height": "small",
+          "text_size": "medium",
+          "show_overlay": false,
+          "autorotate": false,
+          "autorotate_speed": 5,
+          "randomize": true
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "grid",
+          "blog_show_author": false,
+          "blog_show_date": false
+        }
+      },
+      "header": {
+        "type": "header",
+        "blocks": {
+          "87113103-7534-4153-8ac7-abe1d982965a": {
+            "type": "announcement",
+            "settings": {
+              "title": "Expansive glass and minimal frames, intended to maximize light and view.",
+              "link": "https:\/\/pinkysirondoors.com\/collections\/steel-doors",
+              "count_down_enable": false,
+              "count_down_title": "",
+              "count_down_text": "",
+              "count_down_date": "",
+              "count_down_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "87113103-7534-4153-8ac7-abe1d982965a"
+        ],
+        "settings": {
+          "align_logo": "left",
+          "logo": "shopify:\/\/shop_images\/pinkys-final-CMYK.png",
+          "logo_max_width": 100,
+          "main_linklist": "main-menu",
+          "message": "homepage_only",
+          "message_text": "Our showroom is open. See store health and safety plans.",
+          "message_link": "shopify:\/\/pages\/covid-19-rules-and-guidelines",
+          "color_bg": "#ffffff",
+          "color_text": "#000000"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1551301317108": {
+            "type": "link_list",
+            "settings": {
+              "title": "Help",
+              "menu": "help"
+            }
+          },
+          "1551301322583": {
+            "type": "link_list",
+            "settings": {
+              "title": "About",
+              "menu": "about"
+            }
+          },
+          "1551301335991": {
+            "type": "link_list",
+            "settings": {
+              "title": "Information",
+              "menu": "information"
+            }
+          }
+        },
+        "block_order": [
+          "1551301317108",
+          "1551301322583",
+          "1551301335991"
+        ],
+        "settings": {
+          "show_payment_icons": true,
+          "color_footer_bg": "#323232",
+          "color_footer_text": "#ffffff"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": 3,
+          "rows": 8,
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": true,
+          "tags_enable": true
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": false,
+          "show_share_buttons": true,
+          "variant_style": "dropdown"
+        }
+      },
+      "page-about-timeline": {
+        "type": "page-about-timeline",
+        "blocks": {
+          "1557356517823": {
+            "type": "date",
+            "settings": {
+              "title": "1969-1978",
+              "info": "Vic, our father, drums for a group called Thunder Ball in the free-spirited 70’s of Iran, a suspended blink in time where the middle east awakened with artistic renaissance and progressive spirit last seen in Paris of the 20’s. He would play Jazz music in the lobby of all American Hotels. The music is wild, free, and bursting with life.",
+              "image": "shopify:\/\/shop_images\/7.jpg"
+            }
+          },
+          "1557356690926": {
+            "type": "date",
+            "settings": {
+              "title": "1977",
+              "info": "Attracted to the energy of the music and the artist's life, our mother was not your typical groupie.",
+              "image": "shopify:\/\/shop_images\/8.jpg"
+            }
+          },
+          "1558456772156": {
+            "type": "date",
+            "settings": {
+              "title": "1978",
+              "info": "Our family's story is always with us. The tradition, the artistry, the love.",
+              "image": "shopify:\/\/shop_images\/9.jpg"
+            }
+          },
+          "1557356769082": {
+            "type": "date",
+            "settings": {
+              "title": "1979",
+              "info": "Even under the restrictions imposed during an oppressive revolution, (including a ban on artists), Vic couldn't abandon soul-seeking life. He joined his family’s ironworks studio, under the leadership of his brother, a noted master craftsman, and used the craft as his new form of expression.",
+              "image": "shopify:\/\/shop_images\/11.jpg"
+            }
+          },
+          "1558456932404": {
+            "type": "date",
+            "settings": {
+              "title": "1979",
+              "info": "Dion Der, Vic's older son, is born.  Dion is drawn to creative spirits with a lifelong passion for cars and machines. He is a natural trailblazer opening auto mechanic shops across Los Angeles. Dion reflects many of his father's traits in a new generation.",
+              "image": "shopify:\/\/shop_images\/10-min.jpg"
+            }
+          },
+          "1558457241760": {
+            "type": "date",
+            "settings": {
+              "title": "1983",
+              "info": "Searching for a freedom of creative expression, the Ders leave Iran for Geneva, Switzerland. A drastic change in scenery forever influenced our point of view.",
+              "image": "shopify:\/\/shop_images\/12-min.jpg"
+            }
+          },
+          "d91070a6-66c2-42bb-b1ba-3c1253fd2214": {
+            "type": "date",
+            "disabled": true,
+            "settings": {
+              "title": "1983",
+              "info": "Searching for a freedom of creative expression, the Ders leave Iran for Geneva, Switzerland. A drastic change in scenery forever influenced our point of view."
+            }
+          },
+          "1558457254994": {
+            "type": "date",
+            "settings": {
+              "title": "1983",
+              "info": "Arin Der, Vic's younger son and Dion's younger brother, is born. Arin is a calm hand guiding the artistic forces of Vic and Dion. Arin goes to law school and gets his MBA. His balance unifies PINKYS, leading to an improved company operation that is more accessible to the customer.",
+              "image": "shopify:\/\/shop_images\/13-min.jpg"
+            }
+          },
+          "1558457500561": {
+            "type": "date",
+            "settings": {
+              "title": "1984",
+              "info": "Two brothers stronger together. Balancing each other. A natural team.",
+              "image": "shopify:\/\/shop_images\/14-min.jpg"
+            }
+          },
+          "1558457621840": {
+            "type": "date",
+            "settings": {
+              "title": "1987",
+              "info": "The Der family arrives to the center of the creative world: Los Angeles.",
+              "image": "shopify:\/\/shop_images\/1-min.jpg"
+            }
+          },
+          "1558457707726": {
+            "type": "date",
+            "settings": {
+              "title": "1987",
+              "info": "Our father begins life in America with little but his family, his skills, and determination."
+            }
+          },
+          "1558457716038": {
+            "type": "date",
+            "settings": {
+              "title": "1987",
+              "info": "But the creativity, hard work, and talent he always possessed would carry him forward."
+            }
+          },
+          "1558457975788": {
+            "type": "date",
+            "settings": {
+              "title": "1987-1992",
+              "info": "Vic's passion and skill are recognized in the new work he finds in Los Angeles, albeit in ways he could not imagine.",
+              "image": "shopify:\/\/shop_images\/16-min.jpg"
+            }
+          },
+          "1558458050593": {
+            "type": "date",
+            "settings": {
+              "title": "1987-1992",
+              "info": "Vic works hard in his new country, chasing the dream of having his own artisan's studio. Craving the freedom he felt through the drums, the sticks vibrating in his hands, Vic spends long hours working in an auto mechanic shop then comes home to weld iron in the backyard."
+            }
+          },
+          "1558458265598": {
+            "type": "date",
+            "settings": {
+              "title": "1992",
+              "info": "Vic's dream comes true: he opens his own ironworks studio, King Iron Works.",
+              "image": "shopify:\/\/shop_images\/17-min.jpg"
+            }
+          },
+          "1558458557136": {
+            "type": "date",
+            "settings": {
+              "title": "1992",
+              "info": "Vic champions the American-made ethos, designing and hand-forging all his custom iron gates, windows, doors, and other pieces in his backyard."
+            }
+          },
+          "1558458566400": {
+            "type": "date",
+            "settings": {
+              "title": "1992",
+              "info": "Overcoming the obstacles he faces as an immigrant, Vic works every aspect of his business and finds growing success, without speaking the english language. A testament that art is truly the universal human language."
+            }
+          },
+          "1558458578992": {
+            "type": "date",
+            "settings": {
+              "title": "2001",
+              "info": "Vic has tapped into something within the spirit of Southern California through his ironwork. His studio grows from a one-man backyard operation, into a nationally recognized brand with a team of designers, artisans, and more.",
+              "image": "shopify:\/\/shop_images\/18_copy-min.jpg"
+            }
+          },
+          "1558458616718": {
+            "type": "date",
+            "settings": {
+              "title": "2006",
+              "info": "Dion follows his own passions and opens an auto mechanic shop. He names it PINKYS, a name that would reveal great magic and success to him.",
+              "image": "shopify:\/\/shop_images\/21-min.jpg"
+            }
+          },
+          "1558458657102": {
+            "type": "date",
+            "settings": {
+              "title": "2008",
+              "info": "Decades of craft and dedication have elevated Vic to become one the best hand-forging iron artisans in California. His artistry finds kinship with L.A.’s own artist community through clients like Dr. Woo, Nate Berkus and Jeremiah Brent, Magic Johnson and others.",
+              "image": "shopify:\/\/shop_images\/22-min.jpg"
+            }
+          },
+          "1558458711530": {
+            "type": "date",
+            "settings": {
+              "title": "2008",
+              "info": "Shavo Odadjian of System of a Down shows off his custom Shavo Design single-entry door from PINKYS.",
+              "image": "shopify:\/\/shop_images\/23-min.jpg"
+            }
+          },
+          "1558458736073": {
+            "type": "date",
+            "settings": {
+              "title": "2008",
+              "info": "Mark Jackson, NBA Superstar, with Vic and Arin.",
+              "image": "shopify:\/\/shop_images\/24-min.jpg"
+            }
+          },
+          "1558458762849": {
+            "type": "date",
+            "settings": {
+              "title": "2009",
+              "info": "Dion brings the power of the PINKYS name to the family business. PINKYS is born.",
+              "image": "shopify:\/\/shop_images\/25-min.jpg"
+            }
+          },
+          "1558458789273": {
+            "type": "date",
+            "settings": {
+              "title": "2009",
+              "info": "Pairing their passions and strengths, Dion and Arin team up to take their father's legacy to the next level."
+            }
+          },
+          "1558458808870": {
+            "type": "date",
+            "settings": {
+              "title": "2014 PINKYS Opens",
+              "info": "PINKYS debuts an industry-leading showroom in Los Angeles, with the largest inventory of doors in the nation.  Nationwide shipping expands PINKYS reach across the country, bringing the Los Angeles lifestyle to homes in every part of the contiguous United States. Beyond the superior quality and customer service, a PINKYS piece is a statement of purpose in a home.",
+              "image": "shopify:\/\/shop_images\/26-min.jpg"
+            }
+          },
+          "1558458883655": {
+            "type": "date",
+            "settings": {
+              "title": "Today",
+              "info": "PINKYS continues to evolve and refine its vision with every year, fueled by the desire to transform homes into places of light and beauty. The transformation is not just an aesthetic one, but a lifestyle shift as designers, musicians, and others will attest to including those listed below:",
+              "image": "shopify:\/\/shop_images\/27-min.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1557356517823",
+          "1557356690926",
+          "1558456772156",
+          "1557356769082",
+          "1558456932404",
+          "1558457241760",
+          "d91070a6-66c2-42bb-b1ba-3c1253fd2214",
+          "1558457254994",
+          "1558457500561",
+          "1558457621840",
+          "1558457707726",
+          "1558457716038",
+          "1558457975788",
+          "1558458050593",
+          "1558458265598",
+          "1558458557136",
+          "1558458566400",
+          "1558458578992",
+          "1558458616718",
+          "1558458657102",
+          "1558458711530",
+          "1558458736073",
+          "1558458762849",
+          "1558458789273",
+          "1558458808870",
+          "1558458883655"
+        ],
+        "settings": {
+          "banner_image": "shopify:\/\/shop_images\/1_1024x_1326f7d8-d1c4-4564-a3e1-6880d053335a.jpg"
+        }
+      },
+      "newsletter-popup": {
+        "type": "newsletter-popup",
+        "settings": {
+          "show_newsletter_popup": true,
+          "newsletter_popup_delay": "30",
+          "image": "shopify:\/\/shop_images\/AIR-4-single-mini-50x-50.png",
+          "newsletter_popup_expiration": "90",
+          "section_title": "Design by PINKYS",
+          "bg_color": "",
+          "subheading": "<p>Sign up for our newsletter to be the first to know about our new promotions, new designs and new everything!<\/p>",
+          "show_homepage": true,
+          "show_plp": true
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_notes_enable": false,
+          "related": "locks"
+        }
+      },
+      "page-faq": {
+        "type": "page-faq",
+        "blocks": {
+          "1554850498737": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU SHIP TO ALL 50 STATES?",
+              "answer": "<p>Yes. We ship Nationwide.<br\/><br\/>**Hawaii shipments would have to be set up and<br\/>handled by you, the customer. Palletizing fees apply.<\/p><p> <\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554850523504": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT FORM(S) OF SHIPPING DO YOU USE?",
+              "answer": "<p>Most of our doors are shipped via LTL (Less-Than-Truckload) freight. each order is palletized specifically for the size of the door. <\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554850548840": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW LONG DO SHIPMENTS TAKE TO GET TO MY LOCATION?",
+              "answer": "<p>For LTL shipments, transit time is between 2-14 days to get to their destination terminal, depending on the destination. once it has arrived, the carrier will call within a few days to set up a delivery date and time with you directly. Please note that no transit times are guaranteed, and holidays do affect these times as well.  <\/p><p><\/p><p>For flatbed shipments, the time it takes to secure a flatbed will vary based on the time of year and the weather. Transit time once shipped varies based on destination, and will be anywhere from 1-10 days. The driver will contact you 24 hours before arrival. <\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554850597257": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW DO LTL DELIVERIES WORK?",
+              "answer": "<p>For an LTL delivery, once the pallet gets picked up, you will get updates from the carrier as it moves through each terminal. Once it arrives at the destination terminal, the carrier will contact you within a few of days to schedule a delivery date and time.  <\/p><p><\/p><p>Once a date is secured, it is necessary to have at minimum 2 to 3 able bodied persons to dismantle the pallet inside the box truck and bring each piece off one by one. To do so only requires a standard #2 Phillips screw bit and a cordless drill, along with a pair of scissors to cut the scraping holding the doors down to the pallet. Lift gates are often available, but they are strictly up to the discretion of the driver and his manager due to safety protocols.<\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554850624962": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW DO FLATBED DELIVERIES WORK?",
+              "answer": "<p>When ordering multiple doors that would typically require more than 2 pallets when shipping via LTL freight, a flatbed may be the required form of shipment. With flatbed orders, a PINKYS representative will be contacting you via phone to discuss the process before having the order picked up. once PINKYS gets the ok from you, the customer, to put your load up for bid, the order will take anywhere between 1-4 days (sometimes more depending on destination, sizing, and time of year) to get picked up from our warehouse. once picked up, the flatbed driver will contact you 24 hours out from delivery. There is no set date\/time for flatbed deliveries. It is your responsibility to make sure you are there for offload at the time the driver arrives. You will have 30-45 minutes to offload your order. Most of our doors require 2-3 (sometimes 4) able bodied persons to lift and remove doors and frames from the flatbed. For larger orders, please make sure you have more manpower in order to offload within the time limits. PINKYS is not liable for any charges that may occur due to non adherence to the above information. <\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554928652371": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW MUCH DO YOUR SINGLE DOORS WEIGH?",
+              "answer": "<p><strong>APPROX. WEIGHT IN (LBS)<\/strong><br\/><br\/>30” x 81” = 300 LBS <br\/>32\" x 81\" = 325 LBS <br\/>36” x 81” = 365 LBS <br\/>36\" x 84\" = 395 LBS <br\/>40” x 81” = 405 LBS <br\/>36” x 96” = 432 LBS <br\/>40” x 96” = 480 LBS <br\/>42” x 96” = 504 LBS <br\/>46” x 97.5” = 561 LBS <br\/>49” x 103” = 600 LBS <br\/>42” x 108” = 600 LBS <br\/><br\/><\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554928664319": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW MUCH DO YOUR DOUBLE DOORS WEIGH?",
+              "answer": "<p><strong>APPROX. WEIGHT IN (LBS)<\/strong><\/p><p>61” x 81” = 620 LBS<br\/>62\" x 84\" = 745 LBS<br\/>65” x 81” = 760 LBS<br\/>71\" x 95\" = 855 LBS<br\/>72” x 81” = 810 LBS<br\/>72\" x 120\" = 1040 LBS<br\/>74\" x 96\" = 885 LBS<br\/>62” x 96” = 820 LBS<br\/>65” x 96” = 850 LBS<br\/>72” x 96” = 864 LBS<br\/>74” x 97.5” = 900 LBS<br\/>72” x 108” = 960 LBS<br\/>74” x 110” = 1,000 LBS<br\/>74” x 120” = 1,060 LBS<br\/>72” x 132” = 1,188 LBS<br\/>74” x 132” = 1,221 LBS<br\/><\/p>",
+              "category": "SHIPPING"
+            }
+          },
+          "1554928676955": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW ARE YOUR DOORS MEASURED?",
+              "answer": "<p>Our sizes are measured from outside of jamb to the outside of the jamb. For example, a 72” x 96” iron door listed on our website means that 72” is the width from outside to outside of jamb (not the actual width size of the door) and 96” is the height from outside of jamb to bottom of our built-in steel threshold (not the actual height of the door). <\/p><p> <br\/>We recommend the rough opening of the width to be 1\/2” to 1” wider than the door size ordered to give the installer enough room to comfortably position the jamb into place and have enough room to make sure the jamb is leveled.<\/p>",
+              "category": "MEASURE & INSTALL"
+            }
+          },
+          "1554928688678": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU DO THE INSTALLATION?",
+              "answer": "<p>We do not do installations. <\/p>",
+              "category": "MEASURE & INSTALL"
+            }
+          },
+          "1554928702311": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU HAVE AN INSTALLATION GUIDE YOU CAN PROVIDE?",
+              "answer": "<p>Yes. We have a easy to use step by step installation guide provided to all customers after the transaction has been completed. <\/p>",
+              "category": "MEASURE & INSTALL"
+            }
+          },
+          "1554928723833": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW MANY PEOPLE DO YOU TYPICALLY NEED TO INSTALL THE IRON DOORS?",
+              "answer": "<p>We recommend at least 2 able bodied people for your  installation, depending on your door size this number should increase to avoid any complications.<\/p>",
+              "category": "MEASURE & INSTALL"
+            }
+          },
+          "1554928741236": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU HAVE ANY VIDEOS SHOWING AN INSTALLATION?",
+              "answer": "<p>Here is a <a href=\"https:\/\/youtu.be\/4wnyGLOerj0\" target=\"_blank\" title=\"https:\/\/youtu.be\/4wnyGLOerj0\"><span style=\"text-decoration:underline\">video<\/span><\/a> of an exterior double door installation. More in-depth videos and instructions are included in the install guide you will receive upon purchase of your doors.<\/p>",
+              "category": "MEASURE & INSTALL"
+            }
+          },
+          "398240df-d475-4e54-b522-25a38a9ea0f6": {
+            "type": "faq",
+            "settings": {
+              "title": "CAN I BUY A TRANSOM FOR MY DOOR I ALREADY HAVE?",
+              "answer": "<p>Yes as long as you have a beam between the door and transom or it will need some work to modify the stock door frame to allow a transom to be placed right no top<\/p>",
+              "category": "MEASURE & INSTALL"
+            }
+          },
+          "1554928771088": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A LOW-E GLASS?",
+              "answer": "<p>The “E” in Low-E stands for Emissivity - The ability to emit radiant energy. Low emissivity or Low-E Glass is a coating of Microscopically thin metal layers deposited on a door glass surface to keep the heat on the same side of the glass from which it originated.<\/p>",
+              "image": "shopify:\/\/shop_images\/Low-E_Diagram_720x-Nologo.jpg",
+              "category": "GLASS"
+            }
+          },
+          "1554928780410": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT ARE THE BENEFITS OF LOW-E GLASS?",
+              "answer": "<p><strong>Improved Energy Efficiency:<\/strong> In addition to reducing heat loss during winter months, Low-E Glass also reduces heat gain during the air-conditioning season.<\/p><p><br\/><strong>Reduced Condensation:<\/strong> Condensation on door glass can be a problem during the heating season, as warm air comes into contact with cold door glass and gives up its moisture, forming water droplets on the glass surface. Low-E Glass will minimize or Eliminate this unwanted condensation.<br\/><\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928857980": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE THICKNESS OF THE GLASS THAT YOU USE ON YOUR DOORS?",
+              "answer": "<p>Tempered dual pane glass. There is a 3\/8\" spacer in between each 1\/8” thick glass that makes the total thickness of the tempered dual pane glass 5\/8”. Front exterior side glass is the design glass style you chose and back interior side.<br\/>Glass is clear. <\/p><p><\/p><p>Glass is included with order.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/Glass_thickness_cea1c42b-0421-4011-a71a-0a91b45f9a6e.jpg",
+              "category": "GLASS"
+            }
+          },
+          "1554928873498": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE THICKNESS OF THE GLASS THAT YOU USE ON YOUR INTERIOR DOORS?",
+              "answer": "<p>We use single pane glass on our interior doors.<\/p><p><br\/>Glass is included with order.<\/p>",
+              "image": "shopify:\/\/shop_images\/Glass_thickness_copy_001bc232-9c61-4c77-a3d4-7a79eae24658.jpg",
+              "category": "GLASS"
+            }
+          },
+          "1554928887019": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT TYPE OF GLASS DO YOU USE?",
+              "answer": "<p>5\/8” Dual Pane tempered glass.<\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928900486": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS TEMPERED GLASS?",
+              "answer": "<p>Tempered glass is defined as toughened glass that has been treated by heat or chemicals to increase its strength. Tempered glass is about four times stronger than \"ordinary,\" or annealed, glass. And unlike annealed glass, which can shatter into jagged shards when broken, tempered glass fractures into small, relatively harmless pieces.  Tempered glass has many benefits and uses which makes it a popular glass used in many home and commercial building projects.<\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928911087": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT ARE THE BENEFITS OF A TEMPERED GLASS?",
+              "answer": "<p>The most important benefit of tempered glass is safety. Tempered glass reduces the risk of injury due to its nature of breaking into small, circular pieces instead of sharp, jagged shards.<\/p><p><br\/>A final benefit of tempered glass is its strength. Because the process of heating and applying chemicals strengthens the glass, tempered glass is an excellent choice for doors and any other projects where maximum durability is desirable.<br\/><\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928923492": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A DUAL PANE GLASS?",
+              "answer": "<p>Insulating Glass (IG), more commonly known as Double Glazing (or Double-Pane), consists of two glass panes separated to help reduce heat transfer across a part of the building envelope.<\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928937130": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT ARE THE BENEFITS OF A DUAL PANE GLASS?",
+              "answer": "<p>Double-paned doors have two sheets of glass in a door frame instead of just one. Between the glass panes is a small space to provide insulation. The small space between windowpanes is filled with insulating gas to further increase insulation.<\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928950357": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE GLASS SIZE?",
+              "answer": "<p>Front exterior side glass is the design glass style you chose and back interior side glass is clear.  Each tempered dual pane glass is 1\/4” thick.  Tempered dual pane glass (including the spacer in between the two glasses) is a total of 5\/8” in thickness. The dual glass comes installed on the door.<\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928960838": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW IS THE PRIVACY FOR YOUR GLASS STYLES?",
+              "answer": "<p>Watch our glass privacy video here:  <a href=\"https:\/\/www.youtube.com\/watch?v=Hgjk93ClNxY&t=3s\" target=\"_blank\" title=\"Iron Door Glass Options\">https:\/\/www.youtube.com\/watch?v=Hgjk93ClNxY&t=3s<\/a><\/p>",
+              "category": "GLASS"
+            }
+          },
+          "1554928970560": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “RHI” RIGHT HAND IN SWING IF I HAVE A DOUBLE DOOR?",
+              "answer": "<p><strong>(RHI) Right Hand in Swing: <\/strong><br\/>You are facing the door standing outside, exterior side, of the door.  The handle or lock will be on your left side, the hinges will be on the interior right side of the door and the door will swing towards the inside from left to right.  When the door is at its open position, the door will be resting on the right interior side.<\/p>",
+              "image": "shopify:\/\/shop_images\/RHI_a5d464e2-2ee1-4587-9d6c-d7b451ed777a.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278271429": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “LHI” LEFT HAND IN SWING IF I HAVE A DOUBLE DOOR?",
+              "answer": "<p><strong>(LHI) Left Hand in Swing:<\/strong> <br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your right side, the hinges will be on the interior left side of the door and the door will swing towards the inside from right to left. When the door is at its open position, the door will be resting on the left interior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/LHI_2395aa7c-3a91-41a5-acd1-bb65eb109a9b.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278365076": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “RHO” RIGHT HAND OUT SWING IF I HAVE A DOUBLE DOOR?",
+              "answer": "<p><strong>(RHO) Right Hand Out Swing:<\/strong>  <br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your left side, the hinges will be on the exterior right side of the door and the door will swing towards the outside from left to right. When the door is at its open position, the door will be resting on the right exterior side.<\/p>",
+              "image": "shopify:\/\/shop_images\/RHO_9707e102-8f27-47d3-92d0-796d2a30a2d6.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278531996": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “LHO” LEFT HAND OUT SWING IF I HAVE A DOUBLE DOOR?",
+              "answer": "<p><strong>(LHO) Left Hand Out Swing:<\/strong> <br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your right side, the hinges will be on the exterior left side of the door and the door will swing towards the outside from right to left. When the door is at its open position, the door will be resting on the left exterior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/LHO_6ad04d4d-8177-4c8a-a9f4-a671e5e0d68d.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278611316": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “RHI” RIGHT HAND IN SWING IF I HAVE A SINGLE DOOR?",
+              "answer": "<p><strong>(RHI) Right Hand In Swing: <\/strong><br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your left side, the hinges will be on the interior right side of the door and the door will swing towards the inside from left to right. When the door is at its open position, the door will be resting on the right interior side.<\/p>",
+              "image": "shopify:\/\/shop_images\/RHI_2_6325954f-28df-4838-b142-cd31f748140c.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278673831": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “LHI” LEFT HAND IN SWING IF I HAVE A SINGLE DOOR?",
+              "answer": "<p><strong>(LHI) Left Hand In Swing: <\/strong><br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your right side, the hinges will be on the interior left side of the door and the door will swing towards the inside from right to left. When the door is at its open position, the door will be resting on the left interior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/LHI_2_d1a5b0d7-3f6e-49e7-8ec2-88a871ba219b.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278762382": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “RHO” RIGHT HAND OUT SWING IF I HAVE A SINGLE DOOR?",
+              "answer": "<p><strong>(RHO) Right Hand Out Swing:<\/strong> <br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your left side, the hinges will be on the exterior right side of the door and the door will swing towards the outside from left to right. When the door is at its open position, the door will be resting on the right exterior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/RHO_2_71e8622c-365e-4e2f-a18e-ab6ffaa49672.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278817837": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “LHO” LEFT HAND OUT SWING IF I HAVE A SINGLE DOOR?",
+              "answer": "<p><strong>(LHO) Left Hand Out Swing:<\/strong> <br\/>You are facing the door standing outside, exterior side, of the door. The handle or lock will be on your right side, the hinges will be on the exterior left side of the door and the door will swing towards the outside from right to left. When the door is at its open position, the door will be resting on the left exterior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/LHO_2_e5c5da3b-c500-40f6-8234-aba7222dc8b9.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278876621": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU HAVE A SWING HELP VIDEO?",
+              "answer": "<p>Yes. Watch our swing explanation video here:  <a href=\"https:\/\/www.youtube.com\/watch?v=XTriz-7QXtk&t=4s\" target=\"_blank\" title=\"Door Swing Options Explained\">https:\/\/www.youtube.com\/watch?v=XTriz-7QXtk&t=4s<\/a><\/p>",
+              "category": "SWING"
+            }
+          },
+          "1559278918654": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW FAR CAN THE DOUBLE DOOR SWING?",
+              "answer": "<p><strong>Swing Capacity:<\/strong> 180 Degrees<\/p><p><br\/>This measurement shows the amount in degrees the hinge of the door allows for the door to fully open. Please note, every project site is different, and this is solely dependent on nothing on site blocking the opening space of the door and the installation method your installer chooses to install the product. Please advise your installer before the installation day if you are in need of the door taking advantage of its full opening capability.<\/p>",
+              "image": "shopify:\/\/shop_images\/double_8a8a838d-ad85-4972-8546-5631c357097e.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559278992896": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW FAR CAN THE SINGLE DOOR SWING?",
+              "answer": "<p><strong>Swing Capacity: <\/strong> 180 Degrees<\/p><p><br\/>This measurement shows the amount in degrees the hinge of the door allows for the door to fully open. Please note, every project site is different, and this is solely dependent on nothing on site blocking the opening space of the door and the installation method your installer chooses to install the product.  Please advise your installer before the installation day if you are in need of the door taking advantage of its full opening capability.<\/p>",
+              "image": "shopify:\/\/shop_images\/single_fa033384-0260-4684-98d4-931d2df3fe6b.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559279105123": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “RHO” RIGHT HAND OUT SWING IF I HAVE A BI-FOLD DOOR?",
+              "answer": "<p><strong>(Rho) Right Hand Out Swing: <\/strong><br\/>You are facing the bi-fold door standing outside, exterior side, of the door.  The bi-fold door will begin to fold towards the outside from left to right.  When the bi-fold door is at its open position, the door will be stacked on the right exterior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/RHO_3_785b2d78-96be-4968-9ab2-86e4d86e72a0.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559279257503": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A “LHO” LEFT HAND OUT SWING IF I HAVE A BI-FOLD DOOR?",
+              "answer": "<p><strong>(LHO) Left Hand Out Swing:<\/strong> <br\/>You are facing the bi-fold door standing outside, exterior side, of the door. The bi-fold door will begin to fold towards the outside from right to left. When the bi-fold door is at its open position, the door will be stacked on the left exterior side.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/LHO_3_e5620ebf-516e-4c50-9b99-fb27ff7116e9.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559279329961": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU HAVE A SWING HELP VIDEO FOR BI FOLD DOORS?",
+              "answer": "<p>Yes.  Watch our swing explanation videos here: <a href=\"https:\/\/www.youtube.com\/watch?v=M9gvf_4mO4Q\" target=\"_blank\" title=\"Patio Bi-fold Doors\">https:\/\/www.youtube.com\/watch?v=M9gvf_4mO4Q<\/a><\/p><p><\/p>",
+              "category": "SWING"
+            }
+          },
+          "1559279446999": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW MUCH SPACE DOES A BI-FOLD DOOR NEED WHEN FULLY OPENED?",
+              "answer": "<p>The bifold door will stick out (1) one panel length when it is fully opened and resting to one side<\/p>",
+              "image": "shopify:\/\/shop_images\/Photo.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559279584567": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A TOP ROLLER FOR A BI FOLD?",
+              "answer": "",
+              "image": "shopify:\/\/shop_images\/roller_1ac72b87-6fc8-4263-8720-f9796a53af53.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559279707108": {
+            "type": "faq",
+            "settings": {
+              "title": "IS THERE A COVER CAP FOR THE BI FOLD ROLLERS?",
+              "answer": "<p>Yes, see below.<\/p>",
+              "image": "shopify:\/\/shop_images\/cover_cac03082-ea16-49b9-bfc8-f81471f80f37.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559279807883": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS A BOTTOM ROLLER FOR A BI FOLD?",
+              "answer": "",
+              "image": "shopify:\/\/shop_images\/bottom_roller_432853c9-1013-4c2e-b4e9-918c85d6f437.jpg",
+              "category": "SWING"
+            }
+          },
+          "1559320186824": {
+            "type": "faq",
+            "settings": {
+              "title": "IS THE JAMB INCLUDED WITH THE DOOR ORDER?",
+              "answer": "<p>Yes. Jamb is included and packaged separately from the door.<\/p>",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320248403": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT GAUGE MATERIALS ARE USED FOR THE DOOR AND JAMB?",
+              "answer": "<p>Jamb is constructed with 12 gauge tube (above industry standard).<\/p>",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320335237": {
+            "type": "faq",
+            "settings": {
+              "title": "HOW IS THE JAMB INSULATED?",
+              "answer": "<p>Polyurethane foam core is filled in the jamb for greater insulation.<\/p>",
+              "image": "shopify:\/\/shop_images\/Foam_10795c42-fa77-4edb-a43b-9e6052663903.jpg",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320475269": {
+            "type": "faq",
+            "settings": {
+              "title": "IS THE THRESHOLD INCLUDED WITH THE ORDER?",
+              "answer": "<p>Yes. Steel threshold is included and it comes welded on the jamb.<\/p>",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320516980": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT ARE THE SPECS & MEASUREMENTS OF YOUR IN SWING THRESHOLDS?",
+              "answer": "<p><strong>In swing threshold:<\/strong>   <br\/><strong>Thickness or height from the back interior side: <\/strong> 1 1\/8”<br\/><strong>Thickness or height from the front exterior side:<\/strong> 1\/2”<br\/><strong>Width or depth:<\/strong>  6”<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/in_swing_49eb7783-0583-4366-ad69-7054c4fa4a49.jpg",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320672537": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT ARE THE SPECS & MEASUREMENTS OF YOUR OUT SWING THRESHOLDS?",
+              "answer": "<p><strong>Out Swing Threshold: <\/strong><br\/><strong>Thickness or height from the back interior side:<\/strong>  1 1\/4”<br\/><strong>Thickness or height from the front exterior side: <\/strong>1\/2”<br\/><strong>Width or depth:<\/strong>  6”<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/Outswing_ad4b0a82-5282-447f-9010-d64241b8a87d.jpg",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320777294": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU HAVE TABS ON THE JAMB TO MAKE THE INSTALLATION EASIER?",
+              "answer": "<p>Yes. Tabs come welded on jamb with predrilled holes to allow for easy installation.<\/p>",
+              "image": "shopify:\/\/shop_images\/tabs_35b68f56-96c0-4b65-a431-165b5138f3a7.jpg",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559320900434": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT TYPE OF HINGES DO YOU USE?",
+              "answer": "<p>Steel weld on bullet hinges with grease fittings come welded on jamb and door. Allows customers to comfortably open our doors, but yet feel that quality with each and every use. We use welded steel bullet hinge with copper crush washer instead of a ball bearing hinge because ball bearings are made out of stainless steel (hard material) and the hinges\/doors are made out of steel (softer material) which over time causes the hinge to wear. With copper crush washers, the washer is the soft point and they are easily replaceable over time if needed.<\/p>",
+              "category": "JAMB & THRESHOLD"
+            }
+          },
+          "1559321666593": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT LOCK IS COMPATIBLE WITH THE AIR 4 & AIR 5?",
+              "answer": "<p>The WESLOCK - <a href=\"https:\/\/pinkysirondoors.com\/collections\/locks\/products\/weslock-air-addy-w-lever\" title=\"https:\/\/pinkysirondoors.com\/collections\/locks\/products\/weslock-air-addy-w-lever\">AIR ADDY W\/ LEVER, WESLOCK<\/a> - <a href=\"https:\/\/pinkysirondoors.com\/collections\/locks\/products\/weslock-air-addy-w-round-knob\" title=\"https:\/\/pinkysirondoors.com\/collections\/locks\/products\/weslock-air-addy-w-round-knob\">AIR ADDY W\/ ROUND KNOB<\/a>, and <a href=\"https:\/\/pinkysirondoors.com\/collections\/locks\/products\/weslock-philtower-passage-handle\" title=\"https:\/\/pinkysirondoors.com\/collections\/locks\/products\/weslock-philtower-passage-handle\">WESLOCK - PHILTOWER PASSAGE HANDLE<\/a> is compatible with the AIR 4 & AIR 5 design.<br\/><br\/><br\/><br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/Lock_AirAddyHandle_Dual.jpg",
+              "category": "LOCKS"
+            }
+          },
+          "1559321032256": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU OFFER LOCKS & ARE THEY INCLUDED WITH A DOOR PURCHASE?",
+              "answer": "<p>Yes, We do offer a wide variety of locks. Locks are sold separately.<\/p>",
+              "image": "shopify:\/\/shop_images\/all_locks_b1665e5a-2c45-4336-a425-52046996949d.jpg",
+              "category": "LOCKS"
+            }
+          },
+          "1559321135061": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS YOUR LOCK BORE HOLE SPECS?",
+              "answer": "<p>If you choose to purchase your hardware\/lockset from a third party vendor, please make sure to provide them with the following specifications to ensure that your desired lockset will be compatible with our doors. <\/p><p><br\/><strong>Bore hole size: <\/strong> 2 1\/8” <br\/><strong>Back set:<\/strong> 2 3\/4” <br\/><strong>Center to center:<\/strong> 5 1\/2”<br\/><strong>Door thickness:<\/strong> 2”<br\/><\/p><p>In stock single doors come with two predrilled bore holes (one active lock needed) unless if otherwise specified. <br\/><\/p><p>In stock double doors come with two predrilled bore holes on each door (one active lock and one dummy lock needed) unless if otherwise specified.<\/p><p>Our Dutch Doors have a different lock spec than our regular exterior doors. The back set for dutch doors is 2 3\/8\" as opposed to 2 3\/4\". <\/p><p><br\/>Locks purchased from PINKYS do not come installed on door upon delivery or shipment. The reason for this is that it may get damage.<\/p><p><br\/>During the delivery or shipment process. The installer will need to install the lock after the door installation is complete.<\/p>",
+              "category": "LOCKS"
+            }
+          },
+          "1559321370836": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE BORE HOLE?",
+              "answer": "<p><strong>Bore Hole: A Bore Hole is the Doorknob Hole<\/strong> that is drilled on the face of the door with a hole saw.  The hole is drilled halfway through from each side. The hole saw is also used to drill the cross bore otherwise known as the latch hole.  Both doorknob hole and latch holes come completed and drilled with every in-stock order to help your installer install the lock at ease.<\/p>",
+              "image": "shopify:\/\/shop_images\/Bore_Hole_f345a093-9e9c-4b8c-9faf-915184b93cba.jpg",
+              "category": "LOCKS"
+            }
+          },
+          "1559321428123": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE CENTER TO CENTER?",
+              "answer": "<p><strong>Center to Center: <\/strong>The vertical distance measured between the center-points of the two bore holes.  In other words, it is the measurement from the middle of the top bore hole to the middle of the bottom bore hole. This measurement is used to determine where a bore for the deadbolt is located above the bore for the latch. This information is important to help our customers purchase the correct compatible lock if you choose to purchase them from an outside hardware store. We have already done the homework for you by specifying the PINKYS locks that are compatible with your door if you choose to purchase the locks from PINKYS.<\/p>",
+              "image": "shopify:\/\/shop_images\/Center_to_Center_c53d84bf-923c-4deb-abd6-b8c27fe174fb.jpg",
+              "category": "LOCKS"
+            }
+          },
+          "1559321516588": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE BACK SET?",
+              "answer": "<p><strong>Back set: <\/strong>The backset is the distance from the edge of the door to the center of the 2-1\/8” bore hole. The back set measurement is important to help our customers purchase the correct compatible lock with the correct latch size. We have already done the homework for you by specifying the PINKYS locks that are compatible with your door if you choose to purchase the locks from PINKYS. Our customers do not have to purchase the locks from PINKYS, you may purchase the locks from any local hardware store of your liking.<\/p>",
+              "image": "shopify:\/\/shop_images\/Back_Set_dc9e34ff-fdf6-45b3-8cbb-1e8125464026.jpg",
+              "category": "LOCKS"
+            }
+          },
+          "1559321600281": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS THE DOOR THICKNESS?",
+              "answer": "<p>The doors are 2\" inches thick, include a steel threshold, and bullet hinges with grease fittings welded on the frame.<\/p>",
+              "image": "shopify:\/\/shop_images\/Door_Thickness_984e5216-baff-4e69-b55d-7b659118fa13.jpg",
+              "category": "LOCKS"
+            }
+          },
+          "1559322034342": {
+            "type": "faq",
+            "settings": {
+              "title": "MAY I RETURN MY DOOR?",
+              "answer": "<p>Within thirty days of the date products are delivered and prior to installation or an attempt to install, your purchase can be returned to PINKYS for a refund. Please note that a 25% restocking fee will be charged for the return, and pinky’s iron doors has the right to charge for any damages that may have occurred to the product(s). The product must be packed in its original packaging material. <\/p><p><br\/>If packaging material is unusable, please contact our customer service department prior to return. Delivery fees are not refundable.<br\/><\/p>",
+              "category": "RETURNS"
+            }
+          },
+          "1559322073051": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT ARE THE DETAILS OF THE RETURN PROCESS?",
+              "answer": "<p>In order to return an item you need to first obtain an RMA (Return Merchandise Authorization) number. <\/p><p><br\/>To request an RMA number online send us an email (info@pinkys.com). <br\/>To request an RMA number by phone, call customer service at 818-843-6670 or toll free 1-843-843-6677. <\/p><p><br\/>Place the original product into its original packaging. Please do not place stickers or shipping labels on the original package. The RMA number must be clearly written on package. We recommend you ship via insured common carrier service with a tracking number. <\/p><p><br\/>Return shipping charges are the responsibility of the customer. We are not responsible for lost or damaged packages. <br\/><\/p><p>Please allow up to 2 to 3 weeks for your refund or exchange to process for stock products.<br\/><\/p>",
+              "category": "RETURNS"
+            }
+          },
+          "1559322197368": {
+            "type": "faq",
+            "settings": {
+              "title": "CAN YOU MAKE THE DOOR TO HAVE A SCREEN?",
+              "answer": "<p>Yes, we can. Doors with removable screens are available with special order only.<\/p>",
+              "image": "shopify:\/\/shop_images\/Screen_photo_71f2aa21-4c1c-4858-b519-92489e1e7bf1.jpg",
+              "category": "MORE"
+            }
+          },
+          "1559322279893": {
+            "type": "faq",
+            "settings": {
+              "title": "DO YOU HAVE A VIDEO OF YOUR SCREENS?",
+              "answer": "<p>Yes, Watch our screen video here: <a href=\"https:\/\/www.youtube.com\/watch?v=Xg443wIGTeA\" target=\"_blank\" title=\"Amazing Removable Door Screens\">https:\/\/www.youtube.com\/watch?v=Xg443wIGTeA<\/a><\/p>",
+              "category": "MORE"
+            }
+          },
+          "1559322320833": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT TYPE OF FINISH DO YOU USE?",
+              "answer": "<p>We use automotive paint to coat our doors.<\/p><p><br\/>Galvanize spray is used to help provide greater protection against corrosion for the iron base. Primer and automotive paint is applied after the galvanizing spray process.<\/p>",
+              "category": "MORE"
+            }
+          },
+          "1559322420351": {
+            "type": "faq",
+            "settings": {
+              "title": "CAN I EXPEDITE AN ORDER?",
+              "answer": "<p>Yes. Please get in touch with us at <a href=\"mailto:INFO@PINKYSIRONDOORS.COM\">info@pinkys.com<\/a><\/p>",
+              "category": "MORE"
+            }
+          },
+          "1559322456583": {
+            "type": "faq",
+            "settings": {
+              "title": "CAN I PUT AN IRON DOOR IN MY OLD HOME THAT HAS A WEIRD SIZE?",
+              "answer": "<p>Yes, we can custom make any size and any design. Simply provide us with the dimensions and design and we will write you an estimate.<\/p>",
+              "category": "MORE"
+            }
+          },
+          "1559322500972": {
+            "type": "faq",
+            "settings": {
+              "title": "ARE THE RUBBER DOOR SWEEPS INCLUDED?",
+              "answer": "<p>Yes, door sweep located underneath the door is included and comes installed on door.<br\/>Bottom sweeps are used to help seal the gap at the bottom of your door to help prevent infiltration of sound, light, drafts, insects, moisture, smoke, or fire. The bottom sweep is a simple way to help in insulating a room, which provides cost and environmental benefits.<br\/><\/p>",
+              "image": "shopify:\/\/shop_images\/bottom_strip_25d56c27-af15-46cd-97eb-c452ca1fd947.jpg",
+              "category": "MORE"
+            }
+          },
+          "1559322583724": {
+            "type": "faq",
+            "settings": {
+              "title": "IS THE FLUSH LATCH INCLUDED?",
+              "answer": "<p>Yes, included and pre-installed on all double door orders (unless otherwise specified). Our flush latch is installed on the upper and lower sections of the secondary door to allow both doors to open and operate while in the unlocked position.<\/p>",
+              "image": "shopify:\/\/shop_images\/flush_latch_0aa9ac1e-c47b-4f27-bf0a-856eda49b7ca.jpg",
+              "category": "MORE"
+            }
+          },
+          "1559322655945": {
+            "type": "faq",
+            "settings": {
+              "title": "WHAT IS NOT INCLUDED?",
+              "answer": "<p>Installation of door and locks.<\/p><p> <br\/>Locks are sold separately and can be purchased directly from our website.<br\/><\/p>",
+              "category": "MORE"
+            }
+          }
+        },
+        "block_order": [
+          "1554850498737",
+          "1554850523504",
+          "1554850548840",
+          "1554850597257",
+          "1554850624962",
+          "1554928652371",
+          "1554928664319",
+          "1554928676955",
+          "1554928688678",
+          "1554928702311",
+          "1554928723833",
+          "1554928741236",
+          "398240df-d475-4e54-b522-25a38a9ea0f6",
+          "1554928771088",
+          "1554928780410",
+          "1554928857980",
+          "1554928873498",
+          "1554928887019",
+          "1554928900486",
+          "1554928911087",
+          "1554928923492",
+          "1554928937130",
+          "1554928950357",
+          "1554928960838",
+          "1554928970560",
+          "1559278271429",
+          "1559278365076",
+          "1559278531996",
+          "1559278611316",
+          "1559278673831",
+          "1559278762382",
+          "1559278817837",
+          "1559278876621",
+          "1559278918654",
+          "1559278992896",
+          "1559279105123",
+          "1559279257503",
+          "1559279329961",
+          "1559279446999",
+          "1559279584567",
+          "1559279707108",
+          "1559279807883",
+          "1559320186824",
+          "1559320248403",
+          "1559320335237",
+          "1559320475269",
+          "1559320516980",
+          "1559320672537",
+          "1559320777294",
+          "1559320900434",
+          "1559321666593",
+          "1559321032256",
+          "1559321135061",
+          "1559321370836",
+          "1559321428123",
+          "1559321516588",
+          "1559321600281",
+          "1559322034342",
+          "1559322073051",
+          "1559322197368",
+          "1559322279893",
+          "1559322320833",
+          "1559322420351",
+          "1559322456583",
+          "1559322500972",
+          "1559322583724",
+          "1559322655945"
+        ],
+        "settings": {
+        }
+      },
+      "pdp-color-popup": {
+        "type": "pdp-color-popup",
+        "blocks": {
+          "1555073811464": {
+            "type": "color",
+            "settings": {
+              "title": "Black",
+              "image": ""
+            }
+          },
+          "1555073963896": {
+            "type": "color",
+            "settings": {
+              "title": "Heavy Bronze",
+              "image": ""
+            }
+          },
+          "1555073979607": {
+            "type": "color",
+            "settings": {
+              "title": "Oil Rubbed Bronze",
+              "image": ""
+            }
+          },
+          "1555073991371": {
+            "type": "color",
+            "settings": {
+              "title": "Pewter",
+              "image": ""
+            }
+          },
+          "1555074003743": {
+            "type": "color",
+            "settings": {
+              "title": "Silver Pewter",
+              "image": ""
+            }
+          }
+        },
+        "block_order": [
+          "1555073811464",
+          "1555073963896",
+          "1555073979607",
+          "1555073991371",
+          "1555074003743"
+        ],
+        "settings": {
+          "text": "<p><strong>FINISH<\/strong><\/p>\n<p>We use automotive paint to coat our doors.<\/p>\n<p>Galvanize spray is used to help provide greater protection against corrosion for the iron base.&nbsp; Primer and automotive paint is applied after the galvanizing spray process.<\/p>"
+        }
+      },
+      "pdp-swing-double": {
+        "type": "pdp-swing-double",
+        "blocks": {
+          "1555075446745": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(RHI) Right hand in swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your left side, the hinges will be on the interior right side of the door and the door will swing towards the inside from left to right.&nbsp; When the door is at its open position, the door will be resting on the right interior side.<\/p>",
+              "image": ""
+            }
+          },
+          "1555075505226": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(LHI) Left hand in swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your right side, the hinges will be on the interior left side of the door and the door will swing towards the inside from right to left.&nbsp; When the door is at its open position, the door will be resting on the left interior side.<\/p>",
+              "image": ""
+            }
+          },
+          "1555075521532": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(RHO) Right hand out swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your left side, the hinges will be on the exterior right side of the door and the door will swing towards the outside from left to right.&nbsp; When the door is at its open position, the door will be resting on the right exterior side.<\/p>",
+              "image": ""
+            }
+          },
+          "1555075541218": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(LHO) Left hand out swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your right side, the hinges will be on the exterior left side of the door and the door will swing towards the outside from right to left.&nbsp; When the door is at its open position, the door will be resting on the left exterior side.<\/p>",
+              "image": ""
+            }
+          }
+        },
+        "block_order": [
+          "1555075446745",
+          "1555075505226",
+          "1555075521532",
+          "1555075541218"
+        ],
+        "settings": {
+          "video_title": "Swing Explanation Video",
+          "video_embed_code": "<iframe width=\"921\" height=\"518\" src=\"https:\/\/www.youtube.com\/embed\/XTriz-7QXtk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>",
+          "capacity_title": "Swing Capacity Capability",
+          "capacity_image": "",
+          "capacity_text": "<p>Swing Capacity:&nbsp; 180 degrees<\/p>\n<p><\/p>\n<p>This measurement shows the amount in degrees the hinge of the door allows for the door to fully open. Please note, every project site is different and this is solely dependent on nothing on site blocking the opening space of the door and the installation method your installer chooses to install the product.&nbsp; Please advise your installer before the installation day if you are in need of the door taking advantage of its full opening capability.<\/p>"
+        }
+      },
+      "pdp-swing-single": {
+        "type": "pdp-swing-single",
+        "blocks": {
+          "1555076292256": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(RHI) Right hand in swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your left side, the hinges will be on the interior right side of the door and the door will swing towards the inside from left to right.&nbsp; When the door is at its open position, the door will be resting on the right interior side.<\/p>",
+              "image": ""
+            }
+          },
+          "1555076317088": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(LHI) Left hand in swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your right side, the hinges will be on the interior left side of the door and the door will swing towards the inside from right to left.&nbsp; When the door is at its open position, the door will be resting on the left interior side.<\/p>",
+              "image": ""
+            }
+          },
+          "1555076330234": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(RHO) Right hand out swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your left side, the hinges will be on the exterior right side of the door and the door will swing towards the outside from left to right.&nbsp; When the door is at its open position, the door will be resting on the right exterior side.<\/p>",
+              "image": ""
+            }
+          },
+          "1555076351740": {
+            "type": "swing_option",
+            "settings": {
+              "text": "<p><strong>(LHO) Left hand out swing<\/strong>:&nbsp; You are facing the door standing outside, exterior side, of the door.&nbsp; The handle or lock will be on your right side, the hinges will be on the exterior left side of the door and the door will swing towards the outside from right to left.&nbsp; When the door is at its open position, the door will be resting on the left exterior side.<\/p>",
+              "image": ""
+            }
+          }
+        },
+        "block_order": [
+          "1555076292256",
+          "1555076317088",
+          "1555076330234",
+          "1555076351740"
+        ],
+        "settings": {
+          "video_title": "Swing Explanation Video",
+          "video_embed_code": "<iframe width=\"921\" height=\"518\" src=\"https:\/\/www.youtube.com\/embed\/XTriz-7QXtk\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\"><\/iframe>",
+          "capacity_title": "Swing Capacity Capability",
+          "capacity_image": "",
+          "capacity_text": "<p>Swing Capacity:&nbsp; 180 degrees<\/p>\n<p><\/p>\n<p>This measurement shows the amount in degrees the hinge of the door allows for the door to fully open. Please note, every project site is different and this is solely dependent on nothing on site blocking the opening space of the door and the installation method your installer chooses to install the product.&nbsp; Please advise your installer before the installation day if you are in need of the door taking advantage of its full opening capability.<\/p>"
+        }
+      },
+      "page-category-contact": {
+        "type": "page-category-contact",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/5-min.jpg",
+          "form_bg": "#f5f5f5"
+        }
+      },
+      "1556664003633": {
+        "type": "homepage-snapppt",
+        "disabled": true,
+        "settings": {
+          "title": "@PinkysIronDoors",
+          "embed": "<script async src=\"https:\/\/app.addsauce.com\/widgets\/widget_loader\/f254964f-a015-4a4d-8aa4-d791ed07f487\/sauce_homepage.js\" class=\"snapppt-widget\"><\/script>"
+        }
+      },
+      "page-how-the-site-works": {
+        "type": "page-how-the-site-works",
+        "settings": {
+          "embed_code": ""
+        }
+      },
+      "page-how-to": {
+        "type": "page-how-to",
+        "blocks": {
+          "1557354873209": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/_ws0gKSQ6XQ"
+            }
+          },
+          "1557354888535": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/n18iX2mM8ZU"
+            }
+          },
+          "1557354894487": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/hSz1TzwCCK0"
+            }
+          },
+          "1557354906788": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/qFtW1zUI-Gg"
+            }
+          },
+          "1557354912485": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/2N2NL_9JRP0"
+            }
+          },
+          "1557354914447": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/4wnyGLOerj0"
+            }
+          },
+          "1557354922025": {
+            "type": "faq",
+            "settings": {
+              "video_url": "https:\/\/www.youtube.com\/embed\/vkOYuTqIgn8"
+            }
+          }
+        },
+        "block_order": [
+          "1557354873209",
+          "1557354888535",
+          "1557354894487",
+          "1557354906788",
+          "1557354912485",
+          "1557354914447",
+          "1557354922025"
+        ],
+        "settings": {
+        }
+      },
+      "page-become-an-installer": {
+        "type": "page-become-an-installer",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/door_thickness_1512x_c8523dc4-47fe-427c-8d67-7005e3e1fe7b.jpg",
+          "form_bg": "#f5f5f5"
+        }
+      },
+      "product-template-gt-100": {
+        "type": "product-template-gt-100",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": false,
+          "show_share_buttons": true,
+          "variant_style": "dropdown"
+        }
+      },
+      "page-contact": {
+        "type": "page-contact",
+        "settings": {
+          "heading": "Contact Pinkys",
+          "address": "Showroom\n2382 East 48th Street Vernon, California 90058\n4815 S Santa Fe Ave Vernon, California 90058",
+          "phone": "(844) 843-6677",
+          "phone_link": "tel:844-843-6677",
+          "phone_times": "Call us anytime!",
+          "email": "info@pinkysirondoors.com",
+          "office_hours": "PICK UP HOURS ONLY <br> Monday to Friday from 8 A.M. - 5 P.M. (PST)\n<br>\nSaturday from 11 A.M. - 2 P.M."
+        }
+      },
+      "nfrc": {
+        "type": "nfrc",
+        "blocks": {
+          "1565123686995": {
+            "type": "block-image",
+            "settings": {
+              "title": "STEEL WINDOW & DOOR SYSTEMS (NFRC TESTED)",
+              "text": "<ul>\n<li class=\"li3\"><span class=\"s1\">NFRC Tested steel windows and doors in solid steel. <\/span><\/li>\n<li class=\"li3\"><span class=\"s1\">Thermally Broken Steel Doors with fine finish, hardware, glass\/glazing, certifications, energy values and more. <\/span><\/li>\n<li class=\"li3\"><span class=\"s1\">Install our products side by side with no interruption in architectural lines.<\/span><\/li>\n<\/ul>",
+              "image": "shopify:\/\/shop_images\/nfrc-1_720x_6ee2db66-3b3c-429e-86e2-ae07cb4bfd8b.jpg",
+              "popup_page": ""
+            }
+          },
+          "1565124238578": {
+            "type": "block-image",
+            "settings": {
+              "title": "STEEL SWING DOORS",
+              "text": "<ul class=\"ul1\">\n<li class=\"li3\"><span class=\"s1\">Double or single swing doors.<span class=\"Apple-converted-space\">  <\/span>Go grand and combine our steel swing doors with fixed sidelights and\/or transoms. <\/span><\/li>\n<li class=\"li3\"><span class=\"s1\">Seamless Dorma closing systems integrate with built in one of a kind steel thresholds. <\/span><\/li>\n<li class=\"li3\"><span class=\"s1\">Customize to any spec or detail.<\/span><\/li>\n<\/ul>",
+              "image": "shopify:\/\/shop_images\/nfrc-2_720x_11baf7d8-d53a-412c-9421-4c207d2d9a2a.jpg",
+              "popup_page": ""
+            }
+          }
+        },
+        "block_order": [
+          "1565123686995",
+          "1565124238578"
+        ],
+        "settings": {
+        }
+      },
+      "page-dealer-program": {
+        "type": "page-dealer-program",
+        "settings": {
+          "video_url": "https:\/\/www.youtube.com\/watch?v=tzpfw9K_gLM"
+        }
+      },
+      "discount-military": {
+        "type": "discount-military",
+        "blocks": {
+          "93ee0410-94d6-4a28-95f9-5a94203104f1": {
+            "type": "faq",
+            "settings": {
+              "title": "How do I get verified as a military professional?",
+              "answer": "<p>Click the Verify Eligibility button at the top of this page and complete the form. Additional documentation is sometimes required. To avoid delays in verification, please enter your first and last name on the form as it appears on your military discount documentation. If your last name has changed since your first licensing document was issued, please upload a government-issued document along with your military documentation that shows your current last name.<\/p>"
+            }
+          },
+          "4e8c0305-f5a0-4576-9047-40d6d1144bab": {
+            "type": "faq",
+            "settings": {
+              "title": "How long does the verification process take?",
+              "answer": "<p>It won’t take longer than 20 minutes to get a response. You may also get an instant outcome.<\/p>"
+            }
+          },
+          "e86b2b5a-f30c-4733-976b-09c2f097f4b9": {
+            "type": "faq",
+            "settings": {
+              "title": "How do I use the discount code once I'm verified?",
+              "answer": "<p>We will email you a single-use discount code! You can then use that code to make your purchase online at <a href=\"https:\/\/pinkysirondoors.com\" title=\"https:\/\/pinkysirondoors.com\">pinkysirondoors.com<\/a><\/p>"
+            }
+          },
+          "72a41797-d891-47ce-af30-3884344a948b": {
+            "type": "faq",
+            "settings": {
+              "title": "Can the military discount be applied to retroactive orders?",
+              "answer": "<p>Unfortunately, the military discount is not applicable to retroactive orders.<\/p>"
+            }
+          },
+          "825b1081-ffd6-41dd-8ee5-c328181b0ff8": {
+            "type": "faq",
+            "settings": {
+              "title": "Will my personal information be safe?",
+              "answer": "<p>Your security matters to us! Your information will not be shared or sold. It is simply used for the verification process. We partner with SheerID for verification of eligibility and SheerID does not store documents or images uploaded to their system. <a href=\"https:\/\/www.sheerid.com\/privacy_notice_services\/\" target=\"_blank\">Click here<\/a> to read SheerID’s full privacy policy.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "93ee0410-94d6-4a28-95f9-5a94203104f1",
+          "4e8c0305-f5a0-4576-9047-40d6d1144bab",
+          "e86b2b5a-f30c-4733-976b-09c2f097f4b9",
+          "72a41797-d891-47ce-af30-3884344a948b",
+          "825b1081-ffd6-41dd-8ee5-c328181b0ff8"
+        ],
+        "settings": {
+          "color_hero_bg": "#f9f9f9",
+          "image_hero_desktop": "shopify:\/\/shop_images\/Military-Hero-DT-full.jpg",
+          "image_hero_mobile": "shopify:\/\/shop_images\/Military-Hero-Mobile.jpg",
+          "text_hero_heading": "Exclusive Military Discount",
+          "text_hero_percentage": "5% Off",
+          "text_hero_paragraph": "<p>We appreciate the sacrifices made by our military community. In honor of your service, take advantage of our exclusive iron door military discount*<\/p><p>Verify your eligibility now to get 5% Off any Pinky’s doors. <\/p>",
+          "text_hero_btn": "Verify Eligibility",
+          "text_hero_below_btn": "Once verified, you will receive a single-use discount code to make your purchase.",
+          "text_section2_heading": "Who is Eligible?",
+          "text_section2_paragraph": "<p>This offer is available to military personnel who have served or are currently serving in the United States Armed Forces.<\/p><p>Active and reservist military, veterans, retirees, military spouses, and registered dependents are eligible for this military mattress discount.<\/p>",
+          "color_section3_bg": "#222222",
+          "color_section3_text": "#ffffff",
+          "text_section3_heading": "5% Military Discount",
+          "text_section3_paragraph": "",
+          "text_section3_btn": "Shop Now",
+          "link_section3_btn": "shopify:\/\/collections\/iron-doors",
+          "image_section3": "shopify:\/\/shop_images\/Discount-2.jpg",
+          "text_section4_heading": "FAQs",
+          "text_section4_paragraph": "<p>*Our healthcare professionals discount is valid online at <a href=\"https:\/\/pinkysirondoors.com\" title=\"https:\/\/pinkysirondoors.com\">pinkys.com<\/a>. Proper identification must be submitted. The code is valid for one-time use online. Valid on full-price merchandise only. Cannot be combined with any other offer. Pinky’s reserves the right to change or cancel this promotion at any time. No price adjustments will be made on previous purchases. Purchases made with this offer are not eligible for future price adjustments. Discount applies to merchandise only and not shipping & handling, taxes, or packaging.<\/p>",
+          "sheer_id_embed": "<link rel=\"stylesheet\" href=\"https:\/\/cdn.jsdelivr.net\/npm\/@sheerid\/jslib@1\/sheerid.css\" type=\"text\/css\"> <script src=\"https:\/\/cdn.jsdelivr.net\/npm\/@sheerid\/jslib@1\/sheerid.js\"><\/script> <script> function displayVerification() { const verificationUrl = 'https:\/\/services.sheerid.com\/verify\/60a44742123c340b2e791e9a\/'; sheerId.loadInModal( verificationUrl, { mobileRedirect: true }); }; <\/script> <script src=\"https:\/\/cdn.jsdelivr.net\/npm\/@sheerid\/jslib@1\/sheerid.js\"><\/script> <script> sheerId.conversion.listenForVerificationId(); <\/script>"
+        }
+      },
+      "discount-healthcare": {
+        "type": "discount-healthcare",
+        "blocks": {
+          "6d414a21-aa34-428e-bdc3-e97248a6ce69": {
+            "type": "faq",
+            "settings": {
+              "title": "How do I get verified as a healthcare professional?",
+              "answer": "<p>Click the Verify Eligibility button at the top of this page and complete the form. Additional documentation is sometimes required. To avoid delays in verification, please enter your first and last name on the form as it appears on your healthcare professional documentation. If your last name has changed since your first licensing document was issued, please upload a government-issued document along with your medical, nursing, or healthcare professional documentation that shows your current last name.<\/p>"
+            }
+          },
+          "d5f7d000-b69c-40c1-a08d-b6d28d71314e": {
+            "type": "faq",
+            "settings": {
+              "title": "How long does the verification process take?",
+              "answer": "<p>It won’t take longer than 20 minutes to get a response. You may also get an instant outcome.<\/p>"
+            }
+          },
+          "bb41909f-a16d-4cd3-85a7-02e33fd3d232": {
+            "type": "faq",
+            "settings": {
+              "title": "How do I use the discount code once I'm verified?",
+              "answer": "<p>We will email you a single-use discount code! You can then use that code to make your purchase online at <a href=\"https:\/\/pinkysirondoors.com\" title=\"https:\/\/pinkysirondoors.com\">pinkysirondoors.com<\/a>.<\/p>"
+            }
+          },
+          "ddd5c016-3593-4fbc-88ce-86d0ecd6ccc6": {
+            "type": "faq",
+            "settings": {
+              "title": "Can the healthcare discount be applied to retroactive orders?",
+              "answer": "<p>Unfortunately, the healthcare professionals discount is not applicable to retroactive orders.<\/p>"
+            }
+          },
+          "463a7d20-129a-4543-8c5f-88559e46d0f7": {
+            "type": "faq",
+            "settings": {
+              "title": "Will my personal information be safe?",
+              "answer": "<p>Your security matters to us! Your information will not be shared or sold. It is simply used for the verification process. We partner with SheerID for verification of eligibility and SheerID does not store documents or images uploaded to their system. <a href=\"https:\/\/www.sheerid.com\/privacy_notice_services\/\" target=\"_blank\">Click here<\/a> to read SheerID’s full privacy policy.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "6d414a21-aa34-428e-bdc3-e97248a6ce69",
+          "d5f7d000-b69c-40c1-a08d-b6d28d71314e",
+          "bb41909f-a16d-4cd3-85a7-02e33fd3d232",
+          "ddd5c016-3593-4fbc-88ce-86d0ecd6ccc6",
+          "463a7d20-129a-4543-8c5f-88559e46d0f7"
+        ],
+        "settings": {
+          "color_hero_bg": "#fbe7e0",
+          "image_hero_desktop": "shopify:\/\/shop_images\/Healthcare-Hero-DT.jpg",
+          "image_hero_mobile": "shopify:\/\/shop_images\/Healcare-Hero-Mobile.jpg",
+          "text_hero_heading": "Healthcare Professionals",
+          "text_hero_percentage": "5% Off",
+          "text_hero_paragraph": "<p>We appreciate the hard work and selfless dedication of healthcare professionals. As a token of gratitude, we want all healthcare professionals to enjoy our iron and steel doors with this extra special discount.*<\/p><p>Verify your eligibility now to get 5% off any Pinky’s doors.  <\/p>",
+          "text_hero_btn": "Verify Eligibility",
+          "text_hero_below_btn": "Once verified, you will receive a single-use discount code to make your purchase.",
+          "text_section2_heading": "Who is Eligible?",
+          "text_section2_paragraph": "<p>•   Licensed Practical Nurses  •   Medical assistants   •   Medical Doctors   •   Medical laboratory scientists •   Medical transcriptionists   •   Nurse anesthetists   •   Nurse practitioners    •   Nurse midwives   •   Audiologists<\/p><p><\/p><p>•   Clinical coders   •   Clinical nurse specialists   •   Clinical officers   •   Dentists   •   Doctors of Osteopathic Medicine (DO)   •   Emergency medical technicians   •   Feldshers   •   Health administrators   •   Occupational therapists  <\/p><p><\/p><p> •   Optometrists   •   Paramedics   •   Pharmacists   •   Pharmaconomists   •   Pharmacy technicians   •   Phlebotomists   •   Physicians   •   Physician assistants   •   Podiatrists    •   Psychologists   •   Psychotherapists   •   Physical therapists   <\/p><p><\/p><p>•   Radiographers   •   Radiotherapists   •   Respiratory Speech-language pathologists   •   Surgeons   •   Surgeon's assistants   •   Surgical technologists<\/p>",
+          "color_section3_bg": "#f9f9f9",
+          "color_section3_text": "#000000",
+          "text_section3_heading": "5% Healthcare Discount",
+          "text_section3_paragraph": "",
+          "text_section3_btn": "Shop Now",
+          "link_section3_btn": "shopify:\/\/collections\/iron-doors",
+          "image_section3": "shopify:\/\/shop_images\/Discount-2.jpg",
+          "text_section4_heading": "FAQs",
+          "text_section4_paragraph": "<p>*Our healthcare professionals discount is valid online at <a href=\"https:\/\/pinkysirondoors.com\" title=\"https:\/\/pinkysirondoors.com\">pinkys.com<\/a>. Proper identification must be submitted. The code is valid for one-time use online. Valid on full-price merchandise only. Cannot be combined with any other offer. Pinky’s reserves the right to change or cancel this promotion at any time. No price adjustments will be made on previous purchases. Purchases made with this offer are not eligible for future price adjustments. Discount applies to merchandise only and not shipping & handling, taxes, or packaging.<\/p>",
+          "sheer_id_embed": "<link rel=\"stylesheet\" href=\"https:\/\/cdn.jsdelivr.net\/npm\/@sheerid\/jslib@1\/sheerid.css\" type=\"text\/css\"> <script src=\"https:\/\/cdn.jsdelivr.net\/npm\/@sheerid\/jslib@1\/sheerid.js\"><\/script> <script> function displayVerification() { const verificationUrl = 'https:\/\/services.sheerid.com\/verify\/60a448be123c340b2e792d99\/'; sheerId.loadInModal( verificationUrl, { mobileRedirect: true }); }; <\/script> <script src=\"https:\/\/cdn.jsdelivr.net\/npm\/@sheerid\/jslib@1\/sheerid.js\"><\/script> <script> sheerId.conversion.listenForVerificationId(); <\/script>"
+        }
+      },
+      "cookies-popup": {
+        "type": "cookies-popup",
+        "settings": {
+          "title": "",
+          "paragraph": "<p>We use cookies to ensure that we give you the best experience on our website. If you continue to use this website we will assume that you are happy with it.<\/p>",
+          "delay_time": 2,
+          "cookies_expiration": 30
+        }
+      },
+      "product-template-basic": {
+        "type": "product-template-basic",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": false,
+          "show_share_buttons": false,
+          "variant_style": "dropdown"
+        }
+      },
+      "related-products-auto": {
+        "type": "related-products-auto",
+        "settings": {
+          "title": "You Might Also Like"
+        }
+      },
+      "164797903300492f60": {
+        "type": "custom-content",
+        "blocks": {
+          "e7e0e26e-9920-4b00-a40b-5c29b9fa5738": {
+            "type": "html",
+            "settings": {
+              "code": "<style>\n    \n    .homePageHero {\n        background-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Hero-3D_V001.jpg\"); \n        background-size: cover; \n        height: 963px;\n    }\n    .homePageHero h1 {\n        float: right;\n        \/* width: 100%; *\/\n        font-size: 5.5vw;\n        color: #ffffff;\n        padding: 5% 3% 0;\n        font-weight: 100;\n    }   \n    .sectionLinks a {\n        color: #ffffff;\n        text-decoration: underline;\n    }\n    .sectionLinks a:hover {\n        color: #CE816C;\n    }\n    .sectionLinks {\n        float: right;\n        width: 100%;\n    }\n    .sectionLinks p {\n        float: right;\n        color: #ffffff;\n        font-size: 1.7vw;\n        padding: 0 4%;\n        text-transform: uppercase;\n    }\n\n    a.sectionLinks{\n        text-decoration: underline;\n    }\n\n\n    .newBrandBox {\n        background-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/US-Inventory___V003-DT.jpg\"); \n        background-size: cover; \n        margin-bottom: 70px;\n    }\n\n\n    .newBrandBox h1 {\n        font-size:10.6vw; \n        text-align:right; \n        font-weight:100;\n    }\n    .newBrandBox p {\n        font-size:4vw; \n        text-align:right; \n        text-decoration: underline; \n        text-transform: uppercase; \n        color:#000;\n    }\n    .newBrandBoxEmpty1{\n        height: 1000px;\n    }\n    .newBrandBoxEmpty2{\n        height: 1000px;\n    }\n\n    .newBrandBoxLeft {\n        background-image: url(\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/AirSeries___V004-DT.jpg\"); \n        background-size: cover; \n        margin-bottom: 70px;\n    }\n    .newBrandBoxLeft h1 {\n        font-size:10.6vw; \n        text-align:left; \n        font-weight:100;\n    }\n    .newBrandBoxLeft p {\n        font-size:4vw; \n        text-align:left; \n        text-decoration: underline; \n        text-transform: uppercase; \n        color:#000;\n    }\n    .newBrandBox p:hover{\n        color:#CE816C;\n    }\n    .newBrandBoxLeft a:hover{\n        color:#CE816C;\n    }\n    .aboutGuysMain a:link{\n        text-decoration: underline;\n    }\n     \n    .aboutGuysMain a:hover{\n        color:#fff;\n    }\n\n    .AboutGuysBox{\n        background-color: #CE816C; \n        float: left; \n        padding: 180px 0 220px;\n        width: 100%;\n    }\n    \n    .aboutGuysMain h1 {\n        text-align: left;\n        font-size: 5vw;\n        font-weight: 100;\n        padding: 0 2% 3%;\n    }\n    .txtInfo{\n        padding: 5% 4%;\n    }\n    .txtInfo p{\n        text-align: left;\n        font-size:4vw; \n        text-transform: uppercase; \n        color:#000; \n        line-height:1;\n    }  \n    .readMoreBTNHome{\n        display: none;\n    }\n    .readMoreBTNHome p {\n        float:left;\n        width: 100%; \n        font-weight:100;\n        font-size:3vw; \n        text-transform: uppercase; \n        \/*border-top: solid 3px #000000;*\/\n        border-bottom: solid 3px #000000; \n        text-align: left; \n        color:#000; \n    }\n    .aboutGuysSplit{\n        width: 50%; \n        float: left;\n    }\n    .aboutGuysSplit img{\n        width: 100%;\n        padding: 0;\n    }\n    .MainTag h1{\n        font-size:10.4vw; \n        text-align:center; \n        font-weight:100;\n    }\n    .homePageHeroFoot{\n        font-size: 1vw;\n    }\n    @media only screen and (max-width: 1024px) {\n        .homePageHero {\n            background-image: url(\"\"); \n            background-size: cover; \n            max-height:0px;\n        }\n        .homePageHero h1 {\n            float: left;\n            width: 100%;\n            font-size: 7vw;\n            color: #000000;\n            padding: 5% 3% 0;\n            font-weight: 100;\n            text-align: center;\n        }\n        .sectionLinks a {\n            color: #000000;\n            text-decoration: underline;\n        }\n        .sectionLinks {\n            float: right;\n            width: 100%;\n        }\n        .sectionLinks p {\n            float: left;\n            color: #000000;\n            font-size: 3.5vw;\n            padding: 0 4%;\n            text-transform: uppercase;\n            text-align: center;\n        }\n        .newBrandBox, .newBrandBoxLeft {\n            background-image: url(\"\"); \n            \/*background-size:;*\/\n            margin-bottom: 5%;                 \n        }\n        .AboutGuysBox{\n            padding: 3% 0;\n        }\n        .aboutGuysSplit{\n            width: 100%; \n            float: left;\n        }\n        .aboutGuysSplit img{\n            padding: 0 4%;\n        }\n        .readMoreBTNHome p {\n            \/*border-top: solid 1px #000000;*\/\n            border-bottom: solid 1px #000000; \n            padding: 5px 0;\n        }\n        .homePageHeroFoot{\n            font-size: 1rem;\n        }\n    }\n<\/style>",
+              "width": "100%"
+            }
+          },
+          "2b45bc0b-c955-4e3e-8de7-1db56b2ee918": {
+            "type": "html",
+            "settings": {
+              "code": "<!-- Block Hero Banner -->\n    <div class=\"custom_mainDT\">\n        <div class=\"homePageHero\">\n            <h1>Largest <br>U.S. Inventory<\/h1>\n            <div class=\"sectionLinks\">\n                <p>\n                    <a href=\"https:\/\/pinkysirondoors.com\/collections\/iron-doors\">Iron Doors<\/a>, <a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-doors\">Steel Doors<\/a> and <a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-windows-special-order\">Steel Windows<\/a>\n                <\/p>\n            <\/div>\n        <\/div>\n    <\/div>\n    <div class=\"custom_mainMO\">\n        <div class=\"homePageHero\">\n<a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-doors\">\n            <img style=\"width: 100%;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Hero-3D_V001-Mo.jpg\" alt=\"3D Render of Pinkys Iron doors\">\n            <h1>Largest U.S. Inventory<\/h1>\n<\/a>\n            <div class=\"sectionLinks\">\n                <p>\n                    <a href=\"https:\/\/pinkysirondoors.com\/collections\/iron-doors\">Iron Doors<\/a>, <a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-doors\">Steel Doors<\/a> and <a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-windows-special-order\">Steel Windows<\/a>\n                <\/p>\n            <\/div>\n        <\/div>\n    <\/div>\n<!-- Block Hero Banner -->",
+              "width": "100%"
+            }
+          },
+          "91cc2661-7993-4ec0-a4b0-6bb347321749": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<!-- Block 01 -->\n    <div class=\"custom_mainDT\">\n        <div class=\"newBrandBox\">\n            <h1>Largest <br>U.S. Inventory<\/h1>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/iron-doors\">\n                    <p>Iron Doors<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-windows-special-order\">\n                    <p>Steel Windows<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/thermally-broken-doors\">\n                    <p>Thermal Break<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/french-doors\">\n                    <p>Patio Doors<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/passage-doors-special-order\">\n                    <p>Interior Doors<\/p>\n                <\/a>\n            <\/div>    \n            \n            <div class=\"newBrandBoxEmpty1\"> \n                <!-- br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br -->\n            <\/div>\n        <\/div>\n    <\/div>\n    <div class=\"custom_mainMO\">\n        <div class=\"newBrandBox\">\n            <h1>Largest <br>U.S. Inventory<\/h1>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/iron-doors\">\n                    <p>Iron Doors<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/steel-windows-special-order\">\n                    <p>Steel Windows<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/thermally-broken-doors\">\n                    <p>Thermal Break<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/french-doors\">\n                    <p>Patio Doors<\/p>\n                <\/a>\n            <\/div>\n            <div class=\"mainblockBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/passage-doors-special-order\">\n                    <p>Interior Doors<\/p>\n                <\/a>\n            <\/div>          \n            <img style=\"width: 100%;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/US-Inventory___V001-MO.jpg\" alt=\"3D Render of Pinkys Iron doors\">\n        <\/div>\n\n        \n    <\/div>",
+              "width": "100%"
+            }
+          },
+          "7bb9c6f2-ea37-4186-b5fd-2ff56ed446d1": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<!-- Block 02 -->\n    <div class=\"custom_mainDT\">\n        <div class=\"newBrandBoxLeft\">\n            <h1>Air <br> Collection<\/h1>\n            <p>\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/bi-fold-accordion\">Bi-Folds<\/a> <br>\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/pivot-doors-special-order\">Pivot <\/a><br>\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/dutch-doors\">Dutch Doors <\/a><br>\n                <a href=\"https:\/\/pinkysirondoors.com\/pages\/category-contact-room-dividers?ref=room-dividers\">Room Dividers <\/a><br>\n                <a href=\"https:\/\/pinkysirondoors.com\/pages\/category-contact-interior-sliding-doors?ref=sliding-doors\">Sliding Doors <\/a><br>\n            <\/p>\n            <div class=\"newBrandBoxEmpty2\"> \n                <!-- br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br -->\n            <\/div>\n        <\/div>\n    \n    <\/div>\n    <div class=\"custom_mainMO\">\n        <div class=\"newBrandBoxLeft\">\n            <h1>Air <br> Collection<\/h1>\n            <p>\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/bi-fold-accordion\">Bi-Folds<\/a> <br>\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/pivot-doors-special-order\">Pivot <\/a><br>\n                <a href=\"https:\/\/pinkysirondoors.com\/collections\/dutch-doors\">Dutch Doors <\/a><br>\n                <a href=\"https:\/\/pinkysirondoors.com\/pages\/category-contact-room-dividers?ref=room-dividers\">Room Dividers <\/a><br>\n                <a href=\"https:\/\/pinkysirondoors.com\/pages\/category-contact-interior-sliding-doors?ref=sliding-doors\">Sliding Doors <\/a><br>\n            <\/p>\n            <img style=\"width: 100%;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/AirSeries___V004-MO.jpg\" alt=\"3D Render of Pinkys Iron doors\">\n        <\/div>\n    \n    <\/div>",
+              "width": "100%"
+            }
+          },
+          "8007af0e-fdc2-479a-93ba-276d3d0efa36": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<!-- Block 03 -->\n<div class=\"custom_mainDT\">\n    <div class=\"AboutGuysBox\">\n        <div class=\"aboutGuysMain\">\n            <h1>NEW LOOK. SAME PINKYS.<\/h1>        \n            <div class=\"aboutGuysSplit\">\n                \n                <div class=\"txtInfo\">\n                    \n                    <p>\n                        \n                        PINKYS <br>\n                        is a family legacy <br> \n                        in the making. <br>\n                        Get to know <br>\n                        <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">our story<\/a>, <br>\n                        and the brothers <br>\n                        behind our vision.    \n                     <\/p>\n                    <!-- br><br -->\n                    <!-- div class=\"readMoreBTNHome\">\n                        <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">\n                            <p>Read our Story Here<\/p>\n                        <\/a>\n                    <\/div -->    \n                <\/div>\n            <\/div>\n            <div class=\"aboutGuysSplit\">\n                    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Pinkys_5221crop-web_900x.jpg\" alt=\"Dion and Arin sitting on Table\">\n            <\/div>\n        <\/div>\n    <\/div>\n    \n<\/div>\n<div class=\"custom_mainMO\">\n    <div class=\"AboutGuysBox\">\n        <div class=\"aboutGuysMain\">\n            <h1>SAME PINKYS NEW LOOK<\/h1>        \n            <div class=\"aboutGuysSplit\">\n                <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Pinkys_5221crop-web_900x.jpg\" alt=\"Dion and Arin sitting on Table\">\n            <\/div>\n            <div class=\"aboutGuysSplit\">\n                <div class=\"txtInfo\">\n                    <p>\n                       PINKYS is a family legacy in the making. Get to know <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">our story<\/a>, and the brothers behind our vision.    \n                    <\/p>\n                <\/div>\n            <\/div>\n            <!-- div class=\"readMoreBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">\n                    <p>Read our Story Here<\/p>\n                <\/a>\n            <\/div -->\n            \n        <\/div>\n    <\/div>\n<\/div>",
+              "width": "100%"
+            }
+          },
+          "d53964c0-73e5-4f6b-92f4-a509a5a662e2": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "image": "shopify:\/\/shop_images\/FooterImage-2022-05-02.png",
+              "width": "100%",
+              "alignment": "center"
+            }
+          },
+          "dbee4923-146c-4b7e-8cc7-e43cb5d6c47b": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<div class=\"MainTag\">\n    <h1>Enjoy the View<sup style=\"font-size:0.2em;top: -2.8em !important;\">™<\/sup>\n<\/h1>\n<\/div>",
+              "width": "100%"
+            }
+          },
+          "dc9db4c0-6cc5-436b-a4cf-d35bd9979673": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<center>\n<h1 style=\"font-size: 4.625em;\">Enjoy the view.<\/h1>\n<\/center>",
+              "width": "100%"
+            }
+          },
+          "bef87497-f718-485c-8c4f-2e839643f15b": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<style>\n    .hexagon {\n    position: relative;\n    width: 499px; \n    height: 100px;\n    background-color: #CE816C;\n    margin: 86.60px auto;\n    color: #ffffff;\n    }\n    .hexagon h1 {\n    padding: 30px 0;\n    }\n\n    .hexagon:before,\n    .hexagon:after {\n    content: \"\";\n    position: absolute;\n    width: 0;\n    border-left: 250px solid transparent;\n    border-right: 250px solid transparent;\n    }\n\n    .hexagon:before {\n    bottom: 100%;\n    border-bottom: 65px solid #CE816C;\n    }\n\n    .hexagon:after {\n    top: 100%;\n    width: 0;\n    border-top: 65px solid #CE816C;\n    }\n    .txtInfo{padding: 0 45px;}\n\n    @media only screen and (max-width: 677px) {\n        .hexagon {\n        position: relative;\n        width: 333px; \n        height: 100px;\n        background-color: #CE816C;\n        margin: 86.60px auto;\n        color: #ffffff;\n        }\n\n        .hexagon:before,\n        .hexagon:after {\n        content: \"\";\n        position: absolute;\n        width: 0;\n        border-left: 166.5px solid transparent;\n        border-right: 166.5px solid transparent;\n        }\n\n\n    }\n\n\n\n<\/style>\n\n\n\n<div class=\"custom_mainDT\">\n    <div style=\"width: 50%; float: left;\">\n        <img style=\"width: 100%;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Pinkys_5221crop-web_900x.jpg\" alt=\"Dion and Arin sitting on Table\">\n    <\/div>\n    <div style=\"width: 50%; float: left;\">\n        <div class=\"hexagon\">\n            <center>\n                <h1>Read our Story<\/h1>\n            <\/center>\n        <\/div>\n        <div class=\"txtInfo\">\n            <p> (LOS ANGELES, CA)–The Culture Creative is pleased to announce representation of PINKYS (formerly Pinky’s Iron Doors). PINKYS celebrates the beauty of Southern California's unique sunsets: Blush. Breathtaking. Ethereal. Expansive.<\/p>\n            <p>A Los Angeles-based architectural elements studio with roots dating back to 1978, PINKYS is credited with being a leader in popularizing the iron doors and steel windows design trend favored by the country’s most celebrated architects and interior design firms. <\/p>\n            \n            <br>\n            <br>\n            \n        <\/div>\n        <center>\n            <ul class=\"list--inline article__meta-buttons\">\n                <li>\n                  <a href=\"http:\/\/www.batman.com\" class=\"btn btn-thin btn--secondary\" aria-label=\"Read more: About PINKYS\">\n                    Read more\n                  <\/a>\n                <\/li>\n              <\/ul>\n        <\/center>\n    <\/div>\n    \n<\/div>\n<div class=\"custom_mainMO\">\n    <div style=\"width: 100%; float: left;\">\n        <img style=\"width: 100%;\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Pinkys_5221crop-web_900x.jpg\" alt=\"Dion and Arin sitting on Table\">\n    <\/div>\n    <div style=\"width: 100%; float: left;\">\n        <div class=\"hexagon\">\n            <center>\n                <h1>Read our Story<\/h1>\n            <\/center>\n        <\/div>\n        <div class=\"txtInfo\">\n            <p> (LOS ANGELES, CA)–The Culture Creative is pleased to announce representation of PINKYS (formerly Pinky’s Iron Doors). PINKYS celebrates the beauty of Southern California's unique sunsets: Blush. Breathtaking. Ethereal. Expansive.<\/p>\n            <p>A Los Angeles-based architectural elements studio with roots dating back to 1978, PINKYS is credited with being a leader in popularizing the iron doors and steel windows design trend favored by the country’s most celebrated architects and interior design firms. <\/p>\n            <br>\n            <br>\n            \n        <\/div>\n        <center>\n            <ul class=\"list--inline article__meta-buttons\">\n                <li>\n                <a href=\"http:\/\/www.batman.com\" class=\"btn btn-thin btn--secondary\" aria-label=\"Read more: About PINKYS\">\n                    Read more\n                <\/a>\n                <\/li>\n            <\/ul>\n        <\/center>\n    <\/div>\n\t\n<\/div>",
+              "width": "100%"
+            }
+          }
+        },
+        "block_order": [
+          "e7e0e26e-9920-4b00-a40b-5c29b9fa5738",
+          "2b45bc0b-c955-4e3e-8de7-1db56b2ee918",
+          "91cc2661-7993-4ec0-a4b0-6bb347321749",
+          "7bb9c6f2-ea37-4186-b5fd-2ff56ed446d1",
+          "8007af0e-fdc2-479a-93ba-276d3d0efa36",
+          "d53964c0-73e5-4f6b-92f4-a509a5a662e2",
+          "dbee4923-146c-4b7e-8cc7-e43cb5d6c47b",
+          "dc9db4c0-6cc5-436b-a4cf-d35bd9979673",
+          "bef87497-f718-485c-8c4f-2e839643f15b"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "1658786810bc450458": {
+        "type": "custom-content",
+        "blocks": {
+          "a80aa94b-8f31-4c03-8476-2516f2f129c8": {
+            "type": "html",
+            "settings": {
+              "code": "<!-- Block 03 -->\n<div class=\"custom_mainDT\">\n    <div class=\"AboutGuysBox\">\n        <div class=\"aboutGuysMain\">\n            <h1>NEW LOOK. SAME PINKYS.<\/h1>        \n            <div class=\"aboutGuysSplit\">\n                \n                <div class=\"txtInfo\">\n                    \n                    <p>\n                        \n                        PINKYS <br>\n                        is a family legacy <br> \n                        in the making. <br>\n                        Get to know <br>\n                        <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">our story<\/a>, <br>\n                        and the brothers <br>\n                        behind our vision.    \n                     <\/p>\n                    <!-- br><br -->\n                    <!-- div class=\"readMoreBTNHome\">\n                        <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">\n                            <p>Read our Story Here<\/p>\n                        <\/a>\n                    <\/div -->    \n                <\/div>\n            <\/div>\n            <div class=\"aboutGuysSplit\">\n                    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Pinkys_5221crop-web_900x.jpg\" alt=\"Dion and Arin sitting on Table\">\n            <\/div>\n        <\/div>\n    <\/div>\n    \n<\/div>\n<div class=\"custom_mainMO\">\n    <div class=\"AboutGuysBox\">\n        <div class=\"aboutGuysMain\">\n            <h1>SAME PINKYS NEW LOOK<\/h1>        \n            <div class=\"aboutGuysSplit\">\n                <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0036\/1745\/6237\/files\/Pinkys_5221crop-web_900x.jpg\" alt=\"Dion and Arin sitting on Table\">\n            <\/div>\n            <div class=\"aboutGuysSplit\">\n                <div class=\"txtInfo\">\n                    <p>\n                       PINKYS is a family legacy in the making. Get to know <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">our story<\/a>, and the brothers behind our vision.    \n                    <\/p>\n                <\/div>\n            <\/div>\n            <!-- div class=\"readMoreBTNHome\">\n                <a href=\"https:\/\/pinkysirondoors.com\/blogs\/press\/la-based-iron-doors-and-steel-windows-studio-celebrates-the-beauty-of-california-s-pink-sunsets\">\n                    <p>Read our Story Here<\/p>\n                <\/a>\n            <\/div -->\n            \n        <\/div>\n    <\/div>\n<\/div>",
+              "width": "100%"
+            }
+          },
+          "dc7eb64b-56dd-4dd4-8c97-0805866bc5a3": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<div class=\"homePageHeroFoot\">\n    <p>\n        A message from the Der Brothers:\n    <\/p>\n    <p>\n        <strong>Welcoming your guests starts with the perfect door.<\/strong> Whether romantic French doors, charming wrought iron doors, modern front doors, storybook dutch doors, or barn doors,  we pride ourselves on our extensive inventory and endless selections to suit all styles, with quality and craftsmanship at the heart of what we do.\n    <\/p>\n    <p>\n        <strong>Exceptional customer service is our passion.<\/strong> Our dedicated team is ready to help you choose your dream door. All of our products are handmade with precision by skilled artisans and makers. We are a family-owned, prestige brand, focused on providing innovative and unique doors to our clients. With our timeless designs, we provide many looks and styles that homeowners around the country have been enjoying for years.  PINKYS has made a name for itself through decades of providing a wide range of steel doors, entrance doors, exterior doors, iron doors, and sliding doors for our happy customers across the country.\n    <\/p>\n    <p>\n        <strong>Our inventory is like no other.<\/strong> A common mistake many make in their initial search for doors, is to search online for 'iron doors near me' or 'steel doors near me'. While proximity can be ideal, on further research customers realize that <a href=\"http:\/\/www.pinkys.com\">PINKYS.com<\/a> has an unmatched selection of in-stock doors at our Los Angeles warehouse, and that we ship nationwide every day.  While many companies have long lead-times, one of the most common questions we receive is how long the wait is for black entry doors or black front doors. With the largest US inventory of steel windows and doors, in most instances lead times are often just a few days for us.  \n    <\/p>\n    <p>\n        <strong>We love the art of bespoke.<\/strong> Along with our in-stock doors, we specialize in creating custom doors to fit any home; from contemporary doors and modern styles to classic designs, we offer customization on our front doors, bifold doors, accordion doors, black interior doors, modern front doors, or most any door type you can think of. \n    <\/p>\n    <p>\n        <strong>We're devoted to creating architectural elements that allow you to express your personality.<\/strong> Our goal is to provide you with the highest quality doors, windows, and other accessories for your home. We create pieces that are beautiful, functional and timeless. Whether you're looking for a steel door, modern entry door, modern interior door, metal doors in general, or custom house doors, we pride ourselves on providing the highest quality products designed with style. \n    <\/p>\n    <p>\n        We welcome you to contact us with any questions, When in Los Angeles, visit our showroom and warehouse in Vernon, right off the 10 freeway in the industrial heart of downtown L.A. \n    <\/p>\n    <p>\n        Dion Der + Arin Der\n\n    <\/p>\n<\/div>",
+              "width": "100%"
+            }
+          },
+          "aa89e83b-06dd-4aeb-8204-5d8cf68aec97": {
+            "type": "html",
+            "disabled": true,
+            "settings": {
+              "code": "<div class=\"homePageHeroFoot\">\n<h1 style=\"font-size:34px\">Pinky's Iron Doors | Best Iron Doors &amp; Steel Doors On The Market<\/h1>\n<p>Pinky’s Iron Doors is Southern California’s premier developer of the best iron doors and windows. Pinky’s creates the element that makes a home extraordinary with our large selection of steel doors. \n\nPinky’s delivers an uncompromised experience through modern design, artisanship, and unyielding craftsmanship. Pinky’s has earned a reputation as a superior provide of residential and commercial steel doors, the single entry doors, double entry doors, and black front doors. \n\nPinky’s Iron Doors has been Southern California's premier developer of modern doors for sale.\n        <\/p>\n<\/div>",
+              "width": "100%"
+            }
+          }
+        },
+        "block_order": [
+          "a80aa94b-8f31-4c03-8476-2516f2f129c8",
+          "dc7eb64b-56dd-4dd4-8c97-0805866bc5a3",
+          "aa89e83b-06dd-4aeb-8204-5d8cf68aec97"
+        ],
+        "settings": {
+          "title": ""
+        }
+      },
+      "67d5d9e3-1041-4d04-8a71-638310419c61": {
+        "type": "video",
+        "settings": {
+          "heading": "",
+          "heading_size": "h1",
+          "enable_video_looping": true,
+          "video": "shopify:\/\/files\/videos\/4-PINKYS-Website_720p_Compressed_WithAudio.mov",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "description": "Adjust as needed",
+          "full_width": false,
+          "padding_top": 0,
+          "padding_bottom": 20
+        }
+      },
+      "0feb73f1-e132-4843-b576-9973c8e57a19": {
+        "type": "video",
+        "disabled": true,
+        "settings": {
+          "heading": "",
+          "heading_size": "h1",
+          "enable_video_looping": true,
+          "video": "shopify:\/\/files\/videos\/PINKYS_BannerVideo_NoTalent_Overlaid_Logo_16x9_FullRes.mov",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+          "description": "",
+          "full_width": false,
+          "padding_top": 36,
+          "padding_bottom": 36
+        }
+      },
+      "medias_app_DJCQVa": {
+        "type": "Medias-app",
+        "settings": {
+          "media_group_id": "1"
+        }
+      }
+    },
+    "content_for_index": [
+      "164797903300492f60",
+      "67d5d9e3-1041-4d04-8a71-638310419c61",
+      "medias_app_DJCQVa",
+      "1556664003633",
+      "1658786810bc450458",
+      "0feb73f1-e132-4843-b576-9973c8e57a19"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "color_text": "#3d4246",
+      "color_body_text": "#69727b",
+      "color_sale_text": "#557B97",
+      "color_borders": "#e8e9eb",
+      "color_button": "#557B97",
+      "color_button_text": "#fff",
+      "color_small_button_text_border": "#3d4246",
+      "color_text_field": "#fff",
+      "color_text_field_text": "#000",
+      "color_text_field_border": "#949494",
+      "color_image_overlay_text": "#fff",
+      "color_image_overlay": "#3d4246",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#fff",
+      "type_header_font": "work_sans_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "work_sans_n4",
+      "type_base_size": 16,
+      "type_bold_product_titles": false,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+              }
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "feature-row",
+        "slideshow"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "type_bold_product_titles": true,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "image_size": "medium",
+            "show_quantity_selector": false,
+            "show_variant_labels": true,
+            "show_vendor": false,
+            "enable_zoom": true,
+            "show_share_buttons": true
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {
+          }
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {
+          }
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {
+          }
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

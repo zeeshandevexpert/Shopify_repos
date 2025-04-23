@@ -1,0 +1,56 @@
+<div class="page-width">
+  <br>
+  <div class="grid flex flex--wrap" data-section-id="{{ section.id }}" data-section-type="how-to">
+    {% if section.blocks.size > 0 %}
+    {% for block in section.blocks %}
+    <div class="grid__item how-to__item medium-up--one-third small--one-half widescreen--one-quarter">
+      <a class="mfp-iframe" href="https://www.youtube.com/watch?v={{block.settings.video_url | split: '/' | last }}">
+        {% if block.settings.image %}
+        {% assign img = block.settings.image | img_url: '400x' %}
+        {% else %}
+        {% assign videoID = block.settings.video_url | split: '/' | last %}
+        {% capture img %}//img.youtube.com/vi/{{videoID}}/mqdefault.jpg{% endcapture %}
+        {% endif %}
+        <div class="box-hd lazyload lazyfade" data-bg="{{img}}">
+          {% comment %}<h2 class="get-video-title" data-url="http://youtube.com/get_video_info?video_id={{videoID}}"></h2>{% endcomment %}
+        </div>
+        <div class="play-btn">{% include 'icon-play-video', color: '#ffffff' %}</div>
+      </a>
+      
+    </div>
+    {% endfor %}
+    {% else %}
+    {% for i in (1..24) %}
+    <div class="how-to__item medium-up--one-fifth small--one-half">
+      <a class="mfp-iframe" href="https://www.youtube.com/watch?v=DkD0fs0p1xY">
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "How to?",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "faq",
+        "name": "FAQ",
+        "settings": [
+			{
+			  "id":"video_url",
+			  "type":"text",
+			  "label":"Youtube URL"
+			},
+  		    {
+			  "id":"image",
+			  "type":"image_picker",
+			  "label":"Video Thumbnail"
+			}
+        ]
+      }
+    ]
+  }
+{% endschema %}

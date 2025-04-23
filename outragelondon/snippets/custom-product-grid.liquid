@@ -1,0 +1,39 @@
+<a href="{% if product.metafields.custom.mystery_box_url != blank %}{{ product.metafields.custom.mystery_box_url }}{% else %}{{ product.url }}{% endif %}" class="custom-main-collection-grid">
+  {% if product.images.size > 0 %}
+    <div class="custom-main-collection-grid-images-wrapper">
+          <button aria-label="Add to Wishlist" data-with-epi="true" class="custom-grid-wishlist swym-button swym-add-to-wishlist-view-product product_{{product.id}}" data-swaction="addToWishlist" data-product-id="{{product.id | json}}" data-variant-id="{{product.variants[0].id}}" data-product-url="{{ shop.url }}{{ product.url }}"></button>
+      <ul class="custom-main-collection-grid-badges">
+        {% unless product.available %}
+          <li>SOLD OUT</li>
+        {% endunless %}
+        {% if product.tags contains 'NEW' %}
+          <li>NEW</li>
+        {% endif %}
+     {% comment %}   {% if product.compare_at_price != blank and product.compare_at_price > product.price %}
+          <li>{{ product.compare_at_price | minus: product.price | money }} OFF</li>
+        {% endif %} {% endcomment %}
+        {% if product.tags contains 'black-friday' %}
+          <li>BLACK FRIDAY</li>
+        {% endif %}
+        {% if product.tags contains 'coming-soon' %}
+          <li>Coming soon</li>
+        {% endif %}
+      </ul>
+      <div class="custom-main-collection-grid-image-wrapper">
+        <img src="{{ product.images[0] | img_url: '1024x' }}" class="custom-main-collection-grid-image"/>
+        {% if product.images.size > 1 %}
+          <img src="{{ product.images[1] | img_url: '1024x' }}" class="custom-main-collection-grid-image-second" />
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  <div class="custom-main-collection-grid-info">
+    <p class="custom-main-collection-grid-title">{{ product.title }}</p>
+    <p class="custom-main-collection-price">
+      <span>{{ product.price | money }}</span>
+      {% if product.compare_at_price != blank and product.compare_at_price > product.price %}
+        <strike>{{ product.compare_at_price | money }}</strike>
+      {% endif %}
+    </p>
+  </div>
+</a>

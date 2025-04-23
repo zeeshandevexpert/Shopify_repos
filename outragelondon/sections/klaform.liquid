@@ -1,0 +1,91 @@
+
+<div class='form-klaviyu-collection'>
+   <div class='page-width'>
+     {% if section.settings.heading !=blank %}
+  <div class="heading">
+    <h2>{{ section.settings.heading }}</h2>
+  </div>
+   {% endif %}
+     {% if section.settings.form !=blank %}
+ 
+      <div class='form-inner'>
+        {{ section.settings.form }}
+ </div>
+  </div>
+     {% endif %}
+  {% if section.settings.image !=blank %}
+     <div class='form-img desktop'>
+  <img src="{{ section.settings.image | img_url:'master' }}">
+     </div>
+  {% endif %}
+
+ {% if section.settings.mimage !=blank %}
+     <div class='form-img mobile'>
+  <img src="{{ section.settings.mimage | img_url:'master' }}">
+     </div>
+  {% endif %}
+  
+
+</div>
+<style>
+  .form-klaviyu-collection {
+    padding: 40px 0px 0 0;
+}
+  .form-klaviyu-collection .heading {
+    text-align: center;
+}
+ .form-klaviyu-collection  h2.h4.footer__title.small--hide {
+    display: block !important;
+}
+  .form-img.mobile{
+     display:none;
+   }
+  .form-klaviyu-collection .form-inner {
+    max-width: 700px;
+    margin: 0 auto;
+}
+   .form-img img{
+     width:100%;
+   }
+@media screen and (max-width: 480px) {
+  .form-img.mobile{
+     display:block;
+   }
+   .form-img.desktop{
+     display:none;
+   }
+}
+ 
+  </style>
+{% schema %}
+  {
+    "name": "c-form",
+    "settings": [
+       {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+      {
+      "type": "html",
+      "id": "form",
+      "label": "Form"
+    },
+       {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+        {
+      "type": "image_picker",
+      "id": "mimage",
+      "label": "Mobile Image"
+    }
+    ],
+        "presets": [
+  {
+    "name": "c-form"
+  }
+]
+  }
+{% endschema %}

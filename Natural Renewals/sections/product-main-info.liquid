@@ -1,0 +1,81 @@
+{% if product.metafields.arena.external_link != blank %}
+    <script>
+        document.location.href= '{{ product.metafields.arena.external_link }}';
+    </script>
+{% endif %}
+
+
+<div class="container-style product-page-top-container">
+        <div class="product-page-top-row">
+            <div class="product-page-top-col-left">
+                <h4>{{ product.metafields.arena.top_title }}</h4>
+                <h1>{{ product.title }}</h1>
+                <div class="product-page-top-col-left-contain">
+                    {% if product.available %} 
+                        <span>{{ product.price | money }} usd</span>
+                    {% else %}
+                        <span>Sold Out</span>
+                    {% endif %}
+                    <button class="scrollable-element" data-scroll="#sectionbuy">buy now</button>
+                </div>
+            </div>
+            <div class="product-page-top-col-middle">
+                <img src="{{ product.images[0] | img_url: '10x' }}"
+                     class="lazyload"
+                     data-src="{{ product.images[0] | img_url: '1000x' }}"
+                     data-widths="[1000]"
+                     data-sizes="auto"
+                     tabindex="-1"
+                />
+            </div>
+            <div class="product-page-top-col-right">
+                {% if  product.metafields.arena.circle_point_1 != blank and product.metafields.arena.circle_point_2 != blank and product.metafields.arena.circle_point_3 != blank %}
+                    <div class="chart-animate slide-0">
+                        <span data-id="0">{{ product.metafields.arena.circle_point_1 }}</span>
+                        <span data-id="1">{{ product.metafields.arena.circle_point_2 }}</span>
+                        <span data-id="2">{{ product.metafields.arena.circle_point_3 }}</span>
+                        <i></i>
+                    </div>
+                    <div class="swiper chart-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                {{product.metafields.arena.circle_point_1_desc}}
+                            </div>
+                            <div class="swiper-slide">
+                                {{product.metafields.arena.circle_point_2_desc}}
+                            </div>
+                            <div class="swiper-slide">
+                                {{product.metafields.arena.circle_point_3_desc}}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+{% schema %}
+{
+  "name": "Product - Main",
+  "tag": "section",
+  "class": "product-page-top-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "cycora_image",
+      "label": "Cycora Image"
+    },
+    {
+      "type": "richtext",
+      "id": "cycora_description",
+      "label": "Cycora description",
+      "default": "<p>cycora® is regenerated fabric created from post-consumer, landfill-destined textile 'waste.’ cycora® is regenerated fabric created from post-consumer.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product - Main"
+    }
+  ]
+}
+{% endschema %}

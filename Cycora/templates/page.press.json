@@ -1,0 +1,211 @@
+{
+  "sections": {
+    "16554551086c0c5990": {
+      "type": "press-head",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/3_683eb63f-a9e3-4441-8c9b-c9325cc2bedf.png",
+        "title": ""
+      }
+    },
+    "1655466002c17dbb2a": {
+      "type": "press-brand",
+      "blocks": {
+        "c284399e-4163-4391-880e-a0ce6484d56e": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/cycora_logo.png?v=1657840743",
+            "image": "shopify:\/\/shop_images\/brand1.png"
+          }
+        },
+        "525fd793-2f8f-4da3-82be-3ce0421f1d4a": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/cycora_logo_white.png?v=1657922961",
+            "image": "shopify:\/\/shop_images\/brand2.png"
+          }
+        },
+        "47290714-13f2-400c-9528-9a4a7a226ba5": {
+          "type": "item",
+          "disabled": true,
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/00_-_LOGO_transparent_99bba14a-cd77-40c2-b73a-6b930bdf05ae.png?v=1657840822",
+            "image": "shopify:\/\/shop_images\/brand3.png"
+          }
+        }
+      },
+      "block_order": [
+        "c284399e-4163-4391-880e-a0ce6484d56e",
+        "525fd793-2f8f-4da3-82be-3ce0421f1d4a",
+        "47290714-13f2-400c-9528-9a4a7a226ba5"
+      ],
+      "settings": {
+        "title": "resources",
+        "subtitle": "brand assets"
+      }
+    },
+    "1655466019f4b93326": {
+      "type": "press-photography",
+      "blocks": {
+        "4d50ffcf-3138-454c-a56d-899f36d3aed2": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/Shredded_Textiles.png?v=1695426513",
+            "image": "shopify:\/\/shop_images\/Shredded_Textiles.png"
+          }
+        },
+        "85ce44e4-34c0-448a-9622-3612a685f51b": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/yarn-spinning.jpg?v=1695426669",
+            "image": "shopify:\/\/shop_images\/yarn-spinning.jpg"
+          }
+        },
+        "c55e09aa-681b-49c8-9cf6-e138700f7cb4": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/cycoraA_x_Saucony_-_final_product_in_garment.png?v=1695426346",
+            "image": "shopify:\/\/shop_images\/cycoraA_x_Saucony_-_final_product_in_garment.png"
+          }
+        },
+        "bb8c9537-c3e4-4f10-9cf2-bbf150497f88": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/Ambercycle_4_22189_1.jpg?v=1656026186",
+            "image": "shopify:\/\/shop_images\/Ambercycle_4_22189_1_9154ebc6-a0c2-4cf5-9ab1-26f3ac1b2611.jpg"
+          }
+        },
+        "aa3e1b6f-8440-4bb2-9f35-8d06d8e9793f": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/Regenerated_Pellets_1.jpg?v=1695426548",
+            "image": "shopify:\/\/shop_images\/Regenerated_Pellets_1.jpg"
+          }
+        },
+        "b41dabb7-afdb-429f-9979-88d604708e49": {
+          "type": "item",
+          "settings": {
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/2021206_CycoraxH_M_ML-83.jpg?v=1657821669",
+            "image": "shopify:\/\/shop_images\/undesigning-film-april-27-23-05-min.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "4d50ffcf-3138-454c-a56d-899f36d3aed2",
+        "85ce44e4-34c0-448a-9622-3612a685f51b",
+        "c55e09aa-681b-49c8-9cf6-e138700f7cb4",
+        "bb8c9537-c3e4-4f10-9cf2-bbf150497f88",
+        "aa3e1b6f-8440-4bb2-9f35-8d06d8e9793f",
+        "b41dabb7-afdb-429f-9979-88d604708e49"
+      ],
+      "settings": {
+        "title": "photography",
+        "link": ""
+      }
+    },
+    "1655791653fa80585c": {
+      "type": "press-approved",
+      "blocks": {
+        "f76e048d-1b31-4f73-9a05-300979ac0af7": {
+          "type": "item",
+          "settings": {
+            "title": "about cycora®",
+            "description": "<p>cycora® is regenerated polyester made from end-of-life textiles, offering the same versatility and strength as conventional petroleum-derived materials, at a fraction of the environmental cost.<\/p><p><\/p><p>cycora® materials are displacing reliance on the earth's raw resources, bringing us one step closer to living in material harmony.<\/p><p><\/p>"
+          }
+        },
+        "cc9d14a5-1d36-439e-a92b-894c9825c955": {
+          "type": "item",
+          "settings": {
+            "title": "impact",
+            "description": "<p>cycora® materials help divert ‘waste’ away from landfills, reduce greenhouse emissions compared to traditional material production, and minimize reliance on raw materials extracted from the earth.<br\/><br\/>To learn more about our impact, please contact us at press@ambercycle.com.<\/p>"
+          }
+        },
+        "657326dc-2fe8-4db9-b4d0-1fc9c8cc6e92": {
+          "type": "item",
+          "settings": {
+            "title": "boiler plate",
+            "description": "<p>Ambercycle is the ecosystem for circular textiles. Established in 2015, this Los Angeles-based company is revolutionizing the fashion industry with its award-winning molecular regeneration technology.  cycora® regenerated polyester is the company’s first premium material solution made from end-of-life textiles. Driven by the vision to improve humanity’s relationship with materials, Ambercycle is minimizing the impact of raw material extraction on our environment and paving the way to decarbonize fashion. <\/p>"
+          }
+        },
+        "ecbeb2f8-f51d-4bed-b754-2498a984d1d9": {
+          "type": "item",
+          "settings": {
+            "title": "trademark usage",
+            "description": "<p>In order to utilize the cycora® name and trademark, you must have approval and an agreement in place with Ambercycle, Inc. Please contact our team directly for inquiries on utilizing cycora® material in your products. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f76e048d-1b31-4f73-9a05-300979ac0af7",
+        "cc9d14a5-1d36-439e-a92b-894c9825c955",
+        "657326dc-2fe8-4db9-b4d0-1fc9c8cc6e92",
+        "ecbeb2f8-f51d-4bed-b754-2498a984d1d9"
+      ],
+      "settings": {
+        "title": "approved copy"
+      }
+    },
+    "16554551145d164b11": {
+      "type": "press-articles",
+      "blocks": {
+        "a655f1b6-7f72-442f-935c-963b651b5e79": {
+          "type": "item",
+          "settings": {
+            "title": "The College Graduates Behind The Breakthrough Solution To Fast Fashion’s Waste Problem",
+            "link": "https:\/\/www.forbes.com\/sites\/mariannelehnis\/2023\/08\/24\/from-campus-to-catwalk-the-college-graduates-behind-the-breakthrough-solution-to-fast-fashions-waste-problem\/?sh=1b61dac35862",
+            "image": "shopify:\/\/shop_images\/Moby_Ahmed_Shay_Sethi_Founders.jpg"
+          }
+        },
+        "327795a4-7b76-4f5e-81be-f753d894a5da": {
+          "type": "item",
+          "settings": {
+            "title": "Pertex® x cycora® Develop High-Performance Circular Fabric",
+            "link": "https:\/\/www.textileworld.com\/textile-world\/2022\/10\/pertex-and-cycora-to-collaborate-on-development-of-high-performance-circular-fabric-for-the-outdoor-and-sportswear-industry\/",
+            "image": "shopify:\/\/shop_images\/Ambercycle_4_22_27_93ba95dc-927f-4ea8-a0ff-922bf354eef4.jpg"
+          }
+        },
+        "f38071ae-caf7-43c7-a814-2ccf0e7684ed": {
+          "type": "item",
+          "settings": {
+            "title": "Ambercycle Raises $21.6 Million",
+            "link": "https:\/\/www.ambercycle.com\/news\/ambercycle-raises-21-6-million-to-build-circularity-ecosystem-in-the-fashion-industry",
+            "image": "shopify:\/\/shop_images\/6255f62a948ed83768c71d2a_Ambercycle-Raises-21.6M.jpg"
+          }
+        },
+        "9de028b7-04ec-4530-bbbb-49788de62ec2": {
+          "type": "item",
+          "settings": {
+            "title": "forbes \/ 30 under 30",
+            "link": "https:\/\/www.forbes.com\/profile\/ambercycle\/?sh=6f3969d422cb",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-07-12_at_2.11.08_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "a655f1b6-7f72-442f-935c-963b651b5e79",
+        "327795a4-7b76-4f5e-81be-f753d894a5da",
+        "f38071ae-caf7-43c7-a814-2ccf0e7684ed",
+        "9de028b7-04ec-4530-bbbb-49788de62ec2"
+      ],
+      "settings": {
+        "title": "resources",
+        "subtitle": "company updates"
+      }
+    },
+    "1655455120eb5f7a8f": {
+      "type": "press-bottom",
+      "settings": {
+        "title": "press inquiries",
+        "button_title": "contact us",
+        "button_link": "shopify:\/\/pages\/contact"
+      }
+    }
+  },
+  "order": [
+    "16554551086c0c5990",
+    "1655466002c17dbb2a",
+    "1655466019f4b93326",
+    "1655791653fa80585c",
+    "16554551145d164b11",
+    "1655455120eb5f7a8f"
+  ]
+}

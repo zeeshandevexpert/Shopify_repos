@@ -1,0 +1,138 @@
+<section class="image-text-blurb" style="z-index: {{section.settings.index}};">
+    {% if section.settings.bg_image %}
+        <div class="bg-img">
+        <img src="{{ section.settings.bg_image |  img_url: 'master' }}" alt="">
+    </div>    
+    {% endif %}
+
+  <div class="image-text-blurb-container{% if section.settings.reverse %} revert{% endif %}{% if section.settings.small %} small-font-style{% endif %}">
+        <div class="blurb-content">
+            <div class="blurb-heading">
+                <h2>{{ section.settings.heading }} </h2>
+            </div>
+            <div class="blurb-subtext">
+              {{ section.settings.description }}
+            </div>
+            {% if section.settings.button_title != blank %}
+                <div class="blurb-button">
+                    <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+                </div>
+            {% endif %}
+        </div>
+        {% if section.settings.type == "image" %}
+
+            <div class="blurb-image{% if section.settings.large %} full-width{% endif %}">
+                <div class="image-wrap">
+                    <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+                </div>
+            </div>  
+
+        {% endif %}
+      
+        {% if section.settings.type == "video" %}
+            <div class="blurb-video">
+                <div class="video-wrap">
+                    <video src="{{ section.settings.video_media }}" controls></video>
+                </div>
+                {% comment %} {{ section.settings.video_media.sources[0].url }} {% endcomment %}
+            </div>
+        {% endif %}
+        {% comment %} <?php if($block['video_or_image'] == "image"){ ?>
+          
+        <?php } ?>
+        <?php if($block['video_or_image'] == "video"){ ?>
+      
+        <?php } ?> {% endcomment %}
+    </div>
+</section>
+
+{% schema %}
+    {
+      "name": "Blurb Section",
+      "settings": [
+        {
+        "type": "range",
+        "id": "index",
+        "min": 0,
+        "max": 9,
+        "step": 1,
+        "label": "Z-index",
+        "default": 6
+      },
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "small",
+          "label": "Small Font",
+          "default":false
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse Block"
+        },
+        {
+          "type": "checkbox",
+          "id": "large",
+          "label": "Large Image",
+          "default":false
+        },
+        {
+        "type": "select",
+        "id": "type",
+        "label": "Select Type",
+        "options": [
+            {
+            "value": "image",
+            "label": "Image"
+            },
+            {
+            "value": "video",
+            "label": "Video"
+            }
+        ],
+        "default": "image"
+        },
+     
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "video_media",
+          "label": "Video Url self Hosted"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ],
+      "presets": [
+        {
+            "name": "Blurb Section"
+        }
+      ]
+    }
+    {% endschema %}

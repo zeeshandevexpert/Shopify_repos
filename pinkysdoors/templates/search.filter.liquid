@@ -1,0 +1,67 @@
+{% paginate search.results by 50 %}
+
+<div class="page-width">
+
+  <div class="grid">
+    <div class="grid__item medium-up--two-fifths medium-up--push-three-tenths">
+      <form action="/search" method="get" role="search" class="search">
+        <div aria-live="polite" class="form-message form-message--error search-result-error-message hide" data-search-error-message>
+          <ul id="error-search-form">
+            <li>{{ 'general.search.empty_search_message' | t }}</li>
+          </ul>
+        </div>
+
+        <div class="input-group">
+          <input type="search"
+                 id="SearchInput"
+                 class="input-group__field search__input"
+                 name="q"
+                 value="{{ search.terms | escape }}"
+                 placeholder="{{ 'general.search.placeholder' | t }}"
+                 aria-label="{{ 'general.search.placeholder' | t }}"
+                 >
+          <span class="input-group__btn">
+            <button id="SearchResultSubmit" class="btn search__submit" type="submit">{{ 'general.search.submit' | t }}</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  {% if search.performed and search.results_count == 0 %}
+  <hr class="hr--small hr--invisible" aria-hidden="true" />
+  <div class="rte">
+    <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+  </div>
+  {% endif %}
+
+</div>
+
+
+{% if search.performed %}
+{% assign the_products = '' %}
+{% assign the_articles = '' %}
+{% assign the_pages = '' %}
+{% assign alreadyChecked = false %}
+<h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+<div class="page-width">
+  {% for item in search.results %}
+  {% if item.object_type == 'product' %}
+  {% capture the_products %}{{the_products}}
+  <div class="grid__item medium-up--one-third small--one-half">{% include 'product-card-grid', product: item %}</div>
+  {% endcapture %}
+  {% endif %}
+  {% endfor %}
+
+  {% if the_products != '' %}
+  <div class="search-page__products search-page__tab">
+    <div class="search-page__inner grid flex flex--wrap">{{the_products}}</div>
+  </div>
+  {% endif %}
+
+</div>
+
+
+{% endif %}
+
+{% endpaginate %}

@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "custom-main-collection",
+      "blocks": {
+        "custom_banner_EfRp7P": {
+          "type": "custom_banner",
+          "settings": {
+            "bgclr": "#ebebeb",
+            "title": "BUY 2 OR MORE",
+            "text": "Free Gift Box + Shipping"
+          }
+        },
+        "custom_banner_KTwBLH": {
+          "type": "custom_banner",
+          "settings": {
+            "bgclr": "#ebebeb",
+            "title": "BUY 5 OR MORE",
+            "text": "Free Custom Travel Jewellery Box + Shipping"
+          }
+        }
+      },
+      "block_order": [
+        "custom_banner_EfRp7P",
+        "custom_banner_KTwBLH"
+      ],
+      "settings": {
+        "enable_banner": false,
+        "collection_banner_image": "shopify:\/\/shop_images\/Outrage_London_Banner-2_2_8cddd1de-a44e-4464-89d8-1b9115fc3ac2.jpg",
+        "heading": "NEW GIFT BOX",
+        "banner_text": "Lorem IpsumLorem IpsumLorem IpsumLorem Ipsum",
+        "banner_btn_text": "Shop Now",
+        "banner_btn_link": "#"
+      }
+    }
+  },
+  "order": [
+    "main-collection"
+  ]
+}

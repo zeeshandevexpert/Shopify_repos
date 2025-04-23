@@ -1,0 +1,90 @@
+<style>
+
+  .custom-ann-wrapper{
+  background: {{section.settings.bbg}};
+  text-align: center;
+}
+.custom-ann-text{
+  font-size: 13px;
+  color: {{section.settings.ffg}};
+  padding: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.custom-ann-text *{
+  font-size: 13px;
+  color: {{section.settings.ffg}};
+      margin: 0;
+}
+
+    @media screen and (max-width: 767px){
+.custom-ann-text{
+flex-direction: column;
+  gap: 0;
+}
+
+  }
+  </style>
+
+
+
+      {% if section.blocks.size > 0 and section.settings.ann %}
+        <div class="custom-ann-wrapper">
+          <div class="page-width">
+          <swiper-container slides-per-view="1" loop="true" autoplay="true" autoplay-delay="4000">
+            {% for block in section.blocks %}
+              {% if block.settings.text != blank %}
+              <swiper-slide>
+                <div class="custom-ann-text">{{ block.settings.text }}</div>
+                </swiper-slide>
+              {% endif %}
+            {% endfor %}
+          </swiper-container>
+          </div>
+        </div>
+      {% endif %}
+
+{% schema %}
+{
+  "name": "Custom Announcement",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "ann",
+      "label": "Enable Announcement Bar",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bbg",
+      "label": "Announcement Bg Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "ffg",
+      "label": "Announcement Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Announcement Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Your text here</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

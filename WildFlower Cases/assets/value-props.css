@@ -1,0 +1,29 @@
+.value-props {
+  justify-content: center;
+}
+
+.value-prop {
+  min-width: 120px;
+  text-align: center;
+}
+
+.value-prop__icon {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  margin: 0px auto;
+  border: 1px solid rgb(var(--color-foreground));
+  border-radius: 50%;
+  position: relative;
+}
+
+.value-prop__text {
+  font-size: 1.1rem;
+}
+
+.value-prop__icon svg {
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

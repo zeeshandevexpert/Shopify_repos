@@ -1,0 +1,12 @@
+{% capture src %}{% include 'shortcode-render' render: 'src' %}{% endcapture %}
+{% capture alt %}{% include 'shortcode-render' render: 'alt' %}{% endcapture %}
+{%- assign img_url = src | file_img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+{%- assign loading = src | file_img_url: '100x' -%}
+<p>
+<img class="feature-row__image lazyfade lazyload"
+     src="{{loading}}"
+     data-src="{{ img_url }}"
+     data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+     data-sizes="auto"
+     width="100%"
+     alt="{{alt}}" /></p>

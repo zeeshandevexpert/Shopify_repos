@@ -1,0 +1,18 @@
+<div class="collab">
+  <div class="collab__image">
+    {%- liquid 
+    render 'image-element', image: block.settings.image, image_ratio: 'portrait'
+    if block.settings.image_hover != blank
+      render 'image-element', image: block.settings.image_hover, image_ratio: 'portrait'
+    endif 
+    -%}
+  </div>
+  <div class="collab__content">
+    <h3 class="collab__title">{{ block.settings.title }}</h3>
+  </div>
+  {% if block.settings.link != blank %}
+  <a href="{{ block.settings.link }}" class="link--fill-parent">
+    <span class="visually-hidden">{{ block.settings.title }}</span>
+  </a>
+  {% endif %}
+</div>

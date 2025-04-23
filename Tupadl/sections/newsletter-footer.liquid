@@ -1,0 +1,111 @@
+<div class="newsletter-block">
+    <div class="container">
+        <div class="newsletter-left-col">
+            <div class="icon">
+                <img src="{{ section.settings.icon |  img_url: 'master' }}" alt="">
+            </div>
+            <div class="text">
+                <h4>{{ section.settings.form_heading }}</h4>
+                {{ section.settings.subtext }}
+            </div>
+        </div>
+        <div class="newsletter-right-col">
+          {%- form 'customer', id: 'ContactFooter', class: 'footer__newsletters' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <div class="newsletter-form__field-wrappers">
+              <div class="fields">
+
+                <input
+                  id="NewsletterForm--{{ section.id }}"
+                  type="email"
+                  name="contact[email]"
+                  class="field__input_e"
+                  value="{{ form.email }}"
+                  aria-required="true"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="email"
+                  {% if form.errors %}
+                    autofocus
+                    aria-invalid="true"
+                    aria-describedby="ContactFooter-error"
+                  {% elsif form.posted_successfully? %}
+                    aria-describedby="ContactFooter-success"
+                  {% endif %}
+                  placeholder="Email Address"
+                  required
+                >
+                {% comment %} <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                  {{ 'newsletter.label' | t }}
+                </label> {% endcomment %}
+                <button type="submit">Submit</button>
+              </div>
+              {%- if form.errors -%}
+                <small class="newsletter-form__message form__message" id="ContactFooter-error">
+                  {%- render 'icon-error' -%}
+                  {{- form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email -}}
+                </small>
+              {%- endif -%}
+            </div>
+            {%- if form.posted_successfully? -%}
+              <h3
+                class="newsletter-form__message newsletter-form__message--success form__message"
+                id="ContactFooter-success"
+                tabindex="-1"
+                autofocus
+              >
+                {% render 'icon-success' -%}
+                {{- 'newsletter.success' | t }}
+              </h3>
+            {%- endif -%}
+          {%- endform -%}
+          
+            {% comment %} <form action="">
+                <input type="email" name="" id="" placeholder="Email Address">
+                <button type="submit">Submit</button>
+            </form> {% endcomment %}
+
+            <p class="subtext">
+              {{ section.settings.form_text }}
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Newsletter Footer",
+    "settings": [
+            {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+            },
+            {
+            "type": "text",
+            "id": "form_heading",
+            "default": "SUBSCRIBE FOR MORE UPDATED",
+            "label": "Heading"
+            },
+            {
+            "type": "richtext",
+            "id": "subtext",
+            "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</p>",
+            "label": "Text"
+            },
+            {
+            "type": "inline_richtext",
+            "id": "form_text",
+            "default": "Stay Informed, Stay Inspired: Your Weekly Source of News and Insights.",
+            "label": "Text"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Footer Newsletter"
+            }
+        ]
+}
+{% endschema %}

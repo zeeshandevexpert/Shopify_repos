@@ -1,0 +1,90 @@
+/* Old, replacing with new since we're already using jquery might as well... */
+function addPoElement(){
+         var inputNode = document.createElement("input");
+         inputNode.setAttribute("type", "text")
+         inputNode.setAttribute("name", "checkout[note]");
+         inputNode.setAttribute("class", "field__input");
+         inputNode.setAttribute("placeholder", "PO Number (optional)");
+         inputNode.style.width ="50%";
+         var containerNode=document.createElement("div");
+         containerNode.style.marginTop = "10px";
+         containerNode.style.border="1px solid #d9d9d9";
+         containerNode.style.borderRadius = "4px"
+         containerNode.style.backgroundColor = "#fafafa";
+         containerNode.style.padding = "1.1428571429em";
+         containerNode.appendChild(inputNode)
+         var selectorEle = document.querySelector('.step__sections');
+         selectorEle.parentNode.insertBefore(containerNode, selectorEle.nextSibling);
+       }
+       
+       var updatePOvalue = function(MyEle){
+         var xhr = new XMLHttpRequest();
+         xhr.withCredentials = true;
+
+         xhr.addEventListener("readystatechange", function() {
+           if(this.readyState === 4) {
+			 var response = JSON.parse(this.responseText);
+             if(response.note && response.note != ""){
+//                if(Shopify.Checkout.step == "thank_you"){
+                 
+//                }
+//                if(Shopify.Checkout.step == "contact_information"){
+				var ele = document.getElementsByName("checkout[note]")
+                if(ele && ele.length == 1){
+                  ele[0].value = response.note;
+                }
+//                }
+             }
+           }
+         });
+
+         xhr.open("GET", "/cart.json");
+         xhr.send();
+       }
+       
+//        function addPOtothankyou(){
+//           var rowNode = document.createElement('div');
+//           rowNode.setAttribute("class", "content-box__row");
+//           rowNode.style.borderTop = 'none';
+//           var sectionNode = document.createElement('div');
+//           sectionNode.setAttribute("class", "section__content");
+//           var sectionContent = document.createElement('div')
+//           sectionContent.setAttribute("class", "section__content__column");
+//           var textContainer = document.createElement("div")
+//           textContainer.setAttribute("class", "text-container");
+
+//           var heading= document.createElement("h3");
+//           heading.setAttribute("class", "heading-3");
+//           var headingText = document.createTextNode("PO Number");
+
+//           var para = document.createElement("p");
+//           para.setAttribute("class","add-po");
+
+//           heading.appendChild(headingText);
+//           textContainer.appendChild(heading);
+//           textContainer.appendChild(para);
+//           sectionContent.appendChild(textContainer);
+//           sectionNode.appendChild(sectionContent);
+//           rowNode.appendChild(sectionNode);
+
+//           return rowNode
+//         }
+       
+       
+       if(Shopify.Checkout.step == "contact_information"){
+         addPoElement();
+       	 updatePOvalue();  
+       }
+//        if(Shopify.Checkout.step == "thank_you"){
+//          var customerInformationNode = document.querySelector('.thank-you__additional-content').nextElementSibling
+//          if(customerInformationNode.textContent.toLowerCase().includes("customer information")){
+//            var contentBox = customerInformationNode.querySelectorAll('.content-box')
+//            for(var i=0; i< contentBox.length; i++){
+//              if(contentBox[i].textContent.toLowerCase().includes("customer information")){
+//                var newNode = addPOtothankyou()
+//                contentBox[i].appendChild(newNode);
+// //                updatePOvalue();
+//              }
+//            }
+//          }
+//        }

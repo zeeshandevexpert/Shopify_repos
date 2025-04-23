@@ -1,0 +1,136 @@
+.collection{
+    padding: 50px 20px;
+    .collection-container{
+        max-width: 1600px;
+        margin: 0 auto;
+        .subheading{
+            margin-bottom: 10px;
+            h4{
+                text-align: center;
+                font-family: $sportingregular;
+                font-size: 14px;
+                color: $green;
+            }    
+        }
+        .heading{
+            margin-bottom: 30px;
+            h2{
+                text-align: center;
+                font-family: $sportingbold;
+                font-size: 50px;
+                color: $black;
+                @media screen and (max-width: 991px) {
+                    font-size: 38px;
+                }
+                color: $black;
+                @media screen and (max-width: 567px) {
+                    font-size: 32px;
+                }
+            }    
+        }
+        .collection-wrap{
+            @media screen and (max-width:1024px) {
+                height: 70vh;
+            }
+            .inner{
+                display: flex;
+                height: 100% !important;
+                .slick-track{
+                    height: 100%;
+                }
+                .collection-item{
+                    flex-basis: 33.3333333333%;
+                    position: relative;
+                    height: 100%;
+                    overflow: hidden;
+                    img{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .wrap-title-line{
+                        display: flex;
+                        align-items: center;
+                        position: absolute;
+                        // left: 10px;
+                        z-index: 10;
+                        bottom: 0px;
+                        width: 100%;
+                    }
+
+                    .category-name{
+                        font-size: 35px;
+                        font-family: $sportingregular;
+                        color: $whitealt;
+                       margin:0 10px;
+                        text-transform: uppercase;
+                        @media screen and (max-width:1024px) {
+                            font-size: 26px;
+                            bottom: 100px;
+                        }
+                        @media screen and (max-width: 567px) {
+                            bottom: 120px;
+                        }
+                     
+                    }
+                     .line{
+                    //     position: absolute;
+                    //     background: $whitealt;
+                    //     height: 7px;
+                    //     right: 0;
+                    //     width: 100%;
+                    //     z-index: 5;
+                    //     bottom: 30px;
+                    //     display: block;
+                    flex-grow: 1;
+                    border: 4px solid $green;
+                    display: block;
+                    margin-bottom: 5px;
+                     }
+                }   
+                
+                
+                .slick-dots{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    bottom: -30px;
+                    li{
+                        button{
+                            border: 1px solid black;
+                            border-radius: 50% ;   
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            padding: 0;
+                            &::before{
+                                font-size: 8px ; 
+                                opacity: 1;    
+                                position: unset;
+                                content: '';
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 50%;
+                                background: #000;
+                            } 
+                        }
+                        &.slick-active{
+                            button{
+                               
+                                &::before{
+                                width: 12px;
+                                height: 12px; 
+                                } 
+                            }
+                        }
+                    }
+                } 
+                
+               
+            }    
+        }    
+    }    
+}

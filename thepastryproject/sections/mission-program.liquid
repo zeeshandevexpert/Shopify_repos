@@ -1,0 +1,198 @@
+{{ 'mission-program.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}-padding {
+     padding-top: {{ section.settings.padding_top | times: 0.75 }}px;
+     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 }}px;
+    }
+
+    @media screen and (min-width: 991px) {
+    .section-{{ section.id }}-padding {
+     padding-top: {{ section.settings.padding_top }}px;
+     padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+    {% if section.settings.text_color != blank %}
+    .section-{{ section.id }}-padding {
+     color: {{ section.settings.text_color }};
+    }
+    {% endif %}
+
+    .section-{{ section.id }}-padding {
+      {% if section.settings.background_image != blank %}
+      background-image: url("{{ section.settings.background_image | image_url: width: 1920 }}");
+      {% endif %}
+      {% if section.settings.background != blank and section.settings.background_image == blank %}
+      background-color: {{ section.settings.background }};
+      {% endif %}
+    }
+{% endstyle %}
+
+<div
+  class="section-{{ section.id }}-padding mission-program"
+>
+  <div class="container">
+    <div class="mission-program__wrap">
+      {% if section.settings.image != blank %}
+        <div class="image__wrap">
+          {% if section.settings.image != blank %}
+            <div class="main__image">
+              {{ section.settings.image | image_url: width: 400 | image_tag }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <div class="content_wrap">
+        <div class="content-background">
+          <div class="content-group">
+            <content-item class="content-item">
+              {% if section.settings.title != blank %}
+                <h2 class="sectionHeading">{{ section.settings.title }}</h2>
+              {% endif %}
+
+              {% if section.settings.content != blank %}
+                <div class="content rte">
+                  {{ section.settings.content }}
+                </div>
+              {% endif %}
+
+              {% if section.settings.button_text != blank %}
+                <div class="mw-100">
+                  <a
+                    href="{{ section.settings.button_link }}"
+                    class="btn btn-primary btn-image-text"
+                  >
+                    {{ section.settings.button_text }}
+                  </a>
+                </div>
+              {% endif %}
+            </content-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Mission Program",
+  "class": "mission-program-text",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 100
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#f6ede6"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "header",
+      "content": "Overlay Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Overlay Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading",
+        "de": "Überschrift",
+        "es": "Encabezado",
+        "fr": "Rubrique",
+        "pt-PT": "Título"
+      },
+      "default": {
+        "en": "Share brand or product details",
+        "de": "Marken- oder Produktdetails teilen",
+        "es": "Compartir marca o detalles del producto",
+        "fr": "Partager les infos sur la marque ou le produit",
+        "pt-PT": "Partilhar detalhes da marca ou produto"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": {
+        "en": "Text",
+        "de": "Text",
+        "es": "Texto",
+        "fr": "Texte",
+        "pt-PT": "Texto"
+      },
+      "default": {
+        "en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "de": "<p>Fügen Sie langen Texten ein Bild hinzu, um dem Produkt, der Kollektion oder dem Blogpost Ihrer Wahl Fokus zu verleihen. Fügen Sie Details bezüglich der Verfügbarkeit oder dem Stil hinzu oder stellen Sie sogar eine Rezension zur Verfügung.</p>",
+        "es": "<p> Combine texto grande con una imagen para focalizar la atención en su producto, colección o publicación del blog. Añada detalles sobre la disponibilidad, el estilo o, incluso, un comentario. </p>",
+        "fr": "<p>Associez un texte en gros caractères à une image pour mettre en valeur le produit, la collection ou l'article de blog que vous avez choisi. Ajoutez des détails sur la disponibilité et le style ou même fournissez un commentaire.</p>",
+        "pt-PT": "<p>Associe um texto de grandes dimensões a uma imagem para destacar o seu produto, coleção ou publicação no blog de eleição. Acrescente detalhes relativos à disponibilidade, estilo, ou até mesmo uma opinião.</p>"
+      }
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Mission Program",
+      "category": "Image"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "product",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "search"
+    ]
+  }
+}
+{% endschema %}

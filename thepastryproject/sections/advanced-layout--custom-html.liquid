@@ -1,0 +1,165 @@
+{% style %}
+  .section-{{ section.id }}-margin {
+     margin-top: {{ section.settings.margin_top | times: 0.75 }}px;
+     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 }}px;
+    }
+
+    @media screen and (min-width: 991px) {
+    .section-{{ section.id }}-margin {
+     margin-top: {{ section.settings.margin_top }}px;
+     margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="section-{{ section.id }}-margin">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      {% for block in section.blocks %}
+        {% case block.settings.width %}
+          {% when '25%' %}
+            {%- assign block_width = 'col-md-3 col-12' -%}
+          {% when '33%' %}
+            {%- assign block_width = 'col-md-4 col-12' -%}
+          {% when '50%' %}
+            {%- assign block_width = 'col-md-6 col-12' -%}
+          {% when '66%' %}
+            {%- assign block_width = 'col-md-8 col-12' -%}
+          {% when '75%' %}
+            {%- assign block_width = 'col-md-9 col-12' -%}
+          {% when '100%' %}
+            {%- assign block_width = 'col-md-12' -%}
+        {% endcase %}
+
+        <div class="{{ block_width }}" {{ block.shopify_attributes }}>
+          <div class="rte">
+            {{ block.settings.code }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom HTML",
+  "class": "homepage-section--html-wrapper wow",
+  "settings": [
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0
+    }
+  ],
+  "max_blocks": 9,
+  "blocks": [
+    {
+      "type": "html",
+      "name": "Custom HTML",
+      "settings": [
+        {
+          "type": "html",
+          "id": "code",
+          "label": "HTML",
+          "default": "<div style='text-align:center; padding: 50px 0;'><h2>Use HTML to format your text so it can be easily read.</h2>This text can be used to share information about your brand with customers.</div>"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Container width",
+          "default": "100%",
+          "options": [
+            {
+              "value": "25%",
+              "label": {
+                "en": "25%",
+                "de": "25 %",
+                "es": "25%",
+                "fr": "25 %",
+                "pt-PT": "25 %"
+              }
+            },
+            {
+              "value": "33%",
+              "label": {
+                "en": "33%",
+                "de": "33 %",
+                "es": "33%",
+                "fr": "33 %",
+                "pt-PT": "33 %"
+              }
+            },
+            {
+              "value": "50%",
+              "label": {
+                "en": "50%",
+                "de": "50 %",
+                "es": "50%",
+                "fr": "50 %",
+                "pt-PT": "50 %"
+              }
+            },
+            {
+              "value": "66%",
+              "label": {
+                "en": "66%",
+                "de": "66 %",
+                "es": "66%",
+                "fr": "66 %",
+                "pt-PT": "66 %"
+              }
+            },
+            {
+              "value": "75%",
+              "label": {
+                "en": "75%",
+                "de": "75 %",
+                "es": "75%",
+                "fr": "75 %",
+                "pt-PT": "75 %"
+              }
+            },
+            {
+              "value": "100%",
+              "label": {
+                "en": "100%",
+                "de": "100 %",
+                "es": "100%",
+                "fr": "100 %",
+                "pt-PT": "100 %"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom HTML",
+      "category": "Advanced layout",
+      "blocks": [
+        {
+          "type": "html"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

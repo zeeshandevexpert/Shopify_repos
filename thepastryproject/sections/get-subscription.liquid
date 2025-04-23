@@ -1,0 +1,244 @@
+<style>
+ /* .get-subscription-section-outer{
+  background-color: {{ section.settings.getSection--background-color }};
+}  */
+.btn{
+  /* color: {{ section.settings.getSection--background-text-color }} !important;
+  background-color: {{ section.settings.button--background-color }}; */
+}
+ 
+{% comment %} .section-padding{
+    padding-top: {{ section.settings.font_padding }}px ;
+    padding-bottom: {{ section.settings.font_padding }}px ;
+} {% endcomment %}
+
+  .get-subscription-section-outer{
+    padding-bottom: 100px;
+    padding-top:130px;
+  }
+
+
+@media(max-width: 991px){
+  .get-subscription-section-outer {
+    padding-bottom: 60px;
+    padding-top: 90px;
+  }
+ }
+
+
+</style>
+<div class="get-subscription-section-outer  {% if section.settings.font_padding != blank %}section-padding{% endif %}" style="background-color: {{ section.settings.getSection--background-color }};">
+  
+  <div class="container">
+
+  <div class="row align-items-center {% if section.settings.flip_id != blank %}flex-row-reverse{% endif %} " >
+
+  <div class="col-12 col-lg-6 d-flex justify-content-lg-start justify-content-center{% if section.settings.flip_id != blank %} justify-content-lg-end  reverseContentColumn{% endif %}">
+
+<div class="contentImageColumnOuter position-relative">
+    
+       <div class="get-subscription-arrowContent position-absolute">
+       {% if section.settings.get_subscription_title != blank %}
+        <span class="arrowContentText">{{ section.settings.get_subscription_title }}</span>
+      {% endif %}
+  
+      {% if section.settings.get_subscription_arrow != blank %}
+        <span class="arrowContentIndicaton">{{ section.settings.get_subscription_arrow }}</span>
+      {% endif %}
+      
+       </div>
+        <div class="get-subscription-image">
+          <img class="get-subscription-img" alt=""  src="{{ section.settings.get_subscription_image | img_url: ' ' }}" />
+        </div>
+        <div class="get-subscription-freeShipping position-absolute">
+        {% if section.settings.arrow_image != blank %}
+        <div class="freeShipping-img"><img class="arrow-img" alt="" src="{{ section.settings.arrow_image | img_url: ' ' }}" /></div>
+        {% endif %}
+        <span></span>
+        </div>  
+</div>
+  </div>
+
+    <div class="col-12 col-lg-6">
+ <div class="get-subscription-right-content">
+         {% if section.settings.get_subscription_heading != blank %}
+              <h3 class="sectionSubheading">{{ section.settings.get_subscription_heading }}</h3>
+            {% endif %}
+               {% if section.settings.get_subscription_subheading != blank %}
+              <h2 class="sectionHeading">{{ section.settings.get_subscription_subheading }}</h2>
+            {% endif %}
+              {% if section.settings.get_subscription_points != blank %}
+               {{ section.settings.get_subscription_points }}
+            {% endif %}
+         </div>
+          <div class="get-subscription-right-button">
+          <a class="btn btn-primary" href="{{ section.settings.link }}">
+         {{ section.settings.linktext }}
+          </a>
+          </div>
+
+      
+    </div>
+    
+  </div>
+</div>
+
+</div>
+
+{% comment %}
+
+<div class="get-subscription-section-outer">
+    <div class="get-subscription-left">
+           
+             <div class="get-subscription-arrowContent">
+             {% if section.settings.get_subscription_title != blank %}
+              <span>{{ section.settings.get_subscription_title }}</span>
+            {% endif %}
+
+            {% if section.settings.get_subscription_arrow != blank %}
+              <span>{{ section.settings.get_subscription_arrow }}</span>
+            {% endif %}
+            
+             </div>
+             <div class="get-subscription-image">
+                    <img class="get-subscription-img" alt="" src="{{ section.settings.get_subscription_image | img_url: 'large' }}" />
+                  </div>
+            <div class="get-subscription-freeShipping">
+              {% if section.settings.arrow_image != blank %}
+               <div class="freeShipping-img"><img class="arrow-img" alt="" src="{{ section.settings.arrow_image | img_url }}" /></div>
+                {% endif %}
+               <span></span>
+             </div>      
+      </div>   
+    <div class="get-subscription-right">
+         <div class="get-subscription-right-content">
+         {% if section.settings.get_subscription_heading != blank %}
+              <h3>{{ section.settings.get_subscription_heading }}</h3>
+            {% endif %}
+               {% if section.settings.get_subscription_subheading != blank %}
+              <h2>{{ section.settings.get_subscription_subheading }}</h2>
+            {% endif %}
+              {% if section.settings.get_subscription_points != blank %}
+               {{ section.settings.get_subscription_points }}
+            {% endif %}
+         </div>
+          <div class="get-subscription-right-button">
+          <a href="{{ section.settings.link }}">
+         <span class="right-buttontext"> {{ section.settings.linktext }}</span>
+          </a>
+          </div>
+   
+    </div>
+
+</div>
+
+
+
+
+{% endcomment %}
+
+
+{% schema %}
+  {
+    "name": "Home Text With Image",
+    "settings": [
+      {
+    "type": "range",
+    "id": "font_padding",
+    "min": 12,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "label": "Padding",
+    "default": 16
+    },
+    {
+    "type": "checkbox",
+    "id": "flip_id",
+    "label": "Swap section", 
+    "default": false
+    },
+
+    {
+        "type": "color",
+        "id": "getSection--background-color",
+        "label":  "Section background",
+        "default" : "#2D2D2D"
+        },
+
+    {
+          "type": "image_picker",
+          "id": "get_subscription_image",
+          "label": "Image"
+     },
+
+      {
+                "type": "text",
+                "id": "get_subscription_title",
+                "label": "Title"
+        },
+      {
+                "type": "html",
+                "id": "get_subscription_arrow",
+                "label": "Arrow Image"
+        },
+       {
+          "type": "image_picker",
+          "id": "arrow_image",
+          "label": "Image"
+     },
+
+        {
+            "id": "get_subscription_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Heading"
+            
+        },
+
+      {
+            "type": "text",
+            "id": "get_subscription_subheading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+      {
+           "type": "html",
+            "id": "get_subscription_points",
+            "label": "Text",
+            "default": "<p>Content goes here...</p>"
+        },
+
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Link URL"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Link text",
+      "default": "Click here"
+    },
+         {
+            "type": "color",
+            "id": "button--background-color",
+            "label":"Button color",
+            "default": "#2D2D2D"
+        },
+      {
+        "type": "color",
+        "id": "getSection--background-text-color",
+        "label":  "Text color",
+        "default" : "#2D2D2D"
+        }
+        
+    ],
+  "presets": [
+    {
+      "name": "Get Subscription"  
+    }
+  ]
+  }
+{% endschema %}
+

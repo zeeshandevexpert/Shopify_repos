@@ -1,0 +1,186 @@
+{
+  "sections": {
+    "heading_banner_section_RXFrwj": {
+      "type": "heading-banner-section",
+      "settings": {
+        "bg_image": "{{ collection.image }}",
+        "heading": "<p>{{ collection.title }}<\/p>"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-2"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": false,
+        "filter_type": "horizontal",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "logo_slider_Ukzfbw": {
+      "type": "logo-slider",
+      "blocks": {
+        "slide_KDxiat": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_MFkrhk": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_6fbNAH": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_KqD6Qi": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_AGzfWU": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_LbWqCq": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_R4VYyD": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_cj4LAC": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_TLn88p": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_ymQzCc": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_KDxiat",
+        "slide_MFkrhk",
+        "slide_6fbNAH",
+        "slide_KqD6Qi",
+        "slide_AGzfWU",
+        "slide_LbWqCq",
+        "slide_R4VYyD",
+        "slide_cj4LAC",
+        "slide_TLn88p",
+        "slide_ymQzCc"
+      ],
+      "settings": {
+        "padding_top": 4,
+        "padding_bottom": 52,
+        "slider_type": "text_slider"
+      }
+    },
+    "image_slider_text_blurb_NA9n8Z": {
+      "type": "image-slider-text-blurb",
+      "blocks": {
+        "slide_6ULmPX": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_pcfKgY": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_gjMgJa": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_MyBWib": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_7REJUH": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_mfbdr4": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6ULmPX",
+        "slide_pcfKgY",
+        "slide_gjMgJa",
+        "slide_MyBWib",
+        "slide_7REJUH",
+        "slide_mfbdr4"
+      ],
+      "settings": {
+        "reverse": true,
+        "collection": "vintage-collection",
+        "heading": "A Unique Watch That Fits Your Style",
+        "description": "<p>The new Lawson collection is already here! This quartz Lawson Franklin 38 model, designed with simplicity and elegance, is truly a cherry on the cake. Comes in different sizes and band colors, has a stainless steel back for a personalized engraving.<\/p>",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
+    },
+  },
+  "order": [
+    "heading_banner_section_RXFrwj",
+    "banner",
+    "product-grid",
+    "logo_slider_Ukzfbw",
+    "image_slider_text_blurb_NA9n8Z"
+  ]
+}

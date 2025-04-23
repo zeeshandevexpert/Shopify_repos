@@ -1,0 +1,293 @@
+<style>
+ /* .home-banner-section-outer{
+  background-color: {{ section.settings.homeBanner--background-color }};
+}  */
+.btn{
+  {% comment %} color: {{ section.settings.homeBanner--background-text-color }} !important;
+  background-color: {{ section.settings.button--background-color }}; {% endcomment %}
+}
+ 
+.section-padding{
+    padding-top: {{ section.settings.font_padding }}px ;
+    padding-bottom: {{ section.settings.font_padding }}px ;
+}
+  .home-banner-section-outer{
+    background-image: url("{{ section.settings.homeBanner--background-image | img_url: ' ' }}");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: #9D9DCE;
+    padding: 80px 0 80px;
+    position: relative;
+  }
+
+  /* .home-banner-section-outer {
+    background: #9D9DCE;
+  } */
+  
+  .home-banner-right-contentOuter {
+    max-width: 470px;
+  }
+
+  .home-banner-right-content .sectionHeading {
+    font-size: 70px;
+    line-height: 78px;
+  }
+
+  /* .home-banner-right-content .sectionSubheading {
+    font-size: 34px;
+    text-transform: capitalize;
+    line-height: 34px;
+  } */
+
+  .home-banner-right-content .sectionSubheading {
+    font-size: 34px;
+    text-transform: capitalize;
+    line-height: 34px;
+    margin-bottom: 15px;
+}
+
+  @media (max-width: 1359px){
+    
+    .home-banner-right-content .sectionHeading {
+        font-size: 55px;
+        line-height: 58px;
+    }
+    
+    .home-banner-right-content .sectionSubheading {
+        font-size: 24px;
+        text-transform: capitalize;
+        line-height: 24px;
+    }
+  }
+
+  @media (max-width: 991px){
+    
+    .home-banner-right-contentOuter {
+      max-width: 100%;
+      margin-top: 100px;
+    }
+    
+  }
+
+  @media (max-width: 767px){
+      .home-banner-right-content .sectionHeading {
+        font-size: 35px;
+        line-height: 38px;
+      }
+  }
+
+@media (max-width: 574px){
+
+  .home-banner-section-outer {
+    background-image: none;
+    background-color: #9D9DCE;
+    padding: 50px 0;
+  }
+  
+  .home-banner-right-content .sectionSubheading {
+    font-size: 18px;
+    line-height: 15px;
+    margin: 0 0 10px;
+  }
+  
+  .home-banner-right-content .sectionHeading {
+    font-size: 28px;
+    line-height: 28px;
+    margin: 0 0 10px;
+  }
+
+  .home-banner-right-content p {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 0;
+  }
+
+  .home-banner-right-contentOuter {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+  
+}
+
+  
+</style>
+
+
+<div class="home-banner-section-outer  {% if section.settings.font_padding != blank %}section-padding{% endif %}">
+  <style>
+    .opacity{
+      position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    }
+  </style>
+  <div class="opacity" style="background-color: {{ section.settings.bg_color }};"></div>
+<div class="container">
+
+  <div class="row align-items-center flex-row-reverse" >
+
+  <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end reverseContentColumn">
+
+<div class="contentImageColumnOuter position-relative">
+    
+       <div class="home-banner-arrowContent get-subscription-arrowContent position-absolute">
+       {% if section.settings.home_Banner_section_title != blank %}
+        <span class="arrowContentText">{{ section.settings.home_Banner_section_title }}</span>
+      {% endif %}
+  
+      {% if section.settings.home_Banner_section_arrow != blank %}
+        <span class="arrowContentIndicaton">{{ section.settings.home_Banner_section_arrow }}</span>
+      {% endif %}
+      
+       </div>
+        <div class="get-subscription-image home-banner-image">
+          <img class="home-banner-img" alt="" width= '' height= '' loading= "lazy" src="{{ section.settings.home_Banner_section_image | img_url: ' ' }}" />
+        </div>
+        <div class="get-subscription-freeShipping position-absolute">
+        {% if section.settings.arrow_image != blank %}
+        <div class="freeShipping-img"><img width= '' height= '' loading= "lazy" class="arrow-img" alt="" src="{{ section.settings.arrow_image | img_url: ' ' }}" /></div>
+        {% endif %}
+        <span></span>
+        </div>  
+</div>
+  </div>
+
+    <div class="col-12 col-lg-6">
+      <div class="home-banner-right-contentOuter">
+ <div class="home-banner-right-content">
+         {% if section.settings.home_Banner_section_heading != blank %}
+              <h3 class="sectionSubheading">{{ section.settings.home_Banner_section_heading }}</h3>
+            {% endif %}
+               {% if section.settings.home_Banner_section_subheading != blank %}
+              <h2 class="sectionHeading">{{ section.settings.home_Banner_section_subheading }}</h2>
+            {% endif %}
+              {% if section.settings.home_Banner_section_points != blank %}
+               <p>{{ section.settings.home_Banner_section_points }}</p>
+            {% endif %}
+         </div>
+          <div class="home-banner-right-button">
+          <a class="btn btn-primary" href="{{ section.settings.link }}">
+         {{ section.settings.linktext }}
+          </a>
+          </div>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+</div>
+<div class="sepratorOuter"></div>
+
+{% schema %}
+  {
+    "name": "Home Banner",
+    "settings": [
+      {
+    "type": "range",
+    "id": "font_padding",
+    "min": 12,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "label": "Padding",
+    "default": 16
+    },
+    {
+    "type": "checkbox",
+    "id": "flip_id",
+    "label": "Swap section", 
+    "default": false
+    },
+
+    {
+        "type": "image_picker",
+        "id": "homeBanner--background-image",
+        "label":  "Background Image"
+        },
+
+    {
+          "type": "image_picker",
+          "id": "home_Banner_section_image",
+          "label": "Image"
+     },
+
+    {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Overlay color"
+     },
+
+      {
+                "type": "text",
+                "id": "home_Banner_section_title",
+                "label": "Title"
+        },
+      {
+                "type": "html",
+                "id": "home_Banner_section_arrow",
+                "label": "Arrow Image"
+        },
+       {
+          "type": "image_picker",
+          "id": "arrow_image",
+          "label": "Image"
+     },
+
+        {
+            "id": "home_Banner_section_heading",
+            "type": "text",
+            "label": "Heading",
+            "default": "Heading"
+            
+        },
+
+      {
+            "type": "text",
+            "id": "home_Banner_section_subheading",
+            "label": "Heading",
+            "default": "Heading"
+        },
+      {
+           "type": "html",
+            "id": "home_Banner_section_points",
+            "label": "Text",
+            "default": "<p>Content goes here...</p>"
+        },
+
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Link URL"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Link text",
+      "default": "Click here"
+    },
+         {
+            "type": "color",
+            "id": "button--background-color",
+            "label":"Button color",
+            "default": "#2D2D2D"
+        },
+      {
+        "type": "color",
+        "id": "homeBanner--background-text-color",
+        "label":  "Text color",
+        "default" : "#2D2D2D"
+        }
+        
+    ],
+  "presets": [
+    {
+      "name": "Home Banner"  
+    }
+  ]
+  }
+{% endschema %}
+

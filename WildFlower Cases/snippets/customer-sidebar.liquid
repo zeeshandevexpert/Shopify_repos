@@ -1,0 +1,10 @@
+<div class="customer-sidebar">
+    <ul class="list-unstyled">
+        {% for link in linklists.customer-sidebar.links %}
+        <li {% if link.active %}class='active'{% endif %}>{{ link.title | link_to: link.url }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ routes.account_logout_url }}" class="button button--primary">
+        {{ 'customer.log_out' | t }}
+      </a>
+</div>

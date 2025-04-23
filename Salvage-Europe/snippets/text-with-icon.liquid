@@ -1,0 +1,40 @@
+{% comment %}
+snippets/text-with-icon.liquid
+
+Usage:
+
+{%
+  render 'text-with-icon',
+  block: block
+%}
+
+{% endcomment %}
+{% unless block.settings.ac_text == blank %}
+  {% unless block.settings.ac_link == blank %}
+    <a href="{{ block.settings.ac_link }}">
+  {% endunless %}
+  <div class="product-blocks__inner">
+    {% unless block.settings.ac_icon == 'none' %}
+      {% case block.settings.ac_icon %}
+        {% when 'cart' or 'bag' or 'search' %}
+          {% assign icon_collection_type = 'mrparker' %}
+        {% else %}
+          {% assign icon_collection_type = 'apollo' %}
+      {% endcase %}
+      {% render 'snip-icons',
+         wrapper: '.product-blocks__icon',
+         type: icon_collection_type,
+         icon: block.settings.ac_icon,
+         classes: 'vib-center',
+         size: '14px',
+         fill: 'var(--text-color)',
+         hover: 'var(--text-color)' %}
+    {% endunless %}
+    <div class="rte">
+      {{ block.settings.ac_text }}
+    </div>
+  </div>
+  {% unless block.settings.ac_link == blank %}
+    </a>
+  {% endunless %}
+{% endunless %}

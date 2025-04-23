@@ -1,0 +1,36 @@
+<section class="video_section">
+    <div class="title">{{ section.settings.heading }}</div>
+    <div class="video-wrapper">
+        <video src="{{ section.settings.video }}" controls autoplay></video>
+    </div>
+</section>
+
+
+
+
+{% schema %}
+    {
+        "name": "Video Block",
+        "settings": [
+                {
+                "type": "textarea",
+                "id": "heading",
+                "label": "Heading"
+                },
+                {
+                "type": "url",
+                "id": "video",
+                "label": "Video"
+                }
+            ],
+        
+            "presets": [
+                {
+                    "name": "Video Block"
+                }
+            ]
+    }
+    
+    
+    
+    {% endschema %}

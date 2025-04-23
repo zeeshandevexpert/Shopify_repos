@@ -1,0 +1,102 @@
+{% comment %}
+snippets/product-tabs.liquid
+- tabs_active
+- product
+{% endcomment %}
+{% assign first_tab = true %}
+{%- if tabs_active -%}
+  <div class="rte-tab rte-tab--{{ section.id }}">
+    {%- for block in section.blocks -%}
+      {% case block.type %}
+        {% when 'tab_content' or 'product_description' %}
+          <input id="tab--{{ section.id }}--{{ forloop.index }}" type="radio" name="pct--{{ section.id }}" {% if first_tab %}checked="checked"{% endif %} />
+          {% assign first_tab = false %}
+      {% endcase %}
+    {%- endfor -%}
+    <nav>
+      <ul class="tabbed">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'tab_content' or 'product_description' %}
+              <li class="tab--{{section.id}}--{{ forloop.index }} product--tab_block-item">
+                <label for="tab--{{ section.id }}--{{ forloop.index }}">
+                  {% if block.type == 'product_description' %}
+                    {{ 'products.product.details' | t }}
+                  {% else %}
+                    {{ block.settings.tab_heading }}
+                  {% endif %}
+                </label>
+              </li>
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </nav>
+    <section>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'tab_content' or 'product_description' %}
+            <div class="tab tab--{{ section.id }}--{{ forloop.index }} tabbed-block rte">
+              {% if block.type == 'product_description' %}
+                {% unless product == empty %}
+                  {% if product.description contains '[#' %}
+                    {{ product.description | split: '[#' | first }}
+                  {% else %}
+                    {{ product.description }}
+                  {% endif %}
+                {% else %}
+                  <p>{{ 'general.onboard.featured_product_description' | t }}</p>
+                {% endunless %}
+              {% elsif block.type == 'tab_content' %}
+                {{ block.settings.tab_content }}
+              {% endif %}
+            </div>
+        {% endcase %}
+      {% endfor %}
+    </section>
+  </div>
+  <style>
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        .rte-tab.rte-tab--{{ section.id }} #tab--{{section.id}}--{{forloop.index}}:checked ~ section .tab--{{section.id}}--{{forloop.index}}{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {
+        display: block;
+      }
+      {% for block in section.blocks %}
+        .rte-tab.rte-tab--{{ section.id }} #tab--{{section.id}}--{{forloop.index}}:checked ~ nav .tab--{{section.id}}--{{forloop.index}} label{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {
+        background: var(--background, white);
+        color: var(--text-color, #111);
+        position: relative;
+      }
+      {% for block in section.blocks %}
+        .rte-tab.rte-tab--{{ section.id }} #tab--{{section.id}}--{{forloop.index}}:checked ~ nav .tab--{{section.id}}--{{forloop.index}} label:after{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+      {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: var(--background, #ffffff);
+        left: 0;
+        bottom: -1px;
+      }
+    {% else %}
+      /*No blocks in section*/
+    {% endif %}
+  </style>
+{%- else -%}
+  <div class="rte">
+    {% unless product == empty %}
+    {% if product.description contains '[#' %}
+    {{ product.description | split: '[#' | first }}
+    {% else %}
+    {{ product.description | split: '<!-- split -->' | first }}
+    {% endif %}
+    {% else %}
+      <p>{{ 'general.onboard.featured_product_description' | t }}</p>
+    {% endunless %}
+  </div>
+{%- endif -%}

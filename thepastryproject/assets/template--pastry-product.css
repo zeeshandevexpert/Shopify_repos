@@ -1,0 +1,220 @@
+.serviesBarOuter {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-evenly;
+  gap: 30px;
+  background: #feeee6;
+  padding: 50px 0;
+  animation-duration: 60s;
+  animation-name: marquee;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes marquee{
+  
+  0%{
+    transform: translate(100%, 0);
+  }
+
+  100% {
+     transform: translate(-100%, 0);
+  }
+    
+}
+
+.serviesBar-col {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 0 0 200px;
+  max-width: 200px;
+}
+
+.serviesBar-col p{
+  color:#A264A9;
+  font-weight: 500;
+  font-size:18px;
+  margin:0;
+  line-height: 28px;
+}
+
+
+.pastry-product-Outer {
+  padding: 100px 0;
+}
+
+.pastry-product-Outer .product-description-main-wrapper{
+  position: static;
+}
+
+.template-product .pastry-product-Outer .product-description-wrapper{
+  border:none;
+}
+
+.serviesBarMainOuter{
+  background: #feeee6;
+  overflow: hidden;
+}
+
+
+/* ====== PDP page design ====== */
+
+.pdpMainOuter{
+  padding-top:100px; 
+}
+
+.pdp-imageColumn img{
+  max-width:100%;
+}
+
+.product-page--thumb-slider.no-arrows .swiper-container .swiper-slide {
+  width: 38px !important;
+  margin: 0 !important;
+}
+
+.pdp-imageColumnInner {
+  max-width: 500px;
+  border: 1px solid #A264A9;
+  border-radius: 250px 250px 0 0;
+}
+
+.pdp-imageColumnInner img{
+  transform: translate(-30px, -30px);
+}
+
+.pdp-imageColumnInner .get-subscription-freeShipping {
+    right: auto;
+    bottom: 53px;
+    left: -107px;
+}
+
+.subscriberOuter .widgetSellingPlanWrapper input:checked+label {
+    background-color: #f4e8f5 !important;
+}
+
+
+#pastry-kit-subscription .yotpo-modal-header,
+#pastry-kit-subscription .yotpo-form-label, 
+#pastry-kit-subscription .yotpo-new-input-message,
+#pastry-kit-subscription .form-footer h6{
+  color: #CF6A28; 
+  letter-spacing: initial;
+  font-family: var(--body-font-stack);
+}
+
+#pastry-kit-subscription .yotpo-input-wrapper input, #pastry-kit-subscription .yotpo-input-wrapper textarea {
+  border: 1px solid #CF6A28;
+  padding: 12px 15px;
+  border-radius: 100px;
+  font-family: var(--body-font-stack);
+}
+
+#pastry-kit-subscription .yotpo-new-review-submit{
+  border-radius: 100px;
+  padding: 12px 20px;
+  background: #A264A9;
+  font-family: var(--body-font-stack);
+  color: #ffffff;  
+}
+
+#pastry-kit-subscription .yotpo-input-wrapper input::placeholder,
+#pastry-kit-subscription .yotpo-input-wrapper textarea::placeholder{
+  color: #CF6A28;
+}
+
+.galleryImageRow .grid__item {
+    padding: 16px;
+}
+
+@media (min-width:992px){
+  
+  .pastry-product-Outer .product-info-wrapper {
+    padding-left: 100px;
+  }
+  
+}
+
+
+@media(max-width:1279px){
+  .pdp-imageColumnInner {
+    max-width: 300px;
+  }
+}
+
+
+@media(max-width: 991px){
+  
+  .pdpMainOuter {
+    padding-top: 30px;
+  }
+
+  .pdp-imageColumn{
+     padding-top:50px; 
+  }
+
+  .pastry-product-Outer {
+    padding: 70px 0;
+  }
+
+  .pdp-imageColumnInner {
+      max-width: 370px;
+      margin: 0 auto;
+  }
+  
+}
+
+@media(max-width: 767px){
+  
+  .pdp-imageColumnInner {
+      margin: 0;
+  }
+
+}
+
+@media(max-width: 574px){
+  
+  .pdp-imageColumnInner {
+      max-width: 220px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

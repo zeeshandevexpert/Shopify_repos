@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "page_width": "page-width--narrow"
+      }
+    },
+    "fulfillment": {
+      "type": "fulfillment",
+      "settings": {
+        "heading": "Wildflower Fulfillment Solution",
+        "description": "<p>Wildflower offers a full suite of fulfillment services for growing brands like yours. We know what its like packing your own orders because Wildflower Cases was there 10 years ago.</p><p>Just fill out the form below. Share a little information about your business and we'll follow up with a customized proposal catered to your specific needs.</p>",
+        "image": "shopify://shop_images/wildflower-fulfillment-solution.jpg",
+        "form_success_message": "Thank you for your fulfillment services inquiry! We'll reply within the next 24-48 hours. Chat soon!",
+        "form_call_to_action": "Submit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fulfillment"
+  ]
+}

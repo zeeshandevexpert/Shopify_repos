@@ -1,0 +1,894 @@
+/*BASE SHOPIFY CHECKOUT CSS*/
+    .globale-generated {
+        max-width: 800px;
+        margin-top:40px;
+    }
+
+    #GEWindowPopupOverlay {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        background-color: #fff;
+        z-index: 999999;
+    }
+
+    .GEWindowPopupWrapper .GEWindowPopupHeader .GEWindowPopupCloser {
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        width: 16px;
+        height: 16px;
+        background: url(https://web.global-e.com//content/images/icons/close2.png);
+        cursor: pointer;
+    }
+    
+    .GEWindowPopupWrapper .GEWindowPopupFrame {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 30px;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .GEWindowPopupWrapper .GEWindowPopupHeader {
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+    
+    .GEWindowPopupWrapper {
+        border: 1px solid #aaa;
+        position: fixed;
+        z-index: 1000000;
+        background-color: #fff;
+        box-shadow: 0 0 20px #888;
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    
+    .glbe-oos-error {
+        position: relative;
+        display: block;
+        opacity: 1;
+        padding: 1em;
+        border-radius: 4px;
+        border: 1px solid #d3e7f5;
+        background-color: #eff8ff;
+        color: #545454;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .globale-generated .form-control {
+        border-radius: 0;
+        box-shadow: none;
+        font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 0 0 0 17px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        box-sizing: border-box;
+    }
+
+    .globale-generated .form-select {
+        color: gray;
+    }
+
+        .globale-generated .form-select option {
+            color: #000000;
+        }
+
+            .globale-generated .form-select:invalid,
+            .globale-generated .form-select option[value=""] {
+                color: #757575;
+            }
+
+
+
+    .globale-generated .glbe-tab-label {
+        font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+        /* font-family: helveticaneueltstdRoman; */
+ 
+    }
+
+    .globale-generated .card-css-col {
+        width: 49%;
+        display: inline-block;
+        height:50px;
+        line-height:50px;
+    }
+
+    .globale-generated .card-css-info {
+        width: 90%;
+        margin-left: 15px;
+        line-height: 18px;
+        vertical-align: middle;
+        display: inline-block;
+        font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+        font-size: 15px;
+        color: #717171;
+    }
+    .globale-generated .credit-card {
+        max-width: 100%;
+    }
+
+    .globale-generated .card-date {
+        width: 49%;
+        display: inline-block;
+    }
+    .globale-generated .card-date-row {
+        display: flex;
+        align-items: flex-start;
+    }
+    .globale-generated .card-date-row .card-date:nth-child(1) {
+        margin-right: 2%;
+    }
+.ap-date-container {
+    padding: 15px 0 15px 0;
+}
+.glbe-date-part-container:nth-child(2) {
+    margin: 0 5px 0 5px;
+}
+#glbe-secureContainer {
+    position: relative;
+}
+.globale-generated .card-row {
+    margin-bottom: 18px;
+}
+
+    .globale-generated .card-submit {
+        display: none;
+    }
+.glbe-payments-msg {
+    display: none;
+    border: 1px solid red;
+    margin-bottom: 12px;
+    text-align: left;
+    background-color: crimson;
+    color: #fff;
+    font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+    padding: 25px;
+    border-radius: 5px;
+    line-height: 20px;
+}
+.glbe-btnDisabled {
+    opacity:0.3;
+    cursor:default;
+}
+.glbe-linkDisabled {
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+    color: grey;
+}
+.globale-generated .pay-button {
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.globale-generated .form-control.invalid {
+    border: 2px solid #f77fa1;
+    box-shadow: 0 0 10px #c0c0c0;
+    background-color: #fdf6f8;
+}
+    /*accordion*/
+.glbe-radio {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.section--payment-method {
+    display:none;
+}
+.glbe-row {
+    xdisplay: flex;
+}
+
+.glbe-row .glbe-col {
+    flex: 1;
+}
+
+        .row .col:last-child {
+            margin-left: 1em;
+        }
+
+/* Accordion styles */
+.globale-generated .glbe-tabs {
+    border-radius: 8px;
+    overflow: hidden;
+    /*box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);*/
+    border: 1px solid rgb(217, 217, 217);
+}
+
+.globale-generated .glbe-tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+}
+
+.globale-generated .glbe-tab-label span {
+    display: block;
+    width: 100%;
+    position:relative;
+}
+
+.globale-generated .glbe-pm-cards {
+     
+}
+.glbe-pm-icon-text {
+    height: 26px;
+    margin-right: 50px;
+    float: right;
+    position: relative;
+    right: 0px;
+    top: -2px;
+}
+.glbe-pm-icon {
+    height: 26px;
+    margin-right: 15px;
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: -2px;
+}
+
+.glbe-pm-icon-rtl {
+    height: 26px;
+    margin-right: 15px;
+    float: right;
+    position: absolute;
+    left: 0px;
+    top: -2px;
+}
+
+.card-number {
+    position:relative;
+}
+.glbe-display-block-impr {
+    display:block !important;
+}
+.glbe-more-cards {
+    font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+    display: inline-block;
+    height: 27px;
+    vertical-align: top;
+    line-height: 27px;
+}
+.glbe-cards-icons {
+    margin-bottom: 34px;
+    height: 28px;
+}
+.glbe-cc-form {
+    clear: both;
+}
+.glbe-smallcard-icon {
+    width: 43px !important;
+    height: 27px;
+    background-image: url(https://s3.global-e.com/Images/Sprites/secure_spritesheet_16_7.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 10px;
+    background-size: 219px 171px;
+}
+
+#glbe-cardtype-hint {
+    width: 43px;
+    height: 27px;
+    background-image: url(https://s3.global-e.com/Images/Sprites/secure_spritesheet_16_7.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 12px;
+    top: 11px;
+    display: none;
+    background-size: 219px 171px;
+}
+
+.glbe-cardtype-hint-rtl {
+    left: 12px !important;
+    right: unset !important;
+}
+
+div[data-type="glbe-alt-cc-hint"] {
+    width: 43px !important;
+    height: 27px !important;
+    background-image: url(https://s3.global-e.com/Images/Sprites/secure_spritesheet_16_7.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 12px !important;
+    top: 11px !important;
+    display: none;
+    background-size: 219px 171px !important;
+}
+
+.card-hint-visa {
+    background-position: -69px -15px;
+}
+.glbe-date-part-container {
+    width:30%;
+    display:inline-block;
+}
+.glbe-extra-fields-dropdown-container {
+    width: 98%;
+    display: block;
+    text-align: left;
+    padding: 20px 0;
+}
+.glbe-extra-fields-dropdown-container select {
+    margin: 10px 0 0 0;
+}
+.card-hint-mastercard {
+    background-position: -88px -72px;
+}
+.card-hint-americanexpress {
+    background-position: -161px -72px;
+}
+.card-hint-maestro {
+    background-position: -15px -72px;
+}
+.card-hint-jcb {
+    background-position: -142px -15px;
+}
+.card-hint-diners {
+    background-position: -15px -129px;
+}
+.card-hint-discover {
+    background-position: -88px -129px;
+}
+.card-hint-mir {
+    background: url(https://web.global-e.com/Content/Images/paymentMethods/pm_79.png) no-repeat 0;
+}
+
+.card-hint-default {
+    background-position: -161px -129px;
+}
+
+.globale-generated .glbe-card-icon {
+    width: 50px;
+    height: 25px;
+}
+.globale-generated .glbe-card-1 {
+    background-position: -116px -81px;
+    margin-left: -18px;
+}
+    .globale-generated .glbe-card-2 {
+    background-position: -19px -141px;    
+}
+
+.globale-generated .glbe-card-3 {
+    background-position: -163px -16px;
+}
+
+.globale-generated .glbe-card-4 {
+    background-position: -90px -252px;
+}
+
+
+.globale-generated .glbe-tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: #f6f6f6;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+    color: #243a4f;
+    /* Icon */
+    border-bottom: 1px solid #ccc;
+}
+
+    .globale-generated .glbe-tab-label:hover {
+        background-color: #e1e1e1;
+    }
+
+    .globale-generated .glbe-tab-label::after {
+        content: "❯";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transition: all 0.35s;
+        color: #243a4f;
+    }
+
+.globale-generated .glbe-tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: #2c3e50;
+    background-color: white;
+    transition: all 0.35s;
+    display: flex;
+    flex-direction: column;
+}
+
+.globale-generated .glbe-tab-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background-color: #2c3e50;
+    cursor: pointer;
+}
+
+    .globale-generated .glbe-tab-close:hover {
+        background-color: #f6f6f6;
+    }
+
+.globale-generated .glbe-radio:checked + .glbe-tab-label {
+    background-color: #f6f6f6;
+}
+
+    .globale-generated .glbe-radio:checked + .glbe-tab-label::after {
+        transform: rotate(90deg);
+    }
+
+.globale-generated .glbe-radio:checked ~ .glbe-tab-content {
+    max-height: 100vh;
+    padding: 1em;
+}
+
+.sprite-pm_106_supported-banks_ZA {
+    background-image: url(https://s3.global-e.com/Images/PaymentMethods/supported-banks.png);
+    background-repeat: no-repeat;
+    display: block;
+    height: 70px;
+    background-size: 219px 30px;
+    background-position: 5px 10px;
+}
+
+.glbe-content-alternative-icon {
+    background-image: url(https://cdn.shopify.com/shopifycloud/shopify/assets/checkout_2021-01-25/offsite-908d79d8d532f6af67d7cc99244ede733729c29379c349ee015fbcea71fd8274.svg);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+    background-position: center;
+    margin-bottom: 20px;
+}
+
+.glbe-content-alternative-text {
+    text-align: center;
+    font-family: "helveticaneueltstdRoman", Helvetica, Arial, "Sans-serif", sans-serif;
+    font-size: 14px;
+    padding: 0 20px 0 20px;
+}
+
+/* Group payment methods */
+.glbe-group-pm-box {
+    float: left;
+    width: 83px;
+    margin-bottom: 10px;
+    padding: 4px;
+    text-align: center;
+    border: 1px solid #CFCFCF;
+    height: 80px;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+    background: #F2F2F2;
+}
+
+    .glbe-group-pm-box:hover {
+        background: #fff;
+        box-shadow: 0 0 9px #D8D8D8;
+    }
+
+    .glbe-group-pm-box.active {
+        box-shadow: 0 0 9px #D8D8D8;
+        border-color: #9D9999;
+        background: #fff;
+    }
+
+.Klarna-internal-img {
+    background-image: url(https://s3qa.bglobale.com/Images/Sprites/sprite_KlarnaDirect.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 76px;
+    height: 64px;
+    margin-left: 3px;
+}
+
+    .Klarna-internal-img.pm-54 {
+        background-position: 0 0;
+    }
+
+    .Klarna-internal-img.pm-53 {
+        background-position: -76px 0;
+    }
+
+    .Klarna-internal-img.pm-55 {
+        background-position: -152px 0;
+    }
+
+    .Klarna-internal-img.pm-91 {
+        background-image: url(https://s3qa.bglobale.com/Images/PaymentMethods/klarna.svg);
+        background-position: center;
+        background-size: 80%;
+    }
+
+.Klarna-external-img-53,
+.Klarna-external-img-54,
+.Klarna-external-img-55,
+.Klarna-external-img-91 {
+    position: relative;
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 76px;
+    height: 64px;
+    background-size: 80%;
+    background-position: center;
+}
+
+.glbe-group-payment-method-msg {
+    position: absolute;
+    width: 80px;
+    top: 52px;
+    left: -2px;
+    font-size: 10px;
+}
+ 
+/*loader */
+.glbe-loading-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 100;
+}
+
+.glbe-loading {
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: glbe-spin 1s ease-in-out infinite;
+    -webkit-animation: glbe-spin 1s ease-in-out infinite;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.glbe-loading-absolute {
+    position: absolute;
+    left:50%;
+    margin-left:-25px;
+    top:50%;
+    margin-top:-25px;
+}
+@keyframes glbe-spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes glbe-spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.glbe-popup-button {
+    float:right;
+}
+
+/*TINGLE POPUP CSS*/
+.tingle-modal * {
+    box-sizing: border-box;
+}
+
+.tingle-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    background: rgba(0, 0, 0, .9);
+    opacity: 0;
+    cursor: url("data:image/svg+xml,%3Csvg width='19' height='19' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.514.535l-6.42 6.42L2.677.536a1.517 1.517 0 00-2.14 0 1.517 1.517 0 000 2.14l6.42 6.419-6.42 6.419a1.517 1.517 0 000 2.14 1.517 1.517 0 002.14 0l6.419-6.42 6.419 6.42a1.517 1.517 0 002.14 0 1.517 1.517 0 000-2.14l-6.42-6.42 6.42-6.418a1.517 1.517 0 000-2.14 1.516 1.516 0 00-2.14 0z' fill='%23FFF' fill-rule='nonzero'/%3E%3C/svg%3E"), auto;
+}
+
+@supports (backdrop-filter: blur(12px)) {
+    .tingle-modal {
+        backdrop-filter: blur(12px);
+    }
+}
+
+/* confirm and alerts
+-------------------------------------------------------------- */
+
+.tingle-modal--confirm .tingle-modal-box {
+    text-align: center;
+}
+
+/* modal
+-------------------------------------------------------------- */
+
+.tingle-modal--noOverlayClose {
+    cursor: default;
+}
+
+.tingle-modal--noClose .tingle-modal__close {
+    display: none;
+}
+
+.tingle-modal__close {
+    position: fixed;
+    top: 2.5rem;
+    right: 2.5rem;
+    z-index: 1000;
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+    .tingle-modal__close svg * {
+        fill: currentColor;
+    }
+
+.tingle-modal__closeLabel {
+    display: none;
+}
+
+.tingle-modal__close:hover {
+    color: #fff;
+}
+
+.tingle-modal-box {
+    position: relative;
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 60%;
+    border-radius: 4px;
+    background: #fff;
+    opacity: 1;
+    cursor: auto;
+    will-change: transform, opacity;
+}
+
+.tingle-modal-box__content {
+    padding: 3rem 3rem;
+}
+
+.tingle-modal-box__footer {
+    padding: 1.5rem 2rem;
+    width: auto;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #f5f5f5;
+    cursor: auto;
+}
+
+    .tingle-modal-box__footer::after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+.tingle-modal-box__footer--sticky {
+    position: fixed;
+    bottom: -200px; /* TODO : find a better way */
+    z-index: 10001;
+    opacity: 1;
+    transition: bottom .3s ease-in-out .3s;
+}
+
+/*Checkout ID*/
+.glbe-customerid-container {
+    border-radius: 5px;
+    border: 1px solid rgb(217, 217, 217);
+    padding: 16px;
+    margin-bottom: 20px;
+    display:none;
+}
+
+.glbe-ci-header {
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.glbe-ci-description {
+    margin-top: 10px;
+}
+
+/* state
+-------------------------------------------------------------- */
+.tingle-enabled {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.tingle-modal--visible .tingle-modal-box__footer {
+    bottom: 0;
+}
+
+.tingle-modal--visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+    .tingle-modal--visible .tingle-modal-box {
+        animation: scale .2s cubic-bezier(.68, -.55, .265, 1.55) forwards;
+    }
+
+.tingle-modal--overflow {
+    overflow-y: scroll;
+    padding-top: 8vh;
+}
+
+/* btn
+-------------------------------------------------------------- */
+
+.tingle-btn {
+    display: inline-block;
+    margin: 0 .5rem;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: grey;
+    box-shadow: none;
+    color: #fff;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    cursor: pointer;
+    transition: background-color .4s ease;
+}
+
+.tingle-btn--primary {
+    background-color: #3498db;
+}
+
+.tingle-btn--danger {
+    background-color: #e74c3c;
+}
+
+.tingle-btn--default {
+    background-color: #34495e;
+}
+
+.tingle-btn--pull-left {
+    float: left;
+}
+
+.tingle-btn--pull-right {
+    float: right;
+}
+
+/* responsive
+-------------------------------------------------------------- */
+
+@media (max-width : 540px) {
+    .tingle-modal {
+        top: 0px;
+        display: block;
+        padding-top: 60px;
+        width: 100%;
+    }
+
+    .tingle-modal-box {
+        width: auto;
+        border-radius: 0;
+    }
+
+    .tingle-modal-box__content {
+        overflow-y: scroll;
+    }
+
+    .tingle-modal--noClose {
+        top: 0;
+    }
+
+    .tingle-modal--noOverlayClose {
+        padding-top: 0;
+    }
+
+    .tingle-modal-box__footer .tingle-btn {
+        display: block;
+        float: none;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .tingle-modal__close {
+        top: 0;
+        right: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 60px;
+        border: none;
+        background-color: #2c3e50;
+        box-shadow: none;
+        color: #fff;
+    }
+
+    .tingle-modal__closeLabel {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.6rem;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    }
+
+    .tingle-modal__closeIcon {
+        display: inline-block;
+        margin-right: .8rem;
+        width: 1.6rem;
+        vertical-align: middle;
+        font-size: 0;
+    }
+}
+
+/* animations
+-------------------------------------------------------------- */
+
+@keyframes scale {
+    0% {
+        opacity: 0;
+        transform: scale(.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/*Hide Express Payment methods*/
+div[data-alternative-payments] {
+    display: none;
+}
+
+div[data-rtl="true"] #glbe-cc-number {
+    direction: ltr;
+    text-align: right;
+}
+
+div[data-rtl="true"] .form-control {
+    padding-right: 17px;
+}
+
+div[data-rtl="true"] .card-date-row .card-date:nth-child(1) {
+    margin-right: 0;
+}
+
+div[data-rtl="true"] .card-date {
+    margin-right: 2%;
+}
+/*CUSTOM MERCHANT CHECKOUT CSS*/
+
+
+

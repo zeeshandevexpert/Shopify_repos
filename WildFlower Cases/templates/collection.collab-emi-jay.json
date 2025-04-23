@@ -1,0 +1,464 @@
+{
+  "sections": {
+    "9df2377d-e27a-4004-af93-bdefc93dded6": {
+      "type": "video-banner",
+      "blocks": {
+        "88fb37b6-673b-4e4e-935e-b81e91b1de31": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Emi Jay x Wildflower Cases",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "88fb37b6-673b-4e4e-935e-b81e91b1de31"
+      ],
+      "settings": {
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1f8321073ea64940abccdcb070d99a77.mp4",
+        "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/1f8321073ea64940abccdcb070d99a77.mp4",
+        "image_overlay_opacity": 0,
+        "video_height": "56.25",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "video_height_mobile": "100",
+        "show_text_below": true
+      }
+    },
+    "1d615018-233d-46e7-892d-06897eae6dc0": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Trixie Mattel x Wildflower Cases",
+            "heading_size": "h1"
+          }
+        },
+        "aa33ff9e-2632-4a1c-82e4-f598cf7e6842": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify:\/\/collections\/new-arrivals",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0",
+        "aa33ff9e-2632-4a1c-82e4-f598cf7e6842",
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Wildflower-Cases-Natalie-Krim-DT.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Wildflower-Cases-Natalie-Krim-MB.jpg",
+        "image_overlay_opacity": 10,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "1d6c24a2-38ba-4cdf-b54d-7a442ecb0679": {
+      "type": "rich-text",
+      "blocks": {
+        "b727f9ed-6e06-4722-8bbb-11166abff793": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Emi Jay x Wildflower Cases<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--14974873796656__1d6c24a2-38ba-4cdf-b54d-7a442ecb0679-1668190728bc43347b-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>“Match your hair to your favorite phone case. These claw clips feature Wildflower's signature Lovey Dovey and Brown Floral prints. Adorned with rhinestones, this limited-edtion piece makes the perfect gift for yourself or a friend. ” <strong>@emijayinc<\/strong><\/p>"
+          }
+        },
+        "template--14974873796656__1d6c24a2-38ba-4cdf-b54d-7a442ecb0679-1668190728bc43347b-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/trixie-mattel-x-wildflower-cases",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "b727f9ed-6e06-4722-8bbb-11166abff793",
+        "template--14974873796656__1d6c24a2-38ba-4cdf-b54d-7a442ecb0679-1668190728bc43347b-1",
+        "template--14974873796656__1d6c24a2-38ba-4cdf-b54d-7a442ecb0679-1668190728bc43347b-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "8d06f118-28c0-44da-b91d-dfb303623989": {
+      "type": "image-banner",
+      "disabled": true,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/nessa-barrett-sig.png",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "light",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2": {
+          "type": "marketing_tile",
+          "disabled": true,
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify:\/\/shop_images\/Olivia-Coming-Soon-Hero-DT.jpg",
+            "link": "#",
+            "position": 5,
+            "title": "Need Help?",
+            "paragraph": "<p>Browse our Style Tips and get inspired<\/p>",
+            "button_text": "Go To Style tips",
+            "hide_text_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2"
+      ],
+      "settings": {
+        "collection_override": "emi-jay-x-wildflower-cases",
+        "columns_desktop": 4,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "choose_size",
+        "shop_by_size": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "c7c42282-9915-44a6-aa28-fa751cce442c": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15013928632368__c7c42282-9915-44a6-aa28-fa751cce442c-1676909040f1b08e67-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>As seen on...<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--15013928632368__c7c42282-9915-44a6-aa28-fa751cce442c-1676909040f1b08e67-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--15013928632368__c7c42282-9915-44a6-aa28-fa751cce442c-1676909040f1b08e67-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15013928632368__c7c42282-9915-44a6-aa28-fa751cce442c-1676909040f1b08e67-0",
+        "template--15013928632368__c7c42282-9915-44a6-aa28-fa751cce442c-1676909040f1b08e67-1",
+        "template--15013928632368__c7c42282-9915-44a6-aa28-fa751cce442c-1676909040f1b08e67-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "2679d45f-ae32-4313-82dc-5a2ccb024acc": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--14974873796656__2679d45f-ae32-4313-82dc-5a2ccb024acc-1668191056c3627b90-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/01-UGC-Wildflower-Cases-Caroline-Ricke-Optimized.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14974873796656__2679d45f-ae32-4313-82dc-5a2ccb024acc-1668191056c3627b90-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/02-UGC-Wildflower-Cases-Caroline-Ricke-Optimized.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14974873796656__2679d45f-ae32-4313-82dc-5a2ccb024acc-1668191056c3627b90-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/03-UGC-Wildflower-Cases-Caroline-Ricke-Optimized.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14974873796656__2679d45f-ae32-4313-82dc-5a2ccb024acc-1668191056c3627b90-0",
+        "template--14974873796656__2679d45f-ae32-4313-82dc-5a2ccb024acc-1668191056c3627b90-1",
+        "template--14974873796656__2679d45f-ae32-4313-82dc-5a2ccb024acc-1668191056c3627b90-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "no_padding": true,
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "23af4319-ad47-45d4-a5a1-cb6b33e3af29": {
+      "type": "rich-text",
+      "blocks": {
+        "bf7730e2-8a90-457f-849f-720cbec8a2cb": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h2>❄️🎀 Shop Our Exclusive Collab with Emi Jay ❄️🎀<\/h2>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "bf7730e2-8a90-457f-849f-720cbec8a2cb"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 12,
+        "padding_bottom": 0
+      }
+    },
+    "d038a529-118c-4422-b5c0-c8b947cc6202": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Emi-Jay-Brown-Floral-Image-01.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "f7e41e52-fa82-4f36-9b68-cef647d59d2f": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Emi-Jay-Brown-Floral-Image-02.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Emi-Jay-Lovey-Image-02.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "470f18bc-a150-4fd1-8e2c-aa7bcae6c3f3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Emi-Jay-Lovey-Image-01_9a19e867-0e8f-4a82-9fd8-40e8e5f8231b.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-1",
+        "f7e41e52-fa82-4f36-9b68-cef647d59d2f",
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-0",
+        "470f18bc-a150-4fd1-8e2c-aa7bcae6c3f3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 20,
+        "padding_bottom": 32
+      }
+    },
+    "4471b01e-c1af-4018-b311-803338c052b2": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--15013928632368__4471b01e-c1af-4018-b311-803338c052b2-1676909414589a5135-0": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--15013928632368__4471b01e-c1af-4018-b311-803338c052b2-1676909414589a5135-1": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--15013928632368__4471b01e-c1af-4018-b311-803338c052b2-1676909414589a5135-2": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15013928632368__4471b01e-c1af-4018-b311-803338c052b2-1676909414589a5135-0",
+        "template--15013928632368__4471b01e-c1af-4018-b311-803338c052b2-1676909414589a5135-1",
+        "template--15013928632368__4471b01e-c1af-4018-b311-803338c052b2-1676909414589a5135-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Multicolumn",
+        "heading_size": "h1",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "marketing_tile_section_8cqAGJ": {
+      "type": "marketing-tile-section",
+      "blocks": {
+        "quote_tile_37i6qc": {
+          "type": "quote_tile",
+          "settings": {
+            "tile_size": "full-width",
+            "logo": "shopify:\/\/shop_images\/Nylon_logo.png",
+            "link": "",
+            "position": 5,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "quote_tile_37i6qc"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "9df2377d-e27a-4004-af93-bdefc93dded6",
+    "1d615018-233d-46e7-892d-06897eae6dc0",
+    "1d6c24a2-38ba-4cdf-b54d-7a442ecb0679",
+    "banner",
+    "8d06f118-28c0-44da-b91d-dfb303623989",
+    "product-grid",
+    "c7c42282-9915-44a6-aa28-fa751cce442c",
+    "2679d45f-ae32-4313-82dc-5a2ccb024acc",
+    "23af4319-ad47-45d4-a5a1-cb6b33e3af29",
+    "d038a529-118c-4422-b5c0-c8b947cc6202",
+    "4471b01e-c1af-4018-b311-803338c052b2",
+    "marketing_tile_section_8cqAGJ"
+  ]
+}

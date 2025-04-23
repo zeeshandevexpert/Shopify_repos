@@ -1,0 +1,49 @@
+<form id="contact_formklaviyo">
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <div class="newsletter--form">
+      <div class="input-group">
+        <input id="newsletter-input" type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+        <span class="input-group-btn">
+          <button class="btn btn--primary newsletter__submit" name="commit" id="Subscribe">
+            {% if section.settings.send_icon %}
+            <span class="fas {{ section.settings.send_icon }}"></span>
+            {% else block.settings.send_icon %}
+            <span class="fas {{ block.settings.send_icon }}"></span>
+            {% else %}
+            <span class="fas fa-envelope"></span>
+            {% endif %}
+          </button>
+        </span>
+      </div>
+    </div>
+</form>
+
+<script>
+  setTimeout(function() {
+jQuery(document).ready(function() {
+$(".newsletter__submit").on("click", function(e) {
+var cusemail = $("#newsletter-input").val();
+e.preventDefault();
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://manage.kmail-lists.com/ajax/subscriptions/subscribe",
+  "method": "POST",
+  "headers": {
+    "content-type": "application/x-www-form-urlencoded",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "g": "XemkfV",
+    "email": cusemail
+  }
+}
+ 
+$.ajax(settings).done(function (response) {
+  console.log(response);
+$("#contact_formklaviyo").html("<div class='note form-success'><span class='fas fa-envelope'></span> {{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>")
+});
+})
+})
+  }, 3000)
+</script>

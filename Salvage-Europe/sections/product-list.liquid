@@ -1,0 +1,181 @@
+{%- liquid
+
+  assign hide = false
+
+  assign list = section.settings.product_list
+
+  assign five_column = false
+  case section.settings.grid
+    when 2
+      assign grid_item_width = 'span-6 auto'
+      assign width = 50
+    when 3
+      assign grid_item_width = 'span-4 md-span-4 sm-span-6 auto'
+      assign width = 33.333
+    when 4
+      assign grid_item_width = 'span-3 md-span-4 sm-span-6 auto'
+      assign width = 25
+    when 5
+      assign five_column = true
+      assign width = 20
+    when 6
+      assign grid_item_width = 'span-2 md-span-4 sm-span-6 auto'
+      assign width = 16.6666667
+   endcase
+
+    if section.settings.hide_empty and list == blank
+      assign hide = true
+    endif
+
+   if section.settings.carousel and list.count > section.settings.grid
+     assign is_carousel = true
+   endif
+
+-%}
+{% unless hide %}
+<section class="global__section product__list-section section-{{ section.id }}"
+data-section-id="{{ section.id }}"
+data-section-type="featured-collection"
+data-aos="{{ settings.scroll_animation }}">
+
+  <div class="row feat__collection-container">
+    {% if section.settings.title != blank %}
+     <div class="section-heading">
+         <h2>{{ section.settings.title | escape }}</h2>
+       <span class="section-border">
+         {%- if settings.header_border_style == 'zigzag' -%}<div class="zigzag"></div>{% endif %}
+       </span>
+       <div class="clear"></div>
+     </div>
+   {% endif %}
+
+   {%- liquid
+
+      assign enough_to_wrap = true
+
+      if list.count == section.settings.grid
+        assign enough_to_wrap = false
+      endif
+
+   -%}
+    {% capture slideshow_config %}{
+      "wrapAround":{{ enough_to_wrap }},
+      "cellAlign": "left",
+      "dragThreshold":"15",
+      "draggable": {{ enough_to_wrap }},
+      "pauseAutoPlayOnHover":false,
+      "prevNextButtons":{{ enough_to_wrap }},
+      "pageDots": false
+   }{% endcapture %}
+
+      <div class="collection__grid-loop {% if five_column == true %} five_column_grid{% endif %}{% if is_carousel %} product__list-carousel flickity__section js-carousel{% else %} grid__wrapper{% endif %}"{% if is_carousel %} data-flickity='{{ slideshow_config }}' data-slider-index="{{ forloop.index }}"{% endif %}>
+        {% if list == blank %}
+          {% render 'onboard-product', grid_item_width: grid_item_width, product_limit: grid %}
+        {% else %}
+          {% for product in list %}
+          <div class="product-index {{ grid_item_width }}"
+                data-product-id="{{ product.id }}"
+                data-alpha="{{ product.title }}"
+                data-price="{{ product.price }}"
+                data-color-options="{%- render 'product-listing-color-options', product: product, collection: collection -%}"
+                data-size-options="{%- render 'product-listing-size-options', product: product, collection: collection -%}"
+                data-aos="{{ settings.scroll_animation }}" >
+                {% render 'product-listing', product: product, collection: collection, grid: section.settings.grid %}
+          </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+
+    {% if is_carousel %}
+    <style>
+      .collection__grid-loop.product__list-carousel {
+        margin: 0 0.6%;
+      }
+      .product__list-section.section-{{ section.id }} .collection__grid-loop.product__list-carousel .product-index {
+        width: {{ width }}%;
+        padding: 0 14px;
+        border: 0 !important;
+        grid-column: unset !important;
+      }
+      @media screen and (min-width: 741px) and (max-width: 980px) {
+        .collection__grid-loop.product__list-carousel .product-index {
+          width: 33% !important;
+        }
+      }
+      @media screen and (max-width: 740px) {
+        .collection__grid-loop.product__list-carousel .product-index {
+          width: 50% !important;
+        }
+      }
+      </style>
+    {% endif %}
+
+</section>
+<div class="clear"></div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Product list",
+  "settings": [
+    {
+      "type":"paragraph",
+      "content":"Select a list of products or when viewing a product page optionally show unique items from each product using [metafields](https:\/\/www.weareunderground.com\/blogs\/theme-support\/using-metafields-for-additional-product-content)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured products"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Products",
+      "limit": 50
+    },
+    {
+      "type":"checkbox",
+      "id":"hide_empty",
+      "label":"Hide when product list empty",
+      "default":false
+    },
+    {
+      "type":"checkbox",
+      "id":"carousel",
+      "label":"Display in carousel",
+      "default":true
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Products per row",
+      "default": 4
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  },
+  "presets": [
+    {
+      "name": "Product list"
+    }
+  ]
+}
+{% endschema %}

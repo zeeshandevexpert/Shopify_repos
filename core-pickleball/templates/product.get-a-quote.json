@@ -1,0 +1,110 @@
+{
+  "sections": {
+    "upgrade_order": {
+      "type": "upgrade-order",
+      "disabled": true,
+      "settings": {
+        "tab-text1": "FTF BEGINNER BOOTCAMP",
+        "tab-content1": "",
+        "tab-text2": "UPGRADE YOUR ORDER",
+        "tab-content2": "",
+        "tab-text3": "ORDER COMPLETE",
+        "tab-content3": ""
+      }
+    },
+    "featured_product_BU4kXg": {
+      "type": "featured-product",
+      "blocks": {
+        "text_zfGUJt": {
+          "type": "text",
+          "settings": {
+            "text_alignment": "text-center",
+            "dbtfy_product_tabs_icon": "",
+            "dbtfy_product_tabs_title": "Customise Your Paddle",
+            "dbtfy_product_tabs_text": "",
+            "dbtfy_product_tabs_html": "<a href=\"https:\/\/corepickleballusa.com\/pages\/core-pickleball-customised-paddle\" style=\"color:white; width:100%;text-decoration: none !important;\n}\" class=\"btn btn--buy btn--add-to-cart\">\n                       GET A QUOTE\n                      <\/a>",
+            "dbtfy_product_tabs_type": "",
+            "dbtfy_product_tabs_tag": "",
+            "dbtfy_product_tabs_product": "",
+            "dbtfy_product_tabs_collection": ""
+          }
+        },
+        "text_KnxVJb": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text_alignment": "text-center",
+            "dbtfy_product_tabs_icon": "",
+            "dbtfy_product_tabs_title": "",
+            "dbtfy_product_tabs_text": "",
+            "dbtfy_product_tabs_image": "shopify:\/\/shop_images\/Screenshot_2024-01-29_at_5.17.43_AM.png",
+            "dbtfy_product_tabs_html": "",
+            "dbtfy_product_tabs_type": "",
+            "dbtfy_product_tabs_tag": "",
+            "dbtfy_product_tabs_product": "",
+            "dbtfy_product_tabs_collection": ""
+          }
+        },
+        "description_mHHqpx": {
+          "type": "description",
+          "settings": {
+            "dbtfy_product_tabs_icon": "list",
+            "dbtfy_product_tabs_title": "Details"
+          }
+        }
+      },
+      "block_order": [
+        "text_zfGUJt",
+        "text_KnxVJb",
+        "description_mHHqpx"
+      ],
+      "settings": {
+        "featured_product": "{{ product }}",
+        "image_layout": "stacked",
+        "product_photo_alignement": "left",
+        "enable_zoom": true,
+        "product_vendor": false,
+        "product_title_size": false,
+        "product_header_alignement": "",
+        "product_selector": "radio",
+        "quantity_enabled": false,
+        "button_cart_icon": true,
+        "enable_payment_button": false,
+        "show_description": false,
+        "social_sharing_products": true,
+        "show_product_tags": true,
+        "dbtfy_product_tabs_first": true,
+        "amazon_enable": false,
+        "amazon_link": "",
+        "amazon_button_label": "",
+        "ticktextclass": ""
+      }
+    },
+    "custom_html_eaHDGW": {
+      "type": "custom-html",
+      "blocks": {
+        "html_PDCTab": {
+          "type": "html",
+          "settings": {
+            "code": "<script>\n  $('#AddToCart--product-template-t-icons-section').on('click', function() {window.location = '\/pages\/performance-pickleball-program'})\n<\/script>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "html_PDCTab"
+      ],
+      "settings": {
+        "padding_section": true,
+        "section_style": "",
+        "wrapper_size": ""
+      }
+    }
+  },
+  "order": [
+    "upgrade_order",
+    "featured_product_BU4kXg",
+    "custom_html_eaHDGW"
+  ]
+}

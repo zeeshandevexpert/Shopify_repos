@@ -1,0 +1,68 @@
+<section class="product_section{% if section.settings.reverse %} reverse{% endif %}" style="background-image: url({{ section.settings.bg_image | img_url: 'master' }});">
+    <div class="image">
+        <img src="{{ section.settings.image |  img_url: "master"  }}" alt="" />
+    </div>
+    <div class="product_section-wrapper">
+        <div class="image-place">
+            <img src="{{ section.settings.image |  ima_url: "master"  }}" alt="" />
+        </div>
+        <div class="content">
+            <div class="title">{{ section.settings.heading }} </div>
+            <div class="sub-title">
+                {{ section.settings.text }} <span>{{ section.settings.price }}</span>
+            </div>
+            <div class="info">{{ section.settings.info }}</div>
+            <a href="#" class="global_button">Shop NOW</a>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Best Seller Block",
+    "settings": [
+            {
+            "type": "checkbox",
+            "id": "reverse",
+            "label": "Reverse Column"
+            },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+            },
+            {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Product Image"
+            },
+            {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+            },
+            {
+            "type": "textarea",
+            "id": "text",
+            "label": "Product Name"
+            },
+            {
+            "type": "text",
+            "id": "info",
+            "label": "Info Text"
+            },
+            {
+            "type": "text",
+            "id": "price",
+            "label": "Price"
+            }
+           
+        ],
+        "presets": [
+            {
+                "name": "Best Seller Block"
+            }
+        ]
+}
+{% endschema %}

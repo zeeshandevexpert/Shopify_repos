@@ -1,0 +1,19 @@
+ <div class="shipping-calc-wrapper flex flex--wrap flex--align-end">
+  <div class="product-form__item">
+    <label>Country</label>
+    <select id="shipping-country" name="shipping_address[country]"></select>
+  </div>
+  <div class="product-form__item">
+    <label>State</label>
+    <select id="shipping-state" name="shipping_address[province]"></select>
+  </div>
+  <div class="product-form__item">
+    <label>Postcode</label>
+    <input id="shipping-zip" type="text" name="shipping_address[zip]" value="90025">
+  </div>
+  <div class="product-form__item shipping__submit">
+    <label>&nbsp;</label>
+    <button class="shipping-submit btn"><span class="inner-txt">Get Rates</span> {% include 'icon-preloader', color: '#ffffff' %}</button>
+  </div>
+  <p id="shipping-response"></p>
+</div>

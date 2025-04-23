@@ -1,0 +1,41 @@
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-bar-0": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "LAUNCHING MAY 2024",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-bar-0"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "show_line_separator": true,
+        "auto_rotate": false,
+        "change_slides_speed": 5
+      }
+    },
+    "header_new_3r9AB6": {
+      "type": "header-new",
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/image_1_6767cce6-f699-4225-bc86-abe9729a200b.svg",
+        "site_title": "Second Language",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header_new_3r9AB6"
+  ]
+}

@@ -1,0 +1,65 @@
+<div class="page-width padding-top">
+  {% if section.settings.title != blank %}
+  <div class="section-header text-center">
+    <h1>{{ section.settings.title }}</h1>
+  </div>
+  {% endif %}
+  <div class="page--track-my-order">
+    <iframe id="track-my-order__iframe" style="min-height: {{ section.settings.min_height }}px" height='100%' width='100%' frameborder='0' allowTransparency='true' scrolling='auto' src='https://creatorapp.zohopublic.com/pinkysirondoors/production-tracker-v2/page-embed/Order_Tracker/aRAwN7sf4NMfvwUvD35kMjuBmejPfDXUp1ZvXm3kMhhr5KjYrEO4DNvE9b3X6bZPXCmQJ85YyRWXdv2AhyeSeGSTUxTevTjYyag5?Email={{ customer.email }}'></iframe>
+  </div>
+</div>
+
+<script>
+  function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? false : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  };
+  
+  const lastName = getUrlParameter('lname').toLowerCase();
+  const orderNumber = getUrlParameter('ordernum')
+  
+  if(getUrlParameter('lname') && getUrlParameter('ordernum')) {
+    const orderNumberForm = `https://creatorapp.zohopublic.com/pinkysirondoors/production-tracker-v2/page-embed/Order_Tracker/aRAwN7sf4NMfvwUvD35kMjuBmejPfDXUp1ZvXm3kMhhr5KjYrEO4DNvE9b3X6bZPXCmQJ85YyRWXdv2AhyeSeGSTUxTevTjYyag5?lname=${lastName}&ordernum=${orderNumber}`;
+    document.getElementById('track-my-order__iframe').setAttribute('src',orderNumberForm);
+  }
+  
+  
+  
+</script>
+{% schema %}
+  {
+    "name": "Track My Order",
+    "settings": [
+	{
+		"type":"text",
+		"id":"title",
+		"label":"Title",
+		"default":"Track My Order"
+	},
+	{
+		"type":"textarea",
+		"id":"iframe_code",
+		"label":"Iframe code"
+	},
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 100,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Minimum Height",
+	  "default":500
+    }
+
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

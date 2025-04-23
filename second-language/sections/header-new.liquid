@@ -1,0 +1,152 @@
+<header id="header" class="new-header{% if template.name == "index" %} sticky-header{% endif %}">
+    <div class="main-header-wrap">
+      <div class="empty-block"></div>
+        {% if section.settings.logo %}
+          <a class="logo-wrapper" href="/">  <img src="{{ section.settings.logo |  img_url: 'master' }}" alt="">    </a>
+        {% else %}
+       <a class="logo-wrapper" href="/"> <div class="text">{{ section.settings.site_title }}</div></a>
+    {% endif %}
+
+      <div class="wrap-header-nav">
+        <div class="wrapper">
+          {%- liquid
+          if section.settings.menu != blank
+            if section.settings.menu_type_desktop == 'dropdown'
+              render 'header-dropdown-menu'
+            elsif section.settings.menu_type_desktop != 'drawer'
+              render 'header-mega-menu'
+            endif
+          endif
+        %}
+        
+        {%- liquid
+        if section.settings.menu != blank
+          render 'mobile-header'
+        endif
+      -%}
+      </div>
+      <div class="wrap-icon-nav">
+        {% render 'header-search', input_id: 'Search-In-Modal' %}
+          <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} {% endif %}">
+            {% render 'icon-account' %}
+            <span class="visually-hidden">
+              {%- liquid
+                if customer
+                  echo 'customer.account_fallback' | t
+                else
+                  echo 'customer.log_in' | t
+                endif
+              -%}
+            </span>
+          </a>
+          <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+            {%- liquid
+              if cart == empty
+                render 'icon-cart-empty'
+              else
+                render 'icon-cart'
+              endif
+            -%}
+            <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+            {%- if cart != empty -%}
+              <div class="cart-count-bubble">
+                {%- if cart.item_count < 100 -%}
+                  <span aria-hidden="true">{{ cart.item_count }}</span>
+                {%- endif -%}
+                <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+              </div>
+            {%- endif -%}
+          </a>
+      </div>
+  </div>
+    </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenuIcon = document.querySelector('.hamburger-menu-icon');
+    const mobileNavigation = document.querySelector('.header__inline-menu-mob');
+    const fullheader = document.querySelector('.new-header');
+
+    hamburgerMenuIcon.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileNavigation.classList.toggle('active');
+        // fullheader.classList.addClass('sticky');
+        if (mobileNavigation.classList.contains('active')) {
+            fullheader.classList.add('sticky');
+        } else {
+            fullheader.classList.remove('sticky');
+        }
+    });
+});
+
+ </script>
+
+<script>
+ 
+window.addEventListener('scroll', function() {
+  const header = document.getElementById('header');
+  if (window.scrollY > 250) {
+    header.classList.add('sticky');
+  } else {
+    header.classList.remove('sticky');
+  }
+});
+
+</script>
+
+{% schema %}
+    {
+        "name": "Header",
+        "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label": "Site Logo"
+                },
+                {
+                    "type": "text",
+                    "id": "site_title",
+                    "label": "Site Title"
+                },
+                {
+                "type": "link_list",
+                "id": "menu",
+                "default": "main-menu",
+                "label": "Menu"
+                },
+                {
+                "type": "link_list",
+                "id": "mob_menu",
+                "default": "main-menu",
+                "label": "Mobile Menu"
+                },
+                {
+                "type": "select",
+                "id": "menu_type_desktop",
+                "options": [
+                    {
+                    "value": "dropdown",
+                    "label": "t:sections.header.settings.menu_type_desktop.options__1.label"
+                    },
+                    {
+                    "value": "mega",
+                    "label": "t:sections.header.settings.menu_type_desktop.options__2.label"
+                    },
+                    {
+                    "value": "drawer",
+                    "label": "t:sections.header.settings.menu_type_desktop.options__3.label"
+                    }
+                ],
+                "default": "dropdown",
+                "label": "t:sections.header.settings.menu_type_desktop.label",
+                "info": "t:sections.header.settings.menu_type_desktop.info"
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Header"
+                }
+            ]
+    }
+    {% endschema %}

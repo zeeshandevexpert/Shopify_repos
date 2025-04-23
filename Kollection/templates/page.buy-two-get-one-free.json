@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "product_section_eNTU8J": {
+      "type": "product-section",
+      "settings": {
+        "title": "Buy Two Get One free",
+        "price": "109",
+        "description": "For a limited time only, buy one Adult hoodie and get one Adult hoodie FREE! This deal is available on selected hoodies for a limited time only."
+      }
+    },
+    "product_section_b_yXRhWc": {
+      "type": "product-section-B",
+      "disabled": true,
+      "settings": {
+        "title": "Buy Two Get One free",
+        "price": "109",
+        "description": "For a limited time only, buy one Adult hoodie and get one Adult hoodie FREE! This deal is available on selected hoodies for a limited time only."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_section_eNTU8J",
+    "product_section_b_yXRhWc"
+  ]
+}

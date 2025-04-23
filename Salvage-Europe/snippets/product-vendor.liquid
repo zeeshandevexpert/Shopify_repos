@@ -1,0 +1,17 @@
+{% comment %}
+snippets/product-vendor.liquid
+
+- product
+- shop
+{% endcomment %}
+{% unless product == empty %}
+  <p class="h4">{{ product.vendor }}</p>
+{% else %}
+  <p class="h4">
+  {% if shop.vendors.size > 0 %}
+    {{ shop.vendors | first }}
+  {% else %}
+    {{ 'general.onboard.featured_product_vendor' | t }}
+  {% endif %}
+  </p>
+{% endunless %}

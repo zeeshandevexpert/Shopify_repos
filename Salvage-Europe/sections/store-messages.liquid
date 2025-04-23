@@ -1,0 +1,108 @@
+{%- liquid
+
+  assign color = section.settings.color
+  assign background = section.settings.background
+  assign has_content = false
+  if section.blocks.size >= 1
+    assign has_content = true
+  endif
+  
+  assign prevNextButtons = false
+  if section.settings.show_nav_buttons and section.blocks.size > 1
+    assign prevNextButtons = true
+  endif
+
+-%}
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --text-color: {{ color }};
+    --section-background: {{ background }};
+  }
+{% endstyle %}
+<section class="store__messages-section{% if has_content %} has__content{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="store-messages">
+
+  {% capture slideshow_config %}{
+    "wrapAround":true,
+    "autoPlay":6000,
+    "cellAlign":"left",
+    "dragThreshold":"15",
+    "draggable": false,
+    "pauseAutoPlayOnHover":false,
+    "prevNextButtons":{{ prevNextButtons }},
+    "pageDots": false
+ }{% endcapture %}
+
+    <div class="store__messages_container grid__wrapper">
+      <div class="span-12 auto store__messages--carousel  flickity__section js-carousel" data-flickity='{{ slideshow_config }}'>
+      {% for block in section.blocks %}
+
+        {%- liquid
+          assign message = block.settings.message_content
+        -%}
+
+        <div class="store__message-content auto rte center" {{ block.shopify_attributes }}>
+            {{ message }}
+        </div>
+
+      {% endfor %}
+      </div>
+    </div>
+    <style type="text/css">
+      .store__messages--carousel {
+        opacity: 0;
+        display: none;
+      }
+      .store__messages--carousel.flickity-enabled {
+        opacity: 1;
+        transition: opacity 2s;
+        display: block;
+      }
+    </style>
+</section>
+{% schema %}
+{
+  "name": "Store messages",
+  "class": "js-site-store-messages",
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type":"paragraph",
+      "content":"Display rotating messages below the header, hides automatically if header set to overlay homepage content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_nav_buttons",
+      "label": "Show next / prev buttons",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type":"message",
+      "name":"Message",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "message_content",
+          "label": "Add a message",
+          "default": "<p>Add a store wide announcement or message</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,49 @@
+{% comment %}
+snippets/product-collection-navigation.liquid
+
+- product
+- collection
+{% endcomment %}
+{% if collection or product == empty %}
+  <div class="product-links">
+    <span class="backto">
+      {% unless product == empty %}
+      {% assign back_to = 'products.product.back_to' | t: collection_title: collection.title %}
+      {{ back_to | link_to: collection.url, title: back_to, aria-label: back_to }}
+      {% else %}
+      {% assign back_to = 'products.product.back_to' | t: collection_title: 'Collection title' %}
+      {{ back_to | link_to: '#', title: back_to, aria-label: back_to }}
+      {% endunless %}
+    </span>
+    {% assign prev_product = 'products.product.previous_product_html' | t %}
+    {% unless product == empty %}
+      {% if collection.previous_product %}
+        {% capture prev_url %}
+          {{ collection.previous_product}}
+        {% endcapture %}
+        <span class="prev-prod">
+          {{ prev_product | link_to: prev_url, title: prev_product , aria-label: prev_product }}
+        </span>
+      {% endif %}
+    {% else %}
+      <span class="prev-prod">
+        {{ prev_product | link_to: '#', title: prev_product , aria-label: prev_product }}
+      </span>
+    {% endunless %}
+    {% assign next_product = 'products.product.next_product_html' | t %}
+    {% unless product == empty %}
+    {% if collection.next_product %}
+      {% capture next_url %}
+        {{ collection.next_product}}
+      {% endcapture %}
+      <span class="next-prod">
+        {{ next_product | link_to: next_url, title: next_product , aria-label: next_product }}
+      </span>
+    {% endif %}
+    {% else %}
+      <span class="next-prod">
+        {{ next_product | link_to: '#', title: next_product , aria-label: next_product }}
+      </span>
+    {% endunless %}
+  </div><!-- /.product-links -->
+{% endif %}

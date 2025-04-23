@@ -1,0 +1,188 @@
+{
+  "order": [
+    "main",
+    "product_collection",
+    "3bd6fa8b-76d4-4ffd-80f0-88bd3bac5420",
+    "752cf358-21e6-41e7-a8e8-3804c584f2d9",
+    "16922337029501a420"
+  ],
+  "sections": {
+    "main": {
+      "type": "malomo_order_tracking",
+      "blocks": {
+        "malomo_shipment_tracker": {
+          "type": "shopify://apps/malomo-order-tracking/blocks/shipment-tracker/5cb158a1-dc52-4d21-aac7-e017083c11e2",
+          "settings": {
+            "publishable_api_key": "pk_847aa8d5314dd47f8b69aea491bd8590",
+            "element": "shipmentTracker",
+            "block_width": 350,
+            "button_background_color": "#fd83c2",
+            "button_border_color": "",
+            "button_border_radius": 6,
+            "button_border_width": 0,
+            "button_capitalization": "capitalize",
+            "button_height": 48,
+            "button_text_color": "#ffffff",
+            "input_background_color": "#ffffff",
+            "input_border_color": "#dddddd",
+            "input_border_radius": 10,
+            "input_border_width": 1,
+            "input_height": 42
+          }
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero-image.jpg",
+            "image_horizontal_alignment": "center",
+            "image_link_url": "",
+            "image_width": ""
+          }
+        }
+      },
+      "block_order": [
+        "malomo_shipment_tracker",
+        "image"
+      ],
+      "settings": {
+        "height": "500",
+        "padding": "",
+        "header_background_color": "rgba(0,0,0,0)",
+        "header_font": "sans-serif",
+        "header_font_size": "40",
+        "header_horizontal_alignment": "center",
+        "header_padding_top": "20",
+        "header_padding_bottom": "20",
+        "header_level": "h2",
+        "header_text": "",
+        "background_color": "#fee7f1",
+        "background_image_enabled": false,
+        "background_repeat": "repeat",
+        "background_size": "auto",
+        "malomo_background_color": "rgba(0,0,0,0)",
+        "malomo_border_color": "",
+        "malomo_border_radius": "0",
+        "malomo_border_style": "none",
+        "malomo_border_width": "0",
+        "malomo_padding": "40"
+      }
+    },
+    "product_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop while you wait",
+        "heading_size": "h1",
+        "description": "<p>Check out our latest drops</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-releases",
+        "products_to_show": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "choose_size": true,
+        "view_all_style": "solid",
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3bd6fa8b-76d4-4ffd-80f0-88bd3bac5420": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "cover_image": "shopify://shop_images/Malomo-Video-Cover-Image.jpg",
+        "video_url": "https://youtu.be/AQRBoz2PX7M",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "752cf358-21e6-41e7-a8e8-3804c584f2d9": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15107853025328__752cf358-21e6-41e7-a8e8-3804c584f2d9-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p><strong>Follow @wildflowercases </strong></p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--15107853025328__752cf358-21e6-41e7-a8e8-3804c584f2d9-text-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "template--15107853025328__752cf358-21e6-41e7-a8e8-3804c584f2d9-button-1": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15107853025328__752cf358-21e6-41e7-a8e8-3804c584f2d9-heading-1",
+        "template--15107853025328__752cf358-21e6-41e7-a8e8-3804c584f2d9-text-1",
+        "template--15107853025328__752cf358-21e6-41e7-a8e8-3804c584f2d9-button-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 12
+      }
+    },
+    "16922337029501a420": {
+      "type": "apps",
+      "blocks": {
+        "25daca09-17f5-454c-a1e6-52d728604a16": {
+          "type": "shopify://apps/shoppable-instagram-ugc/blocks/custom_ambassador_page/e2616dfe-fbb6-4e7d-874d-d250b973556d",
+          "disabled": true,
+          "settings": {
+            "theme": "full",
+            "ambassador_spacing": 5,
+            "base_color": "#ffffff",
+            "ambassador_font_size": 12,
+            "ambassador_font": "helvetica_n4",
+            "backbutton_text": "View All",
+            "foreground_color": "#ffffff",
+            "background_color": "#000000",
+            "background_color_alpha": 90,
+            "post_spacing": 1,
+            "hover_margin": 0,
+            "target_blank": false,
+            "show_icon": true,
+            "show_text": false,
+            "show_date": false,
+            "call_to_action": "SHOP IT",
+            "shop_type": "button",
+            "override_feed_id": "",
+            "arbitrary_attributes": "",
+            "custom_css": "",
+            "custom_js": ""
+          }
+        }
+      },
+      "block_order": [
+        "25daca09-17f5-454c-a1e6-52d728604a16"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  }
+}

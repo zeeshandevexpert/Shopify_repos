@@ -1,0 +1,534 @@
+<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+  <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60RW6G6H5P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-60RW6G6H5P');
+</script>
+
+
+    
+    <meta name="p:domain_verify" content="bf6adf1ffaca946cb6e65c824f98a79e"/>
+    <meta name="google-site-verification" content="BlptwmPX8Ub-uBlad-2nHvoFUhnjriibgXCqD5Weihk" />
+    <meta name="google-site-verification" content="J_2O82Uys89cNjyz69jkmUwdwRw5tMEfXXutF43a7EY" />
+    <meta charset="utf-8">
+    {%  if template contains 'product' and product.tags contains 'redirect' %}
+    <meta http-equiv="refresh" content="0;url={{ shop.url }}" />
+    {% endif  %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_button }}">
+    <meta name="msvalidate.01" content="8634DD92B9345F3F9B0E8381A8DC3B03" />
+    <meta http-equiv="Expires" content="30" />
+    
+    <!-- Code for Neue Hass Grotesk and Courier Font -->
+    {% render 'hs-defer-css' with filename: 'https://use.typekit.net/iac8srz.css', pages: 'collection,index,product' | split: ',', minify: false, local: false %}
+    
+
+    {%  if template contains 'product' and product.tags contains 'redirect' %}
+     <meta http-equiv="refresh" content="0;url={{ shop.url }}" /> 
+     <meta name="robots" content="noindex" />
+     <meta name="googlebot" content="noindex" />
+    {% endif %}
+    {% if template contains 'collection' and current_tags %}
+    <meta name="robots" content="index" /> 
+    <link rel="canonical" href="{{ shop.url }}{{ collection.url }}" /> 
+    {% elsif template == 'page.no-follow' %}
+    <meta name="robots" content="index" /> 
+    {% else %} 
+    <link rel="canonical" href="{{ canonical_url }}" /> 
+    {% endif %}
+
+    {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {%- capture seo_title -%}
+    {%- if template == 'search' and search.performed == true -%}
+    {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    {%- else -%}
+    {{ page_title }}
+    {%- endif -%}
+    {%- if current_tags -%}
+    {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+    &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+    &ndash; {{ shop.name }}
+    {%- endunless -%}
+    {%- endcapture -%}
+    <title>{{ seo_title | strip }}</title>
+
+    {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+    {%- endif -%}
+
+    {% include 'social-meta-tags' %}
+    <style>
+      {% if settings.hide_telephone_number %}
+      .site-header__tel,
+      #shopify-section-page-contact ul li:nth-child(2),
+      #mobile--call-us
+      {
+        display: none !important;
+      }
+      {% endif %}
+
+      body {
+        opacity: 0;
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -ms-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+      }
+    </style>
+
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-M4V4S2S');</script>
+    <!-- End Google Tag Manager -->
+
+    {% include 'wholesale-vars' %}
+    
+    <script src="https://cdn.yottaa.com/rapid.security.min.6.5.1.js?key=-r5wn4BGuBNvCw"></script>
+    <script>
+      Yo.configure('https://qoe-1.yottaa.net/api/v1/configure.rapid.js?key=-r5wn4BGuBNvCw');
+    </script>
+
+    <script>
+
+      var theme = {
+        strings: {
+          addToCart: {{ 'products.product.add_to_cart' | t | json }},
+          soldOut: {{ 'products.product.sold_out' | t | json }},
+          unavailable: {{ 'products.product.unavailable' | t | json }},
+          regularPrice: {{ 'products.product.regular_price' | t | json }},
+          sale: {{ 'products.product.on_sale' | t | json }},
+          showMore: {{ 'general.filters.show_more' | t | json }},
+          showLess: {{ 'general.filters.show_less' | t | json }},
+          addressError: {{ 'sections.map.address_error' | t | json }},
+          addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+          addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+          authError: {{ 'sections.map.auth_error_html' | t | json }},
+          newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
+          external: {{ 'general.accessibility.link_messages.external' | t | json }},
+          newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }},
+          cookiesPopupText: {{ 'cookies_notice' | t | json }}
+        },
+        moneyFormat: {{ shop.money_format | json }},
+        dev: {
+        variantSelection: '{{settings.variant_style}}',
+        preorder: false,
+        showAnnouncementBar: false,
+        showReviews: 1,
+        otherColors: 1,
+        cartTotal: {{cart.total_price | divided_by: 100}},
+        upsellId: {{ upsell_product.selected_or_first_available_variant.id | json }}
+      },
+          wholesale: {
+            {% if is_wholesale %}
+            discount: {{ discount | json }},
+              percentOff: {{ percent_off | json }},
+                {% endif %}
+                isWholesale: {{ is_wholesale | json }}
+          }
+          }
+
+      {% assign upsell_product = all_products[settings.upsell_product] %}
+      var upsellProduct = {{ upsell_product | json }};
+      var GlassOptions = [{% for link in linklists.glass-options.links %}'{{link.title}}'{% unless forloop.last %},{% endunless %}{% endfor %}];
+                          var ColorOptions = [{% for link in linklists.color-options.links %}'{{link.title}}'{% unless forloop.last %},{% endunless %}{% endfor %}];
+      var SwingOptions = [{% for link in linklists.door-swing.links %}'{{link.title | replace: 'Right-Hand','Right Hand' | replace: 'Left-Hand','Left Hand' | replace: ' - ', ' ' | replace: 'swing','Swing'  }}'{% unless forloop.last %},{% endunless %}{% endfor %}];
+                          document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    </script>
+
+    {%- if template.directory == 'customers' -%}
+    <script defer src="{{ 'shopify_common.js' | shopify_asset_url }}"></script>
+    {%- endif -%}
+    {{ content_for_header }}
+    
+    <!-- Zoho Chat Code -->
+    <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "f94e74016e686415cb75cbfd2d6908490a554ee0baec9365fc37702a394b2628ffabdc6dd0842c0bc91c0dde1a5ac9e3", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>
+
+
+
+
+    <script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"25058194"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+
+	<style type="text/css">
+      @font-face {
+        font-family: 'NHaasGroteskDSPro';
+        src: url({{ 'NHaasGroteskDSPro-bold.woff' | asset_url }}) format('woff'),
+          url({{ 'NHaasGroteskDSPro-bold.woff2' | asset_url }}) format('woff2');
+        font-weight: bold;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'NHaasGroteskDSPro';
+        src: url({{ 'NHaasGroteskDSPro.woff2' | asset_url }}) format('woff2'),
+          url({{ 'NHaasGroteskDSPro.woff' | asset_url }}) format('woff');
+        font-weight: normal;
+        font-display: swap;
+      }
+    </style>
+
+
+    <!-- Affirm -->
+    {% if template contains 'product' or template == 'cart' %}
+    <script>
+      _affirm_config = {
+        public_api_key:  "56RDQZYTVEUFDMKW",
+        script:          "https://cdn1.affirm.com/js/v2/affirm.js"
+      };
+      (function(l,g,m,e,a,f,b){var d,c=l[m]||{},h=document.createElement(f),n=document.getElementsByTagName(f)[0],k=function(a,b,c){return function(){a[b]._.push([c,arguments])}};c[e]=k(c,e,"set");d=c[e];c[a]={};c[a]._=[];d._=[];c[a][b]=k(c,a,b);a=0;for(b="set add save post open empty reset on off trigger ready setProduct".split(" ");a<b.length;a++)d[b[a]]=k(c,e,b[a]);a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+      // Use your live public API Key and https://cdn1.affirm.com/js/v2/affirm.js script to point to Affirm production environment.
+    </script>
+    <!-- End Affirm -->
+    {% endif %}
+
+    {% if product and product.available != true %}
+    <script>
+      //console.log('boo');
+      {% if product.title contains 'Special Order' %}
+      window.location.href = '/pages/contact-us';
+      {% else %}
+      //console.log({{product.url}});
+      window.location.href = '/products/{{ product.handle | remove: '-clearance' | remove: '-pre-sale' }}-special-order';
+      {% endif %}
+    </script>
+    {% endif %}
+
+
+    {% comment %} Get the shipping time {% endcomment %}
+    {% include 'shipping-time' %}
+    {% if product %}
+    <script>
+      var shippingTime = '{{- shipping_time | strip -}}';
+      shippingTime = shippingTime.trim();
+    </script>
+    {% endif %}
+
+
+
+
+
+
+
+    <!--=========================================Header=========================================-->
+    {% comment %}
+    <!-- Global Site Tag (gtag.js) - Google AdWords: 738902025 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-738902025"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-738902025', {'send_page_view': false});
+    </script>    
+    {% endcomment %}
+
+    {% if handle contains 'terms-conditions' %}
+    <meta name="robots" content="noindex">
+    {% endif %}
+
+
+    {% render 'gsf-conversion-pixels' %}
+
+    {% render 'hs-defer-css' with filename: 'theme.scss.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}
+    {% render 'minmaxify-head' %}
+
+    <meta name="facebook-domain-verification" content="efi2mfhjg954w2ioqxwjwlhbgblx4k" />
+    {% render "geo" %}  <!--CPC-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!--CPC-->
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MNV9RS8');</script>
+<!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-60RW6G6H5P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-60RW6G6H5P');
+</script>
+  
+
+                        {% include 'otRegion' %}            
+                        </head>
+
+  <body class="{% if is_wholesale %}wholesale--user{% endif %} template-{{ template | split: '.' | first }} full-template--{{ template }}{% if template == 'page' %} page-{{page.handle}}{% endif %} {% if template contains 'black' %}dark-mode{% endif %} {% if template == 'collection' %}collection--{{collection.handle}}{% endif %}">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNV9RS8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <script async data-client-id="08eb0a74-3a82-52ca-9b76-eba2c527c03e" src="https://na-library.klarnaservices.com/lib.js"></script>
+    <!--     <script>
+window.KlarnaOnsiteService = window.KlarnaOnsiteService || [];
+window.KlarnaOnsiteService.push({ eventName: 'refresh-placements' });
+</script> -->
+
+    <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+    <div id="SearchDrawer" class="search-bar drawer drawer--top" role="dialog" aria-modal="true" aria-label="{{ 'general.search.placeholder' | t }}">
+
+
+      <form class="search search-bar__form you-autocomplete-me" action="/search" method="get" role="search">
+        <div class="search-bar__flex flex flex--align-center">
+          <input class="search__input search-bar__input" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Type to search..." aria-label="{{ 'general.search.placeholder' | t }}">
+          <button class="search-bar__submit search__submit btn--link" type="submit">
+            {% include 'icon-search' %}
+            <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+          </button>
+          <button type="button" class="btn--link search-bar__close js-drawer-close">
+            {% include 'icon-close' %}
+            <span class="icon__fallback-text">{{ 'general.search.close' | t }}</span>
+          </button>
+        </div>
+      </form>
+
+
+    </div>
+
+    {% section 'header' %}
+
+    <div class="page-container" id="PageContainer">
+
+      <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+
+      {% section 'footer' %}
+
+      <div id="slideshow-info" class="visually-hidden" aria-hidden="true">
+        {{- 'sections.slideshow.navigation_instructions' | t -}}
+      </div>
+
+    </div>
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    </ul>
+
+    {% section 'newsletter-popup' %}
+
+    {% comment %}
+    <a id="mobile--call-us" class="medium-up--hide" href="tel:18448436677"></a>
+    {% endcomment %}
+
+    <a id="mobile--call-us" class="medium-up--hide" href="tel:18448436677">(844) 843-6677</a>
+
+    {% if template == 'collection' %}
+    <script type="text/javascript">
+      window.currentTagsJSON = {{ current_tags | json }};
+      window.productsJSON = {{ collection.products | json }};
+      window.collectionUrl = "/collections/{{ collection.handle }}/?page={{ paginate.current_page }}";
+      window.currentPage = {{ pagination.current_page | json }};
+    </script>
+    <div class="collection-preloader" style="display: none;">{% include 'icon-preloader' %}</div>
+    {% endif %}
+
+
+    {% section 'cookies-popup' %}
+
+
+    <script async src="{{ 'lazysizes.js' | asset_url }}"></script>
+    <script src="{{ 'vendor.js' | asset_url }}"></script>
+
+    {% if blog.title == 'Press' %}
+    <script src="{{ 'masonry.pkgd.min.js' | asset_url }}"></script>
+    {% endif %}
+    {% if template contains 'product' and product.available and product.options.size > 1 %}
+    {% include 'linked-options' %}
+    {% endif %}
+
+    <script src="{{ 'theme.js' | asset_url }}"></script>
+
+    {% if template contains 'collection' %}
+    <script src="{{ 'collection.min.js' | asset_url }}"></script>
+    {% endif %}
+
+    {% if template contains 'product' %}
+    <script src="{{ 'product.min.js' | asset_url }}"></script>
+    {% endif %}
+
+
+    {% if page and page.handle == 'about-us' %}
+    <script defer src="{{ 'history.js' | asset_url }}"></script>
+    {% endif %}
+
+    <noscript class="hs-load-onaction"><script defer src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js" type="text/javascript"></script></noscript>
+    <script type="text/javascript">
+      KlaviyoSubscribe.attachToForms('#klaviyo-above-footer,#klaviyo-popup', {
+        hide_form_on_success: true
+      });
+    </script>
+
+    <script type='text/javascript'>
+      window.__wtw_lucky_site_id = 158960;
+      (function() {
+        var wa = document.createElement('script'); wa.type = 'text/javascript'; wa.async = true;
+        wa.src = 'https://d10lpsik1i8c69.cloudfront.net/w.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wa, s);
+      })();
+    </script>
+
+    {% if customerz and customer.email == 'david@abbyrosedesign.com' and page.handle == 'steel-windows-doors-nfrc-rated' %}
+    <script>
+      $(function() {
+        $('#nfrc-profiles').show();
+      });
+    </script>
+    <style>
+      .nfrc-page .even .flex{
+        background: transparent;
+      }
+      .nfrc-page > div:nth-child(even) {
+        background: #222 !important;
+      }
+    </style>
+    {% endif %}
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4V4S2S" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!--=========================================Footer=========================================-->
+    {% comment %}
+    
+    <!-- google dynamic remarketing tag for theme.liquid -->
+    {% if template contains 'product' %}
+    <script type="text/javascript">
+      var json_product = {{ product | json }};
+    </script>
+    <script>
+      var ecomm_prodid=[];
+      for(var i=0;i<json_product.variants.length;i++)
+        ecomm_prodid.push('shopify_US_{{product.id}}_'+json_product.variants[i].id);
+    </script>
+    <script type="text/javascript">
+      var google_tag_params = {
+        ecomm_prodid: ecomm_prodid,
+        ecomm_pagetype: 'product',
+        ecomm_totalvalue: parseFloat('{{ product.price | money_without_currency | remove: ","}}')
+                                     };
+    </script>
+    {% elsif template contains 'collection' %}
+    <script type="text/javascript">
+      var google_tag_params = {
+        ecomm_pagetype: 'category'
+      };
+    </script>
+    {% elsif template contains 'cart' %}
+    <script type="text/javascript">
+      var id = new Array();
+      {% for item in cart.items %}
+      id.push('shopify_US_{{item.product.id}}_{{item.variant.id}}');
+              {% endfor %}
+
+              var google_tag_params = {
+              ecomm_prodid: id,
+              ecomm_pagetype: 'cart',
+              ecomm_totalvalue: parseFloat('{{ cart.total_price | money_without_currency | remove: ","}}')
+              };
+    </script>
+    {% elsif template contains 'search' %}
+    <script type="text/javascript">
+      var google_tag_params = {
+        ecomm_pagetype: 'searchresults'
+      };
+    </script>
+    {% elsif template contains 'index' %}
+    <script type="text/javascript">
+      var google_tag_params = {
+        ecomm_pagetype: 'home'
+      };
+    </script>
+    {% else %}
+    <script type="text/javascript">
+      var google_tag_params = {
+        ecomm_pagetype: 'other'
+      };
+    </script>
+    {% endif %}
+    <script>
+      gtag('event', 'page_view', {'send_to': 'AW-738902025',
+                                  'ecomm_prodid':window.google_tag_params.ecomm_prodid,
+                                  'ecomm_pagetype': window.google_tag_params.ecomm_pagetype,
+                                  'ecomm_totalvalue':window.google_tag_params.ecomm_totalvalue
+                                 });
+    </script>   
+    {% endcomment %}
+
+    <script type="text/javascript" async defer>
+      var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"f94e74016e686415cb75cbfd2d6908490a554ee0baec9365fc37702a394b2628ffabdc6dd0842c0bc91c0dde1a5ac9e3", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+    </script>
+    <script defer src="https://www.googleoptimize.com/optimize.js?id=OPT-57Z9QC4"></script>
+
+    <!--     <script src="{{ 'collection-worker.min.js' | asset_url }}"></script> -->
+
+    {% comment %} Wishlist King {% endcomment %}
+    {% if settings.app_wk_enabled %}
+    {% include 'appmate-wishlist-king' %}
+    {% endif %}
+    {% comment %}{% render 'wholesale-now', customer: customer, template: template, product: product, cart: cart %}{% endcomment %}
+
+
+    {% comment %}
+    <script type="text/javascript">!function(){var b=function(){window.__AudioEyeSiteHash = "cfc3d646c09588ccdc41474d43067d5d"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();</script>    
+    {% endcomment %}
+
+    <script>(function(){ var s = document.createElement('script'), e = ! document.body ? document.querySelector('head') : document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : true, hideTrigger : true, language : 'en', position : 'left', leadColor : '#9c9c9c', triggerColor : '#fa5e53', triggerRadius : '50%', triggerPositionX : 'left', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'small', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'left', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 0, triggerRadius : '50%' } }); }; e.appendChild(s);}());</script>
+    
+    <script>
+      window.addEventListener('load', function(){
+        jQuery('button:contains("Add to cart")').click(function(){
+          console.log(jQuery('.price-item--sale').text().replace(/[^0-9.]/g,''));
+          gtag('event', 'conversion', {
+            'send_to': 'AW-738902025/f3EoCP6yqJQDEImAq-AC',
+            'value': parseFloat(jQuery('.price-item--sale').text().replace(/[^0-9.]/g,'')),
+            'currency': 'USD'
+          });
+        });
+      });
+    </script>
+
+    <script>
+  document.addEventListener('click', function(e) {
+    if (e.target.matches('button[name="checkout"] , [name="checkout"] *')) {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-738902025/d5bFCNjaqJQDEImAq-AC',
+        'value': parseFloat(jQuery('.cart__subtotal').text().replace(/[^0-9.]/g, '')),
+        'currency': 'USD'
+      });
+    }
+  })
+
+</script>
+    {% if template == 'product' %}
+    <script defer src="https://calcapi.printgrid.io/shopify/calculator.js"></script>
+    {% endif %}
+
+  </body>
+</html>
+
+

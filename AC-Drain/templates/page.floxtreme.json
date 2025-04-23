@@ -1,0 +1,146 @@
+{
+  "sections": {
+    "banner_block_teEeVD": {
+      "type": "banner-block",
+      "settings": {
+        "bg_image1": "shopify:\/\/shop_images\/Group_4.svg",
+        "bg_image2": "shopify:\/\/shop_images\/Group-190.png",
+        "heading": "KEEP YOUR AC DRAIN LINE CLEAR FOR JUST PENNIES A DAY.",
+        "description": "<p>FloXtreme 24\/7's patented technology sends a low-dose drip of environmentally friendly cleaner into your AC’s drain pan, where algae and bacteria begin.  The solution mixes with condensation from your AC unit, then flows through the drain line to prevent the growth of toxic sludge.  <\/p><p> <\/p><p>FloXtreme 24\/7 was invented by Brian Hoskins, an AC contractor in Florida for over 20 years.  Brian knows first-hand the discomfort, expense and damage that clogged AC lines can cause.  When he found that blocked lines accounted for more than half his service calls, he developed a simple, preventive solution that stops AC blockages before they start.  <\/p>",
+        "button_title": "",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "blurb_section_FazfLe": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/c2ffa853-3681-4766-8828-67bc44ab7daa.png",
+        "video_media": "",
+        "heading": "The Clear Difference",
+        "description": "<p>FloXtreme offers clear advantages over <br\/>other products:<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_FJzA8U": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/76004c1c-7dd9-4dc3-875f-e055930ee5bf.png",
+        "video_media": "",
+        "heading": "Order yours today, risk free.",
+        "description": "<p>The FloXtreme System includes everything you need to install FloXtreme in just minutes, plus a bottle of our proprietary cleaning solution. Refills can be purchased individually, or you can subscribe for regular deliveries of FloXtreme at a discount, to ensure that you always have a supply on hand.  <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_wVrYtH": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group195_966187f4-43f7-46c6-a5bd-ea07baaf24ea.png",
+        "video_media": "",
+        "heading": "THE FLOXTREME SYSTEM - $99.00",
+        "description": "<p><strong>Includes:<\/strong><\/p><p>• PVC fittings<br\/>• Patented dispensing cap<br\/>• Solution bottle<\/p><p>•  ClearShot Bottle<\/p>",
+        "button_title": "ORDER NOW",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "blurb_section_gaT9Cd": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_197_93d6a179-9797-4c2d-84b5-836eee3de5ef.png",
+        "video_media": "",
+        "heading": "FLOXTREME SOLUTION REFILLS - $39.99",
+        "description": "<p>Our non-acidic solution works wonders on your drainage system, and it won’t damage your AC. One bottle will last up to three months, depending on your AC usage.<\/p>",
+        "button_title": "ORDER NOW",
+        "button_link": "shopify:\/\/products\/floxtreme-solution-refills"
+      }
+    },
+    "blurb_section_e463G6": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 2,
+        "bg_image": "shopify:\/\/shop_images\/Group_5.svg",
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_107_3.png",
+        "video_media": "",
+        "heading": "Keep your AC going!  Subscribe today.",
+        "description": "<p>You won’t have to worry about losing AC drain system protection when you sign up for FloXtreme’s solution subscription service.  We’ll automatically send refill solution to you every four months at a discounted price.  You’ll prevent toxic sludge build-up, save time and money, and keep your AC going!  Sign up today.<\/p>",
+        "button_title": "SUBSCRIBE",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "text_banner_section_xwWbRC": {
+      "type": "text-banner-section",
+      "settings": {
+        "heading": "STOP CLOGS BEFORE THEY START.",
+        "description": "<p>Unlike home remedies and other products on the market, AC Drain Clear stops the problem where it starts:  in your AC’s drain pan.  Our proprietary solution is non-toxic, non-acidic and environmentally friendly.  It keeps the toxic slime away without damaging your AC unit.<\/p>",
+        "button_title": "ORDER TODAY",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    }
+  },
+  "order": [
+    "banner_block_teEeVD",
+    "banner",
+    "product-grid",
+    "blurb_section_FazfLe",
+    "blurb_section_FJzA8U",
+    "blurb_section_wVrYtH",
+    "blurb_section_gaT9Cd",
+    "blurb_section_e463G6",
+    "text_banner_section_xwWbRC"
+  ]
+}

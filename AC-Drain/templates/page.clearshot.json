@@ -1,0 +1,145 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "blurb_section_8mTPFz": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Clearshot_image.png",
+        "video_media": "",
+        "heading": "INTRODUCING FLOXTREME CLEARSHOT",
+        "description": "<h2>The Ultimate AC Drain Line and Pan Cleaner<\/h2><p>Fast. Safe. Effective.<\/p><p>Is your AC system struggling with sludge buildup in the drain line or pan? Say goodbye to clogs and hello to efficiency with Floxtreme ClearShot, the powerful solution designed to keep your AC running smoothly.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_gUXLiG": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "video",
+        "video_media": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4e60751833ad4bbd9323695e3af890aa.mp4",
+        "heading": "Why Choose Floxtreme ClearShot?",
+        "description": "<p>Instant Results!<\/p><p>Floxtreme ClearShot's powerful formula works instantly to dissolve any sludge buildup in your AC pan and drain line. Watch as ClearShot quickly and effectively eliminates clogs, restoring your system to peak performance.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_pGQtBD": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "video",
+        "video_media": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5872f16d031f4b388e5ffb14ee26fd35.mp4",
+        "heading": "How to Use Floxtreme ClearShot",
+        "description": "<p>Watch our step by step video on how to use FloXtreme ClearShot.  <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "text_banner_section_K6ndCR": {
+      "type": "text-banner-section",
+      "settings": {
+        "heading": "GET FLOXTREME CLEARSHOT TODAY!",
+        "description": "<p>Don’t let sludge and clogs compromise your AC system’s performance.  Experience the power and safety of Floxtreme ClearShot for yourself.   Order now and keep your AC running at its best!<\/p>",
+        "button_title": "Order Now",
+        "button_link": "shopify:\/\/products\/floxtreme-clearshot"
+      }
+    },
+    "blurb_section_WD3DyX": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/AIR_HANDLER_COIL_SHOT.png",
+        "video_media": "",
+        "heading": "Safe for Your AC System",
+        "description": "<p>Worried about the safety of your AC unit? With Floxtreme ClearShot, you can have peace of mind. Our advanced formula is completely safe for your AC components, including the pan and coils. ClearShot will not cause any damage or corrosion, ensuring the longevity of your system.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_FmPVWR": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/image_750x_6564ae311c59c.jpg",
+        "video_media": "",
+        "heading": "Cost Effective Benefits of Floxtreme ClearShot",
+        "description": "<ul><li>Affordable and Prevents Costly Repairs<\/li><li>Safe for All AC Components: Will not harm your pan or coils<\/li><li>Quick and Easy Application: No fuss, no mess<\/li><li>Maintains System Efficiency: Keeps your AC running smoothly<\/li><li>Prevent Future Clogs: Regular use helps prevent future buildup<\/li><\/ul>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "rich_text_7JiRqF": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HdUjFA": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Fast, safe, and effective. Keep your AC system in top condition with minimal effort.  Order your bottle today and experience the difference!<\/strong>",
+            "heading_size": "h1"
+          }
+        },
+        "button_T6rLmt": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/products\/floxtreme-clearshot",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_HdUjFA",
+        "button_T6rLmt"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": false,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blurb_section_8mTPFz",
+    "blurb_section_gUXLiG",
+    "blurb_section_pGQtBD",
+    "text_banner_section_K6ndCR",
+    "blurb_section_WD3DyX",
+    "blurb_section_FmPVWR",
+    "rich_text_7JiRqF"
+  ]
+}

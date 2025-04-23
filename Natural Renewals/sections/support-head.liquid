@@ -1,0 +1,39 @@
+
+    <div class="container-style container-large">
+        <div class="support-top-section-row">
+            <div class="support-top-section-col-left">
+                <h2>{{ section.settings.title }}</h2>
+            </div>
+            <div class="support-top-section-col-right">
+                <label>{{ section.settings.description }}</label>
+                <input type="text" placeholder="Search topics" id="search_support" />
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Support - Head",
+  "tag": "section",
+  "class": "support-top-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "support"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "How may we help you?"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support - Head"
+    }
+  ]
+}
+{% endschema %}

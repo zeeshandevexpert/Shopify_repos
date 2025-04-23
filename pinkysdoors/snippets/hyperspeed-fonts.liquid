@@ -1,0 +1,3 @@
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+{% render 'hs-defer-css' with filename: 'https://fonts.googleapis.com/css?family=Work+Sans:600,900,400italic,700italic,400,700', pages: 'collection,index,product' | split: ',', minify: false, local: false %}

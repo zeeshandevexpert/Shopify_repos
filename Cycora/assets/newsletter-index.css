@@ -1,0 +1,63 @@
+.block-full-newslettter-block{
+
+
+  
+}
+
+.newsletter-content-wrap-stick {
+
+  }
+  @media (max-width: 991px) {
+    .newsletter-content-wrap-stick {
+      right: 50px;
+      bottom: 120px;
+    }
+  }
+  @media (max-width: 576px) {
+    .newsletter-content-wrap-stick {
+      max-width: 280px;
+      right: 25px;
+      /* opacity: 0; */
+      display: none;
+    }
+  }
+  /* .newsletter-content-wrap-stick h2 {
+    font-family: "Helvetica Neue LT Pro";
+    font-size: 24px;
+    margin-bottom: 0;
+    padding-left: 25px;
+    margin-top: 25px;
+  } */
+  /* .newsletter-content-wrap-stick h2 .close-icon {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+  } */
+  /* .newsletter-content-wrap-stick .klaviyo-form {
+    background-color: #DBEDF5 !important;
+    padding-left: 25px;
+    margin-bottom: 10px;
+  } */
+  /* .newsletter-content-wrap-stick input {
+    background-color: #DBEDF5 !important;
+    color: #DBEDF5 !important;
+    font-family: "Helvetica Neue LT Pro" !important;
+  } */
+
+  /* .newsletter-content-wrap-stick input::placeholder {
+    color: #222222 !important;
+  } */
+
+  /* .newsletter-content-wrap-stick .needsclick #klaviyo_ariaid_3 {
+    font-family: "Helvetica Neue LT Pro" !important;
+  } */
+  /* .newsletter-content-wrap-stick button {
+    background: url("../assets/button-more.svg") center right no-repeat !important;
+    position: absolute;
+    right: 200%;
+    width: 15px;
+    text-indent: 200%;
+    white-space: nowrap !important;
+    overflow: hidden;
+  } */

@@ -1,0 +1,84 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "heading_banner_fqwDBY": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "{{ collection.image }}",
+        "heading": "{{ collection.title }}",
+        "sub_heading": "",
+        "font_size": 30,
+        "content": "<p>{{ collection.metafields.custom.collection_description | metafield_tag }}<\/p>"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "testimonial_block_4796rp54": {
+      "type": "testimonial-block",
+      "blocks": {
+        "item_BYPcEb": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "name": "Client Name"
+          }
+        },
+        "item_TwCMCd": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "name": "Client Name"
+          }
+        },
+        "item_6qYRWz": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "name": "Client Name"
+          }
+        }
+      },
+      "block_order": [
+        "item_BYPcEb",
+        "item_TwCMCd",
+        "item_6qYRWz"
+      ],
+      "settings": {
+        "sub_heading": "LOREM IPSUM",
+        "heading": "WHAT IS LOREM IPSUM"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "heading_banner_fqwDBY",
+    "product-grid",
+    "testimonial_block_4796rp54"
+  ]
+}

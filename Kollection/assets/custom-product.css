@@ -1,0 +1,102 @@
+.product-block {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+.product-block .wrap-product-block {
+  display: flex;
+  gap: 30px;
+}
+.product-block .wrap-product-block .image-block {
+  width: 65%;
+}
+.product-block .wrap-product-block .image-block .product-gallery .image img {
+  margin: 0 auto;
+  width: 100%;
+}
+.product-block .wrap-product-block .image-block .thumbnail-slider .slick-track .slick-slide {
+  padding: 5px;
+}
+.product-block .wrap-product-block .image-block .thumbnail-slider .slick-track .slick-slide.slick-current img {
+  box-shadow: 0 0 0 0.1rem rgb(var(--color-foreground));
+  border-color: rgb(var(--color-foreground));
+}
+.product-block .wrap-product-block .content-block {
+  width: 35%;
+}
+.product-block .wrap-product-block .content-block .wrap-title-price .product-title {
+  font-family: var(--font-heading-family);
+  font-size: 40px;
+  margin-top: 0;
+}
+.product-block .wrap-product-block .content-block .wrap-title-price .price {
+  font-family: var(--font-body-family);
+  font-size: 18px;
+}
+.product-block .wrap-product-block .content-block .product-description {
+  font-family: var(--font-body-family);
+  font-size: 18px;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 200px;
+  overflow: auto;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product-box {
+  display: block;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  flex: 0 0 20%;
+  position: relative;
+  flex-basis: calc(20% - 10px);
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product-box:hover {
+  border-color: #b0c4de; /* Light blue on hover */
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product-box input[type=checkbox]:checked + .product {
+  border: 2px solid transparent; /* Blue border when checked */
+  background-color: rgba(104, 176, 238, 0.7490196078); /* Light blue background */
+  border-width: 5px;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product-box .addon-checkbox,
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product-box .free-product-checkbox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product .title {
+  margin: 0;
+  font-size: 10px;
+}
+.product-block .wrap-product-block .content-block .buy-two-get-one .products .product .price {
+  margin: 0;
+  font-size: 12px;
+}
+.product-block .wrap-product-block .content-block #add-to-cart-btn {
+  width: 100%;
+  border: 1px solid #000;
+  box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
+  background: transparent;
+  padding: 12px 20px;
+  font-family: var(--font-body-family);
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/*# sourceMappingURL=custom-product.css.map */

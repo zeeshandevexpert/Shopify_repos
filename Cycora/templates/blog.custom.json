@@ -1,0 +1,247 @@
+{
+  "sections": {
+    "16618941472682c5fa": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "1655209200296f7bbd": {
+      "type": "blog-head",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/api.cycora-lab-zine-4.jpg",
+        "title": "<p>experiment_001: twill jacket<\/p>",
+        "button_title": "explore",
+        "button_link": "shopify:\/\/blogs\/zine\/experiment_001-twill-jacket"
+      }
+    },
+    "16552092042dc7b01d": {
+      "type": "blog-extra-head",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-09-20_at_11.34.34_AM_5cbe513c-c9a3-4af6-9674-b6e1a53c0f29.png",
+        "title": "<p>Kozaburo: East meets West<\/p>",
+        "button_title": "read more",
+        "button_link": "shopify:\/\/blogs\/zine\/kozaburo"
+      }
+    },
+    "ea45c342-cb4d-4703-b302-3618038dc801": {
+      "type": "blog-head",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/tombogo-film-john-landry-10-min.jpg",
+        "title": "<p>TOMBOGO<\/p><p>The Future is Bright<\/p>",
+        "button_title": "explore",
+        "button_link": "shopify:\/\/blogs\/zine\/tombogo™-x-cycora®"
+      }
+    },
+    "1655209209f99e5c03": {
+      "type": "blog-articles",
+      "blocks": {
+        "articles_rpN4bD": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/regenerative-dinner"
+          }
+        },
+        "articles_3CnFPJ": {
+          "type": "articles",
+          "settings": {
+            "reverse": true,
+            "center": false,
+            "blogPost": "zine\/zara-circularity-meets-performance"
+          }
+        },
+        "997d8552-b848-454a-9e34-c946ee3e8925": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/chris-holland-brandt-support-circular-fashion"
+          }
+        },
+        "b4c9dbfe-0dea-47f0-b6bd-3ee693a2b09f": {
+          "type": "articles",
+          "settings": {
+            "reverse": true,
+            "center": true,
+            "blogPost": "zine\/selected"
+          }
+        },
+        "00ceb460-c544-4ebe-8c06-dbea394aaafd": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/cycora®-lab-at-the-rose-bowl-yarn-head-tees"
+          }
+        },
+        "5218f10a-ec83-4ffb-9bd2-194e97d0c0e0": {
+          "type": "articles",
+          "settings": {
+            "reverse": true,
+            "center": true,
+            "blogPost": "zine\/the-journey-of-a-t-shirt"
+          }
+        },
+        "f1735fb2-2850-40c3-b95f-3da4889838e3": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/knarli-x-cycora®"
+          }
+        },
+        "e43ab6bd-9189-4cd2-8566-d926f662f49a": {
+          "type": "articles",
+          "settings": {
+            "reverse": true,
+            "center": false,
+            "blogPost": "zine\/cbaaf-x-cycora®"
+          }
+        },
+        "cecfd179-523f-4b85-a9ea-bc9858f1c7e6": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/our-ecosystem-explained-creating-infinite-textiles"
+          }
+        },
+        "9a8bff4f-43f0-4394-b9db-b63f9b0f2742": {
+          "type": "articles",
+          "settings": {
+            "reverse": true,
+            "center": false,
+            "blogPost": "zine\/justin-mensinger-x-cycora®"
+          }
+        },
+        "4a1db20d-7480-46f8-a7d3-ffe7fbfa9049": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/mslyon-x-cycora®"
+          }
+        },
+        "47ef7b55-9c35-44be-a7c9-0fdbf04dccce": {
+          "type": "articles",
+          "settings": {
+            "reverse": true,
+            "center": false,
+            "blogPost": "zine\/the-first-cycora™-shirt-ambercycle-x-eigendraads"
+          }
+        },
+        "b08ed129-6067-4cb1-be07-f44833ec754d": {
+          "type": "articles",
+          "settings": {
+            "reverse": false,
+            "center": false,
+            "blogPost": "zine\/how-we-started-a-note-from-our-cofounder"
+          }
+        }
+      },
+      "block_order": [
+        "articles_rpN4bD",
+        "articles_3CnFPJ",
+        "997d8552-b848-454a-9e34-c946ee3e8925",
+        "b4c9dbfe-0dea-47f0-b6bd-3ee693a2b09f",
+        "00ceb460-c544-4ebe-8c06-dbea394aaafd",
+        "5218f10a-ec83-4ffb-9bd2-194e97d0c0e0",
+        "f1735fb2-2850-40c3-b95f-3da4889838e3",
+        "e43ab6bd-9189-4cd2-8566-d926f662f49a",
+        "cecfd179-523f-4b85-a9ea-bc9858f1c7e6",
+        "9a8bff4f-43f0-4394-b9db-b63f9b0f2742",
+        "4a1db20d-7480-46f8-a7d3-ffe7fbfa9049",
+        "47ef7b55-9c35-44be-a7c9-0fdbf04dccce",
+        "b08ed129-6067-4cb1-be07-f44833ec754d"
+      ],
+      "settings": {
+        "title": "blog posts"
+      }
+    },
+    "1655210533a19f5dab": {
+      "type": "blog-bottom",
+      "blocks": {
+        "c4499c75-831b-4867-b9b2-03215812f599": {
+          "type": "point",
+          "settings": {
+            "title": "2022",
+            "link": "https:\/\/textileexchange.org\/app\/uploads\/2022\/10\/Textile-Exchange_PFMR_2022.pdf",
+            "description": "Preferred Fiber & Materials Report",
+            "point_1": "textile exchange",
+            "point_2": "",
+            "point_3": ""
+          }
+        },
+        "1a6eb7d9-00db-4453-8c92-03b0e9c7a6e9": {
+          "type": "point",
+          "settings": {
+            "title": "2020",
+            "link": "http:\/\/www2.globalfashionagenda.com\/initiatives\/fashion-on-climate\/#\/",
+            "description": "Fashion on Climate",
+            "point_1": "global fashion agenda",
+            "point_2": "mckinsey",
+            "point_3": ""
+          }
+        },
+        "50c471ed-eb76-4473-bdbf-12d1f65c5b0c": {
+          "type": "point",
+          "settings": {
+            "title": "2018",
+            "link": "https:\/\/www.youtube.com\/watch?v=tLfNUD0-8ts",
+            "description": "The True Cost of Fast Fashion",
+            "point_1": "the economist",
+            "point_2": "",
+            "point_3": ""
+          }
+        },
+        "0b3d03f9-60e0-437a-9f6d-8629590cf148": {
+          "type": "point",
+          "settings": {
+            "title": "2017",
+            "link": "https:\/\/ellenmacarthurfoundation.org\/topics\/fashion\/overview",
+            "description": "Make Fashion Circular",
+            "point_1": "ellen mcarthur foundation",
+            "point_2": "",
+            "point_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "c4499c75-831b-4867-b9b2-03215812f599",
+        "1a6eb7d9-00db-4453-8c92-03b0e9c7a6e9",
+        "50c471ed-eb76-4473-bdbf-12d1f65c5b0c",
+        "0b3d03f9-60e0-437a-9f6d-8629590cf148"
+      ],
+      "settings": {
+        "title": "educational resources",
+        "description": "reports & articles",
+        "image": "shopify:\/\/shop_images\/IMG_8201.jpg"
+      }
+    },
+    "165521283227bf643c": {
+      "type": "blog-text",
+      "disabled": true,
+      "settings": {
+        "text_1": "curious about how cycora fits into <br>the",
+        "text_2": "process?",
+        "drophover_title": "Ambercycle",
+        "drophover_text": "<p>Ambercycle is the ecosystem for infinite textiles. It is the company that enables cycora® materials to exist.<\/p>",
+        "button_title": "step into the ecosystem",
+        "button_link": "https:\/\/www.ambercycle.com"
+      }
+    }
+  },
+  "order": [
+    "16618941472682c5fa",
+    "1655209200296f7bbd",
+    "16552092042dc7b01d",
+    "ea45c342-cb4d-4703-b302-3618038dc801",
+    "1655209209f99e5c03",
+    "1655210533a19f5dab",
+    "165521283227bf643c"
+  ]
+}

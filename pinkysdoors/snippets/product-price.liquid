@@ -1,0 +1,33 @@
+<!-- snippet/product-price.liquid -->
+{% assign variant = product.selected_or_first_available_variant %}
+{% if variant.title %}
+{%- assign compare_at_price = variant.compare_at_price -%}
+{%- assign price = variant.price -%}
+{%- assign available = variant.available -%}
+{% else %}
+{%- assign compare_at_price = 1999 -%}
+{%- assign price = 1999 -%}
+{%- assign available = true -%}
+{% endif %}
+
+{% assign savings_percentage = product.selected_or_first_available_variant.compare_at_price | minus:product.selected_or_first_available_variant.price | times:100 | divided_by:product.selected_or_first_available_variant.compare_at_price %}
+{% assign savings_dollars = product.selected_or_first_available_variant.compare_at_price | minus:product.selected_or_first_available_variant.price %}
+
+
+{% include 'wholesale-vars' %}
+{% if is_wholesale and compare_at_price >  price %}
+	{% assign price = variant.compare_at_price | times: percent_off %}	
+	{% assign savings_dollars = variant.compare_at_price | minus: price %}
+{% else %}
+	{% assign price = variant.price %}	
+{% endif %}
+
+{%- assign money_price = price | money -%}
+
+<div class="price price--on-sale" data-price>
+  <div class="price__sale">
+    <span class="price-item price-item--sale" data-sale-price data-regular-price>
+      {{ money_price }}
+    </span>
+  </div>
+</div>

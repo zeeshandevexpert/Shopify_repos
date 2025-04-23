@@ -1,0 +1,105 @@
+.featured-product .product__media-list {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.featured-product .global-media-settings:after {
+  z-index: 0;
+}
+
+.featured-product .product__modal-opener {
+  margin-bottom: var(--media-shadow-vertical-offset);
+}
+
+.featured-product .product__media-item {
+  padding-left: 0;
+  width: 100%;
+}
+
+.featured-product .product__media-item:not(:first-child) {
+  display: none;
+}
+
+.background-secondary .featured-product {
+  padding: 2.5rem;
+}
+
+.featured-product .share-button:nth-last-child(2) {
+  display: inline-flex;
+}
+
+.share-button + .product__view-details {
+  display: inline-flex;
+  float: right;
+  align-items: center;
+}
+
+.share-button + .product__view-details::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (min-width: 750px) {
+  .featured-product .product__media-item {
+    padding-bottom: 0;
+  }
+
+  .background-secondary .featured-product {
+    padding: 5rem;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .background-secondary .featured-product:not(.product--no-media) > .product__info-wrapper {
+    padding: 0 0 0 5rem;
+  }
+
+  .featured-product:not(.product--no-media) > .product__info-wrapper {
+    padding: 0 4rem;
+  }
+
+  .background-secondary .featured-product {
+    padding: 6rem 7rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.featured-product .product__media-icon {
+  display: none;
+}
+
+.featured-product {
+  align-items: center;
+}
+
+
+@media screen and (max-width: 749px) {
+  .featured-product .product__media-wrapper {
+    max-width: 33%;
+  }
+  .featured-product .product__info-wrapper {
+    max-width: 67%;
+    padding-right: 1rem;
+  }
+  .featured-product .product__info-container {
+    padding-top: 0 !important;
+    padding-left: 1rem;
+  }
+  .featured-product .product__text {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .featured-product .product__text.caption-with-letter-spacing {
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+}
+
+.section-featured-product .product {
+  max-width: 1024px;
+}

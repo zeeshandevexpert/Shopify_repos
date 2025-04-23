@@ -1,0 +1,23 @@
+<section class="richtext-block">
+    <div class="wrap-content">
+            {{ section.settings.content }}
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Rich Text Block",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Textarea"
+        }
+        ],
+        "presets": [
+            {
+                "name": "Rich Text Block"
+            }
+        ]
+}
+{% endschema %}

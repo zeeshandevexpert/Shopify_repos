@@ -1,0 +1,172 @@
+{% comment %}
+You can edit this template.
+Possible values
+*************************************
+[CDE_first_name]
+[CDE_last_name]
+[CDE_address1]
+[CDE_address2]
+[CDE_city]
+[CDE_company]
+[CDE_country]
+[CDE_country_code]
+[CDE_country_name]
+[CDE_phone]
+[CDE_province]
+[CDE_province_code]
+[CDE_zip]
+*************************************
+[CDE_link_edit_address]
+[CDE_link_delete_address]
+[CDE_address_id]
+*************************************
+{% endcomment %}
+
+
+<script>
+    var CDE_settings = {
+        "show_error_message_for_address": 1, // 0 = false or 1 = true
+        "required_error_message": "This field is required",
+        "addressRequiredFields": ['first_name','last_name'],
+        "deleteConfirmationMessage": "Are you sure you wish to delete this address?",
+        "defaultAddressTitle": "Default",
+        "editAddressActionTitle": "Edit",
+        "editActionTitle": "Edit",
+        "deleteAddressActionTitle": "Delete",
+        "saveActionTitle": "Save",
+        "succSavedMessage": "Saved!",
+        "addAddressFormButtonTitle": "Add",
+        "editAddressButtonTitle": "Save",
+        "addAddressButtonTitle" : "Add new address",
+        "cancelAddressFormButtonTitle": "Cancel",
+        "loadingMessage": "Loading...", //Can be image or html
+        "loginButtonTitle": "Login",
+        "registerButtonTitle": "Register",
+        "restoreButtonTitle": "Restore",
+        "restoreErrorEmailFormat": "Incorrect email",
+        "restoreNoAccountFound": "No account found with that email.",
+        "loginErrorMessage" : "Incorrect email or password", //Can be text or html
+        "loginLoadingMessage" : "Please wait...", //Can be only text
+        "passwordsErrorMessage" : "Passwords do not match", //Can be text or html,
+        "succSentRestorePassword": "A password recovery link has been successfully sent to your email." //Can be text or html,
+    };
+
+
+    var CDE_addressTemplate = "<div class=\"CDE-address-container\" id=\"CDE_address_container_[CDE_address_id]\">" +
+        "<div>[CDE_link_edit_address] [CDE_link_delete_address]</div>" +
+        "<div>[CDE_default]</div>" +
+        "<div>[CDE_first_name] [CDE_last_name]</div> " +
+        "<div>[CDE_address1]</div>" +
+        "<div>[CDE_address2]</div>" +
+        "<div>[CDE_city]</div>" +
+        "<div>[CDE_company]</div>" +
+        "<div>[CDE_country]</div>" +
+        "<div>[CDE_phone]</div>" +
+        "<div>[CDE_province]</div>" +
+        "<div>[CDE_zip]</div>" +
+        "<div><div class=\"CDE-edit-customer-address-form\" id=\"CDE_edit_customer_address_form_[CDE_address_id]\" style=\"display: none;\"></div></div>"+
+        "</div>";
+
+    var CDE_noAddressTemplate = "<div>List is empty</div>";
+
+    var CDE_addAddressButtonTemplate = "<div>[CDE_add_new_address_button]</div>";
+
+    var CDE_addressFormTemplate =   '<div><label>First Name</label><input type="text"   name="address[first_name]" autocapitalize="words" /></div>' +
+        '<div><label>Last Name</label><input type="text"   name="address[last_name]"  autocapitalize="words" /></div>' +
+        '<div><label>Phone</label><input type="text"       name="address[phone]"    autocapitalize="words" /></div>' +
+        '<div><label>Company</label><input type="text"       name="address[company]"    autocapitalize="words" /></div>' +
+        '<div><label>Address Line 1</label><input type="text"  name="address[address1]" autocapitalize="words" /></div>' +
+        '<div><label>Address Line 2</label><input type="text"  name="address[address2]" autocapitalize="words" /></div>' +
+        '<div><label>Country</label><select id="CDE_address_country_new" data-default="[CDE_default_country]" name="address[country]">[CDE_all_countires]</select></div>' +
+        '<div><label>City</label><input type="text" name="address[city]" autocapitalize="words" /></div>' +
+        '<div id="CDE_province_container"><label>Province</label><select id="CDE_address_province_new" data-default="" name="address[province]"></select></div>' +
+        '<div><label>ZIP code</label><input type="text" name="address[zip]" /></div>' +
+        '<div><input type="checkbox" name="address[default]" /> Make Default Address</div>';
+
+    var CDE_addAddressForm = '<form method="post" action="javascript:void(0)" id="CDE_form_add_new_address">' +
+        CDE_addressFormTemplate +
+        '<div><input type="button" value="' + CDE_settings.cancelAddressFormButtonTitle + '" onclick="CDE_button_close_form_add_new_address();" /> ' +
+        '<input type="button" value="' + CDE_settings.addAddressFormButtonTitle + '" onclick="CDE_submit_form_add_new_address();" /></div>' +
+        '</form>';
+
+    var CDE_editAddressForm = '<form method="post" action="javascript:void(0)" id="CDE_form_edit_address">'+
+        CDE_addressFormTemplate +
+        '<div><input type="button" value="Cancel" onclick="CDE_button_close_form_add_new_address();" /> ' +
+        '<input type="button" value="' + CDE_settings.editAddressButtonTitle + '" onclick="CDE_submit_form_edit_address([CDE_address_id]);" /></div>' +
+        '</form>';
+
+    var CDE_loginForm = '<form action="javascript:void(0)">' +
+        '<div id="CDE_login_global_error"></div>' +
+        '<div><label>Email</label><input type="email" name="customer_login[email]" /></div>' +
+        '<div><label>Password</label><input type="password" name="customer_login[password]" /></div>' +
+        '<div><input id="CDE_login_button" type="button" onclick="CDE_submit_login_form()" value="' + CDE_settings.loginButtonTitle + '"/></div> ' +
+        '<div>Don\'t have an account? <a href="/account/register">Create one.</a></div>' +
+        '<div>You forgot your password? <a href="/account/password-recovery">Login here.</a></div>' +
+        '</form>';
+
+    var CDE_registerForm = '<form action="javascript:void(0)">' +
+        '<div id="CDE_register_global_error"></div>' +
+        '<div><label>First Name</label><input type="text"  name="customer_register[first_name]" /></div>' +
+        '<div><label>Last Name</label><input type="text"  name="customer_register[last_name]" /></div>' +
+        '<div><label>Email</label><input type="email"  name="customer_register[email]" /></div>' +
+        '<div><label>Password</label><input type="password" name="customer_register[password]" /></div>' +
+        '<div><label>Confirm Password</label><input type="password" name="customer_register[confirm_password]" /></div>' +
+        '<div><input id="CDE_register_button" type="button" onclick="CDE_submit_register_form()" value="' + CDE_settings.registerButtonTitle + '" /></div>' +
+        '</form>';
+
+    var CDE_restoreForm = '<div id="CDE_succes_restore_message" style="display: none">' + CDE_settings.succSentRestorePassword + '</div>' +
+        '<form action="javascript:void(0)" id="CDE_forgot_password_form">' +
+        '<div id="CDE_restore_global_error"></div>' +
+        '<div><label>Email</label><input type="email" name="customer_restore[email]"  required="required" /></div>' +
+        '<div><input id="CDE_restore_button" type="button" value="' + CDE_settings.restoreButtonTitle + '" onclick="CDE_submit_restore_form()" /></div>' +
+        '</form>';
+
+</script>
+
+<script>
+    /* Custom error messages callback */
+    function CDE_errorMessagesCallbackInit(){
+
+    }
+    function CDE_errorMessagesCallback(element) {
+
+    }
+    function CDE_extraFieldsValidation() {
+        return true;//this is default
+    }
+
+    /* After click on edit input callback */
+    function CDE_afterClickOnEditInput() {
+        $('#CDE_save_email').hide();
+        $('#CDE_save_first_name').hide();
+        $('#CDE_save_last_name').hide();
+    }
+    /* After click on save input callback */
+    function CDE_afterClickOnSaveInput(input_id) {
+        var first_name = $('input[data-input-type="first_name"]').val();
+        var last_name = $('input[data-input-type="last_name"]').val();
+        var email = $('input[data-input-type="email"]').val();
+        $('#current_first_name').text(first_name);
+        $('#current_last_name').text(last_name);
+        $('#current_email').text(email);
+    }
+</script>
+
+<style>
+    .CDE_save_input, .CDE-form-add-new-address{
+        display: none;
+    }
+    .CDE_succ_saved{
+        color: green;
+    }
+    .CDE-address-container{
+        padding-top: 20px;
+    }
+    .CDE-input-error {
+        border: 1px solid #e41b4c !important;
+    }
+    .CDE-input-error-message{
+        color:red;
+        font-size:11px;
+    }
+</style>

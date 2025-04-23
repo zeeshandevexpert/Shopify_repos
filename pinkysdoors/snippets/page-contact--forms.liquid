@@ -1,0 +1,96 @@
+{% assign contact_types = 'Custom Product Sales,Technical Support,Order Status Tracking,Online Order Support,General Questions' | split: ',' %}
+
+
+{% comment %}
+<div class="contact-selector--wrapper">
+  <h1 class="h4">How can we help?</h1>
+  
+  <div class="selector-box text-left">
+
+    <select id="contact-selector" class="fancy-select" name="contact_types">
+      {% for type in contact_types %}
+      <option {% if type == 'General Questions' %}selected="selected"{% endif %} data-form-id="form--{{ type | handle}}" value="form--{{ type | handle }}">{{ type }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>
+{% endcomment %}
+
+{% for contact_type in contact_types %}
+<div class="contact-forms__form" id="form--{{ contact_type | handle }}">
+  {% include 'contact-form' %}
+  {% comment %}
+  {%- liquid
+  case contact_type 
+  when "Custom Product Sales"
+  	include 'zoho-form'
+  when "Technical Support"
+    echo '<div style="margin:0 auto;" class="pxFormGenerator" id="OT_631PgcczFXCCMMxmVrQ"></div>'
+  when "Order Status Tracking"
+    echo '<div style="margin:0 auto;" class="pxFormGenerator" id="HIe4qpqFMPD9ulFwPru0FQ"></div>'
+  when "Online Order Support"
+    echo '<div style="margin:0 auto;" class="pxFormGenerator" id="MvOf7m3uvSuOExbjY-GCvg"></div>'
+  when "General Questions"
+    echo '<div style="margin:0 auto;" class="pxFormGenerator" id="i5dVyC6INBty5S10McFeWA"></div>'
+  endcase
+  -%}
+  {% endcomment %}
+</div>
+{% endfor %}
+
+
+{% render 'hs-defer-css' with filename: 'https://fonts.googleapis.com/css2?family=Lato&display=swap', pages: 'collection,index,product' | split: ',', minify: false, local: false %}
+
+<style type="text/css">
+  .contact-forms__form {
+    display: none;
+  }
+  .contact-selector--wrapper .select2-container .select2-selection__rendered {
+    font-size: 13px;
+    letter-spacing: 1.05px;
+  }
+  #form--general-questions {
+    display: block;
+  }
+  .contact-selector--wrapper,
+  .contact-selector--wrapper .h4 {
+    font-family: 'Lato', sans-serif;
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: 1.05px;
+    color: rgb(51, 51, 51);
+    text-transform: none;
+    font-weight: normal;
+  }
+  #form--custom-product-sales form {
+    font-family: 'Lato', sans-serif;
+    max-width: 800px;
+    padding: 35px;
+    margin: 0px auto;
+  }
+  
+  #form--custom-product-sales input,
+  #form--custom-product-sales textarea {
+    padding: 6px 12px !important;
+    background: transparent;
+    border-radius: 0;
+  }
+  #form--custom-product-sales label {
+    margin-bottom: 3px;
+  }
+  #form--custom-product-sales #formsubmit {
+    background: black;
+    color: white;
+  }
+  #form--custom-product-sales .zcwf_file_overlay {
+   border-color: #ccc;
+   padding: 6px 12px;
+   box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  }
+  .zcwf_col_fld p {
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+</style>
+

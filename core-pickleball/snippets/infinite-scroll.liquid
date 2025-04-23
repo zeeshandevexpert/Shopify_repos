@@ -1,0 +1,22 @@
+{% if template contains 'collection' %}{{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }}{% endif %}
+
+<div id="Huratips-Loop" >
+      {% for product in collection.products %}
+        {% include 'product-grid-item' %}
+      {% endfor %}
+</div>
+<div id="Huratips-Pagination">
+    {% if paginate.next %}
+    <a href="{{ paginate.next.url }}">Loading More</a>
+    {% endif %}  
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var endlessScroll = new Ajaxinate({
+      container: '#Huratips-Loop',
+      pagination: '#Huratips-Pagination',
+	loadingText: '<img src="" >'
+    });
+  });
+</script>

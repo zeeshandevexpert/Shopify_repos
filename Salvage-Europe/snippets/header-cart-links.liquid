@@ -1,0 +1,298 @@
+<ul class="cart-links__wrapper inline__wrapper">
+  {% if shop.customer_accounts_enabled %}
+    {% if customer %}
+      <li class="cart-links__item device-hide">
+        <a class="cart-links__link-account" href="{{ routes.account_url }}">
+          {% render 'snip-icons',
+             wrapper: wrapper,
+             type: 'mrparker',
+             icon: 'user',
+             classes: 'cart-links__link-account--icon ',
+             size: '15px',
+             fill: fill_color,
+             hover: fill_color %}
+          {% unless section.settings.icons_only %}<span class="cart-links__link-account--text">&nbsp;{{ 'general.header.my_account' | t }}</span>{% endunless %}
+        </a>
+      </li>
+      <li class="cart-links__item device-hide">
+        <a class="cart-links__link-logout" href="{{ routes.account_logout_url }}">
+          {% render 'snip-icons',
+             wrapper: wrapper,
+             type: 'mrparker',
+             icon: 'user-logout',
+             classes: 'cart-links__link-account--icon',
+             size: '15px',
+             fill: fill_color,
+             hover: fill_color %}
+          {% unless section.settings.icons_only %}<span class="cart-links__link-account--text">&nbsp;{{ 'general.header.log_out' | t }}</span>{% endunless %}
+        </a>
+      </li>
+    {% else %}
+      <li class="cart-links__item device-hide">
+        <a class="cart-links__link-login" href="{{ routes.account_login_url }}">
+          {% render 'snip-icons',
+             wrapper: wrapper,
+             type: 'mrparker',
+             icon: 'user',
+             classes: 'cart-links__link-login--icon',
+             size: '15px',
+             fill: fill_color,
+             hover: fill_color %}
+          {% unless icons_only %}<span class="cart-links__link-login--text">&nbsp;&nbsp;{{ 'general.header.log_in' | t }}</span>{% endunless %}
+        </a>
+      </li>
+    {% endif %}
+  {% endif %}
+  {%- if hd_locale_selector -%}
+    <li class="cart-links__item lang-selector device-hide">
+      <div class="selectors-form__item">
+        <noscript>
+          {%-
+            form 'localization',
+            id: 'HeaderLanguageFormNoScript',
+            class: 'localization-form selectors-form',
+            data-disclosure-form: ''
+          -%}
+            <h2 class="visually-hidden" id="HeaderLanguageLabelNoScript">
+              {{ 'general.currency.dropdown_label' | t }}
+            </h2>
+            <div class="selectors-form__select">
+              <select
+                name="locale_code"
+                class="localization-selector button"
+                aria-labelledby="HeaderLanguageLabelNoScript"
+                aria-label="Choose language">
+                <option value="" disabled>{{ 'general.language.dropdown_label' | t }}</option>
+                {%- for language in localization.available_languages -%}
+                  <option
+                    value="{{ language.iso_code }}"
+                    lang="{{ language.iso_code }}"
+                    {%- if language.iso_code == localization.language.iso_code %}
+                    selected
+                    {% endif %}>
+                    {{ language.endonym_name | capitalize }}
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'snip-icons',
+                 type: 'apollo',
+                 icon: 'down-carrot',
+                 size: '6px',
+                 fill: 'var(--announcement-text)',
+                 hover: 'var(--announcement-text)' %}
+            </div><!-- /.selectors-form__select -->
+            <button class="localization-form__noscript-btn">
+              {% render 'snip-icons',
+                 type: 'apollo',
+                 icon: 'checkmark',
+                 size: '12px',
+                 fill: 'var(--announcement-text)',
+                 hover: 'var(--announcement-text)' %}
+            </button>
+          {%- endform -%}
+        </noscript>
+        {%-
+          form 'localization',
+          id: 'HeaderLanguageForm',
+          class: 'localization-form selectors-form',
+          data-disclosure-form: ''
+        -%}
+          <div class="disclosure" data-disclosure-locale>
+            <div class="no-js-hidden">
+              <h2 class="visually-hidden" id="HeaderLanguageLabel">
+                {{ 'general.language.dropdown_label' | t }}
+              </h2>
+              <button
+                type="button"
+                class="disclosure__toggle"
+                aria-expanded="false"
+                aria-controls="HeaderLanguageList"
+                aria-describedby="HeaderLanguageLabel"
+                aria-label="Choose language"
+                data-disclosure-toggle>
+                {{ localization.language.endonym_name | capitalize }}&nbsp;
+                {% render 'snip-icons',
+                   type: 'apollo',
+                   icon: 'down-carrot',
+                   size: '6px',
+                   fill: 'var(--announcement-text)',
+                   hover: 'var(--announcement-text)' %}
+              </button>
+              <ul
+                id="HeaderLanguageList"
+                class="disclosure-list"
+                data-disclosure-list>
+                {%- for language in localization.available_languages -%}
+                  <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                    <a
+                      class="disclosure-list__option"
+                      href="#"
+                      title="{{ locale.endonym_name }}"
+                      lang="{{ locale.iso_code }}"
+                      {% if language.iso_code == localization.language.iso_code %}
+                      aria-current="true"
+                      {% endif %}
+                      data-value="{{ language.iso_code | capitalize }}"
+                      data-disclosure-option>
+                      {{ language.endonym_name | capitalize }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+              <input type="hidden" name="locale_code" id="LocaleSelector" value="{{ localization.language.iso_code }}" data-disclosure-input/>
+            </div><!-- /.no-js-hidden -->
+          </div><!-- /.disclosure -->
+        {%- endform -%}
+      </div><!-- /.selectors-form__item -->
+    </li>
+  {%- endif -%}
+  {%- if hd_currency_selector -%}
+    <li class="cart-links__item curr-selector device-hide">
+      <div class="selectors-form__item">
+        <noscript>
+          {%-
+            form 'localization',
+            id: 'HeaderCountryFormNoScript',
+            class: 'localization-form selectors-form',
+            data-disclosure-form: ''
+          -%}
+            <h2 class="visually-hidden" id="HeaderCountryLabelNoScript">
+              {{ 'general.currency.dropdown_label' | t }}
+            </h2>
+            <div class="selectors-form__select">
+              <select
+                class="localization-selector button"
+                name="country_code"
+                aria-labelledby="HeaderCountryLabelNoScript"
+                aria-label="Choose country">
+                <option value="" disabled>{{ 'general.currency.dropdown_label' | t }}</option>
+                {%- for country in localization.available_countries -%}
+                  <option
+                    value="{{ country.iso_code }}"
+                    {%- if country.iso_code == localization.country.iso_code %}
+                    selected
+                    {% endif %}>
+                    {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'snip-icons',
+                 type: 'apollo',
+                 icon: 'down-carrot',
+                 size: '6px',
+                 fill: 'var(--announcement-text)',
+                 hover: 'var(--announcement-text)' %}
+            </div><!-- /.selectors-form__select -->
+            <button class="localization-form__noscript-btn">
+              {% render 'snip-icons',
+                 type: 'apollo',
+                 icon: 'checkmark',
+                 size: '12px',
+                 fill: 'var(--announcement-text)',
+                 hover: 'var(--announcement-text)' %}
+            </button>
+          {% endform %}
+        </noscript>
+        {%-
+          form 'localization',
+          id: 'HeaderCountryForm',
+          class: 'localization-form selectors-form',
+          data-disclosure-form: ''
+        -%}
+          <div class="disclosure" data-disclosure-country>
+            <div class="no-js-hidden">
+              <h2 class="visually-hidden" id="HeaderCountryLabel">
+                {{ 'general.currency.dropdown_label' | t }}
+              </h2>
+              <button
+                type="button"
+                class="disclosure__toggle"
+                aria-expanded="false"
+                aria-controls="HeaderCountryList"
+                aria-describedby="HeaderCountryLabel"
+                aria-label="Choose country"
+                data-disclosure-toggle>
+                {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})&nbsp;
+                {% render 'snip-icons',
+                   type: 'apollo',
+                   icon: 'down-carrot',
+                   size: '6px',
+                   fill: 'var(--announcement-text)',
+                   hover: 'var(--announcement-text)' %}
+              </button>
+              <ul
+                id="HeaderCountryList"
+                class="disclosure-list"
+                data-disclosure-list>
+                {% for country in localization.available_countries %}
+                  <li
+                    class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                    <a
+                      class="disclosure-list__option"
+                      href="#"
+                      title="{{ country.iso_code }}"
+                      {% if country.iso_code == localization.country.iso_code %}
+                      aria-current="true"
+                      {% endif %}
+                      data-value="{{ country.iso_code }}"
+                      data-disclosure-option>
+                      {{ country.name }}&nbsp;<span class="localization-form__currency">{{ country.currency.iso_code }}&nbsp;{{ country.currency.symbol }}</span>
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+              <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}" data-disclosure-input/>
+            </div><!-- /.no-js-hidden -->
+          </div><!-- /.disclosure -->
+        {%- endform -%}
+      </div><!-- /.selectors-form__item -->
+    </li>
+  {%- endif -%}
+
+  <li class="my-cart-link-container">
+    {% if settings.cart_type == 'page_only' %}
+      <a class="cart__link" href="{{ routes.cart_url }}">
+        {% unless icons_only %}<span class="my-cart-text my-cart-link-container--text device-hide">{{ 'general.header.cart' | t }}&nbsp; </span>{% endunless %}
+        {% render 'snip-icons',
+           wrapper: wrapper,
+           type: 'mrparker',
+           icon: cart_icon,
+           classes: 'my-cart-link-container--icon',
+           size: '15px',
+           fill: fill_color,
+           hover: fill_color %}
+         <span class="js-cart-count my-cart-link-container--text device-hide cart__item--count">{{ cart.item_count }}</span>
+      </a>
+    {% else %}
+
+      {%- liquid
+
+        if settings.cart_type == 'drawer'
+          assign cart_classes = 'js-slideout-open'
+          assign cart_settings = 'data-wau-slideout-target="ajax-cart" data-slideout-direction="right"'
+        elsif settings.cart_type == 'modal_cart'
+          assign cart_classes = 'js-modal-open'
+          assign cart_settings = 'data-wau-modal-target="ajax-cart"'
+        endif
+
+      -%}
+      <div class="slideout__trigger--open">
+        <button class="slideout__trigger-mobile-menu js-mini-cart-trigger {{ cart_classes }}"
+          {{ cart_settings }} aria-label="Open cart" tabindex="0" type="button" name="button">
+
+          {% unless icons_only %}<span class="device-hide my-cart-text slideout__trigger-cart--text">{{ 'general.header.cart' | t }}&nbsp; </span>{% endunless %}
+          {% render 'snip-icons',
+             wrapper: wrapper,
+             type: 'mrparker',
+             icon: cart_icon,
+             classes: 'slideout__trigger-mobile-menu--icon',
+             size: '15px',
+             fill: fill_color,
+             hover: fill_color %}
+           <span class="js-cart-count slideout__trigger-mobile-menu--text device-hide cart__item--count">{{ cart.item_count }}</span>
+
+        </button>
+      </div>
+    {% endif %}
+  </li>
+</ul>

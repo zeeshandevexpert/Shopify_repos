@@ -1,0 +1,242 @@
+{
+  "sections": {
+    "main": {
+      "type": "template--page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1659740633a3429163": {
+      "type": "image--image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/emilyheathersig.png",
+        "parallax": true,
+        "hero_size": "medium",
+        "text-over-image-width": "full-width"
+      }
+    },
+    "49fb2c48-a732-48fd-8cba-0d6815a97ada": {
+      "type": "mission-image-overlap-text",
+      "blocks": {
+        "1c3eb56d-a7f8-48bb-8241-894a2f083538": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/D755355_1.jpg",
+            "overlap_image": "shopify://shop_images/PastryProject_Hero.png"
+          }
+        },
+        "8a63de11-8a15-4f25-945c-a5511bfcc13a": {
+          "type": "content",
+          "settings": {
+            "title": "Our Mission",
+            "content": "<p>Our mission is to break barriers to employment and make pastry education more accessible. We provide a free baking and pastry training program to individuals with barriers to employment in our industry. Students learn in-demand technical pastry skills, time management, teamwork, and problem-solving. When students graduate and are ready to work in the industry, we help them apply to jobs with our hiring partners. These bakeries, dessert shops and grocery stores have all agreed to consider completion of our program as the work experience needed for an entry level job with them!</p><p></p>",
+            "button_text": "Support our mission",
+            "button_link": "shopify://products/pastry-kit-subscription"
+          }
+        }
+      },
+      "block_order": [
+        "1c3eb56d-a7f8-48bb-8241-894a2f083538",
+        "8a63de11-8a15-4f25-945c-a5511bfcc13a"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "background": "#cf6a28",
+        "text_color": "#f6ede6"
+      }
+    },
+    "4dc30275-2eaf-498b-99da-3e89c750e00d": {
+      "type": "mission-program",
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "background": "rgba(0,0,0,0)",
+        "text_color": "#f6ede6",
+        "background_image": "shopify://shop_images/D756172_1.jpg",
+        "image": "shopify://shop_images/Burger-Buns-Side-VIew.jpg",
+        "title": "The Pastry Project Training Program",
+        "content": "<p>In our 20-week free baking and pastry training program we focus on in-demand technical skills, time management, teamwork, and problem-solving. Starting with the creaming method, students learn to make the perfect chocolate chip cookie and over the course of the program develop skills to produce high quality quick breads, cakes, tarts, cream puffs, croissants and more. </p><p>Classes are a full day each week for 20 weeks plus one Saturday per month.</p><p>Uniforms, curriculum materials, transit stipends, childcare stipends, other needs-based stipends, and lunches are all provided! </p><p>When students graduate ready to work in the industry, we help them apply to jobs with our hiring partners. These bakeries, dessert shops and grocery stores have all agreed to consider completion of our program as the work experience needed for an entry level job with them! Hiring partners include: Molly Moon’s Homemade Ice Cream, Lavish Roots, Hood Famous Bakeshop, Saint Bread, Macrina, PCC Community Markets, Trophy Cupcakes, Hot Cakes, Le Pichet, Princi, and more!</p><p>Join our mailing list to learn when application are live!</p>",
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "44703851-e665-4f83-b23f-4ebf02f677b7": {
+      "type": "new-newsletter",
+      "settings": {
+        "background": "#f9a820",
+        "background_image": "shopify://shop_images/newsletterBG.jpg",
+        "title": "Join our mailing list",
+        "subheading": "",
+        "newsletter_description": "<p>Describe the benefits of your newsletter</p>"
+      }
+    },
+    "887190d2-1595-4db8-9ee4-6417b1ca05db": {
+      "type": "masonry-grid",
+      "blocks": {
+        "f6eb40ff-2cc3-42e7-845a-2eac163e4178": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D755205-2_1.jpg"
+          }
+        },
+        "f0817651-d44e-45fc-86cf-f03a7bd2c779": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D755355_1.jpg"
+          }
+        },
+        "1897dfdb-7933-4069-8d23-8b9509ebecc6": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D755330_1.jpg"
+          }
+        },
+        "8a8dc9c9-d70c-4de6-877b-c6f46256e2a6": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D755196-2_1.jpg"
+          }
+        },
+        "1940215f-05df-4fc8-a9b3-2862582a6be1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D754974.jpg"
+          }
+        },
+        "62ad8593-eec5-4cfb-b709-76c5f7a400c1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/99291A21-807D-447E-9C40-D0FF4B431D2E.jpg"
+          }
+        },
+        "f4faaeee-f12b-4526-b8af-49e2adc93142": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/533FA4BB-7CEA-4689-9C61-8C9255E316CB.jpg"
+          }
+        },
+        "ebefcca9-3a98-4b6a-b4c6-4cf847f865da": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/cake_3.jpg"
+          }
+        },
+        "03f5728e-bcb0-4692-b0d5-bd3034e8a20f": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D754755.jpg"
+          }
+        },
+        "07fd4c40-75f7-4c88-81ff-51b0c5ea982d": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D754640.jpg"
+          }
+        },
+        "6eb6e69c-e12e-459e-9861-877b093c0fb7": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D756675.jpg"
+          }
+        },
+        "537fec97-e664-4228-b1d9-584fda9d20e6": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/2A209B2A-C669-4973-BC22-B377F3DDF3FA.jpg"
+          }
+        },
+        "12b015cb-89bc-4f32-ac46-babd3ed34c54": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D756193.jpg"
+          }
+        },
+        "632e8078-78ac-4197-bbd2-9cab814e87a3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/D756266.jpg"
+          }
+        },
+        "79b459c3-1989-4ca9-8d99-68ec4b5823fd": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/buns_with_king_arthur_partnership.jpg"
+          }
+        },
+        "76ca2de7-a9ef-4d19-b913-e187580c8163": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "f6eb40ff-2cc3-42e7-845a-2eac163e4178",
+        "f0817651-d44e-45fc-86cf-f03a7bd2c779",
+        "1897dfdb-7933-4069-8d23-8b9509ebecc6",
+        "8a8dc9c9-d70c-4de6-877b-c6f46256e2a6",
+        "1940215f-05df-4fc8-a9b3-2862582a6be1",
+        "62ad8593-eec5-4cfb-b709-76c5f7a400c1",
+        "f4faaeee-f12b-4526-b8af-49e2adc93142",
+        "ebefcca9-3a98-4b6a-b4c6-4cf847f865da",
+        "03f5728e-bcb0-4692-b0d5-bd3034e8a20f",
+        "07fd4c40-75f7-4c88-81ff-51b0c5ea982d",
+        "6eb6e69c-e12e-459e-9861-877b093c0fb7",
+        "537fec97-e664-4228-b1d9-584fda9d20e6",
+        "12b015cb-89bc-4f32-ac46-babd3ed34c54",
+        "632e8078-78ac-4197-bbd2-9cab814e87a3",
+        "79b459c3-1989-4ca9-8d99-68ec4b5823fd",
+        "76ca2de7-a9ef-4d19-b913-e187580c8163"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "background": "#ffab00"
+      }
+    },
+    "08dfb58d-7f1e-46dd-856c-5789263fc78f": {
+      "type": "mission-image-with-text",
+      "blocks": {
+        "91f2d2cc-600b-4049-9b15-2e808edd5a82": {
+          "type": "content",
+          "settings": {
+            "title": "CHECK OUT OUR MONTHLY SUBSCRIPTION BOX!",
+            "sub_title": "FUN AND CRAVEABLE RECIPES CURATED MONTHLY.",
+            "content": "",
+            "button_text": "Sign Up",
+            "button_link": ""
+          }
+        },
+        "29b93fa5-bf54-4a56-b0ba-ce6f6ecc02d3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PastryProject-Kits-May2023-2107.jpg",
+            "overlap_image": "shopify://shop_images/35_per_month.png"
+          }
+        }
+      },
+      "block_order": [
+        "91f2d2cc-600b-4049-9b15-2e808edd5a82",
+        "29b93fa5-bf54-4a56-b0ba-ce6f6ecc02d3"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "background": "#6771b3",
+        "text_color": "#f6ede6"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1659740633a3429163",
+    "49fb2c48-a732-48fd-8cba-0d6815a97ada",
+    "4dc30275-2eaf-498b-99da-3e89c750e00d",
+    "44703851-e665-4f83-b23f-4ebf02f677b7",
+    "887190d2-1595-4db8-9ee4-6417b1ca05db",
+    "08dfb58d-7f1e-46dd-856c-5789263fc78f"
+  ]
+}

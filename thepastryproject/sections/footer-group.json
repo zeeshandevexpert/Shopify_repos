@@ -1,0 +1,65 @@
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer-main": {
+      "type": "footer-main",
+      "blocks": {
+        "footer-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/logo.svg",
+            "image_max_width": 65,
+            "image_opacity": 100,
+            "logo_description": "<p>Our mission is to break barriers to employment and make pastry education more accessible. We provide a free baking and pastry training program to individuals with barriers to employment in our industry. Students learn in-demand technical pastry skills as well as professional skills, preparing them for their first job in the industry!</p>"
+          }
+        },
+        "footer-3": {
+          "type": "menu",
+          "settings": {
+            "menu_title": "Quick Links",
+            "footer_linklist": "main-menu"
+          }
+        },
+        "d807bcd8-ea70-44ff-9c86-1f49690f6d45": {
+          "type": "menu",
+          "settings": {
+            "menu_title": "Other Links",
+            "footer_linklist": "footer"
+          }
+        },
+        "footer-2": {
+          "type": "text",
+          "settings": {
+            "title": "Contact us",
+            "contact_content": "<div class=\"addressInnerWrap position-relative\">\n<span class=\"addressInnerIcon\"><svg width=\"20\" height=\"28\" viewbox=\"0 0 20 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.1094 27.5584L9.59799 26.9333C9.25703 26.4786 0.5625 16.3066 0.5625 10.2261C0.5625 4.94123 4.88135 0.679199 10.1094 0.679199C15.3375 0.679199 19.6564 4.99806 19.6564 10.2261C19.6564 16.3066 10.9618 26.5355 10.6209 26.9333L10.1094 27.5584ZM10.1094 1.98623C5.56327 1.98623 1.92635 5.67998 1.92635 10.1693C1.92635 14.9428 8.23414 23.069 10.1094 25.3989C11.9847 23.069 18.2925 14.9996 18.2925 10.1693C18.2925 5.67998 14.6556 1.98623 10.1094 1.98623Z\" fill=\"#A264A9\"></path>\n<path d=\"M10.1095 13.863C8.12051 13.863 6.47253 12.215 6.47253 10.226C6.47253 8.23711 8.12051 6.58911 10.1095 6.58911C12.0984 6.58911 13.7464 8.23711 13.7464 10.226C13.7464 12.215 12.0984 13.863 10.1095 13.863ZM10.1095 7.95297C8.85926 7.95297 7.83638 8.97586 7.83638 10.226C7.83638 11.4762 8.85926 12.4991 10.1095 12.4991C11.3596 12.4991 12.3825 11.4762 12.3825 10.226C12.3825 8.97586 11.3596 7.95297 10.1095 7.95297Z\" fill=\"#A264A9\"></path>\n</svg></span>\n<p>Pioneer Square 165 S Main Street Seattle, Wa 98104</p>\n</div>\n<div class=\"addressInnerWrap position-relative\">\n<span class=\"addressInnerIcon\">\n<svg width=\"24\" height=\"19\" viewbox=\"0 0 24 19\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M23.6372 2.9409L22.7032 2.00684L14.0508 10.6592C12.9693 11.7407 11.1503 11.7407 10.0688 10.6592L1.41645 2.056L0.482391 2.99006L6.92248 9.43015L0.482391 15.8702L1.41645 16.8043L7.85654 10.3642L9.13473 11.6424C9.9213 12.429 10.9537 12.8714 12.0352 12.8714C13.1168 12.8714 14.1491 12.429 14.9357 11.6424L16.2139 10.3642L22.654 16.8043L23.5881 15.8702L17.148 9.43015L23.6372 2.9409Z\" fill=\"#A264A9\"></path>\n<path d=\"M21.8183 18.4758H2.39972C1.26902 18.4758 0.334961 17.5418 0.334961 16.4111V2.54767C0.334961 1.41697 1.26902 0.48291 2.39972 0.48291H21.8183C22.949 0.48291 23.8831 1.41697 23.8831 2.54767V16.4111C23.8831 17.5418 22.949 18.4758 21.8183 18.4758ZM2.35056 1.81026C1.95727 1.81026 1.66231 2.10522 1.66231 2.49851V16.3619C1.66231 16.7552 1.95727 17.0502 2.35056 17.0502H21.7692C22.1624 17.0502 22.4574 16.7552 22.4574 16.3619V2.49851C22.4574 2.10522 22.1624 1.81026 21.7692 1.81026H2.35056Z\" fill=\"#A264A9\"></path>\n</svg>\n\n\n</span>\n<p><a href=\"mailto:hello@thepastryproject.co\">hello@thepastryproject.co</a> ,\n<a href=\"mailto:classes@thepastryproject.co\">classes@thepastryproject.co</a></p>\n\n</div>\n\n<div class=\"addressInnerWrap d-flex position-relative\">\n\n<a class=\"footerSocialLinks\" href=\"https://www.facebook.com/thepastryproject.co/\"><svg width=\"43\" height=\"43\" viewbox=\"0 0 43 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"21.5\" cy=\"21.5\" r=\"21.5\" fill=\"#A264A9\"></circle>\n<path d=\"M25.2637 22.6875H22.7734V30.125H19.4531V22.6875H16.7305V19.6328H19.4531V17.2754C19.4531 14.6191 21.0469 13.125 23.4707 13.125C24.6328 13.125 25.8613 13.3574 25.8613 13.3574V15.9805H24.5C23.1719 15.9805 22.7734 16.7773 22.7734 17.6406V19.6328H25.7285L25.2637 22.6875Z\" fill=\"white\"></path>\n</svg></a>\n\n\n<a class=\"footerSocialLinks\" href=\"https://www.instagram.com/thepastryproject_/\" target=\"_blank\"><svg width=\"43\" height=\"43\" viewbox=\"0 0 43 43\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle cx=\"21.5\" cy=\"21.5\" r=\"21.5\" fill=\"#A264A9\"></circle>\n<path d=\"M21.3125 17.6074C23.6504 17.6074 25.5801 19.5371 25.5801 21.875C25.5801 24.25 23.6504 26.1426 21.3125 26.1426C18.9375 26.1426 17.0449 24.25 17.0449 21.875C17.0449 19.5371 18.9375 17.6074 21.3125 17.6074ZM21.3125 24.6582C22.834 24.6582 24.0586 23.4336 24.0586 21.875C24.0586 20.3535 22.834 19.1289 21.3125 19.1289C19.7539 19.1289 18.5293 20.3535 18.5293 21.875C18.5293 23.4336 19.791 24.6582 21.3125 24.6582ZM26.7305 17.459C26.7305 16.9023 26.2852 16.457 25.7285 16.457C25.1719 16.457 24.7266 16.9023 24.7266 17.459C24.7266 18.0156 25.1719 18.4609 25.7285 18.4609C26.2852 18.4609 26.7305 18.0156 26.7305 17.459ZM29.5508 18.4609C29.625 19.834 29.625 23.9531 29.5508 25.3262C29.4766 26.6621 29.1797 27.8125 28.2148 28.8145C27.25 29.7793 26.0625 30.0762 24.7266 30.1504C23.3535 30.2246 19.2344 30.2246 17.8613 30.1504C16.5254 30.0762 15.375 29.7793 14.373 28.8145C13.4082 27.8125 13.1113 26.6621 13.0371 25.3262C12.9629 23.9531 12.9629 19.834 13.0371 18.4609C13.1113 17.125 13.4082 15.9375 14.373 14.9727C15.375 14.0078 16.5254 13.7109 17.8613 13.6367C19.2344 13.5625 23.3535 13.5625 24.7266 13.6367C26.0625 13.7109 27.25 14.0078 28.2148 14.9727C29.1797 15.9375 29.4766 17.125 29.5508 18.4609ZM27.7695 26.7734C28.2148 25.6973 28.1035 23.0996 28.1035 21.875C28.1035 20.6875 28.2148 18.0898 27.7695 16.9766C27.4727 16.2715 26.916 15.6777 26.2109 15.418C25.0977 14.9727 22.5 15.084 21.3125 15.084C20.0879 15.084 17.4902 14.9727 16.4141 15.418C15.6719 15.7148 15.1152 16.2715 14.8184 16.9766C14.373 18.0898 14.4844 20.6875 14.4844 21.875C14.4844 23.0996 14.373 25.6973 14.8184 26.7734C15.1152 27.5156 15.6719 28.0723 16.4141 28.3691C17.4902 28.8145 20.0879 28.7031 21.3125 28.7031C22.5 28.7031 25.0977 28.8145 26.2109 28.3691C26.916 28.0723 27.5098 27.5156 27.7695 26.7734Z\" fill=\"white\"></path>\n</svg></a>\n\n</div>"
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-3",
+        "d807bcd8-ea70-44ff-9c86-1f49690f6d45",
+        "footer-2"
+      ],
+      "settings": {
+        "show_back_to_top": false,
+        "back_to_top_text": "Back to top",
+        "show_borders": false
+      }
+    },
+    "footer-bottom": {
+      "type": "footer-bottom",
+      "settings": {
+        "footerBottom--background-color": "#ffffff",
+        "show_methods_of_payment": false,
+        "show_currency_selector": false,
+        "show_locale_selector": false
+      }
+    }
+  },
+  "order": [
+    "footer-main",
+    "footer-bottom"
+  ]
+}

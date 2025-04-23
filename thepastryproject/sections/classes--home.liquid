@@ -1,0 +1,228 @@
+<style>
+ /* .classes-section-outer{
+  background-color: {{ section.settings.classes--background-color }};
+}  */
+.btn{
+  {% comment %} color: {{ section.settings.classes--background-text-color }} !important;
+  background-color: {{ section.settings.button--background-color }}; {% endcomment %}
+}
+ 
+/* .section-padding{
+    padding-top: {{ section.settings.font_padding }}px ;
+    padding-bottom: {{ section.settings.font_padding }}px ;
+} */
+
+  .classes-img {
+    position: absolute;
+    left: auto;
+    bottom: 0;
+    max-width: 317px;
+    width: 100%;
+  }
+
+  .classes-section-inner{
+     padding-top:100px;
+    padding-bottom:100px; 
+  }
+
+  .classes-contentInnerOuter {
+    max-width: 510px;
+  }
+
+  .rightSectionOuter {
+    gap: 30px;
+  }
+
+ .rightSectionOuter {
+    align-items: self-start;
+    flex-wrap: wrap
+ }
+
+  
+  .rightSectionSecondimage {
+    margin: 70px 0 0;
+  }
+
+  .rightSectionImage {
+    max-width: 50%;
+    flex: 0 0 calc(50% - 15px);
+  }
+  
+  .rightSectionImage img {
+    max-width: 100%;
+  }
+
+  
+  @media(max-width:991px){
+    .classes-section-inner {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      }
+
+    .classes-contentInnerOuter {
+        max-width: 100%;
+        margin: 0 0 30px;
+    }
+  }
+  
+  @media(max-width:767px){
+      .rightSectionImage img {
+        max-width: 100%;
+      }
+      
+      .rightSectionImage {
+        max-width: 45%;
+      }
+  }
+
+</style>
+<div class="sepratorOuter"></div>
+<div class="classes-section-outer"  style="background-color: {{ section.settings.classes--background-color }}">
+<div class="container classes-section-inner position-relative" >
+  
+  {% comment %}
+  <div class="section-header">
+    <div class="section-header-iiner">
+    {% if section.settings.classes_title_top != blank %}<h2 class="sectionHeading">{{ section.settings.classes_title_top }}</h2>{% endif %}
+      <p>{{ section.settings.classes_content }}</p>
+    </div>    
+  </div>
+{% endcomment %}
+  
+
+  <div class="row align-items-center" >
+   
+  <div class="col-12 col-lg-6">
+
+<div class="classes-contentInnerOuter position-relative">
+    
+       <div class="classes-content ">
+       {% if section.settings.classes_title_bottom != blank %}
+        <h2 class="sectionHeading">{{ section.settings.classes_title_bottom }}</h2>
+      {% endif %}
+  
+      {% if section.settings.classes_points != blank %}
+      <p>{{ section.settings.classes_points }}</p>
+      {% endif %}
+      
+       </div>
+       <div class="classes-left-button">
+   {% if section.settings.linktext != blank %}
+        <a class="btn btn-primary" href="{{ section.settings.link }}">
+         {{ section.settings.linktext }}
+        </a>
+   {% endif %}
+          </div> 
+</div>
+  </div>
+
+
+    <div class="col-12 col-lg-6 d-flex rightSectionOuter">
+      
+    {% if section.settings.rightSection--imageFirst != blank %}
+      <div class="rightSectionImage rightSectionFirstimage">
+      <img class="" alt="" src="{{ section.settings.rightSection--imageFirst | img_url: '720x720'  }}" />
+      </div>
+      {% endif %}
+      {% if section.settings.rightSection--imageSecond != blank %}
+        <div class="rightSectionImage rightSectionSecondimage">
+          <img class="" alt="" src="{{ section.settings.rightSection--imageSecond | img_url: '720x720'  }}" />
+        </div>
+        {% endif %}
+    </div>
+    
+  </div>
+
+</div>
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Home Classes",
+    "settings": [
+      {
+    "type": "range",
+    "id": "font_padding",
+    "min": 12,
+    "max": 100,
+    "step": 1,
+    "unit": "px",
+    "label": "Padding",
+    "default": 16
+    },
+    
+
+    {
+        "type": "color",
+        "id": "classes--background-color",
+        "label":  "Section background",
+        "default" : "#2D2D2D"
+        },
+      {
+              "type": "text",
+              "id": "classes_title_top",
+              "label": "Heading"
+      },
+      {
+           "type": "html",
+            "id": "classes_content",
+            "label": "Text",
+            "default": "<p>Content goes here...</p>"
+        },
+       {
+              "type": "text",
+              "id": "classes_title_bottom",
+              "label": "Heading"
+      },
+      {
+           "type": "html",
+            "id": "classes_points",
+            "label": "Text",
+            "default": "<p>Content goes here...</p>"
+        },
+
+    {
+      "id": "link",
+      "type": "url",
+      "label": "Link URL"
+    },
+    {
+      "id": "linktext",
+      "type": "text",
+      "label": "Link text",
+      "default": "Click here"
+    },
+         {
+            "type": "color",
+            "id": "button--background-color",
+            "label":"Button color",
+            "default": "#2D2D2D"
+        },
+      {
+        "type": "color",
+        "id": "classes--background-text-color",
+        "label":  "Text color",
+        "default" : "#2D2D2D"
+        },
+       {
+        "type": "image_picker",
+        "id": "rightSection--imageFirst",
+        "label":  "Right Side Image First"
+        },
+       {
+        "type": "image_picker",
+        "id": "rightSection--imageSecond",
+        "label":  "Right Side Image Second"
+        }
+        
+    ],
+  "presets": [
+    {
+      "name": "Home Classes"  
+    }
+  ]
+  }
+{% endschema %}
+

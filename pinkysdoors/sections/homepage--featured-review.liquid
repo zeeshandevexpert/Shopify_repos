@@ -1,0 +1,76 @@
+<div class="page-width--thin">
+  <h1>Reviews</h1>
+  <div class="featured-review flex flex--align-center">
+    <div class="featured-review__video one-third small--one-half">
+      <video playsinline="true" width="100%" src="{{section.settings.filename | file_url }}" poster="{{section.settings.cover  | img_url: 'master'}}">
+        Sorry, your browser doesn't support embedded videos.
+      </video>
+    </div>
+    <div class="featured-review__text two-thirds text-center small--one-half">
+
+      <svg width="44" height="34" viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg"><path d="M38.93.4l1.08 1.68c-7.92 5.16-11.16 10.2-11.16 14.64 0 2.88 1.8 4.08 3.24 4.32l5.04-4.68c2.76.96 6.36 3.84 6.36 8.4 0 5.28-4.32 8.76-9.6 8.76-6.48 0-10.8-4.2-10.8-11.52 0-9.12 6.96-16.08 15.84-21.6zM16.37.4l1.08 1.68C9.53 7.24 6.29 12.28 6.29 16.72c0 2.88 1.8 4.08 3.24 4.32l5.04-4.68c2.76.96 6.36 3.84 6.36 8.4 0 5.28-4.32 8.76-9.6 8.76C4.85 33.52.53 29.32.53 22 .53 12.88 7.49 5.92 16.37.4z" fill="#000" fill-rule="nonzero"/></svg>
+
+      {% if section.settings.paragraph != blank %}
+      <div class="rte-setting mega-paragraph">
+        {{ section.settings.paragraph | newline_to_br }}
+        <br/>
+        – {{section.settings.title}}
+      </div>
+      {% endif %}
+
+      <div class="mega-link">
+        <a class="btn btn--secondary" href="/pages/reviews">More REviews</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Homepage Featured Review",
+	"class": "index-section index--featured-review text-center",
+    "settings": [
+	{
+		"type":"text",
+		"id":"filename",
+		"label":"Video Filename",
+		"default": "pinkys-instagram-story.mp4 "
+	},
+	{
+		"type":"image_picker",
+		"id":"cover",
+		"label":"Video Cover (still)"
+	},
+	{
+		"type":"text",
+		"id":"title",
+		"label":"User Name",
+		"default":"Zoe Bleak"
+	},
+	{
+		"type":"textarea",
+		"id":"paragraph",
+		"label":"Paragraph",
+		"default":"I really looked for materials that echoed the art–unique and handcrafted, explains Brent. I wanted pieces that are not too polished or precious, that could stand the test of me getting down and dirty in the space."
+	}
+	],
+	"presets": [
+    {
+      "name": "Homepage Featured Review",
+      "category": "Info"
+    }
+  ]
+  }
+{% endschema %}
+{% javascript %}
+var video = document.querySelector('.featured-review__video video');
+video.addEventListener('click',function(){
+    if(video.paused){
+        video.play();
+    }else{
+        video.pause();
+    }
+},false);
+{% endjavascript %}

@@ -1,0 +1,230 @@
+{% include 'block-width' %}
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+
+<div id="section-{{ section.id }}" class="{{ section.settings.section_style }}" data-section-id="{{ section.id }}" data-section-type="logo-list-section">
+  <div class="box">
+    <div class="wrapper">
+        
+      {% unless section.settings.title == blank and section.settings.subtitle == blank %}
+        <div class="grid">
+          <div class="grid__item large--eight-twelfths push--large--two-twelfths">
+            <div class="section-header">
+              {% unless section.settings.title == blank %}
+                <h2 class="section-header__title">{{ section.settings.title | escape }}</h2>
+              {% endunless %}
+              {% unless section.settings.subtitle == blank %}
+                <p class="section-header__subtitle">{{ section.settings.subtitle | escape }}</p>
+              {% endunless %}
+            </div>
+           </div>
+        </div>
+      {% endunless %}
+        
+     {% comment %} {% if section.blocks.size > 0 %}
+        <ul class="logo-bar">
+          
+          <style>
+            .logo-bar__item {
+              max-width: {{ section.settings.logo_width }};
+            }
+          </style>
+            
+          <!-- Blocks -->
+          {% for block in section.blocks %}
+            <li class="logo-bar__item" {{ block.shopify_attributes }}>
+              {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}" class="logo-bar__link">
+              {% endif %}
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | img_url: '300x300' | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+              {% if block.settings.link != blank %}
+                </a>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %} {% endcomment %}
+
+      {% if section.blocks.size > 0 %}
+        <!-- Owl Carousel Wrapper -->
+        <style>
+          .logo-bar__item {
+            max-width: {{ section.settings.logo_width }};
+          }
+        </style>
+        <div class="owl-carousel owl-theme" id="clients-slider-first">
+        
+          <!-- Blocks -->
+          {% for block in section.blocks %}
+            <div class="logo-bar__item" {{ block.shopify_attributes }}>
+              {% if block.settings.link != blank %}
+                <a href="{{ block.settings.link }}" class="logo-bar__link">
+              {% endif %}
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | img_url: '300x300' | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% endif %}
+              {% if block.settings.link != blank %}
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+
+        
+      {% if section.blocks.size == 0 %}
+        {% include 'no-blocks' %}
+      {% endif %}
+        
+    </div>
+  </div>
+</div>
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('#clients-slider-first').owlCarousel({
+        items: 7,
+        autoplay: true,
+        slideTransition: 'linear',
+        autoplayTimeout: 2500,
+        smartSpeed: 2500,
+        slideSpeed: 2500,
+        center: false,
+        dots: false,
+        nav: false,
+        loop: true,
+        rtl: false,
+        responsive: {
+            0: {
+                items: 1,
+            },
+            600: {
+                items: 3,
+            },
+            1000: {
+                items: 10,
+            }
+        }
+    });
+  });
+</script>
+
+
+{% schema %}
+  {
+    "name": "Logo list",
+    "class": "logo-list-section",
+    // "max_blocks": 10,
+    "settings": [
+	  {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+		"default": "Logo list"
+      },
+	  {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subheading"
+      },
+      {
+        "type": "select",
+        "id": "section_style",
+        "label": "Section style",
+        "default": "",
+        "options": [
+          {
+            "value": "",
+            "label": "Default"
+          },
+		  {
+            "value": "bg-section",
+            "label": "Add background color"
+          },
+          {
+            "value": "border-section",
+            "label": "Add border top"
+          }
+        ]
+      },
+	  {
+        "type": "select",
+        "id": "logo_width",
+        "label": "Logo width",
+        "default": "150px",
+        "options": [
+          {
+            "label": "Extra Small",
+            "value": "100px"
+          },
+          {
+            "label": "Small",
+            "value": "125px"
+          },
+          {
+            "label": "Medium",
+            "value": "150px"
+          },
+          {
+            "label": "Large",
+            "value": "175px"
+          },
+          {
+            "label": "Extra Large",              
+            "value": "200px"
+          }
+        ]
+      }
+	],
+	"blocks" : [
+	  {
+        "type": "logo",
+        "name": "Logo",
+        "settings": [
+		  {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+		  {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+	"presets": [
+      {
+        "name":  "Logo list",
+        "category":"Image",
+		"blocks": [
+          {
+            "type": "logo"
+          },
+          {
+            "type": "logo"
+          },
+          {
+            "type": "logo"
+          },
+          {
+            "type": "logo"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

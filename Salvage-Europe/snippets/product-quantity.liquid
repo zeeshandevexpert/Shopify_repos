@@ -1,0 +1,21 @@
+{% comment %}
+snippets/product-quantity.liquid
+
+- product
+{% endcomment %}
+<div class="qty-selection">
+  <label class="h5" for="quantity-{{ product.id }}"><strong>{{ 'products.product.quantity' | t }}</strong></label>
+  <div class="quantity__wrapper">
+    <button
+      class="down quantity-control-down"
+      tabindex="0"
+      aria-label="{{ 'products.general.decrease' | t: product: product.title | escape }}"
+      type="button">-</button>
+      <input id="quantity-{{ product.id }}" min="1" type="text" name="quantity" class="product-qty quantity js-qty-input" value="1" />
+    <button
+      class="up quantity-control-up"
+      tabindex="0"
+      aria-label="{{ 'products.general.increase' | t: product: product.title | escape }}"
+      type="button">+</button>
+  </div>
+</div>

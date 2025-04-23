@@ -1,0 +1,66 @@
+{% if section.settings.gradient != blank %}
+    <style>
+        :root {
+            --colorgradient: {{ section.settings.gradient }} !important;
+        }
+    </style>
+{% endif %}
+    <div class="container-style container-large tech-top-container">
+        <div class="tech-top-row">
+            <div class="tech-top-col-left">
+                <h2>{{ section.settings.title }}</h2>
+                {{ section.settings.description }}
+            </div>
+            <div class="tech-top-col-right">
+                <div class="tech-top-mini-container" style="background-image:url('{{ section.settings.image_bg | img_url: '800x' }}')">
+                    <img src="{{ section.settings.image | img_url: '10x' }}"
+                         class="lazyload"
+                         data-src="{{ section.settings.image | img_url: '800x' }}"
+                         data-widths="[800]"
+                         data-sizes="auto"
+                         tabindex="-1"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "How We Work - Hero",
+  "tag": "section",
+  "class": "tech-top-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "gradient",
+      "label": "Gradient"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bg",
+      "label": "Image Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How We Work - Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,147 @@
+
+{% if section.settings.show_top_content %}
+  <div class="top-content-block">
+      <div class="heading"> {{ section.settings.heading }}</div>
+      <div class="text">{{ section.settings.text }}</div>
+  </div>
+{% endif %}
+
+
+  <div class="wrap-experiment-block">
+
+    <div class="home-experiment-left">
+
+        <div class="standard-cover">
+            {% include "media-block" %}
+        </div>
+        {% if section.settings.show_content %}
+          <div class="home-experiment-left-content">
+            <h2>{{ section.settings.title2 }}</h2>
+            <a href="{{ section.settings.button_link2 }}">{{ section.settings.button_title2 }}</a>
+          </div>         
+        {% endif %}
+ 
+    </div>
+    <div class="home-experiment-right" style="background-image:url('{{ section.settings.image_bg | img_url: '1000x' }}');">
+        <div class="home-experiment-right-content">
+            <h2>{{ section.settings.title }}</h2>
+            <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+        </div>
+    </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Index - Experiment",
+  "tag": "section",
+  "class": "home-experiment-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_top_content",
+      "label": "Show Top Content",
+      "default": false
+    },
+
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bg",
+      "label": "Image Background"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Media Block"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content",
+      "label": "Show Content",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "title2",
+      "label": "Title Block 2"
+    },
+    {
+      "type": "text",
+      "id": "button_title2",
+      "label": "Link Title Block 2"
+    },
+    {
+      "type": "url",
+      "id": "button_link2",
+      "label": "Link Block 2"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "image"
+        },
+        {
+          "value": "vimeo_youtube_video",
+          "label": "YouTube or Vimeo Video"
+        },
+        {
+          "value": "video_file",
+          "label": "HTML5 Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video_url",
+      "id": "vimeo_youtube_video",
+      "label": "Video",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "video_file",
+      "label": "HTML5 Video File URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index - Experiment"
+    }
+  ]
+}
+{% endschema %}

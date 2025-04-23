@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "heading_banner_section_8yJP9U": {
+      "type": "heading-banner-section",
+      "settings": {
+        "heading": "<p>frequently asked questions<\/p>"
+      }
+    },
+    "faq_block_aK7HwB": {
+      "type": "faq-block",
+      "blocks": {
+        "aacordion_qfVR38": {
+          "type": "aacordion",
+          "settings": {
+          }
+        },
+        "aacordion_kwUaC3": {
+          "type": "aacordion",
+          "settings": {
+          }
+        },
+        "aacordion_EbQFFX": {
+          "type": "aacordion",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "aacordion_qfVR38",
+        "aacordion_kwUaC3",
+        "aacordion_EbQFFX"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "heading_banner_section_8yJP9U",
+    "faq_block_aK7HwB"
+  ]
+}

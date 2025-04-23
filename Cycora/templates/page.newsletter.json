@@ -1,0 +1,32 @@
+{
+  "sections": {
+    "header_skin_XtfMkK": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "16552150111ff55d09": {
+      "type": "newsletter-template",
+      "settings": {
+        "sliders_title": "",
+        "bg_image": "shopify:\/\/shop_images\/Group_12_2.png",
+        "bg_image_mob": "shopify:\/\/shop_images\/Group_13.png",
+        "heading": "stay in the loop",
+        "description": "<p>subscribe to our newsletter to gain access to: <\/p><ul><li>product launches <\/li><li>brand partner launches <\/li><li>community events <\/li><li>sustainability resources <\/li><\/ul>"
+      }
+    }
+  },
+  "order": [
+    "header_skin_XtfMkK",
+    "main",
+    "16552150111ff55d09"
+  ]
+}

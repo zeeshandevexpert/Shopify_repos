@@ -1,0 +1,41 @@
+
+    <div class="img-holder">
+        <img src="{{ section.settings.image | img_url: '10x' }}"
+             class="lazyload"
+             data-src="{{ section.settings.image | img_url: 'master' }}"
+             data-widths="[1900]"
+             data-sizes="auto"
+             tabindex="-1"
+        />
+    </div>
+    <div class="container-style container-large">
+        <div class="press-top-content">
+            <h1>{{ section.settings.title }}</h1>
+        </div>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Press - Head",
+  "tag": "section",
+  "class": "press-top-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press - Head"
+    }
+  ]
+}
+{% endschema %}

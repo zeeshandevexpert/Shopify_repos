@@ -1,0 +1,110 @@
+<section class="legal-top-section">
+    <div class="container-style container-large">
+        <div class="legal-top-section-row">
+            <div class="legal-top-section-col-left">
+                <h1>{{ section.settings.title }}</h1>
+            </div>
+            <div class="legal-top-section-col-right">
+                <h2>{{ section.settings.count_sections }} sections</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="legal-main-section">
+    <div class="container-style container-large">
+        <div class="legal-main-row">
+            <div class="legal-main-col-left">
+                <div class="legal-main-title">
+                    <h2>chapter</h2>
+                </div>
+                <h3>privacy policy</h3>
+            </div>
+            <div class="legal-main-col-right">
+                {% for block in section.blocks %}
+                    {% if block.settings.category == 'privacy_policy' %}
+                        <div class="legal-main-title">
+                            <h2>{{ block.settings.title }}</h2>
+                        </div>
+                        {{ block.settings.description }}
+                        {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="legal-main-row">
+            <div class="legal-main-col-left">
+                <div class="legal-main-title">
+                    <h2>chapter</h2>
+                </div>
+                <h3>terms & conditions</h3>
+            </div>
+            <div class="legal-main-col-right">
+                {% for block in section.blocks %}
+                    {% if block.settings.category == 'terms_conditions' %}
+                        <div class="legal-main-title">
+                            <h2>{{ block.settings.title }}</h2>
+                        </div>
+                        {{ block.settings.description }}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Legal - Content",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "count_sections",
+      "label": "Count Sections"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "section",
+      "type": "section",
+      "settings":[
+        {
+          "type": "select",
+          "id": "category",
+          "label": "Category",
+          "options": [
+            {
+              "value": "privacy_policy",
+              "label": "privacy policy"
+            },
+            {
+              "value": "terms_conditions",
+              "label": "terms & conditions"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Legal - Content"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,61 @@
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "enable": true,
+        "message_text": "Free Shipping With Every Subscription!",
+        "message_link": "",
+        "notification-bar--background-color": "#f389b8",
+        "notification-bar--text-color": "#ffffff",
+        "social-enable": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "ed9efaab-cb3e-4de5-b839-2581dd1a508e": {
+          "type": "content",
+          "disabled": true,
+          "settings": {
+            "mega-menu": "",
+            "mega_image_header_1": "",
+            "mega_image_subheader_1": "",
+            "mega_image_link_1": "",
+            "mega_image_header_2": "",
+            "mega_image_subheader_2": "",
+            "mega_image_link_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "ed9efaab-cb3e-4de5-b839-2581dd1a508e"
+      ],
+      "settings": {
+        "sticky_header": "disable",
+        "overlay_header": true,
+        "show_border": false,
+        "header--background-color": "#feeee6",
+        "logo": "shopify://shop_images/logo.svg",
+        "logo_max_width": 350,
+        "logo-placement": "left",
+        "sticky_header_logo": true,
+        "search-expand": false,
+        "search-message": "Search our store...",
+        "icon-enable": true,
+        "cart-number": "quantity",
+        "show_currency_selector": false,
+        "show_locale_selector": false,
+        "main_linklist": "main-menu",
+        "top_bar_linklist": "",
+        "show-sticky-top-bar": false
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

@@ -1,0 +1,28 @@
+<div class="one-line-block">
+    <div class="content">
+        <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "One Link Block",
+    "settings": [
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+        ],
+        "presets": [
+            {
+                "name": "One Link Block"
+            }
+        ]
+}
+{% endschema %}

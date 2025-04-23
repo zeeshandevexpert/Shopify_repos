@@ -1,0 +1,27 @@
+{% if predictiveElements %}
+<predictive-search>
+{% endif %}
+<form action="/search" method="get" class="search-header search" role="search">
+  <input class="search-header__input search__input"
+    type="search"
+    name="q"
+    placeholder="{{ 'general.search.placeholder' | t }}"
+    aria-label="{{ 'general.search.placeholder' | t }}">
+  <button class="search-header__submit search__submit btn--link site-header__icon" type="submit">
+    {% include 'icon-search' %}
+    <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+  </button>
+  {%- if predictiveElements -%}
+    <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+      <div class="predictive-search__loading-state">
+        <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+        </svg>
+      </div>
+    </div>
+    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+  {%- endif -%}
+</form>
+{% if predictiveElements %}
+</predictive-search>
+{% endif %}

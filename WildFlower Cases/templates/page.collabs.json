@@ -1,0 +1,378 @@
+{
+  "sections": {
+    "1664386827089992d6": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/wildflower-cases-ming-lee-collab-hero-dt.jpg",
+        "image_mobile": "shopify://shop_images/wildflower-cases-ming-lee-collab-hero-mb.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "16643870178b9d2cef": {
+      "type": "rich-text",
+      "blocks": {
+        "166438701769db22a3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Wildflower Cases x Collaborations</p>",
+            "heading_size": "h1"
+          }
+        },
+        "166438701769db22a3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop Our Latest Collab with Ming Lee</p>"
+          }
+        },
+        "166438701769db22a3-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/ming-lee-x-wildflower-cases",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "166438701769db22a3-0",
+        "166438701769db22a3-1",
+        "166438701769db22a3-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "collabs": {
+      "type": "page-collabs",
+      "blocks": {
+        "489c7f09-8220-4517-a03c-440b572de649": {
+          "type": "collab",
+          "disabled": true,
+          "settings": {
+            "title": "Emi Jay",
+            "image": "shopify://shop_images/Wildflower-Cases-Emi-Jay-Brown-Floral-Image-02_3f8de805-e09a-4bf2-8a97-c86d75f34e71.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Emi-Jay-Lovey-Image-01_2bd1646a-b164-4700-8155-6f7e802aa5ef.jpg",
+            "link": "shopify://collections/emi-jay-x-wildflower-cases"
+          }
+        },
+        "16e7fa27-0ca6-49ab-b0a6-241694e4e641": {
+          "type": "collab",
+          "settings": {
+            "title": "Ming Lee",
+            "image": "shopify://shop_images/wildflower-cases-ming-lee-collab-main-image-01.jpg",
+            "image_hover": "shopify://shop_images/wildflower-cases-ming-lee-collab-main-image-02.jpg",
+            "link": "shopify://collections/ming-lee-x-wildflower-cases"
+          }
+        },
+        "693d9370-8f70-4c49-ac2d-09b0f1d106c5": {
+          "type": "collab",
+          "settings": {
+            "title": "Nessa Barrett",
+            "image": "shopify://shop_images/wildflower-cases-nessa-barrett-collab-main-image-01.jpg",
+            "image_hover": "shopify://shop_images/wildflower-cases-nessa-barrett-collab-main-image-02.jpg",
+            "link": "shopify://collections/nessa-barrett-x-wildflower-cases"
+          }
+        },
+        "f3016462-d7ec-47e4-8be0-280ded918ca3": {
+          "type": "collab",
+          "settings": {
+            "title": "Taylor Giavasis",
+            "image": "shopify://shop_images/Wildflower-Cases-Taylor-Giavasis-Collab-Hover-01_25cf0350-00f4-4ef6-b486-c20d98079b4a.jpg",
+            "link": "shopify://collections/taylor-giavasis-x-wildflower-cases"
+          }
+        },
+        "0cf58e76-8f45-4096-8e21-0880dd1e9c5b": {
+          "type": "collab",
+          "settings": {
+            "title": "Caroline Ricke",
+            "image": "shopify://shop_images/Wildflower-Cases-Caroline-Collab-Cover-Image-01_60252279-ec73-4b39-89cd-3fe29dc6f582.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Caroline-Collab-Cover-Image-02_7ecf6879-f656-428f-9e9e-e826efb1710c.jpg",
+            "link": "shopify://collections/caroline-ricke-x-wildflower-cases"
+          }
+        },
+        "7e41ecd2-19ee-45ca-9e25-4732a9ecad55": {
+          "type": "collab",
+          "settings": {
+            "title": "Bretman Rock",
+            "image": "shopify://shop_images/Wildflower-Cases-Bretman-Rock-Cover-02_3156556b-3d50-481e-8096-5eb0a4baa261.jpg",
+            "link": "shopify://collections/bretman-rock-x-wildflower-cases"
+          }
+        },
+        "d804ba7a-b5e4-49f1-8292-53386b302e4f": {
+          "type": "collab",
+          "settings": {
+            "title": "Enya Umanzor",
+            "image": "shopify://shop_images/Wildflower-Cases-Enya-Collab-Page-Image-02_19b18daf-b497-4f3f-9a9e-9e744dd069be.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Enya-Collab-Page-Image-01_767d3492-8422-4036-b7c2-817fe5d590d1.jpg",
+            "link": "shopify://collections/enya-umanzor-x-wildflower-cases"
+          }
+        },
+        "97b43909-f649-4350-a3f0-54926c1d7acc": {
+          "type": "collab",
+          "settings": {
+            "title": "Nailea Devora",
+            "image": "shopify://shop_images/nai-cover-main_00f9ba16-e78b-40f4-915b-8f253d9a5b1c.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Nailea-Devora-Collab-Cover-01_577c59c8-d8bf-418e-aa56-782b5272da72.jpg",
+            "link": "shopify://collections/nailea-devora-x-wildflower-cases"
+          }
+        },
+        "b5d4a2c1-abd3-4a8a-b203-69c4c98d4494": {
+          "type": "collab",
+          "settings": {
+            "title": "Sandy Liang",
+            "image": "shopify://shop_images/Wildflower-Cases-Sandy-Liang-Collab-Cover-02.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Sandy-Liang-Collab-Hover.jpg",
+            "link": "shopify://collections/sandy-liang-x-wildflower-cases"
+          }
+        },
+        "a241bbd9-716a-47dc-a5a7-ee4d6a5c10bb": {
+          "type": "collab",
+          "settings": {
+            "title": "Realisation Par x Devon Lee Carlson",
+            "image": "shopify://shop_images/WildflowerCasesxDevonLeeCarlsonxRealisationPar-Hero-Collab-Main.jpg",
+            "image_hover": "shopify://shop_images/WildflowerCasesxDevonLeeCarlsonxRealisationPar-Hero-Collab-02_fe2431b4-3b31-498a-80a0-da33ddd3e9fb.jpg",
+            "link": "shopify://collections/realisation-par-x-devon-lee-carlson-x-wildflower-cases"
+          }
+        },
+        "1602718157671": {
+          "type": "collab",
+          "settings": {
+            "title": "Antonio Garza",
+            "image": "shopify://shop_images/Wildflower-Cases-Antonio-Garza-Collab-Image-03_f95e5df0-9a12-49e0-9ba6-e97f802dc4ac.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Antonio-Garza-Collab-Hover.jpg",
+            "link": "shopify://collections/antonio-garza-x-wildflower-cases"
+          }
+        },
+        "bbddb762-05f6-4087-bd8e-1c765c705724": {
+          "type": "collab",
+          "settings": {
+            "title": "Olivia O'Brien",
+            "image": "shopify://shop_images/Wildflower-Cases-Hero-Collab-01.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Hero-Collab-02.jpg",
+            "link": "shopify://collections/olivia-obrien-x-wildflower-cases"
+          }
+        },
+        "ca54c2a1-c63a-4ffa-9c8e-d88425a5f67a": {
+          "type": "collab",
+          "settings": {
+            "title": "Frankies Bikinis",
+            "image": "shopify://shop_images/Frankies-Bikinis-Wildflower-Collab-03.jpg",
+            "image_hover": "shopify://shop_images/Frankies-Bikinis-Wildflower-Collab-02.jpg",
+            "link": "shopify://collections/frankies-bikinis-x-wildflower-cases"
+          }
+        },
+        "5a1a61f3-505e-4376-835b-c4c7e818c82a": {
+          "type": "collab",
+          "settings": {
+            "title": "Trixie Mattel",
+            "image": "shopify://shop_images/Wildflower-Cases-Trixie-Mattel-Hover_dda5eaf8-de68-438e-8663-a476f388af4f.jpg",
+            "image_hover": "shopify://shop_images/Wildflower-Cases-Trixie-Mattel-Collab-02.jpg",
+            "link": "shopify://collections/trixie-mattel-x-wildflower-cases"
+          }
+        },
+        "68254f0b-bced-42b4-8619-a5032c5ef501": {
+          "type": "collab",
+          "settings": {
+            "title": "about-face",
+            "image": "shopify://shop_images/AboutFace-Collab-Hero_b97971a4-d84e-4b24-b334-97f63dc605e2.jpg",
+            "image_hover": "shopify://shop_images/AboutFace-Collab-Hero-02.jpg",
+            "link": "shopify://collections/about-face-x-wildflower-cases"
+          }
+        },
+        "1605294888995": {
+          "type": "collab",
+          "settings": {
+            "title": "Salem Mitchell",
+            "image": "shopify://shop_images/Salem-Mitchell-Wildflower-Collab-Hover-02_31d5b986-8da4-4410-b5db-61ff3f856daa.jpg",
+            "image_hover": "shopify://shop_images/Salem-Mitchell-Wildflower-Collab-Hover-03.jpg",
+            "link": "shopify://collections/salem-mitchell-x-wildflower-cases"
+          }
+        },
+        "65a48e07-b395-40d6-8106-0ddcffee5ddb": {
+          "type": "collab",
+          "settings": {
+            "title": "Coachella",
+            "image": "shopify://shop_images/Coachella-Collab-Hero-00_570b0923-33af-4b35-a089-3c963d2519f8.jpg",
+            "image_hover": "shopify://shop_images/Coachella-Collab-Hero-02_b2781779-d45f-4cde-99ae-258e94639e80.jpg",
+            "link": "shopify://collections/coachella-x-wildflower-cases"
+          }
+        },
+        "390cc62f-3144-48bf-a668-678ad05a0d97": {
+          "type": "collab",
+          "settings": {
+            "title": "I'm Sorry by Petra Collins",
+            "image": "shopify://shop_images/Wildflower-Cases-Petra-Collins-Collab-Main-Image_1719a05e-d3b2-4a21-be8a-5ebef2c59f1a.jpg",
+            "image_hover": "shopify://shop_images/WildflowerxPetra-Collins-Hover.jpg",
+            "link": "shopify://collections/im-sorry-by-petra-collins-x-wildflower-cases"
+          }
+        },
+        "6b976d21-0ea9-4842-8524-1efd8fc2f120": {
+          "type": "collab",
+          "settings": {
+            "title": "Cierra Ramirez",
+            "image": "shopify://shop_images/WildflowerxCierraRamirez-Main-Image.jpg",
+            "image_hover": "shopify://shop_images/WildflowerxCierraRamirez-Hover.jpg",
+            "link": "shopify://collections/cierra-ramirez-x-wildflower-cases"
+          }
+        },
+        "80828751-df4d-439b-a2b4-c5b7cac4d0ca": {
+          "type": "collab",
+          "settings": {
+            "title": "Jaded London x Sydney Carlson",
+            "image": "shopify://shop_images/WildflowerxJaded-London-Main-Image.jpg",
+            "image_hover": "shopify://shop_images/WildflowerxJaded-London-Hover.jpg",
+            "link": "shopify://collections/sydney-x-jaded-london-x-wildflower-cases"
+          }
+        },
+        "b5194e99-26b3-4fbf-8b24-d636436ea028": {
+          "type": "collab",
+          "settings": {
+            "title": "Claudia Sulewski",
+            "image": "shopify://shop_images/WildflowerxClaudia-Suleski-Main-Image.jpg",
+            "image_hover": "shopify://shop_images/WildflowerxClaudia-Sulewski-Hover.jpg",
+            "link": "shopify://collections/claudia-sulewski-x-wildflower-cases"
+          }
+        },
+        "03b07f44-2f04-4e67-ac9e-775248020724": {
+          "type": "collab",
+          "settings": {
+            "title": "Rickey Thompson",
+            "image": "shopify://shop_images/WildflowerxRickey-Thompson-Main-Image.jpg",
+            "image_hover": "shopify://shop_images/WildflowerxRickey-Thompson-Hover_c7af736c-2f8f-4336-9d0b-53685ee64bf2.jpg",
+            "link": "shopify://collections/rickey-thompson-x-wildflower-cases"
+          }
+        },
+        "1609364594616": {
+          "type": "collab",
+          "settings": {
+            "title": "Emma Chamberlain",
+            "image": "shopify://shop_images/EmmaChamberlainxWildflower-Collab-PDP-Main_a7d17cf2-0925-48b1-824c-607742c7a842.jpg",
+            "image_hover": "shopify://shop_images/EmmaChamberlainxWildflowerCollabPDP-01.jpg",
+            "link": "shopify://collections/emma-chamberlain-x-wildflower-cases"
+          }
+        },
+        "1600724506540": {
+          "type": "collab",
+          "settings": {
+            "title": "Amanda Steele",
+            "image": "shopify://shop_images/Wildflower-Collab-Profile-Amanda-Steele-Mobile_ea12ae3a-da24-419c-87d1-1f34037ea7b0.jpg",
+            "link": "shopify://collections/amanda-steele-x-wildflower-cases"
+          }
+        },
+        "1602713203921": {
+          "type": "collab",
+          "settings": {
+            "title": "Adeline Morin",
+            "image": "shopify://shop_images/Wildflower-Collab-Profile-Desktop-Adeline-Morin.jpg",
+            "link": "shopify://collections/adelaine-morin-x-wildflower-cases"
+          }
+        },
+        "1600724456386": {
+          "type": "collab",
+          "settings": {
+            "title": "Pizzaslime",
+            "image": "shopify://shop_images/wf-collab-pizzaslime-dt.jpg",
+            "link": "shopify://collections/pizzaslime-x-wildflower-collection"
+          }
+        },
+        "1602717282687": {
+          "type": "collab",
+          "settings": {
+            "title": "Jesse Jo Stark",
+            "image": "shopify://shop_images/Wildflower-Collab-Profile-Jesse-Jo-Stark.jpg",
+            "link": "shopify://collections/jesse-jo-stark-x-wildflower-case-collection"
+          }
+        },
+        "1602717984136": {
+          "type": "collab",
+          "settings": {
+            "title": "Hannah Meloche",
+            "image": "shopify://shop_images/Wildflower-Collab-Profile-Hannah-Meloche.jpg",
+            "link": "shopify://collections/hannah-meloche-x-wildflower-case"
+          }
+        },
+        "1600724576827": {
+          "type": "collab",
+          "settings": {
+            "title": "Jordyn Jones",
+            "image": "shopify://shop_images/wf-collab-jordyn-jones-dt.jpg",
+            "link": ""
+          }
+        },
+        "1605120116201": {
+          "type": "collab",
+          "settings": {
+            "title": "Remi Cruz",
+            "image": "shopify://shop_images/Wildflower-Collab-Profile-Remi-Cruz-Mobile_11d2b5ac-cd97-4c01-af3e-eede4264afd2.jpg",
+            "link": "shopify://collections/remi-ashten-x-wildflower-cases"
+          }
+        },
+        "43e4e0fb-5adb-4ab6-a788-5688005692b1": {
+          "type": "collab",
+          "settings": {
+            "title": "Tana Mongeau",
+            "image": "shopify://shop_images/Wildflower-Cases-Tana.jpg",
+            "link": "shopify://collections/tana-mongeau-x-wildflower-cases"
+          }
+        }
+      },
+      "block_order": [
+        "489c7f09-8220-4517-a03c-440b572de649",
+        "16e7fa27-0ca6-49ab-b0a6-241694e4e641",
+        "693d9370-8f70-4c49-ac2d-09b0f1d106c5",
+        "f3016462-d7ec-47e4-8be0-280ded918ca3",
+        "0cf58e76-8f45-4096-8e21-0880dd1e9c5b",
+        "7e41ecd2-19ee-45ca-9e25-4732a9ecad55",
+        "d804ba7a-b5e4-49f1-8292-53386b302e4f",
+        "97b43909-f649-4350-a3f0-54926c1d7acc",
+        "b5d4a2c1-abd3-4a8a-b203-69c4c98d4494",
+        "a241bbd9-716a-47dc-a5a7-ee4d6a5c10bb",
+        "1602718157671",
+        "bbddb762-05f6-4087-bd8e-1c765c705724",
+        "ca54c2a1-c63a-4ffa-9c8e-d88425a5f67a",
+        "5a1a61f3-505e-4376-835b-c4c7e818c82a",
+        "68254f0b-bced-42b4-8619-a5032c5ef501",
+        "1605294888995",
+        "65a48e07-b395-40d6-8106-0ddcffee5ddb",
+        "390cc62f-3144-48bf-a668-678ad05a0d97",
+        "6b976d21-0ea9-4842-8524-1efd8fc2f120",
+        "80828751-df4d-439b-a2b4-c5b7cac4d0ca",
+        "b5194e99-26b3-4fbf-8b24-d636436ea028",
+        "03b07f44-2f04-4e67-ac9e-775248020724",
+        "1609364594616",
+        "1600724506540",
+        "1602713203921",
+        "1600724456386",
+        "1602717282687",
+        "1602717984136",
+        "1600724576827",
+        "1605120116201",
+        "43e4e0fb-5adb-4ab6-a788-5688005692b1"
+      ],
+      "settings": {
+        "banner_image": "shopify://shop_images/nai-cover-main_00f9ba16-e78b-40f4-915b-8f253d9a5b1c.jpg",
+        "banner_image_mobile": "shopify://shop_images/Wildflower-Cases-Nailea-Devora-Collab-Cover-01_577c59c8-d8bf-418e-aa56-782b5272da72.jpg",
+        "featured": "Nailea Devora",
+        "featured_url": "shopify://collections/nailea-devora-x-wildflower-cases"
+      }
+    }
+  },
+  "order": [
+    "1664386827089992d6",
+    "16643870178b9d2cef",
+    "collabs"
+  ]
+}

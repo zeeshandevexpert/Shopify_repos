@@ -1,0 +1,37 @@
+{% form 'contact' %}
+
+  {% if form.posted_successfully? %}
+  <div class="note-success successForm feedback">
+    <p>{{ 'sections.contact_form.post_success' | t }}</p>
+  </div>
+  {% endif %}
+
+  {% if form.errors %}
+  <div class="errorForm feedback">
+    <p>{{ 'general.forms.post_error' | t }}</p>
+  </div>
+  {% endif %}
+
+  <div id="contactFormWrapper">
+    <p>
+      <label class="visually-hidden" for="contactFormName">{{ 'sections.contact_form.name' | t }}</label>
+      <input type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'sections.contact_form.name' | t }}" />
+    </p>
+    <p>
+      <label class="visually-hidden" for="contactFormEmail">{{ 'sections.contact_form.email' | t }}</label>
+      <input type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'sections.contact_form.email' | t }}" />
+    </p>
+    <p>
+      <label class="visually-hidden" for="contactFormTelephone">{{ 'sections.contact_form.phone' | t }}</label>
+      <input type="text" id="contactFormTelephone" name="contact[phone]" placeholder="{{ 'sections.contact_form.phone' | t }}" />
+    </p>
+    <p>
+      <label class="visually-hidden" for="contactFormMessage">{{ 'sections.contact_form.message' | t }}</label>
+      <textarea rows="15" cols="90" id="contactFormMessage" name="contact[body]" placeholder="{{ 'sections.contact_form.message' | t }}"></textarea>
+    </p>
+    <p>
+      <input type="submit" id="contactFormSubmit" class="secondary button" value="{{ 'sections.contact_form.send' | t }}" />
+    </p>
+  </div>
+
+{% endform %}

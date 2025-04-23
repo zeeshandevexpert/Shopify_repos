@@ -1,0 +1,78 @@
+{%- comment -%}
+body-classes.liquid
+
+snippet used to render theme features as classes on the body tag, removed liquid from stylesheet.
+
+theme feature classes (in order)
+
+- settings.header_border_style
+- settings.header_horizontal_alignment
+- settings.header_border_weight
+- settings.header_border_width
+- settings.header_edges
+- settings.h2_size (section titles)
+- settings.header_vertical_alignment
+- settings.rounded_buttons
+- settings.display_options
+- settings.product_align
+- settings.product_border
+- settings.product_info
+- settings.price_bold
+- settings.product_icon_position
+- settings.ultra_wide
+
+{%- endcomment -%}
+{%- liquid
+
+  assign body_classes = ''
+  assign base_class = 'theme-features__'
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'header-border-style--' | append: settings.header_border_style
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'header-horizontal-alignment--' | append: settings.header_horizontal_alignment
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'header-border-weight--' | append: settings.header_border_weight
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'header-border-width--' | append: settings.header_border_width
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'header-edges--' | append: settings.header_edges
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'h2-size--' | append: settings.h2_size
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'header-vertical-alignment--' | append: settings.header_vertical_alignment
+
+  if settings.rounded_buttons
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'rounded-buttons--' | append: 'enabled'
+  else
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'rounded-buttons--' | append: 'disabled'
+  endif
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'display-options--' | append: settings.display_options
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'product-align--' | append: settings.product_align
+
+  if settings.product_border
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'product-border--' | append: 'enabled'
+  else
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'product-border--' | append: 'disabled'
+  endif
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'product-info--' | append: settings.product_info
+
+  if settings.price_bold
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'price-bold--' | append: 'enabled'
+  else
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'price-bold--' | append: 'disabled'
+  endif
+
+  assign body_classes = body_classes | append: ' ' | append: base_class | append: 'product-icon-position--' | append: settings.product_icon_position
+
+  if settings.ultra_wide
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'ultra-wide--' | append: 'enabled'
+  else
+    assign body_classes = body_classes | append: ' ' | append: base_class | append: 'ultra-wide--' | append: 'disabled'
+  endif
+
+  echo body_classes | strip
+
+ -%}

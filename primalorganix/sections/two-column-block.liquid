@@ -1,0 +1,86 @@
+<section class="two-section-block">
+    <div class="image-two-blurb-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+        <h2 class="main-heading">
+          {{ section.settings.heading }}
+        </h2>
+
+        {% for block in section.blocks %}
+            <div class="wrap-image-blurb{% if block.settings.reverse %} revert{% endif %}">
+                <div class="content-block">
+                    <div class="content">
+                        <h2 class="sup-title">{{ block.settings.sup_title }}</h2>
+                        <h2 class="title">{{ block.settings.title }}</h2>
+                        <div class="description">
+                           {{ block.settings.description }} 
+                        </div>
+                    </div>
+                </div>
+                <div class="image-block">
+                    <div class="image">
+                        <img src="{{ block.settings.image |  img_url: 'master' }}" alt="">
+                    </div>
+                </div>
+            </div>            
+        {% endfor %}
+
+
+    </div>
+   </section> 
+
+   {% schema %}
+    {
+        "name": "Two Column Block",
+        "settings": [
+            
+                {
+                    "type": "image_picker",
+                    "id": "bg_image",
+                    "label": "Background Image"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                }
+
+            ],
+            "blocks": [
+                    {
+                    "type": "two-section",
+                    "name": "Two Column",
+                    "settings": [
+                        {
+                            "type": "checkbox",
+                            "id": "reverse",
+                            "label": "Reverse"
+                        },
+                        {
+                            "type": "text",
+                            "id": "sup_title",
+                            "label": "Sup Title"
+                        },
+                        {
+                            "type": "text",
+                            "id": "title",
+                            "label": "Title"
+                        },
+                        {
+                            "type": "richtext",
+                            "id": "description",
+                            "label": "Description"
+                        },
+                        {
+                            "type": "image_picker",
+                            "id": "image",
+                            "label": "Image"
+                        }
+                    ]
+                    }
+                ],
+                "presets": [
+                    {
+                        "name": "Two Column Block"
+                    }
+                ]
+    }
+    {% endschema %}

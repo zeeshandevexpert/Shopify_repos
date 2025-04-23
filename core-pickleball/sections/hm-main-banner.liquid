@@ -1,0 +1,73 @@
+<!-- SECTION--MAIN--BANNER -->
+    <div class="main-banner p-relative">
+      {% if section.settings.hm-main-banner-before-layer != blank and section.settings.hm-main-banner-after-layer != blank %}
+        <img src="{{ section.settings.hm-main-banner-before-layer | img_url: 'master' }}" class="video-before-layer" width="" height="">
+        <img src="{{ section.settings.hm-main-banner-after-layer | img_url: 'master' }}" class="video-after-layer" width="" height="">
+      {% endif %}
+        <div class="banner-video-wrapper">
+            <video id="myVideo" autoplay="" loop="" playsinline preload="auto"  onvolumechange="updateVolume(this)">
+                <source src="https://cdn.shopify.com/videos/c/o/v/0b0f439ab8b04e7c9331d490ee5ae171.mp4" type="video/mp4">
+            </video>
+        </div>
+      <div class="main-banner-play-text-block">
+       <div class="primary-container">
+          <h2 class="ff-helvetica primary-heading">{{ section.settings.hm-main-banner-heading }}</h2>
+        <h3 class="ff-helvetica secondary-heading">{{ section.settings.hm-main-banner-sub-heading }}</h3>
+       </div>
+      </div>
+    </div>
+    <!-- SECTION--MAIN-BANNER--END -->
+
+
+    <script>
+    function updateVolume(video) {
+    // Ensure volumeDisplay exists before updating
+    const volumeDisplay = document.getElementById('volumeDisplay');
+    if (volumeDisplay) {
+        volumeDisplay.textContent = video.volume.toFixed(2);
+    }
+}
+
+
+</script>
+
+
+{% schema %}
+  {
+    "name": "HM Main Banner",
+    "tag": "section",
+    "class": "hm-main-banner-sc",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "hm-main-banner-before-layer",
+        "label": "Select Main Banner Before Layer Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "hm-main-banner-after-layer",
+        "label": "Select Main Banner After Layer Image"
+      },
+      {
+        "type": "video",
+        "id": "hm-main-banner-video",
+        "label": "Select Main Banner Video"
+      },
+      {
+        "type": "text",
+        "id": "hm-main-banner-heading",
+        "label": "Enter Main Banner heading"
+      },
+      {
+        "type": "text",
+        "id": "hm-main-banner-sub-heading",
+        "label": "Enter Main Banner Sub-heading"
+      }
+    ],
+    "presets": [
+      {
+        "name": "HM Main Banner"
+      }
+    ]
+  }
+{% endschema %}

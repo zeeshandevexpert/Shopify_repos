@@ -1,0 +1,25 @@
+{%- layout none -%}{
+{%- assign total = 0 -%}
+{%- assign split_value = ' - ' %}
+{%- assign used_sizes = '' -%}
+{%- capture results -%}
+  {%- for item in cart.items -%}  
+	{%- capture item_variants -%}{%- for option in item.options_with_values -%}{% unless forloop.first %} / {% endunless %}{{option.value | escape}}{%- endfor -%}{%- endcapture -%}
+	{%- capture special_order -%}{% if item.title contains 'Special Order' %}true{% else %}false{% endif %}{%- endcapture -%} 
+    {%- unless forloop.first -%},{%- endunless -%}
+	{%- capture qty_total -%}{% if item.title contains 'Special Order' %}-1{% else %}{{item.variant.inventory_quantity}}{% endif %}{%- endcapture -%}
+    {
+      "title":"{{item.product.title}}",
+	  "handle":"{{item.product.handle}}",
+	  "variant_id":{{item.variant.id}},
+	  "variant_title":"{{item_variants | escape }}",
+	  "special_order":{{special_order}},
+	  "qty_added":{{item.quantity}},
+      "qty_available":{{qty_total | minus: item.quantity}},
+	  "qty_total":{{qty_total}}
+    }
+  {%- endfor -%}
+{%- endcapture -%}
+  "results_count": {{ cart.item_count }},
+  "results": [{{ results }}]
+}

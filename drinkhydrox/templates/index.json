@@ -1,0 +1,554 @@
+{
+  "sections": {
+    "section_slideshow_JnUxBm": {
+      "type": "section-slideshow",
+      "blocks": {
+        "image_TmfBzW": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_1935.jpg",
+            "overlay_opacity": 45,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "探索 HydroX 海澳活性氢水",
+            "richtext": "<p>HydroX<strong>獨家活性氫技術+千年岩層地下礦物質水<br\/><br\/>創造出超強大抗氧化劑<\/strong><\/p>",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "熱銷產品",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn--soft"
+          }
+        }
+      },
+      "block_order": [
+        "image_TmfBzW"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}",
+        "h1.hero__title.heading-size-9.aos-init.aos-animate {font-size: 39px;}"
+      ],
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 8,
+        "preload_first_image": true,
+        "height": "use_screen_two_thirds",
+        "color_bg": "palette--light bg--neutral",
+        "width": "wrapper--none",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_double_4X4YGq": {
+      "type": "section-double",
+      "blocks": {
+        "text_pqN7Em": {
+          "type": "text",
+          "settings": {
+            "kicker": "",
+            "title": "全球領先的活性氫水品牌",
+            "text": "<p>HydroX將尖端的活性氫技術與純淨的高品質深層水融合，創造出一種革命性的健康神仙水。HydroX充分利用超級抗氧化劑的力量，精心調製，旨在應對各種炎症情況。<br\/><br\/>我們的產品系列旨在滿足那些尋求緩解炎症情況的人們的特定需求，重點關注三個主要領域：<br\/>痛風和關節炎專注。運動恢復。逆齡抗衰。<\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        },
+        "image_9q98Bf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/7.png",
+            "overlay_opacity": 15,
+            "overlay_color": "#000000",
+            "enable_overlay_text": false,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        }
+      },
+      "block_order": [
+        "text_pqN7Em",
+        "image_9q98Bf"
+      ],
+      "settings": {
+        "height": "use_screen_one_half",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_icons_yQ4cM3": {
+      "type": "section-icons",
+      "blocks": {
+        "icon_block_herXxB": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-award",
+            "icon_color": "#aaaaaa",
+            "title": "香港品牌",
+            "text": "<p>全球領先的活性氫水的香港品牌<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icon_block_cFDLJx": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-legal",
+            "icon_color": "#aaaaaa",
+            "title": "FDA認證",
+            "text": "<p>獲取國際食品安全認證，<br\/>品質高，安全可靠。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "icon_block_tJW39n": {
+          "type": "icon_block",
+          "settings": {
+            "icon_name": "icon-phone",
+            "icon_color": "#aaaaaa",
+            "title": "24\/7 支持",
+            "text": "<p>請隨時致電 +85259311848與我們聯絡。<\/p>",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_block_herXxB",
+        "icon_block_cFDLJx",
+        "icon_block_tJW39n"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--light bg--neutral",
+        "icons_size": 30,
+        "icon_alignment": "icon--top",
+        "layout": "grid--stacked",
+        "align_text": "text-center",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_richtext_reNJw7": {
+      "type": "section-richtext",
+      "blocks": {
+        "kicker_Jzxpef": {
+          "type": "kicker",
+          "settings": {
+            "kicker": "活性氫水的健康益處",
+            "enable_line": true,
+            "text_size": 4
+          }
+        },
+        "heading_DdwPfn": {
+          "type": "heading",
+          "settings": {
+            "heading": "人體的78%是由水組成的。水是最重要但最容易被忽略的補充品。",
+            "text_size": 8
+          }
+        },
+        "text_TrzXFc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>發現氫水的驚人好處。受到全球醫生、名人和運動員的喜愛，有 1,800 多項令人興奮的科學研究支持。<\/p><ul><li><strong>抗炎和緩解炎症反應帶來的疼痛<\/strong><\/li><li><strong>減緩痛風和關節炎的發展<\/strong><\/li><li><strong>加快運動修復<\/strong><\/li><li><strong>緩解宿醉症狀<\/strong><\/li><li><strong>增強腸道健康，提升免疫力<\/strong><\/li><li><strong>改善皮膚狀況，提升身體活力<\/strong><\/li><\/ul>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        },
+        "button_k6gVLK": {
+          "type": "button",
+          "settings": {
+            "link_text_1": "Shop all",
+            "link_1": "shopify:\/\/collections\/all",
+            "button_size_1": "btn--medium",
+            "button_style_1": "btn-text-thick-line",
+            "button_color_1": "btn--neutral",
+            "link_text_2": "",
+            "link_2": "",
+            "button_size_2": "btn--medium",
+            "button_style_2": "btn-text-thick-line",
+            "button_color_2": "btn--neutral",
+            "link_text_3": "",
+            "link_3": "",
+            "button_size_3": "btn--long",
+            "button_style_3": "btn-text-thick-line",
+            "button_color_3": "btn--white"
+          }
+        }
+      },
+      "block_order": [
+        "kicker_Jzxpef",
+        "heading_DdwPfn",
+        "text_TrzXFc",
+        "button_k6gVLK"
+      ],
+      "disabled": true,
+      "settings": {
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_announcement_q78Ayg": {
+      "type": "section-announcement",
+      "blocks": {
+        "text_PgVGdf": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Active Hydrogen Water |<\/p>"
+          }
+        },
+        "icon_block_r39NFB": {
+          "type": "icon_block",
+          "settings": {
+            "text": "<p><strong>HydroX<\/strong> | Learn more<\/p>",
+            "icon_name": "icon-water",
+            "icon_color": "#0e1b4d",
+            "icon_alt_width": 33
+          }
+        }
+      },
+      "block_order": [
+        "text_PgVGdf",
+        "icon_block_r39NFB"
+      ],
+      "settings": {
+        "bg_color": "#f7f7f7",
+        "color": "#545454",
+        "text_size": 7,
+        "padding_top": 18,
+        "padding_bottom": 18
+      }
+    },
+    "section_collection_tabs_6gwVeN": {
+      "type": "section-collection-tabs",
+      "blocks": {
+        "collection_jktgaN": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "title": "發現活性氫的力量。感受科學支持下的健康益處。"
+          }
+        }
+      },
+      "block_order": [
+        "collection_jktgaN"
+      ],
+      "settings": {
+        "title": "熱銷產品",
+        "progress_bar": "mobile",
+        "grid_large": 3,
+        "grid_medium": 2,
+        "grid_mobile": 1.2,
+        "limit": 6,
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_columns_z3qhPP": {
+      "type": "section-columns",
+      "blocks": {
+        "text_block_GcBtmD": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/testimonial_1_1.webp",
+            "shape_class": "",
+            "title": "Amanda S. ⭐️⭐️⭐️⭐️⭐️",
+            "text": "<p>\"多年來飽受痛風之苦，並嘗試了多種治療方法均未成功後，我決定嘗試 HydroX 活性氫水。令我驚訝的是，在將其納入我的日常生活的短短一周內，我注意到我的痛風症狀顯著減輕。我對結果感到非常興奮，並感謝終於找到了解脫。謝謝你，HydroX！\"<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_9yJCnn": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/testimonial2_1.webp",
+            "shape_class": "",
+            "title": "Jake M. ⭐️⭐️⭐️⭐️⭐️",
+            "text": "<p>\"作為一名運動員，快速恢復對於保持最佳表現至關重要。自從將 HydroX Active 氫水納入我的補水方案以來，我的運動恢復得到了令人難以置信的促進。我感覺更有活力、更有活力，並為下一次訓練或比賽做好了準備。感謝 HydroX，我能夠在比賽中保持領先！\"<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_hiJgwL": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify:\/\/shop_images\/testimonial_3_1.webp",
+            "shape_class": "",
+            "title": "Emily L. ⭐️⭐️⭐️⭐️⭐️",
+            "text": "<p>\"HydroX 活性氫水真正改變了我的日常生活。自從將其融入我的生活方式以來，我不僅注意到衰老跡像明顯減少，而且我的能量水平也顯著增加。每喝一口，就像煥然一新的活力。我感覺煥然一新，更有活力，並準備好迎接這一天遇到的任何事情。\"<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_GcBtmD",
+        "text_block_9yJCnn",
+        "text_block_hiJgwL"
+      ],
+      "settings": {
+        "title": "顧客評價",
+        "bg": "palette--light bg--neutral",
+        "align_text": "text-center",
+        "scale_image": true,
+        "wh_ratio": 1,
+        "grid_large": 3,
+        "grid_medium": 3,
+        "grid_mobile": 1.2,
+        "progress_bar_mobile": true,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_logos_jQEPd9": {
+      "type": "section-logos",
+      "blocks": {
+        "logo_image_H8WcUz": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/brand_140x_e38f0414-d95f-4f01-91ca-efa866280a7c.gif",
+            "link": "",
+            "new_tab": true,
+            "width": 140,
+            "spacing": 50
+          }
+        },
+        "logo_image_Pt73h9": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/images_1_140x_2e6378b9-465b-4888-87ac-d047d4b31e50.jpg",
+            "link": "",
+            "new_tab": true,
+            "width": 140,
+            "spacing": 50
+          }
+        },
+        "logo_image_ERNJxm": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/idOewfjmfo_140x_9edfa8cb-85c8-4694-b4d4-cae46ca1d329.jpg",
+            "link": "",
+            "new_tab": true,
+            "width": 140,
+            "spacing": 50
+          }
+        },
+        "logo_image_JqUznP": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Web_Summit_logo_svg_140x_7ef2e429-abeb-425f-8eb7-96f657a65254.png",
+            "link": "",
+            "new_tab": true,
+            "width": 140,
+            "spacing": 50
+          }
+        },
+        "logo_image_macyzB": {
+          "type": "logo_image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/eyJidWNrZXQiOiJjbXMtaW1nbGliLXByZCIsImtleSI6InRyYWRlLWV2ZW50LzIwMjMwMTE5LzZxaWliNzI2LVNXNXViMFZZSURFeE1qQjROak13SUV0V0lFSmhibTVsY2lBb1JVNHBYM1l4LmpwZWciLCJyZWdpb24iOiJhcC1zb3V0aGVhc3Q.jpg",
+            "link": "",
+            "new_tab": true,
+            "width": 140,
+            "spacing": 50
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_H8WcUz",
+        "logo_image_Pt73h9",
+        "logo_image_ERNJxm",
+        "logo_image_JqUznP",
+        "logo_image_macyzB"
+      ],
+      "settings": {
+        "title": "關於活性氫水的媒體報道",
+        "bg": "palette--light bg--neutral",
+        "enable_marquee": true,
+        "marquee_speed": 30,
+        "width": "wrapper--none",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_column_slider_E99RYb": {
+      "type": "section-column-slider",
+      "blocks": {
+        "text_block_gJbMLz": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "shape_class": "",
+            "title": "Feature images or videos",
+            "text": "<p>Add a video popup link to show a play button.  Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_jMPyUH": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "shape_class": "",
+            "title": "Feature images or videos",
+            "text": "<p>Add a video popup link to show a play button.  Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_WRLGzx": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "shape_class": "",
+            "title": "Feature images or videos",
+            "text": "<p>Add a video popup link to show a play button.  Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_W8MAgK": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "shape_class": "",
+            "title": "Feature images or videos",
+            "text": "<p>Add a video popup link to show a play button.  Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_q3egTt": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "shape_class": "",
+            "title": "Feature images or videos",
+            "text": "<p>Add a video popup link to show a play button.  Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_4qqHzD": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "shape_class": "",
+            "title": "Feature images or videos",
+            "text": "<p>Add a video popup link to show a play button.  Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
+            "button_label": "",
+            "button_link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_gJbMLz",
+        "text_block_jMPyUH",
+        "text_block_WRLGzx",
+        "text_block_W8MAgK",
+        "text_block_q3egTt",
+        "text_block_4qqHzD"
+      ],
+      "settings": {
+        "title": "Text with images",
+        "bg": "palette--light bg--neutral",
+        "align_text": "text-center",
+        "scale_image": true,
+        "wh_ratio": 1,
+        "grid_large": 3,
+        "grid_medium": 3,
+        "grid_mobile": 1.2,
+        "progress_bar_mobile": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "section_slideshow_JnUxBm",
+    "section_double_4X4YGq",
+    "section_icons_yQ4cM3",
+    "section_richtext_reNJw7",
+    "section_announcement_q78Ayg",
+    "section_collection_tabs_6gwVeN",
+    "section_columns_z3qhPP",
+    "section_logos_jQEPd9",
+    "section_column_slider_E99RYb"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "741f44ed-b7f5-489e-844c-f915a92ef3af": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "492b3236-ff02-4f86-bb6c-7ea73389f03d": {
+          "type": "marketing_tile",
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify://shop_images/Marketing-Tile-New-Releases_ead3fa46-3205-4217-beeb-c3e8fa81f0b3.jpg",
+            "link": "shopify://collections/new-releases",
+            "position": 5,
+            "title": "Pair with a new phone case⋆˚✿˖°",
+            "paragraph": "<p>Shop our newest release 'Lilac and Blue Floral</p>",
+            "button_text": "Shop New Releases",
+            "hide_text_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "492b3236-ff02-4f86-bb6c-7ea73389f03d"
+      ],
+      "settings": {
+        "collection_override": "",
+        "columns_desktop": 4,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "choose_size",
+        "shop_by_size": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2": {
+          "type": "marketing_tile",
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify://shop_images/Lullaby-Lamb-Marketing-Tile.jpg",
+            "link": "shopify://collections/accessories",
+            "position": 5,
+            "title": "For maximum cuteness.. ⊹୨୧",
+            "paragraph": "<p>Shop your favorites in AirPods Pro Case, AirPods Pro Gen 2 Case, and AirPods Max Cover</p>",
+            "button_text": "Shop Airpod Accessories",
+            "hide_text_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2"
+      ],
+      "disabled": true,
+      "settings": {
+        "collection_override": "",
+        "columns_desktop": 4,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "choose_size",
+        "shop_by_size": true,
+        "columns_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "eb55e6c9-ebf2-4355-a21b-90812e5c171d": {
+      "type": "foursixty",
+      "blocks": {
+        "8c887f4b-0c6c-4b64-9a0b-be5ff3d468d6": {
+          "type": "embed_code",
+          "settings": {
+            "feed_script": ""
+          }
+        }
+      },
+      "block_order": [
+        "8c887f4b-0c6c-4b64-9a0b-be5ff3d468d6"
+      ],
+      "settings": {
+        "width": "page-width",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margins": 50,
+        "border_top": true,
+        "text_align": "center"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "741f44ed-b7f5-489e-844c-f915a92ef3af",
+    "product-grid",
+    "eb55e6c9-ebf2-4355-a21b-90812e5c171d"
+  ]
+}

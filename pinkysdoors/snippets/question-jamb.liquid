@@ -1,0 +1,24 @@
+{%- case type -%}
+
+{%- when 'Passage Doors' -%}
+
+{% capture content %}{{pages.pdp-jamb-passage-doors.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+{%- when 'Thermally Broken Doors' -%}
+
+{% capture content %}{{pages.pdp-jamb-thermally-broken-doors.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+{%- when 'Bi-Fold/Accordion' -%}
+
+{% capture content %}{{pages.pdp-jamb-bi-fold-accordion.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+
+{% else %}
+
+{% capture content %}{{pages.pdp-jamb.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+{%- endcase -%}

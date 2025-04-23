@@ -1,0 +1,143 @@
+{% capture affirm_text %}
+<div class="homepage--affirm">Now financing with <span class="__affirm-logo __affirm-logo-blue __ligature__affirm_full_logo__ __processed"><img class="affirm-logo-pic lazyload hs-lazyload hs-id-bfec4727" data-src="https://cdn.shopify.com/s/files/1/0036/1745/6237/files/IMG_affirmLogo.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></span> </div>
+<div class="homepage--affirm" style="display:none;">Now financing with <span class="__affirm-logo __affirm-logo-blue __ligature__affirm_full_logo__ __processed">Affirm</span> &nbsp;&nbsp;<a class="mfp-inline" href="#affirm-popup"><u>Learn more</u></a></div>
+{% endcapture %}
+
+{% capture as_seen_on %}
+<div class="homepage--as-seen-on flex flex--align-center small--flex-wrap small--flex-justify-center">
+  <span class="small--one-whole">As seen on:</span>
+  <div class="homepage--as-seen-on__item">{% include 'icon-tlc' %}</div>
+  <div class="homepage--as-seen-on__item">{% include 'icon-hgtv' %}</div>
+</div>
+{% endcapture %}
+
+<div class="homepage-hero--new relative">
+  <a href="{{ section.settings.button_link }}" class="homepage-hero--new__link">
+    {% if section.settings.image %}
+    {%- assign img = section.settings.image -%}
+    {%- assign img_url = img | img_url: '1x1', format: 'jpg' | replace: '_1x1.', '_{width}x.' -%}
+    <div class="small--hide">
+      <img id="{{ img_id }}"
+           class="lazyload lazyfade"
+           data-src="{{ img_url }}"
+           data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512]"
+           src="{{img | img_url: '1x', format: 'jpg' }}"
+           data-aspectratio="{{ img.aspect_ratio }}"
+           width="{{ img.width }}"
+           height="{{ img.height }}"
+           data-sizes="auto"
+           alt="{{ img.alt | escape }}">
+    </div>
+    {% endif %}
+
+    {% if section.settings.image_mobile %}
+    {%- assign img = section.settings.image_mobile -%}
+    {%- assign img_url = img | img_url: '1x1', format: 'jpg' | replace: '_1x1.', '_{width}x.' -%}
+    <div class="medium-up--hide">
+      <img id="{{ img_id }}"
+           class="lazyload lazyfade"
+           data-src="{{ img_url }}"
+           data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512]"
+           src="{{img | img_url: '1x', format: 'jpg' }}"
+           data-aspectratio="{{ img.aspect_ratio }}"
+           width="{{ img.width }}"
+           height="{{ img.height }}"
+           data-sizes="auto"
+           alt="{{ img.alt | escape }}">
+    </div>
+    {% endif %}
+
+    {% if section.settings.image == blank %}
+    <div class="placeholder-background">
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+    {% endif %}
+
+    <div class="homepage-hero--new__inner">
+
+      {% if section.settings.title != blank %}
+      <h2 class="h1 mega-title">{{ section.settings.title | escape }}</h2>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+      <div class="rte-setting mega-subtitle">{{ section.settings.subtitle }}</div>
+      {% endif %}
+
+      {% if section.settings.paragraph != blank %}
+      <div class="rte-setting mega-paragraph">{{ section.settings.paragraph }}</div>
+      {% endif %}
+
+      <div class="medium-up--hide text-center flex--justify-center">
+        {{as_seen_on}}
+      </div>
+    </div>
+  </a>
+</div>
+
+
+<div class="homepage--affirm--wrapper page-width">
+ <div class="flex flex--justify-center flex--align-center">
+   {{ affirm_text }}
+   <div class="small--hide">
+     {{as_seen_on}}
+   </div>
+  </div>
+</div>
+
+<div style="display: none;">
+  <div id="affirm-popup" class="regular-mfp-popup rte">
+    {{pages.affirm-popup.content}}
+  </div>
+</div>
+
+<noscript>
+  <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+</noscript>
+
+
+{% schema %}
+  {
+    "name": "Homepage Hero NEW",
+    "settings": [
+	{
+		"type":"image_picker",
+		"id":"image",
+		"label":"Image (desktop)"
+	},
+	{
+		"type":"image_picker",
+		"id":"image_mobile",
+		"label":"Image (mobile)"
+	},
+	{
+		"type":"text",
+		"id":"title",
+		"label":"Title",
+		"default":"Summer Sale is Here!"
+	},
+	{
+		"type":"text",
+		"id":"subtitle",
+		"label":"Subtitle",
+		"default":"Up to 60% off"
+	},
+	{
+		"type":"textarea",
+		"id":"paragraph",
+		"label":"Paragraph",
+		"default":"No tax and nationwide next day shipping"
+	},
+	{
+		"type":"url",
+		"id":"button_link",
+		"label":"Link"
+	}
+	],
+	"presets": [
+    {
+      "name": "Homepage Hero NEW",
+      "category": "Image"
+    }
+  ]
+  }
+{% endschema %}

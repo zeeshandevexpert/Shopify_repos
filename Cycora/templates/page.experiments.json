@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "1661894067b7b84c74": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "16541595848894baf0": {
+      "type": "experiments-head",
+      "settings": {
+        "title": "cycora®.lab",
+        "description": "<p>garments designed by our team, inspired by our lab's 'design for circularity' guidelines<\/p>",
+        "button_title": "",
+        "button_link": "",
+        "media_type": "video_file",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-07-15_at_8.50.50_AM.png",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/723807431",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/51ef8528f06e4f1096bbb68df1d4a85a.mov"
+      }
+    },
+    "165415959893803660": {
+      "type": "experiments-products",
+      "blocks": {
+        "3f23baaf-454d-4beb-8007-c13494b684e2": {
+          "type": "product",
+          "settings": {
+            "product": "oversized-bungee-sweater"
+          }
+        },
+        "82ef322d-7947-40b5-b03f-1f8f4bbd230c": {
+          "type": "product",
+          "settings": {
+            "product": "cycora®-cloud-tee"
+          }
+        },
+        "0b8dd6c6-3c44-4028-98af-5e52b08555c8": {
+          "type": "product",
+          "settings": {
+            "product": "yarn-head-tee"
+          }
+        }
+      },
+      "block_order": [
+        "3f23baaf-454d-4beb-8007-c13494b684e2",
+        "82ef322d-7947-40b5-b03f-1f8f4bbd230c",
+        "0b8dd6c6-3c44-4028-98af-5e52b08555c8"
+      ],
+      "settings": {
+        "title_plp": "explore cycora®.lab products",
+        "view_all_link": "shopify:\/\/collections\/cycora-lab"
+      }
+    },
+    "1654159591197d499f": {
+      "type": "experiments-details",
+      "settings": {
+        "title": "leading by example<br> through intentional<br> design",
+        "subtitle2": "our garments",
+        "subtitle": "explore our experiments",
+        "description": "<p>designed with the past, present, and future stitched in<\/p>",
+        "image_bg": "shopify:\/\/shop_images\/undesigning-film-april-27-23-05-min.jpg",
+        "image": "shopify:\/\/shop_images\/past.png",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "16541596073fcee0d0": {
+      "type": "experiments-video",
+      "disabled": true,
+      "settings": {
+        "title": "collection one",
+        "description": "",
+        "image": "shopify:\/\/shop_images\/Cycora_Still-15.png",
+        "video": "https:\/\/www.youtube.com\/watch?v=nIV8edTFdtg"
+      }
+    },
+    "1654159609484b4e0c": {
+      "type": "experiments-facility",
+      "disabled": true,
+      "settings": {
+        "title": "<span>uncover<\/span><span>the<\/span>\n<span>story<\/span>",
+        "title2": "<span>behind<\/span><span>every<\/span>\n<span>fiber<\/span>",
+        "image": "shopify:\/\/shop_images\/Untitled_design-33.png"
+      }
+    },
+    "1654159612bae70dfb": {
+      "type": "experiments-process",
+      "disabled": true,
+      "settings": {
+        "title": "learn more about our circular yarns and fabrics for your brand",
+        "button_title": "explore",
+        "button_link": "shopify:\/\/blogs\/materials"
+      }
+    }
+  },
+  "order": [
+    "1661894067b7b84c74",
+    "16541595848894baf0",
+    "165415959893803660",
+    "1654159591197d499f",
+    "16541596073fcee0d0",
+    "1654159609484b4e0c",
+    "1654159612bae70dfb"
+  ]
+}

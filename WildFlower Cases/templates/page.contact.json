@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "75b3e78b-4590-4c0a-8c2a-52826d93be0d": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14926922809392__75b3e78b-4590-4c0a-8c2a-52826d93be0d-16651678629c7633ca-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>How can we help?<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "574dc099-e3f6-4f2d-8bcf-e492deb84de2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Visit Customer Support Center",
+            "button_link": "https:\/\/wildflower-cases.gorgias.help\/",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922809392__75b3e78b-4590-4c0a-8c2a-52826d93be0d-16651678629c7633ca-0",
+        "574dc099-e3f6-4f2d-8bcf-e492deb84de2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ada8ce48-22ac-41ec-8b9a-ec3821aa810d": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14926922809392__ada8ce48-22ac-41ec-8b9a-ec3821aa810d-1665167951a2a9dc2a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please visit our <a href=\"https:\/\/support.wildflowercases.com\/\" target=\"_blank\" title=\"Wildflower Cases Support\">support center <\/a>for frequently asked questions, shipping, returns, and order information.\u2028Please use this form for specific inquiries not offered in our support center. We will do our best to reply within 24-48 hours. We do not respond to customer inquiries on Instagram\/Twitter. Or call +1 (888) 317-5595 Monday through Friday between hours from 9am - 4:30pm PST (only). We are CLOSED SATURDAY AND SUNDAYS.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922809392__ada8ce48-22ac-41ec-8b9a-ec3821aa810d-1665167951a2a9dc2a-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "page_width": "page-width--narrow"
+      }
+    },
+    "fb6c0ceb-540c-42d9-b77a-c00c9c208484": {
+      "type": "contact-form",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "e8c8ef64-ff46-46e9-8a04-5c5ae836b5a4": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14926922809392__e8c8ef64-ff46-46e9-8a04-5c5ae836b5a4-1665167951a2a9dc2a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Wholesale \/ Press \/ Media<\/strong><\/p><p>Email <a target=\"_blank\" title=\"Email sales@wildflowercases.com\">sales@wildflowercases.com<\/a><br\/>\u2028We <strong>DO NOT respond to wildflowercases.com order inquiries<\/strong> and support on this email.<\/p><p><\/p><p><strong>Job Inquiries<\/strong><\/p><p>Send your updated resume to <a target=\"_blank\" title=\"Email jobs@wildflowercases.com\">jobs@wildflowercases.com<\/a>. Please allow some time for us to respond but we do read all emails.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922809392__e8c8ef64-ff46-46e9-8a04-5c5ae836b5a4-1665167951a2a9dc2a-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "75b3e78b-4590-4c0a-8c2a-52826d93be0d",
+    "ada8ce48-22ac-41ec-8b9a-ec3821aa810d",
+    "main",
+    "fb6c0ceb-540c-42d9-b77a-c00c9c208484",
+    "e8c8ef64-ff46-46e9-8a04-5c5ae836b5a4"
+  ]
+}

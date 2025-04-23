@@ -1,0 +1,29 @@
+<div class="page-width">
+  <h2 class="small--hide">{{section.settings.title}}</h2>
+  <div class="snapppt-homepage">{{section.settings.embed}}</div>
+</div>
+{% schema %}
+  {
+    "name": "Snapppt",
+	"class":"index-section",
+    "settings": [
+	{
+	  "type":"text",
+	  "id":"title",
+	  "label":"Title"
+	},
+	{
+	  "type":"textarea",
+	  "id":"embed",
+	  "label":"Snapppt embed code"
+	}
+	],
+	"presets": [
+    {
+      "name": "Snapppt",
+      "category": "Image"
+    }
+  ]
+  }
+{% endschema %}
+

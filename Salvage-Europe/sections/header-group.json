@@ -1,0 +1,98 @@
+{
+  "name": "Header",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "cfaa1565-d63b-414c-94f0-099e2dd5a8c3": {
+          "type": "search_box",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "75802f87-d8b2-4a57-91db-f9a89bb54186": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "announcement_text": "<p>Share a short announcement or message<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "cfaa1565-d63b-414c-94f0-099e2dd5a8c3",
+        "75802f87-d8b2-4a57-91db-f9a89bb54186"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "show_mobile": true,
+        "icons_only": false,
+        "announcement_text_size": 14,
+        "show_locale_selector": false,
+        "show_country_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "c55d3532-318a-45fa-9976-20f24cb85007": {
+          "type": "collections_mega_menu",
+          "settings": {
+            "collection_item": "COLLECTIONS",
+            "image_ratio": "vertical",
+            "collection_1": "",
+            "collection_2": "",
+            "collection_3": "",
+            "collection_4": "",
+            "collection_5": "",
+            "collection_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "c55d3532-318a-45fa-9976-20f24cb85007"
+      ],
+      "settings": {
+        "logo_position": "above_center",
+        "full_width": true,
+        "absolute_header": false,
+        "nav_top_border": false,
+        "nav_bottom_border": false,
+        "homepage_nav_color": "#ffffff",
+        "nav_border_color": "#000000",
+        "logo": "shopify:\/\/shop_images\/SALVAGE_EUROPE_LOGO.png",
+        "logo_max_width": 250,
+        "main_nav": "primary-menu",
+        "nav_height": 72,
+        "nav_hover_effect": "bottom-border",
+        "nav_split": 3
+      }
+    },
+    "store-messages": {
+      "type": "store-messages",
+      "blocks": {
+        "a1805061-0b22-4e09-9f10-d7bac86ffb83": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "message_content": "<p>For all enquires call 8732476<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a1805061-0b22-4e09-9f10-d7bac86ffb83"
+      ],
+      "settings": {
+        "show_nav_buttons": false,
+        "color": "#ffffff",
+        "background": "#000000"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header",
+    "store-messages"
+  ]
+}

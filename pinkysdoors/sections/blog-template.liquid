@@ -1,0 +1,136 @@
+{% paginate blog.articles by 33 %}
+
+<div class="page-width">
+  <header class="section-header text-center">
+    <h1>{{ page_title }}</h1>
+  </header>
+</div>
+
+{% capture all_page_urls %}{% for i in (1..paginate.pages) offset: 1 %}{% unless forloop.first %}:::{% endunless %}/blogs/{{ blog.handle }}{% if current_tags != blank %}/tagged/{{ current_tags | handle | join:'+' }}{% endif %}?page={{ i }}&view=infinite{% endfor %}{% endcapture %}
+
+<div class="blog--{{blog.handle}} {% if section.settings.layout == 'list' %}blog--list-view{% endif %}">
+  <div class="page-width">
+    <div class="grid grid--uniform grid--blog" data-all-pages="{{ all_page_urls }}">
+      {% for article in blog.articles %}
+      <div class="grid__item medium-up--one-third">
+        {% if article.image %}
+        {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+        {% capture img_wrapper_id %}ArticleImageWrapper-{{ article.image.id }}{% endcapture %}
+        {%- assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <div id="{{ img_wrapper_id }}" style="background-image: url({{ article.image | img_url: '1x'}});" class="article__grid-image-wrapper js lazyload lazyfade" data-bgset="{% include 'bgset', image: article.image %}" data-sizes="auto" >
+          <a href="{{ article.url }}" class="link--abs-pos"><span class="visually-hidden">{{ article.title }}</span></a>
+        </div>
+
+        <noscript>
+          <a href="{{ article.url }}" class="article__grid-image-wrapper">
+            {{ article | img_url: '345x', scale: 2 | img_tag: article.title, 'article__grid-image' }}
+          </a>
+        </noscript>
+        {% endif %}
+
+        <div class="article__grid-meta{% if article.image %} article__grid-meta--has-image{% endif %}">
+          <h2 class="article__title h4">
+            <a href="{{ article.url }}">{{ article.title }}</a>
+          </h2>
+
+          {% if section.settings.blog_show_author %}
+          <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+          {% endif %}
+
+          {% if section.settings.blog_show_date %}
+          <span class="article__date">
+            {{ article.published_at | time_tag: format: 'month_day_year' }}
+          </span>
+          {% endif %}
+
+          <div class="rte article__grid-excerpt">
+            {% if article.excerpt.size > 0 %}
+            {{ article.excerpt }}
+            {% else %}
+            {{ article.content | strip_html | truncate: 150 }}
+            {% endif %}
+          </div>
+
+          <ul class="list--inline">
+            <li>
+              <a href="{{ article.url }}" class="article__grid--readmore">
+                {{ 'blogs.article.read_more' | t }}
+                <span class="visually-hidden">Read more about {{ article.title }}</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if paginate.pages > 1 %}
+  {% include 'pagination' %}
+  {% endif %}
+</div>
+
+{% endpaginate %}
+
+
+
+{% schema %}
+  {
+    "name": {
+      "en": "Blog pages",
+      "de": "Blogseiten",
+      "fr": "Pages du blog"
+    },
+    "settings": [
+      {
+        "type": "select",
+        "id": "layout",
+        "label": {
+          "en": "Layout",
+          "de": "Layout",
+          "fr": "Mise en page"
+        },
+        "default": "grid",
+        "options": [
+          {
+            "value": "grid",
+            "label": {
+              "en": "Grid",
+              "de": "Raster",
+              "fr": "Grille"
+            }
+          },
+          {
+            "value": "list",
+            "label": {
+              "en": "List",
+              "de": "Liste",
+              "fr": "Liste"
+            }
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_author",
+        "label": {
+          "en": "Show author",
+          "de": "Autor anzeigen",
+          "fr": "Afficher l'auteur"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_show_date",
+        "label": {
+          "en": "Show date",
+          "de": "Datum anzeigen",
+          "fr": "Afficher la date"
+        },
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

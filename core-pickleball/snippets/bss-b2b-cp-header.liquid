@@ -1,0 +1,24 @@
+
+                  {% capture bss_b2b_pl_rules_data %}{% include 'bss-b2b-pl-rules-data' %}{% endcapture %}{% unless bss_b2b_pl_rules_data contains "Liquid error" %}{{ bss_b2b_pl_rules_data }}{% endunless %}{% include 'bss-b2b-cp-rules-data' %} 
+                  <script id="bss-b2b-cp-config-data">
+                  if (typeof BSS_B2B == 'undefined') {
+                      var BSS_B2B = {};
+                  }
+                  
+                  BSS_B2B.configData = [].concat(bssB2BConfigData0,);
+                  BSS_B2B.plConfigData = [];
+                  BSS_B2B.cpSettings = {"cpType":0,"default_price_color":"#d30d0d","price_applied_cp_color":"#000000"};
+                  BSS_B2B.customPricingSettings = {"id":896,"shop_id":8716,"cp_type":0,"default_price_color":"#d30d0d","price_applied_cp_color":"#000000","createdAt":"2023-02-27T13:40:17.000Z","updatedAt":"2023-02-28T12:55:29.000Z"};
+                </script><style>
+    [bss-b2b-cart-item-key],
+    [bss-b2b-product-id],
+    [bss-b2b-variant-id],
+    [bss-b2b-cart-item-key],
+    [bss-b2b-cart-total-price],
+    [bss-b2b-cart-total-discount],
+    [data-cart-item-regular-price],
+    [bss-b2b-ajax-cart-subtotal],
+    [data-cart-subtotal] {
+        visibility: hidden;
+    }
+</style>

@@ -1,0 +1,51 @@
+<section class="icon-list-block">
+    <div class="wrap-icon-list-block">
+        <div class="icon-wrapper">
+            {% for block in section.blocks %}
+                <div class="icon-box">
+                    <img src="{{ block.settings.image | img_url: 'master' }}" alt="">
+                    <div class="title">
+                        {{ block.settings.heading }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Icon List Block",
+  "settings": [
+  
+   
+  ],
+
+  "blocks": [
+    {
+        "type": "icon",
+        "name": "Icon",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "image"
+              },
+              {
+                "type": "text",
+                "id": "heading",
+                "label": "Title"
+              }
+        ]
+    },
+  ],
+  
+  "presets": [
+    {
+      "name": "Icon List Block",
+    }
+  ]
+}
+{% endschema %}

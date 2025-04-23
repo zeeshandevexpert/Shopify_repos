@@ -1,0 +1,49 @@
+<section class="signup-page-section">
+    <div class="container-style signup-page-container">
+        <h1>welcome to cycora</h1>
+        <div class="form-signup">
+            <div class="form-signup-header">
+                <h2>sign up</h2>
+            </div>
+
+            {% form 'create_customer', class:"account-form" %}
+                <div class="error-form">
+                    {{ form.errors | default_errors }}
+                </div>
+                <div class="form-signup-row">
+                        <div class="form-signup-col">
+                            <input type="text"  name="customer[first_name]" placeholder="first name" />
+                        </div>
+                        <div class="form-signup-col">
+                            <input type="text"  name="customer[last_name]" placeholder="last name" />
+                        </div>
+                        <div class="form-signup-col">
+                            <input type="email"  name="customer[email]" placeholder="email" />
+                        </div>
+                        <div class="form-signup-col">
+                            <input type="password"  name="customer[password]" id="create_password" placeholder="create a password" />
+                        </div>
+                        <div class="form-signup-col">
+                            <input type="password"  name="customer[confirm_password]" id="password_confirm" placeholder="enter password again" />
+                        </div>
+                </div>
+                <div class="form-signup-bottom">
+                    <div class="form-signup-bottom-left">
+                        <button type="button" id="button_create_customer">sign up <i></i></button>
+                    </div>
+                    <div class="form-signup-bottom-right">
+                        <a href="/account/login">have an account? login</a>
+                    </div>
+                </div>
+            {% endform %}
+        </div>
+    </div>
+</section>
+{% section "account-bottom" %}
+
+<style>
+    .error-form{
+        color:red;
+        padding-bottom: 10px;
+    }
+</style>

@@ -1,0 +1,11 @@
+{% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
+
+{% assign show_collection_image = true %}
+{% assign hide_filters = true %}
+<style>
+  .collection-filters--wrapper,
+  .select-type__wrapper { display: none; }
+</style>
+{% section 'collection-template' %}

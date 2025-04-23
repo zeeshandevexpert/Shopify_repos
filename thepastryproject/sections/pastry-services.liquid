@@ -1,0 +1,62 @@
+<div class="serviesBarMainOuter" style="background-color: {{ section.settings.service--background-color }};">
+<div class="serviesBarOuter">
+
+ {% for block in section.blocks %}
+   <div class="serviesBar-col">
+      {% if block.settings.call-to-icon != blank %}
+        <span>{{ block.settings.call-to-icon }}</span>
+      {% endif %}
+      {% if block.settings.call-to-text != blank %}
+        <p>{{ block.settings.call-to-text }}</p>
+      {% endif %}
+   </div> 
+    {% endfor %}
+   
+  </div>
+</div>
+
+<div class="sepratorOuter">
+</div>
+
+{% schema %}
+  
+  {
+  	"name": "Services section",
+  	"settings": [{
+  			"type": "header",
+  			"content": "Services"
+  		},
+       {
+        "type": "color",
+        "id": "service--background-color",
+        "label":  "Section background",
+        "default" : "#2D2D2D"
+        }
+  	],
+  	"blocks": [{
+  		"type": "block-1",
+  		"name": "Block 1",
+  		"settings": [{
+  				"type": "html",
+  				"label": "Add icon ",
+  				"id": "call-to-icon"
+  			},
+  			{
+  				"type": "text",
+  				"label": "Add text",
+  				"id": "call-to-text"
+
+  			}
+  		]
+
+  	}],
+    "presets": [
+        {
+            "name": {
+                "en": "Services section"
+            }
+        }
+    ]
+  }
+{% endschema %}
+

@@ -1,0 +1,315 @@
+{
+  "sections": {
+    "banner_block_MEHNyh": {
+      "type": "banner-block",
+      "settings": {
+        "bg_image1": "shopify:\/\/shop_images\/Group.svg",
+        "bg_image2": "shopify:\/\/shop_images\/Vector_1.svg",
+        "heading": "FLOXTREME YOUR AC SOLUTION",
+        "description": "<ul><li>Prevent Clogged AC Drain Lines<\/li><li>Avoid Costly Service Calls and Flood Damage<\/li><li>Extend the Life and Performance of Your AC Unit<\/li><\/ul><p> <\/p><p>FloXtreme is the simple, economical way to prevent clogged AC drain lines and avoid costly repairs and damage from flooding. Best of all, you can install it yourself in just minutes!<\/p>",
+        "button_title": "FIND OUT MORE",
+        "button_link": "shopify:\/\/pages\/faq",
+        "image": "shopify:\/\/shop_images\/Group_201_1.png"
+      }
+    },
+    "blurb_section_U3MH3E": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "video",
+        "video_media": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/4e60751833ad4bbd9323695e3af890aa.mp4",
+        "heading": "WHAT IS FLOXTREME 24\/7?",
+        "description": "<p>FloXtreme 24\/7 is a patented system that uses the natural vacuum pressure of your AC unit to continuously dispense an environmentally friendly cleaning agent into the condensation drain pan and through the drain line.<\/p><p><\/p><p>FloXtreme 24\/7 was invented by Brian Hoskins, an AC contractor in Florida for over 20 years. He’s seen firsthand the damage that clogged AC lines can cause, and knew this was a problem he could solve.<\/p>",
+        "button_title": "LEARN MORE",
+        "button_link": "shopify:\/\/products\/what-is-ac-drain-clear"
+      }
+    },
+    "blurb_section_i4VTxp": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Clearshot_image.png",
+        "video_media": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/042111cd486944c9a149ab2be7dbaa56.mp4",
+        "heading": "Instant Results",
+        "description": "<p>Floxtreme ClearShot is a powerful AC drain line and pan  cleaner designed to dissolve sludge buildup and keep your  AC system running smoothly. It's formulated to be both fast acting and safe for all AC components.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_6yycPk": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_197_93d6a179-9797-4c2d-84b5-836eee3de5ef.png",
+        "video_media": "",
+        "heading": "PROVEN PERFORMANCE",
+        "description": "<p>Our proprietary solution is the strongest formula on the market – proven to dissolve AC drain clogs without corroding or damaging your system. It is environmentally friendly and completely safe.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_caA6Ci": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_196.png",
+        "video_media": "",
+        "heading": "CONTINUIOUS TREATMENT",
+        "description": "<p>FloXtreme’s patented wicking system is designed to deliver a slow, continuous drip of cleaning solution into your drain pan and through the drain line. The water keeps flowing, and your AC unit keeps going!<\/p>",
+        "button_title": "",
+        "button_link": "#"
+      }
+    },
+    "blurb_section_ViyNHJ": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "video",
+        "video_media": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5872f16d031f4b388e5ffb14ee26fd35.mp4",
+        "heading": "EASY INSTALLATION",
+        "description": "<p>Check out how easy it is to install FloXtreme 24\/7!<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_UYcB9x": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": true,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/c2ffa853-3681-4766-8828-67bc44ab7daa.png",
+        "video_media": "",
+        "heading": "THE CLEAR DIFFERENCE",
+        "description": "<p>FloXtreme offers clear advantages over<br\/>other products:<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "text_banner_section_he8qH3": {
+      "type": "text-banner-section",
+      "blocks": {
+        "icon_JTkR6y": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/EASY_2_MINUTE_INSTALLATION_ICON_50f341b1-660f-485d-8f9b-0bdbfe2d3587.png",
+            "title": "EASY 2 MINUTE INSTALLATION"
+          }
+        },
+        "icon_Aym9ni": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/NO_TOOLS_REQUIRED.png",
+            "title": "NO TOOLS REQUIRED"
+          }
+        },
+        "icon_E6WLat": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/SAVE_ON_MAINTENANCE_COSTS_ICON_1cf61484-a376-48d5-b9c4-f5f2697d4a7e.png",
+            "title": "SAVE ON MAINTENANCE COST"
+          }
+        },
+        "icon_XEAfiX": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/AUTOMATIC_SHIPPING_AVAILABLE_ICON_1aa6962e-05c3-425c-bbfa-b9616a61dbaa.png",
+            "title": "AUTOMATIC SHIPPING AVAILABLE"
+          }
+        },
+        "icon_tBYFRV": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/MONEY_BACK_GUARANTEE_ICON_6dd74a27-35e4-439d-add6-2f1e2917059c.png",
+            "title": "MONEY BACK GUARANTEE"
+          }
+        }
+      },
+      "block_order": [
+        "icon_JTkR6y",
+        "icon_Aym9ni",
+        "icon_E6WLat",
+        "icon_XEAfiX",
+        "icon_tBYFRV"
+      ],
+      "settings": {
+        "heading": "STOP CLOGS BEFORE THEY START.",
+        "description": "",
+        "button_title": "ORDER TODAY",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "blurb_section_g4AwbP": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "bg_image": "shopify:\/\/shop_images\/Group_1.svg",
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Rectangle.png",
+        "video_media": "",
+        "heading": "WHY DO AC DRAIN LINES CLOG?",
+        "description": "<p>AC drain blockages are caused by a combination of mold, mildew, algae and other organic matter that develops in your AC’s drain pan.  This toxic slime then spreads into the drain line, where it blocks the flow of condensation, causing overflowing and flooding.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "slider_blurb_section_NrYwPH": {
+      "type": "slider-blurb-section",
+      "blocks": {
+        "icon_G3iQyd": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Comp_Slide_2.png"
+          }
+        },
+        "icon_BDNtBj": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Bleach_Slide_-2.png"
+          }
+        },
+        "icon_azD4Rx": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Vinegar_Slide_2.png"
+          }
+        },
+        "icon_dGnP9t": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/floxtreme_slide_-_2.png"
+          }
+        }
+      },
+      "block_order": [
+        "icon_G3iQyd",
+        "icon_BDNtBj",
+        "icon_azD4Rx",
+        "icon_dGnP9t"
+      ],
+      "settings": {
+        "small": false,
+        "reverse": true,
+        "heading": "COMPARE RESULTS",
+        "description": "<p>FloXtreme 24\/7 goes to work immediately, treating contaminant build-up in your drain pan that can block your drain line. See for yourself the results you’ll get with FloXtreme 24\/7 in just days.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_Cztbq6": {
+      "type": "blurb-section",
+      "disabled": true,
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/image-1.png",
+        "video_media": "",
+        "heading": "COMPARE RESULTS",
+        "description": "<p>FloXtreme goes to work immediately, treating contaminant build-up in your drain pan that can block your drain line. See for yourself the results you’ll get with FloXtreme in just days.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_NRmnW8": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "bg_image": "shopify:\/\/shop_images\/Group_2.svg",
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/c697cc90-e54d-49ce-a378-2af968bc08f4.jpg",
+        "video_media": "",
+        "heading": "CAN I FIX A CLOG MYSELF?",
+        "description": "<p>Manually clearing the sludge out of your drain pipe is a temporary solution, at best.  The contaminants are still in your AC’s drain system, and they must be removed.  Using corrosive home remedies like bleach or vinegar to clean your drain lines can seriously damage your unit’s evaporator coil.<\/p>",
+        "button_title": "",
+        "button_link": "#"
+      }
+    },
+    "blurb_section_7XYB6g": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/SAVE-TIME-AND-MONEY-IMAGE-scaled.jpg",
+        "video_media": "",
+        "heading": "SAVE TIME AND MONEY",
+        "description": "<p>Proactively preventing clogs with FloXtreme 24\/7 keeps your AC drain line flowing for just pennies a day. You’ll avert service calls and avoid the costly damage that can occur from drain pan flooding.<\/p>",
+        "button_title": "ORDER TODAY",
+        "button_link": "#"
+      }
+    },
+    "blurb_section_f9NUfF": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/90_DAY_GUARANTEE_SEAL_2_300_DPI.png",
+        "video_media": "",
+        "heading": "You’ll love FloXtreme 24\/7!",
+        "description": "<p>We guarantee you’ll love the performance, convenience and peace of mind you’ll get from installing FloXtreme 24\/7 on your AC unit.  We’re so confident that our superior solution will stop clogged drain lines before they start that we invite you to try FloXtreme 24\/7 today, risk-free.  If you are not completely satisfied with its performance, we’ll give you a full refund within 90 days of purchase, guaranteed.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "text_banner_section_he8qHB": {
+      "type": "text-banner-section",
+      "settings": {
+        "heading": "STOP CLOGS BEFORE THEY START.",
+        "description": "<p>Unlike home remedies and other products on the market, FloXtreme 24\/7 stops the problem where it starts: in your AC’s drain pan. Our proprietary solution is non-toxic, non-acidic and environmentally friendly. It keeps toxic slime away without damaging your AC unit.<\/p>",
+        "button_title": "ORDER TODAY",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    }
+  },
+  "order": [
+    "banner_block_MEHNyh",
+    "blurb_section_U3MH3E",
+    "blurb_section_i4VTxp",
+    "blurb_section_6yycPk",
+    "blurb_section_caA6Ci",
+    "blurb_section_ViyNHJ",
+    "blurb_section_UYcB9x",
+    "text_banner_section_he8qH3",
+    "blurb_section_g4AwbP",
+    "slider_blurb_section_NrYwPH",
+    "blurb_section_Cztbq6",
+    "blurb_section_NRmnW8",
+    "blurb_section_7XYB6g",
+    "blurb_section_f9NUfF",
+    "text_banner_section_he8qHB"
+  ]
+}

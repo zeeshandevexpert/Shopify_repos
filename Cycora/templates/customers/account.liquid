@@ -1,0 +1,124 @@
+<style>
+    .CDE_edit_input, .CDE_save_inpu{
+        display: none !important;
+    }
+</style>
+<section class="account-top-section">
+    <div class="container-style container-large">
+        <div class="account-top-section-row">
+            <div class="account-top-section-col-left">
+                <h1>your account</h1>
+            </div>
+            <div class="account-top-section-col-right">
+                <h2>{{ customer.first_name }} {{ customer.last_name }}</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="account-main-section">
+    <div class="container-style container-large">
+        <div class="account-main-header">
+            <div class="account-main-header-row">
+                <div class="account-main-header-col-left">
+                    <h4>account info</h4>
+                </div>
+                <div class="account-main-header-col-right">
+                    <h4>email</h4>
+                </div>
+            </div>
+            <div class="account-main-row">
+                <div class="account-main-col-left">
+                    <span>first name</span>
+                </div>
+                <div class="account-main-col-center" id="first_name">
+                    <span id="current_first_name">{{ customer.first_name }}</span>
+                    <input type="text" value="{{ customer.first_name }}" data-input-id="first_name" data-input-type="first_name"  class="CDE_input" />
+                </div>
+                <div class="account-main-col-right">
+                    <button data-id="#first_name">edit</button>
+                </div>
+            </div>
+            <div class="account-main-row">
+                <div class="account-main-col-left">
+                    <span>last name</span>
+                </div>
+                <div class="account-main-col-center" id="last_name">
+                    <span id="current_last_name">{{ customer.last_name }}</span>
+                    <input type="text" value="{{ customer.last_name }}" data-input-id="last_name" data-input-type="last_name"  class="CDE_input" />
+                </div>
+                <div class="account-main-col-right">
+                    <button data-id="#last_name">edit</button>
+                </div>
+            </div>
+            <div class="account-main-row">
+                <div class="account-main-col-left">
+                    <span>login credentials</span>
+                </div>
+                <div class="account-main-col-center" id="email">
+                    <span id="current_email">{{ customer.email }}</span>
+                    <input type="text" value="{{ customer.email }}" data-input-id="email" data-input-type="email"  class="CDE_input" />
+                </div>
+                <div class="account-main-col-right">
+                    <button data-id="#email">edit</button>
+                </div>
+            </div>
+            <div class="account-main-row">
+                <div class="account-main-col-left">
+                </div>
+                <div class="account-main-col-center" id="pass1">
+                    <span>password (**********)</span>
+                    <input type="password" value="" placeholder="new password">
+                </div>
+                <div class="account-main-col-right">
+                    <button data-id="#email1" onclick="document.location.href='/account/login#recover'">edit</button>
+                </div>
+            </div>
+        </div>
+        <div class="account-main-bottom-row account-main-bottom-row-title">
+            <div class="account-main-bottom-col account-main-bottom-col-1">
+                <h4>order history</h4>
+            </div>
+            <div class="account-main-bottom-col account-main-bottom-col-2">
+                <h4>items</h4>
+            </div>
+            <div class="account-main-bottom-col account-main-bottom-col-3">
+                <h4>date</h4>
+            </div>
+            <div class="account-main-bottom-col account-main-bottom-col-4">
+                <h4>cost</h4>
+            </div>
+        </div>
+        <div class="account-main-bottom-products">
+
+            {% for order in customer.orders %}
+                <div class="account-main-bottom-row">
+                    <div class="account-main-bottom-col account-main-bottom-col-1">
+                        <span>order # {{ order.id }}</span><u class="mobile-only">$${{ order.total_price | money }}</u>
+                    </div>
+                    <div class="account-main-bottom-col account-main-bottom-col-2">
+
+                            {% for line_item in order.line_items %}
+                                {% if items %}
+                                    {% assign items = items | append: ", " | append: line_item.title %}
+                                {% else %}
+                                    {% assign items = line_item.title %}
+                                {% endif %}
+                            {% endfor %}
+                        
+                            <span>{{ items }}</span>
+
+                    </div>
+                    <div class="account-main-bottom-col account-main-bottom-col-3">
+                        <i>{{ order.created_at | date: "%d.%m.%y" }}</i>
+                    </div>
+                    <div class="account-main-bottom-col account-main-bottom-col-4">
+                        <i>${{ order.total_price | money }}</i>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+

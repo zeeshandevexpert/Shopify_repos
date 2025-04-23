@@ -1,0 +1,419 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "text_dKG4iU": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Womens Watch",
+            "text_style": "body"
+          }
+        },
+        "judge_me_reviews_preview_badge_3xQi7z": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "custom_liquid_YXfe43": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<!DOCTYPE html>\n<html>\n<head>\n<style>\n:root {\n  --social-proof-text-color: #000000;\n  --social-proof-star-color: #FFE266;\n}\n\n.social-proof-slide__block-rating {\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\nfont-size: 14px;\n}\n\n.social-proof-slide__block-stars {\n    display: flex;\n    margin-right: 8px;\n    color: var(--social-proof-star-color);\n}\n\n.social-proof-slide__block-rating-text {\n    display: inline;\n    color: var(--social-proof-text-color);\n    content: var(--social-proof-rating-text);\n}\n\n.social-proof-star {\n    margin: 0;\n    padding: 0;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 16px;\n    height: 16px;\n}\n\n.social-proof-star svg {\n    width: 16px;\n    height: 16px;\n    fill: var(--social-proof-star-color);\n}\n<\/style>\n<\/head>\n<body>\n\n<div class=\"social-proof-slide__block-rating mt-2\">\n  <span class=\"social-proof-slide__block-stars\">\n    <span class=\"social-proof-star\">\n      <svg xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <svg class=\"w-[16px] h-[16px]\" fill=\"currentColor\" stroke=\"currentColor\" xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <path d=\"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z\"><\/path>\n      <\/svg>\n    <\/span>\n<span class=\"social-proof-star\">\n      <svg xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <svg class=\"w-[16px] h-[16px]\" fill=\"currentColor\" stroke=\"currentColor\" xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <path d=\"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z\"><\/path>\n      <\/svg>\n    <\/span>\n<span class=\"social-proof-star\">\n      <svg xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <svg class=\"w-[16px] h-[16px]\" fill=\"currentColor\" stroke=\"currentColor\" xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <path d=\"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z\"><\/path>\n      <\/svg>\n    <\/span>\n<span class=\"social-proof-star\">\n      <svg xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <svg class=\"w-[16px] h-[16px]\" fill=\"currentColor\" stroke=\"currentColor\" xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <path d=\"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z\"><\/path>\n      <\/svg>\n    <\/span>\n<span class=\"social-proof-star\">\n      <svg xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <svg class=\"w-[16px] h-[16px]\" fill=\"currentColor\" stroke=\"currentColor\" xmlns=\"http:\/\/w3.org\/2000\/svg\" viewBox=\"0 0 576 512\">\n        <path d=\"M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z\"><\/path>\n      <\/svg>\n    <\/span>\n  <\/span>\n  <span class=\"social-proof-slide__block-rating-text\">\n (3,032)\n  <\/span>\n<\/div>\n\n<\/body>\n<\/html>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<strong>Pick Your Vintage Watches -<\/strong>Buy 2, Get 1 Free",
+            "text_style": "body"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "square"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "text_dc9drk": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "",
+            "text_style": "subtitle"
+          }
+        },
+        "icon_with_text_NnHiVM": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "vertical",
+            "icon_1": "truck",
+            "heading_1": "Free Shipping on orders $49+",
+            "icon_2": "check_mark",
+            "heading_2": "Materials designed to never fade, rust, or tarnish.",
+            "icon_3": "box",
+            "heading_3": "Free Gift Box Included"
+          }
+        },
+        "custom_liquid_3RJkLj": {
+          "type": "custom_liquid",
+          "disabled": true,
+          "settings": {
+            "custom_liquid": "<div class=\"loved-by-customers\">\n  <span> Free shipping on all orders<\/span>\n<\/div>\n\n<style>\n  .loved-by-customers {\n    background-color: #D0FFE0;\n    color: #008454;\n    text-align: center;\n    padding: 6px;\n    margin-top: 20px; \/* Adjust as needed *\/\n    border-radius: 20px; \/* Adjust to desired pill shape *\/\n    width: 300px; \/* Adjust width as needed *\/\n    margin-left: auto;\n    margin-right: auto;\n    font-size: 14px;\n    font-weight: \n  }\n<\/style>"
+          }
+        },
+        "collapsible_tab_F8MmzX": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_CQeXPi": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Watch Quality & Sizing",
+            "icon": "none",
+            "content": "<p>Crafted from <strong>100% real,<\/strong> non-tarnish premium materials and fully waterproof. <\/p><p><strong>Watch Face Size:<\/strong> APPROX. <strong>3- 4 inches<\/strong><\/p><p><strong>Length: 8 inches<\/strong> Adjustable by removing links .<\/p><p><strong>Made to last a lifetime. <\/strong><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_MBVTP3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Lifetime Warranty",
+            "icon": "none",
+            "content": "<p>Lifetime warranty - from the date of purchase, just email us a picture of any damages & we'll replace your watch for free. <\/p><p><strong>Guaranteed. <\/strong><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_pFDaRE": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Returns",
+            "icon": "none",
+            "content": "<p>All <strong>orders are processed<\/strong> in 2-3 Days. <\/p><p><strong>USA Shipping:<\/strong> 5- 7 Days <\/p><p><strong>International Shipping: <\/strong>7-12 Days<\/p><p>Email us for any <strong>returns within 60 Days.<\/strong><\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_caRXyr": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Watch Sizing",
+            "icon": "ruler",
+            "content": "<p><strong>Watch Face Size:<\/strong> APPROX. <strong>3- 4 inches<\/strong><\/p><p><strong>Length: 8 inches<\/strong> Adjustable by removing links .<\/p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "reelup_shoppable_videos_reels_reelup_playlist_pjKmUx": {
+          "type": "shopify:\/\/apps\/reelup-shoppable-videos-reels\/blocks\/reelup-playlist\/a8ec9e4d-d192-44f7-9c23-595f9ee7dd5b",
+          "disabled": true,
+          "settings": {
+            "playlist_id": "",
+            "debugging_script": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "text_dKG4iU",
+        "judge_me_reviews_preview_badge_3xQi7z",
+        "custom_liquid_YXfe43",
+        "price",
+        "description",
+        "vendor",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "text_dc9drk",
+        "icon_with_text_NnHiVM",
+        "custom_liquid_3RJkLj",
+        "collapsible_tab_F8MmzX",
+        "collapsible_tab_CQeXPi",
+        "collapsible_tab_MBVTP3",
+        "collapsible_tab_pFDaRE",
+        "collapsible_tab_caRXyr",
+        "share",
+        "reelup_shoppable_videos_reels_reelup_playlist_pjKmUx"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "171931579835d40d75": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_6rMKdh": {
+          "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_6rMKdh"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "image_with_text_FdhVcw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_9GyN7Q": {
+          "type": "heading",
+          "settings": {
+            "heading": "Luxury Gift Box",
+            "heading_size": "h1"
+          }
+        },
+        "text_UHxp79": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each of our one of a kind watches include a free luxury gift box to cherish or gift a loved one. <\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_iG8XtD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_9GyN7Q",
+        "text_UHxp79",
+        "button_iG8XtD"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/A57E9382-ABA0-4717-9B1C-2053AACEAC45-344-0000007C2B965B73.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "featured_collection_KTLear": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Vintage Watches",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vintage-collection",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "logo_slider_cUiVkb": {
+      "type": "logo-slider",
+      "blocks": {
+        "slide_DXwqMc": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_rQCzgg": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_Fbjjgk": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_TFGAja": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_nK8mAt": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_KdrGKr": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_arhWLR": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_C6X7JV": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_9Kb3NU": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_LVbzGe": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_npaLAd": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_DXwqMc",
+        "slide_rQCzgg",
+        "slide_Fbjjgk",
+        "slide_TFGAja",
+        "slide_nK8mAt",
+        "slide_KdrGKr",
+        "slide_arhWLR",
+        "slide_C6X7JV",
+        "slide_9Kb3NU",
+        "slide_LVbzGe",
+        "slide_npaLAd"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 48,
+        "slider_type": "text_slider"
+      }
+    },
+    "image_slider_text_blurb_4aNzym": {
+      "type": "image-slider-text-blurb",
+      "settings": {
+        "reverse": true,
+        "collection": "vintage-collection",
+        "heading": "A Unique Watch ThatFits Your Style",
+        "description": "<p>The new Lawson collection is already here! This quartz Lawson Franklin 38 model, designed with simplicity and elegance, is truly a cherry on the cake. Comes in different sizes and band colors, has a stainless steel back for a personalized engraving.<\/p>",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "171931579835d40d75",
+    "image_with_text_FdhVcw",
+    "related-products",
+    "featured_collection_KTLear",
+    "logo_slider_cUiVkb",
+    "image_slider_text_blurb_4aNzym"
+  ]
+}

@@ -1,0 +1,117 @@
+<div class="page-width list-products-template" data-section-id="{{ section.id }}" data-section-type="list-products" data-slider="{% if section.settings.enable_slider %}1{% endif %}" data-slider-count="{{ section.settings.grid }}">
+  {% if section.settings.title != blank or section.settings.text != blank %}
+    <div class="section-header text-center">
+      {% if section.settings.title != blank %}
+      <h2 class="list-products__title">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.text != blank %}
+      <div class="list-products__text">{{ section.settings.text }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% case section.settings.grid %}
+    {% when 2 %}
+      {%- assign max_height = 530 -%}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign max_height = 345 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign max_height = 250 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign max_height = 195 -%}
+      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+  {% endcase %}
+
+  {%- assign product_limit = section.settings.grid | times: section.settings.rows -%}
+  {% if section.settings.enable_slider %}
+    <div class="grid" id="list-products-{{ section.id }}">
+      {% for block in section.blocks limit: product_limit %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          {% assign product = block.settings.product %}
+          {% render 'product-card-grid', max_height: max_height, product: product %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+  <ul class="grid grid--uniform grid--view-items" id="list-products-{{ section.id }}">
+    {% for block in section.blocks limit: product_limit %}
+      <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+        {% assign product = block.settings.product %}
+        {% render 'product-card-grid', max_height: max_height, product: product %}
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "List products",
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "List Products Section"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": "Rows",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Enable slider",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show product vendors",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings": [
+        {
+          "id": "product",
+          "type": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "List products",
+      "category": "Products"
+    }
+  ]
+}
+{% endschema %}

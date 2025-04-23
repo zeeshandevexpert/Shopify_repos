@@ -1,0 +1,129 @@
+{%- liquid
+
+  assign call_to_action = 'products.product.add_to_cart' | t
+  assign current_variant = product.selected_or_first_available_variant
+
+  unless current_variant.available
+    assign call_to_action = 'products.product.sold_out' | t
+  endunless
+
+  assign product_form_id = 'product-form-' | append: section.id
+
+-%}
+
+{%
+  form 'product',
+  product,
+  id: product_form_id,
+  class: "product_form",
+  data-product-form: product_form_config,
+  data-product-id: product.id
+%}
+
+  {%- if template == 'product.quick' -%}
+    {% render 'product-price', variant: current_variant, product: product %}
+
+    <div class="spi-banner">
+      {{ form | payment_terms }}
+    </div><!-- /#spi-banner -->
+  {%- endif -%}
+
+  {%- unless product.has_only_default_variant -%}
+   {%- if settings.product_variants == 'swatches' -%}
+     <div class="product__variants-swatches no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
+       {% for option in product.options_with_values %}
+         {% render "swatch",
+           option: option,
+           current_variant: current_variant,
+           product: product,
+           show_color_swatches: settings.show_color_swatches,
+           color_swatch_shape: settings.color_swatch_shape,
+           color_swatch_style: settings.color_swatch_style %}
+       {% endfor %}
+     </div>
+   {%- else -%}
+     <div class="product__variants-select no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}">
+       {%- for option in product.options_with_values -%}
+         <div class="product-form__input product-form__input--dropdown">
+           <label for="Option-{{ section.id }}-{{ forloop.index0 }}">
+             {{ option.name }}
+           </label>
+           <div class="select">
+             <select id="Option-{{ section.id }}-{{ forloop.index0 }}"
+               class="js-variant-selector"
+               name="options[{{ option.name | escape }}]"
+               form="product-form-{{ section.id }}"
+             >
+               {%- for value in option.values -%}
+                 <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+                   {{ value }}
+                 </option>
+               {%- endfor -%}
+             </select>
+           </div>
+         </div>
+       {%- endfor -%}
+     </div>
+   {%- endif -%}
+  {%- endunless -%}
+
+  <noscript class="product__variants-select product-form__noscript-wrapper-{{ section.id }}">
+    <div class="product-form__input product-form__input--dropdown{% if product.has_only_default_variant %} hidden{% endif %}">
+      <label for="Variants-{{ section.id }}">{{ 'products.product.select_option' | t }}</label>
+      <div>
+        <select name="id" id="Variants-{{ section.id }}">
+          {%- for variant in product.variants -%}
+            <option
+              {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+              {% if variant.available == false %}disabled{% endif %}
+              value="{{ variant.id }}"
+            >
+              {{ variant.title }}
+              {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+              - {{ variant.price | money | strip_html }}
+            </option>
+          {%- endfor -%}
+        </select>
+      </div>
+    </div>
+  </noscript>
+
+  {% if settings.show_sku %}
+    <div class="product__sku-container sku js-product-sku-container{% if current_variant.sku == blank %} hide{% endif %}">
+      <span class="product__sku-label">{{ 'customer.order.details.sku' | t }}:</span>
+      <span class="product__sku-value js-product-sku">{{ current_variant.sku }}</h5>
+    </div><div class="clear"></div>
+  {% endif %}
+
+  <div class="product-add">
+    <input class="formVariantId" name="" type="hidden" value="{{ product.selected_or_first_available_variant.id }}">
+    <input class="formQty" type="hidden" name="quantity" value="1" />
+    {% if settings.show_quantity %}
+      <div class="qty-selection">
+        <label class="h5" for="quantity-{{ product.id }}"><strong>{{ 'products.product.quantity' | t }}</strong></label>
+        <div class="quantity__wrapper">
+          <button
+            class="down quantity-control-down"
+            type="button">-</button>
+            <input id="quantity-{{ product.id }}" min="1" type="text" name="quantity" class="product-qty quantity js-qty-input" value="1" />
+          <button
+            class="up quantity-control-up"
+            type="button">+</button>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="note note-success mt3 js-added-msg" style="display: none">
+    <b>{{ 'products.product.added' | t }}</b>&nbsp;&nbsp;&nbsp;<a class="underline" href="{{ routes.cart_url }}">{{ 'products.product.view_cart' | t }}</a> {{ 'products.product.or' | t }} <a class="underline" href="{{ routes.all_products_collection_url }}">{{ 'products.product.continue' | t }}</a>.
+    </div>
+    <div class="note note-error js-error-msg" style="display: none">
+    <b>{{ 'cart.general.cart_error' | t }}</b>&nbsp;&nbsp;&nbsp;{{ 'cart.general.update_qty_error' | t }}
+    </div>
+    <input id="addToCart" type="submit" name="button" class="product__add-button add clearfix AddtoCart js-ajax-submit {% if settings.show_payment_button and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}" value="{{ call_to_action }}" {% unless current_variant.available %}disabled{% endunless %} />
+
+    {% if settings.show_payment_button %}
+     {{ form | payment_button }}
+    {% endif %}
+  </div>
+    <p class="product__add-msg add-to-cart-msg"></p>
+{% endform %}

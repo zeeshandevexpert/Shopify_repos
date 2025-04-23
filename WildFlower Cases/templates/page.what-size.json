@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "what-size": {
+      "type": "page-what-size",
+      "settings": {
+        "step1_title": "Step 1: Find Your Model Number",
+        "step1_p1": "You can find this by looking in your settings or by looking at your device.",
+        "image_settings": "shopify://shop_images/what-size-settings.png",
+        "color_settings": "#d1f0fa",
+        "step1_h2": "Look in settings",
+        "step1_p2": "Go to Settings > General > About. To the right of Model, you'll see the part number. To see the model number, tap the part number.",
+        "image_device": "shopify://shop_images/what-size-device.png",
+        "step1_h3": "Look on your device",
+        "step1_h4": "On an iPhone 8 or later",
+        "step1_p4": "To find the model number, remove the SIM tray and look in the SIM tray slot. Make sure that you're in a place with bright light overhead. The model number is on the upper side—the side with the display.",
+        "image_i4": "shopify://shop_images/what-size-i4.png",
+        "step1_h5": "On an iPhone 7 or earlier",
+        "step1_p5": "Find the model number on the back of your device.",
+        "image_i5": "shopify://shop_images/what-size-i5.png"
+      }
+    }
+  },
+  "order": [
+    "what-size"
+  ]
+}

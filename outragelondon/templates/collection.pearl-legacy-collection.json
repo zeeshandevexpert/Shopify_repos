@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "custom-main-collection-pearl",
+      "settings": {
+        "enable_password": false,
+        "password_error_message": "Entered password is wrong. Please enter correct password. (Ensure your password is in low-case letter format)",
+        "heading": "The Mayfair Heritage Collection",
+        "password_value": "stones",
+        "desktop_image": "shopify:\/\/shop_images\/Untitled_design_-_2024-10-21T113203.984.png",
+        "mobile_image": "shopify:\/\/shop_images\/Untitled_600_x_900_px_2.png"
+      }
+    }
+  },
+  "order": [
+    "main-collection"
+  ]
+}

@@ -1,0 +1,114 @@
+
+<div id="customer_login">
+    <section class="login-page-section">
+        <div class="container-style login-page-container">
+            <h1>hello</h1>
+            <div class="form-login">
+                <div class="form-login-header">
+                    <h2>your account</h2>
+                </div>
+                {% form 'customer_login', class: "account-form" %}
+
+                    <div class="error-form">
+                        {{ form.errors | default_errors }}
+                    </div>
+
+                    <div class="form-login-row">
+                        <input type="email" placeholder="Email"  name="customer[email]" />
+                    </div>
+                    <div class="form-login-row">
+                        <input type="password"  name="customer[password]" placeholder="Password" />
+                    </div>
+                    <div class="form-login-bottom">
+                        <div class="form-login-bottom-left">
+                            <button type="submit">sign in <i></i></button>
+                        </div>
+                        <div class="form-login-bottom-right">
+                            <a href="/account/register">create an account</a>
+                            <a href="javascript:void(0)" onclick="showRecoverPasswordForm();">forgot password</a>
+                        </div>
+                    </div>
+
+                {% endform %}
+
+            </div>
+        </div>
+    </section>
+    {% section "account-bottom" %}
+</div>
+
+<div id="recover_password" style="display: none;"> <!-- START PAGE WRAP -->
+    <section class="login-page-section">
+        <div class="container-style login-page-container">
+            <h1>Restore password</h1>
+            <div class="form-login">
+                <div class="form-login-header">
+                    <h2>your email</h2>
+                </div>
+                {% form 'recover_customer_password', class: "account-form" %}
+
+                    <div class="error-form">
+                        {{ form.errors | default_errors }}
+                    </div>
+
+                    {% if form.posted_successfully? %}
+                        {% assign resetPassword = true %}
+                    {% endif %}
+                    <div style="color:green; display: none" id="resetSuccess">
+                        Recovery link successfully sent to email!
+                    </div>
+
+                    <div class="form-login-row">
+                        <input type="email" placeholder="Email"  name="email" />
+                    </div>
+                    <div class="form-login-bottom">
+                        <div class="form-login-bottom-left">
+                            <button type="submit">restore <i></i></button>
+                        </div>
+                        <div class="form-login-bottom-right">
+                            <a href="/account/register">create an account</a>
+                            <a href="javascript:void(0)" onclick="hideRecoverPasswordForm();">login</a>
+                        </div>
+                    </div>
+
+                {% endform %}
+            </div>
+        </div>
+    </section>
+
+    <section class="general-support-bottom">
+        <h2>need help with something?</h2>
+        <a href="#">support</a>
+    </section>
+
+</div>
+
+
+
+
+
+
+<style>
+    .error-form{
+        color:red;
+        padding-bottom: 10px;
+    }
+</style>
+<script>
+    function showRecoverPasswordForm() {
+        document.getElementById('recover_password').style.display = 'block';
+        document.getElementById('customer_login').style.display='none';
+    }
+
+    function hideRecoverPasswordForm() {
+        document.getElementById('recover_password').style.display = 'none';
+        document.getElementById('customer_login').style.display = 'block';
+    }
+
+    if (window.location.hash == '#recover') { showRecoverPasswordForm() }
+
+    {% if resetPassword == true %}
+        showRecoverPasswordForm();
+        document.getElementById('resetSuccess').style.display = 'block';
+    {% endif %}
+</script>

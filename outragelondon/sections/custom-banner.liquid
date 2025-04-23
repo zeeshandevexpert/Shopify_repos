@@ -1,0 +1,56 @@
+{% if section.settings.img %}
+  <div class="custom-banner">
+    <div class="custom-banner-wrapper">
+      <img src="{{ section.settings.img | img_url: 'master' }}" class="custom-banner-img" />
+      <div class="custom-banner-overlay">
+        {% if section.settings.heading != blank %}
+          <h2 class="custom-banner-heading" style="color: {{ section.settings.fg }}">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <h2 class="custom-banner-subheading" style="color: {{ section.settings.fg }}">{{ section.settings.subheading }}</h2>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "fg",
+      "label": "Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Banner"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}

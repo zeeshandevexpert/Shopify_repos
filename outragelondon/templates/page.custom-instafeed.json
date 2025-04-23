@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_iwt_2_PbHJag": {
+      "type": "custom-iwt-2",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_2000_x_2000_px_6.png",
+        "heading": "Shop our Instagram",
+        "text": "<p>Check out our Insta shop gallery down below for a glimpse into our Instagram feed. Catch our newest releases and get inspired on how to rock our jewelry with your attire. Be sure to give us a follow! Just tap on any photo to explore the products showcased. And don't miss tagging us when you showcase your Outrage London Jewellery!<\/p>",
+        "btn-label": "Follow Us On instagram!",
+        "btn-link": "https:\/\/www.instagram.com\/outrage_ldn\/",
+        "subheading": "",
+        "bg": "#ffffff",
+        "fg": "#000000"
+      }
+    },
+    "17125765319844c079": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_g4ntY4": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_g4ntY4"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true
+      }
+    },
+    "custom_insta_column_dUKEN7": {
+      "type": "custom-insta-column",
+      "blocks": {
+        "select_8yi49T": {
+          "type": "select",
+          "settings": {
+            "il-head": "Outrage Social Profiles",
+            "il-para": "<p>If Instagram isn’t your thing, Check out our instagram <a href=\"https:\/\/www.facebook.com\/OutrageLdn\/\" target=\"_blank\" title=\"https:\/\/www.facebook.com\/OutrageLdn\/\">FACEBOOK<\/a> or <a href=\"https:\/\/www.tiktok.com\/@outragelondon\" target=\"_blank\" title=\"https:\/\/www.tiktok.com\/@outragelondon\">TIKTOK<\/a>. Follow and like our pages to see our latest jewellery releases and for news updates on Outrage London. If you're eager to delve deeper into the world of jewelry or seeking some style inspiration, why not visit our <a href=\"\/blogs\/news\" title=\"CENTRAL\">blog<\/a>? We curate a variety of content, including how-to tutorials, gift guides, and lookbooks. Additionally, we delve into the latest celebrity fashion trends and showcase insights into the world of jewelry and fashion.<\/p>"
+          }
+        },
+        "select_GRhRFQ": {
+          "type": "select",
+          "settings": {
+            "il-head": "Essential Reading",
+            "il-para": "<p>Outrage London is dedicated to offering high-quality, stylish pieces at an affordable prices. Our passion lies in crafting jewellery that sets the latest trends, ensuring that fashion-forward individuals can express themselves with confidence.<\/p>"
+          }
+        },
+        "select_zdbYAH": {
+          "type": "select",
+          "settings": {
+            "il-head": "Contact Us",
+            "il-para": "<p>We are here to help at Outrage London so don’t hesitate to get in touch if you need help. Our <a href=\"\/pages\/contact-details\" target=\"_blank\" title=\"Customer Support Centre\"><span style=\"text-decoration:underline\">help centre <\/span><\/a>answers our most frequently asked questions including information on shipping, returns, size guides, personalised orders as well as jewellery care. prefer to Email? use the email info@outrageldn.com. We will try to answer your query as soon as possible.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "select_8yi49T",
+        "select_GRhRFQ",
+        "select_zdbYAH"
+      ],
+      "settings": {
+        "sec-head": "About OUTRAGE LONDON",
+        "sec-head-color": "#000000",
+        "bk-colr": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_iwt_2_PbHJag",
+    "17125765319844c079",
+    "custom_insta_column_dUKEN7"
+  ]
+}

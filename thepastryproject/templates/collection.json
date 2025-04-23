@@ -1,0 +1,151 @@
+{
+  "wrapper": "div.collection-wrapper",
+  "sections": {
+    "1658441208dd49d963": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "16584412081f6aaec4-0": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<style type=\"text/css\">\ndiv {\n\t-webkit-box-sizing: border-box;\n\tbox-sizing: border-box;\n\n}\n\n.images {\nposition: absolute;\n  left: 0;\n  width: 150%;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n}\n\n.bannerbody {\n  background-video: url(\"//cdn.shopify.com/videos/c/o/v/deddea6f9f2f431285974865319a7d46.mp4\");\nbackground-size: cover!important;\nposition: relative;\nheight: 100%;}\n\n.wrapper {\n  position: relative;\n  width: 100%;\n  max-width: 1680px;\n  margin: 0 auto;\n  padding: 0 45px;\noverflow: hidden;\n\n}\n\n.flex {\n  display: flex;\n  -webkit-box-flex: 1;\n  -ms-flex: 1 0 auto;\n  flex: 1 0 auto;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n\n}\n\n.four-fifths {\n  width: 80%;\n}\n\n.three-fourths {\n  width: 75%;\n}\n\n.two-thirds {\n  width: 66.6666%;\n}\n\n.three-fifths {\n  width: 60%;\n}\n\n.one-half {\n  width: 50%;\n\n}\n\n.badgecontent {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  align-items: center;\n  justify-content: center;\n}\n\n.badgecontent h1{\n  position: relative;\n  /*padding: 15% 18%;*/\n  font-family: var(--header-font-stack);\n    font-weight: var(--header-font-weight);\n    font-style: var(--header-font-style);\n    text-transform: var(--header-font-transform);\n    letter-spacing: var(--header-letter-spacing);\n    margin-bottom: 0.5rem;\n    line-height: 1.2;\nfont-size: calc(25px + 0.390625vw);\ntext-align: center;\nwhite-space: nowrap;\n}\n\n.badgebox img {\nposition: relative;    \nmax-width: calc(50vw - 25px);\n}\n\n.badgebox {\nposition: relative;\n    max-width: calc(50vw - 25px);\nmin-width: 200px;\n  top: 0px;\nbottom: 0px;\npadding: 40px;\ntransform: rotate(-10deg);\n}\n\n.flex img {\n  -ms-flex-item-align: center;\n  -ms-grid-row-align: center;\n  align-self: center;\n}\n\n@media only screen and (min-width:320px) and (max-width:800px){\n\n.badgecontent flex h1 {\n  padding: 15% 18%;\n  font-family: var(--header-font-stack);\n    font-weight: var(--header-font-weight);\n    font-style: var(--header-font-style);\n    text-transform: var(--header-font-transform);\n    letter-spacing: var(--header-letter-spacing);\n    margin-bottom: 0.5rem;\n    line-height: 1.2;\nfont-size: calc(10px + 0.390625vw);\n\n}\n.badgebox img {\nposition: relative;\n    max-width: calc(40vw - 25px);\nmin-width: 350px;\nheight: 300px;}\n\n.badgebox {\nleft: 25%;\n  top: 0px;\nbottom: 0px;\npadding: 20px;\ntransform: rotate(-10deg)\ntranslate (0%, -50%);\n  align-items: center;\n  justify-content: center; \n}\n\n}\n\n</style>\n<div class=\"images\">\n<div class=\"bannerbody\"></div>\n</div>\n<div class=\"wrapper flex\">\n    <div class=\"one-half\">\n      <div class=\"badgebox flex\">\n<img src=\"https://cdn.shopify.com/s/files/1/0567/8923/7875/t/2/assets/purpleflower-05.svg?v=1658801322\">\n\n<div class=\"badgecontent flex\">\n          <h1>shop our dough!\n\n</h1>\n</div>\n</div>\n</div>\n</div>",
+            "width": "100%"
+          }
+        },
+        "86609ea1-4a82-43e3-abd4-b40628b9aa19": {
+          "type": "html",
+          "settings": {
+            "code": "<style type=\"text/css\">\n.badgeboxvid {\nposition: absolute;\n    top: 40px;\n    right: 75px;\n    width: 500px;\n    height: auto;\n  display: flex;\n  justify-content: center;\ntransform: rotate(10deg) scale(100%);\n}\n\n.bigCrop{\n width: 100%;\n    height: 600px;\n    overflow: hidden;\n}\n\n.bg {\nposition: relative;\n  width: 100%;\nheight: auto;\n   z-index:-5;\n  margin-top: -10%;\n}\n\n\n.content {\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -ms-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%) scale(120%);\npadding-left: 5px;\npadding-right: 5px;\n}\n\n@media only screen and (min-width:320px) and (max-width:767px){\n\n.bg img{\n        width: 100% !important;\n        height: auto !important ;\n    }\n    \n.bigCrop{\n width: 100%;\n    height: auto;\n    overflow: hidden;\n}\n.badgeboxvid {\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -ms-transform: translate(-50%, -50%) scale(50%);\n  transform: translate(-50%, -50%) scale(50%) rotate(0deg);\n}\n\n.content {\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -ms-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%) scale(60%);\npadding-left: 5px;\npadding-right: 5px;}\n\n}\n\n</style>\n\n\n<div class=\"bigCrop\">\n<div class=\"bg\">\n<video width=\"100%\" autoplay=\"\" muted=\"\" loop=\"\">\n    <source src=\"https://cdn.shopify.com/videos/c/o/v/c86b9d0a44f74271ac20c58bcaa06e64.mp4\" type=\"video/mp4\">\n\n    Sorry, your browser doesn't support embedded videos.\n</source></video>\n</div>\n</div>\n\n<div class=\"badgeboxvid\">\n<img src=\"https://cdn.shopify.com/s/files/1/0567/8923/7875/t/2/assets/purpleflower-05.svg?v=1658801322\">\n\n\n<div class=\"content\">\n<center><h1>shop our dough!</h1></center>\n</div>\n</div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "16584412081f6aaec4-0",
+        "86609ea1-4a82-43e3-abd4-b40628b9aa19"
+      ],
+      "settings": {
+      }
+    },
+    "collection_header": {
+      "type": "template--collection-header",
+      "blocks": {
+        "collection_title": {
+          "type": "collection-title",
+          "settings": {
+          }
+        },
+        "collection_description": {
+          "type": "collection-description",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "collection_title",
+        "collection_description"
+      ],
+      "disabled": true,
+      "settings": {
+        "collection_image_enable": false
+      }
+    },
+    "product_filtering": {
+      "type": "main-collection-filtering",
+      "disabled": true,
+      "settings": {
+        "desktop_position": "sidebar",
+        "enable_filtering": true,
+        "enable_sorting": true
+      }
+    },
+    "main": {
+      "type": "template--collection",
+      "blocks": {
+        "product_title": {
+          "type": "product-card-title",
+          "settings": {
+          }
+        },
+        "product_price": {
+          "type": "product-card-price",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "product_title",
+        "product_price"
+      ],
+      "settings": {
+        "grid": 4,
+        "grid_mobile": "per_row_two",
+        "rows": 6,
+        "pagination_type": "load_more"
+      }
+    },
+    "image": {
+      "type": "image--image",
+      "settings": {
+        "image": "shopify://shop_images/PastryProject-PerfectCookie-5954.jpg",
+        "parallax": true,
+        "hero_size": "large",
+        "text-over-image-width": "full-width"
+      }
+    },
+    "text-adverts": {
+      "type": "text--text-adverts",
+      "blocks": {
+        "text-adverts-0": {
+          "type": "text",
+          "settings": {
+            "icon": "takeaway",
+            "heading": "Free shipping",
+            "subheading": "Shout about your unique selling points",
+            "buttonLabel": "",
+            "link": ""
+          }
+        },
+        "text-adverts-1": {
+          "type": "text",
+          "settings": {
+            "icon": "exchange",
+            "heading": "Hassle free returns",
+            "subheading": "Shout about your unique selling points",
+            "buttonLabel": "",
+            "link": ""
+          }
+        },
+        "text-adverts-2": {
+          "type": "text",
+          "settings": {
+            "icon": "recycle",
+            "heading": "Eco friendly packaging",
+            "subheading": "Shout about your unique selling points",
+            "buttonLabel": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text-adverts-0",
+        "text-adverts-1",
+        "text-adverts-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "icon-color": "#c9a62d",
+        "text-color": "#11879f",
+        "background-color": "#b9e8a6"
+      }
+    }
+  },
+  "order": [
+    "1658441208dd49d963",
+    "collection_header",
+    "product_filtering",
+    "main",
+    "image",
+    "text-adverts"
+  ]
+}

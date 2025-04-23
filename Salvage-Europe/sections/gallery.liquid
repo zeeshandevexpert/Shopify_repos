@@ -1,0 +1,451 @@
+{%- liquid
+
+  assign image_height = section.settings.image_height | append: 'px'
+  assign mobile_image_height = section.settings.mobile_image_height | append: 'px'
+
+-%}
+
+{% style %}
+#shopify-section-{{ section.id }} {
+  --h3-size:  {{ section.settings.heading_size }}px;
+  --font-size:  {{ section.settings.text_size }}px;
+}
+{% for block in section.blocks %}
+  .gallery__column.block-{{ block.id }} {
+    --section-overlay-color: {{ block.settings.overlay_color | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+    --section-overlay-opacity: {{ block.settings.overlay_opacity | plus: 0 | divided_by: 100.0  }};
+    --text-color: {{ block.settings.color }};
+    --button-text: {{ block.settings.button_text_color }};
+    --button-color: {{ block.settings.button_color }};
+  }
+{% endfor %}
+.gallery__column-container.section-{{ section.id }} .gallery__column-image .onboard svg.placeholder-svg {
+    height: {{ image_height }};
+    width: 100%;
+}
+.gallery__column-container.section-{{ section.id }} .gallery__column-image {
+  /* height: {{ image_height }}; */
+  height:100%;
+  overflow: hidden;
+}
+
+.gallery__column-container.section-{{ section.id }} .gallery__column-image .featured_image {
+padding-top:100%;
+}
+.gallery__column-container.section-{{ section.id }} .gallery__column-image .box-ratio {
+  padding-bottom: {{ image_height }} ! important;
+}
+.gallery__column-container.section-{{ section.id }} .gallery__column-image img {
+  /* height: {{ image_height }};
+  object-fit: cover;
+  object-position: center;
+  width: 100%; */
+  display: block;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+@media screen and (max-width: 740px) {
+  .gallery__column-container.section-{{ section.id }} .gallery__column-image .onboard svg.placeholder-svg {
+      height: {{ mobile_image_height }};
+      width: 100%;
+  }
+  .gallery__column-container.section-{{ section.id }} .gallery__column-image {
+    height: {{ mobile_image_height }};
+  }
+  .gallery__column-container.section-{{ section.id }} .gallery__column-image .box-ratio {
+    padding-bottom: {{ mobile_image_height }} ! important;
+  }
+  .gallery__column-container.section-{{ section.id }} .gallery__column-image img {
+    height: {{ mobile_image_height }};
+    object-fit:cover;
+  }
+}
+{% endstyle %}
+
+<section class="global__section gallery__section" data-section-id="{{ section.id }}" data-aos="{{ settings.scroll_animation }}">
+
+{% if section.settings.full_width %}<div class="gridlock-fluid"><div class="row">{% endif %}
+  <div class="gallery__column-scroll row{% if section.settings.mobile_scroll %} mobile_scroll{% endif %}">
+
+    <div class="wrap-heading-title">
+      <h2 class="heading">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="gallery__column-container section-{{ section.id }}{% if section.settings.no_space %} no-space{% endif %}{% unless section.settings.display_wide %} with-padding{% endunless %}">
+      {% for block in section.blocks %}
+            <div class="gallery__column block-{{ block.id }} block-{{ forloop.index0 }}" data-block-type="{{ block.type }}" data-aos="{{ settings.scroll_animation }}" data-aos-delay="{{ forloop.index | times: 150  }}" {{ block.shopify_attributes }}>
+              {% case block.type %}
+              {% when 'image' %}
+                {%- liquid
+
+                  case block.settings.column_size
+                    when 1
+                      assign md_render = 'calc(100vw / 4)'
+                      assign lg_render = 'calc(1600px / 4)'
+                      assign width = '400'
+                    when 2
+                      assign md_render = 'calc(100vw / 3)'
+                      assign lg_render = 'calc(1600px / 3)'
+                      assign width = '600'
+                    when 3
+                      assign md_render = 'calc(100vw / 2)'
+                      assign lg_render = 'calc(1600px / 2)'
+                      assign width = '1000'
+                    when 4
+                      assign md_render = 'calc(100vw * 0.6667)'
+                      assign lg_render = 'calc(1600px * 0.6667)'
+                      assign width = '1200'
+                    when 5
+                      assign md_render = 'calc(100vw * 0.75)'
+                      assign lg_render = 'calc(1600px * 0.75)'
+                      assign width = '1400'
+                    when 6
+                      assign md_render = '100vw'
+                      assign lg_render = '100vw'
+                      assign width = '2000'
+                  endcase
+
+                -%}
+
+                  <div class="gallery__column-image">
+                    {% if block.settings.link != blank and block.settings.button_text == blank %}<a href="{{ block.settings.link }}">{% endif %}
+                      {% if block.settings.image != blank %}
+                        {% render 'collection-responsive-image',
+                          type: block.settings.image,
+                          sm_render: '300px',
+                          md_render: md_render,
+                          lg_render: lg_render,
+                          width: width
+                        %}
+                      {% else %}
+                        <div class="onboard">
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                      {% endif %}
+                    {% if block.settings.link != blank and block.settings.button_text == blank %}</a>{% endif %}
+                  </div>
+                  {% if block.settings.text or block.settings.button_text != blank and block.settings.title_text != blank %}
+                    <div class="gallery__image--caption{% if block.settings.caption_bottom %} caption-bottom{% endif %}">
+                      {% if block.settings.title_text != blank %}
+                        <h3>{{ block.settings.title_text | escape }}</h3>
+                      {% endif %}
+                      {% if block.settings.text != blank %}
+                        <div class="rte gallery__caption-text">
+                          {{ block.settings.text }}
+                        </div>
+                      {% endif %}
+                      {% if block.settings.button_text != blank and block.settings.link != blank %}
+                      <div class="gallery__column-btn-wrapper">
+                        <a href="{{ block.settings.link }}">{{ block.settings.button_text | escape }}</a>
+                      </div>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+              {% when 'text' %}
+                <div class="gallery__column-caption{% if block.settings.center_align %} center{% endif %}">
+                  {% if block.settings.title_text != blank %}
+                    <h3>{{ block.settings.title_text | escape }}</h3>
+                  {% endif %}
+                  {% if block.settings.text != blank %}
+                    <div class="rte gallery__caption-text">
+                      {{ block.settings.text }}
+                    </div>
+                  {% endif %}
+                  {% if block.settings.link != blank and block.settings.button_text != blank %}
+                    <div class="gallery__column-btn-wrapper">
+                      <a href="{{ block.settings.link }}">{{ block.settings.button_text | escape }}</a>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endcase %}
+              {% assign frac = block.settings.column_size %}
+              <style>
+                .gallery__column.block-{{ block.id }} {
+                    grid-column: auto / span {{ frac }};
+                }
+                @media screen and (max-width: 740px) {
+                  .gallery__column.block-{{ block.id }} {
+                      grid-column: auto / span 2;
+                  }
+                }
+              </style>
+            </div>
+          {% endfor %}
+    </div>
+  </div>
+  {% if section.settings.full_width %}</div></div>{% endif %}
+
+
+
+
+</section>
+
+{% schema %}
+{
+  "name": "Image gallery",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Add image or text blocks to a 6 column grid. Within each block use the controls to set how many columns each will take up"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enable full width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "no_space",
+      "label": "Remove space between",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_scroll",
+      "label": "Swipe on mobile",
+      "default": true
+    },
+    {
+      "type":      "range",
+      "id":        "image_height",
+      "min":       100,
+      "max":       1000,
+      "step":      50,
+      "unit":      "px",
+      "label":     "Image height",
+      "default":   400
+    },
+    {
+      "type":      "range",
+      "id":        "mobile_image_height",
+      "min":       100,
+      "max":       1000,
+      "step":      50,
+      "unit":      "px",
+      "label":     "Mobile image height",
+      "default":   400
+    },
+    {
+      "type":      "range",
+      "id":        "heading_size",
+      "min":       14,
+      "max":       36,
+      "step":      1,
+      "label":     "Heading size",
+      "default":   15
+    },
+    {
+      "type":      "range",
+      "id":        "text_size",
+      "min":       14,
+      "max":       24,
+      "step":      1,
+      "label":     "Subheading size",
+      "default":   15
+    }
+  ],
+	"blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "800px x 800px recommended"
+        },
+        {
+          "type":"header",
+          "content":"Content"
+        },
+        {
+          "type": "text",
+          "id": "title_text",
+          "label": "Heading",
+          "default": "Our collections"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add text to your image</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Button"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        },
+        {
+          "type":"header",
+          "content":"Appearance"
+        },
+        {
+          "type": "checkbox",
+          "id": "caption_bottom",
+          "label": "Position caption at the bottom",
+          "default": true
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color",
+          "default":"#ffffff"
+        },
+        {
+          "type":"color",
+          "id":"button_text_color",
+          "label":"Button text",
+          "default":"#ffffff"
+        },
+        {
+          "type":"color",
+          "id":"button_color",
+          "label":"Button color",
+          "default":"#000000"
+        },
+        {
+          "type": "color",
+          "id": "overlay_color",
+          "label": "Overlay color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "overlay_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Overlay opacity",
+          "default": 0
+        },
+        {
+          "type":      "range",
+          "id":        "column_size",
+          "min":       1,
+          "max":       6,
+          "step":      1,
+          "label":     "Block size",
+          "default":   2,
+          "info": "Choose how many blocks this will fill (max 6 blocks per row)"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_text",
+          "label": "Heading",
+          "default": "Our collections"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Add text blocks to call out features, updates and more.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Button"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "info": "Optional"
+        },
+        {
+          "type":"header",
+          "content":"Style"
+        },
+        {
+          "type": "checkbox",
+          "id": "center_align",
+          "label": "Center align text",
+          "default": false
+        },
+        {
+          "type":"color",
+          "id":"color",
+          "label":"Color",
+          "default":"#000000"
+        },
+        {
+          "type":"color",
+          "id":"button_text_color",
+          "label":"Button text",
+          "default":"#ffffff"
+        },
+        {
+          "type":"color",
+          "id":"button_color",
+          "label":"Button color",
+          "default":"#000000"
+        },
+        {
+          "type":      "range",
+          "id":        "column_size",
+          "min":       1,
+          "max":       6,
+          "step":      1,
+          "label":     "Block size (Maximum of 6 per row)",
+          "default":   2,
+          "info": "Choose how many blocks this will fill"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image gallery",
+      "blocks": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          }
+        ]
+      }
+    ],
+    "enabled_on": {
+      "templates": [
+        "404",
+        "article",
+        "blog",
+        "collection",
+        "index",
+        "list-collections",
+        "page",
+        "product"
+      ]
+    }
+  }
+{% endschema %}

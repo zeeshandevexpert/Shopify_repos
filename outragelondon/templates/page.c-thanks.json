@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "rich_text_gNHzcD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PDU3c6": {
+          "type": "heading",
+          "settings": {
+            "title": "The Mayfair Collection"
+          }
+        },
+        "text_6eQN7W": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><strong>WELCOME TO THE VIP CLUB<\/strong><\/p><p>Your password has been sent to your email.<\/p><p>03RD_NOV make sure to set your reminder<\/p><p>Check your Junk Mail if email not in inbox<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PDU3c6",
+        "text_6eQN7W"
+      ],
+      "custom_css": [
+        "p {font-family: courier;}",
+        ".index-section {margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "divider": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        ".section-header__title {display: none;}"
+      ],
+      "settings": {}
+    },
+    "klaform_cABNmV": {
+      "type": "klaform",
+      "custom_css": [],
+      "settings": {
+        "heading": "",
+        "form": "",
+        "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-10-21T113203.984.png",
+        "mimage": "shopify:\/\/shop_images\/Untitled_600_x_900_px_1.png"
+      }
+    }
+  },
+  "order": [
+    "rich_text_gNHzcD",
+    "main",
+    "klaform_cABNmV"
+  ]
+}

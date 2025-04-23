@@ -1,0 +1,127 @@
+$libre: "Libre Baskerville", serif;
+$itc: "ITC New Baskerville", serif;;
+
+.product-block{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    .wrap-product-block{
+        display: flex;
+        gap: 30px;
+        .image-block{
+            width: 65%;
+            .product-gallery{
+                .image{
+                    img{
+                        margin: 0 auto;
+                        width: 100%;
+                    }
+                }
+            }
+            .thumbnail-slider{
+                .slick-track{
+                    .slick-slide{
+                      padding: 5px;
+                        &.slick-current{
+                          // padding: 5px;
+                          img{
+                          box-shadow: 0 0 0 .1rem rgb(var(--color-foreground));
+                          border-color: rgb(var(--color-foreground));
+
+                          }
+                        }
+                    }
+                }
+            }
+        }
+        .content-block{
+            width: 35%;
+            .wrap-title-price{
+              .product-title{
+                font-family: var(--font-heading-family);
+                font-size: 40px;
+                margin-top: 0;
+              }
+              .price{
+                font-family: var(--font-body-family);
+                font-size: 18px;
+              }
+            }
+            .product-description{
+              font-family: var(--font-body-family);
+              font-size: 18px;
+            }
+            .buy-two-get-one {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .products {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                  height: 200px;
+                  overflow: auto;
+                  .product-box{
+                    display: block;
+                    // padding: 10px;
+                    transition: border-color 0.3s ease, background-color 0.3s ease;
+                    cursor: pointer;
+                    // border: 2px solid #ddd;
+                    // width: 200px;
+                    text-align: center;
+                    // border-radius: 10px;
+                    flex: 0 0 20%;
+                    position: relative;
+                    flex-basis: calc(20% - 10px);
+                    &:hover{
+                      border-color: #b0c4de; /* Light blue on hover */
+                    }
+                    input[type="checkbox"]:checked + .product {
+                      border: 2px solid transparent; /* Blue border when checked */
+                      background-color: #68b0eebf; /* Light blue background */
+                      border-width: 5px;
+                      // border-radius: 10px;
+                    }
+                    .addon-checkbox,
+                    .free-product-checkbox{
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      opacity: 0;
+                      inset: 0;
+                      margin: 0;
+                    }
+                  }
+                  .product {
+                   
+                     img {
+                      max-width: 100%;
+                      height: auto;
+                      width: 100%;
+                      // border-radius: 10px;
+                    }
+                    .title{
+                      margin: 0;
+                      font-size: 10px;
+                    }
+                    .price{
+                      margin: 0;
+                      font-size: 12px;
+                    }
+                  }
+     
+                }
+              }  
+              #add-to-cart-btn{
+                width: 100%;
+                border: 1px solid #000;
+                box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset)) rgba(var(--color-button-text), var(--border-opacity)), 0 0 0 calc(var(--buttons-border-width) + 1px) rgba(var(--color-button), var(--alpha-button-background));
+                background: transparent;
+                padding: 12px 20px;
+                font-family: var(--font-body-family);
+                font-size: 18px;
+                margin-top: 15px;
+              }
+        }
+    }
+}

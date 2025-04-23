@@ -1,0 +1,57 @@
+<section class="organs-details-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+    <div class="wrap-organ-details">
+        <div class="image-block">
+            <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+        </div>
+    <div class="content-block">
+        <h2 class="heading">{{ section.settings.heading }}</h2>
+        <div class="description">
+            <div class="points">
+                {{ section.settings.left_items }}
+            </div>
+            <div class="points">
+                {{ section.settings.right_items }}
+            </div>
+        </div>
+    </div>
+    </div>
+</section> 
+
+{% schema %}
+    {
+        "name": "Organ Details Block",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            },
+            {
+                "type": "richtext",
+                "id": "left_items",
+                "label": "Left Items"
+            },
+            {
+                "type": "richtext",
+                "id": "right_items",
+                "label": "Right Items"
+            }
+            
+            ],
+            "presets": [
+                {
+                    "name": "Organ Details Block"
+                }
+            ]
+    }
+    {% endschema %}

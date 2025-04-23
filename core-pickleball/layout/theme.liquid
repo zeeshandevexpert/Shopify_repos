@@ -1,0 +1,478 @@
+{% capture bsscommerce_login_require_template %}{% include 'bsscommerce_login_require' %}{% endcapture %}{% unless bsscommerce_login_require_template contains "Liquid error" %}{{ bsscommerce_login_require_template }}{% endunless %}<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}">
+<head>{{ 'bss-hide-variant.css' | asset_url | stylesheet_tag }}
+
+<!-- Anti-flickering script -->
+<script>
+  var  timeout = 3000; // Timeout value to remove the flicker (in milliseconds)
+  !function(h,i,d,e){var  t,n=h.createElement("style");n.id=e,n.innerHTML="body{opacity:0}",h.head.appendChild(n),t=d,i.rmfk=function(){var  t=h.getElementById(e);t&&t.parentNode.removeChild(t)},setTimeout(i.rmfk,t)}(document,window,timeout,"abhide");
+</script>
+
+<!-- Mida A/B Testing Script -->
+<script type="text/javascript" async src="https://cdn.mida.so/js/optimize.js?key=34MV9Wnqd0Oe6BXrGNLpJw"></script>
+
+  <style>
+    body .uwy.userway_p1 .userway_buttons_wrapper{
+    top: auto !important;
+    right: auto;
+  bottom: 25px !important;
+    left: 25px !important;
+    transform: translate(0%) !important;
+    }
+  </style>
+  
+  <script src="https://cdn.userway.org/widget.js" data-account="Z4EM23yPPT"></script>
+{% render 'replo-head' %}
+<link rel='preconnect dns-prefetch' href='https://api.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://conf.config-security.com/' crossorigin />
+<link rel='preconnect dns-prefetch' href='https://whale.camera/' crossorigin />
+<script>
+/* >> TriplePixel :: start*/
+window.TriplePixelData={TripleName:"core-pickleball.myshopify.com",ver:"2.11",plat:"SHOPIFY",isHeadless:false},function(W,H,A,L,E,_,B,N){function O(U,T,P,H,R){void 0===R&&(R=!1),H=new XMLHttpRequest,P?(H.open("POST",U,!0),H.setRequestHeader("Content-Type","application/json")):H.open("GET",U,!0),H.send(JSON.stringify(P||{})),H.onreadystatechange=function(){4===H.readyState&&200===H.status?(R=H.responseText,U.includes(".txt")?eval(R):P||(N[B]=R)):(299<H.status||H.status<200)&&T&&!R&&(R=!0,O(U,T-1,P))}}if(N=window,!N[H+"sn"]){N[H+"sn"]=1,L=function(){return Date.now().toString(36)+"_"+Math.random().toString(36)};try{A.setItem(H,1+(0|A.getItem(H)||0)),(E=JSON.parse(A.getItem(H+"U")||"[]")).push({u:location.href,r:document.referrer,t:Date.now(),id:L()}),A.setItem(H+"U",JSON.stringify(E))}catch(e){}var i,m,p;A.getItem('"!nC`')||(_=A,A=N,A[H]||(E=A[H]=function(t,e,a){return void 0===a&&(a=[]),"State"==t?E.s:(W=L(),(E._q=E._q||[]).push([W,t,e].concat(a)),W)},E.s="Installed",E._q=[],E.ch=W,B="configSecurityConfModel",N[B]=1,O("https://conf.config-security.com/model",5),i=L(),m=A[atob("c2NyZWVu")],_.setItem("di_pmt_wt",i),p={id:i,action:"profile",avatar:_.getItem("auth-security_rand_salt_"),time:m[atob("d2lkdGg=")]+":"+m[atob("aGVpZ2h0")],host:A.TriplePixelData.TripleName,plat:A.TriplePixelData.plat,url:window.location.href,ref:document.referrer,ver:A.TriplePixelData.ver},O("https://api.config-security.com/event",5,p),O("https://whale.camera/live/dot.txt",5)))}}("","TriplePixel",localStorage);
+/* << TriplePixel :: end*/
+</script>
+<!-- Global site tag (gtag.js) - Google Ads: 477018567 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-477018567"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-477018567');
+</script>{{ 'tiny.content.min.css' | asset_url | stylesheet_tag }}
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="author" content="Debutify">
+  <meta name="google-site-verification" content="K89pb2XUMtAib7aXJ_Rofal4Uol_QID9qY7GiVN4y94" />
+  <!-- Fav icon ================================================== -->
+  {% if settings.favicon %}
+    <link sizes="192x192" rel="shortcut icon" href="{{ settings.favicon | img_url: '192x192' }}" type="image/png">
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  <title>
+    {{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+  </title>
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
+
+  <!-- Social meta ================================================== -->
+  {% include 'social-meta-tags' %}
+
+  <!-- CSS ================================================== -->
+  {% if page.handle == 'camp' or collection.handle == 'camps' %}
+  {{ 'custom-landing-page.css' | asset_url | stylesheet_tag }}
+{% endif %}
+  
+  {{ 'global.css' | asset_url | stylesheet_tag }}
+    {{ 'main-styling.css' | asset_url | stylesheet_tag }}
+    {{ 'responsive.css' | asset_url | stylesheet_tag }}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+  <!-- Vendors ================================================== -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <style>
+  
+        #core-pickleball-lp-paddle div#shopify-section-header {
+        visibility: hidden;
+        height: 0px;
+    }
+    #core-pickleball-lp-paddle #shopify-section-header > div > header > div > div.nav-containers.nav-container-right-icons > ul > li:nth-child(3) {
+        visibility: visible;
+    }
+    #core-pickleball-lp-paddle #shopify-section-header > div > header > div > div.nav-containers.nav-container-right-icons > ul > li:nth-child(3) > a > span.icon-fallback-text{color:white;}
+</style>
+  
+  <!-- Sections ================================================== -->
+  <script>
+    window.theme = window.theme || {};
+    theme.strings = {
+      zoomClose: {{ "products.zoom.close" | t | json }},
+      zoomPrev: {{ "products.zoom.prev" | t | json }},
+      zoomNext: {{ "products.zoom.next" | t | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      addressError: {{ 'home_page.map.address_error' | t | json }},
+      addressNoResults: {{ 'home_page.map.address_no_results' | t | json }},
+      addressQueryLimit: {{ 'home_page.map.address_query_limit_html' | t | json }},
+      authError: {{ 'home_page.map.auth_error_html' | t | json }},
+      cartCookie: {{ 'cart.general.cookies_required' | t | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      gridType: {{ settings.collection_products_grid | json }}
+    };
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> 
+  <script>
+   // Initialize Swiper
+        var mhswiper = new Swiper(".testimonialSwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                350: {
+                    slidesPerView: 1,
+                },
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+    // Initialize videos for muted autoplay (if needed for some browsers)
+$(".myvideos").each(function () {
+    this.muted = true; // Start muted
+    this.play();       // Play to initialize (browsers allow muted autoplay)
+    this.pause();      // Immediately pause it
+});
+
+// Hover logic to play and pause videos
+$(".video-card-1").on("mouseover", function () {
+    const video = $(this).find(".myvideos")[0];
+    video.currentTime = 0; // Reset the video to the beginning
+    video.muted = false;   // Unmute the video
+    video.play();          // Play the video
+
+    // Stop Swiper autoplay using the specific Swiper instance
+    mhSwiper.autoplay.stop();
+}).on("mouseout", function () {
+    const video = $(this).find(".myvideos")[0];
+    video.muted = true;    // Mute the video
+    video.pause();         // Pause the video
+
+    // Resume Swiper autoplay using the specific Swiper instance
+    mhSwiper.autoplay.start();
+});
+
+// Listen for video end event (optional, to skip to the next slide)
+$(".myvideos").on("ended", function () {
+    mhSwiper.slideNext();
+});
+
+</script>
+
+    
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("myVideo");
+
+        // Ensure the video is muted before attempting to play (to comply with autoplay policies)
+        video.muted = true;
+
+        // Trigger the play method
+        video.play().catch((error) => {
+            console.log("Autoplay was prevented:", error);
+        });
+    });
+</script>
+
+
+
+ {% comment %}
+   <script>
+    $(document).ready(function () {
+        // Initialize videos to work around autoplay restrictions
+        $(".myvideos").each(function () {
+            this.muted = true; // Start muted
+            this.play();       // Play to initialize (browsers allow muted autoplay)
+            this.pause();      // Immediately pause it
+        });
+
+        // Hover logic
+        $(".video-card-1").on("mouseover", function () {
+            const video = $(this).find(".myvideos")[0];
+            video.currentTime = 0; // Reset the video to the beginning
+            video.muted = false;   // Unmute the video
+            video.play();          // Play the video
+        }).on("mouseout", function () {
+            const video = $(this).find(".myvideos")[0];
+            video.muted = true;    // Mute the video
+            video.pause();         // Pause the video
+        });
+    });
+</script>
+{% endcomment %}
+  {{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
+  
+  {% include 'currency-detection' %}
+  
+  <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  <script src="{{ 'dbtfy-addons.js' | asset_url }}" defer="defer"></script> <!-- Header hook for plugins ================================================== -->
+  <!-- starapps_scripts_start -->
+<!-- This code is automatically managed by StarApps Studio -->
+<!-- Please contact support@starapps.studio for any help -->
+{% include "starapps-language-meta" %}
+<!-- starapps_scripts_end -->
+{{ content_for_header }}
+  
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  {% comment %}
+    If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet"> 
+  {% if template == 'index' %}
+    {{ 'home-rd.css' | asset_url | stylesheet_tag }}
+  {% endif %}
+  
+  
+  {% if template.directory == 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  
+{% include 'pagefly-header' %}
+{% include 'judgeme_core' %}
+{% include 'kart_discount' %}
+{% comment %}
+{% capture boostersnippet %}
+  {% include "booster-apps-common" %}
+{% endcapture %}
+{% unless boostersnippet contains "Liquid error" %}
+  {{ boostersnippet }}
+{% endunless %}
+{% endcomment %}
+
+{{ 'custom-rd.css' | asset_url | stylesheet_tag }}
+{% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-header' %}{% endif %}{% if content_for_header contains 'bss-b2b-customer-portal' %}{% render "bss-bcp-header" %}{% endif %}
+  {% render 'shogun-head' %}
+
+<style>
+body#paddle-napollo main.main-content {
+    padding: 0;
+}
+</style>
+
+{% if template contains 'collection' %}{{ 'https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937' | script_tag }}{% endif %}
+  {{ 'custom_pickleball.css' | asset_url | stylesheet_tag }}
+  {{ 'custom_pickleball.js' | asset_url | script_tag }}
+{% include 'pagefly-app-header' %}</head>  
+<body id="{{ page_title | handle }}"
+      class="{% if settings.show_announcement %}announcement-active{% endif %}
+             {% if settings.hide_announcement_mobile %}announcement-mobile-hide{% endif %}
+             {% if settings.sticky_header %}sticky-header{% endif %}
+             {% if settings.hero_header %}transparent-header{% endif %}
+             {% if customer %}customer-logged-in {% endif %}
+             {{ page_title }}
+             template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
+
+  <div id="SearchDrawer" class="drawer drawer--top">{% include "dbtfy-smart-search" %}
+    <div class="drawer__inner">
+    	{% include 'search-bar', input_type: 'input-group-full', search_location: 'drawer' %}
+    </div>
+  </div>
+
+  {% section 'drawer-menu' %}
+
+  <div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-header drawer--has-fixed-footer">
+    <div class="drawer__fixed-header">
+      <div class="drawer__header">
+        <div class="drawer__title">
+          <a href="{{ routes.cart_url }}">
+            <span class="fas fa-shopping-{{ settings.cart_icon }}" aria-hidden="true"></span>
+            {{ 'cart.general.title' | t }}
+          </a>
+        </div>
+        <div class="drawer__close">
+          <button type="button" class="btn btn-square-small icon-fallback-text drawer__close-button js-drawer-close">
+            <span class="fas fa-times" aria-hidden="true"></span>
+            <span class="fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__inner">
+      <p class="ajaxcart-loading-icon fas fa-spinner fa-spin text-center"></p>
+      <div class="cart-empty-container text-center">
+        <p class="cart--empty-message">{{ 'cart.general.empty' | t }}</p>
+        <a href="{{ settings.browsing_link }}" class="btn {{ settings.browsing_button_style }}  cart--continue-browsing">{{ 'cart.general.continue_browsing_html' | t }}</a>
+        <p class="cookie-message">{{ 'cart.general.cookies_required' | t }}</p>
+      </div>
+      {% include "dbtfy-cart-countdown" %}<div id="CartContainer" class="drawer__cart"></div>
+    </div>
+  </div>
+
+  <div id="PageContainer" class="page-container">
+    
+    {% include 'announcement' %}
+
+    {% section 'header' %}
+    
+    {% unless template == 'collection' or template == 'article' %}
+      {% include 'breadcrumbs' %}
+    {% endunless %}
+
+    <main class="main-content" role="main">
+      <div class="{% if template == 'index' or template == 'collection' or template == 'product' or template == 'product.new-top-tank' or template == 'article' %}wrapper-full
+                  {% elsif template == 'page.full-width' %}wrapper-fluid  {% elsif template == 'page.fullblank' %}wrapper-full{% elsif template == 'page.custom-paddle' %}paddle-page
+                  {% else %} wrapper{% endif %}">
+
+        {{ content_for_layout }}
+      </div>
+    {% capture bsscommerce_passcode_to_see_price_product_custom %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endcapture %}{% unless bsscommerce_passcode_to_see_price_product_custom contains "Liquid error" %}{% render 'bss-passcode-to-see-price-js.liquid' %}{% endunless %}{% capture bsscommerce_login_to_see_price_product_custom %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endcapture %}{% unless bsscommerce_login_to_see_price_product_custom contains "Liquid error" %}{% render 'bsscommerce-login-to-see-price-custom-js.liquid' %}{% endunless %}{% capture bss_ltap_fl_redirect %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endcapture %}{% unless bss_ltap_fl_redirect contains "Liquid error" %}{% render 'bss-ltap-fl-redirect.liquid' %}{% endunless %}</main>
+
+    {% section 'guarantee' %}  
+
+   {% section "footer" %}
+
+    {% if settings.show_top_button %}
+      <a href="#" class="btn-top btn btn--square btn-top-{{ settings.top_button_position }} {% if settings.top_button_mobile %}small--hide{% endif %}">
+        <span class="fas fa-arrow-up"></span>
+      </a>
+    {% endif %}
+    <div class="overlay-drawer"></div>
+  </div>
+  
+  {% comment %}
+    Template-specific js
+  {% endcomment %}
+  <script>
+    {% if resetPassword %}
+      $(function() {
+        timber.resetPasswordSuccess();
+      });
+    {% endif %}
+  </script>
+
+  {% comment %}
+    Ajaxify your cart with this plugin.
+    Documentation:
+      - http://shopify.com/timber#ajax-cart
+  {% endcomment %}
+  {% if settings.cart_type == 'drawer' %}
+    {% include 'ajax-cart-template' %}
+  {% endif %}
+
+  {% if template.name == 'product' or template.name == 'index' %}
+    <script>
+      // Override default values of shop.strings for each template.
+      // Alternate product templates can change values of
+      // add to cart button, sold out, and unavailable states here.
+      theme.productStrings = {
+        addToCart: {{ 'products.product.add_to_cart' | t | json }},
+        soldOut: {{ 'products.product.sold_out' | t | json }},
+        unavailable: {{ 'products.product.unavailable' | t | json }}
+      }
+    </script>
+  {% endif %}
+  
+  {% if template.name == 'collection' %}
+    <script>
+      /* Product Tag Filters - Good for any number of filters on any type of collection pages */
+      var collFilters = jQuery('.tag-filter');
+      collFilters.change(function() {
+        var newTags = [];
+        collFilters.each(function() {
+          if (jQuery(this).val()) {
+            newTags.push(jQuery(this).val());
+          }
+        });
+        if (newTags.length) {
+          var query = newTags.join('+');
+          window.location.href = jQuery('{{ 'tag' | link_to_tag: 'tag' }}').attr('href').replace('/' + 'tag', '/' + query);
+        }
+        else {
+          {% if collection.handle %}
+          window.location.href = '/collections/{{ collection.handle }}';
+          {% elsif collection.products.first.type == collection.title %}
+          window.location.href = '{{ collection.title | url_for_type }}';
+          {% elsif collection.products.first.vendor == collection.title %}
+          window.location.href = '{{ collection.title | url_for_vendor }}';
+          {% endif %}
+        }
+      });
+    </script>
+  {% endif %}
+  
+  {% if template.name == 'cart' and settings.cart_top_button %}
+  <script>
+    $('document').ready(function(){
+      $('#topCheckoutButton').click(function(event){
+        event.preventDefault();
+        $('.cart__checkout').click();
+      });
+    });
+    
+  </script>
+  {% endif %}
+      {% include "dbtfy-chat-box" %} {% include "dbtfy-cookie-box" %} {% include "dbtfy-newsletter-popup" %} {% include "dbtfy-quick-view", type: "container" %} {% include "dbtfy-sales-pop" %} {% section "dbtfy-upsell-popup" %} {% include 'socialboost-widgets' %} {% render 'spurit_po2_theme_snippet' %}
+  {% include 'paywhirl-settings' %}
+  
+ 
+ 
+
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+  <!-- Stamped - End Script -->
+  <script async type="text/javascript" data-api-key="pubkey-SA29Db3hp02Gt0E2ZCqv07uE9bO22f" id="stamped-script-widget" src="https://cdn1.stamped.io/files/widget.min.js"></script>
+  <!-- Stamped - End Script -->
+  
+
+  
+  
+{% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-jquery-341-js' %}{% include 'bss-b2b-js' %}{% endif %}{% if request.path contains "/apps/customer-portal" %}{% if content_for_header contains 'bss-b2b-customer-portal' %}{% render "bss-b2b-customer-portal-styles" %}{% endif %}{% endif %}{% if content_for_header contains 'bss-b2b-customer-portal' %}{% render "bss-bcp-js" %}{% endif %}
+
+{% render 'paywhirl-main' %}
+  
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="{{ 'hm-landing-script.js' | asset_url }}" defer></script>
+
+  
+</body>
+</html>
+
+ <script>
+    $('document').ready(function(){
+      $('.dbtfy-color_swatches .swatch .swatch-element label[for=swatch-1-yellow]').click(function(){
+        $(".single-option-selector__radio option[value='24 Core Pickleballs (Out of Stock)']").css('display', 'none');
+        $(".single-option-selector__radio option[value='50 Core Pickleballs (pre-sale)']").css('display', 'none');
+        $(".single-option-selector__radio option[value='100 Core Pickleballs (pre-sale)']").css('display', 'none');
+        
+      });
+      $('.dbtfy-color_swatches .swatch .swatch-element label[for=swatch-1-green]').click(function(){
+        $(".single-option-selector__radio option[value='24 Core Pickleballs (Out of Stock)']").css('display', 'block');
+        $(".single-option-selector__radio option[value='50 Core Pickleballs (pre-sale)']").css('display', 'block');
+        $(".single-option-selector__radio option[value='100 Core Pickleballs (pre-sale)']").css('display', 'block');
+      });
+    });
+    
+  </script>
+
+  
+
+<!-- Start VWO Async SmartCode -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<script type='text/javascript' id='vwoCode'>
+window._vwo_code || (function() {
+var account_id=851240,
+version=2.0,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(){if(!f){f=true;var e=d.getElementById('_vis_opt_path_hides');if(e)e.parentNode.removeChild(e)}},finished:function(){return f},load:function(e){var t=this.getSettings(),n=d.createElement('script'),i=this;if(t){n.textContent=t;d.getElementsByTagName('head')[0].appendChild(n);if(!w.VWO||VWO.caE){stT.removeItem(cK);i.load(e)}}else{n.fetchPriority='high';n.src=e;n.type='text/javascript';n.onerror=function(){_vwo_code.finish()};d.getElementsByTagName('head')[0].appendChild(n)}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t=d.currentScript,n=d.createElement('style'),i=this.hide_element(),r=t&&!t.async&&i?i+this.hide_element_style():'',c=d.getElementsByTagName('head')[0];n.setAttribute('id','_vis_opt_path_hides');v&&n.setAttribute('nonce',v.nonce);n.setAttribute('type','text/css');if(n.styleSheet)n.styleSheet.cssText=r;else n.appendChild(d.createTextNode(r));c.appendChild(n);this.load('https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&vn='+version)}};w._vwo_code=code;code.init();})();
+</script>
+<!-- End VWO Async SmartCode -->

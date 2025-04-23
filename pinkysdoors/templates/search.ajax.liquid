@@ -1,0 +1,19 @@
+{% layout none %}
+{% paginate search.results by 50 %}
+{% if search.performed %}
+<div id="Collection">
+  <div class="page-width grid flex">
+    {% for item in search.results %}
+      {% if item.featured_image %}
+    	<div class="grid__item medium-up--one-third small--one-half">
+        {% include 'product-card-grid', product: item %}
+	    </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% if paginate.pages > 1 %}
+	{% include 'pagination' %}
+{% endif %}
+{% endif %}
+{% endpaginate %}

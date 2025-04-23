@@ -1,0 +1,301 @@
+{
+  "sections": {
+    "11a22c89-64e8-4c25-b512-7a122e77657e": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "technology_banner_section_FXqpcA": {
+      "type": "technology-banner-section",
+      "blocks": {
+        "slide_pgbwTT": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step-1.png",
+            "text": "divert from landfill"
+          }
+        },
+        "slide_zYXKnU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step-2.png",
+            "text": "molecular regeneration"
+          }
+        },
+        "slide_yBVgP7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step-3.png",
+            "text": "pellets"
+          }
+        },
+        "slide_gUJHfU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step-4_bf1f58ba-25db-4f71-b3ee-160347bd63f2.png",
+            "text": "yarns"
+          }
+        },
+        "slide_axx4rE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step-5_aef338a5-92a2-488e-8cce-bd2525403dbe.png",
+            "text": "fabric"
+          }
+        },
+        "slide_qXa99M": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step-6.png",
+            "text": "repeat"
+          }
+        }
+      },
+      "block_order": [
+        "slide_pgbwTT",
+        "slide_zYXKnU",
+        "slide_yBVgP7",
+        "slide_gUJHfU",
+        "slide_axx4rE",
+        "slide_qXa99M"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/cycora-technology-gradient-bg.jpg"
+      }
+    },
+    "technology_two_block_section_RkBLGe": {
+      "type": "technology-two-block-section",
+      "blocks": {
+        "block_AiF7jh": {
+          "type": "block",
+          "settings": {
+            "media_type": "video_file",
+            "vimeo_youtube_video": "",
+            "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/d555bc53ced64057afe49f7029527206.mp4",
+            "count": "",
+            "text": "end-of-life textiles are sorted, consolidated, and diverted from landfill or incineration. they’re then shredded and fed into our machines to separate mixed fibers like cotton, nylon and wool."
+          }
+        },
+        "block_yqxAAq": {
+          "type": "block",
+          "settings": {
+            "media_type": "video_file",
+            "vimeo_youtube_video": "",
+            "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b9f31161a622480fa4e6878341a35d0c.mp4",
+            "count": "",
+            "text": "additives like dyes and finishes are removed to further purify the raw materials at a molecular level, prepping them to turn into new, high-quality cycora® material."
+          }
+        }
+      },
+      "block_order": [
+        "block_AiF7jh",
+        "block_yqxAAq"
+      ],
+      "settings": {
+        "heading": "the complexity of fashion",
+        "text": "until today, there hasn't been a solution for what to do with our clothes at the end of their life. the complex materials and components in garments make recycling difficult, and current methods often <span class=\"linked-drophover\">downcycle<i><strong>'downcycle'<\/strong>waste is a perception of material that has been deemed with no value. we're on a mission to reimagine waste streams.<\/i><\/span> or degrade the quality. through cycora's new advanced regeneration technology, we now have a fully circular solution that maintains the high quality of our materials life cycle after life cycle."
+      }
+    },
+    "technology_blurb_section_BzCpee": {
+      "type": "technology-blurb-section",
+      "blocks": {
+        "block_HAWAJD": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_52.png",
+            "text": "50%+ of global fiber production is polyester, making it the most widely used and fastest growing textile fiber in the world.<sup>1<\/sup>",
+            "link": "",
+            "link_text": "<sup>1<\/sup> Textile Exchange, 2022"
+          }
+        },
+        "block_mU9qG4": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_53.png",
+            "text": "~99% of garments are landfilled, incinerated, or downcycled at the end of their life.<sup>2<\/sup>",
+            "link": "",
+            "link_text": "<sup>2<\/sup> Textile Exchange, 2022"
+          }
+        },
+        "block_tDUNd3": {
+          "type": "block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_54.png",
+            "text": "~10% of global co2 emissions come from the textile industry.<sup>3<\/sup>",
+            "link": "",
+            "link_text": "<sup>3<\/sup> European Parliament, 2021"
+          }
+        }
+      },
+      "block_order": [
+        "block_HAWAJD",
+        "block_mU9qG4",
+        "block_tDUNd3"
+      ],
+      "settings": {
+        "heading": "why our technology is needed",
+        "text": "the state of fashion is a complex challenge – from material creation and finite raw resources, to consumption and disposal."
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "index_vintage_RrjqUU": {
+      "type": "index-vintage",
+      "disabled": true,
+      "custom_css": [
+        "h2,p {color: #f4f6f8;}"
+      ],
+      "settings": {
+        "text_color": "",
+        "title": "our technology",
+        "description": "powered by molecular regeneration technology, cycora® is made from<br> end-of-life textiles in order to keep our clothing in the loop and out of landfills.",
+        "button_title": "",
+        "button_link": "",
+        "media_type": "video_file",
+        "vimeo_youtube_video": "",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/35674e51d8dc4d7eac04911407a865b2.mp4"
+      }
+    },
+    "fc5e571b-b2eb-48b1-9230-26d4d559cb85": {
+      "type": "index-process",
+      "disabled": true,
+      "settings": {
+        "text_color": "#ffffff",
+        "title": "using textiles of the past to make the clothing of the future",
+        "media_type": "video_file",
+        "image": "shopify:\/\/shop_images\/orange_is_the_new_cycora.png",
+        "image_mobile": "shopify:\/\/shop_images\/orange_is_the_new_cycora.png",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/731444637",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3461903a543a41f0be42da1402bc55f6.mp4"
+      }
+    },
+    "16541546962f890120": {
+      "type": "overview-processes",
+      "blocks": {
+        "c18fcc78-133f-41d8-ab16-f1ab0f39c110": {
+          "type": "slide",
+          "settings": {
+            "title": "50% + of global fiber production is polyester, making it the most widely used and fastest growing textile fiber in the world.<sup>1<\/sup>",
+            "description": "<p>1 Textile Exchange, 2022<\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/2021206_CycoraxH_M_ML-97.jpg",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        },
+        "98f41f07-a8ad-4d6c-970d-c932542d9743": {
+          "type": "slide",
+          "settings": {
+            "title": "~99% of garments are landfilled, incinerated, or downcycled at the end of their life.<sup>2<\/sup>",
+            "description": "<p>2 Textile Exchange, 2022<\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/2021206_CycoraxH_M_ML-45.jpg",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        },
+        "a9102849-5097-42cb-94a0-62c694b133ec": {
+          "type": "slide",
+          "settings": {
+            "title": "~10% of global co2 emissions come from the textile industry.<sup>3<\/sup>",
+            "description": "<p>3 European Parliament, 2021<\/p>",
+            "media_type": "image",
+            "image": "shopify:\/\/shop_images\/Untitled_design-44.png",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        }
+      },
+      "block_order": [
+        "c18fcc78-133f-41d8-ab16-f1ab0f39c110",
+        "98f41f07-a8ad-4d6c-970d-c932542d9743",
+        "a9102849-5097-42cb-94a0-62c694b133ec"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".overview-processes-section {background-color: #f4f6f8;}",
+        ".overview-processes-top {color: #151a1d; text-align: left;}"
+      ],
+      "settings": {
+        "mode": "light-mode",
+        "subtitle": "",
+        "title": "the current linear state of fashion",
+        "description": "<p>a complex challenge–from material creation and finite raw resources, to consumption and disposal.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "index_vintage_QBKNx7": {
+      "type": "index-vintage",
+      "disabled": true,
+      "settings": {
+        "text_color": "",
+        "title": "",
+        "description": "",
+        "button_title": "",
+        "button_link": "",
+        "media_type": "video_file",
+        "vimeo_youtube_video": "",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9a7055dc1cf24d70bfdf2f9b26fc6a78.mov"
+      }
+    },
+    "index_vintage_DW9QzK": {
+      "type": "index-vintage",
+      "disabled": true,
+      "custom_css": [
+        "h2,p {color: #f4f6f8;}"
+      ],
+      "settings": {
+        "text_color": "",
+        "title": "where creativity and circularity intersect",
+        "description": "as a material ingredient, cycora® partners with brands to create high-quality, essential products that are made to live harmoniously with nature. look for us in the composition of your favorite garment.",
+        "button_title": "",
+        "button_link": "",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/pushnpixels_httpss.mj.runbsA4-1CN9FI_a_3d_rendering_depicting_f_7d64b28a-b99b-45e1-a7d2-06400d17ba8c.png",
+        "vimeo_youtube_video": "",
+        "video_file": ""
+      }
+    },
+    "technology_cycle_slider_gETbDR": {
+      "type": "technology-cycle-slider",
+      "blocks": {
+        "slide_fJ8tY9": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/Group_2_3.png",
+            "title": "where creativity and circularity intersect",
+            "text": "as a material ingredient, cycora® partners with brands to create high-quality, essential products that are made to live harmoniously with nature. look for us in the composition of your favorite garment.",
+            "btn_text": "discover our partners",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "slide_fJ8tY9"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "11a22c89-64e8-4c25-b512-7a122e77657e",
+    "technology_banner_section_FXqpcA",
+    "technology_two_block_section_RkBLGe",
+    "technology_blurb_section_BzCpee",
+    "main",
+    "index_vintage_RrjqUU",
+    "fc5e571b-b2eb-48b1-9230-26d4d559cb85",
+    "16541546962f890120",
+    "index_vintage_QBKNx7",
+    "index_vintage_DW9QzK",
+    "technology_cycle_slider_gETbDR"
+  ]
+}

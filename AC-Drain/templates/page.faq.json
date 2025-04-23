@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "title": "FREQUENTLY ASKED QUESTIONS - FLOXTREME",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "blurb_section_ACjnWc": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": true,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Rectangle.png",
+        "video_media": "",
+        "heading": "",
+        "description": "<h2>Why do AC drain lines clog?<\/h2><p>AC drain blockages are caused by a combination of mold, mildew, algae and  other organic matter that develops in your AC’s drain pan. This toxic slime  then spreads into the drain line, where it blocks the flow of condensation, causing over flowing and flooding.<\/p><h2>Are AC drain lines clogging more frequently?<\/h2><p>Clogged drain lines are the most common cause of AC shut-offs, and typically  account for over half of AC contractors’ service calls. In the past, the evaporator  coils of AC units were made of copper, a natural algaecide. With the industry’s switch to aluminum evaporator coils, clogged drain lines are becoming more common than ever. <\/p><h2>Can I fix a clog myself?<\/h2><p>Manually clearing the sludge out of your drain pipe is a temporary solution, at best.  The contaminants are still in your AC’s drain system, and they must be removed. Using corrosive home remedies like bleach or vinegar to clean your drain line can seriously damage your unit’s evaporator coil.<\/p><h2>How can I prevent clogs in my AC drain?<\/h2><p>FloXtreme is a preventive solution designed to stop the problem where it starts: in  your AC’s drain pan. Its patented wicking system delivers a slow, continuous drip of cleaning solution into your drain pan and through the drain line. The water keeps flowing, and your AC unit keeps going!<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_gBU6Dz": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": true,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/image_2.png",
+        "video_media": "",
+        "heading": "",
+        "description": "<h2>How does FloXtreme work?<strong><br\/><\/strong><\/h2><p>FloXtreme’s patented technology uses the natural vacuum of your AC system to send a low-dose drip of environmentally friendly cleaner into your AC’s drain pan, where algae and bacteria begin. The solution mixes with condensation from your AC unit, then flows  through the drain line to prevent the growth and accumulation of toxic sludge.<\/p><h2>Is FloXtreme safe?<strong><br\/><\/strong><\/h2><p>Our proprietary solution is the strongest on the market, yet it is non-toxic, non-acidic  and environmentally friendly. It keeps algae and bacteria away without damaging your AC unit.<\/p><h2>Can I install FloXtreme myself?<\/h2><p>FloXtreme is easy to install, and can be done in less than one minute. There is no need  for drilling, and there are no phone apps to download or electronics to maintain. You  simply thread the provided slip adaptor and fitting into your AC unit’s drain plug, insert our patented delivery tube into your bottle of FloXtreme solution, and invert the bottle with the delivery tube over the fitting. It’s that simple. Check out our video ((insert link)) to see how easy it is. <br\/><\/p><p>If you prefer, you can have your AC contractor install FloXtreme for you and check your drain line to ensure that everything is clear before you start treatment, but this isn’t required. <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_FBXanF": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": true,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/76004c1c-7dd9-4dc3-875f-e055930ee5bf.png",
+        "video_media": "",
+        "heading": "",
+        "description": "<h2>How is FloXtreme different from other products? <br\/><\/h2><p>Unlike home remedies and other products on the market, FloXtreme begins at the drain pan and continuously treats the entire AC drainage system to prevent the growth of mold,  mildew, algae and bacteria. Because it uses the natural vacuum pressure of your AC unit to dispense our environmentally friendly cleaner throughout the drain line, there are no complicated electronics or phone apps to install and maintain. Our proprietary solution is strong enough to prevent the development of toxic sludge, yet it is non toxic and won’t damage your AC unit. <br\/><\/p><p>FloXtreme was invented by someone who knows HVAC systems inside and out: Brian  Hoskins, an AC contractor who has serviced and installed AC units in Florida’s demanding climate for over 20 years. Brian designed a cleaning system that is easy for consumers to install and maintain: one that effectively and economically prevents clogging and keeps the cool air flowing. <\/p><h2>How many FloXtreme kits do I need?<strong><br\/><\/strong><\/h2><p>You’ll need an FloXtreme kit for each AC unit in your home or offce. <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_mBbQqR": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": true,
+        "reverse": false,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_195_2.png",
+        "video_media": "",
+        "heading": "",
+        "description": "<h2>How often do I need to replenish the solution?<\/h2><p>Solution use varies, depending on the outdoor climate and the run time of your AC unit.  Typically, one bottle lasts about three months<\/p><h2>Where can I get more FloXtreme solution?<\/h2><p>You can order FloXtreme to be delivered conveniently to your door through our website. Refills can be purchased individually, or you can subscribe for regular deliveries of FloXtreme at a discount, to ensure that you always have a supply on hand. <\/p><h2>What is your guarantee?<\/h2><p>We invite you to try FloXtreme today, risk-free. If you are not completely satisfied with its performance, we’ll give you a full refund within 90 days of purchase, guaranteed. <\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    },
+    "blurb_section_AtKMmx": {
+      "type": "blurb-section",
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Frame_2.png",
+        "video_media": "",
+        "heading": "",
+        "description": "<h2>What is Floxtreme ClearShot?<\/h2><p> Floxtreme ClearShot is a powerful AC drain line and pan cleaner designed to dissolve sludge buildup and keep your AC system running smoothly. It's formulated to be both fast-acting and safe for all AC components.<\/p><p><\/p><h2>Is Floxtreme ClearShot safe for my AC system?<\/h2><p>Yes, Floxtreme ClearShot is completely safe for your AC system. It will not harm your AC pan, coils, or any other components. It is designed to provide effective cleaning without causing damage or corrosion.<\/p><p><\/p><h2> How often should I use Floxtreme ClearShot?<\/h2><p>For optimal performance, it is recommended to use Floxtreme ClearShot as part of your regular AC maintenance routine. Using it every 2-3 months can help prevent future clogs and keep your AC system running efficiently.<\/p>",
+        "button_title": "",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "blurb_section_ACjnWc",
+    "blurb_section_gBU6Dz",
+    "blurb_section_FBXanF",
+    "blurb_section_mBbQqR",
+    "blurb_section_AtKMmx"
+  ]
+}

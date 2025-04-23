@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "38dc023c-d847-4770-81df-9d1cf13129a1": {
+          "type": "quick_link",
+          "disabled": true,
+          "settings": {
+            "collection_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "38dc023c-d847-4770-81df-9d1cf13129a1"
+      ],
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "e7efe11e-3b41-4ae3-8477-209d0dfd0508": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "9f495bee-6e24-4986-89df-8a819e19e505": {
+          "type": "marketing_tile",
+          "disabled": true,
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify://shop_images/Marketing-Tile-ARAV-Cases.jpg",
+            "link": "https://www.wildflowercases.com/collections/new-releases",
+            "position": 2,
+            "title": "Match your AirPods with your Case",
+            "paragraph": "<p>Shop our iPhone Cases to match your AirPods</p>",
+            "button_text": "Shop iPhone Cases",
+            "hide_text_mobile": false
+          }
+        }
+      },
+      "block_order": [
+        "9f495bee-6e24-4986-89df-8a819e19e505"
+      ],
+      "disabled": true,
+      "settings": {
+        "collection_override": "",
+        "columns_desktop": 3,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "button_style": "add_to_cart",
+        "shop_by_size": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "cdf193ed-3acb-47a1-9c99-10066ca343af": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "a9008173-2219-47bd-a522-1deb33e15680": {
+          "type": "marketing_tile",
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify://shop_images/Marketing-Tile-New-Releases.jpg",
+            "link": "shopify://collections/shop-all",
+            "position": 5,
+            "title": "New Release ˚✿˖°",
+            "paragraph": "<p>Shop our newest release 'Lilac and Blue Floral' </p>",
+            "button_text": "Shop New Releases",
+            "hide_text_mobile": false
+          }
+        },
+        "73f04967-3b4a-4188-8deb-7a04de4a86db": {
+          "type": "quote_tile",
+          "settings": {
+            "tile_size": "full-width",
+            "link": "",
+            "position": 16,
+            "title": "Love wildflower cases!!! The covers are cool and fun and protect my headphones great! Have gotten so many compliments on them and will be buying more from this company!",
+            "author": "Mark B."
+          }
+        }
+      },
+      "block_order": [
+        "a9008173-2219-47bd-a522-1deb33e15680",
+        "73f04967-3b4a-4188-8deb-7a04de4a86db"
+      ],
+      "settings": {
+        "collection_override": "",
+        "columns_desktop": 4,
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "button_style": "add_to_cart",
+        "shop_by_size": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "c7a5f3d1-8143-4ebd-b3ef-1e0b227abac8": {
+      "type": "foursixty",
+      "blocks": {
+        "dc9d77f7-0cfa-416e-8436-4562e42bf653": {
+          "type": "title",
+          "settings": {
+            "title": "Shop Instagram"
+          }
+        },
+        "56cbff19-6c51-4178-b4ec-bf18ae94ae08": {
+          "type": "feed",
+          "settings": {
+            "feed_id": "wildflower-cases",
+            "total_images": 7,
+            "big_first_image": false,
+            "per_row": 5,
+            "image_margin": 5,
+            "feed_type": "slider"
+          }
+        },
+        "65220432-041d-4536-91d8-23e2112853cf": {
+          "type": "button",
+          "settings": {
+            "link": "shopify://pages/shop-wildflowercases-instagram",
+            "link_text": "Shop Our Instagram",
+            "button_style": "button"
+          }
+        }
+      },
+      "block_order": [
+        "dc9d77f7-0cfa-416e-8436-4562e42bf653",
+        "56cbff19-6c51-4178-b4ec-bf18ae94ae08",
+        "65220432-041d-4536-91d8-23e2112853cf"
+      ],
+      "settings": {
+        "width": "page-width",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "margins": 20,
+        "border_top": true,
+        "text_align": "center"
+      }
+    },
+    "marketing_tile_section_8cqAGJ": {
+      "type": "marketing-tile-section",
+      "blocks": {
+        "quote_tile_37i6qc": {
+          "type": "quote_tile",
+          "settings": {
+            "tile_size": "full-width",
+            "link": "",
+            "position": 16,
+            "title": "Love wildflower cases!!! The covers are cool and fun and protect my headphones great! Have gotten so many compliments on them and will be buying more from this company!",
+            "author": "Mark B."
+          }
+        }
+      },
+      "block_order": [
+        "quote_tile_37i6qc"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "e7efe11e-3b41-4ae3-8477-209d0dfd0508",
+    "cdf193ed-3acb-47a1-9c99-10066ca343af",
+    "c7a5f3d1-8143-4ebd-b3ef-1e0b227abac8",
+    "marketing_tile_section_8cqAGJ"
+  ]
+}

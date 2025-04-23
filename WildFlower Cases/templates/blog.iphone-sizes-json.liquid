@@ -1,0 +1,24 @@
+{%- layout none -%}
+{%- assign link_url = false -%}
+{%- assign blog = blogs.iphone-sizes -%}
+{%- comment -%}{{ blog.articles | json }}{%- endcomment -%}
+{%- capture json -%}
+[
+{%- for article in blog.articles -%}
+{%- for tag in article.tags -%}
+{%- if tag contains '/collections/' -%}
+{%- assign link_url = tag -%}
+{%- endif -%}
+{%- endfor -%} 
+{%- unless forloop.first -%},{%- endunless -%}
+{
+"name":{{ article.title | json }},
+"description": {{ article.content | json }},
+"models": {{ article.excerpt | strip_html | split: ',' | json }},
+"link_url": {{ link_url | json }},
+"image": {{ article.image | img_url: 'master' | json }}
+}
+{%- endfor -%}
+]
+{%- endcapture -%}
+{{- json  -}}

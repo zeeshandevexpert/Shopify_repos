@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "main_heading": "ALREADY REGISTERED?",
+        "sub_description": "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.<\/p>",
+        "heading": "INTERESTED IN OPENING A WHOLESALE ACCOUNT?",
+        "content": "<p>We updated our online wholesale portal on November 11, 2021. If you received login information, please use that to sign in. If you’re interested in an updated account, please reach out to <a href=\"mailto:mercadeo@tecnisportvzla.com\" title=\"mailto:mercadeo@tecnisportvzla.com\">mercadeo@tecnisportvzla.com<\/a>.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

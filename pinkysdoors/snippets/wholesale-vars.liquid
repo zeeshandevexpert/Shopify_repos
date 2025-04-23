@@ -1,0 +1,16 @@
+{% assign is_wholesale = false %}
+{% if customer %}
+  {% for tag in customer.tags %}
+    {% if tag == 'wholesale' %}
+      {% assign is_wholesale = true %}
+    {% endif %}
+    {% if tag contains 'discount' %}
+      {% assign discount = tag | split: ':' | last | remove: '%' | plus: 0 %}
+      {% assign percent_off = 100 | minus: discount | times: 0.01 %}
+    {% endif %}
+  {% endfor %}
+{% endif %} 
+{% comment %} 
+Save for ref 
+{%- assign price = product.price | times: percent_off  -%}
+{% endcomment %}

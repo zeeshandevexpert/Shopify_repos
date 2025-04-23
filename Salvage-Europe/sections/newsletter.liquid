@@ -1,0 +1,159 @@
+<section id="newsletter" class="global__section homepage-newsletter-{{ section.id }} gridlock-fluid" data-aos="{{ settings.scroll_animation }}">
+  <div class="row newsletter__section-wrapper">
+    <div class="section-header">
+      {% if section.settings.heading != blank %}
+      <div class="rich__text-heading span-12 center">
+        <h3>{{ section.settings.heading | escape }}</h3>
+      </div>
+      {% endif %}
+      {%- if section.settings.newsletter_subheading != blank -%}
+      <div class="rte">{{ section.settings.newsletter_subheading }}</div>
+      {%- endif -%}
+    </div>
+    <div class="section-newsletter">
+      {% form 'customer', id: 'mailing-popup-form' %}
+        {%- if form.errors -%}
+          <div class="note-error">
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+        {% if form.posted_successfully? %}
+          <p class="note-success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+        {% else %}
+          <div class="input-group newsletter__input-group">
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <label class="visually-hidden" for="Email">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+            <input type="email"
+              name="contact[email]"
+              id="Email"
+              class="input-group__field newsletter__input"
+              value="{% if customer %}{{ customer.email }}{% endif %}"
+              placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}"
+              autocorrect="off"
+              autocapitalize="off">
+              <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe">
+                <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+              </button>
+          </div>
+        {% endif %}
+      {% endform %}
+    </div>
+    {% if section.settings.show_social_icons %}
+    <div class="section-icons text-center">
+      {% render 'social-icons', fill_color: section.settings.text_color, wrapper: '.newsletter__section-wrapper' %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+<style>
+  .homepage-newsletter-{{ section.id }} {
+    padding: 0;
+    margin: 0;
+  }
+  .homepage-newsletter-{{ section.id }} {
+    background: {{ section.settings.background_color }};
+  }
+  .homepage-newsletter-{{ section.id }} .newsletter__section-wrapper {
+    padding-top: {{ section.settings.padding }}px;
+    {% if section.settings.title != blank %}
+    padding-bottom: calc({{ section.settings.padding }}px + 25px);
+    {% else %}
+    padding-bottom: {{ section.settings.padding }}px;
+    {% endif %}
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .homepage-newsletter-{{ section.id }} h3,
+  .homepage-newsletter-{{ section.id }} p,
+  .homepage-newsletter-{{ section.id }} p a {
+    color: {{ section.settings.text_color }} !important;
+  }
+
+  .homepage-newsletter-{{ section.id }} p {
+    max-width: 60%;
+    margin: 0 auto !important;
+    line-height: 24px;
+    padding-bottom: 20px !important;
+  }
+  @media screen and (max-width: 500px) {
+    .homepage-newsletter-{{ section.id }} p {
+      max-width: 100%;
+    }
+  }
+  .homepage-newsletter-{{ section.id }} ul#social-icons li a:hover {
+    opacity: 0.8;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "richtext",
+        "id": "newsletter_subheading",
+        "label": "Subheading",
+        "default": "<p>Signup to receive news and updates</p>"
+      },
+      {
+        "type":"checkbox",
+        "id":"show_social_icons",
+        "label":"Show social icons"
+      },
+      {
+        "type": "range",
+        "id": "padding",
+        "min": 0,
+        "max": 80,
+        "step": 5,
+        "unit": "px",
+        "label": "Section padding",
+        "default": 30
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background",
+        "default": "#f7f7f7"
+      },
+      {
+        "type": "paragraph",
+        "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+      }
+    ],
+    "enabled_on": {
+      "templates": [
+        "404",
+        "article",
+        "blog",
+        "cart",
+        "collection",
+        "index",
+        "list-collections",
+        "page",
+        "product",
+        "search",
+        "customers/account"
+      ],
+      "groups": [
+        "footer"
+      ]
+    },
+    "presets": [{
+      "name": "Newsletter"
+    }]
+  }
+{% endschema %}

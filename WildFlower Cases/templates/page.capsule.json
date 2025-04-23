@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "capsule": {
+      "type": "capsule",
+      "settings": {
+        "image": "shopify://shop_images/01-bugs-n-berries-Capsule-Desktop-Banner.jpg",
+        "image_mobile": "shopify://shop_images/01-bugs-n-berries-Capsule-Mobile-Banner.jpg",
+        "max_height": "",
+        "countdown_to": "2024-01-11 09:00",
+        "title": "",
+        "text": "next drop (pst)...",
+        "button_label": "Get On The List",
+        "button_link": "shopify://pages/new-release-list",
+        "button_label2": "",
+        "button_link2": "",
+        "heading_color": "#ffffff",
+        "p_color": "#ffffff",
+        "btn_text_color": "#ffffff",
+        "countdown_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "capsule"
+  ]
+}

@@ -1,0 +1,7 @@
+{%- layout none -%}
+{%- capture shipping_time -%}
+{%- include 'special-order-shipping-time' -%}
+{%- endcapture -%}
+{	
+	"specialOrderValue": {{ shipping_time | strip | json }}
+}

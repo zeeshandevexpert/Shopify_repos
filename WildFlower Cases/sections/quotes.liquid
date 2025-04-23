@@ -1,0 +1,340 @@
+<link rel="stylesheet" href="{{ 'section-testimonials.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{% render 'hs-defer-css', filename: 'section-testimonials.css', pages: 'collection,index,product' | split: ',', local: true %}</noscript>
+
+<style>
+  [data-section-id="{{ section.id }}"] .quote-block + .quote-block {
+    margin-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+  }
+</style>
+
+<div style="background-color: {{ section.settings.color_background }};">
+    <div data-section-id="{{ section.id }}" data-section-type="quotes" class="{% unless section.settings.full_width %}page-width small--page-width{% endunless %}{% if section.settings.hide_mobile %} small--hide{% endif %}{% if section.settings.hide_desktop %} medium-up--hide{% endif %}" style="text-align: {{ section.settings.text_align }};padding-top:{{ section.settings.padding_top }}px;padding-bottom:{{ section.settings.padding_bottom }}px;">
+      {% if section.settings.title != blank %}
+      <div class="section-header">
+        <h2 class="h1">{{ section.settings.title | escape }}</h2>
+      </div>
+      {% endif %}
+      
+      {%- liquid 
+        assign customer_slides = ''
+        assign press_slides = '' 
+      %}
+      
+      {% for block in section.blocks %}
+          {% if block.type == 'quote' %}
+              {% capture customer_slides %}{{ customer_slides }}
+              <div class="swiper-slide">
+                <div class="quote quote-customer">
+                  <div class="quote-customer__image">
+                    {%- render 'image-element', image: block.settings.image -%}
+                    {% comment %} <img class="lazyload hs-lazyload hs-id-bed3b87f" data-src="{{ block.settings.image | image_url: width: 600 }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/> {% endcomment %}
+                  </div>
+                  <div class="quote-customer__info">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7.8 0C1.8 2.80001 0 6.4 0 13.8V24.4H9.5V13.2H4.4V13C4.4 8.3 5.2 5.9 9.8 3.6L7.8 0ZM22.6 0C16.6 2.80001 14.7 6.4 14.7 13.8V24.4H24.2V13.2H19.2V13C19.2 8.3 20 5.9 24.6 3.6L22.6 0Z" fill="black"/>
+                    </svg>                      
+                    <div class="rte quote-text">{{ block.settings.quote }}</div>
+                    <div class="quote-customer__stars">
+                      {% render 'icon-five-stars' %}
+                    </div>
+                    {% if block.settings.author != blank %}
+                    <cite>{{ block.settings.author | escape | replace: ' | ', '<br>' }}</cite>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endcapture %}
+          {% elsif block.type =='quote_press' %}
+              {% capture press %}{{ press }}
+              <div class="swiper-slide">
+                <div class="quote quote-press ">
+                    {% if block.settings.logo != blank %}
+                    <div class="quote-press__logo" role="presentation" style="background-image: url({{ block.settings.logo | image_url: height: 65 }});">
+                        <span class="visually-hidden">Logo for {{ block.settings.author }}</span>
+                    </div>
+                    {% endif %}
+                    {% if block.settings.quote != blank %}
+                    <div class="rte quote-text">{{ block.settings.quote }}</div>
+                    {% endif %}
+                </div>
+              </div>
+              {% endcapture %}
+          {% endif %}
+      {% endfor %}
+      
+      {%- capture slick_settings_press -%}
+      {
+          "slidesPerView":1,
+          "autoplay":true,
+          "autoHeight":true,
+          "loop":true,
+          "navigation": {
+            "prevEl":".press-slider__prev",
+            "nextEl":".press-slider__next"
+          },
+          "effect":"fade",
+          "fadeEffect": {
+            "crossFade":true
+          }
+      }
+      {%- endcapture -%}
+      
+      {%- capture slick_settings_customer -%}
+      {
+        "slidesPerView":1,
+        "autoplay":false,
+        "autoHeight":true,
+        "loop":true,
+        "pagination": {
+          "el":".swiper-pagination",
+          "type":"bullets"
+        }
+      }
+      {%- endcapture -%}
+      
+     
+      <div>
+        {% if press_slides != '' %}
+        <div class="relative quote-block">
+          <div class="quotes-wrapper quotes-wrapper-1">
+            <div class="quotes-slider swiper" data-json='{{- slick_settings_press -}}'>
+                <div class="swiper-wrapper">
+                  {{ press_slides }}
+                </div>
+            </div>
+            <div class="quotes-slider__links center">
+              <h4>
+                <a href="{{ section.settings.press_link }}" class="link">
+                    <u>All Press</u>
+                </a>
+              </h4>
+              <button class="quotes-slider__prev btn--link press-slider__prev">
+                {% render 'icon-caret' %}
+                <span class="visually-hidden">Previous Press Quote</span>
+              </button>
+              <button class="quotes-slider__next btn--link press-slider__next">
+                {% render 'icon-caret' %}
+                <span class="visually-hidden">Next Press Quote</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        {% if customer_slides != '' %}
+        <div class="relative quote-block">
+          <div class="quotes-wrapper quotes-wrapper-2">
+            <div class="quotes-slider swiper" data-json='{{- slick_settings_customer -}}'>
+                <div class="swiper-wrapper">
+                  {{ customer_slides }}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  {% schema %}
+{
+  "name": {
+    "cs": "Ohlasy",
+    "da": "Udtalelser",
+    "de": "Testimonials",
+    "en": "Testimonials",
+    "es": "Testimonios",
+    "fi": "Suositukset",
+    "fr": "Témoignages",
+    "it": "Testimonial",
+    "ja": "お客様の声",
+    "ko": "추천",
+    "nb": "Tilbakemeldinger fra kunder",
+    "nl": "Getuigenissen",
+    "pl": "Referencje",
+    "pt-BR": "Depoimentos",
+    "pt-PT": "Depoimentos",
+    "sv": "Kundberättelser",
+    "th": "เสียงชื่นชมจากลูกค้า",
+    "tr": "Kullanıcı görüşleri",
+    "vi": "Chứng thực",
+    "zh-CN": "感言",
+    "zh-TW": "推薦文"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width?",
+      "default": false,
+      "info": "All the way to edges of screen?"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_desktop",
+      "label": "Hide Desktop?",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_mobile",
+      "label": "Hide Mobile?",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Background Color",
+      "default": "#f1f1f1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 0
+    },
+    {
+      "type": "url",
+      "id": "press_link",
+      "label": "Press Link"
+    },
+    {
+      "type": "url",
+      "id": "reviews_link",
+      "label": "Reviews Link"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "cs": "Nadpis",
+        "da": "Overskrift",
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fi": "Otsake",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "ko": "제목",
+        "nb": "Overskrift",
+        "nl": "Kop",
+        "pl": "Nagłówek",
+        "pt-BR": "Título",
+        "pt-PT": "Título",
+        "sv": "Rubrik",
+        "th": "ส่วนหัว",
+        "tr": "Başlık",
+        "vi": "Tiêu đề",
+        "zh-CN": "标题",
+        "zh-TW": "標題"
+      },
+      "default": {
+        "cs": "Ohlasy",
+        "da": "Udtalelser",
+        "de": "Testimonials",
+        "en": "Testimonials",
+        "es": "Testimonios",
+        "fi": "Suositukset",
+        "fr": "Témoignages",
+        "it": "Testimonial",
+        "ja": "お客様の声",
+        "ko": "추천",
+        "nb": "Tilbakemeldinger fra kunder",
+        "nl": "Getuigenissen",
+        "pl": "Referencje",
+        "pt-BR": "Depoimentos",
+        "pt-PT": "Depoimentos",
+        "sv": "Kundberättelser",
+        "th": "เสียงชื่นชมจากลูกค้า",
+        "tr": "Kullanıcı görüşleri",
+        "vi": "Chứng thực",
+        "zh-CN": "感言",
+        "zh-TW": "推薦文"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Customer Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    },
+    {
+      "type": "quote_press",
+      "name": "Press Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "quote_press"
+        },
+        {
+          "type": "quote_press"
+        },
+        {
+          "type": "quote"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    "index",
+    "page",
+    "article"
+  ]
+}
+{% endschema %}
+  

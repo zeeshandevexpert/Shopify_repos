@@ -1,0 +1,23 @@
+<section class="text-section">
+    <div class="content-block">
+        <div class="description">{{ section.settings.description }}</div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Text Section",
+        "settings": [
+                {
+                    "type": "richtext",
+                    "id": "description",
+                    "label": "Description"
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Text Section"
+                }
+            ]
+    }
+    {% endschema %}

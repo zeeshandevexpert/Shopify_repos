@@ -1,0 +1,3 @@
+{{ content_for_index }}
+
+{% render 'hs-defer-css' with filename: 'homepage-hero.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}

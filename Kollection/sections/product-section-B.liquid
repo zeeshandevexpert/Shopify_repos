@@ -1,0 +1,208 @@
+<!-- Slick Slider CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+{{ 'custom-product.css' |  asset_url |  stylesheet_tag }}
+
+
+<section class="product-block">
+    <div class="wrap-product-block">
+        <div class="image-block">
+        <div class="product-gallery">
+            <!-- Main image slider -->
+            <div class="main-slider">
+            {% for product in collections['vintage-collection'].products %}
+                <div class="image">
+                    <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                </div>
+            {% endfor %}
+            </div>
+          
+            <!-- Thumbnails slider -->
+            <div class="thumbnail-slider">
+            {% for product in collections['vintage-collection'].products %}
+                  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="thumbnail">
+              {% endfor %}
+          
+            </div>
+          </div>
+          
+        </div>
+        <div class="content-block">
+              <div class="wrap-title-price">
+                <h2 class="product-title">
+                  {{ section.settings.title }}
+                </h2>
+                <div class="price">
+                  ${{ section.settings.price }} USD
+                </div>  
+              </div>
+              <h2 class="product-description">
+                {{ section.settings.description }}
+              </h2>
+
+                <div class="buy-two-get-one">
+                  <form id="addon-products-form">
+                    <h3><strong>Pick Your Vintage Watches -</strong>Buy 2, Get 1 Free</h3>
+                    <div class="products">
+                      {% for product in collections['vintage-collection'].products %}
+                        <label class="product-box">
+                          <input type="checkbox" class="addon-checkbox" data-product-id="{{ product.selected_or_first_available_variant.id }}"> 
+                          <div class="product">
+                              <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+                            <h2 class="title">{{ product.title | split: ' ' | first }}</h2>
+                            <p class="price">{{ product.price | money }}</p>
+                          </div>
+                        </label>
+                      {% endfor %}
+                    </div>
+                  </form>
+
+                </div>
+                  <!-- Add to cart button -->
+                    <button id="add-to-cart-btn" >Add to Cart</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('.addon-checkbox');
+      const freeProductCheckboxes = document.querySelectorAll('.free-product-checkbox');
+      const addToCartButton = document.getElementById('add-to-cart-btn');
+      const errorMessage = document.querySelector('.error-message');
+      
+      let selectedProducts = []; // Selected main product IDs
+    //   let selectedFreeProduct = null; // Selected free product ID
+
+      // Function to update the selected products and button state
+      function updateSelection() {
+          selectedProducts = Array.from(checkboxes)
+              .filter(checkbox => checkbox.checked)
+              .map(checkbox => checkbox.dataset.productId);
+
+          // Enable the button if 2 main products are selected and a free product is selected
+          addToCartButton.disabled = !(selectedProducts.length === 3 );
+      }
+
+      // Add event listeners for the main product checkboxes
+      checkboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function() {
+              // Prevent selecting more than 2 main products
+              if (this.checked && selectedProducts.length >= 3) {
+                  this.checked = false;
+              }
+              updateSelection();
+          });
+      });
+
+
+      // Handle the Add to Cart functionality
+      addToCartButton.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          if (selectedProducts.length === 3) {
+              const items = [
+                  ...selectedProducts.map(productId => ({ id: productId, quantity: 1 })),
+              ];
+
+              // Log items to verify
+              console.log('Adding to cart:', JSON.stringify(items, null, 2));
+
+              // Add items to cart
+              fetch('/cart/add.js', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({ items })
+              })
+              .then(response => {
+                  if (!response.ok) {
+                      return response.json().then(errorData => {
+                          throw new Error(`Error ${response.status}: ${errorData.message}`);
+                      });
+                  }
+                  return response.json();
+              })
+              .then(data => {
+                  console.log('Products added to cart:', data);
+                  // Apply the discount code to the free product
+                  // window.location.href = '/cart?discount=9PPHY33JZAHK'; // Replace with your actual discount code
+                  window.location.href = '/checkout?discount=GS6MB2NMFEER';
+              })
+              .catch(error => {
+                  console.error('Error adding products to cart:', error);
+                  alert(`There was an error adding products to the cart: ${error.message}`);
+              });
+          }
+      });
+  });
+</script>
+
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<!-- Slick Slider JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" integrity="sha512-HGOnQO9+SP1V92SrtZfjqxxtLmVzqZpjFFekvzZVWoiASSQgSr4cw9Kqd2+l8Llp4Gm0G8GIFJ4ddwZilcdb8A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+$(document).ready(function(){
+  // Initialize the main image slider
+  $('.main-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.thumbnail-slider' // Sync with thumbnail slider
+  });
+
+  // Initialize the thumbnail slider
+  $('.thumbnail-slider').slick({
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    asNavFor: '.main-slider', // Sync with main slider
+    dots: false,
+    focusOnSelect: true
+  });
+
+  // Add 'active' class to the currently active thumbnail
+  $('.thumbnail-slider img').on('click', function() {
+    $('.thumbnail-slider img').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  // Set the first thumbnail as active by default
+  $('.thumbnail-slider img').first().addClass('active');
+});
+
+</script>
+
+{% schema %}
+{
+    "name": "Product Section B",
+    "settings": [
+        {
+          "type": "text",
+          "label": "Product Title",
+          "id": "title",
+          "default":" Buy Two Get One free"
+        },
+        {
+          "type": "text",
+          "label": "Product Price",
+          "id": "price",
+          "default":"109"
+        },
+        {
+          "type": "textarea",
+          "label": "Product Description",
+          "id": "description",
+          "default":"For a limited time only, buy one Adult hoodie and get one Adult hoodie FREE! This deal is available on selected hoodies for a limited time only."
+        }
+        ],
+        "presets": [
+            {"name": "Product Section B"}
+        ]
+}
+{% endschema %}
+

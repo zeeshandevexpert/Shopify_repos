@@ -1,0 +1,40 @@
+<div class="page-width--tiny text-center index-section small--page-width">
+  <h1 class="page-title">Become an Installer</h1>
+  <hr class="hr--invisible" />
+  {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+  <img id="{{ img_id }}"
+       class="lazyload lazyfade"
+       src="{{ section.settings.image | img_url: '100x' }}"
+       data-src="{{ img_url }}"
+       data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+       data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+       data-sizes="auto"
+       width="100%"
+       alt="{{ section.settings.image.alt | escape }}">
+
+  <hr class="hr--invisible" />
+  {{page.content}}
+
+</div>
+
+<div style="background-color: {{section.settings.form_bg}};" class="small--page-width">
+  {% include 'page-become-an-installer' %}
+</div>
+{% schema %}
+  {
+    "name": "Become an Installer",
+    "settings": [
+	{
+	  "type":"image_picker",
+	  "id":"image",
+	  "label":"Image"
+	},
+	{
+	  "type":"color",
+	  "id":"form_bg",
+	  "label":"Form Background Color",
+	  "default":"#f5f5f5"
+	}
+	]
+  }
+{% endschema %}

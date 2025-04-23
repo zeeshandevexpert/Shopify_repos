@@ -1,0 +1,269 @@
+<section id="popup-contact-form" class="popup__form_global__section">
+   
+<div class="contact__form-wrapper row grid__wrapper">
+
+
+      {% if section.settings.title != blank %}
+      <div class="contact__form-heading span-12">
+        {% render 'section-headings', type: section.settings.title %}
+      </div>
+      {% endif %}
+  
+    {% form 'contact', class: 'span-12 auto'%}
+  
+      <div class="contact__form--inner-wrapper">
+        {% if form.posted_successfully? %}
+          <div class="successForm feedback note-success">
+            <p>{{ 'sections.contact_form.post_success' | t }}</p>
+          </div>
+        {% endif %}
+  
+        {% if form.errors %}
+          <div class="notice note-error">
+            <p>{{ 'general.forms.post_error' | t }}</p>
+            <ul class="disc">
+              {% for field in form.errors %}
+              {% if field == 'form' %}
+              <li>
+                {{ form.errors.messages[field] }}
+              </li>
+              {% else %}
+              <li>
+                <strong>{{ field | replace: 'body', 'Message' }}</strong> {{ form.errors.messages[field] }}
+              </li>
+              {% endif %}
+  
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+        <div class="contact__form--input">
+        <label class="label-text" for="contactFormprofession--{{ section.id }}">Role*</label>
+              <select id="contactFormprofession--{{ section.id }}" name="contact[profession]" required>
+                    <option>Please Select</option>
+                    <option value="Architect">Architect</option>
+                    <option value="Designer">Designer</option>
+                    <option value="Contractor">Contractor</option>
+                    <option value="Installer">Installer</option>
+                    <option value="Home Owner">Homeowner</option>
+                    <option value="Other">Other</option>
+              </select>
+              </div>
+              
+        <div class="contact__form--input">
+          <label class="label-text" for="contactFormName--{{ section.id }}">COMPANY</label>
+          <input type="text" id="contactFormName--{{ section.id }}" name="contact[company]" aria-label="COMPANY" />
+        </div>
+
+        <div class="form-column-two">
+        <div class="contact__form--input half-width">
+          <label class="label-text" for="contactFormName--{{ section.id }}">FIRST NAME*</label>
+          <input type="text" id="contactFormName--{{ section.id }}" name="contact[first_name]" aria-label="FIRST NAME" required />
+        </div>
+  
+        <div class="contact__form--input half-width">
+          <label class="label-text" for="contactFormName--{{ section.id }}">LAST NAME*</label>
+          <input type="text" id="contactFormName--{{ section.id }}" name="contact[last_name]" aria-label="LAST NAME" required />
+        </div>
+        </div>
+
+        <div class="form-column-two">
+        <div class="contact__form--input half-width">
+          <label class="label-text" for="contactFormEmail--{{ section.id }}">EMAIL*</label>
+          <input type="email" id="contactFormEmail--{{ section.id }}" name="contact[email]" aria-label="{{ 'sections.contact_form.email' | t }}" required/>
+        </div>
+  
+        <div class="contact__form--input half-width">
+          <label class="label-text" for="contactFormTelephone--{{ section.id }}">PHONE NUMBER</label>
+          <input type="text" id="contactFormTelephone--{{ section.id }}" name="contact[phone]" aria-label="{{ 'sections.contact_form.phone' | t }}" />
+        </div>
+        </div>
+
+        {% comment %}
+          
+        <div class="contact__form--input"> 
+            <label class="label-text" for="country">Country*</label>
+            <select name="contact[country]" id="country" onchange="showStatesDropdown(this.value)">
+              <option value="">Select Country</option>
+              <option value="United States">United States</option>
+              {% assign countries = "Afghanistan,Albania,Algeria,Andorra,Angola,Antigua and Barbuda,Argentina,Armenia,Australia,Austria,Azerbaijan,Bahamas,Bahrain,Bangladesh,Barbados,Belarus,Belgium,Belize,Benin,Bhutan,Bolivia,Bosnia and Herzegovina,Botswana,Brazil,Brunei,Bulgaria,Burkina Faso,Burundi,Cabo Verde,Cambodia,Cameroon,Canada,Central African Republic (CAR),Chad,Chile,China,Colombia,Comoros,Congo,Costa Rica,Cote d'Ivoire,Croatia,Cuba,Cyprus,Czech Republic,Denmark,Djibouti,Dominica,Dominican Republic,Ecuador,Egypt,El Salvador,Equatorial Guinea,Eritrea,Estonia,Eswatini (formerly Swaziland),Ethiopia,Fiji,Finland,France,Gabon,Gambia,Georgia,Germany,Ghana,Greece,Grenada,Guatemala,Guinea,Guinea-Bissau,Guyana,Haiti,Honduras,Hungary,Iceland,India,Indonesia,Iran,Iraq,Ireland,Israel,Italy,Jamaica,Japan,Jordan,Kazakhstan,Kenya,Kiribati,Kosovo,Kuwait,Kyrgyzstan,Laos,Latvia,Lebanon,Lesotho,Liberia,Libya,Liechtenstein,Lithuania,Luxembourg,Madagascar,Malawi,Malaysia,Maldives,Mali,Malta,Marshall Islands,Mauritania,Mauritius,Mexico,Micronesia,Moldova,Monaco,Mongolia,Montenegro,Morocco,Mozambique,Myanmar (formerly Burma),Namibia,Nauru,Nepal,Netherlands,New Zealand,Nicaragua,Niger,Nigeria,North Korea,North Macedonia (formerly Macedonia),Norway,Oman,Pakistan,Palau,Palestine,Panama,Papua New Guinea,Paraguay,Peru,Philippines,Poland,Portugal,Qatar,Romania,Russia,Rwanda,Saint Kitts and Nevis,Saint Lucia,Saint Vincent and the Grenadines,Samoa,San Marino,Sao Tome and Principe,Saudi Arabia,Senegal,Serbia,Seychelles,Sierra Leone,Singapore,Slovakia,Slovenia,Solomon Islands,Somalia,South Africa,South Korea,South Sudan,Spain,Sri Lanka,Sudan,Suriname,Sweden,Switzerland,Syria,Taiwan,Tajikistan,Tanzania,Thailand,Timor-Leste,Togo,Tonga,Trinidad and Tobago,Tunisia,Turkey,Turkmenistan,Tuvalu,Uganda,Ukraine,United Arab Emirates (UAE),United Kingdom (UK),Uruguay,Uzbekistan,Vanuatu,Vatican City (Holy See),Venezuela,Vietnam,Yemen,Zambia,Zimbabwe" | split: ',' %}
+              {% for country in countries %}
+                {% if country != 'United States' %}
+                  <option value="{{ country }}">{{ country }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+{% endcomment %}
+        <div class="contact__form--input half-width">
+          <label class="label-text" for="contactFormzip-{{ section.id }}">ZIP CODE*</label>
+          <input type="text" id="contactFormzip--{{ section.id }}" name="contact[zip]" aria-label="ZIP CODE" required />
+        </div>
+          
+          <div id="stateDropdown" style="display: none;">
+            <label class="label-text" for="state">State*</label>
+            <select name="contact[state]" id="state"></select>
+          </div>
+          
+          <script>
+            var states = {
+              'United States': [
+                'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
+                'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa',
+                'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan',
+                'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
+                'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma',
+                'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee',
+                'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
+              ]
+            };
+          
+            function showStatesDropdown(selectedCountry) {
+              var stateDropdown = document.getElementById('stateDropdown');
+              var stateSelect = document.getElementById('state');
+          
+              if (selectedCountry === 'United States') {
+                stateDropdown.style.display = 'block';
+                stateSelect.innerHTML = '';
+                
+                states[selectedCountry].forEach(function(state) {
+                  var option = document.createElement('option');
+                  option.value = state;
+                  option.innerHTML = state;
+                  stateSelect.appendChild(option);
+                });
+              } else {
+                stateDropdown.style.display = 'none';
+              }
+            }
+          </script>
+          
+          {% comment %}
+          
+          <div class="contact__form--input">
+            <label class="label-text" for="communication-preference">COMMUNICATION PREFERENCE*</label>
+           <div class="wrap-radio-block"> <input type="radio" name="contact[communication_preference]" value="email" id="email"><label for="email">Email</label></div>
+           <div class="wrap-radio-block"> <input type="radio" name="contact[communication_preference]" value="phone" id="phone"><label for="phone">Phone</label></div>
+        </div>
+  {% endcomment %}
+  
+        <div class="contact__form--input">
+          <label class="label-text" for="contactFormMessage--{{ section.id }}">Message / Project Details</label>
+          <textarea rows="15" cols="90" id="contactFormMessage--{{ section.id }}" name="contact[body]" aria-label="Message / Project Details" placeholder="Message / Project Details"></textarea>
+        </div>
+
+        <div class="contact__form--input">
+           <label for="agree"> <input type="checkbox" name="contact[agree]" value="agree" required>  <span> I agree to be contacted response to this submission and for other communications. I understand that I can unsubscribe at any time.</span></label>
+        </div>
+  
+        <div class="contact__form--input">
+          <input type="submit" id="contactFormSubmit--{{ section.id }}" class="secondary button" value="SUBMIT" />
+        </div>
+      </div>
+      
+    {% endform %}
+    </div>
+    <style>
+      @media (min-width: 741px) {
+        .section-{{ section.id }} .contact__form--inner-wrapper {
+          width: {{ section.settings.width }}%;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </section>
+  
+  {% schema %}
+  {
+    "name": "Contact form Block",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Contact Form"
+      },
+      {
+        "type": "range",
+        "id": "width",
+        "min": 50,
+        "max": 100,
+        "step": 10,
+        "unit": "%",
+        "label": "Form width",
+        "default": 60
+      }
+    ],
+    "blocks": [
+      {
+      "type": "text_input",
+      "name": "Text input",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Custom field"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Is required",
+          "default": false
+        }
+      ]
+    },
+    {
+    "type": "dropdown",
+    "name": "Dropdown",
+    "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Custom field"
+        },
+        {
+          "type": "text",
+          "id": "values",
+          "label": "Values",
+          "default": "value 1, value 2, value 3",
+          "info":"Separate each value with a comma"
+        }
+      ]
+    },
+    {
+    "type": "radio",
+    "name": "Radio",
+    "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Custom field"
+        },
+        {
+          "type": "text",
+          "id": "values",
+          "label": "Values",
+          "default": "value 1, value 2, value 3",
+          "info":"Separate each value with a comma"
+        }
+      ]
+    }
+],
+    "presets": [{
+      "name": "Contact form Block"
+    }],
+    "enabled_on": {
+      "templates": [
+        "index",
+        "404",
+        "article",
+        "page",
+        "product"
+      ]
+    }
+  }
+  {% endschema %}
+  

@@ -1,0 +1,160 @@
+<div id="sidebar"{% if is_sticky %} class="is_sticky"{% endif %}>
+  <div class="sidebar__content-wrapper">
+  {% assign unique_id = section.id %}
+  <div class="js-accordion c-accordion c-accordion--product c-accordion--{{ unique_id }}" id="c-accordion--{{ unique_id }}" data-accordion-allow-multiple>
+    {% for block in section.blocks %}
+      {%- liquid
+
+        assign accordion_content_class = 'c-accordion__panel--'
+        assign accordion_content_id = accordion_content_class | append: unique_id | append: '-' | append: forloop.index
+
+        assign accordion_heading = 'foo'
+        assign accordion_content = 'bar'
+        assign defaultOpen = block.settings.default_open_accordion
+
+      -%}
+
+      {% if block.type == 'sidebar_filter' %}
+        {% render 'filters',
+        collection: collection
+        block: block,
+        forloop: forloop,
+        defaultOpen: defaultOpen,
+        accordion_content_id: accordion_content_id,
+        unique_id: unique_id
+        %}
+      {% elsif block.type == 'sidebar_menu' %}
+
+        <button class="button-as-link js-accordion-header c-accordion__header {% if defaultOpen %}js-accordion-is-open{% endif %}"
+        {% if defaultOpen %}
+        aria-expanded="true"
+        {% else %}
+        aria-expanded="false"
+        {% endif %}
+        aria-controls="{{ accordion_content_id }}" data-toggle="accordion"
+        {{ block.shopify_attributes }} >
+        {{ block.settings.title }}
+          <span class="dropdown-arrow">
+            {% render 'snip-icons',
+             wrapper: '.c-accordion__header',
+             type: 'apollo',
+             icon: 'down-carrot',
+             classes: 'c-accordion__header--icon vib-center',
+             size: '8px',
+             fill: 'var(--text-color)',
+             hover: 'var(--text-color)' %}
+          </span>
+        </button>
+
+        <div class="filter c-accordion__panel {% if defaultOpen %}is-active{% endif %} {{ accordion_content_id }}" id="{{ accordion_content_id }}" data-parent="#c-accordion--{{ unique_id }}" {% unless defaultOpen %}style="display:  none;" hidden{% endunless %} {{ block.shopify_attributes }}>
+          <div class="c-accordion__inner">
+            <ul class="filter-list collection__filters--filter-list sidebar-menu">
+              {% for link in linklists[block.settings.side_nav].links %}
+                {% if link.links != blank %}
+                  <li class="extend has_sub_menu" aria-haspopup="true" aria-expanded="false"><a {% if link.current %} class="current"{% endif %}href="{{ link.url }}">{{ link.title }}</a></li>
+                    <ul class="extended-submenu">
+                      {% for sub_link in link.links %}
+                      <li><a {% if sub_link.current %} class="current"{% endif %}href="{{ sub_link.url }}">{{ sub_link.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                {% else %}
+                  <li>{{ link.title | link_to: link.url }}</li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+      {% elsif block.type == 'sidebar_subcollections' %}
+
+        <button class="button-as-link js-accordion-header c-accordion__header {% if defaultOpen %}js-accordion-is-open{% endif %}"
+        {% if defaultOpen %}
+        aria-expanded="true"
+        {% else %}
+        aria-expanded="false"
+        {% endif %}
+        aria-controls="{{ accordion_content_id }}" data-toggle="accordion"
+        {{ block.shopify_attributes }} >
+        {{ block.settings.title }}
+          <span class="dropdown-arrow">
+            {% render 'snip-icons',
+             wrapper: '.c-accordion__header',
+             type: 'apollo',
+             icon: 'down-carrot',
+             classes: 'c-accordion__header--icon vib-center',
+             size: '8px',
+             fill: 'var(--text-color)',
+             hover: 'var(--text-color)' %}
+          </span>
+        </button>
+
+        <div class="filter c-accordion__panel {% if defaultOpen %}is-active{% endif %} {{ accordion_content_id }}" id="{{ accordion_content_id }}" data-parent="#c-accordion--{{ unique_id }}" {{ block.shopify_attributes }}>
+          <div class="c-accordion__inner">
+            <ul class="filter-list collection__filters--filter-list sidebar-menu">
+              {% for link in linklists[block.settings.menu].links %}
+                 {% if link.current %}
+                   {% for sub_link in link.links %}
+                     {% if sub_link.type == 'collection_link' %}
+                     <li><a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                     {% endif %}
+                   {% endfor %}
+                 {% endif %}
+                 {% for sub_link in link.links %}
+                   {% if sub_link.links != blank %}
+                     {% if sub_link.active %}
+                     {% for sub_sub_link in sub_link.links %}
+                       {% if sub_sub_link.type == 'collection_link' %}
+                       <li><a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+                       {% endif %}
+                     {% endfor %}
+                     {% endif %}
+                   {% endif %}
+                 {% endfor %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+
+        <style>
+          ul.extended-submenu {
+              margin-left: 10px;
+          }
+          a.active {
+              font-weight: bold;
+          }
+          a.active_no_arrow {
+            font-weight: bold;
+          }
+        </style>
+
+      {% elsif block.type == 'sidebar_image' %}
+        {%- assign image_size = '450x' -%}
+        <div class="image_container" {% if forloop.index == 1 %}style="margin-top:0;"{% endif %}>
+          <a href="{{ block.settings.link }}">
+            {% if block.settings.image != blank %}
+              {% render 'basic-responsive-image',
+                type: block.settings.image,
+                width: 500
+              %}
+            {% endif %}
+          </a>
+        </div>
+
+      {% elsif block.type == 'sidebar_text_note' %}
+        <div class="textnote_container">
+          {% if block.settings.textbox_heading != blank %}<label for="textbox-{{ block.id }}">{{ block.settings.textbox_heading }}</label>{% endif %}
+          {% if block.settings.textbox_subheading != blank %}
+            <div id="textbox-{{ block.id }}" class="subheading rte">
+              {{ block.settings.textbox_subheading }}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+
+  </div>
+</div>

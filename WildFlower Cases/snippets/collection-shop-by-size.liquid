@@ -1,0 +1,33 @@
+{%- liquid 
+   assign has_cases = false
+   for product in collection.products
+     if product.title contains 'iPhone' and product.title contains 'Case'
+       assign has_cases = true
+     endif
+   endfor
+-%}
+
+{% if has_cases %}
+{% render 'hs-defer-css' with filename: 'shop-by-size.css', pages: 'collection,index,product' | split: ',', local: true %}
+
+<div class="shop-by-size__wrapper">
+  <div class="page-width">
+    {% comment %}<h5 class="h6 center">Shop by Phone Size</h5>{% endcomment %}
+    <div class="shop-by-size">
+      {% assign sizes = shop.metaobjects.all_i_phone_case_sizes.all-i-phone-case-sizes.iphone_size.value %}
+      {% for iphone in sizes %}
+        <div class="shop-by-size__item relative {% if iphone.collection.value.url == collection.url %}active{% endif %}" >
+            <div class="icon {{ icon }}">
+              <img loading="lazy" src="{{ iphone.icon | file_url }}" width height>
+              <span class="visually-hidden">{{ iphone.name.value }} icon</span>
+            </div>
+           {% assign saleUrl = '/collections/sale' %}
+          <a href="{{ iphone.collection.value.url }}{% if collection.url == saleUrl %}/Final-Sale{% endif %}" class="link--fill-parent">
+            <span class="visually-hidden">{{ iphone.name.value }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

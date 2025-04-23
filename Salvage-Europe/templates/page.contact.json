@@ -1,0 +1,158 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "Contact Us",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-contact-page",
+      "disabled": true,
+      "settings": {
+        "contact_form_position": "right",
+        "content_width": 90,
+        "cf_show_first_name": true,
+        "cf_show_last_name": true,
+        "cf_show_company_name": true,
+        "cf_show_address": true,
+        "cf_show_website_url": false,
+        "cf_show_phone": false,
+        "cf_show_custom_field_one": false,
+        "cf_custom_field_one": "Custom Field One",
+        "cf_custom_field_one_type": "input",
+        "cf_show_custom_field_two": false,
+        "cf_custom_field_two": "Custom Field Two",
+        "cf_custom_field_two_type": "input"
+      }
+    },
+    "6ff4a7c4-72d9-4567-9572-894bdafb69bb": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--18994102763806__6ff4a7c4-72d9-4567-9572-894bdafb69bb-image_with_text-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "EMAIL",
+            "richtext": "<p><a href=\"mailto:info@salvageeurope.com\" title=\"mailto:info@salvageeurope.com\">info@salvageeurope.com<\/a><\/p>",
+            "button_text": "",
+            "link": "mailto:info@salvageeurope.com",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--18994102763806__6ff4a7c4-72d9-4567-9572-894bdafb69bb-image_with_text-2": {
+          "type": "image_with_text",
+          "disabled": true,
+          "settings": {
+            "title": "SALES",
+            "richtext": "<p><a href=\"mailto:evan@salvageeurope.com\" title=\"mailto:evan@salvageeurope.com\">Lorem Ipsum<\/a><\/p>",
+            "button_text": "",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--18994102763806__6ff4a7c4-72d9-4567-9572-894bdafb69bb-image_with_text-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "PHONE",
+            "richtext": "<p><a href=\"tel:+1 575 291 6584\" title=\"tel:+1 575 291 6584\">+1 575 291 6584<\/a><\/p>",
+            "button_text": "",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--18994102763806__6ff4a7c4-72d9-4567-9572-894bdafb69bb-image_with_text-1",
+        "template--18994102763806__6ff4a7c4-72d9-4567-9572-894bdafb69bb-image_with_text-2",
+        "template--18994102763806__6ff4a7c4-72d9-4567-9572-894bdafb69bb-image_with_text-3"
+      ],
+      "settings": {
+        "title": "",
+        "rich_text": "",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "#ffde59",
+        "padding": 30
+      }
+    },
+    "bd93e9f0-00a8-402b-be06-8ff8b9cf5874": {
+      "type": "contact-from-block",
+      "settings": {
+        "title": "",
+        "width": 60
+      }
+    },
+    "f7a12a0d-18a9-469d-95dc-38aff1df2a45": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--18994102763806__f7a12a0d-18a9-469d-95dc-38aff1df2a45-image_with_text-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/MALIBU.png",
+            "title": "MALIBU",
+            "richtext": "<p>24911 E PACIFIC COAST HWY, MALIBU, CA 90265<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--18994102763806__f7a12a0d-18a9-469d-95dc-38aff1df2a45-image_with_text-2": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9ff338f2-4773-4659-b9da-a226cba43fa1.png",
+            "title": "TEXAS",
+            "richtext": "<p>201 N LIVE OAK ST, ROUND TOP, TX 78954<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "image_with_text_JA8dha": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8A0CF7F3-5E87-4BB6-9455-768DBF7A924F_3c9a4961-e498-4875-85c0-74fa6031c420.jpg",
+            "title": "BELGIUM WAREHOUSE",
+            "richtext": "<p>BY APPOINTMENT ONLY<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--18994102763806__f7a12a0d-18a9-469d-95dc-38aff1df2a45-image_with_text-1",
+        "template--18994102763806__f7a12a0d-18a9-469d-95dc-38aff1df2a45-image_with_text-2",
+        "image_with_text_JA8dha"
+      ],
+      "settings": {
+        "title": "Locations",
+        "rich_text": "",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "",
+        "padding": 30
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main",
+    "6ff4a7c4-72d9-4567-9572-894bdafb69bb",
+    "bd93e9f0-00a8-402b-be06-8ff8b9cf5874",
+    "f7a12a0d-18a9-469d-95dc-38aff1df2a45"
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "sections": {
+    "list_products_KWD4PN": {
+      "type": "list-products",
+      "blocks": {
+        "product_mFVV4k": {
+          "type": "product",
+          "settings": {
+            "product": "pinkys-lock-w-lever-in-black"
+          }
+        },
+        "product_Fa44xb": {
+          "type": "product",
+          "settings": {
+            "product": "pinkys-lock-w-lever-in-brass"
+          }
+        },
+        "product_C43rJX": {
+          "type": "product",
+          "settings": {
+            "product": "pinkys-lock-w-round-knob-in-black"
+          }
+        },
+        "product_Gfffef": {
+          "type": "product",
+          "settings": {
+            "product": "pinkys-lock-w-round-knob-in-brass"
+          }
+        }
+      },
+      "block_order": [
+        "product_mFVV4k",
+        "product_Fa44xb",
+        "product_C43rJX",
+        "product_Gfffef"
+      ],
+      "settings": {
+        "title": "AIR DOORS(AIR 4, AIR 5, AIR 7, BI-FOLDS)",
+        "text": "",
+        "grid": 4,
+        "rows": 2,
+        "enable_slider": true,
+        "show_vendor": false
+      }
+    },
+    "list_products_VQ9MfJ": {
+      "type": "list-products",
+      "blocks": {
+        "product_Ncgwma": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-xanthis"
+          }
+        },
+        "product_JNXgUX": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-wilshire"
+          }
+        },
+        "product_tGVMBM": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-stonebriar"
+          }
+        },
+        "product_TXPbEF": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-castletown"
+          }
+        },
+        "product_mELPBw": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-wexford-knob"
+          }
+        },
+        "product_rXJNUA": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-premiere-deadbolt"
+          }
+        },
+        "product_Kdd7PF": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-air-deadbolt"
+          }
+        },
+        "product_KbazqK": {
+          "type": "product",
+          "settings": {
+            "product": "pinkys-lock-w-round-knob-in-black"
+          }
+        },
+        "product_EGYrQf": {
+          "type": "product",
+          "settings": {
+            "product": "pinkys-lock-w-round-knob-in-brass"
+          }
+        }
+      },
+      "block_order": [
+        "product_Ncgwma",
+        "product_JNXgUX",
+        "product_tGVMBM",
+        "product_TXPbEF",
+        "product_mELPBw",
+        "product_rXJNUA",
+        "product_Kdd7PF",
+        "product_KbazqK",
+        "product_EGYrQf"
+      ],
+      "settings": {
+        "title": "All Iron Doors",
+        "text": "",
+        "grid": 4,
+        "rows": 3,
+        "enable_slider": true,
+        "show_vendor": false
+      }
+    },
+    "list_products_XD3AxP": {
+      "type": "list-products",
+      "blocks": {
+        "product_eRL7f6": {
+          "type": "product",
+          "settings": {
+            "product": "emtek-round-key-in-knobset"
+          }
+        }
+      },
+      "block_order": [
+        "product_eRL7f6"
+      ],
+      "settings": {
+        "title": "DUTCH DOORS (AIR 4 AND AIR 5)",
+        "text": "",
+        "grid": 4,
+        "rows": 2,
+        "enable_slider": true,
+        "show_vendor": false
+      }
+    },
+    "list_products_E6bTUB": {
+      "type": "list-products",
+      "blocks": {
+        "product_Q4LP8F": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-air-deadbolt"
+          }
+        },
+        "product_gFH7EL": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-mesa-passage-knob"
+          }
+        }
+      },
+      "block_order": [
+        "product_Q4LP8F",
+        "product_gFH7EL"
+      ],
+      "settings": {
+        "title": "DUTCH DOORS (REGULAR AIR DUTCH)",
+        "text": "",
+        "grid": 4,
+        "rows": 2,
+        "enable_slider": true,
+        "show_vendor": false
+      }
+    },
+    "list_products_rcmcYa": {
+      "type": "list-products",
+      "blocks": {
+        "product_xYwz9A": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-mesa-privacy-knob"
+          }
+        },
+        "product_gHm4jB": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-mesa-passage-knob"
+          }
+        }
+      },
+      "block_order": [
+        "product_xYwz9A",
+        "product_gHm4jB"
+      ],
+      "settings": {
+        "title": "INTERIOR AIR DOORS",
+        "text": "",
+        "grid": 4,
+        "rows": 2,
+        "enable_slider": true,
+        "show_vendor": false
+      }
+    },
+    "list_products_nr4Lij": {
+      "type": "list-products",
+      "blocks": {
+        "product_tQFLcH": {
+          "type": "product",
+          "settings": {
+            "product": "weslock-air-deadbolt"
+          }
+        }
+      },
+      "block_order": [
+        "product_tQFLcH"
+      ],
+      "settings": {
+        "title": "Standard pivot doors",
+        "text": "",
+        "grid": 4,
+        "rows": 2,
+        "enable_slider": true,
+        "show_vendor": false
+      }
+    },
+    "list_products_j8j9fJ": {
+      "type": "list-products",
+      "blocks": {
+        "product_3jzqfN": {
+          "type": "product",
+          "settings": {
+            "product": "lock-strike-1"
+          }
+        },
+        "product_QTnTEj": {
+          "type": "product",
+          "settings": {
+            "product": "lock-strike-2"
+          }
+        }
+      },
+      "block_order": [
+        "product_3jzqfN",
+        "product_QTnTEj"
+      ],
+      "settings": {
+        "title": "Lock Strike Plates",
+        "text": "",
+        "grid": 4,
+        "rows": 2,
+        "enable_slider": false,
+        "show_vendor": false
+      }
+    }
+  },
+  "order": [
+    "list_products_KWD4PN",
+    "list_products_VQ9MfJ",
+    "list_products_XD3AxP",
+    "list_products_E6bTUB",
+    "list_products_rcmcYa",
+    "list_products_nr4Lij",
+    "list_products_j8j9fJ"
+  ]
+}

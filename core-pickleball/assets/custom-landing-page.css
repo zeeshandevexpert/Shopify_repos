@@ -1,0 +1,663 @@
+@import url("https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "Winner Sans Cond";
+  src: url("WinnerSans-CondRegular.woff2") format("woff2"), url("WinnerSans-CondRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+.main-content .wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.main-content .wrapper .hero-banner {
+  margin-bottom: 50px;
+}
+.main-content .wrapper .hero-banner .hero-banner__holder {
+  padding: 7.5rem 2.5rem 2.5rem;
+  position: relative;
+  padding-top: 15rem;
+}
+.main-content .wrapper .hero-banner .hero-banner__holder .hero-banner__media {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0;
+}
+.main-content .wrapper .hero-banner .hero-banner__holder .hero-banner__media .hero-banner__img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.main-content .wrapper .hero-banner .hero-banner__holder .hero-banner__media:after {
+  background: linear-gradient(0deg, #0c2b44, rgba(255, 255, 255, 0) 60%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.main-content .wrapper .hero-banner .hero-banner__holder .hero-banner__content {
+  color: #FFFFFF;
+  position: relative;
+  z-index: 2;
+}
+.main-content .wrapper .hero-banner .hero-banner__holder .hero-banner__content .hero-banner__heading {
+  font-size: 48px;
+  margin: 0;
+  font-family: "Winner Sans Cond";
+  font-weight: 600;
+  color: #FFFFFF;
+}
+@media (max-width: 991px) {
+  .main-content .wrapper .hero-banner .hero-banner__holder .hero-banner__content .hero-banner__heading {
+    font-size: 30px;
+  }
+}
+.main-content .wrapper .image-blurb-content {
+  margin-bottom: 50px;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block {
+  flex: 0 0 auto;
+  width: calc(50% - 24px);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block {
+    width: 100%;
+  }
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block {
+  padding: 20px;
+}
+@media (max-width: 991px) {
+  .main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block {
+    padding: 0;
+  }
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .sub-heading {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #444444;
+  font-family: "Winner Sans Cond";
+  font-weight: 600;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .heading {
+  font-family: "Winner Sans Cond";
+  font-size: 40px;
+  font-weight: 600;
+  color: #444444;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .heading {
+    font-size: 28px;
+  }
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .content {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+  margin-top: 1.25rem;
+  font-size: 16px;
+  color: #444444;
+}
+@media (max-width: 767px) {
+  .main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .content {
+    font-size: 14px;
+  }
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .content h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .content a {
+  color: #4dc1ef;
+  transition: all 0.3s ease-in-out;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .content p {
+  margin-bottom: 16px;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .buttons a {
+  display: inline-flex;
+  align-items: center;
+  background-color: #4dc1ef;
+  border-color: #4dc1ef;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.625em 1.25em;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  color: #FFFFFF;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .right-block .content-block .buttons a svg {
+  margin-left: 0.625rem;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .left-block {
+  flex: 0 0 auto;
+  width: calc(50% - 24px);
+  padding: 0 12px;
+  display: flex;
+}
+@media (max-width: 991px) {
+  .main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .left-block {
+    width: 100%;
+    padding: 0;
+  }
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .left-block .image-block {
+  margin: 0;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper .left-block .image-block img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
+}
+.main-content .wrapper .image-blurb-content .image-blurb-content__holder .content-wrapper.revert {
+  flex-direction: row-reverse;
+}
+.main-content .wrapper .upcoming-tournaments {
+  margin-bottom: 100px;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__header {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__header .upcoming-tournaments__heading {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Winner Sans Cond";
+  color: #444444;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__header .upcoming-tournaments__heading {
+    font-size: 22px;
+  }
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__header .upcoming-tournaments__button .button {
+  align-items: center;
+  display: inline-flex;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 0 0 2px;
+  color: #444444;
+  padding: 0;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__header .upcoming-tournaments__button .button .button__icon {
+  margin-left: 0.625rem;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider {
+  margin: -0.75rem;
+  padding: 0.75rem;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .swiper-wrappers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1215686275);
+  height: auto;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item .upcoming-tournaments__item-link {
+  color: inherit;
+  display: block;
+  padding: 0.75rem;
+  text-decoration: inherit;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item .upcoming-tournaments__item-link .upcoming-tournaments__item-media {
+  aspect-ratio: 200/140;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  position: relative;
+  width: 100%;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item .upcoming-tournaments__item-link .upcoming-tournaments__item-media .upcoming-tournaments__item-img {
+  border-radius: 0.1875rem;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item .upcoming-tournaments__item-link .upcoming-tournaments__item-media .upcoming-tournaments__item-logo {
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item .upcoming-tournaments__item-link .upcoming-tournaments__item-content .upcoming-tournaments__item-date {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #444444;
+  font-family: "Montserrat", sans-serif;
+}
+.main-content .wrapper .upcoming-tournaments .upcoming-tournaments__holder .upcoming-tournaments__slider .upcoming-tournaments__item .upcoming-tournaments__item-link .upcoming-tournaments__item-content .upcoming-tournaments__item-heading {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #444444;
+  font-family: "Winner Sans Cond";
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.main-content .wrapper .testimonial {
+  margin-bottom: 100px;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__header .testimonial__heading {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Winner Sans Cond";
+  color: #444444;
+  text-transform: uppercase;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__header .testimonial__button .button {
+  align-items: center;
+  display: inline-flex;
+  border-color: rgba(0, 0, 0, 0);
+  border-width: 0 0 2px;
+  color: #444444;
+  padding: 0;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__header .testimonial__button .button .button__icon {
+  margin-left: 0.625rem;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__slider {
+  padding: 0.75rem;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__slider .testimonial__item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1215686275);
+  height: auto;
+  width: 33.33%;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__slider .testimonial__item .testimonial__item-link {
+  color: inherit;
+  display: block;
+  padding: 0.75rem;
+  text-decoration: inherit;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__slider .testimonial__item .testimonial__item-link .testimonial__item-content {
+  text-align: center;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__slider .testimonial__item .testimonial__item-link .testimonial__item-content .testimonial__item-date {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #444444;
+  font-family: "Montserrat", sans-serif;
+}
+.main-content .wrapper .testimonial .testimonial__holder .testimonial__slider .testimonial__item .testimonial__item-link .testimonial__item-content .testimonial__item-heading {
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: #444444;
+  font-family: "Winner Sans Cond";
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.main-content .wrapper .skills_level_camp {
+  margin-bottom: 100px;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .skills_level_camp__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .skills_level_camp__header .skills_level_camp__heading {
+  font-size: 32px;
+  font-weight: 600;
+  font-family: "Winner Sans Cond";
+  color: #444444;
+  text-transform: uppercase;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card {
+  margin: 15px 10px;
+  width: calc(33.33% - 20px);
+  flex: 0 0 auto;
+}
+@media (max-width: 1024px) {
+  .main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 600px) {
+  .main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1215686275);
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link {
+  color: inherit;
+  display: block;
+  text-decoration: inherit;
+  padding: 20px;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link .skills_level_camp__item-content .skills_level_camp__item-heading {
+  font-size: 22px;
+  margin-bottom: 4px;
+  color: #444444;
+  font-family: "Winner Sans Cond";
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link .skills_level_camp__item-content .skills_sub-title {
+  color: #4dc1ef;
+  font-size: 20px;
+  padding-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link .skills_level_camp__item-content .skills_sub-title p {
+  margin: 0;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link .skills_level_camp__item-content .skills_level_camp__item-description {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #444444;
+  font-family: "Montserrat", sans-serif;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link .skills_level_camp__item-content .skills_level_camp__item-description h5 {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+.main-content .wrapper .skills_level_camp .skills_level_camp__holder .wrap-skills-card .skills_level_camp__card .skills_level_camp__item .skills_level_camp__item-link .skills_level_camp__item-content .skills_level_camp__item-description ul li {
+  margin-bottom: 12px;
+}
+
+.user-block-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.user-block-container .user_block__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .user-block-container .user_block__header {
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+}
+.user-block-container .user_block__header .user_block__heading {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Winner Sans Cond";
+  color: #444444;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .user-block-container .user_block__header .user_block__heading {
+    font-size: 22px;
+  }
+}
+.user-block-container .user-image {
+  width: calc(33.33% - 20px);
+  position: relative;
+  height: 400px;
+}
+@media (max-width: 991px) {
+  .user-block-container .user-image {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 500px) {
+  .user-block-container .user-image {
+    height: 200px;
+  }
+}
+.user-block-container .user-image:hover .name {
+  visibility: visible;
+  opacity: 1;
+}
+.user-block-container .user-image:hover .name .view-details {
+  text-decoration: underline;
+}
+.user-block-container .user-image img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 8px;
+  object-position: top;
+}
+.user-block-container .user-image .name {
+  cursor: pointer;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease;
+  background-color: rgba(0, 0, 0, 0.5882352941);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+.user-block-container .user-image .name .view-details {
+  font-size: 18px;
+  margin-top: 15px;
+  padding-bottom: 5px;
+}
+.user-block-container .image-blurb-content__holder {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5882352941);
+  z-index: 9;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container {
+  display: flex;
+  background: white;
+  padding: 25px;
+  position: relative;
+  width: 100%;
+  height: 75vh;
+}
+@media (max-width: 991px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container {
+    flex-wrap: wrap;
+    overflow: scroll;
+    margin: 25px;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container #close-icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container #close-icon svg {
+  width: 25px;
+  height: 25px;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block {
+  flex: 0 0 auto;
+  width: calc(50% - 24px);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block {
+    width: 100%;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block {
+  padding: 20px;
+}
+@media (max-width: 991px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block {
+    padding: 0;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .sub-heading {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #444444;
+  font-family: "Winner Sans Cond";
+  font-weight: 600;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .heading {
+  font-family: "Winner Sans Cond";
+  font-size: 40px;
+  font-weight: 600;
+  color: #444444;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .heading {
+    font-size: 28px;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .content {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 0;
+  margin-top: 1.25rem;
+  font-size: 16px;
+  color: #444444;
+}
+@media (max-width: 767px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .content {
+    font-size: 14px;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .content h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .content a {
+  color: #4dc1ef;
+  transition: all 0.3s ease-in-out;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .content p {
+  margin-bottom: 16px;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .buttons a {
+  display: inline-flex;
+  align-items: center;
+  background-color: #4dc1ef;
+  border-color: #4dc1ef;
+  border-style: solid;
+  border-width: 1px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0.625em 1.25em;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  color: #FFFFFF;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .right-block .content-block .buttons a svg {
+  margin-left: 0.625rem;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .left-block {
+  flex: 0 0 auto;
+  width: calc(50% - 24px);
+  padding: 0 12px;
+  display: flex;
+  padding: 0;
+}
+@media (max-width: 991px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container .left-block {
+    width: 100%;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .left-block .image-block {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+.user-block-container .image-blurb-content__holder .content-wrapper .pop-container .left-block .image-block img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  object-position: top;
+}
+@media (max-width: 991px) {
+  .user-block-container .image-blurb-content__holder .content-wrapper .pop-container .left-block .image-block img {
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+.user-block-container .image-blurb-content__holder .content-wrapper.revert {
+  flex-direction: row-reverse;
+}
+
+/*# sourceMappingURL=custom-landing-page.css.map */

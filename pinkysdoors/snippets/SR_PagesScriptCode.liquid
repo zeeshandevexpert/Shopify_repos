@@ -1,0 +1,1160 @@
+<!--Client Invoice Script Code -->
+<script>  
+  //Customer Order Script
+  var i=0;
+  var ClientInvoiceDiscount ="";
+Clientproduct=[];
+  ClientInvoiceselectedProduct=[];
+	 
+  // Add selected products to the product table
+  var AddProductInClientInvoice=function(title,price,image,type,Pid,size){
+    
+     var quantity=$('#ClientInvoicequantity_'+Pid).val();
+    if(quantity==""){
+      quantity=1;
+    }
+    	       	  
+    $('#clientinvoicetable').hide();
+
+if(ClientInvoiceselectedProduct.length==0){
+       ClientInvoiceselectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+    });
+}
+else{
+      if((ClientInvoiceselectedProductIndex = ClientInvoiceselectedProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        ClientInvoiceselectedProduct[ClientInvoiceselectedProductIndex].quantity = parseInt(ClientInvoiceselectedProduct[ClientInvoiceselectedProductIndex].quantity)+parseInt(quantity)
+    }
+  else{
+       ClientInvoiceselectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+    });
+  }
+}
+
+  if(Clientproduct.length==0){
+     Clientproduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+  }
+  else{
+    if((ProductIndex = Clientproduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        Clientproduct[ProductIndex].product_price = Clientproduct[ProductIndex].product_price+(price*quantity)
+        Clientproduct[ProductIndex].product_quantity = parseInt(Clientproduct[ProductIndex].product_quantity)+parseInt(quantity)
+    }
+    else{
+    Clientproduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+    }
+
+  }
+     showDetailsInClientInvoiceProductTable(serverData,price,quantity,image,title,type,size);        		 
+  }
+  
+  var showDetailsInClientInvoiceProductTable=function(response,price,quantity,image,title,type,size){
+    $('#productnotselect1').hide();
+    $("#Customedraft_btn").show();
+    
+    var val=$('#DiscountType').val();
+    
+    //if CommissionAndDiscountPerRep is selected
+    if(response.select.CommissionPerRep)
+    {
+      console.log(response.PerRepCommissionModel);
+      getCommissionPerRep(Clientproduct,response.PerRepCommissionModel,currencyFormat);
+      ApplyDiscount(val);
+      $("#Choice").show();
+      $('#CreateInvoice').show();
+      $('#productTable').show();
+      $('#draft_btn').show();
+    }
+    
+       //if ClientDiscount is selected 
+    
+    else if(response.select.ClientDiscount)
+    {
+      	$("#CreateInvoice").hide();
+         
+      	ClientInvoiceDiscount = response.ClientInvoiceDiscount;
+      	if(Clientproduct == 0)
+		{
+	   		$("#productTable").hide();
+       		$("#productnotselect1").text('No Products Selected. Please select products and try again.'); 
+		}
+      	else
+      	{
+          $('#CustomDiscount').show();
+			var count = 1;
+          var customersalerows = '<tr id="ClientInvoicerow">'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Name</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Size</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th>'+
+  			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Discounted Price for Customer</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">SalesRep Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">DiscountType</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Product</th></tr>';
+   
+          	for(var data in Clientproduct)
+          	{
+              	
+            	var producttype = Clientproduct[data].product_type;
+            	if(producttype == "" )
+        		{
+            		var producttype = "all other products";          
+        		}
+              	var k=0;
+        		var optns = null ;  
+              	console.log(response.ClientInvoiceDiscount);
+        		for(var discount in response.ClientInvoiceDiscount)
+        		{
+                  if(response.ClientInvoiceDiscount[discount].ProductType.toLowerCase() == producttype.toLowerCase())
+                  {
+          			optns += '<option value="'+response.ClientInvoiceDiscount[discount].DiscountName.toString()+'" id="'+response.ClientInvoiceDiscount[discount].DiscountRate+'">'+ response.ClientInvoiceDiscount[discount].DiscountName.toString()+'</option>';
+           			k++;
+                  }
+        		}
+                customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=image'+Clientproduct[data].variantId+'><img src='+(Clientproduct[data].Image)+'></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Title'+Clientproduct[data].variantId+'>'+(Clientproduct[data].title)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=size'+Clientproduct[data].variantId+'>'+(Clientproduct[data].product_size)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=qty'+Clientproduct[data].variantId+'>'+(Clientproduct[data].product_quantity)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=ItemPrice'+Clientproduct[data].variantId+'>'+(currencyFormat +" "+ Clientproduct[data].Item_Price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=productPrice'+Clientproduct[data].variantId+'>'+(currencyFormat +" "+ Clientproduct[data].product_price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Discount'+Clientproduct[data].variantId+'>No Discount</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=Commission'+Clientproduct[data].variantId+'>No Commission</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><select id="discounttype_'+Clientproduct[data].variantId +'" onchange="ApplyInvoiceDiscount(this, ' + Clientproduct[data].variantId + ' );" > <option value="No Discount"> No DiscountType </option>'+ optns +'</select></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;" id=productPrice'+Clientproduct[data].variantId+'><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+  
+              count++;
+            }
+            $('#productTable').show();
+          	document.getElementById( 'productTable' ).innerHTML = customersalerows;
+      	}
+    }
+    else{
+      console.log(response.productssetcommission);
+      getCommission(Clientproduct,response.productssetcommission,currencyFormat);
+      ApplyDiscount(val);
+      $("#Choice").show();
+      $('#CreateInvoice').show();
+      $('#productTable').show();
+      $('#draft_btn').show();
+    }
+    
+  }
+  
+var RemoveClientInvoiceProduct=function(Id){
+  Id=Id.toString();
+   $('#row'+Id).remove();
+          ClientInvoiceselectedProduct=ClientInvoiceselectedProduct.filter(function(item){
+          return item.variantId!==Id;
+         });     
+    Clientproduct = Clientproduct.filter(function(item) { 
+  return item.variantId !== Id; 
+});
+    if(Clientproduct.length<1){
+      $('#ClientInvoicerow').hide();
+      $("#Customedraft_btn").hide();
+	  $('#draft_btn').hide();
+    }
+    var data = {
+                "id": Id,
+                "quantity": 0,
+            };
+	    $.ajax({
+	      type: 'POST',
+          url: '/cart/change.js',
+	      dataType: 'json',
+	       data: data,             
+        });
+}   
+  
+function showSelected(thisObj)
+{
+
+  document.getElementById('sr_customer_fname').value = thisObj.options[thisObj.selectedIndex].text;
+  document.getElementById('sr_customer_email').value = thisObj.options[thisObj.selectedIndex].id;
+
+}
+                     
+   var onSuccessInvoice = function(response)
+    {
+      if(response == false)
+	  {
+		 $("#sentinvoice"+i).text("Invoice Sending Failed");
+	  }
+      else
+      {
+         $("#sentinvoice"+i).text("Invoice Sent Successfully");
+      }
+    }
+   
+       
+  var SendInvoice = function(orderid,shopname,emailid,i)
+  {
+
+     $("#sentinvoice"+i).text("Sending Invoice"); 
+       var data = {
+        			"orderid" : orderid,
+         			"shopname" : shopname,
+                    "emailid" : emailid,
+         			
+        		}
+                var invoicedata = JSON.stringify(data);
+                var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=2&data="+invoicedata;
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             onSuccessInvoice(data, status);
+                             $("#sentinvoice"+i).text("Invoice Sent Successfully");                
+                      }
+					                      );
+  }
+  
+                
+  var DeleteInvoice = function(orderid,shopname,i)
+  {
+     $("#deleteinvoice"+i).text("Deleting Invoice"); 
+       var data = {
+        			"orderid" : orderid,
+         			"shopname" : shopname
+         			
+        		}
+                var invoicedata = JSON.stringify(data);
+                var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=14&data="+invoicedata;
+               $.post(
+                  urlVal,
+                   function (data, status) {  
+                             if(data == false)
+	  						{
+		 						$("#deleteinvoice"+i).text("Delete Invoice Failed");
+	  						}
+      						else
+      						{
+         						$("#deleteinvoice"+i).text("Invoice deleted Successfully");
+      						}               
+                      }
+                    );
+  }
+  
+  var onSuccessdata = function(response, textStatus)
+     {
+          if(response.ClientInvoiceDetails!= 0)
+         { 
+
+           var rows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Customer Name </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Title </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Subtotal Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Status </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Invoice</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Delete Invoice</th></tr>';
+           for(var cust in response.ClientInvoiceDetails) { 
+
+              if(response.ClientInvoiceDetails[cust].status != "completed")
+              {
+                 rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].customername)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].lineitems)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].subtotalprice)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].status)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                '<div><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="SendInvoice(\'' + response.ClientInvoiceDetails[cust].orderid+ '\',\'' + response.ClientInvoiceDetails[cust].shopname + '\',\'' + response.ClientInvoiceDetails[cust].emailid + '\',\''+i+'\')"><span class="Polaris-Button__Content"><span>Send Invoice</span></span></button></div></div></td>' +
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                '<div><div class="Polaris-ButtonGroup__Item"><button type="button" id="deleteinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DeleteInvoice(\'' + response.ClientInvoiceDetails[cust].orderid+ '\',\'' + response.ClientInvoiceDetails[cust].shopname + '\',\''+i+'\')"><span class="Polaris-Button__Content"><span>Delete Invoice</span></span></button></div></div></td></tr>';
+              } 
+			  else
+             {
+               rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].customername)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].lineitems)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].subtotalprice)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.ClientInvoiceDetails[cust].status)+'</td>'+
+				 '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">-</td>'+ 
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">-</td></tr>';
+               }
+                     i++;
+             }
+
+          $("#clientorder").hide();
+          $("#ViewOrders").show();
+          document.getElementById( 'ViewClientOrders' ).innerHTML = rows;
+         }
+         else
+           {
+		      $("#clientorder").hide();
+              $("#ViewOrders").show();
+              $("#noclientorder").show();
+           }
+         };
+            
+  var ViewInvoiceOrders= function(){
+     $("#Order_btn").text("Getting...");       
+     var urlVal="{{shop.url}}/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=2";
+               $.get(
+                  urlVal,
+                   function (data, status) {  
+                          onSuccessdata(data, status)
+                          $("#Order_btn").text(" View Previous Orders");
+                               
+                  });
+     }
+
+            var ResponseSuccess = function (response,textStatus) {
+    		if (response == null)
+		  	{
+		   		$("#SalesRep_order").text('Error during creating your order.Please contact support');
+          	}        
+          	else if (response.email && textStatus){
+            	$("#SalesRep_order").attr('href',response.invoice_url);
+                
+                $("#SalesRep_order").text('Order Invoice created successfully!  Invoice has been emailed to Customer!');
+                $("#SalesRep_order").show().delay(2000).fadeOut();
+                Clientproduct=[];
+                ClientInvoiceselectedProduct=[];
+          	}
+          	else {
+                 $("#SalesRep_order").text('Error during creating your order.Please contact support');                   
+            }    
+          }	
+ 
+ //Custom Tiers Client Invoice	   
+ var CustomDiscountDraftOrder = function(){
+    	
+    	for(var count in ClientInvoiceselectedProduct)
+        {
+          	var type = document.getElementById("discounttype_"+ClientInvoiceselectedProduct[count].variantId);
+            if(type!=null){
+             var discounttype = type.options[type.selectedIndex].value;
+          	
+        	ClientInvoiceselectedProduct[count]["DiscountType"] = discounttype;
+            }    
+			
+        }
+    	var prods = JSON.stringify(ClientInvoiceselectedProduct);	 
+    
+         var sr_customer_email=document.getElementById("sr_customer_email").value;
+         var sr_customer_fname=document.getElementById("sr_customer_fname").value;
+
+         if(sr_customer_fname == "" || sr_customer_email == "")
+         {
+         	$("#sr_customerOrder_error1").show();
+         }
+          else 
+            {
+                if(ClientInvoiceselectedProduct.length<1){
+           		 $("#Customedraft_btn").text("Create New Invoice");
+          		 $("#SalesRep_order").text('No Products Selected. Please select products and try again.');
+                }
+                else{  
+				$("#Customedraft_btn").text("Creating Order...");
+				 
+                var order = {
+        			"email" : "{{customer.email}}",
+         			"prods" : prods,
+         			"customerId" : {{customer.id}},
+         			"wholesale": "false",
+         			"Index": Index,
+                  	"fnamecus" : sr_customer_fname,
+                  	"cusemail": sr_customer_email,
+					"pro":  $('#reppro').is(":checked")
+                    
+        		}
+                var customerdata = JSON.stringify(order);				
+				var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=0&data="+customerdata;
+				
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             ResponseSuccess(data, status);
+							 document.getElementById("sr_customer_email").value = "" ;
+                             document.getElementById("sr_customer_fname").value = "";
+                             $("#Customedraft_btn").text("Create New Invoice"); 
+                             $('#productTable').hide();
+                      }
+                    );
+                }
+        }
+      } 
+
+
+//Default Tiers Client Invoice	
+    var DraftOrder = function(){	       
+       	 var prods = JSON.stringify(ClientInvoiceselectedProduct);
+         var sr_customer_email=document.getElementById("sr_customer_email").value;
+         var sr_customer_fname=document.getElementById("sr_customer_fname").value;
+         
+         if(sr_customer_fname == "" || sr_customer_email=="")
+         {
+         	$("#sr_customerOrder_error1").show();
+         }
+              else 
+            {
+                if(ClientInvoiceselectedProduct.length<1){
+           		 $("#draft_btn").text("Create New Invoice");
+          		 $("#SalesRep_order").text('No Products Selected. Please select products and try again.');   
+                }
+                else{
+				$("#draft_btn").text("Creating Order...");
+
+                var order = {
+        			"email" : "{{customer.email}}",
+         			"prods" : prods,
+         			"customerId" : {{customer.id}},
+         			"wholesale": "false",
+         			"Index": Index,
+                  	"fnamecus" : sr_customer_fname,
+                  	"cusemail": sr_customer_email,
+                    "pro":  $('#reppro').is(":checked")
+        		}
+                var customerdata = JSON.stringify(order);
+                var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=0&data="+customerdata;
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             ResponseSuccess(data, status);
+						     document.getElementById("sr_customer_email").value = "" ;
+                             document.getElementById("sr_customer_fname").value = "";
+                             $("#draft_btn").text("Create New Invoice");
+                             $('#productTable').hide();
+                      }
+                    );
+                }
+        }
+      }          
+                
+	   var BacktoClientPage = function(){
+	              $("#clientorder").show();
+                  $("#ViewOrders").hide();
+	     }
+</script>
+
+<!--Wholesale Order Script Code -->
+<script>
+  selectedProduct=[];
+  wholesaleProduct=[];
+  subtotal=0;
+  finalDiscount=0;
+
+  // Add selected products to the product table
+  var AddProduct=function(title,price,image,type,Pid,size){
+    
+     var quantity=$('#quantity_'+Pid).val();
+    if(quantity==""){
+      quantity=1;
+    }
+    	
+    $('#wholesaleinvoicetable').hide();
+ 
+if(selectedProduct.length==0){
+      selectedProduct.push({
+      "variantId" :Pid , 
+       "quantity" :  quantity,
+       "product_type" : type
+    });
+}
+
+else{
+      if((selectedProductIndex = selectedProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        selectedProduct[selectedProductIndex].quantity = parseInt(selectedProduct[selectedProductIndex].quantity)+parseInt(quantity)
+    }
+  else{
+      selectedProduct.push({
+      "variantId" :Pid , 
+      "quantity" :  quantity,
+      "product_type" : type
+    });
+  }
+}
+
+  if(wholesaleProduct.length==0){
+     wholesaleProduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+  }
+  else{
+    if((ProductIndex = wholesaleProduct.findIndex((obj => obj.variantId == Pid)))>=0){
+        wholesaleProduct[ProductIndex].product_price = wholesaleProduct[ProductIndex].product_price+(price*quantity)
+        wholesaleProduct[ProductIndex].product_quantity = parseInt(wholesaleProduct[ProductIndex].product_quantity)+parseInt(quantity)
+    }
+    else{
+    wholesaleProduct.push({
+    "product_type":type,
+    "product_price":price*quantity,
+    "Item_Price":price,
+    "product_quantity":quantity,
+    "Image":image,
+    "title":title,
+    "product_size":size,
+    "variantId":Pid
+  });
+    }
+
+  }
+  subtotal=subtotal+price*quantity;
+  showDetailsInProductTable(serverData,price,quantity,image,title,type,size,Pid);
+  
+  
+}
+  
+  
+  var showDetailsInProductTable=function(response,price,quantity,image,title,type,size,Pid){
+    $('#productnotselect').hide();
+    $('#draftWholesale_btn').show();
+    $('#totalPrice').show();
+    $('#DiscountedPrice').show();
+   
+      getDiscount(wholesaleProduct,response.productssetdiscount,currencyFormat,response.select.FixedWholesaleDiscount,response.select.wholesaleqtydiscount);
+    if(wholesaleProduct == 0)
+	{
+	   $("#prodTable").hide();
+      $("#productnotselect").text('No Products Selected. Please select products and try again.');
+	}
+	else
+	{ 
+       var wholesalerows = '<tr id="row">'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Name</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Size</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th>'+
+  			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Your Discounted Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Product</th></tr>';
+      for(var data in wholesaleProduct)
+      {
+        var discountText="";
+        if(wholesaleProduct[data].Discounted_Amount>0){
+         discountText=currencyFormat+" "+(wholesaleProduct[data].Discounted_Amount);
+          
+        }
+        else{
+          wholesaleProduct[data].Discounted_Amount=0;
+          discountText="No Discount";
+        }
+
+                wholesalerows += '<tr id="row' + (wholesaleProduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img src='+wholesaleProduct[data].Image+'></td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(wholesaleProduct[data].title)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(wholesaleProduct[data].product_size)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(wholesaleProduct[data].product_quantity)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ wholesaleProduct[data].Item_Price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ wholesaleProduct[data].product_price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(discountText)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" id="sentinvoice' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveProduct('+wholesaleProduct[data].variantId+','+wholesaleProduct[data].product_price+','+parseFloat(wholesaleProduct[data].Discounted_Amount)+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+          }
+     document.getElementById( 'prodTable' ).innerHTML = wholesalerows;
+	  $('#wholesaleinvoicetable').hide();
+      $('#prodTable').show(); 
+    }
+  
+    addItems(Pid,quantity);
+}
+  
+  
+var RemoveProduct=function(Id,totalPrice,discountAmt){
+  Id=Id.toString();
+  subtotal=subtotal-totalPrice;
+  if(discountAmt==0){
+    globalTotalDiscountAmt=globalTotalDiscountAmt-totalPrice;
+  }
+  else{
+    globalTotalDiscountAmt=globalTotalDiscountAmt-discountAmt;
+  }
+  finalDiscount=subtotal-parseFloat(globalTotalDiscountAmt);
+  
+    $('#totalPrice').html('Total Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+ subtotal.toFixed(2)+"</b>");
+  if(subtotal.toFixed(2)==(subtotal- finalDiscount).toFixed(2)){
+        $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>0.00</b>"); 
+
+  }
+  else{
+        $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>"); 
+  }
+   $('#row'+Id).remove();
+         
+     selectedProduct=selectedProduct.filter(function(item){
+          return item.variantId!==Id;
+         });
+    wholesaleProduct = wholesaleProduct.filter(function(item) { 
+  return item.variantId !== Id; 
+});
+    if(wholesaleProduct.length<1){
+      $('#row').hide();
+      $('#totalPrice').hide();
+      $('#DiscountedPrice').hide();
+      $('#draftWholesale_btn').hide();
+    }
+    var data = {
+                "id": Id,
+                "quantity": 0,
+            };
+	    $.ajax({
+	      type: 'POST',
+          url: '/cart/change.js',
+	      dataType: 'json',
+	       data: data,             
+        });
+}   
+  
+
+function addItems(Id,quantity){  
+  var data = {
+                "id": Id,
+                "quantity": quantity,
+            };
+	    $.ajax({
+	      type: 'POST',
+          url: '/cart/add.js',
+	      dataType: 'json',
+	       data: data,             
+        });
+  
+  };  
+  
+    
+var onSuccessWholesale = function (response,textStatus) {
+   document.location.href = '/checkout?discount='+response;
+       
+};
+    
+    var DraftWholesaleOrder=function(){
+
+        var prods = JSON.stringify(selectedProduct);
+         
+      if (selectedProduct.length < 1){
+			$("#draftWholesale_btn").text("Create New Invoice");	
+      		$("#SalesRepWholesale_order").text('No Products Selected. Please select products and try again.');
+      }
+        else{
+             $("#draftWholesale_btn").text("Wait While Processing..."); 
+          if(finalDiscount==subtotal){
+            finalDiscount=0;
+          }
+         	  var order = {
+        			"email" : "{{customer.email}}",
+         			"customerId" : {{customer.id}},
+         			"wholesale": "true",
+         			"Index": 5,
+                    "discountAmount":finalDiscount,
+        		}
+        	  var data = JSON.stringify(order);
+         	  var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=5&data="+data;
+			  $.post(
+       			   urlVal,
+			   function (data, status) {                 
+							   onSuccessWholesale(data, status);
+						}
+					);
+              }    
+			            
+      }
+</script>
+
+<!--Discount Coupon Order Script Code -->
+<script>
+
+  	var CreateCoupon = function()
+	{
+      	var discount=document.getElementById("Discount").value;
+  		var coupon = document.getElementById("DiscountCouponCode").value;
+		var strUser;
+
+		if(discount == "" || coupon == "")
+		{
+		  $("#sr_coupon_error1").show();
+		}
+		else
+		{
+		{% if customer %}
+			strUser = {{customer.id}};
+		{% else %}
+			strUser = "";
+		{% endif %}
+          
+        $("#submit").text("Creating Coupon..");
+      	var data = {
+          				"couponCode" : coupon,
+        				"salesrepId" : strUser,
+         				"Discount" : discount,
+        			}
+        var couponeData = JSON.stringify(data);
+        var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=3&data="+couponeData;
+        $.post(
+				urlVal,
+				function (data, status) {     
+                if (data == null)
+                  {
+                      $("#couponempty").text(data);
+                  }
+                  else {
+                        if(data == "Coupon Created")
+                        {
+						   $("#couponempty").hide();
+                           $("#submit").text(data);						   
+                        }
+                        else
+                        {
+                           $("#couponempty").text(data);
+                        }
+                      
+              }
+                  
+        }
+        );
+		}
+  	}
+
+var DeleteCoupon = function(coupon,couponid,i)
+  {
+     $("#deletecoupon"+i).text("Deleting Coupon"); 
+       var data = {
+        			"coupon" : coupon,
+         			"customerId" : {{customer.id}},
+                    "couponid" : couponid,
+         			
+        		}
+                var data = JSON.stringify(data);
+                var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=4&data="+data;
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             if(data == false)
+                              {
+                                 $("#deletecoupon"+i).text("Coupon deleting Failed");
+                              }
+                              else
+                              {
+                                 $("#deletecoupon"+i).text("Coupon Deleted");
+                              }               
+                      }
+                    );
+      }        
+          
+         
+      var onSuccessCoupondata = function (response, textStatus)
+        {
+        console.log(response.Coupons);
+        if(response.Coupons == 0)
+    	{
+            $("#Discount_Coupon").hide();
+            $("#salesrepcoupon").hide();
+            $("#View_DiscountCoupons").show();
+      		$("#OneTimeCoupons").hide();
+      		$("#nodiscountcoupon").show();
+    	}
+    	else{
+         var DiscountCoupons = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Coupon Code</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Discount</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Delete Coupon</th></tr>';
+           for(var coupon in response.Coupons)
+           {  
+                DiscountCoupons += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.Coupons[coupon].CouponeCode)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ response.Coupons[coupon].Discount +"%"+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                '<div><div class="Polaris-ButtonGroup__Item"><button type="button" id="deletecoupon' + i + '" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DeleteCoupon(\'' + response.Coupons[coupon].CouponeCode+ '\',\''+response.Coupons[coupon].couponId+'\',\''+i+'\')"><span class="Polaris-Button__Content"><span>Delete</span></span></button></div></div></td></tr>';
+             i++;
+           }
+    	
+         $("#salesrepcoupon").hide();
+         $("#Discount_Coupon").hide();
+         $("#View_DiscountCoupons").show();
+          
+    		document.getElementById('OneTimeCoupons').innerHTML = DiscountCoupons;
+  		}
+        }
+        
+	function myFunction() {
+  		var copyText = document.getElementById("myInput");
+  		copyText.select();
+  		document.execCommand("Copy");
+  		$('#btnmsg').text('Copied');
+ 
+	}
+       var ShowCouponTable = function ()
+        {
+        
+        $("#Coupon_btn").text("Getting...");       
+        var urlVal="{{shop.url}}/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=8";
+               $.get(
+                  urlVal,
+                   function (data, status) {  
+                          onSuccessCoupondata(data, status)
+                          $("#Coupon_btn").text("View Coupons");
+                               
+                  });
+        }
+        
+   var BacktoCouponPage = function(){
+	  $("#Discount_Coupon").show();
+      $("#salesrepcoupon").show();
+	  $("#View_DiscountCoupons").hide();
+	 }
+</script>
+
+<!--Affiliate Orders Script Code -->
+<script>
+ 
+   var onSuccessAffiliatedata = function(response, textStatus)
+   {
+     var i;    
+    
+     if(response.CustomerDetails!= 0)
+       { 
+	       var rows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Customer Name </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;"> Customer Email </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Title</th>'+
+			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Order Date</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Subtotal </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th></tr>';
+           for(var cust in response.CustomerDetails)
+           {  
+              var orderDate = new Date(parseInt(response.CustomerDetails[cust].orderDate.replace('/Date(', '')));
+                rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].FirstName)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].email)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].title)+'</td>'+
+			    '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(orderDate.toLocaleDateString())+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].subtotalprice)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.CustomerDetails[cust].totalCommission)+'</td></tr>';
+             i++;
+           }                     
+              $("#affiliateorder").hide();
+              $("#View_AffiliateOrders").show();
+              document.getElementById( 'AffiliateOrders' ).innerHTML = rows;
+      }
+	  else
+       {
+          $("#View_AffiliateOrders").show();
+          $("#noaffiliateorder").show();
+		  $("#affiliateorder").hide();
+       }
+     };
+        
+  
+  var ViewAffiliateOrders= function(){
+     $("#AffiliateOrder_btn").text("Getting...");       
+     var urlVal="{{shop.url}}/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=3";
+               $.get(
+                  urlVal,
+                   function (data, status) {  
+                          onSuccessAffiliatedata(data, status)
+                          $("#AffiliateOrder_btn").text(" View Affiliate Orders");
+                               
+                  });
+     }
+
+	 var BacktoAffiliatePage = function(){
+	  $("#affiliateorder").show();
+	  $("#View_AffiliateOrders").hide();
+	 }
+</script>
+
+<!--Your Bio Script Code -->
+<script>
+ var onSuccess = function(response)
+    {
+      if(response == false)
+	  {
+         $("#error_link").show();
+		 $("#save_btn").text("Failed");
+	  }
+      else
+      {
+	     $("#error_link").hide();
+         $("#save_btn").text("Saved Successfully");
+      }
+    }
+
+var SaveBio = function()
+{
+    $("#save_btn").text("Saving..");
+    var bio = document.getElementById("repbio").value;
+	var uniquelink = document.getElementById("uniquelink").value;
+    var repbio = {       			
+         			"bio" : bio,
+         			"repId" : {{customer.id}},
+					"repname" : "{{customer.first_name}}",
+					"uniquelink" : uniquelink
+        		 }
+
+           var customerdata = JSON.stringify(repbio);
+           var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=8&data="+customerdata;
+				
+               $.post(
+                  urlVal,
+                   function (data, status) {            
+                             onSuccess(data, status);							
+                      }
+                    );
+    }            
+  
+</script>
+
+<!--Team Script Code -->
+<script>
+
+var onSuccessTeamMemberData = function(response, textStatus)
+{
+    $("#teamdata").show();
+  //Client Order
+   var teamrows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Sent</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Paid</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Sales</th></tr>';
+ 
+
+   teamrows += '<tr class="Polaris-DataTable__TableRow">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberClientOrdersDetails.OrdersSent)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.TeamMemberClientOrdersDetails.OrdersPaid)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberClientOrdersDetails.Commission)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberClientOrdersDetails.TotalSales)+'</td></tr>';
+  
+  document.getElementById( 'ViewClientOrderTeamMember' ).innerHTML = teamrows;
+  $("#ClientOrderTeamMember").show();
+  
+  //Wholesale Order
+   var teamrows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Sent</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Paid</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Sales</th></tr>';
+ 
+ 
+   teamrows += '<tr class="Polaris-DataTable__TableRow">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberWholesaleOrdersDetails.OrdersSent)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.TeamMemberWholesaleOrdersDetails.OrdersPaid)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberWholesaleOrdersDetails.Commission)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberWholesaleOrdersDetails.TotalSales)+'</td></tr>';
+  
+  document.getElementById( 'ViewWholesaleOrderTeamMember' ).innerHTML = teamrows;
+  $("#WholesaleOrderTeamMember").show();
+  
+   //Coupon Order
+   var teamrows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Paid</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">TotalSales</th></tr>';
+ 
+ 
+   teamrows += '<tr class="Polaris-DataTable__TableRow">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.TeamMemberCouponOrdersDetails.OrdersPaid)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberCouponOrdersDetails.Commission)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberCouponOrdersDetails.TotalSales)+'</td></tr>';
+  
+  document.getElementById( 'ViewCouponOrderTeamMember' ).innerHTML = teamrows;
+  $("#CouponOrderTeamMember").show();
+  
+   //Affiliate Order
+   var teamrows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Paid</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Sales</th></tr>';
+ 
+ 
+   teamrows += '<tr class="Polaris-DataTable__TableRow">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.TeamMemberAffiliateOrdersDetails.OrdersPaid)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberAffiliateOrdersDetails.Commission)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberAffiliateOrdersDetails.TotalSales)+'</td></tr>';
+  
+  document.getElementById( 'ViewAffiliateOrderTeamMember' ).innerHTML = teamrows;
+  $("#AffiliateOrderTeamMember").show();
+  
+   //Tag Customer Order
+   var teamrows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Orders Paid</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Sales</th></tr>';
+ 
+ 
+   teamrows += '<tr class="Polaris-DataTable__TableRow">'+                
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.TeamMemberTagCustomerOrdersDetails.OrdersPaid)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberTagCustomerOrdersDetails.Commission)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (response.TeamMemberTagCustomerOrdersDetails.TotalSales)+'</td></tr>';
+  
+  document.getElementById( 'ViewTagCustomerOrderTeamMember' ).innerHTML = teamrows;
+  $("#TagCustomerOrderTeamMember").show();
+}
+
+
+function showTeamDetails(thisrep)
+{
+  var RepName = thisrep.options[thisrep.selectedIndex].text;
+  var Repid = thisrep.options[thisrep.selectedIndex].id;
+
+
+  var urlVal="{{shop.url}}/apps/SalesRep?customerId="+Repid+"&customerName="+RepName+"&data=7";
+    $.get(
+          urlVal,
+          function (data, status) {  
+            onSuccessTeamMemberData(data, status)                            
+     }); 
+
+}
+</script>
+
+<!-- Team Lead -->
+<script>
+
+  	var CreateLead = function()
+	{
+      	var firstname=document.getElementById("customer_fname").value;
+  		var lastname = document.getElementById("customer_lname").value;
+        var phoneno=document.getElementById("customer_phoneno").value;
+  		var email = document.getElementById("customer_email").value;
+        var note=document.getElementById("customer_note").value;
+  		var address = document.getElementById("customer_address").value;
+        var customercity=document.getElementById("customer_city").value;
+        var customerstate=document.getElementById("customer_state").value;
+        var customercountry=document.getElementById("customer_country").value;
+        var customerpincode=document.getElementById("customer_pincode").value;
+        var companyaddress=document.getElementById("cust_company_address").value;
+        var companycity=document.getElementById("cust_company_city").value;
+        var companystate=document.getElementById("cust_company_state").value;
+        var companycountry=document.getElementById("cust_company_country").value;
+        var companypincode=document.getElementById("cust_company_pincode").value;
+  		var leadstatus = document.getElementById("LeadStatus").value;
+        var leadrating=document.getElementById("LeadRating").value;
+  		var salesprogram = document.getElementById("SalesProgram").value;
+		var salesrepid, salesrepname;
+
+		
+		{% if customer %}
+			salesrepid = {{customer.id}};
+			salesrepname = "{{customer.first_name}}";
+		{% else %}
+			strUser = "";
+		{% endif %}
+          
+        $("#leadsave").text("Saving..");
+      	var data = {
+                "SalesRepId" : salesrepid,
+				"SalesRepName" : salesrepname,    
+                "firstname" : firstname, 
+                "lastname" : lastname,
+                "phoneno" : phoneno,
+                "email" : email,
+                "note" : note,
+                "address" : address,
+                "customercity" : customercity,
+                "customerstate" : customerstate,
+                "customercountry": customercountry,
+                "customerpincode" : customerpincode,
+                "companyaddress" : companyaddress,
+                "companycity" : companycity,
+                "companystate" : companystate,
+                "companycountry" : companycountry,
+                "companypincode" : companypincode,
+                "leadstatus" : leadstatus,
+                "leadrating" : leadrating,
+                "salesprogram" : salesprogram,
+    
+         }
+        var leadData = JSON.stringify(data);
+        var urlVal="{{shop.url}}/apps/SalesRep?pageIndex=13&data="+leadData;
+        $.post(
+				urlVal,
+				function (data, status) {     
+                
+                     if(data == false)
+                      {                         
+                         $("#leadsave").text("Failed");
+                      }
+                      else
+                      {
+                         $("#leadsave").text("Saved");
+                      }
+                 
+                  }
+        );
+		
+  	}
+</script>
+
+<!--Your Clients Code-->
+<script>
+
+var onSuccessClientOrdersData = function(response, textStatus)
+{
+   console.log(response.clientallorders);
+    if(response.clientallorders != 0)
+       { 
+        
+	       var rows = '<tr>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Order Number </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Order Date </th>'+
+			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Subtotal</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Status</th></tr>';
+          
+         for(var order in response.clientallorders)
+           { 
+              var orderDate = new Date(parseInt(response.clientallorders[order].created_at.replace('/Date(', '')));
+                rows += '<tr id="row' + i +'" class = "class="Polaris-DataTable__TableRow"">'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.clientallorders[order].order_number)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(orderDate.toLocaleDateString())+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.clientallorders[order].subtotal_price)+'</td>'+
+                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(response.clientallorders[order].financial_status)+'</td></tr>';
+             
+           }                     
+              $("#Clientdetails").hide();
+              $("#ViewRepClientOrders").show();
+              document.getElementById( 'ViewRepClientOrdersDetails' ).innerHTML = rows;
+      }
+	  else
+       {     
+          $("#Clientdetails").hide();
+          $("#ViewRepClientOrders").show();
+          $("#norepclientorder").show();
+		  $("#ViewRepClientOrdersDetails").hide();       
+       }
+  
+}
+
+var ClientOrdersDetails = function(Clientid,ClientName)
+{      
+    var urlVal="{{shop.url}}/apps/SalesRep?customerId="+Clientid+"&customerName="+ClientName+"&data=12";
+    $.get(
+          urlVal,
+          function (data, status) {  
+          onSuccessClientOrdersData(data, status)                            
+     });                           
+}
+
+var BacktoYourClientPage = function(){
+	              $("#Clientdetails").show();
+                  $("#ViewRepClientOrders").hide();
+	     }
+</script>

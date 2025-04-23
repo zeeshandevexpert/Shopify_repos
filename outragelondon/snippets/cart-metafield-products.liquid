@@ -1,0 +1,33 @@
+<div class="meta-wrap" style="display:none;">
+{% for item in cart.items %} 
+ <div data-class="{{ item.product.handle }}">
+  {% assign recommended_products = item.product.metafields.custom.product_swatches.value %}
+  {% if recommended_products != blank %}
+     <div class="swiper-slide cus-meta-pro-upsell">
+  {% for metaproduct in recommended_products %}
+  
+            <div class="custom-rec-form drawer-pd">
+              <a class="custom-rec-pro-image" href="{{ metaproduct.url }}">
+                <img src="{{ metaproduct.featured_image | img_url: '400x' }}" class="custom-rec-img" />
+              </a>
+              <div class="bottom-pd">
+                <a href="{{ metaproduct.url }}" class="custom-rec-title">{{ metaproduct.title }}</a>
+                <p class="custom-rec-price">{{ metaproduct.price | money }}</p>
+                <div class="select-btn">
+                  <input type="hidden" name="quantity" value="1" />
+                  <select name="id" class="custom-rec-variants" {% if metaproduct.has_only_default_variant %}hidden{% endif %}>
+                    {% for variant in metaproduct.variants %}
+                      <option value="{{ variant.id }}" {% if variant == metaproduct.selected_or_first_available_variant %}selected{% endif %} {% unless variant.available %}disabled{% endunless %}>{{ variant.title }}</option>
+                    {% endfor %}
+                  </select>
+                  <button type="button" class="custom-rec-btn">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          
+    {% endfor %}
+     </div>
+    {% endif %}
+ </div>
+  {% endfor %}
+</div>

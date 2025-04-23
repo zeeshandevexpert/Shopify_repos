@@ -1,0 +1,95 @@
+[
+  {
+    "name": "Logo",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "header_light_logo",
+        "label": "Header Light Skin Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "header_dark_logo",
+        "label": "Header Dark Skin Logo"
+      },
+      {
+        "type": "textarea",
+        "id": "header_logo_title",
+        "label": "Header Logo Right Title",
+        "default": "logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "footer_logo",
+        "label": "Footer Logo"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_logo_title",
+        "label": "Footer Logo Right Title",
+        "default": "logo"
+      }
+    ]
+  },
+  {
+    "name": "HomePage Newsletter",
+    "settings": [
+      {
+        "type": "text",
+        "id": "news_title",
+        "label": "Newsletter Title",
+        "default": "stay in the loop..."
+      },
+      {
+        "type": "textarea",
+        "id": "email_subscribe_code",
+        "label": "Email Subscribe Code"
+      }
+    ]
+  },
+  {
+    "name": "Other Settings",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon_image",
+        "label": "Favicon Image"
+      },
+      {
+        "type": "textarea",
+        "id": "copyright_text",
+        "label": "Copyright Text",
+        "default": "&copy; cycora 2022. All rights reserved."
+      }
+    ]
+  },
+  {
+    "name": "Header type",
+    "settings": [
+      {
+        "type": "radio",
+        "id": "header_type",
+        "label": "Header type",
+        "options": [
+          {
+            "value": "shadow-gradient",
+            "label": "Shadow gradient"
+          },
+          {
+            "value": "floating-blur",
+            "label": "Floating blur"
+          },
+          {
+            "value": "full-bleed",
+            "label": "Full bleed"
+          },
+          {
+            "value": "default",
+            "label": "Default"
+          }
+        ],
+        "default": "default"
+      }
+    ]
+  }
+]

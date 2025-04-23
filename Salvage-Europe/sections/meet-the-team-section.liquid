@@ -1,0 +1,117 @@
+<div id="who-we-are" class="global-team-block" style="background: {{ section.settings.bg_color }}; color: {{section.settings.color }}">
+    <div class="wrap-global-team">
+        <div class="top-block">
+            <h2 class="main-heading" style="color: {{section.settings.color }}">
+                {{ section.settings.main_heading }}
+            </h2>
+        </div>
+            <div class="team-block">
+                <div class="middle-line"></div>
+                {% for block in section.blocks %}
+                    <div class="wrap-team-block{% if block.settings.reverse_row %} reverse{% endif %}">
+                   <div class="year-name">
+                    <div class="year">{{ block.settings.year }}</div>
+                    <div class="roud-full">
+                        <div class="rounded-full bg-black"></div>
+                    </div>
+                   </div>
+                    <div class="team-data{% if block.settings.reverse_row %} reverse{% endif %}">
+                        <div class="member-image">
+                           <img src="{{ block.settings.profile |img_url: 'master' }}" alt="">
+                        </div>
+                        <div class="member-details">
+                            <h3 class="name" style="color: {{section.settings.color }}">
+                                {{ block.settings.name }}
+                            </h3>
+                            <div class="description">
+                                {{ block.settings.description }}
+                            </div>
+                            {% if block.settings.email != blank %}
+                                <div class="info">
+                                    <a href="mailto:{{ block.settings.email }}">Email: {{block.settings.email}}</a>
+                                </div>    
+                            {% endif %}
+                        
+                        </div>
+                    </div>   
+                </div> 
+                {% endfor %}
+                
+            </div>
+      
+    </div>
+</div>
+
+
+{% schema %}
+    {
+       "name": "Our Team Block",
+      "settings": [
+            {
+              "type": "color",
+              "id": "bg_color",
+              "label": "Background Color"
+          },
+            {
+              "type": "color",
+              "id": "color",
+              "label": "Text Color"
+          },
+            {
+              "type": "text",
+              "id": "main_heading",
+              "label": "Main Heading"
+          }
+      ],
+      "blocks": [
+      {
+        "name": "Team Member",
+        "type": "icon",
+        "settings": [
+            {
+        "type":"checkbox",
+        "id":"reverse_row",
+        "label":"Row Reverse",
+        "default": false
+      },
+          {
+            "type": "image_picker",
+            "id": "profile",
+            "label": "Profile"
+          },
+          {
+            "type": "text",
+            "id": "year",
+            "label": "Year"
+          },
+          {
+              "type": "text",
+              "id": "name",
+              "label": "Name"
+          },
+          {
+              "type": "richtext",
+              "id": "description",
+              "label": "Member Bio"
+          },
+          {
+              "type": "text",
+              "id": "email",
+              "label": "Email Info"
+          }
+        ]
+      }
+    ],
+    "presets": [
+     {
+       "name": "Our Team Block",
+       "settings": {
+         
+        },
+       "blocks": [
+       
+       ]
+     }
+   ]
+    }
+    {% endschema %}

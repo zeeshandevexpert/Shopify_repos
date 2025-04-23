@@ -1,0 +1,135 @@
+<section class="global__section {% if section.settings.no_bottom_margin %}mb0 {% endif %}search__section section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="search-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="gridlock-fluid">
+    <div class="{% unless settings.ultra_wide %}row{% endunless %}">
+      <div class="search__section-wrapper {% unless settings.ultra_wide %}row{% endunless %}">
+        <div class="grid__wrapper rg6">
+          {% if section.settings.title != blank %}
+          <div class="search__section-heading span-12 center">
+          <h3>{{ section.settings.title | escape }}</h3>
+          </div>
+          {% endif %}
+          <div class="search__section-content span-6 push-3 sm-span-12 auto center">
+            <div class="rte">
+              {{ section.settings.rich_text }}
+            </div>
+            <form action="{{ routes.search_url }}" method="get" class="search__section-form">
+              <label class="visually-hidden" for="search-{{ section.id }}">{{ 'sections.search.placeholder' | t }}</label>
+              <input type="text" name="q" id="search-{{ section.id }}" placeholder="{{ 'sections.search.placeholder' | t }}" />
+              <button type="submit" class="search__submit">
+                <span class="search__submit-button">{{ 'sections.search.submit' | t }}</span>
+                {% if section.settings.products_only %}
+                <input type="hidden" name="type" value="product" />
+                {% endif %}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+
+  .search__section-form {
+      position: relative;
+  }
+
+  .search__section-form button.search__submit {
+      position: absolute;
+      top: 0;
+      right: 0;
+  }
+  .search__section.section-{{ section.id }} .search__section-wrapper {
+    background: {{ section.settings.background }};
+    padding-top: {{ section.settings.padding }}px;
+    {% if section.settings.title != blank %}
+    padding-bottom: calc({{ section.settings.padding }}px + 25px);
+    {% else %}
+    padding-bottom: {{ section.settings.padding }}px;
+    {% endif %}
+  }
+  .search__section.section-{{ section.id }} h3,
+  .search__section.section-{{ section.id }} .rte p,
+  .search__section.section-{{ section.id }} .rte a {
+    color: {{ section.settings.color }};
+  }
+  @media screen and (max-width: 740px) {
+    .search__section-content {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Search banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Search our store"
+    },
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "Text",
+      "default": "<p>Add a search section to your page.</p>"
+    },
+    {
+      "type":"checkbox",
+      "id":"products_only",
+      "label":"Search products only",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 30
+    },
+    {
+      "type":"color",
+      "label":"Text color",
+      "id":"color",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "label":"Background color",
+      "id":"background"
+    },
+    {
+      "type":"checkbox",
+      "id":"no_bottom_margin",
+      "label":"Remove bottom margin",
+      "default": false
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  },
+  "presets":[
+    {
+     "name":"Search banner"
+    }
+  ]
+}
+{% endschema %}

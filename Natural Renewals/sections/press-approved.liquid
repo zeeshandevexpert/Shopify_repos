@@ -1,0 +1,59 @@
+
+    <div class="container-style container-large">
+        <div class="press-approved-row">
+            <div class="press-approved-col-left">
+                <h2>{{ section.settings.title }}</h2>
+            </div>
+            <div class="press-approved-col-right">
+                <!-- Dont remove this 2 col-divider, are needed for masonry layout -->
+                <div class="col-divider col-divider--1"></div>
+                <div class="col-divider col-divider--2"></div>
+
+                {% for block in section.blocks %}
+                    <div class="press-approved-info">
+                        <h3>{{ block.settings.title }}</h3>
+                        {{ block.settings.description }}
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Press - Approved",
+  "tag": "section",
+  "class": "press-approved-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "item",
+      "type": "item",
+      "settings":[
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press - Approved"
+    }
+  ]
+}
+{% endschema %}

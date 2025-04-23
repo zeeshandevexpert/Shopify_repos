@@ -1,0 +1,399 @@
+{
+  "sections": {
+    "9df2377d-e27a-4004-af93-bdefc93dded6": {
+      "type": "video-banner",
+      "disabled": true,
+      "settings": {
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/b23fda1f08cd4ced9263edd5e602121e.mp4",
+        "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/a826ecf678a94982be5d87e3e6e7f263.mp4",
+        "image_overlay_opacity": 0,
+        "video_height": "56.25",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "video_height_mobile": "100",
+        "show_text_below": true
+      }
+    },
+    "1d615018-233d-46e7-892d-06897eae6dc0": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Trixie Mattel x Wildflower Cases",
+            "heading_size": "h1"
+          }
+        },
+        "aa33ff9e-2632-4a1c-82e4-f598cf7e6842": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
+        },
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify:\/\/collections\/new-arrivals",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0",
+        "aa33ff9e-2632-4a1c-82e4-f598cf7e6842",
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Wildflower-Cases-Collab-Profile-Hannah-Meloche-Desktop.jpg",
+        "image_overlay_opacity": 10,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "1d6c24a2-38ba-4cdf-b54d-7a442ecb0679": {
+      "type": "rich-text",
+      "blocks": {
+        "54ff5986-8a15-45b7-becb-7e5926a46c7d": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Hannah Meloche x Wildflower Cases<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--14974873796656__1d6c24a2-38ba-4cdf-b54d-7a442ecb0679-1668190728bc43347b-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify:\/\/collections\/trixie-mattel-x-wildflower-cases",
+            "button_style_secondary": false
+          }
+        },
+        "d345b6b2-853d-4ea1-bdf2-cc6a09e58cf1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"Hannah has been such a kind supporter of our small family business for years so we wanted to give her the opportunity to design her very first Wildflower case!\" <br\/><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "54ff5986-8a15-45b7-becb-7e5926a46c7d",
+        "template--14974873796656__1d6c24a2-38ba-4cdf-b54d-7a442ecb0679-1668190728bc43347b-2",
+        "d345b6b2-853d-4ea1-bdf2-cc6a09e58cf1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2": {
+          "type": "marketing_tile",
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify:\/\/shop_images\/Olivia-Coming-Soon-Hero-DT.jpg",
+            "link": "#",
+            "position": 5,
+            "title": "Need Help?",
+            "paragraph": "<p>Browse our Style Tips and get inspired<\/p>",
+            "button_text": "Go To Style tips"
+          }
+        }
+      },
+      "block_order": [
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2"
+      ],
+      "settings": {
+        "columns_desktop": 3,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "choose_size",
+        "shop_by_size": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "b713b8d2-e08c-4b37-949a-e713745cd026": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15019348262960__b713b8d2-e08c-4b37-949a-e713745cd026-1676915111151ed252-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "<p>As seen on...<\/p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--15019348262960__b713b8d2-e08c-4b37-949a-e713745cd026-1676915111151ed252-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "template--15019348262960__b713b8d2-e08c-4b37-949a-e713745cd026-1676915111151ed252-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15019348262960__b713b8d2-e08c-4b37-949a-e713745cd026-1676915111151ed252-0",
+        "template--15019348262960__b713b8d2-e08c-4b37-949a-e713745cd026-1676915111151ed252-1",
+        "template--15019348262960__b713b8d2-e08c-4b37-949a-e713745cd026-1676915111151ed252-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "676e4d8c-a913-4837-8c92-cc46e44c318d": {
+      "type": "marquee",
+      "blocks": {
+        "0b08b300-3b75-4bf1-8ff6-3495e645e20f": {
+          "type": "item",
+          "settings": {
+            "title": "Enya Umazor •  Wildflower Cases  •"
+          }
+        }
+      },
+      "block_order": [
+        "0b08b300-3b75-4bf1-8ff6-3495e645e20f"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "border_top": false,
+        "image": "shopify:\/\/shop_images\/enya.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/enya2.jpg"
+      }
+    },
+    "17200558-71a4-41ec-82e7-a8e629bc3c64": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--15019348262960__17200558-71a4-41ec-82e7-a8e629bc3c64-1676914092b09ae40c-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/sophiabbirlem_325583855_873622720545043_2419155283673058442_n.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--15019348262960__17200558-71a4-41ec-82e7-a8e629bc3c64-1676914092b09ae40c-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/layadeleonhayes_327382457_575238960783734_4859790157847069291_n.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--15019348262960__17200558-71a4-41ec-82e7-a8e629bc3c64-1676914092b09ae40c-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ameliagray_2977114938162444396.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15019348262960__17200558-71a4-41ec-82e7-a8e629bc3c64-1676914092b09ae40c-0",
+        "template--15019348262960__17200558-71a4-41ec-82e7-a8e629bc3c64-1676914092b09ae40c-1",
+        "template--15019348262960__17200558-71a4-41ec-82e7-a8e629bc3c64-1676914092b09ae40c-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "23af4319-ad47-45d4-a5a1-cb6b33e3af29": {
+      "type": "rich-text",
+      "blocks": {
+        "03409cc1-4ab3-4357-b245-f2a0795c9b88": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Follow Hannah Meloche on Instagram  @hannahmeloche<\/p>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "03409cc1-4ab3-4357-b245-f2a0795c9b88"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "d038a529-118c-4422-b5c0-c8b947cc6202": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HANN201X-Hannah-Meloche-iPhone-Xs-Case2_805d5e2e-8c47-4379-8718-e3e38fc02cd8.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HANN201X-Hannah-Meloche-iPhone-Xs-Case4_fb5f56f6-fa0d-4578-a318-62f94ca909fa.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/HANN201X-Hannah-Meloche-iPhone-Xs-Case3_52b78ec5-726d-428f-a8fa-82d6132cd9d9.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "236b2962-ca78-4258-8906-eb83bb415b98": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Enya-Collab-Page-Image.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-0",
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-2",
+        "template--14974873796656__d038a529-118c-4422-b5c0-c8b947cc6202-1668191215b628f768-1",
+        "236b2962-ca78-4258-8906-eb83bb415b98"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 24,
+        "padding_bottom": 84
+      }
+    },
+    "marketing_tile_section_8cqAGJ": {
+      "type": "marketing-tile-section",
+      "blocks": {
+        "quote_tile_37i6qc": {
+          "type": "quote_tile",
+          "settings": {
+            "tile_size": "full-width",
+            "logo": "shopify:\/\/shop_images\/Nylon_logo.png",
+            "link": "",
+            "position": 5,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "quote_tile_37i6qc"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "9df2377d-e27a-4004-af93-bdefc93dded6",
+    "1d615018-233d-46e7-892d-06897eae6dc0",
+    "1d6c24a2-38ba-4cdf-b54d-7a442ecb0679",
+    "banner",
+    "product-grid",
+    "b713b8d2-e08c-4b37-949a-e713745cd026",
+    "676e4d8c-a913-4837-8c92-cc46e44c318d",
+    "17200558-71a4-41ec-82e7-a8e629bc3c64",
+    "23af4319-ad47-45d4-a5a1-cb6b33e3af29",
+    "d038a529-118c-4422-b5c0-c8b947cc6202",
+    "marketing_tile_section_8cqAGJ"
+  ]
+}

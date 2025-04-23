@@ -1,0 +1,142 @@
+{% style %}
+  .section-{{ section.id }}-main {
+    background: #0195be;
+  }
+
+  #contact-form .form-control {
+    background: #ff8ac4;
+    border: 0px;
+    border-radius: 10px;
+  }
+{% endstyle %}
+
+<div class="section-{{ section.id }}-main homepage-sections-wrapper">
+  <div class="container">
+    <div class="title-bar custom-font">
+      <h1 class="main-heading">
+        <h4>
+          class request? collab? sweet note?<br>
+          fill out this form and we will get back ASAP!
+        </h4>
+      </h1>
+      <div class="clear"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 offset-md-2 col-12">
+        {% if page.content != blank %}
+          <div class="contact-page__entry-content entry-content">
+            {{ page.content }}
+          </div>
+        {% endif %}
+
+        {%- form 'contact', id: 'ContactForm' -%}
+          {% if form.posted_successfully? %}
+            <p class="success-msg form-success">
+              {{ 'contact.form.post_success' | t }}
+            </p>
+          {% endif %}
+
+          {% render 'form-errors-custom', form: form %}
+
+          <div id="contact-form">
+            <div class="row">
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="ContactForm-name">{{ 'contact.form.name' | t }}</label>
+                  <input
+                    class="form-control"
+                    autocomplete="name"
+                    type="text"
+                    id="ContactForm-name"
+                    name="contact[{{ 'contact.form.name' | t }}]"
+                    value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-6 col-12">
+                <div class="form-group">
+                  <label for="ContactForm-email">{{ 'contact.form.email' | t }}</label>
+                  <input
+                    autocomplete="email"
+                    type="email"
+                    id="ContactForm-email"
+                    class="form-control"
+                    name="contact[email]"
+                    spellcheck="false"
+                    autocapitalize="off"
+                    value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                    aria-required="true"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="ContactForm-phone">{{ 'contact.form.phone' | t }}</label>
+                  <input
+                    type="tel"
+                    id="ContactForm-phone"
+                    class="form-control"
+                    autocomplete="tel"
+                    name="contact[{{ 'contact.form.phone' | t }}]"
+                    pattern="[0-9\-]*"
+                    value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="ContactForm-body">{{ 'contact.form.message' | t }}</label>
+                  <textarea
+                    rows="10"
+                    id="ContactForm-body"
+                    class="form-control"
+                    name="contact[{{ 'contact.form.message' | t }}]"
+                  >
+                    {{- form.body -}}
+                  </textarea>
+                </div>
+              </div>
+            </div>
+
+            {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+
+            <div class="row">
+              <div class="col-md-12 btn-contact--wrapper">
+                <div class="form-group" id="newsletter-wrapper-{{ page.title | handle }}">
+                  <button type="submit" class="btn">{{ 'contact.form.send' | t }}</button>
+                </div>
+                <div class="lds-dual-ring newsletter-spinner hide"></div>
+              </div>
+            </div>
+          </div>
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "New Contact Form",
+  "settings": [],
+  "presets": [
+    {
+      "name": "New Contact Form"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

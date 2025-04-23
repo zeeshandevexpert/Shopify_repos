@@ -1,0 +1,462 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "page_width": "page-width--narrow"
+      }
+    },
+    "a541a955-89c4-4352-877d-ec732986292c": {
+      "type": "video-banner",
+      "blocks": {
+        "8576c1d2-31e2-403f-887c-0ea6763b789e": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Founders",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "8576c1d2-31e2-403f-887c-0ea6763b789e"
+      ],
+      "disabled": true,
+      "settings": {
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/57897dc2633e43208c6de11af29576ce.mp4",
+        "video_url_mobile": "https://cdn.shopify.com/videos/c/o/v/57897dc2633e43208c6de11af29576ce.mp4",
+        "image_overlay_opacity": 0,
+        "video_height": "66.66",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "video_height_mobile": "100",
+        "show_text_below": false
+      }
+    },
+    "a8e036a3-2cc3-4d2c-b517-921228f2b427": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14926922776624__a8e036a3-2cc3-4d2c-b517-921228f2b427-16651538670bccdd4c-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>\"I love the brand direction we've created for ourselves over the past 7 years and I see us continuing to evolve that into something even bigger.\"</p>",
+            "heading_size": "h2"
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922776624__a8e036a3-2cc3-4d2c-b517-921228f2b427-16651538670bccdd4c-0"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "inverse",
+        "full_width": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "d54dcb9b-ecdc-43aa-a99a-eb5e9d271f5b": {
+      "type": "image-banner",
+      "settings": {
+        "image": "shopify://shop_images/founders-collage-updated_73cf6d9f-2dc7-4a9e-b7c4-5004c211557c.jpg",
+        "image_mobile": "shopify://shop_images/founders-collage-updated.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "060d5c96-21c6-4237-9251-dccd08e2e1dd": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14926922776624__060d5c96-21c6-4237-9251-dccd08e2e1dd-166515402183f345b3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>A message from our founders Sydney, Devon, and Michelle Carlson</p>",
+            "heading_size": "h2"
+          }
+        },
+        "template--14926922776624__060d5c96-21c6-4237-9251-dccd08e2e1dd-166515402183f345b3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wildflower Cases is a women owned and operated iPhone accessories company in Los Angeles, California. Each exclusive and limited edition fashion iPhone accessory is designed by founder Michelle Carlson and her two daughters, Devon and Sydney Carlson. Wildflower represents all of the girls passionately experiencing life with a free spirit and sense of independence, who are able to grow and survive anywhere, and are driven to succeed.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922776624__060d5c96-21c6-4237-9251-dccd08e2e1dd-166515402183f345b3-0",
+        "template--14926922776624__060d5c96-21c6-4237-9251-dccd08e2e1dd-166515402183f345b3-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "bbee1835-f755-4708-8c3c-86395aa1356d": {
+      "type": "video-with-text",
+      "blocks": {
+        "template--14959055798320__bbee1835-f755-4708-8c3c-86395aa1356d-1686722166a64888b2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Devon Lee Carlson",
+            "heading_size": "h1"
+          }
+        },
+        "template--14959055798320__bbee1835-f755-4708-8c3c-86395aa1356d-1686722166a64888b2-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>co-founder of wildflowercases.com</p>",
+            "text_style": "body"
+          }
+        },
+        "template--14959055798320__bbee1835-f755-4708-8c3c-86395aa1356d-1686722166a64888b2-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Watch Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14959055798320__bbee1835-f755-4708-8c3c-86395aa1356d-1686722166a64888b2-0",
+        "template--14959055798320__bbee1835-f755-4708-8c3c-86395aa1356d-1686722166a64888b2-1",
+        "template--14959055798320__bbee1835-f755-4708-8c3c-86395aa1356d-1686722166a64888b2-2"
+      ],
+      "settings": {
+        "video_url": "https://youtu.be/IKuIKoFVmkw?si=Ogj90zTpVAhrFI_h",
+        "video_url_mobile": "https://youtu.be/IKuIKoFVmkw?si=Ogj90zTpVAhrFI_h",
+        "border_top": false,
+        "page_width": "page-width",
+        "height": "16-9",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "7c16c727-e940-401c-8811-648bb9a56dee": {
+      "type": "video-with-text",
+      "blocks": {
+        "template--14959055798320__7c16c727-e940-401c-8811-648bb9a56dee-16867227428d15b97a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sydney Lynn Carlson",
+            "heading_size": "h1"
+          }
+        },
+        "template--14959055798320__7c16c727-e940-401c-8811-648bb9a56dee-16867227428d15b97a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>co-founder of wildflowercases.com</p>",
+            "text_style": "body"
+          }
+        },
+        "template--14959055798320__7c16c727-e940-401c-8811-648bb9a56dee-16867227428d15b97a-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Watch Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14959055798320__7c16c727-e940-401c-8811-648bb9a56dee-16867227428d15b97a-0",
+        "template--14959055798320__7c16c727-e940-401c-8811-648bb9a56dee-16867227428d15b97a-1",
+        "template--14959055798320__7c16c727-e940-401c-8811-648bb9a56dee-16867227428d15b97a-2"
+      ],
+      "settings": {
+        "video_url": "https://www.youtube.com/watch?v=WKIW2fEFnqk",
+        "video_url_mobile": "https://www.youtube.com/watch?v=WKIW2fEFnqk",
+        "border_top": false,
+        "page_width": "page-width",
+        "height": "16-9",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "6310506e-5dc3-40ef-a3be-448f1b58557d": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14959055798320__6310506e-5dc3-40ef-a3be-448f1b58557d-1686722553472176db-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sydney Lynn Carlson",
+            "heading_size": "h1"
+          }
+        },
+        "template--14959055798320__6310506e-5dc3-40ef-a3be-448f1b58557d-1686722553472176db-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>co-founder of wildflowercases.com</p>",
+            "text_style": "body"
+          }
+        },
+        "template--14959055798320__6310506e-5dc3-40ef-a3be-448f1b58557d-1686722553472176db-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Watch Now",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14959055798320__6310506e-5dc3-40ef-a3be-448f1b58557d-1686722553472176db-0",
+        "template--14959055798320__6310506e-5dc3-40ef-a3be-448f1b58557d-1686722553472176db-1",
+        "template--14959055798320__6310506e-5dc3-40ef-a3be-448f1b58557d-1686722553472176db-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "border_top": false,
+        "page_width": "page-width",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "5e142be3-db0e-406f-9e69-b14a2208caf4": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--14926922776624__5e142be3-db0e-406f-9e69-b14a2208caf4-1665154075d7b47eaa-0": {
+          "type": "column",
+          "settings": {
+            "title": "Devon Carlson",
+            "text": "<p>[devon-social]</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14926922776624__5e142be3-db0e-406f-9e69-b14a2208caf4-1665154075d7b47eaa-1": {
+          "type": "column",
+          "settings": {
+            "title": "Sydney Carlson",
+            "text": "<p>[sydney-social]</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14926922776624__5e142be3-db0e-406f-9e69-b14a2208caf4-1665154075d7b47eaa-2": {
+          "type": "column",
+          "settings": {
+            "title": "Michelle Carlson",
+            "text": "<p>[michelle-social]</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922776624__5e142be3-db0e-406f-9e69-b14a2208caf4-1665154075d7b47eaa-0",
+        "template--14926922776624__5e142be3-db0e-406f-9e69-b14a2208caf4-1665154075d7b47eaa-1",
+        "template--14926922776624__5e142be3-db0e-406f-9e69-b14a2208caf4-1665154075d7b47eaa-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "Read our Story",
+        "button_link": "shopify://pages/about-us",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "4b892b8e-3179-4bc9-b935-1fe1255580fa": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--14926922776624__4b892b8e-3179-4bc9-b935-1fe1255580fa-1665154693bc6ff547-0": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14926922776624__4b892b8e-3179-4bc9-b935-1fe1255580fa-1665154693bc6ff547-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Our-Founders-Page-Tile-Updated.jpg",
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--14926922776624__4b892b8e-3179-4bc9-b935-1fe1255580fa-1665154693bc6ff547-2": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922776624__4b892b8e-3179-4bc9-b935-1fe1255580fa-1665154693bc6ff547-0",
+        "template--14926922776624__4b892b8e-3179-4bc9-b935-1fe1255580fa-1665154693bc6ff547-1",
+        "template--14926922776624__4b892b8e-3179-4bc9-b935-1fe1255580fa-1665154693bc6ff547-2"
+      ],
+      "settings": {
+        "title": "We do a lot of interviews",
+        "heading_size": "h2",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "portrait",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "More Press",
+        "button_link": "shopify://blogs/press",
+        "color_scheme": "accent-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "96804653-ef08-4801-87b9-c614b86f79e7": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--14926922776624__96804653-ef08-4801-87b9-c614b86f79e7-166515483977b22463-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/hq720.jpg",
+            "title": "24 hours in Milan with Gucci l DEVON LEE CARLSON",
+            "text": "",
+            "link_label": "",
+            "link": "https://www.youtube.com/watch?v=uFJrTR4nBng"
+          }
+        },
+        "template--14926922776624__96804653-ef08-4801-87b9-c614b86f79e7-166515483977b22463-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/maxresdefault.webp",
+            "title": "wildflower shoots & jersey shore party l DEVON LEE CARLSON",
+            "text": "",
+            "link_label": "",
+            "link": "https://www.youtube.com/watch?v=okTrc0OvMXo"
+          }
+        },
+        "template--14926922776624__96804653-ef08-4801-87b9-c614b86f79e7-166515483977b22463-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/maxresdefault.jpg",
+            "title": "HomeGoods haul & decorating | DEVON LEE CARLSON",
+            "text": "",
+            "link_label": "",
+            "link": "https://www.youtube.com/watch?v=GlVWXOz5LEI"
+          }
+        },
+        "7eec17ee-8def-4e6f-8bce-c31fee176127": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/maxresdefault_1.jpg",
+            "title": "this vlog took an unexpected twist | DEVON LEE CARLSON",
+            "text": "",
+            "link_label": "",
+            "link": "https://www.youtube.com/watch?v=6htF6CGDeHc"
+          }
+        }
+      },
+      "block_order": [
+        "template--14926922776624__96804653-ef08-4801-87b9-c614b86f79e7-166515483977b22463-0",
+        "template--14926922776624__96804653-ef08-4801-87b9-c614b86f79e7-166515483977b22463-1",
+        "template--14926922776624__96804653-ef08-4801-87b9-c614b86f79e7-166515483977b22463-2",
+        "7eec17ee-8def-4e6f-8bce-c31fee176127"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "..and have even more on Youtube",
+        "heading_size": "h2",
+        "no_padding": false,
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "602ac459-2bb6-4cca-86c4-10cb529f1eee": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "cover_image": "shopify://shop_images/hq720_8ab9865e-dba3-4b21-9fa6-53e4f3867937.jpg",
+        "video_url": "https://www.youtube.com/watch?v=uFJrTR4nBng",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 8,
+        "padding_bottom": 12
+      }
+    }
+  },
+  "order": [
+    "main",
+    "a541a955-89c4-4352-877d-ec732986292c",
+    "a8e036a3-2cc3-4d2c-b517-921228f2b427",
+    "d54dcb9b-ecdc-43aa-a99a-eb5e9d271f5b",
+    "060d5c96-21c6-4237-9251-dccd08e2e1dd",
+    "bbee1835-f755-4708-8c3c-86395aa1356d",
+    "7c16c727-e940-401c-8811-648bb9a56dee",
+    "6310506e-5dc3-40ef-a3be-448f1b58557d",
+    "5e142be3-db0e-406f-9e69-b14a2208caf4",
+    "4b892b8e-3179-4bc9-b935-1fe1255580fa",
+    "96804653-ef08-4801-87b9-c614b86f79e7",
+    "602ac459-2bb6-4cca-86c4-10cb529f1eee"
+  ]
+}

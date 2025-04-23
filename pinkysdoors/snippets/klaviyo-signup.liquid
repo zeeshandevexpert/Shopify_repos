@@ -1,0 +1,39 @@
+<form id="klaviyo-{{id}}" 
+      class="klaviyo_styling klaviyo_gdpr_embed_{{list_id}}" 
+      action="//manage.kmail-lists.com/subscriptions/subscribe" 
+      data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe" 
+      method="GET" 
+      target="_blank" 
+      novalidate="novalidate">
+  <input type="hidden" name="g" value="{{list_id}}">
+  <div class="flex small--flex-wrap">
+    <input type="email"
+           name="email"
+           id="klaviyo-{{id}}-email"
+           class="input-group__field small--one-whole"
+           value="{{ form.email }}"
+           placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+           aria-label="{{ 'general.newsletter_form.email_placeholder' | t }}"
+           aria-required="true"
+           autocorrect="off"
+           autocapitalize="off"
+           >
+
+    <button type="submit" class="btn small--one-whole" name="commit" id="klaviyo-{{id}}-Subscribe">
+      <span>{{ 'general.newsletter_form.submit' | t }}</span>
+    </button>
+  </div>
+  <div class="klaviyo_messages">
+    <div class="success_message" style="display:none;"></div>
+    <div class="error_message" style="display:none;"></div>
+  </div>
+</form>
+
+{% comment %}
+<noscript class="hs-load-onaction"><script defer src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js" type="text/javascript"></script></noscript>
+<script type="text/javascript">
+ KlaviyoSubscribe.attachToForms('#id1,#id2,etc', {
+ hide_form_on_success: true
+ });
+</script>
+{% endcomment %}

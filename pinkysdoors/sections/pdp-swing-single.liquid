@@ -1,0 +1,80 @@
+<div id="swing-popup--hidden" class="page-width--thin" >
+  <div id="swing-popup" class="regular-mfp-popup">
+    <h4>SWING OPTIONS</h4>
+    {% for block in section.blocks %}
+    <div class="flex flex--align-center {% cycle 'odd','even' %}">
+      <div class="one-third"><img class="lazyload hs-lazyload hs-id-f37a1b40" data-src="{{ block.settings.image | img_url: '300x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+      <div class="two-thirds swing__text rte">{{block.settings.text}}</div>
+    </div>
+    {% endfor %}
+
+    <h4>{{section.settings.video_title}}</h4>
+    <div class="fitvids">{{section.settings.video_embed_code}}</div><br/>
+
+    <h4>{{section.settings.capacity_title}}</h4>
+    <div class="flex flex--align-center">
+      <div class="one-half"><img class="lazyload hs-lazyload hs-id-4fabb8fb" data-src="{{ section.settings.capacity_image | img_url: '300x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div>
+      <div class="one-half">{{section.settings.capacity_text}}</div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "PDP - Swing (Single)",
+    "settings": [
+    {
+      "type":"text",
+      "id":"video_title",
+      "label":"Video Title",
+	  "default":"Swing Explanation Video"
+    },
+    {
+      "type":"textarea",
+      "id":"video_embed_code",
+      "label":"Video Embed Code"
+    },
+    {
+      "type":"text",
+      "id":"capacity_title",
+      "label":"Swing Capacity Title",
+	  "default":"Swing Capacity Capability"
+    },
+    {
+      "type":"image_picker",
+      "id":"capacity_image",
+      "label":"Swing Capacity Image"
+    },
+    {
+      "type":"richtext",
+      "id":"capacity_text",
+      "label":"Swing Capacity Text"
+    }
+  	],
+	"blocks":[
+	{
+	  "type":"swing_option",
+	  "name":"Swing Option",
+	  "settings": [
+	    {
+		  "type":"richtext",
+		  "id":"text",
+		  "label":"Swing Text",
+		  "default":"<p>Lorem ipsum dolor amet food truck squid tousled biodiesel yr. Brunch live-edge vegan fingerstache waistcoat enamel pin la croix. PBR fixie put a bird on it, live-edge art party hot chicken sustainable keytar try-hard tacos actually activated charcoal blog. 3 wolf moon neutra cliche, disrupt asymmetrical activated charcoal selfies bitters food truck hoodie mlkshk lomo butcher. Fingerstache hashtag gastropub, chia schlitz subway tile humblebrag. Edison bulb actually pickled bushwick yr. Roof party tacos organic deep v affogato, cloud bread authentic pickled umami farm-to-table af lo-fi listicle.</p>"
+        },
+	    {
+		  "type":"image_picker",
+		  "id":"image",
+		  "label":"Image"
+        }
+	  ]
+	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,21 @@
+{% assign name_handle = name | handle %}
+{% assign learn_text = 'Learn more here' %}
+{% if name == 'Color' %}
+{% assign learn_text = 'See color options' %}
+{% endif %}
+{% capture question_text %}{{ 'option_popups' }}.{{ name | handle }}{% endcapture %}
+{% capture alt_text %}{{ 'option_popups' }}.{{ name | handle }}_alt{% endcapture %}
+{% assign label_text = question_text | t %}
+{% if label_text == "Jamb:" and product.handle contains "thermally-broken" %}
+ {% if product.handle contains "pre-sale" or product.title contains "special-order" %}
+  {% assign label_text = 'Jamb (Includes 3" Nailing fin all around):' %}
+ {% endif %}
+{% endif %}
+<div class="selector-wrapper js product-form__item" data-reorder-index="{{order}}" data-jamb-on-jamb-eater>
+  <label for="SingleOption{{name}}Selector">{{name}}: <a data-alt-text="{{ alt_text | t }}" data-div="question--{{ name_handle }}" href="/products/{{ product.handle }}?view=popups" class="learn-more--link mfp-ajax"><span class="question-circle"></span> {{ label_text }}</a></label>
+  <div class="selector-box">
+    <select id="{{name_handle}}-option" name="properties[{{name}}]" class="product-form__input line-item--selector" id="SingleOption{{name}}Selector">
+      <option value="{{value}}">{{value}}</option>
+    </select>
+  </div>
+</div>

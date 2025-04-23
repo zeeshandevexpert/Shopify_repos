@@ -1,0 +1,136 @@
+
+* {
+    outline:none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+  }
+  sub { 
+    top: 0.4em; 
+  }
+
+html, body { 
+    margin:0;
+    padding:0;
+  scroll-behavior: smooth;
+    
+  
+}
+body {
+    position:relative;
+    
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+*,:after,:before{
+  box-sizing:border-box;
+}
+
+// p,a,
+// h1,h2,h3,h4,h5,h6{
+//   font-family: $font;
+// }
+
+a{
+  text-decoration: none;
+  color: $black;
+}
+
+
+.richtext-block{
+  max-width: 1550px;
+    margin: 0 auto;
+    margin-top: calc(5rem + var(--page-width-margin));
+    padding: 40px;
+    .wrap-content{
+      h3{
+          font-size: 50px;
+          font-family: $sportingbold;
+          color: #000;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+          @media (max-width:991px) {
+            font-size: 38px;
+          }
+      }
+      ul{
+        padding: 25px;
+        li{
+          font-family: $sportingregular;
+          font-size: 18px;
+          color: #000;
+          margin-bottom: 0px;
+          @media (max-width:767px) {
+            font-size: 16px;
+          }
+
+        }
+      }
+      p{
+        font-family: $sportingregular;
+          font-size: 18px;
+          color: #000;
+          margin-bottom: 20px;
+          @media (max-width:767px) {
+            font-size: 16px;
+          }
+      }
+    }
+}
+
+
+#MainContent{
+  .customer{
+    margin-top: 200px;
+    padding: 0 40px;
+  }
+}
+
+cart-items{
+  &.is-empty{
+    margin-top: 70px;
+  }
+}
+
+
+#main-cart-footer{
+  .cart__footer{
+    .cart__blocks{
+      #lead-generator-form{
+        width: 100%;
+        .cart__checkout-button{
+          text-align: center;
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 70px;
+                cursor: pointer;
+                border: 2px solid $green;
+                font-size: 22px;
+                font-family: $sportingregular;
+                color: $whitealt;
+                background: $green;
+                transition: all 0.3s ease;
+                margin-top: 50px;
+                &:hover{
+                    background: transparent;
+                    color: $black;    
+                }
+                @media screen and (max-width:767px) {
+                    width: 220px;
+                }
+        }
+      }
+    }
+  }
+}

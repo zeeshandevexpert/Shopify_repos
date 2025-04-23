@@ -1,0 +1,191 @@
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <header class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </header>
+  {% endif %}
+
+  {%- assign blog = blogs[section.settings.blog] -%}
+
+  <div class="flex grid--blog small--flex-columns homepage-blog-grid">
+    {% if section.settings.article1 and section.settings.article2 %}
+      {% assign article = articles[section.settings.article1] %}
+      {% include 'homepage-featured-article-item', image: section.settings.image1 %}
+      {% assign article = articles[section.settings.article2] %}
+      {% include 'homepage-featured-article-item' image: section.settings.image2 %}
+    {% else %}
+      {% for article in blog.articles limit: section.settings.post_limit %}
+      {% include 'homepage-featured-article-item' %}
+      {% endfor %}
+    {% endif%}
+  </div>
+
+
+  {% if section.settings.show_view_all %}
+    <hr class="hr--invisible" aria-hidden="true"></hr>
+    <div class="text-center">
+      <a href="{{ blog.url }}" class="btn" aria-label="{{ 'blogs.article.view_all_blogs' | t }}">
+        {{ 'blogs.article.view_all' | t }}
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+
+
+{% schema %}
+{
+  "name": {
+    "de": "Blogposts",
+    "en": "Blog posts",
+    "es": "Entradas del blog",
+    "fr": "Articles de blog",
+    "it": "Articoli del blog",
+    "ja": "ブログ記事",
+    "pt-BR": "Posts do blog"
+  },
+  "class": "index-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "pt-BR": "Título"
+      },
+      "default": {
+        "de": "Blogposts",
+        "en": "Blog posts",
+        "es": "Entradas del blog",
+        "fr": "Articles de blog",
+        "it": "Articoli del blog",
+        "ja": "ブログ記事",
+        "pt-BR": "Posts do blog"
+      }
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": {
+        "de": "Blog",
+        "en": "Blog",
+        "es": "Blog",
+        "fr": "Blog",
+        "it": "Blog",
+        "ja": "ブログ",
+        "pt-BR": "Blog"
+      }
+    },
+	{
+	  "type":"article",
+	  "id":"article1",
+	  "label":"Featured Article 1"
+	},
+	{
+	  "type":"image_picker",
+	  "id":"image1",
+	  "label":"Image 1"
+	},
+	{
+	  "type":"article",
+	  "id":"article2",
+	  "label":"Featured Article 2"
+	},
+	{
+	  "type":"image_picker",
+	  "id":"image2",
+	  "label":"Image 2"
+	},
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": {
+        "de": "Posts",
+        "en": "Posts",
+        "es": "Publicaciones",
+        "fr": "Articles",
+        "it": "Articoli",
+        "ja": "投稿",
+        "pt-BR": "Posts"
+      },
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": {
+        "de": "Autor anzeigen",
+        "en": "Show author",
+        "es": "Mostrar autor",
+        "fr": "Afficher l'auteur",
+        "it": "Mostra autore",
+        "ja": "執筆者を表示する",
+        "pt-BR": "Mostrar autor"
+      },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": {
+        "de": "Datum anzeigen",
+        "en": "Show date",
+        "es": "Mostrar fecha",
+        "fr": "Afficher la date",
+        "it": "Mostra data",
+        "ja": "日付を表示する",
+        "pt-BR": "Exibir data"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": {
+        "de": "'Alle anzeigen' Button anzeigen",
+        "en": "Show 'View all' button",
+        "es": "Mostrar el botón 'Ver todo'",
+        "fr": "Afficher le bouton “Voir tout”",
+        "it": "Mostra il pulsante \"Visualizza tutto\"",
+        "ja": "「すべて表示」ボタンを表示する",
+        "pt-BR": "Exibir botão 'Ver tudo'"
+      },
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Blogposts",
+        "en": "Blog posts",
+        "es": "Entradas del blog",
+        "fr": "Articles de blog",
+        "it": "Articoli del blog",
+        "ja": "ブログ記事",
+        "pt-BR": "Posts do blog"
+      },
+      "category": {
+        "de": "Blog",
+        "en": "Blog",
+        "es": "Blog",
+        "fr": "Blog",
+        "it": "Blog",
+        "ja": "ブログ",
+        "pt-BR": "Blog"
+      },
+      "settings": {
+        "blog": "News",
+        "post_limit": 3
+      }
+    }
+  ]
+}
+{% endschema %}

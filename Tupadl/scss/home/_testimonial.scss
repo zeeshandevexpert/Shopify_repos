@@ -1,0 +1,109 @@
+.testimonial-section{
+    padding: 100px 20px;
+    background-size: 40%;
+    background-position: center;
+    background-repeat: no-repeat;
+    .testimonials-container{
+        max-width: 1000px;
+        margin: 0 auto;
+        .subheading{
+            margin-bottom: 10px;
+            h4{
+                font-family: $sportingregular;
+                font-size: 14px;
+                text-align: center;
+                color: $black;
+                text-transform: uppercase;
+            }    
+        }
+        .heading{
+            margin-bottom: 30px;
+            h2{
+                font-family: $sportingbold;
+                font-size: 40px;
+                color: $black;
+                text-align: center;
+                text-transform: uppercase;
+                @media screen and (max-width: 991px) {
+                    font-size: 38px;
+                }
+                @media screen and (max-width: 567px) {
+                    font-size: 28px;
+                }
+            }    
+        }   
+        .testimonial{
+            .single-testimonial{
+                @media screen and (max-width:1200px) {
+                    padding: 0 50px;
+                }
+                @media screen and (max-width:700px) {
+                    padding: 0 0px;
+                }
+                .testimonial-wrapper{
+                    .client-text{
+                        margin-bottom: 50px;
+                        p{
+                            font-size: 26px;
+                            line-height: 49px;
+                            font-family: $sportingregular;
+                            color: $black;
+                            text-align: center;
+                            @media screen and (max-width:991px) {
+                                font-size: 18px;
+                                line-height: 35px;
+                            }
+                        }    
+                    }   
+                    .client-image{
+                        display: flex;
+                        justify-content: center;
+                        margin-bottom: 10px;
+                        img{
+                            
+                        }    
+                    }
+                    .client-name{
+                        p{
+                            font-size: 26px;
+                            line-height: 49px;
+                            font-family: $sportingbold;
+                            color: $black;
+                            text-align: center;
+                        }    
+                    } 
+                }    
+            }    
+            .slick-prev{
+                left: -18%;
+                @media screen and (max-width:1500px) {
+                    left: -8%;
+                }
+                @media screen and (max-width:1300px) {
+                    left: -2%;
+                }
+                @media screen and (max-width:1200px) {
+                    left: 10%;
+                }
+                @media screen and (max-width:991px) {
+                    top: 65% !important;
+                }
+            }
+            .slick-next{
+                right: -18%; 
+                @media screen and (max-width:1500px) {
+                    right: -8%;
+                }   
+                @media screen and (max-width:1300px) {
+                    right: -2%;
+                }   
+                @media screen and (max-width:1200px) {
+                    right: 10%;
+                }   
+                @media screen and (max-width:700px) {
+                    top: 65% !important;
+                }
+            }
+        }    
+    }    
+}

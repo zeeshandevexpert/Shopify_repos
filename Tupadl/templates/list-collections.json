@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "heading_banner_mF64GF": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_2_4.png",
+        "heading": "Collections",
+        "sub_heading": "",
+        "font_size": 30,
+        "content": ""
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    }
+  },
+  "order": [
+    "heading_banner_mF64GF",
+    "main"
+  ]
+}

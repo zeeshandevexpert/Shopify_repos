@@ -1,0 +1,178 @@
+{{ 'section-featured-product.min.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+.section-{{ section.id }}-padding {
+ padding-top: {{ section.settings.padding_top }};
+ padding-bottom: {{ section.settings.padding_bottom }};
+}
+{% endstyle %}
+
+<section
+  class="homepage-sections-wrapper pastry-subscription-product section-{{ section.id }}-padding"
+  style="background-color: {{ section.settings.pastry-subscription--background-color }};"
+>
+  <div
+    class="container product--featured-product"
+    data-wetheme-section-type="image-and-text"
+    data-wetheme-section-id="{{ section.id }}"
+  >
+    <div class="row align-items-center " id="product-box" data-section-id="{{ section.id }}">
+      <div class="col-12 col-lg-6 d-flex justify-content-lg-start justify-content-center">
+        <div class="contentImageColumnOuter position-relative">
+          <div class="get-subscription-arrowContent position-absolute">
+            {% if section.settings.get_subscription_title != blank %}
+              <span class="arrowContentText">{{ section.settings.get_subscription_title }}</span>
+            {% endif %}
+
+            {% if section.settings.get_subscription_arrow != blank %}
+              <span class="arrowContentIndicaton">{{ section.settings.get_subscription_arrow }}</span>
+            {% endif %}
+          </div>
+
+          <div class="get-subscription-image">
+            {% if section.settings.right_image != blank %}
+              <img class="" alt="" src="{{ section.settings.right_image | image_url: width: 500 }}" width="" height="" loading= "lazy" />
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6">
+        <section class=" wow">
+          <div class="homepage-sections--indiv-product-slider-variants">
+            <div class="get-subscription-right-content">
+              <h2 class="sectionHeading">{{ section.settings['title-pastry'] }}</h2>
+              {{ section.settings['text-block-pastry'] }}
+            </div>
+            
+            {% if section.settings.button_text != blank %}
+            <div class="mw-100">
+              <a href="{{ section.settings.button_link }}"
+                class="btn btn-primary btn-image-text"
+              >
+                  {{ section.settings.button_text }}
+              </a>
+            </div>
+            {% endif %}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image and Text",
+  "class": "homepage-section--indiv-product-wrapper",
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 10
+    },
+    {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "unit": "px",
+        "label": "Padding Bottom",
+        "default": 10
+    },
+    {
+      "type": "color",
+      "id": "pastry-subscription--background-color",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    },
+    {
+      "type": "text",
+      "id": "title-pastry",
+      "label": {
+        "en": "Heading",
+        "de": "Überschrift",
+        "es": "Encabezado",
+        "fr": "Rubrique",
+        "pt-PT": "Título"
+      },
+      "default": {
+        "en": "Share brand or product details",
+        "de": "Marken- oder Produktdetails teilen",
+        "es": "Compartir marca o detalles del producto",
+        "fr": "Partager les infos sur la marque ou le produit",
+        "pt-PT": "Partilhar detalhes da marca ou produto"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "text-block-pastry",
+      "label": {
+        "en": "Text",
+        "de": "Text",
+        "es": "Texto",
+        "fr": "Texte",
+        "pt-PT": "Texto"
+      },
+      "default": {
+        "en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "de": "<p>Fügen Sie langen Texten ein Bild hinzu, um dem Produkt, der Kollektion oder dem Blogpost Ihrer Wahl Fokus zu verleihen. Fügen Sie Details bezüglich der Verfügbarkeit oder dem Stil hinzu oder stellen Sie sogar eine Rezension zur Verfügung.</p>",
+        "es": "<p> Combine texto grande con una imagen para focalizar la atención en su producto, colección o publicación del blog. Añada detalles sobre la disponibilidad, el estilo o, incluso, un comentario. </p>",
+        "fr": "<p>Associez un texte en gros caractères à une image pour mettre en valeur le produit, la collection ou l'article de blog que vous avez choisi. Ajoutez des détails sur la disponibilité et le style ou même fournissez un commentaire.</p>",
+        "pt-PT": "<p>Associe um texto de grandes dimensões a uma imagem para destacar o seu produto, coleção ou publicação no blog de eleição. Acrescente detalhes relativos à disponibilidade, estilo, ou até mesmo uma opinião.</p>"
+      }
+    },
+    {
+      "type": "text",
+      "id": "get_subscription_title",
+      "label": "Title"
+    },
+    {
+      "type": "html",
+      "id": "get_subscription_arrow",
+      "label": "Arrow Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image and Text",
+      "category": "Image"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "product",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "search"
+    ]
+  }
+}
+{% endschema %}

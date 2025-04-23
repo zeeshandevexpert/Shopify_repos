@@ -1,0 +1,44 @@
+<div class="cart-menu-modal">
+    <span class="cart-menu-modal-close"></span>
+    <div class="cart-menu-modal-contain">
+        <div class="cart-menu-modal-header-row">
+            <div class="cart-menu-modal-header-col cart-menu-modal-header-col-1">
+                <h4>cart item</h4>
+            </div>
+            <div class="cart-menu-modal-header-col cart-menu-modal-header-col-2">
+                <h4>Options</h4>
+            </div>
+            <div class="cart-menu-modal-header-col cart-menu-modal-header-col-3">
+                <h4>Quantity</h4>
+            </div>
+        </div>
+
+        <div class="mini-products-list">
+
+        </div>
+        <div class="loadingCart" style="text-align: center;display: none;padding-bottom: 100px;padding-top: 100px;">
+            <img src="{{ "ajax-loader.gif" | asset_url }}"/>
+        </div>
+
+        <div class="no-items-in-cart cart-menu-modal-botom-row">No items in cart</div>
+
+        <div class="cart-menu-modal-coupon-row hide-if-no-items">
+            <input type="text" placeholder="apply a promotional code" id="customer_promo_code">
+            <button class="cart-menu-modal-coupon-submit" id="apply_promo_code"><img src="{{ "icon-coupon-submit.svg" | asset_url }}"></button>
+        </div>
+        <div class="cart-menu-modal-botom-row hide-if-no-items">
+            <div class="cart-menu-modal-botom-left">
+                <span>shipping to the united states</span>
+                <span>Apple Pay is now available as a payment option</span>
+            </div>
+            <div class="cart-menu-modal-botom-right">
+                <span class="discount-active" style="display: none">DISCOUNT CODE: <span id="customer_promo_code_res" style="text-decoration: underline"></span></span>
+                <span class="discount-active" style="display: none">Your discount will be calculated on checkout</span>
+                <span>tax & shipping calculated at checkout</span>
+                <span class="totalprice">subtotal (tax excl.) <i class="mini-cart-subtotal"></i></span>
+                <button class="cart-menu-modal-submit" onclick="document.location.href='/checkout'">checkout <i></i></button>
+            </div>
+
+        </div>
+    </div>
+</div>

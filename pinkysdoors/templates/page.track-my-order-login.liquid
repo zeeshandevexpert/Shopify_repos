@@ -1,0 +1,84 @@
+<div class="page-width">
+  <div class="section-header text-center">
+    <h1>Track My Order</h1>
+    <p>Please use one of the options below in order to be able to track the order status.</p>
+    <div class="flex flex--justify-center grid">
+      <div class="grid__item track-order__login-box">
+        <div class="form-message form-message--success hide" id="ResetSuccess" tabindex="-1">
+          {{ 'customer.recover_password.success' | t }}
+        </div>
+
+        <div id="CustomerLoginForm" class="form-vertical">
+          {% form 'customer_login', return_to: '/pages/track-my-order' %}
+
+          {%- if form.errors -%}
+          <div class="form-message form-message--error">
+            <span tabindex="-1" data-form-status>{{ 'contact.form.error_heading' | t }}</span>
+            {{ form.errors | default_errors }}
+          </div>
+          {%- endif -%}
+          
+          <div class="text-left">
+
+            <label for="CustomerEmail">{{ 'customer.login.email' | t }}</label>
+            <input type="email" name="customer[email]" id="CustomerEmail" class="{% if form.errors contains 'email' %} input--error{% endif %}" autocorrect="off" autocapitalize="off" autofocus>
+
+            {% if form.password_needed %}
+            <label for="CustomerPassword">{{ 'customer.login.password' | t }}</label>
+            <input type="password" value="" name="customer[password]" id="CustomerPassword" class="{% if form.errors contains 'password' %} input--error{% endif %}">
+            {% endif %}
+            
+          </div>
+
+          <div class="text-center">
+            {% if form.password_needed %}
+            <p><a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a></p>
+            {% endif %}
+
+            <input type="submit" class="btn" value="{{ 'customer.login.sign_in' | t }}">
+
+            <p>{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
+          </div>
+
+          {% endform %}
+        </div>
+
+      </div>
+      <div class="grid__item track-order__login-box">
+        <form id="track-order-login" class="form-vertical">
+          <div class="text-left">
+            <label for="OrderNumber">Order Number</label>
+            <input type="text" name="order_number" id="OrderNumber" autocorrect="off" autocapitalize="off" required />
+            
+            <label for="LastName">Last Name</label>
+            <input type="text" name="last_name" id="LastName" autocorrect="off" autocapitalize="off"  onkeyup="return forceLower(this);" required />
+          </div>
+          <p>&nbsp;</p>
+          
+          <button class="track-order-login__btn btn" type="submit">Track My Order</button>
+          
+          <p>Need Help? <a href="#"><u>Click Here</u></a></p>
+          
+        </form>
+      </div>
+    </div>
+  </div>  
+</div>
+
+<script>
+  function forceLower(strInput) {
+    strInput.value=strInput.value.toLowerCase();
+  }
+  document.querySelector('.track-order-login__btn').addEventListener('click',(e) => {
+    e.preventDefault();
+    const form = e.target.closest('form');
+    const orderNum = document.getElementById('OrderNumber').value;
+    const lastName = document.getElementById('LastName').value;
+    if(orderNum != '' && lastName != '') {
+      window.location.href = `/pages/track-my-order?lname=${lastName}&ordernum=${orderNum}`;
+    }
+    
+  });
+</script>
+
+{% render 'hs-defer-css' with filename: 'track-order-login.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}

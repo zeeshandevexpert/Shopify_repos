@@ -1,0 +1,58 @@
+<div
+  id="custom-liquid--{{ section.id }}"
+  class="custom-liquid custom-liquid--{{ section.id }} {% unless section.settings.full_width %}row{% endunless %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="custom-liquid">
+    <div class="rte">
+      {{ section.settings.liquid }}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom liquid",
+  "settings":
+  [
+    {
+      "type":"paragraph",
+      "content":"Display custom liquid. Automatically hides in header if header's \"overlay homepage content\" option is enabled."
+    },
+    {
+      "type": "liquid",
+      "id": "liquid",
+      "label": "Custom liquid",
+      "info": "Add app snippets or other Liquid code to create advanced customizations."
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width"
+    }
+  ],
+  "presets":
+  [
+    {
+      "name": "Custom liquid"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ],
+    "groups": [
+      "header",
+      "footer"
+    ]
+  }
+}
+{% endschema %}

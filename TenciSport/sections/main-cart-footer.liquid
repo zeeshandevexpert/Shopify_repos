@@ -1,0 +1,337 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="gradient color-{{ section.settings.color_scheme }}{% if cart == empty %} is-empty{% endif %}"
+  id="main-cart-footer"
+  data-id="{{ section.id }}"
+>
+  <div class="page-width">
+    <div class="cart__footer isolate section-{{ section.id }}-padding">
+      {%- if settings.show_cart_note -%}
+        <cart-note class="cart__note field">
+          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <textarea
+            class="text-area field__input"
+            name="note"
+            form="cart"
+            id="Cart-note"
+            placeholder="{{ 'sections.cart.note' | t }}"
+          >{{ cart.note }}</textarea>
+        </cart-note>
+      {%- endif -%}
+
+      <div class="cart__blocks">
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'subtotal' -%}
+              <div class="js-contents" {{ block.shopify_attributes }}>
+                <div>
+                  {%- if cart.cart_level_discount_applications.size > 0 -%}
+                    <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
+                      {%- for discount in cart.cart_level_discount_applications -%}
+                        <li class="discounts__discount discounts__discount--position">
+                          {%- render 'icon-discount' -%}
+                          {{ discount.title }}
+                          (-{{ discount.total_allocated_amount | money }})
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                </div>
+
+                <div class="totals">
+                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
+                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                </div>
+
+                <small class="tax-note caption-large rte">
+                  {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                    {{ 'sections.cart.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- elsif cart.taxes_included -%}
+                    {{ 'sections.cart.taxes_included_but_shipping_at_checkout' | t }}
+                  {%- elsif shop.shipping_policy.body != blank -%}
+                    {{ 'sections.cart.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                  {%- else -%}
+                    {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
+                  {%- endif -%}
+                </small>
+              </div>
+            {%- else -%}
+              <div class="cart__ctas" {{ block.shopify_attributes }}>
+                <noscript>
+                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                    {{ 'sections.cart.update' | t }}
+                  </button>
+                </noscript>
+
+                <form id="lead-generator-form" method="post" >
+                    <input type="hidden" name="cart_data" id="cart_data" value="">
+                    {% comment %} <input type="email" name="email" placeholder="Your Email" required>  {% endcomment %}
+                    {% comment %} <button
+                    type="submit"
+                    id="checkout"
+                    class="cart__checkout-button button"
+                    name="checkout"
+                    {% if cart == empty %}
+                      disabled
+                    {% endif %}
+                    form="cart"
+                  >
+                    {{ 'sections.cart.checkout' | t }}
+
+                  </button> {% endcomment %}
+                    <button class="cart__checkout-button" type="submit"> {{ 'sections.cart.checkout' | t }}</button>
+                </form>
+
+              
+              </div>
+
+              {%- if additional_checkout_buttons -%}
+                <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                  {{ content_for_additional_checkout_buttons }}
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {% endfor %}
+
+        <div id="cart-errors"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+
+<script>
+
+  const handleSubmit = async (data) => {
+                // e.preventDefault();
+                try {
+                    await emailjs.send(
+                        "service_lk6ima7",
+                        "template_ch7ku4l",
+                        {
+                            firstName: data.firstName,
+                            lastName: data.lastName,
+                            email: data.email,
+                            productData : data.products
+                        },
+                        {
+                            publicKey: "-A97OAC-STkmNkokH",
+                        }
+                    );
+                    // toast.success("Success");
+                } catch (error) {
+                    console.log(error);
+                    // toast.success("Error");
+                }
+  };
+
+  // document.getElementById('lead-generator-form').addEventListener('submit', function(event) {
+  //     event.preventDefault(); // Prevent the default form submission
+
+  //     // Fetch the cart data
+  //     fetch('/cart.js')
+  //         .then(response => response.json())
+  //         .then(data => {
+  //             // Extract specific product information
+  //             const products = data.items.map(item => ({
+  //                 name: item.product_title,
+  //                 quantity: item.quantity,
+  //                 price: item.price / 100 // Convert from cents to dollars
+  //             }));
+
+            
+  //             const email = "{{ customer.email }}"; 
+  //             const firstName = "{{ customer.first_name }}" 
+  //             const lastName = "{{ customer.last_name }}" 
+
+          
+  //             const cartDetails = {
+  //                 email: email, 
+  //                 firstName: firstName,
+  //                 lastName : lastName,
+  //                 products: products 
+  //             };
+
+          
+  //             document.getElementById('cart_data').value = JSON.stringify(cartDetails);
+
+  //             console.log(cartDetails);
+              
+  //             handleSubmit(cartDetails);
+            
+              
+  //               fetch('/cart/clear.js', {
+  //                 method: 'POST',
+  //                 headers: {
+  //                     'Content-Type': 'application/json'
+  //                 }
+  //             }).then(() => {
+  //                 // Redirect after clearing the cart
+  //                 setTimeout(function() {
+  //                     window.location.href = '/pages/thank-you';
+  //                 }, 1000); // 1 second delay
+  //             }).catch(error => console.error('Error clearing cart:', error));
+              
+
+  //         });
+  // });
+
+  document.getElementById('lead-generator-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Fetch the cart data from Shopify's `/cart.js`
+    fetch('/cart.js')
+        .then(response => response.json())
+        .then(data => {
+            // Extract specific product information from the cart
+            const products = data.items.map(item => ({
+                variant_id: item.variant_id, // Use variant ID for the order
+                quantity: item.quantity
+            }));
+
+            // Collect customer details (e.g., email, first name, last name)
+            const email = "{{ customer.email }}"; 
+            const firstName = "{{ customer.first_name }}"; 
+            const lastName = "{{ customer.last_name }}"; 
+
+            // Build the cart details object to send to the serverless function
+            const cartDetails = {
+                products: products,
+                email: email,
+                firstName: firstName,
+                lastName: lastName
+            };
+
+            // Send this data to your Vercel serverless function for draft order creation
+            fetch('https://shopify-vercel-tawny.vercel.app/api/create-draft-order', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(cartDetails)
+            })
+            .then(response => response.json())
+            .then(orderData => {
+                // Handle the response if the draft order is successfully created
+                console.log('Order created successfully:', orderData);
+
+                // // Clear the cart after the order is created
+                fetch('/cart/clear.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }).then(() => {
+                    // Redirect to the thank-you page after a short delay
+                    setTimeout(function() {
+                        window.location.href = '/pages/thank-you';
+                    }, 1000); // 1 second delay
+                }).catch(error => console.error('Error clearing cart:', error));
+            })
+            .catch(error => {
+                console.error('Error creating draft order:', error);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching cart data:', error);
+        });
+});
+
+
+
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function isIE() {
+      const ua = window.navigator.userAgent;
+      const msie = ua.indexOf('MSIE ');
+      const trident = ua.indexOf('Trident/');
+
+      return msie > 0 || trident > 0;
+    }
+
+    if (!isIE()) return;
+    const cartSubmitInput = document.createElement('input');
+    cartSubmitInput.setAttribute('name', 'checkout');
+    cartSubmitInput.setAttribute('type', 'hidden');
+    document.querySelector('#cart').appendChild(cartSubmitInput);
+    document.querySelector('#checkout').addEventListener('click', function (event) {
+      document.querySelector('#cart').submit();
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "background-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

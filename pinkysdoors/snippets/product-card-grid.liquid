@@ -1,0 +1,198 @@
+{% assign ribbon = false %}
+{% assign oilts = false %}
+{% assign preorder = false %}
+{% assign preorder_end = false %}
+{% assign has_date = false %}
+{% assign date = '' %}
+{% assign product_tags = product.tags | join:',' %}
+
+{% if product_tags contains 'oilts' %}
+{% for tag in product.tags %}
+{% if tag contains 'oilts' %}
+{% assign oilts = true %}
+{% break %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+{% if product_tags contains 'ribbon' or product_tags contains 'pre-order:' %}
+{% for tag in product.tags %}
+{% if tag contains 'ribbon' %}
+{% assign ribbon = tag | split: ':' | last %}
+{% break %}
+{% endif %}
+  
+{% if tag contains 'pre-order:' %}
+{% assign preorder = true %}
+{% assign preorder_end = tag | remove: 'pre-order:' %}
+{% endif %}
+
+{% if tag contains 'ETA:' %}
+{% assign has_date = true %}
+{% assign date = tag | remove: 'ETA:' %}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+{% assign arrival_dates = '' %}
+{% for variant in product.variants %}
+  {% if variant.metafields.custom.arrival_date != blank %}
+    {% assign arrival_date = variant.metafields.custom.arrival_date %}
+    {% assign _arrival_date = arrival_date | date: '%Y%m%d' %}
+    {% assign today = "now" | date: '%Y%m%d' %}
+    {% if _arrival_date > today %}
+      {% capture arrival_dates %}{{ arrival_dates }}{% if arrival_dates != '' %},{% endif %}{{ variant.metafields.custom.arrival_date }}{% endcapture %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% if arrival_dates != '' %}
+  {% assign arrival_dates = arrival_dates | split: ',' | sort %}
+  {% assign date = arrival_dates[0] %}
+  {% assign has_date = true %}
+{% endif %}
+
+{% assign product_title = product.title | split: settings.split_value %}
+{% assign pt = product_title[0] | split: ' - ' %}
+
+{% assign arriving = false %}
+
+{% if product.title contains ' | ' %}
+{% assign arriving = product.title | split: ' | ' | last | strip %}
+{% endif %}
+
+{% assign price_min = product.price_max %}
+{% assign price_min_regular = product.price_max %}
+
+{% comment %}
+{% assign variant_titles = product.variants | map: 'title' %}
+{% assign variant_available_arr = product.variants | map: 'available' %}
+{% endcomment %}
+
+{% for variant in product.variants %}
+{% unless variant.available %}{% continue %}{% endunless %}
+{% if variant.price < price_min %}
+{% assign price_min = variant.price %}
+{% assign price_min_regular = variant.compare_at_price %}
+{% endif %}
+{% endfor %}
+
+
+{% capture sizes_available %}{% for variant in product.variants -%}{% if variant.available %}{{ variant | json }}{% endif %}{% endfor %}{% endcapture %}
+{% capture sizes_available %}{[{% for variant in product.variants -%}{% if variant.available %}{{ variant | json | escape }}{% endif %}{% endfor %}]}{% endcapture %}
+
+
+<div
+     id="product-card-{{product.handle}}"
+     data-style="{{pt[0] | strip}}"
+     data-page="{{ paginate.current_page }}"
+     {{my_pricing}}
+     {% if preorder %}
+     data-preorder="true"
+     data-preorder-end="{{preorder_end}}"
+     {% endif %}
+     {% if product.options[0] == 'Size' %}
+     data-sizes='{{ product.variants | map: 'title' | split: ' / ' | json | escape }}'
+     data-availability='{{ product.variants | map: 'available' | json }}'
+     data-sizes-available='{{- sizes_available -}}'
+     {% endif %}
+     data-variants='{{ product.variants | json | escape }}'
+     data-original-sale-price="{{price_min}}"
+     data-original-regular-price="{{price_min_regular}}"
+     class="product-card-{{ product.id }} {{product.handle}} grid-view-item{% unless product.available %} grid-view-item--sold-out{% endunless %} product-card text-center {{available_options}} {{av}} {% for tag in product.tags %}{{tag | handle }} {% endfor %} {% if preorder %}pre-order{% endif %}">
+  <span class="visually-hidden">{{ product.title }}</span>
+
+  {% comment %}<div class="pin-it__plp"><a href="https://www.pinterest.com/pin/create/button/" data-pin-custom="true" data-pin-do="buttonBookmark"><img class="lazyload hs-lazyload hs-id-fb053d69" data-src="{{ 'pin-icon_64x64.png' | asset_url }}" height="32" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="32"/></a></div>{% endcomment %}
+
+  {% capture img_id %}ProductCardImage-{{ section.id }}-{{ product.id }}{% endcapture %}
+  {% capture wrapper_id %}ProductCardImageWrapper-{{ section.id }}-{{ product.id }}{% endcapture %}
+
+  {%- assign img = product.featured_image -%}
+
+  {%- assign img_url = img | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+
+
+  <div id="{{ wrapper_id }}" class="grid-view-item__image-wrapper product-card__image-wrapper js relative">
+    <a class="grid-view-item__link grid-view-item__image-container" href="{{ product.url | within: collection }}{% if first_available_variant %}?variant={{ first_available_variant.id }}{% endif %}" style="display: block; padding-top: 100%;">
+      <img id="{{ img_id }}"
+           class="grid-view-item__image"
+           src="{{ img | img_url: '600x' }}"
+           data-src="{{ img_url }}"
+           data-aspectratio="{{ img.aspect_ratio }}"
+           data-sizes="auto"
+           loading="lazy"
+           width="600"
+           height="600"
+           alt="{{product.title}}">
+      {%  if product.images.size > 1 %}
+      <span class="lazyload grid-view-item__image-hover" data-bg="{{ product.images[1] | img_url: '600x'}}" ></span>
+      {%  endif %}
+      {% if oilts %}
+        <div class="oilts-tag"> </div>
+      {% endif%}
+    </a>
+    {% if product.type == "Iron Doors" and  foobar %}
+    <div class="my-sizes"><h5>Available Sizes<br><small style="color:#999;font-size: 9px;letter-spacing:.5px;">(testing only)</small></h5>
+      {% if my_sizes_full.size >= 1 %}
+      {{my_sizes_full | split: ',' | join:'<br/>'}}
+      {% else %}
+      none in stock
+      {% endif %}
+    </div>
+    {% endif%}
+
+    {% if collection.handle contains 'pre-sale' or has_date %}
+      {% if date != '' %}
+        {% render 'presale-clock', date: date %}
+      {% endif %}
+    {% endif %}
+    
+  </div>
+  {% unless product.available %}
+    {% if collection.handle == 'color-samples' %}
+    <span class="badge">Out Of Stock</span>
+    {% endif %}
+  {% endunless %}
+  <noscript>
+    {% capture image_size %}{{ max_height }}x{{ max_height }}{% endcapture %}
+    <img class="grid-view-item__image" src="{{ product.featured_image.src | img_url: image_size, scale: 1 }}" alt="{{ product.featured_image.alt }}" style="max-width: {{ max_height | times: product.featured_image.aspect_ratio }}px;">
+  </noscript>
+
+  <div class="h4 grid-view-item__title product-card__title" aria-hidden="true">
+    {{ product_title[0] | replace: 'Pre-Sale','<span class="pink">Pre-Sale</span>' }}
+  </div>
+
+  {% if date != '' %}
+    <div class="h5 grey">({{ date | date: "%m-%d-%Y" }})</div>
+  {% endif %}
+
+  <div class="product-card__price">
+    {% assign is_once_in_alifetime_sale_collection = 0 %}
+    {% for _collection in product.collections %}
+      {% if _collection.title contains 'Once in a Lifetime Sale' %}
+        {% assign is_once_in_alifetime_sale_collection = 1 %}
+      {% endif %}
+    {% endfor %}
+    {% if is_once_in_alifetime_sale_collection == 1 %}
+      {% assign price_min = product.price_min %}
+      {% assign price = price_min | times: 0.8 %}
+      <span class="product-card__price-sale strikeout" data-sale-price="{{ price_min }}">Was <span class="ws-sale-price">{{ price_min | money }}</span></span>
+      {% if has_date and date != '' %}
+      <span class="product-card__price-sale" data-sale-price="{{ price }}">Now <span class="ws-sale-price">{{ price | money }}</span></span>
+      {% endif %}
+      {% comment %}
+      <span class="product-card__price-sale strikeout" data-sale-price="{{ price_min }}">Was <span class="ws-sale-price">{{ product.compare_at_price | money }}</span></span>
+      <span class="product-card__price-sale" data-sale-price="{{ price_min }}">Now <span class="ws-sale-price">{{ price_min | money }}</span></span>
+      {% comment %}<span class="product-card__price-regular" {% if product.title contains 'Air 4' or product.title contains 'Air 5' %}style="display: none;"{% endif %}><s data-regular-price="{{ price_min_regular }}">Reg. from <span class="ws-full-price">{{ price_min_regular | money}}</span></s></span>{% endcomment %}
+      {% endcomment %}
+    {% else %}
+    <span class="product-cart__price-chill">{% if product.price_min < product.price_max %}From {% endif %}<span class="ws-sale-price">{{price_min | money}}</span></span>
+    {% endif %}
+  </div>
+  {% if ribbon %}
+  <div class="ribbon">{{ribbon | strip}}</div>
+  {% endif%}
+  <div class="styles"></div>
+
+</div>

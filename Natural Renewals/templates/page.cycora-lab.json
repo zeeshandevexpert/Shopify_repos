@@ -1,0 +1,56 @@
+{
+  "sections": {
+    "header_skin_BBmzWq": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "default",
+        "sticky_header": false
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "video_banner_KQjtpR": {
+      "type": "video-banner",
+      "settings": {
+        "text_color": "#dbedf5",
+        "title": "introducing:",
+        "icon": "shopify:\/\/shop_images\/Layer_1.svg",
+        "text": "cycora.lab",
+        "description": "<p>cycora.lab is for lorem ipsum hghos. hoeih oisei ijhpeijg e ghih iohoe ou8hafh oihaofh. ouhe ohewof ohowhf oihefoh iohef oihef ioh ioehuy. hoihe oiheh oih oiawbvz ohzbeoan.<\/p><p>cycora.lab is for lorem ipsum hghos. hoeih oisei ijhpeijg e ghih iohoe ou8hafh oihaofh. ouhe ohewof ohowhf oihefoh iohef oihef ioh ioehuy. hoihe oiheh oih oiawbvz ohzbeoan.<\/p>",
+        "media_type": "video_file",
+        "vimeo_youtube_video": "",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/881af15503824c7492497e270b747215.mp4"
+      }
+    },
+    "two_column_block_yjUWTG": {
+      "type": "two-column-block",
+      "settings": {
+        "text_color": "#dbedf5",
+        "sub_title": "experiment 001",
+        "title": "twill jacket",
+        "description": "<p>read about the journey of the twill jacket read about the journey of the twill jacket read about the journey of the twill jacket read about the journey of the twill jacket read about the journey of the twill jacket<\/p>",
+        "button_title": "shop now",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/Rectangle_5_9dd05a1e-c38e-403a-a799-3d92b7717136.png"
+      }
+    },
+    "one_line_block_4n6xMY": {
+      "type": "one-line-block",
+      "settings": {
+        "button_title": "read about the journey of the twill jacket",
+        "button_link": "#"
+      }
+    }
+  },
+  "order": [
+    "header_skin_BBmzWq",
+    "main",
+    "video_banner_KQjtpR",
+    "two_column_block_yjUWTG",
+    "one_line_block_4n6xMY"
+  ]
+}

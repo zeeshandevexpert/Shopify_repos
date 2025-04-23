@@ -1,0 +1,21 @@
+{% assign name_handle = name | handle %}
+{% assign menu_handle = menu | handle %}
+{% assign values = linklists[menu_handle].links | map: 'title' | join:', '  %}
+
+<div id="{{ filter.label }}-filter" class="filter-group" >
+  <h4 data-name="{{filter.label}}">
+    <a href="#" class="remove" data-type="{{filter.label}}">&times;</a>
+    <span class="fg-title" data-original-title="{{filter.label | upcase}}">{{filter.label | upcase}}</span>
+  </h4>
+  <div class="fg">
+    <div class="fg-inner">
+      {%- for filter_value in filter.values -%}
+      {% if filter_value.label == 'Out swing' %}{% continue %}{% endif %}
+      <div class="filter-elem swatch-style" {% if filter_value.count == 0 and filter_value.active == false %}style="display:none;"{% endif %}>
+        <input id="filter-{{ filter_value.label | handle }}" type="radio" name="{{filter_value.param_name}}" value="{{filter_value.value}}" class="coll-filter"  {% if filter_value.active %}checked{% endif %} {% if filter_value.count == 0 and filter_value.active == false %}disabled{% endif %} />
+        <label for="filter-{{ filter_value.label | handle }}">{{ filter_value.label }}</label>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

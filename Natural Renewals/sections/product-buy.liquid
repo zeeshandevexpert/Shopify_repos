@@ -1,0 +1,158 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container-style product-buy-container" id="sectionbuy">
+    <div class="product-buy-row">
+        <div class="product-buy-col-left">
+            {% assign product_variant_count = product.variants | size %}
+            <input type="hidden" id="product_variant_count" value="{{ product_variant_count }}" />
+
+            {% if product_variant_count > 1 %}
+            <div class="product-buy-size">
+                {% assign counter = 1 %}
+                {% for variant in product.variants %}
+                <input class="pdp-all-variants" {% if counter==1 %}id="default_product_variant" {% endif %}
+                    type="hidden" data-available="{{ variant.available }}" data-option1="{{ variant.option1 }}"
+                    data-option2="{{ variant.option2 }}" data-variant_id="{{ variant.id }}" />
+                {% assign counter = counter | plus: 1 %}
+                {% endfor %}
+
+                <div class="product-buy-size-title">
+                    <h2>Size</h2><a href="#url">Size guide</a>
+                </div>
+                <div class="product-buy-size-row">
+                    {% for size_option in product.options_by_name['Size'].values %}
+                    <div class="product-buy-radio-col">
+                        <input class="pdp-size-swatcher" type="radio" name="size" id="size_{{ size_option }}"
+                            value="{{ size_option }}" />
+                        <label for="size_{{ size_option }}">{{ size_option }}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="product-buy-color">
+                <h2>Color</h2>
+                <div class="product-buy-color-row">
+                    {% assign start_index = 0 %}
+                    {% for color_option in product.options_by_name['Color'].values %}
+                    <div class="product-buy-color-col" data-id="{{ color_option }}" data-index="{{ start_index }}">
+                        <input class="pdp-color-swatcher" type="radio" name="color" id="color_{{ color_option }}"
+                            value="{{ color_option }}" />
+                        <label for="color_{{ color_option }}" style="background-color: {{ color_option }}"></label>
+                        {% comment %} <i>{{ color_option }}</i> {% endcomment %}
+                    </div>
+                    {% assign start_index = start_index | plus: 1 %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            {% endif %}
+            {%- for block in section.blocks -%}
+            {%- case block.type -%}
+            {%- when '@app' -%}
+            {% render block %}
+            {%- endcase -%}
+            {%- endfor -%}
+            {% if product.metafields.arena.material %}
+            <div class="product-buy-materials">
+                <h2>Materials</h2>
+                {% for material in product.metafields.arena.material %}
+                {% assign material_tooltip = '' %}
+                {% for block in section.blocks %}
+                {% if block.settings.title contains material %}
+                {% assign material_tooltip = block.settings.description %}
+                {% endif %}
+                {% endfor %}
+                <span
+                    class="product-buy-materials-col {% if material_tooltip != blank %}product-buy-materials-col-with-tooltip{% endif %}">{{
+                    material }} {% if material_tooltip != blank %}<i>{{ material_tooltip }}</i>{% endif %}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="product-buy-bottom">
+                {% if product.available %}
+                <span>{{ product.price | money }} usd</span>
+                {% endif %}
+                <input type="hidden" id="active_variant_id"
+                    value="{{ product.selected_or_first_available_variant.id }}" />
+
+                <button id="buy_button" onclick="addItemToCart();">add to cart</button>
+
+                <div style="display: none;font-weight: bold" id="sold_out_title">Sold Out</div>
+
+            </div>
+        </div>
+        <div class="product-buy-col-right">
+            <img src="{{ product.images[0] | img_url: '10x' }}" class="lazyload feature_imgs"
+                data-src="{{ product.images[0] | img_url: '1000x' }}" data-widths="[1000]" data-sizes="auto"
+                tabindex="-1" />
+            <div class="img-wraper">
+                {% for variant in product.variants %}
+                {% if variant.title contains 's' %}
+                <div class="variants s">
+                    <img src="{{ variant.image | img_url : " master", size: 'large' }}" alt="">
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+<script>
+    $(".img-wraper").slick({
+        slidesToShow: 1,
+        infinite: false,
+        slidesToScroll: 1,
+        dots: true,
+        prevArrow: '<button type="button" class="slick-prev pull-left"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+        nextArrow: '<button type="button" class="slick-next pull-right"><i class="fa fa-angle-right" aria-hidden="true"></i></button>'
+    })
+
+    $(".product-buy-color-row .product-buy-color-col").click(function () {
+        var index = $(this).data("index");
+        $(".product-buy-color-row .product-buy-color-col").removeClass("active");
+        $(this).addClass("active");
+        $(".img-wraper").slick('slickGoTo', index);
+        $(".product-buy-col-right .feature_imgs").hide();
+        $(".variants").show();
+    });
+
+</script>
+
+{% schema %}
+{
+"name": "Product - Buy",
+"tag": "section",
+"class": "product-buy-section",
+"settings": [
+
+],
+"blocks": [
+{
+"type": "@app"
+},
+{
+"name": "Tooltip Material",
+"type": "material",
+"settings":[
+{
+"type": "text",
+"id": "title",
+"label": "Material Name"
+},
+{
+"type": "richtext",
+"id": "description",
+"label": "Tooltip Description"
+}
+]
+}
+],
+"presets": [
+{
+"name": "Product - Buy"
+}
+]
+}
+{% endschema %}

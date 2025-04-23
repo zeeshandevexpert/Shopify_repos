@@ -1,0 +1,53 @@
+{% comment %}
+snippets/product-popups.liquid
+
+- popups_active
+- product
+{% endcomment %}
+{%- if popups_active == true -%}
+  <div class="product-extra">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'popup' %}
+          {% assign shortcode_description = '' %}
+          {% if block.settings.popup_label != blank and block.settings.popup_shortcode != blank or block.settings.popup_content != blank %}
+
+            <!-- modal button -->
+            <button
+              class="button-as-link js-modal-open"
+              type="button"
+              name="button"
+              aria-label="Open popup"
+              data-wau-modal-target="product-modal--{{ section.id }}--{{ forloop.index }}">
+              {{ block.settings.popup_label }}
+            </button>
+
+            <!-- modal content -->
+            <div data-wau-modal-content="product-modal--{{ section.id }}--{{ forloop.index }}" style="display: none;">
+              {%- liquid
+
+                assign shortcode_open = '[#' | append: block.settings.popup_shortcode | append: ']'
+                assign shortcode_close = '[/' | append: block.settings.popup_shortcode | append: ']'
+
+                if product.description contains shortcode_open
+                   assign shortcode_description = product.description | split: shortcode_close | first | split: shortcode_open | last
+                endif
+
+              -%}
+              <div class="rte">
+                {{ block.settings.popup_content }}
+                {{ shortcode_description }}
+              </div><!-- /.rte -->
+            </div>
+          {% endif %}
+      {% endcase %}
+    {% endfor %}
+  </div><!-- /.product-extra -->
+  <style>
+    .product__section-content form.product_form {
+        margin-bottom: 0;
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+  </style>
+{% endif %}

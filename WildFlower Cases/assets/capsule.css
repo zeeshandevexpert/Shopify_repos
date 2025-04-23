@@ -1,0 +1,77 @@
+#capsule {
+  position: relative;
+}
+
+#capsule-text {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+#capsule-countdown {
+  justify-content: center;
+}
+
+#capsule-buttons {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.cap-element {
+  margin: 10px;
+}
+
+.cap-element span {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.cap-box {
+  border: 2px solid transparent;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1;
+  padding: 5px;
+  margin-bottom: 10px;
+  font-size: 2.4rem;
+  min-width: 50px;
+}
+
+@media screen and (min-width: 750px) {
+  .cap-box {
+    min-width: 85px;
+    font-size: 5rem;  
+  }
+  .cap-element {
+    margin: 20px;
+  }
+}
+
+.line-btn {
+  text-decoration: none;
+}
+
+#capsule-buttons-mobile {
+  text-align: center;
+}
+#capsule-buttons-mobile .line-btn {
+  color: black;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+  line-height: 1;
+  display: inline-block;
+  letter-spacing: .3rem;
+  margin: 10px 0;
+  padding: 5px 0;
+  font-size: 14px;
+}

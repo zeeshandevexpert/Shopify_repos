@@ -1,0 +1,846 @@
+{% include 'breadcrumbs' %}
+{%- assign specialOrder = false -%}
+{%- assign glass = false -%}
+{%- assign swing = false -%}
+{%- assign color = false -%}
+{%- assign jamb = false -%}
+{%- assign preorder = false -%}
+{%- assign product_title = product.title | split: settings.split_value -%}
+
+{% assign product_tags = product.tags | join: ',' %}
+
+{% unless product.title contains 'Handle' or product_tags contains 'Handle' %}
+{% if product.type contains 'Door' or product_tags contains 'Door' %}
+  {% assign show_for_doors = true %}
+{% endif %}
+{% endunless %}
+
+{% if product.type == "Fence" or product.type == "Gate" or product_tags contains 'Fence' or product_tags contains 'Gate' %}
+  {% assign show_for_fences = true %}
+{% endif %}
+
+{% if product.title contains 'Double' %}
+{% assign special_version = 'double-door-special-order' %}
+{% else %}
+{% assign special_version = 'single-door-special-order' %}
+{% endif %}
+
+{% assign special_version = product.handle | append: '-special-order' %}
+
+{% for tag in product.tags %}
+{% if tag contains 'video:' %}{% assign videoID = tag | remove:'video:' %}{% endif %}
+{% if tag == 'special-order' %}{% assign specialOrder = true %}{% endif %}
+{% if tag contains 'glass' %}{% capture glass %}{% if glass %}{{glass}},{% endif %}{{tag | remove: 'glass:' | handle}}{% endcapture %}{% endif %}
+{% if tag contains 'swing' %}{% capture swing %}{% if swing %}{{swing}},{% endif %}{{tag | remove: 'swing:' | handle}}{% endcapture %}{% endif %}
+{% if tag contains 'color:' %}{% assign color = tag | remove: 'color:' %}{% endif %}
+{% if tag contains 'jamb:' %}{% assign jamb = tag | remove: 'jamb:' %}{% endif %}
+{% if tag == 'pre-order' %}{% assign has_preorders = true %}{% endif %}
+{% if tag contains 'ribbon' %}{% assign ribbon = tag | split: ':' | last %}{% endif %}
+{% endfor %}
+
+
+<script>
+  var preorder_variants = [];
+  var preorder_dates = [];  
+  {% for tag in product.tags %}
+  {% if tag contains 'pre-order|' %}
+  {%- assign po = tag | split: '|' -%}
+  preorder_variants.push({{po[1]}});
+  preorder_dates.push('{{po[2]}}');
+  {% endif %}
+  {% endfor %} 
+</script>
+
+<div class="product-template__container page-width small--full-width {% if specialOrder %}product-single__special-order{% endif %}"
+     id="ProductSection-{{ section.id }}"
+     data-enable-history-state="true"
+     {% comment %}
+     data-preorder="{{preorder}}"
+     data-preorder-variants=""
+     data-preorder-end="{{preorder_end}}"
+     {% endcomment %}
+     {% if specialOrder %}
+     data-normal-version="/products/{{product.handle | remove: '-special-order'}}"
+     {% else %}
+     data-product-handle="{{product.handle}}"
+     data-special-version="/products/{{special_version}}?name={{product.title}}"
+     {% endif %}
+     >
+  {% if product.description contains '<!--split-->' %}
+  {% assign pd = product.description | split: '<!--split-->'  %}
+  {% assign description = pd[0] %}
+  {% assign special_info = pd[1] %}
+  {% else %}
+  {% assign description = product.description %}
+  {% endif %}
+
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign product_image_zoom_size = '1024x1024' -%}
+  {%- assign product_image_scale = '2' -%}
+  {%- assign enable_zoom = section.settings.enable_zoom -%}
+  {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = current_variant.price -%}
+  {%- assign product_image_width = 'medium-up--one-half' -%}
+  {%- assign product_description_width = 'medium-up--one-half' -%}
+  {%- assign product_thumbnail_width = 'medium-up--one-quarter' -%}
+  {%- assign height = 530 -%}
+
+
+  <h1 class="h2 text-center page-width product-single__title medium-up--hide">{{ product.title | remove: '- Special Order' }}</h1>
+  <div class="grid product-single{% if section.settings.enable_payment_button %} product-single--{{ section.settings.image_size }}-image{% endif %}">
+    <div class="grid__item product-single__photos {{ product_image_width }}{% if section.settings.image_size == 'full' %} product-single__photos--full{% endif %}">
+      <div class="flex small--flex-column__reverse">
+        {% if product.images.size > 1 %}
+        <div class="thumbnails-wrapper medium-up--one-fifth small--hide">
+          <ul class="product-single__thumbnails product-single__thumbnails-{{ section.id }}">
+            {% for image in product.images %}
+            {% unless image.alt contains 'slideshow' %}
+            <li class="product-single__thumbnails-item js" >
+              <a href="{{ image.src | img_url: product_image_zoom_size, scale: product_image_scale }}"
+                 class="text-link product-single__thumbnail product-single__thumbnail--{{ section.id }}"
+                 data-slide-index="{{forloop.index0}}"
+                 data-thumbnail-id="{{ image.id }}"
+                 {% if enable_zoom %}data-zoom="{{ image.src | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+                <img alt="{{ 'sections.featured_product.gallery_thumbnail_alt' | t: imageAlt: image.alt | escape }}" class="product-single__thumbnail-image lazyload hs-lazyload hs-id-84d13641" data-src="{{ image.src | img_url: '110x110', scale: 2 }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+              </a>
+            </li>
+            {% else %}
+            	{% assign has_slideshow_images = true %}
+            {% endunless %}
+            {% endfor %}
+            {% if videoID %}
+            <li class="product-single__review-item lazyload lazyfade product-youtube-thumbnail grab-youtube-thumbnail" data-youtube-id="{{videoID}}" data-bg="//img.youtube.com/vi/{{videoID}}/mqdefault.jpg">
+              <a href="https://youtube.com/watch?v={{videoID}}" class="mfp-iframe">{% include 'icon-play-video' %}</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+        {% endif %}
+        <div class="medium-up--four-fifths small--one-whole relative overflow--hidden">
+          
+          <div id="product-slick" class="slick-slider">
+            {% for image in product.images %}
+            {% unless image.alt contains 'slideshow' %}
+            {% capture img_id %}FeaturedImage-{{ section.id }}-{{ image.id }}{% endcapture %}
+            {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <div {% unless image.alt == product.title %}data-color="{{image.alt}}"{% endunless %} class="filter-{{image.alt | handle}} {% if enable_zoom %}js-zoom-enabled{% endif %}" data-image-id="{{ image.id }}"{% if enable_zoom %} data-zoom="{{ image | img_url: product_image_zoom_size, scale: product_image_scale }}"{% endif %}>
+              <img id="{{ img_id }}"
+                   class="lazyload"
+                   src="{{ image | img_url: '300x' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ image.aspect_ratio }}"
+                   data-sizes="auto"
+                   width="100%"
+                   alt="{{ image.alt | escape }}">
+            </div>
+            {% endunless %}
+            {% else %}
+              {{'image' | placeholder_svg_tag}}
+            {% endfor %}
+            
+          </div>
+          {% if special_info %}
+          <div class="product-single__below-main-photo text-center rte">
+            {{special_info}}
+          </div>
+          {% endif %}
+          {% if ribbon %}
+          <div class="corner-ribbon top-left sticky red shadow">{{ribbon}}</div>
+          {% endif %}
+          <a href="#" class="product-single__zoom small--hide">{% include 'icon-zoom' %}</a>
+        </div>
+        <noscript>
+          {% capture product_image_size %}{{ height }}x{% endcapture %}
+          <img src="{{ featured_image | img_url: product_image_size, scale: product_image_scale }}" alt="{{ featured_image.alt }}" id="FeaturedImage-{{ section.id }}" class="product-featured-img" style="max-width: {{ height }}px;">
+        </noscript>
+      </div>
+    </div>
+
+    <div class="grid__item {{ product_description_width }} small--full-width">
+      <div class="product-single__meta">
+
+        {% if specialOrder %}
+          {% assign normal_handle = product.handle | remove: '-special-order' %}
+          {% assign has_special = true %}
+          {% if all_products[normal_handle].title.size > 0 %}
+            {% assign has_normal = true %}
+          {% endif %}
+        {% else %}
+          {% assign special_handle = product.handle | append: '-special-order' %}
+          {% assign has_normal = true %}
+          {% if all_products[special_handle].title.size > 0 %}
+            {% assign has_special = true %}
+          {% endif %}
+        {% endif %}
+        
+        {% if has_normal and has_special %}
+        <div class="flex flex--align-center select-type small--page-width">
+          <div class="select-type__label">Select Type</div>
+          <div class="select-type__input">
+            <label for="in-stock">
+              <input type="radio" class="form-radio" name="in-stock-special-order" value="in-stock" id="in-stock" {% unless specialOrder %}checked{% endunless %}  />
+              <span>In Stock</span> 
+              <a href="#in-stock-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+          </div>
+          <div class="select-type__input">
+            <label for="special-order">
+              <input type="radio" class="form-radio" name="in-stock-special-order" value="special-order" id="special-order" {% if specialOrder %}checked{% endif %} />
+              <span>Special Order</span> 
+              <a href="#special-order-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+          </div>
+        </div>
+        {% endif %}
+
+        <h1 class="product-single__title small--hide">{{ product_title[0] }}</h1>
+
+        <div class="product__price flex small--page-width">
+          {% include 'product-price', variant: current_variant %}
+
+            {% if specialOrder %}
+            <div class="product-single__special-shipping">
+              <h4>Special Order</h4>
+              <p>(ships within 12 to 15 weeks)</p>
+            </div>
+            {% else %}
+              {% include 'stock-notice', variant: current_variant %}
+            {% endif %}
+
+        </div>
+
+        {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
+        <div class="product__policies rte">
+          {%- if shop.taxes_included -%}
+          {{ 'products.product.include_taxes' | t }}
+          {%- endif -%}
+          {%- if shop.shipping_policy.body != blank -%}
+          {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+          {%- endif -%}
+        </div>
+        {%- endif -%}
+
+        {% if section.settings.show_quantity_selector %}
+        <div id="error-quantity-{{ section.id }}" class="form-message form-message--error product__quantity-error hide" tabindex="-1">
+          {% include 'icon-error' %} {{ 'products.product.quantity_minimum_message' | t }}
+        </div>
+        {% endif %}
+
+        {% capture "form_classes" -%}
+        product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
+        {%- endcapture %}
+	    
+        {% form 'product', product, class:form_classes, novalidate: 'novalidate' %}
+        
+        
+        {% assign productVariants = product.variants %}
+        {% assign proOptNames = product.options %}
+        {% assign productOptionNames = product.options | json %}
+        
+        {% assign productList = 'bv-dbl-left-hand-out-swing' | replace: ' ' | split: ',' %}
+        {% for productListHandle in productList %}
+          {% assign productListItem = all_products[productListHandle] %}
+          {% assign productListOption = productListItem.options | json %}
+          {% unless productListOption == productOptionNames %}{% continue %}{% endunless %}
+          {% assign productVariants = productVariants | concat:productListItem.variants %}
+        {% endfor %}
+        
+        
+        
+        
+        {% unless product.has_only_default_variant %}
+        <div class="product-single__swatches {% if section.settings.variant_style == "dropdown"%} flex flex--wrap product-form__group{% endif %}">
+          {% if show_for_doors %} 
+            {% if specialOrder %}
+            <h4 class="one-whole">Please customize your product below:</h4>
+            {% else %}
+            <h4 class="one-whole">Please select options below:</h4>
+            {% endif %}
+          {% endif %}
+          
+	      {% comment %}
+          {% for option in product.options_with_values %}
+          {% if option.name == "Size" %}
+          {% assign reorder_index = 1 %}
+          {% elsif option.name == "Jamb" %}
+          {% assign reorder_index = 5 %}
+          {% elsif option.name == "Screen" %}
+          {% assign reorder_index = 6 %}
+          {% endif %}
+          <div class="selector-wrapper js product-form__item" {% unless section.settings.variant_style == "dropdown" %} style="display: none;"{% endunless %} data-reorder-index="{{reorder_index}}">
+            <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+              {{ option.name }}
+              <a href="#{{option.name | handle}}-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+            <select class="real-option-selector single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+              {% for value in option.values %}
+              <option data-real-value="{{value | escape}}" value="{{ value | handle }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endfor %}
+          {% endcomment %}
+          
+          {% for option in proOptNames %}
+          
+          {% assign option_index = forloop.index0 %}
+          <div class="selector-wrapper js product-form__item" {% unless section.settings.variant_style == "dropdown" %} style="display: none;"{% endunless %} data-reorder-index="{{reorder_index}}">
+            <label {% if option == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+              {{ option }}
+              <a href="#{{option | handle}}-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+
+            <select class="real-option-selector single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+              {% for variant in productVariants %}
+                {% assign value = variant.options[option_index] %}
+                {% unless values contains value %}
+              	  <option value="{{value | handle}}">{{value}}</option>
+              	  {% assign values = values | join: ',' %}{% assign values = values | append: ',' | append: value %}{% assign values = values | split: ',' %}
+                {% endunless %}
+              {% endfor %}
+            </select>
+          </div>
+          {% endfor %}
+
+          {% if product.available and product.variants.size > 1 and section.settings.variant_style == 'swatch' %}
+          {% for option in product.options %}
+          {% include 'swatch' with option %}
+          {% endfor %}
+          {% endif %}
+
+
+          {% comment %} Custom Line Item Properties {% endcomment %}
+
+          {% comment %} If Dropdowns{% endcomment %}
+          {% unless product.title contains 'Handle' %}
+          {% if section.settings.variant_style == "dropdown" and specialOrder %}
+          <div class="selector-wrapper js product-form__item" data-reorder-index="2">
+            <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionGlassSelector">
+              Glass <a href="#glass-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+            <select id="glass-option" name="properties[Glass]" class="line-item--selector product-form__input" id="SingleOptionGlassSelector">
+              {% for link in linklists.glass-options.links %}
+              {% assign lh = link.title | handle %}
+              {% if glass contains lh or specialOrder %}
+              <option value="{{link.title}}" class="{{link.title | handle}}" data-image="{{link.title | handle | prepend: 'glass-' | append: '.jpg' | asset_img_url: '80x'}}">{{link.title}}</option>
+              {% endif%}
+              {% endfor %}
+            </select>
+          </div>
+
+          {% unless product.type == 'Transoms' %}
+          <div class="selector-wrapper js product-form__item" data-reorder-index="3">
+            <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSwingSelector">
+              Swing <a href="#swing-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+            <select id="swing-option" name="properties[Swing]" class="product-form__input line-item--selector" id="SingleOptionSwingSelector">
+              {% for link in linklists.door-swing.links %}
+              {% assign lh = link.title | handle %}
+              {% if swing contains lh or specialOrder %}
+              <option value="{{link.title}}">{{link.title}}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          {% endunless %}
+
+          <div class="selector-wrapper js product-form__item" data-reorder-index="4">
+            <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionColorSelector">
+              Color <a href="#color-popup" class="question-circle mfp-inline"><span>?</span></a>
+            </label>
+            <select id="color-option" name="properties[Color]" class="product-form__input line-item--selector" id="SingleOptionColorSelector">
+              {% for link in linklists.color-options.links %}
+              {% assign lh = link.title | handle %}
+              {% if color contains lh or specialOrder %}
+              <option value="{{link.title}}">{{link.title}}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+          {% else %}
+          
+          {% if color %}{% include 'pdp-select-item', name: 'Color', value: color, order: 4 %}{% endif %}
+          {% if jamb %}{% include 'pdp-select-item', name: 'Jamb', value: jamb, order: 5 %}{% endif %}
+
+          {% endif %}
+          {% endunless %}
+
+          {% comment %} If Swatches{% endcomment %}
+          
+
+          {% if section.settings.variant_style == "swatch" and specialOrder %}
+          <div class="swatch swatch--line-properties Glass" data-option-index="10" data-reorder-index="2">
+            <div class="header">Glass: <span class="selected">{{linklists.glass-options.links.first.title}}</span></div>
+            {% for link in linklists.glass-options.links %}
+            {% assign lh = link.title | handle %}
+            {% if glass contains lh or specialOrder %}
+            <div class="swatch-element">
+              <input id="{{link.title | handle}}" type="radio" name="properties[Glass]" value="{{link.title}}" {% if forloop.first %}checked="checked"{% endif %} />
+              <label for="{{link.title | handle}}">{{link.title}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+
+
+          <div class="swatch swatch--line-properties Swing" data-option-index="11" data-reorder-index="3">
+            <div class="header">Swing: <span class="selected">{{linklists.swing-options.links.first.title}}</span></div>
+            {% for link in linklists.swing-options.links %}
+            {% assign lh = link.title | handle %}
+            {% if swing contains lh or specialOrder %}
+            <div class="swatch-element">
+              <input id="{{link.title | handle}}" type="radio" name="properties[Swing]" value="{{link.title}}" {% if forloop.first %}checked="checked"{% endif %} />
+              <label for="{{link.title | handle}}">{{link.title}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+          <div class="swatch swatch--line-properties Color" data-option-index="12" data-reorder-index="4">
+            <div class="header">Color: <span class="selected">{{linklists.color-options.links.first.title}}</span></div>
+            {% for link in linklists.color-options.links %}
+            {% assign lh = link.title | handle %}
+            {% if color contains lh or specialOrder %}
+            <div class="swatch-element">
+              <input id="{{link.title | handle}}" type="radio" name="properties[Color]" value="{{link.title}}" {% if forloop.first %}checked="checked"{% endif %} />
+              <label for="{{link.title | handle}}">{{link.title}}</label>
+            </div>
+            {% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% endunless %}
+
+        {% comment %}
+        <select name="id" id="ProductSelect-{{ section.id }}" class="" style="display:none;">
+          {% for variant in product.variants %}
+          {% if variant.available %}
+          <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+            {{ variant.title }}
+          </option>
+          {% else %}
+          <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+          {% endif %}
+          {% endfor %}
+        </select>
+        {% endcomment %}
+        
+        <select name="id" id="ProductSelect-{{section.id}}">
+          {% for variant in productVariants %}
+          <option value="{{ variant.id }}">{{ variant.title }} ({{ variant.id }})</option>
+          {% endfor %}
+        </select>
+        
+        
+
+        <div class="product-form__group">
+          {% if section.settings.show_quantity_selector %}
+          <div class="product-form__item product-form__item--quantity">
+            <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+            <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" class="product-form__input" pattern="[0-9]*">
+          </div>
+          {% endif %}
+          <div class="product-form__item product-form__item--submit{% if section.settings.enable_payment_button %} product-form__item--payment-button{% endif %}{% if product.has_only_default_variant %} product-form__item--no-variants{% endif %}">
+            <button type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}">
+              <span id="AddToCartText-{{ section.id }}">
+                {% unless current_variant.available %}
+                {{ 'products.product.sold_out' | t }}
+                {% else %}
+                {{ 'products.product.add_to_cart' | t }}
+                {% endunless %}
+              </span>
+            </button>
+            
+            {% if section.settings.enable_payment_button %}
+            {{ form | payment_button }}
+            {% endif %}
+            <!-- include 'wishlist-button-product' with '{{ product.id }}' -->
+          </div>
+        </div>
+
+        <div class="shipping_notification product-form__group">
+          <span><svg width="52" height="24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 .6H37.84v22.768H0z"></path></defs><g fill="none" fill-rule="evenodd"><g transform="matrix(-1 0 0 1 51.79 .031)"><mask id="b" fill="#fff"><use xlink:href="#a"></use></mask><path d="M30.435 16.018a3.835 3.835 0 0 0-3.354 1.641h-11.46l.001-12.786h-.003l.003-2.527h20.471v15.313l-2.882-.148a3.765 3.765 0 0 0-2.439-1.455l-.337-.038zm-22.28 1.95a1.83 1.83 0 0 1 1.827 1.828 1.83 1.83 0 0 1-1.827 1.828 1.83 1.83 0 0 1-1.827-1.828 1.83 1.83 0 0 1 1.827-1.827zm5.81-6.882l.113 6.573h-2.81a3.768 3.768 0 0 0-3.11-1.648 3.769 3.769 0 0 0-3.117 1.648H2.65v-4.278l4.976-2.295h6.338zm-.087-4.998l.056 3.258H8.458l.551-3.258h4.869zm16.314 15.536a1.83 1.83 0 0 1-1.827-1.828 1.833 1.833 0 0 1 1.827-1.827 1.83 1.83 0 0 1 1.827 1.827 1.83 1.83 0 0 1-1.827 1.828zm-4.074-1.063h.598c.353 1.601 1.77 2.808 3.476 2.808a3.577 3.577 0 0 0 3.562-3.29l4.077-.044v-1.646l.008-.001V.6H13.876v3.642h-6.34l-.273 1.845-.613 3.528-5.74 2.65v5.394H0v2.902h4.667a3.578 3.578 0 0 0 3.488 2.808 3.578 3.578 0 0 0 3.488-2.808h14.475z" fill="#ff5c4e" mask="url(#b)"></path></g><path d="M3.097 13.59h8.128a.873.873 0 0 1 0 1.745H3.097a.873.873 0 0 1 0-1.745M1.415 9.105h8.128a.873.873 0 0 1 0 1.746H1.415a.873.873 0 0 1 0-1.746M10.384 6.477H2.256a.873.873 0 0 1 0-1.745h8.128a.873.873 0 0 1 0 1.745" fill="#ff5c4e"></path></g></svg></span>
+          {% if specialOrder %}
+          <span>ESTIMATED DELIVERY Ships within 12-15 weeks.</span>
+          {% else %}
+          <span>ESTIMATED DELIVERY 1-2 working days. Product is ready to be picked up.</span>
+          {% endif %}
+        </div>
+
+        {% endform %}
+      </div>
+
+      {%- comment -%}
+      Live region for announcing updated price and availability to screen readers
+      {%- endcomment -%}
+      <p class="visually-hidden" data-product-status
+         aria-live="polite"
+         role="status"
+         ></p>
+
+
+      <div class="flex links-below-add-button small--flex-columns">
+        
+        <a class="mfp-inline" href="#details-popup">Details - What's Included</a>
+        <a class="mfp-inline" href="#description-popup">Description</a>
+        
+        {% if show_for_doors %}
+        <a class="mfp-inline" href="#lock-compatibility-popup">Lock Compatibility</a>
+        {% endif %}
+        {% if show_for_fences %}
+        <a class="mfp-inline" href="#fence-hardware-popup">What Hardware You Need</a>
+        {% endif %}
+      </div>
+    
+
+      <div class="help_social small--page-width">
+        <div class="help_block">
+          <h5>Need Help?</h5>
+          <p><span><svg width="26" height="26" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M23.507 20.823l-1.682 1.683c-.85.849-1.828 1.28-2.91 1.28-1.35 0-2.777-.685-4.02-1.926L4.206 11.169c-1.748-1.748-2.965-4.61-.647-6.93l1.683-1.682a.944.944 0 0 1 .673-.278c.254 0 .493.099.673.278l3.788 3.788a.952.952 0 0 1 0 1.346L7.606 10.46a.518.518 0 0 0 0 .73l7.337 7.337a.516.516 0 0 0 .73 0l2.769-2.769a.945.945 0 0 1 .673-.278c.254 0 .493.099.672.278l3.72 3.72c.37.371.37.975 0 1.345m.73-2.076l-3.719-3.72a1.97 1.97 0 0 0-1.403-.581c-.53 0-1.029.206-1.404.582l-2.403 2.403-6.605-6.606 2.403-2.403a1.988 1.988 0 0 0 0-2.807L7.317 1.827a1.97 1.97 0 0 0-1.403-.582c-.53 0-1.03.206-1.404.582L2.827 3.509c-1.2 1.201-1.735 2.673-1.544 4.257.173 1.445.93 2.874 2.19 4.133l10.692 10.692c1.437 1.437 3.124 2.228 4.75 2.228 1.347 0 2.605-.547 3.64-1.582l1.683-1.683a1.987 1.987 0 0 0 0-2.807" fill="#7FC5AC"></path><path d="M23.507 20.823l-1.682 1.683c-.85.849-1.828 1.28-2.91 1.28-1.35 0-2.777-.685-4.02-1.926L4.206 11.169c-1.748-1.748-2.965-4.61-.647-6.93l1.683-1.682a.944.944 0 0 1 .673-.278c.254 0 .493.099.673.278l3.788 3.788a.952.952 0 0 1 0 1.346L7.606 10.46a.518.518 0 0 0 0 .73l7.337 7.337a.516.516 0 0 0 .73 0l2.769-2.769a.945.945 0 0 1 .673-.278c.254 0 .493.099.672.278l3.72 3.72c.37.371.37.975 0 1.345zm.73-2.076l-3.719-3.72a1.97 1.97 0 0 0-1.403-.581c-.53 0-1.029.206-1.404.582l-2.403 2.403-6.605-6.606 2.403-2.403a1.988 1.988 0 0 0 0-2.807L7.317 1.827a1.97 1.97 0 0 0-1.403-.582c-.53 0-1.03.206-1.404.582L2.827 3.509c-1.2 1.201-1.735 2.673-1.544 4.257.173 1.445.93 2.874 2.19 4.133l10.692 10.692c1.437 1.437 3.124 2.228 4.75 2.228 1.347 0 2.605-.547 3.64-1.582l1.683-1.683a1.987 1.987 0 0 0 0-2.807z" stroke="#ff5c4e"></path></g></svg></span>
+            <a href="tel:123 456 7890">123 456 7890</a>
+          </p>
+          <p><span><svg width="26" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M23.709 16.186H2.446a.307.307 0 0 1-.307-.307V3.686l10.658 8.158c.018.013.037.019.056.029a.454.454 0 0 0 .224.066.458.458 0 0 0 .225-.066c.018-.01.038-.016.055-.03l10.658-8.157v12.193c0 .17-.137.307-.306.307M2.446 2.14h21.263c.169 0 .306.138.306.307v.08l-10.938 8.372L2.14 2.525v-.079c0-.169.138-.307.307-.307m21.263-.921H2.446a1.23 1.23 0 0 0-1.228 1.228V15.88c0 .677.551 1.228 1.228 1.228h21.263c.677 0 1.227-.55 1.227-1.228V2.446a1.23 1.23 0 0 0-1.227-1.228" fill="#7FC5AC"></path><path d="M23.709 16.186H2.446a.307.307 0 0 1-.307-.307V3.686l10.658 8.158c.018.013.037.019.056.029a.454.454 0 0 0 .224.066.458.458 0 0 0 .225-.066c.018-.01.038-.016.055-.03l10.658-8.157v12.193c0 .17-.137.307-.306.307zM2.446 2.14h21.263c.169 0 .306.138.306.307v.08l-10.938 8.372L2.14 2.525v-.079c0-.169.138-.307.307-.307zm21.263-.921H2.446a1.23 1.23 0 0 0-1.228 1.228V15.88c0 .677.551 1.228 1.228 1.228h21.263c.677 0 1.227-.55 1.227-1.228V2.446a1.23 1.23 0 0 0-1.227-1.228z" stroke="#ff5c4e"></path></g></svg>
+            </span><a href="mailto:info@pinkysdoors.com">info@pinkysdoors.com</a>
+          </p>
+        </div>
+        {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% if has_slideshow_images  %}
+<div class="pdp-section-2">
+  <div class="flex small--flex-columns flex--align-center">
+    <div class="medium-up--one-half small--one-whole">
+      <div class="pdp-lifestyle-images">
+        {% for image in product.images %}
+          {% if image.alt contains 'slideshow' %}
+            {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        	{%- assign img_src = image | img_url: '100x' -%}
+            <img id="{{ img_id }}"
+                 class="lazyload lazyfade"
+                 src="{{ img_src }}"
+                 data-src="{{ img_url }}"
+                 data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                 data-sizes="auto"
+                 width="100%"
+                 alt="Shipping Calculator">
+          {% endif %}
+        
+        {% endfor %}
+        
+      </div>
+    </div>
+
+    <div class="small--one-whole medium-up--one-half">
+      <div class="product-single__shipping-wrapper">
+        <h4>Shipping Calculator</h4>
+        {% include 'gtz-shipping-calculator' %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% include 'related-products-auto' %}
+
+
+
+{% unless product == empty %}
+<script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+</script>
+<script type="text/javascript">
+  var currentProduct = {{product | json}};
+</script>
+{% endunless %}
+
+<script type="text/javascript">
+  var productJson = {
+    id: {{ product.id | json }},
+    title: {{ product.title | json }},
+    handle: {{ product.handle | json }},
+    description: {{ product.description | json }},
+    vendor: {{ product.vendor | json }},
+    type: {{ product.type | json }},
+    tags: {{ product.tags | json }},
+    price: {{ product.price | json }},
+    price_min: {{ product.price_min | json }},
+    price_max: {{ product.price_max | json }},
+    available: {{ product.available | json }},
+    price_varies: {{ product.price_varies | json }},
+    compare_at_price: {{ product.compare_at_price | json }},
+    compare_at_price_min: {{ product.compare_at_price_min | json }},
+    compare_at_price_max: {{ product.compare_at_price_max | json }},
+    compare_at_price_varies: {{ product.compare_at_price_varies | json }},
+    variants: {{ productVariants | json }}, /* this is our new master list - assuming it works! */ 
+    images: {{ product.images | json }},
+    featured_image: {{ product.featured_image | json }},
+    options: {{ product.options | json }},
+    url: {{ product.url | json }}
+  };
+    
+</script>
+
+<script>
+  var inv_qty = {};
+  {% for variant in product.variants %}
+  inv_qty[{{- variant.id -}}] = {{ variant.inventory_quantity | default: 0 }};
+  {% endfor %}
+</script>
+
+<script>
+  theme.strings = {
+    shippingCalcSubmitButton: {{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' | json }},
+    shippingCalcSubmitButtonDisabled: {{ settings.shipping_calculator_submit_button_label_disabled | default: 'Calculating...' | json }},
+    {% if customer %}shippingCalcCustomerIsLoggedIn: true,{% endif %}
+    shippingCalcMoneyFormat: {{ shop.money_with_currency_format | json }}
+  }
+</script>
+
+{% comment %}
+{% unless show_question_marks or david_says_so %}
+<style>
+  .product-single__meta .question-circle { display: none; }
+</style>
+{% endunless %}
+{% endcomment %}
+
+{% capture fill_text %}<p>Narwhal vinyl vaporware, cray glossier twee tacos franzen taxidermy mustache 90's pug neutra. Lumbersexual godard kale chips roof party freegan, af artisan enamel pin dreamcatcher. Yuccie microdosing palo santo, artisan pug poutine letterpress disrupt cred migas health goth hot chicken. Intelligentsia kombucha hell of taiyaki bespoke, tilde gochujang celiac fingerstache. Affogato VHS retro austin flannel heirloom.</p>{% endcapture %}
+
+
+
+<div style="display: none;">
+  <div id="details-popup" class="regular-mfp-popup rte">
+    {% include 'question-whats-included', type: product.type %}
+  </div>
+  <div id="description-popup" class="regular-mfp-popup rte">
+    {% include 'shortcode' load: description %}
+  </div>
+  <div id="lock-compatibility-popup" class="regular-mfp-popup rte">
+    {% include 'question-lock-compatibility', type: product.type %}
+  </div>
+  <div id="in-stock-popup" class="regular-mfp-popup rte">
+    {% include 'question-in-stock', type: product.type %}
+  </div>
+  <div id="special-order-popup" class="regular-mfp-popup rte">
+    {% include 'question-special-order', type: product.type %}
+  </div>
+  <div id="size-popup" class="regular-mfp-popup rte">
+    {% include 'question-size', type: product.type %}
+    
+  </div>
+  <div id="swing-popup" class="regular-mfp-popup rte">
+    {% include 'question-swing', type: product.type, title: product.title %}
+  </div>
+  <div id="glass-popup" class="regular-mfp-popup rte">
+    {% include 'question-glass', type: product.type %}
+  </div>
+  <div id="color-popup" class="regular-mfp-popup rte">
+    {% include 'question-color', type: product.type %}
+    
+  </div>
+  
+  
+  
+  <div id="jamb-popup" class="regular-mfp-popup rte">
+    {% include 'question-jamb', type: product.type %}
+  </div>
+  <div id="screen-popup" class="regular-mfp-popup rte">
+    {{pages.pdp-screen.content}}
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+"name": {
+"de": "Produktseiten",
+"en": "Product pages",
+"es": "Páginas de productos",
+"fr": "Pages de produits",
+"it": "Pagine di prodotto",
+"ja": "商品ページ",
+"pt-BR": "Páginas de produtos"
+},
+"settings": [
+{
+"type": "select",
+"id": "image_size",
+"label": {
+"de": "Foto-Größe",
+"en": "Image size",
+"es": "Tamaño de la imagen",
+"fr": "Taille des images",
+"it": "Dimensione immagine",
+"ja": "画像のサイズ",
+"pt-BR": "Tamanho da imagem"
+},
+"options": [
+{
+"value": "small",
+"label": {
+"de": "Klein",
+"en": "Small",
+"es": "Pequeña",
+"fr": "Petite",
+"it": "Piccolo",
+"ja": "小",
+"pt-BR": "Pequeno"
+}
+},
+{
+"value": "medium",
+"label": {
+"de": "Mittel",
+"en": "Medium",
+"es": "Mediana",
+"fr": "Moyenne",
+"it": "Medio",
+"ja": "中",
+"pt-BR": "Médio"
+}
+},
+{
+"value": "large",
+"label": {
+"de": "Groß",
+"en": "Large",
+"es": "Grande",
+"fr": "Grande",
+"it": "Grande",
+"ja": "大",
+"pt-BR": "Grande"
+}
+},
+{
+"value": "full",
+"label": {
+"de": "Volle Breite",
+"en": "Full-width",
+"es": "Ancho completo",
+"fr": "Pleine largeur",
+"it": "Intera larghezza",
+"ja": "全幅",
+"pt-BR": "Largura completa"
+}
+}
+],
+"default": "medium"
+},
+{
+"type": "checkbox",
+"id": "show_quantity_selector",
+"label": {
+"de": "Quantitäts-Auswahl anzeigen",
+"en": "Show quantity selector",
+"es": "Mostrar selector de cantidad",
+"fr": "Afficher le sélecteur de quantité",
+"it": "Mostra selettore quantità",
+"ja": "数量セレクターを表示する",
+"pt-BR": "Exibir seletor de quantidade"
+},
+"default": false
+},
+{
+"type": "checkbox",
+"id": "show_variant_labels",
+"label": {
+"de": "Varianten-Etiketten anzeigen",
+"en": "Show variant labels",
+"es": "Mostrar etiquetas de variantes",
+"fr": "Afficher le nom des variantes",
+"it": "Mostra etichette varianti",
+"ja": "バリエーションのラベルを表示する",
+"pt-BR": "Exibir etiquetas de variantes"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_vendor",
+"label": {
+"de": "Lieferanten anzeigen",
+"en": "Show vendor",
+"es": "Mostrar proveedor",
+"fr": "Afficher les vendeurs",
+"it": "Mostra fornitore",
+"ja": "販売元を表示する",
+"pt-BR": "Exibir fornecedor"
+},
+"default": false
+},
+{
+"type": "checkbox",
+"id": "enable_zoom",
+"label": {
+"de": "Foto-Zoom zulassen",
+"en": "Enable image zoom",
+"es": "Habilitar zoom de imagen",
+"fr": "Activer le zoom d'image",
+"it": "Abilita lo zoom dell'immagine",
+"ja": "画像ズームを有効にする",
+"pt-BR": "Ativar o zoom da imagem"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "enable_payment_button",
+"label": {
+"de": "Dynamischen Checkout Button anzeigen",
+"en": "Show dynamic checkout button",
+"es": "Mostrar botón de pago dinámico",
+"fr": "Afficher le bouton de passage à la caisse dynamique",
+"it": "Mostra pulsante di check-out dinamico",
+"ja": "ダイナミックチェックアウトボタンを表示する",
+"pt-BR": "Exibir botão dinâmico de finalização da compra"
+},
+"info": {
+"de": "Jeder Kunde sieht seine bevorzugte Zahlungsmethode aus den in Ihrem Shop verfügbaren Zahlungsmethoden wie PayPal oder Apple Pay. [Mehr Infos](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+"en": "Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+"es": "Cada cliente verá su forma de pago preferida entre las disponibles en tu tienda, como PayPal o Apple Pay. [Más información](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+"fr": "Chaque client verra son moyen de paiement préféré parmi ceux qui sont proposés sur votre boutique, tels que PayPal ou Apple Pay. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+"it": "Ogni cliente vedrà il suo metodo di pagamento preferito tra quelli disponibili nel tuo negozio, come PayPal o Apple Pay. [Maggiori informazioni](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+"ja": "PayPalやApple Payなど、ストアで利用可能な希望の決済方法がお客様に表示されます。[もっと詳しく] (https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+"pt-BR": "Cada cliente verá seu método de pagamento preferido dentre os disponíveis na loja, como PayPal ou Apple Pay. [Saiba mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_share_buttons",
+"label": {
+"de": "Buttons für Social Media anzeigen",
+"en": "Show social sharing buttons",
+"es": "Mostrar botones para compartir en redes sociales",
+"fr": "Affichez les boutons de partage sur les médias sociaux",
+"it": "Mostra i pulsanti per la condivisione sui social",
+"ja": "ソーシャル共有ボタンを表示する",
+"pt-BR": "Exibir botões de compartilhamento em redes sociais"
+},
+"default": true
+},
+{
+"type":"select",
+"id":"variant_style",
+"label":"Variant Style",
+"options" : [
+{
+"value":"dropdown",
+"label":"Dropdown"
+},
+{
+"value":"swatch",
+"label":"Swatch"
+}
+],
+"default":"swatch"
+}
+]
+}
+{% endschema %}

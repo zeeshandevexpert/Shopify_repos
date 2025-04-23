@@ -1,0 +1,50 @@
+<div class="process-text-block">
+    <div class="wrap-process-text{% if section.settings.gradient %} radial-gradient{% endif %}">
+        <div class="content" data-aos="fade-up" data-aos-duration="1000">
+            <div class="text" {% if section.settings.text_color %}style="color:{{ section.settings.text_color }}"{% endif %}>{{section.settings.text}}</div>
+            {% if section.settings.button_title  != blank %}  <a class="link" href="{{ section.settings.button_link }}" {% if section.settings.text_color %}style="color:{{ section.settings.text_color }}"{% endif %}>{{ section.settings.button_title }} <img src="https://cdn.shopify.com/s/files/1/0646/7790/4638/files/button-more.svg?v=1697830000" alt=""> </a>{% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+    {
+    "name": "Process Text Block",
+    "tag": "section",
+    "class": "process-text-block",
+    "settings": [
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color"
+    },
+    {
+      "type": "checkbox",
+      "id": "gradient",
+      "label": "Enable Gradient",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text Description"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+    ],
+    "presets": [
+        {
+         "name": "Process Text Block"
+        }
+    ]
+    }
+{% endschema %}

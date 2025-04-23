@@ -1,0 +1,104 @@
+<div class="form-vertical">
+      {% form 'contact' %}
+
+        {% comment %}
+          Successful message
+        {% endcomment %}
+        {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+        {{ form.errors | default_errors }}
+
+        <div class="grid grid--small">
+          <div class="grid__item large--one-half">
+            <label for="ContactFormCompany" class="hidden-label">{{ 'contact.form.company_name' | t }}</label>
+            <input type="text" id="ContactFormCompany" class="input-full" name="contact[companyname]" placeholder="Company Name" autocapitalize="words">
+          </div>
+
+          <div class="grid__item large--one-half">
+            <label for="ContactFormName" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+            <input type="text" id="ContactFormName" class="input-full" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>
+        </div>
+  
+  		<div class="grid grid--small">
+          <div class="grid__item large--one-half">
+            <label for="ContactFormEmail" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+            <input type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          </div>
+
+          <div class="grid__item large--one-half">
+            <label for="ContactFormPhone" class="hidden-label">{{ 'contact.form.phone' | t }}</label>
+        	<input type="tel" id="ContactFormPhone" class="input-full" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+          </div>
+        </div>
+  
+  		<div class="grid grid--small">
+          <div class="grid__item large--one-half">
+            <label for="ContactFormAccounting" class="hidden-label">{{ 'contact.form.accounting_name' | t }}</label>
+            <input type="text" id="ContactFormAccounting" class="input-full" name="contact[accountingname]" placeholder="Accounting Name" autocapitalize="words">
+          </div>
+
+          <div class="grid__item large--one-half">
+            <label for="ContactFormAcctEmail" class="hidden-label">{{ 'contact.form.accounting_email' | t }}</label>
+            <input type="email" id="ContactFormAcctEmail" class="input-full" name="contact[accountingemail]" placeholder="Accounting Email" autocorrect="off" autocapitalize="off">
+          </div>
+        </div>
+
+  		<div class="grid grid--small">
+          <div class="grid__item large--one-half">
+            <label for="ContactFormAcctPhone" class="hidden-label">{{ 'contact.form.accounting_phone' | t }}</label>
+       	 	<input type="tel" id="ContactFormAcctPhone" class="input-full" name="contact[accountingphone]" placeholder="Accounting Phone" pattern="[0-9\-]*">
+          </div>
+        </div>
+  
+        <label for="ContactFormShipAddress" class="hidden-label">{{ 'contact.form.shipping_address' | t }}</label>
+        <input type="text" id="ContactFormShipAddress" class="input-full" name="contact[shipaddress]" placeholder="Shipping Address">
+  
+  		<label for="ContactFormBillAddress" class="hidden-label">{{ 'contact.form.billing_address' | t }}</label>
+        <input type="text" id="ContactFormBillAddress" class="input-full" name="contact[billaddress]" placeholder="Billing Address">
+  
+  		{% unless section.settings.productLocations == blank %}
+          <label for="{{ formId }}-typeOfLocation">{{'contact.form.product_location' | t}}</label>
+          {% assign product_locations = section.settings.productLocations | split: ',' %}
+          <select id="{{ formId }}-typeOfLocation" name="contact[TypeOfLocation]">
+          {% for location in product_locations %}
+            <option value='{{ location }}'>{{ location }}</option>
+          {% endfor %}
+          </select>
+        {% endunless %}
+  	
+  		<p>Please enter website or explain "Other" option below</p>
+        <label for="ContactFormMessage" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+        <textarea rows="2" id="ContactFormMessage" class="input-full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+        <div class="text-right">
+          <button type="submit" class="btn btn--primary">
+            {{ 'contact.form.send' | t }} <span class="fa fa-arrow-right" aria-hidden="true"></span>   
+          </button>
+        </div>
+
+      {% endform %}
+</div>
+
+{% schema %}
+    {
+        "name": "contact form",
+        "settings": [
+        {
+            "type": "text",
+            "label": "Products Sold Locations (Comma-Separated)",
+            "id": "productLocations"
+        }
+        ]
+    }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

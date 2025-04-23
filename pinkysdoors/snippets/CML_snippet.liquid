@@ -1,0 +1,78 @@
+{% assign pay_later = false %}
+
+{% assign collection_id =  %}
+
+
+
+{% if collection_id != blank %}
+
+{% for line_item in cart.items %}
+
+
+
+{% assign product_collections = line_item.product.collections %}
+
+
+
+  {% for collection in product_collections %}
+
+
+
+      {% if collection.id == collection_id %}
+
+          {% assign pay_later = true %}
+
+          {% break %}
+
+      {% endif %}
+
+
+
+  {% endfor %}
+
+
+
+{% endfor %}
+
+{% else %}
+
+{% assign pay_later = true %}
+
+{% endif %}{% assign later_tag = "net" %}
+
+{% assign instant_tag = "CML_INSTANT" %}
+
+
+
+{% if customer and customer.tags contains later_tag or customer.tags contains instant_tag %}
+
+<script>
+
+var storeArguments = {
+
+customer: "{{customer.id}}",
+
+customer_email: "{{customer.email}}",
+
+shopAddress: "{{shop.permanent_domain}}",
+
+};
+
+</script>
+
+
+
+{% if customer.tags contains instant_tag %}
+
+<script>storeArguments.instantPayment = true;storeArguments.instantPaymentTag = true;</script>
+
+{% endif %}
+
+{% if pay_later %}
+
+<script src="{{ 'CML_script.min.js' | asset_url }}"></script>
+<style>.shopify-payment-button{display:none !important}</style>
+
+{% endif %}
+
+{% endif %}<script>storeArguments.instantPayment = true;</script>

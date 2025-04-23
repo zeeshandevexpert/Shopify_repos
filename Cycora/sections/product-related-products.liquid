@@ -1,0 +1,69 @@
+
+    <div class="container-style container-large">
+        <div class="general-more-products-top">
+            <h2>{{ section.settings.title_plp }}</h2>
+            <a href="{{ section.settings.view_all_link }}">view all</a>
+        </div>
+    </div>
+    <div class="general-more-products-row">
+        {% if product.metafields.arena.related_product %}
+            {% assign products_handle = product.metafields.arena.related_product | split: "|" %}
+            {% for product_handle in products_handle %}
+                {% assign related_product = all_products[product_handle] %}
+                {% include "product-grid", product: related_product %}
+            {% endfor %}
+        {% endif %}
+
+    </div>
+    <div class="general-more-products-bottom">
+        <h4>{{ section.settings.title_bottom }}</h4>
+        <a href="{{ section.settings.learn_link }}">learn more</a>
+    </div>
+
+{% schema %}
+{
+  "name": "Product - Related",
+  "tag": "section",
+  "class": "general-more-products-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title_plp",
+      "label": "Products List Title"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Link"
+    },
+    {
+      "type": "textarea",
+      "id": "title_bottom",
+      "label": "Bottom Title"
+    },
+    {
+      "type": "url",
+      "id": "learn_link",
+      "label": "Learn More Link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings":[
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product - Related"
+    }
+  ]
+}
+{% endschema %}

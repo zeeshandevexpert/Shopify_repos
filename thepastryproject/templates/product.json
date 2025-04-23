@@ -1,0 +1,292 @@
+{
+  "wrapper": "div",
+  "sections": {
+    "main": {
+      "type": "template--product",
+      "blocks": {
+        "product-title": {
+          "type": "product-title",
+          "settings": {
+          }
+        },
+        "8a21484e-af49-405d-90c2-167133cbe4cd": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "disabled": true,
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "product-price": {
+          "type": "product-price",
+          "disabled": true,
+          "settings": {
+            "show_discount": "value",
+            "tax_included": false,
+            "shipping_policy": false
+          }
+        },
+        "6ec6c711-c4e0-44f8-a99e-c9bc484ce270": {
+          "type": "product-description",
+          "settings": {
+          }
+        },
+        "quantity-selector": {
+          "type": "quantity-selector",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "product-options": {
+          "type": "product-options",
+          "settings": {
+            "picker_type": "dropdown"
+          }
+        },
+        "payment-buttons": {
+          "type": "payment-buttons",
+          "settings": {
+            "show_smart_checkout": false,
+            "show_gift_card_recipient": true,
+            "disabled_general_recipient": false
+          }
+        },
+        "shop-pay": {
+          "type": "shop-pay",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "social-sharing": {
+          "type": "social-sharing",
+          "disabled": true,
+          "settings": {
+            "social_align": "right",
+            "social_sharing_facebook": true,
+            "social_sharing_twitter": true,
+            "social_sharing_pinterest": true
+          }
+        },
+        "cross-sells": {
+          "type": "cross-sells",
+          "disabled": true,
+          "settings": {
+            "title": "Ooh, look at what else!",
+            "cross_sell_product_1": "reverse-cookie",
+            "cross_sell_product_2": "",
+            "cross_sell_product_3": "",
+            "cross_sell_bg": "#ff8ac4"
+          }
+        }
+      },
+      "block_order": [
+        "product-title",
+        "8a21484e-af49-405d-90c2-167133cbe4cd",
+        "product-price",
+        "6ec6c711-c4e0-44f8-a99e-c9bc484ce270",
+        "quantity-selector",
+        "product-options",
+        "payment-buttons",
+        "shop-pay",
+        "social-sharing",
+        "cross-sells"
+      ],
+      "settings": {
+        "show_out_of_stock_email": true,
+        "out_of_stock_email_position": "below-details",
+        "hide_out_of_stock": false,
+        "thumbnail_changes_variant": false,
+        "image_display": "thumbnails",
+        "enable_zoom": false,
+        "enable_video_loop": true,
+        "title-popup": "Gift Subscription Details",
+        "title-popup-month": "What month would you like this subscription to start?",
+        "title-popup-note": "Gift Note"
+      }
+    },
+    "b1c5dbcd-5110-4e39-a376-0cc2a49e15f9": {
+      "type": "section-contact-enquiry",
+      "settings": {
+        "width": "medium",
+        "subheading": "",
+        "title": "Gifts that give back! Interested in gift subscriptions for your large team or clients?",
+        "text": "<p>We offer bulk-buying options for our current, or a future month's pastry kit. For example, if you'd like our December kit sent to your team, we can make that happen with a minimum of 10! We can also help with bulk-buying of our 3, 6, or 12 month pastry kit gift subscriptions. We need at least 3 weeks notice to make sure your gift is received in time. Please contact us to coordinate your order at the link below (or email hello@thepastryproject.co). <\/p>",
+        "button_link": "shopify:\/\/pages\/contact",
+        "button_label": "Contact Us",
+        "background": "#f389b8",
+        "text_color": "#ffeee7"
+      }
+    },
+    "1697386317c68a209b": {
+      "type": "apps",
+      "blocks": {
+        "22c755ea-e699-4a05-8187-bbeaa80eee00": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews-ugc\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        }
+      },
+      "block_order": [
+        "22c755ea-e699-4a05-8187-bbeaa80eee00"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "product-recommendations": {
+      "type": "template--product--recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "You may also like"
+      }
+    },
+    "1659991104e46a81fb": {
+      "type": "text--product-testimonials",
+      "blocks": {
+        "16599911048805b1ce-0": {
+          "type": "textarea",
+          "settings": {
+            "text": "<p>Show off incredible feedback from your customers<\/p>",
+            "author": "John Doe"
+          }
+        },
+        "16599911048805b1ce-1": {
+          "type": "textarea",
+          "settings": {
+            "text": "<p>Show off incredible feedback from your customers<\/p>",
+            "author": "John Doe"
+          }
+        },
+        "16599911048805b1ce-2": {
+          "type": "textarea",
+          "settings": {
+            "text": "<p>Show off incredible feedback from your customers<\/p>",
+            "author": "John Doe"
+          }
+        }
+      },
+      "block_order": [
+        "16599911048805b1ce-0",
+        "16599911048805b1ce-1",
+        "16599911048805b1ce-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "image_style": "circle"
+      }
+    },
+    "featured-collection": {
+      "type": "collection--featured-collection",
+      "blocks": {
+        "featured-collection-0": {
+          "type": "product-card-vendor",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "featured-collection-1": {
+          "type": "product-card-title",
+          "settings": {
+          }
+        },
+        "featured-collection-2": {
+          "type": "product-card-price",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "featured-collection-0",
+        "featured-collection-1",
+        "featured-collection-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "subheading": "Never a bad idea to stock up",
+        "title": "fill the freezer!",
+        "collection": "frontpage",
+        "grid": 4,
+        "rows": 1,
+        "hide_add_to_cart": false,
+        "show_view_all": false
+      }
+    },
+    "165974373614a83ddb": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "1659743736f1fc0678-0": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<div class=\"sepratorOuter\"><\/div>",
+            "width": "100%"
+          }
+        },
+        "e7b6a3c9-1841-4674-a3b5-9f74d3be5fa7": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<a data-toggle=\"modal\" href=\"#myModal\">Open Modal<\/a>\n\n<!-- Modal -->\n<div id=\"myModal\" class=\"modal fade\" role=\"dialog\">\n  <div class=\"modal-dialog\">\n\n    <!-- Modal content-->\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">×<\/button>\n        <h4 class=\"modal-title\">Modal Header<\/h4>\n      <\/div>\n      <div class=\"modal-body\">\n        <p>Some text in the modal.<\/p>\n      <\/div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close<\/button>\n      <\/div>\n    <\/div>\n\n  <\/div>\n<\/div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "1659743736f1fc0678-0",
+        "e7b6a3c9-1841-4674-a3b5-9f74d3be5fa7"
+      ],
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "16601748139392fb25": {
+      "type": "image--gallery",
+      "blocks": {
+        "166017481338e6271a-0": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "166017481338e6271a-1": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "title": "",
+            "description": ""
+          }
+        },
+        "166017481338e6271a-2": {
+          "type": "image",
+          "settings": {
+            "link": "",
+            "title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "166017481338e6271a-0",
+        "166017481338e6271a-1",
+        "166017481338e6271a-2"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b1c5dbcd-5110-4e39-a376-0cc2a49e15f9",
+    "1697386317c68a209b",
+    "product-recommendations",
+    "1659991104e46a81fb",
+    "featured-collection",
+    "165974373614a83ddb",
+    "16601748139392fb25"
+  ]
+}

@@ -1,0 +1,33 @@
+
+    <h2>{{ section.settings.title }}</h2>
+    <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+
+{% schema %}
+{
+  "name": "Overview - Schedule",
+  "tag": "section",
+  "class": "overview-schedule-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Overview - Schedule"
+    }
+  ]
+}
+{% endschema %}

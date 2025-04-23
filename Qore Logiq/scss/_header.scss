@@ -1,0 +1,91 @@
+.header-wrapper{
+    max-width: 1566px;
+    margin: 0 auto;
+    .header{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        padding: 0 20px !important;
+        display: block;
+        @media (max-width:989px) {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        &.default {
+            position: unset;
+            .menu-wrapper-block{
+                .header__inline-menu{
+                    .list-menu{
+                        li{
+                            .header__menu-item{
+                                color: $dblue;
+                            }   
+                        }
+                    }
+                }
+            }    
+            header-drawer{
+                .menu-drawer-container{
+                    .header__icon{
+                        span{
+                            .icon{
+                                path{
+                                    fill: $dblue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        header-drawer{
+            .menu-drawer-container{
+                .header__icon{
+                    span{
+                        .icon{
+                            path{
+                                fill: #ffffff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-wrapper-block{
+            display: flex;
+            // flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            // .site-logo{
+            //     .link{
+            //         .header__heading-logo-wrapper{
+            //             img{}
+            //         }
+            //     }
+            // }
+            .header__inline-menu{
+                .list-menu{
+                    li{
+                        .header__menu-item{
+                            text-decoration: none;
+                            color: $white;
+                            font-family: $mont;
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            font-size: 16px;
+                            &:hover{
+                                span{
+                                    // text-decoration: none;
+                                }
+                            }
+                          
+                        }   
+                    }
+                }
+            }
+        }
+    }
+}

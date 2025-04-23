@@ -1,0 +1,114 @@
+{
+  "sections": {
+    "heading_banner_YHUC8Y": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "{{ article.image }}",
+        "heading": "{{ article.title }}"
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "disabled": true,
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "share",
+        "content"
+      ],
+      "settings": {
+      }
+    },
+    "blog_related_product_PyyG6i": {
+      "type": "blog-related-product",
+      "settings": {
+        "title": "Related Products",
+        "heading_size": "h1",
+        "description": "<p>Lorem Ipsum<\/p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "squash",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "testimonial_block_4796kjlrp54": {
+      "type": "testimonial-block",
+      "blocks": {
+        "item_BYPcEb": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.png",
+            "name": "Client Name"
+          }
+        },
+        "item_TwCMCd": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.png",
+            "name": "Client Name"
+          }
+        },
+        "item_6qYRWz": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.png",
+            "name": "Client Name"
+          }
+        }
+      },
+      "block_order": [
+        "item_BYPcEb",
+        "item_TwCMCd",
+        "item_6qYRWz"
+      ],
+      "settings": {
+        "sub_heading": "LOREM IPSUM",
+        "heading": "WHAT IS LOREM IPSUM"
+      }
+    }
+  },
+  "order": [
+    "heading_banner_YHUC8Y",
+    "main",
+    "blog_related_product_PyyG6i",
+    "testimonial_block_4796kjlrp54"
+  ]
+}

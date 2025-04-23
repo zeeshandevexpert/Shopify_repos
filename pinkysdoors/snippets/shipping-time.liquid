@@ -1,0 +1,21 @@
+{%- if product -%}
+{%- capture shipping_time -%}
+  {%- if product.metafields.pinkys.shipping_information != blank %}
+	{{ product.metafields.pinkys.shipping_information }}
+  {%- elsif product.tags contains 'Casement Window' -%}
+    Ships within {{ 'shipping.casement_windows' | t }}
+  {%- elsif product.tags contains 'Fixed Window' -%}
+    Ships within {{  'shipping.fixed_windows' | t }}
+  {%- elsif product.title contains 'Special Order' -%}
+	{%- assign is_special = true -%}
+	Ships within {% include 'special-order-shipping-time' %}
+  {%- elsif product.title contains 'Pre-Sale' -%}
+	Ships within {{ 'shipping.pre_sale' | t }}
+  {%- elsif product.title contains 'Clearance' -%}
+	Ships within {{ 'shipping.clearance' | t }}
+  {%- else -%}
+	{%- assign is_instock = true -%}
+    Ships within {{ 'shipping.in_stock' | t }}
+  {%- endif -%}
+{%- endcapture -%}
+{%- endif -%}

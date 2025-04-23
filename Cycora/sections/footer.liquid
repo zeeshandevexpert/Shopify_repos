@@ -1,0 +1,151 @@
+
+    <div class="container-style footer-container">
+        
+        <div class="footer-content">
+            <div class="footer-row">
+                <div class="footer-col-left">
+                    <div class="logo-wrap">
+                        <a href="/"><img src="{{ settings.footer_logo | img_url: "master" }}" /></a>
+                        <span class="logo-by">{{ settings.footer_logo_title }}</span>
+                    </div>
+                    <div class="newsletter-content-wrap">
+                        <h2>{{ section.settings.footer_title }}</h2>
+                        {{ section.settings.email_subscribe_code }}
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            {% if section.settings.instagram_link != blank %}
+                                <li>
+                                    <a href="{{ section.settings.instagram_link }}" target=_blank>
+                                        <img src="{{ "icon-instagram.svg" | asset_url }}" alt="">
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if section.settings.facebook_link != blank %}
+                                <li>
+                                    <a href="{{ section.settings.facebook_link }}" target=_blank>
+                                        <img src="{{ "icon-facebook.svg" | asset_url }}" alt="">
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if section.settings.twitter_link != blank %}
+                                <li>
+                                    <a href="{{ section.settings.twitter_link }}" target=_blank>
+                                        <img src="{{ "icon-twitter.svg" | asset_url }}" alt="">
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if section.settings.linkedin_link != blank %}
+                                <li>
+                                    <a href="{{ section.settings.linkedin_link }}" target=_blank>
+                                        <img src="{{ "icon-linkedin.svg" | asset_url }}" alt="">
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if section.settings.tiktok_link != blank %}
+                                <li>
+                                    <a href="{{ section.settings.tiktok_link }}" target=_blank>
+                                        <img src="{{ "icon-tiktok-1.svg" | asset_url }}" alt="">
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if section.settings.youtube_link != blank %}
+                                <li>
+                                    <a href="{{ section.settings.youtube_link }}" target=_blank>
+                                        <img src="{{ "icon-youtube-1.svg" | asset_url }}" alt="">
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-col-right">
+                    {% for block in section.blocks %}    
+                        <div class="footer-menu">
+                            {% for link in linklists[block.settings.footer_nav].links %}
+                                <li class="item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                            {% endfor %}
+                        </div>
+                {% endfor %}
+                    {% comment %} {% include "menu-footer" %} {% endcomment %}
+                </div>
+            </div>
+        </div>
+        {% comment %} <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <span>{{ settings.copyright_text }}</span>
+            </div>
+            <ul class="footer-bottom-right">
+                {% for link in linklists['footer-menu-2'].links %}
+                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div> {% endcomment %}
+    </div>
+
+{% schema %}
+    {
+        "name": "Footer",
+        "tag" : "footer",
+        "class" : "footer-section",
+        "settings": [
+            {
+            "type": "text",
+            "id": "footer_title",
+            "label": "Title",
+            "default": "keep up with the footer"
+            },
+         
+            {
+                "type": "textarea",
+                "id": "email_subscribe_code",
+                "label": "Email Subscribe Code"
+            },
+            {
+                "type": "text",
+                "id": "instagram_link",
+                "label": "Instagram link"
+            },
+            {
+                "type": "text",
+                "id": "facebook_link",
+                "label": "Facebook link"
+            },
+            {
+                "type": "text",
+                "id": "twitter_link",
+                "label": "Twitter link"
+            },
+            {
+                "type": "text",
+                "id": "linkedin_link",
+                "label": "LinkedIn link"
+            },
+            {
+                "type": "text",
+                "id": "tiktok_link",
+                "label": "TikTok link"
+            },
+            {
+                "type": "text",
+                "id": "youtube_link",
+                "label": "YouTube link"
+            }
+        ],
+        "blocks": [
+        {
+          "name": "Menu",
+          "type": "item",
+          "settings":[
+            {
+                "type": "link_list",
+                "id": "footer_nav",
+                "label": "Choose a menu",
+                "info":"This menu won't show dropdown items"
+            }
+           
+          ]
+        }
+      ]
+    }
+{% endschema %}

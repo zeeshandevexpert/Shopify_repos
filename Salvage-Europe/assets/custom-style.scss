@@ -1,0 +1,611 @@
+@font-face {
+    font-family: 'TAY Cardano';
+    src: url('TAYCardanoRegular.woff2') format('woff2'),
+        url('TAYCardanoRegular.woff') format('woff'),
+        url('TAYCardanoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Jukebox Johnny';
+    src: url('TAYJukeboxJohnnyRegular.woff2') format('woff2'),
+        url('TAYJukeboxJohnnyRegular.woff') format('woff'),
+        url('TAYJukeboxJohnnyRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Barro';
+    src: url('TAYBarroRegular.woff2') format('woff2'),
+        url('TAYBarroRegular.woff') format('woff'),
+        url('TAYBarroRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Billy';
+    src: url('TAYBillyRegular.woff2') format('woff2'),
+        url('TAYBillyRegular.woff') format('woff'),
+        url('TAYBillyRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Benditos';
+    src: url('TAYBenditosRegular.woff2') format('woff2'),
+        url('TAYBenditosRegular.woff') format('woff'),
+        url('TAYBenditosRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Fortune';
+    src: url('TAYFortuneRegular.woff2') format('woff2'),
+        url('TAYFortuneRegular.woff') format('woff'),
+        url('TAYFortuneRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tay Basal';
+    src: url('TayBasalRegular.woff2') format('woff2'),
+        url('TayBasalRegular.woff') format('woff'),
+        url('TayBasalRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Birdie';
+    src: url('TAYBirdieRegular.woff2') format('woff2'),
+        url('TAYBirdieRegular.woff') format('woff'),
+        url('TAYBirdieRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Danny Lasso';
+    src: url('TAYDannyLassoRegular.woff2') format('woff2'),
+        url('TAYDannyLassoRegular.woff') format('woff'),
+        url('TAYDannyLassoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Amaya';
+    src: url('TAYAmayaRegular.woff2') format('woff2'),
+        url('TAYAmayaRegular.woff') format('woff'),
+        url('TAYAmayaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Barrera';
+    src: url('TAYBarreraRegular.woff2') format('woff2'),
+        url('TAYBarreraRegular.woff') format('woff'),
+        url('TAYBarreraRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Bone Quixote';
+    src: url('TAYBoneQuixoteRegular.woff2') format('woff2'),
+        url('TAYBoneQuixoteRegular.woff') format('woff'),
+        url('TAYBoneQuixoteRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Big Bird';
+    src: url('TAYBigBirdRegular.woff2') format('woff2'),
+        url('TAYBigBirdRegular.woff') format('woff'),
+        url('TAYBigBirdRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Roony';
+    src: url('TAYRoonyRegular.woff2') format('woff2'),
+        url('TAYRoonyRegular.woff') format('woff'),
+        url('TAYRoonyRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Losa';
+    src: url('TAYLosaRegular.woff2') format('woff2'),
+        url('TAYLosaRegular.woff') format('woff'),
+        url('TAYLosaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAYRosemary';
+    src: url('TAYRosemaryRegular.woff2') format('woff2'),
+        url('TAYRosemaryRegular.woff') format('woff'),
+        url('TAYRosemaryRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Nina';
+    src: url('TAYNinaRegular.woff2') format('woff2'),
+        url('TAYNinaRegular.woff') format('woff'),
+        url('TAYNinaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Lana';
+    src: url('TAYLanaRegular.woff2') format('woff2'),
+        url('TAYLanaRegular.woff') format('woff'),
+        url('TAYLanaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Manna';
+    src: url('TAYMannaRegular.woff2') format('woff2'),
+        url('TAYMannaRegular.woff') format('woff'),
+        url('TAYMannaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Peirce';
+    src: url('TAYPeirceRegular.woff2') format('woff2'),
+        url('TAYPeirceRegular.woff') format('woff'),
+        url('TAYPeirceRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Napili';
+    src: url('TAYNapiliRegular.woff2') format('woff2'),
+        url('TAYNapiliRegular.woff') format('woff'),
+        url('TAYNapiliRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Lulu';
+    src: url('TAYLuluRegular.woff2') format('woff2'),
+        url('TAYLuluRegular.woff') format('woff'),
+        url('TAYLuluRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Maka';
+    src: url('TAYMakaRegular.woff2') format('woff2'),
+        url('TAYMakaRegular.woff') format('woff'),
+        url('TAYMakaRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Lennon';
+    src: url('TAYLennonRegular.woff2') format('woff2'),
+        url('TAYLennonRegular.woff') format('woff'),
+        url('TAYLennonRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Makawao';
+    src: url('TAYMakawaoRegular.woff2') format('woff2'),
+        url('TAYMakawaoRegular.woff') format('woff'),
+        url('TAYMakawaoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Milkbar';
+    src: url('TAYMilkbarRegular.woff2') format('woff2'),
+        url('TAYMilkbarRegular.woff') format('woff'),
+        url('TAYMilkbarRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Sweetheart';
+    src: url('TAYSweetheartRegular.woff2') format('woff2'),
+        url('TAYSweetheartRegular.woff') format('woff'),
+        url('TAYSweetheartRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Road Runner';
+    src: url('TAYRoadRunnerRegular.woff2') format('woff2'),
+        url('TAYRoadRunnerRegular.woff') format('woff'),
+        url('TAYRoadRunnerRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Tommy Tokyo';
+    src: url('TAYTommyTokyoRegular.woff2') format('woff2'),
+        url('TAYTommyTokyoRegular.woff') format('woff'),
+        url('TAYTommyTokyoRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Taxi Driver';
+    src: url('TAYTaxiDriverRegular.woff2') format('woff2'),
+        url('TAYTaxiDriverRegular.woff') format('woff'),
+        url('TAYTaxiDriverRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TAY Watkins';
+    src: url('TAYWatkinsRegular.woff2') format('woff2'),
+        url('TAYWatkinsRegular.woff') format('woff'),
+        url('TAYWatkinsRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+
+$driver: 'TAY Taxi Driver';
+$birdie : 'TAY Birdie';
+$napili : 'TAY Napili';
+
+
+.banner-image{
+    .wrap-banner-image{
+        max-width: 1480px;
+        margin: 0 auto;
+    
+        .content-block{
+            display: flex;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+            @media (max-width:767px) {
+                padding: 20px 40px;
+            }
+            .heading{
+                flex: 30%;
+                font-size: 40px;
+                line-height: normal;
+                @media (max-width:767px) {
+                    flex: 100%;
+                }
+            }
+            .content{
+                flex: 70%;
+                @media (max-width:767px) {
+                    flex: 100%;
+                    margin-top: 20px;
+                }
+                p{
+                    font-size: 16px;
+                    width: 70%;
+                    @media (max-width:991px) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.blog-template{
+    .blog-content{
+        .recent-posts{
+            #blog-articles{
+                .single-article{
+                    border-bottom: 2px solid #000000;
+                    padding: 50px 0;
+                    .article-left{
+                        .article-content{
+                            text-align: left;
+                            .wrap-title-block{
+                                .heading{
+                                    margin-bottom: 35px;
+                                }
+                                .content-block{
+                                    .view-btn{
+                                        display: inline-flex;
+                                        align-items: center;
+                                        font-size: 20px;
+                                        margin-top: 15px;
+                                        &:hover{
+                                            border-bottom: 1px solid #000000;
+                                        }
+                                        svg{
+                                            margin-left: 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .article-right{
+                        .blog_image {
+                            height: 650px;
+                            position: relative;
+                            img{
+                                position: absolute;
+                                inset: 0;
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    &.list-view{
+                        display: flex;
+                        flex-wrap: wrap;
+                        .article-left{
+                            .blog_image{
+                                height: 720px;
+                                position: relative;
+                                img{
+                                position: absolute;
+                                inset: 0;
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                                }
+                            }
+                        }
+                        .article-right{
+                            .article-content{
+                                .wrap-title-block{
+                                    display: flex;
+                                    .heading{
+                                        width: 50%;
+                                    }
+                                    .content-block{
+                                        width: 50%;
+                                        .view-btn{
+                                            display: inline-flex;
+                                            align-items: center;
+                                            font-size: 20px;
+                                            margin-top: 15px;
+                                            &:hover{
+                                                border-bottom: 1px solid #000000;
+                                            }
+                                            svg{
+                                                margin-left: 10px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }   
+                    }
+                }
+            
+            }
+        }
+    }
+}
+
+
+.blog-latest{
+    max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        .sidebar-heading{
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+    .wrap-latest-blog{
+        display: flex;
+        
+        gap: 1.25rem;
+        .featured-article{
+            .article-image{
+                .blog_image{
+                    height: 325px;
+                    width: 325px;
+                    position: relative;
+                    z-index: -1;
+                    img{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            &:hover{
+                .article-image{
+                transition-property: box-shadow;
+                transition-timing-function: cubic-bezier(.4,0,.2,1);
+                transition-duration: .15s;
+                --tw-shadow: inset 0 0 0 16px #e9f551;
+                --tw-shadow-colored: inset 0 0 0 16px var(--tw-shadow-color);
+                box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+                }
+            }
+        }
+    }
+  
+}
+
+
+
+#shopify-section-template--22808312873246__6ff4a7c4-72d9-4567-9572-894bdafb69bb
+{
+.editorial__column-container{
+    .editorial__column{
+        .editorial__image--caption{
+            h3{
+                font-family: $birdie;
+            }
+        }
+    }
+}
+}
+
+
+.editorial__column-container{
+    .editorial__column{
+        .editorial__image--caption{
+            h3{
+                font-family: $napili;
+                font-weight: 600;
+            }
+            .rte{
+                font-family: $birdie;
+            }
+        }
+    }
+}
+
+
+.shopify-app-block{
+    #insta-feed{
+        h2{
+            font-family: $birdie;
+        }
+    }
+}
+
+
+.featured__collection-section{
+    .feat__collection-container{
+
+        .section-heading{
+            .description{
+                text-align: center;
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+
+            @media (min-width:767px) {
+                .collection__grid-loop{
+                    max-width: 1480px;
+                    margin: 0 auto;
+                    .other-block{
+                        display: none;
+                    }
+                    .wrapper{
+                        display: flex;
+                        flex-wrap: wrap;
+                        
+                        .product-index-loop {
+                            &.large-item{
+                            width: calc(50% - 20px);
+                            margin: 10px;
+                            display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                a{
+                                    height: 100%;
+                                    .vertical-images{
+                                        height: 100%;
+                                    }
+                                }
+                            }
+                            &.half-grid{
+                                width: calc(25% - 20px);
+                                margin: 10px;
+                            }
+                        }
+                        .inner-wrapper{
+                            display: flex;
+                            flex-wrap: wrap;
+                            width: 50%;
+                            .product-index-loop{
+                                flex: 0 0 50%;
+                                flex-basis: calc(50% - 20px);
+                                margin: 10px;
+                            }
+                        }
+                    }
+                
+                }
+            }
+
+      @media (max-width:767px) {
+        .collection__grid-loop{
+            .main-wrapper-block{
+                .wrapper{
+                    display: none;
+                }
+            }
+            .other-block{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: space-between;
+                .product-index-loop{
+                    flex: 0 0 50%;
+                    flex-basis: calc(50% - 10px);
+                }
+            }
+        }
+      }
+    }
+}

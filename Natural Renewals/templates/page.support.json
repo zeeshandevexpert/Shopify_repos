@@ -1,0 +1,93 @@
+{
+  "sections": {
+    "1658955544c28a0a09": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default"
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "settings": {
+      }
+    },
+    "16541721673cd12063": {
+      "type": "support-head",
+      "settings": {
+        "title": "faq",
+        "description": "How may we help you?"
+      }
+    },
+    "165417217402fb28a4": {
+      "type": "support-template",
+      "blocks": {
+        "66c2c7fe-0800-4135-b122-116fe35821f7": {
+          "type": "answers",
+          "settings": {
+            "topic": "common questions",
+            "title": "where do you get waste to make cycora®?",
+            "answer": "<p>there are a number of different sources that we use to collect feedstock, from local collections, to businesses, to large government collaborations, to institutions that you normally donate your clothes to. If you can think it, we probably collect from there. <\/p><p>whether diverting from North American landfills or West African burn pits, we’re always trying to intercept feedstock.<\/p>"
+          }
+        },
+        "4b7e108d-2b55-42a4-9cf9-8580d838cc03": {
+          "type": "answers",
+          "settings": {
+            "topic": "common questions",
+            "title": "what is Ambercycle?",
+            "answer": "<p>Ambercycle is our parent company and what enables cycora® to be made and regenerated. The Ambercycle Ecosystem entails collection of end-of-life textiles, the regeneration of the material, and the production of cycora®.<\/p>"
+          }
+        },
+        "13d912e2-72eb-417e-9c72-216c0ce49671": {
+          "type": "answers",
+          "settings": {
+            "topic": "all topics",
+            "title": "how is cycora® different from other recycled materials?",
+            "answer": "<p><strong>one existing solution<\/strong> is bottle-to-textile recycling, where PET plastic water bottles are melted down into polyester fiber. this fiber doesn’t have existing end of life options, because the molecule degrades during melting and is mixed with other materials. once it is in garment form, it doesn’t get recycled. This method gives PET just one extra life instead of many. <\/p><p><strong>the other existing solution<\/strong> is mechanical garment-to-garment recycling, in which whole garments are ripped open back into fiber form. these processes can’t separate material blends, and they reduce the length of the resulting fibers, which then can’t be infinitely reused to make new garments. <\/p><p>both of these methods are excellent steps for providing extra life to textiles, but they are not the final solutions. <\/p><p><strong>Ambercycle technology<\/strong> regenerates material at the molecular level. This textile-to-textile process allows us to purify and collect polyester from textile ‘waste’, even blends. garments produced from our materials can continuously be put back into the Ambercycle process at the end of their useful lives [which we hope will be very, very long].<\/p><p>this gives the polyester infinite new lives, unlocking true circularity.<\/p>"
+          }
+        },
+        "892c9842-3718-4e15-a1b7-3614deb32277": {
+          "type": "answers",
+          "settings": {
+            "topic": "all topics",
+            "title": "how specifically is cycora® made?",
+            "answer": "<p>we use chemistry to purify and separate blended ‘waste’ textile materials. It’s like refining ‘waste’ instead of refining oil. <\/p><p>end-of-life textiles are shredded and buttons, zippers, and embellishments are removed. the materials go into a series of reactors where the constituents are separated and purified. the purified materials, like cycora®, then go into downstream processing to make new fibers and yarns.<\/p>"
+          }
+        },
+        "aa5ec4c7-f267-4144-aa6f-b682f2c1cbce": {
+          "type": "answers",
+          "settings": {
+            "topic": "all topics",
+            "title": "where are Ambercycle facilities located?",
+            "answer": "<p>Our company is based out of Downtown Los Angeles. <\/p>"
+          }
+        },
+        "f4d778e8-c918-42e6-9269-67bb81503627": {
+          "type": "answers",
+          "settings": {
+            "topic": "all topics",
+            "title": "what is the quality of cycora® materials?",
+            "answer": "<p>our material is as good as virgin polymer. It is a drop-in replacement for virgin materials while providing a better life cycle and end-of-life solution.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "66c2c7fe-0800-4135-b122-116fe35821f7",
+        "4b7e108d-2b55-42a4-9cf9-8580d838cc03",
+        "13d912e2-72eb-417e-9c72-216c0ce49671",
+        "892c9842-3718-4e15-a1b7-3614deb32277",
+        "aa5ec4c7-f267-4144-aa6f-b682f2c1cbce",
+        "f4d778e8-c918-42e6-9269-67bb81503627"
+      ],
+      "settings": {
+        "title": "faq"
+      }
+    }
+  },
+  "order": [
+    "1658955544c28a0a09",
+    "main",
+    "16541721673cd12063",
+    "165417217402fb28a4"
+  ]
+}

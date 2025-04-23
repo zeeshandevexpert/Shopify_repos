@@ -1,0 +1,67 @@
+
+    <div class="container-style container-large">
+        <h2>{{ section.settings.title }}</h2>
+        <h3>{{ section.settings.subtitle }}</h3>
+        <div class="press-article-row">
+            {% for block in section.blocks %}
+                <div class="press-article-col">
+                    <a href="{{ block.settings.link }}" class="img-holder">
+                        <img src="{{ block.settings.image | img_url: '10x' }}"
+                             class="lazyload"
+                             data-src="{{ block.settings.image | img_url: '400x' }}"
+                             data-widths="[400]"
+                             data-sizes="auto"
+                             tabindex="-1"
+                        />
+                    </a>
+                    <div class="press-article-download">
+                        <a href="{{ block.settings.link }}" target="_blank">download</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Press - Brand",
+  "tag": "section",
+  "class": "press-article-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "item",
+      "type": "item",
+      "settings":[
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Press - Brand"
+    }
+  ]
+}
+{% endschema %}

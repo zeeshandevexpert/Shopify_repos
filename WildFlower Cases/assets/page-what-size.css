@@ -1,0 +1,79 @@
+@media screen and (min-width: 750px) {
+    .index-padding,
+    .what-size__settings {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+    .what-size__settings .image {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center bottom;
+    }
+    .one-half {
+        width: 50%;
+    }
+
+}
+
+.what-size__settings .text-column {
+    padding: 10%;
+}
+
+.what-size__device .text-column {
+    padding: 5%;
+}
+
+.what-size__device {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.what-size__device .image {
+    text-align: center;
+}
+
+.what-size__device img {
+    max-width: 100%;
+}
+
+#what-size-form {
+    max-width: 54rem;
+    margin: 0 auto;
+}
+
+.what-size__input {
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid black;
+    color: black;
+}
+
+.what-size__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.what-size__input::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+@media screen and (max-width: 749px) {
+    #shopify-section-template--14943821922352__what-size img {
+        width: 100%;
+        height: auto;
+    }
+    #shopify-section-template--14943821922352__what-size {
+        padding-bottom: 3rem;
+    }
+}

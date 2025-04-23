@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "upgrade_order": {
+      "type": "upgrade-order",
+      "disabled": true,
+      "settings": {
+        "tab-text1": "FTF BEGINNER BOOTCAMP",
+        "tab-content1": "",
+        "tab-text2": "UPGRADE YOUR ORDER",
+        "tab-content2": "",
+        "tab-text3": "ORDER COMPLETE",
+        "tab-content3": ""
+      }
+    },
+    "replo_ajax_ocu_new_replo_page_qatnc4": {
+      "type": "replo-ajax-ocu-new-replo-page",
+      "settings": {}
+    }
+  },
+  "order": [
+    "upgrade_order",
+    "replo_ajax_ocu_new_replo_page_qatnc4"
+  ]
+}

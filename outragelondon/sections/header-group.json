@@ -1,0 +1,119 @@
+{
+  "type": "header",
+  "name": "t:sections.header-group.name",
+  "sections": {
+    "header": {
+      "type": "header",
+      "blocks": {
+        "header-0": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Outrage_LONDON_800_x_200_px_950_x_250_px_1200_x_300_px_1200_x_300_px_1400_x_400_px_2.png",
+            "logo-inverted": "shopify:\/\/shop_images\/Outrage_LONDON_800_x_200_px_950_x_250_px_1200_x_300_px_1200_x_300_px_4.png",
+            "desktop_logo_width": 170,
+            "mobile_logo_width": 110
+          }
+        },
+        "text_F3xWpm": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": ""
+          }
+        },
+        "text_JAjDLF": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>NEW: KLARNA<\/strong> IS NOW AVAILABLE AT CHECKOUT<\/p>"
+          }
+        },
+        "text_mRD3ch": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>CLEAR-PAY AVAILABLE <\/strong>AT CHECKOUT<\/p>"
+          }
+        },
+        "text_QiLTnk": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>BUILT FOR THOSE <\/strong>WHO DARE TO STAND OUT<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "header-0",
+        "text_F3xWpm",
+        "text_JAjDLF",
+        "text_mRD3ch",
+        "text_QiLTnk"
+      ],
+      "settings": {
+        "ann": true,
+        "bbg": "#000000",
+        "ffg": "#ffffff",
+        "main_menu_link_list": "main-menu",
+        "mobile_main_menu_link_list": "top-menu",
+        "hover_menu": true,
+        "mega_menu_images": false,
+        "main_menu_alignment": "center-split",
+        "header_style": "sticky",
+        "sticky_index": true,
+        "sticky_collection": false,
+        "toolbar_menu": "",
+        "toolbar_social": false,
+        "show_locale_selector": false,
+        "show_currency_selector": false,
+        "show_currency_flags": false,
+        "in": "https:\/\/www.instagram.com\/outrage_ldn\/",
+        "fb": "https:\/\/www.facebook.com\/OutrageLdn\/",
+        "tt": "https:\/\/www.tiktok.com\/@outragelondon",
+        "tp_img": "shopify:\/\/shop_images\/tp.svg",
+        "tp_link": "shopify:\/\/pages\/custom-reviews"
+      }
+    },
+    "announcement": {
+      "type": "announcement",
+      "blocks": {
+        "announcement-0": {
+          "type": "announcement",
+          "settings": {
+            "text": "BUY ANY 2 pieces and get 1 free",
+            "link_text": "",
+            "link": ""
+          }
+        },
+        "announcement-1": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "Hassle-free returns",
+            "link_text": "30-day postage paid returns",
+            "link": ""
+          }
+        },
+        "announcement_VAxNTi": {
+          "type": "announcement",
+          "disabled": true,
+          "settings": {
+            "text": "24HR flash sale live - 20% OFF AUTO APPLIED AT CHECKOUT",
+            "link_text": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement-0",
+        "announcement-1",
+        "announcement_VAxNTi"
+      ],
+      "disabled": true,
+      "settings": {
+        "announcement_compact": true
+      }
+    }
+  },
+  "order": [
+    "header",
+    "announcement"
+  ]
+}

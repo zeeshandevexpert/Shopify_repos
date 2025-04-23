@@ -1,0 +1,81 @@
+{% paginate blog.articles by 20 %}
+<div class="press-grid__wrap blog-{{blog.handle}}" data-section-type="press" data-section-id="{{section.id}}">
+    <h1 class="text-center">{{ blog.title }}</h1>
+
+  <div class="press-grid">
+    <div class="press-grid__sizer"></div>
+
+    {% for article in blog.articles %}
+    {% if article.title %}
+    <div class="press-grid__item {% if article.image and  article.image.aspect_ratio > 1.5 %}press-grid__item--wide{% endif %}">
+      <div class="press-grid__item--inner">
+        {% if article.image %}
+        <div class="press-item__image lazyload lazyfade" data-bgset="{% include 'bgset', image: article.image %}" data-sizes="auto" style="background-image: url({{article.image | img_url: '1x'}});">
+          <a href="{{article.url}}">
+            {% assign img_w = article.image.width | plus: 0.0 %}
+            {% assign img_h = article.image.height | plus: 0.0 %}
+            {% assign pad = img_h | divided_by: img_w | times: 100 %}
+            <div class="press-item__image-padded" style="padding-top:{{pad}}%"></div>
+          </a>
+        </div>
+        <div class="press-item__text">
+          <h3 class="h4">{{article.title | link_to: article.url}}</h3>
+          <div class="rte">
+            {% if article.excerpt %}
+            <p>{{article.excerpt}}</p>
+            {% else %}
+            <p>{{article.content | strip_tags | truncatewords: 30}}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% if blog.articles.size < 5 and need_temp %}
+    {% for i in (1..20) %}
+    <div class="press-grid__item">
+      <div class="press-grid__item--inner">
+        <div class="press-item__image lazyload lazyfade" data-bg="//picsum.photos/600/{% cycle '900','600','850','720' %}" style="background-image: url('//picsum.photos/1/1');">
+          <div class="press-item__image-padded" style="padding-top:{% cycle '150','100','141','120' %}%"></div>
+        </div>
+      </div>
+      <div class="press-item__text">
+      	<h3 class="h4">Automatically generated image for placeholder</h3>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+  </div>
+  {% if paginate.next.is_link %}
+  <div class="text-center">
+    <a href="{{paginate.next.url}}" class="press--load-more btn">Load More</a>
+  </div>
+  {% endif %}
+
+  <div class="small--hide medium-up--hide">
+    {% if paginate.pages > 1 %}
+    {% include 'pagination' %}
+    {% endif %}
+  </div>
+</div>
+{% endpaginate %}
+
+
+
+
+
+{% schema %}
+  {
+    "name": "Press Template",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

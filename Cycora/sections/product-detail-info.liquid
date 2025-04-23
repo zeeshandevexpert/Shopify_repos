@@ -1,0 +1,45 @@
+
+    <div class="container-style product-page-stats-container">
+        <div class="product-page-stats-row">
+            <div class="product-page-stats-col-left">
+                {% if product.metafields.arena.polyester != blank %}
+                    <div class="product-page-stats-element">
+                        <h5>{{product.metafields.arena.param_1_title}}</h5>
+                        <h6>{{ product.metafields.arena.polyester }}</h6>
+                    </div>
+                {% endif %}
+                {% if product.metafields.arena.cotton != blank %}
+                    <div class="product-page-stats-element">
+                        <h5>{{product.metafields.arena.param_2_title}}</h5>
+                        <h6>{{ product.metafields.arena.cotton }}</h6>
+                    </div>
+                {% endif %}
+                {% if product.metafields.arena.blends != blank %}
+                    <div class="product-page-stats-element">
+                        <h5>{{product.metafields.arena.param_3_title}}</h5>
+                        <h6>{{ product.metafields.arena.blends }}</h6>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="product-page-stats-col-right">
+                <h3>{{ product.metafields.arena.pdp_details_title }}</h3>
+                {{ product.metafields.arena.pdp_details_desc }}
+                <span class="globe-background" style="background: url('{{ product.metafields.arena.pdp_details_image }}');"></span>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Product - Details",
+  "tag": "section",
+  "class": "product-page-stats-section",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Product - Details"
+    }
+  ]
+}
+{% endschema %}

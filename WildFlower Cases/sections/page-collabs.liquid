@@ -1,0 +1,86 @@
+{% render 'hs-defer-css', filename: 'collabs.css', pages: 'collection,index,product' | split: ',', local: true %}
+
+<div class="page-width">
+  <h2 class="h1 center">{{ 'pages.collabs.recent_title' | t }}</h2>
+  <div class="rte center"><p>{{ 'pages.collabs.recent_text' | t }}</p></div>
+  <br>
+  <div class="grid collabs-grid grid--3-col-desktop grid--1-col">
+  {% for block in section.blocks limit: 6 %}
+    <div class="grid__item">
+      {%- render 'card-collab', block: block -%}
+    </div>
+  {% endfor %}
+  </div>
+
+  <hr>
+  <h3 class="h2 center">{{ 'pages.collabs.previous_title' | t }}</h3>
+  <div class="grid collabs-grid grid--4-col-desktop grid--2-col">
+    {% for block in section.blocks offset: 6 %}
+      <div class="grid__item">
+        {%- render 'card-collab', block: block -%}
+      </div>
+    {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collabs",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Featured Banner Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_mobile",
+      "label": "Featured Banner Image (mobile)"
+    },
+    {
+      "type": "text",
+      "id": "featured",
+      "label": "Title",
+      "default": "Featured Title"
+    },
+    {
+      "type": "url",
+      "id": "featured_url",
+      "label": "Featured URL"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "collab",
+      "type": "collab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_hover",
+          "label": "Image (hover)"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collabs"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,232 @@
+{
+  "sections": {
+    "1660755853d0fb13f3": {
+      "type": "text--rich-text",
+      "settings": {
+        "width": "full-width",
+        "subheading": "",
+        "title": "faq",
+        "text": "",
+        "button_link": "",
+        "button_label": ""
+      }
+    },
+    "main": {
+      "type": "template--page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "165998358937cf2537": {
+      "type": "accordion",
+      "blocks": {
+        "16599835896d0f8185-0": {
+          "type": "tab_content",
+          "settings": {
+            "question": "What's in a bag?",
+            "text": "<p>Our bags come with 6 dough balls each. This makes 6 cookies! </p>"
+          }
+        },
+        "16599835896d0f8185-1": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Do you have vegan or gluten free flavors?",
+            "text": "<p>Unfortunately we do not yet have vegan or gluten-free cookie options. But we are always working on new flavors! </p>"
+          }
+        },
+        "16599835896d0f8185-2": {
+          "type": "tab_content",
+          "settings": {
+            "question": "How long does dough keep?",
+            "text": "<p>Our dough keeps in the freezer for up to one year.</p>"
+          }
+        },
+        "87d9fb23-cbef-401c-adc9-7f4781a37988": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Can I eat raw dough?",
+            "text": "<p>Our cookie dough is for baking only! Believe us, we know raw cookie dough is delish, but even though we source high quality thoughtful ingredients, there is always a risk of salmonella and E. coli.</p>"
+          }
+        },
+        "f87cd056-8659-4a8d-b2bf-78ac23678b2d": {
+          "type": "tab_content",
+          "settings": {
+            "question": "How often do you have new flavors?",
+            "text": "<p>We have a few always flavors, and then do special collabs and seasonal flavors throughout the year!</p>"
+          }
+        },
+        "1dec33ab-1a10-4e07-b799-7a51af3df9d9": {
+          "type": "tab_content",
+          "settings": {
+            "question": "How do I bake my cookies?",
+            "text": "<p>Cookie instructions are on the bag, but in case you need them again - place your frozen dough straight on a cookie sheet (2-inches apart each) and bake at 375 F (350 F convection) for 13-15 minutes until edges are set and center is slightly puffy.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "16599835896d0f8185-0",
+        "16599835896d0f8185-1",
+        "16599835896d0f8185-2",
+        "87d9fb23-cbef-401c-adc9-7f4781a37988",
+        "f87cd056-8659-4a8d-b2bf-78ac23678b2d",
+        "1dec33ab-1a10-4e07-b799-7a51af3df9d9"
+      ],
+      "settings": {
+        "background-color": "#f389b8",
+        "text-color": "#f6ede6",
+        "title": "Pastry Kits",
+        "faq_icon": "plus_minus"
+      }
+    },
+    "16599832523c28221d": {
+      "type": "accordion",
+      "blocks": {
+        "1659983252cb11fe0a-0": {
+          "type": "tab_content",
+          "disabled": true,
+          "settings": {
+            "question": "When will my dough ship?",
+            "text": ""
+          }
+        },
+        "5a66db21-1c47-4cc0-b1e6-2e9e7a9d98c9": {
+          "type": "tab_content",
+          "disabled": true,
+          "settings": {
+            "question": "How long will it take to get my dough?",
+            "text": "<p>Dough will usually arrive Thursday or Friday of the week after you place your dough order.</p>"
+          }
+        },
+        "1659983252cb11fe0a-1": {
+          "type": "tab_content",
+          "settings": {
+            "question": "How much does shipping cost?",
+            "text": "<p>We can ship up to 4 bags of dough per shipping box. Shipping costs a flat rate of $25 per box.</p>"
+          }
+        },
+        "84e6eda6-dde6-499c-b713-dd2ebccd0b25": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Minimum Orders",
+            "text": "<p>You must order a minimum of three bags of dough to be able to check out. The most we can fit in a shipping box is 4 bags of dough.</p>"
+          }
+        },
+        "543200de-1c5e-4e22-acde-41e7cba71b94": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Receiving my dough shipment.",
+            "text": "<p>Your dough shipment will arrive in our box packed with dry ice. There are dry ice disposal instructions inside. There are also instructions in the FAQ 'How do I dispose of my dry ice'. Immediately upon delivery take out frozen dough packs and place them directly in your freezer. This is a frozen product and must remain frozen.</p>"
+          }
+        },
+        "1659983252cb11fe0a-2": {
+          "type": "tab_content",
+          "settings": {
+            "question": "How do I dispose of my dry ice?",
+            "text": "<p>All dough orders are shipped with dry ice to keep our product frozen. Dry ice is dangerous when handled incorrectly. Please handle dry ice with care and caution. Always wear gloves, use a towel or oven mitt when handling. Don't ever touch with bare hands. To dispose, unwrap and leave the dry ice in an attended ventilated area to sublimate away. Do not place directly on a countertop. Do not leave dry ice unattended around children or pets.</p>"
+          }
+        },
+        "04aa1faf-74da-49be-b184-1646695f6be7": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Return Policy",
+            "text": "<p>All sales are final. If your dough doesn’t arrive frozen, we’ll reship the order at our cost. Need customer service? Contact dough@thepastryproject.co</p>"
+          }
+        }
+      },
+      "block_order": [
+        "1659983252cb11fe0a-0",
+        "5a66db21-1c47-4cc0-b1e6-2e9e7a9d98c9",
+        "1659983252cb11fe0a-1",
+        "84e6eda6-dde6-499c-b713-dd2ebccd0b25",
+        "543200de-1c5e-4e22-acde-41e7cba71b94",
+        "1659983252cb11fe0a-2",
+        "04aa1faf-74da-49be-b184-1646695f6be7"
+      ],
+      "settings": {
+        "background-color": "#f9a820",
+        "text-color": "#f6ede6",
+        "title": "Classes",
+        "faq_icon": "plus_minus"
+      }
+    },
+    "1659983480855050f4": {
+      "type": "accordion",
+      "blocks": {
+        "16599834801d25503b-0": {
+          "type": "tab_content",
+          "settings": {
+            "question": "What is the Take & Bakery?",
+            "text": "<p>The Take & Bakery is a shop within The Pastry Project brand! </p><p>The Pastry Project provides free baking and pastry training and job placement assistance to individuals with barriers to opportunity in the industry. Our passionate students train with us in our Seattle kitchen and after graduation begin careers in bakeries and pastry shops using their new skills.</p><p>We spent years developing the perfect recipes for our pastry curriculum - ones that would inspire our students.</p><p>We think they are so delicious, we started our Take & Bakery to share our dough with you to bake and enjoy at home!</p>"
+          }
+        },
+        "16599834801d25503b-1": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Will you make other Take & Bake products?",
+            "text": "<p>YES! We started with cookie dough, because a) we LOVE IT and b) cookies are the first recipe we teach our students, but we will soon be creating other delicious dough products for you to take and bake at home.</p>"
+          }
+        },
+        "16599834801d25503b-2": {
+          "type": "tab_content",
+          "settings": {
+            "question": "Do you do special collaborations?",
+            "text": "<p>We LOVE collabs! We think cookie collabs are super fun, and if you have any ideas please reach out to tell us about them!</p>"
+          }
+        },
+        "9b5b645e-39a3-41dd-9183-58e2f5fd5eec": {
+          "type": "tab_content",
+          "settings": {
+            "question": "What is your press contact?",
+            "text": "<p>If you are press and would like more info on The Take & Bakery and/or The Pastry Project, or would like to get in touch with co-founders Emily and Heather please email press@thepastryproject.co</p>"
+          }
+        },
+        "fa2ac08c-af20-4f40-a34f-8377c5c29696": {
+          "type": "tab_content",
+          "settings": {
+            "question": "What is your customer service contact?",
+            "text": "<p>If you have any questions or concerns about your order or your dough, or really any questions in general, please email dough@thepastryproject.co</p>"
+          }
+        }
+      },
+      "block_order": [
+        "16599834801d25503b-0",
+        "16599834801d25503b-1",
+        "16599834801d25503b-2",
+        "9b5b645e-39a3-41dd-9183-58e2f5fd5eec",
+        "fa2ac08c-af20-4f40-a34f-8377c5c29696"
+      ],
+      "settings": {
+        "background-color": "#cf6a28",
+        "text-color": "#f6ede6",
+        "title": "Mission & Free Student Program",
+        "faq_icon": "plus_minus"
+      }
+    },
+    "16599833228179dc71": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "1659983322cc298d09-0": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<style>\n.marquee { \n background-color: #b9e8a6;\n  text-decoration: none;\n  color: #afb5da;\n}\n</style>\n\n\n<div class=\"marquee flex\">\n    <div class=\"marquee_list flex\" style=\"animation-duration: 55s\">\n        \n<span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n          HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n    </div>\n\n<div class=\"marquee_list flex\" style=\"animation-duration: 55s\">\n        \n<span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n           HAVE FUN. DŌ GOOD.\n        </span>\n                <span class=\"marquee_item flex\">\n        <img src=\"//cdn.shopify.com/s/files/1/0567/8923/7875/files/marq-yellow.svg?v=1660245486\" height=\"15px\">\n          HAVE FUN. DŌ GOOD.\n        </span>\n    </div>    \n\n</div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "1659983322cc298d09-0"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "1660755853d0fb13f3",
+    "main",
+    "165998358937cf2537",
+    "16599832523c28221d",
+    "1659983480855050f4",
+    "16599833228179dc71"
+  ]
+}

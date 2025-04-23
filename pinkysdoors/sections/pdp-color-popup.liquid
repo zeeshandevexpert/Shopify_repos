@@ -1,0 +1,52 @@
+<div id="color-popup--hidden" class="page-width--thin" style="display: none;">
+  <div id="color-popup" class="regular-mfp-popup">
+    <h4>COLOR</h4>
+    <div class="grid flex flex--wrap text-center">
+    {% for block in section.blocks %}
+   	<div class="grid__item color-popup__item medium-up--one-third small--one-half">
+      <img class="lazyload hs-lazyload hs-id-8028894d" data-src="{{ block.settings.image | img_url: '300x' }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><br/>
+      <h4>{{block.settings.title}}</h4>
+    </div>
+    {% else %}
+      {% for i in (1..6) %}
+      <div class="color-popup__item medium-up--one-third small--one-half">
+        {{'image' | placeholder_svg_tag}}
+        <h4>Color Name</h4>
+      </div>
+      {% endfor %}
+    {% endfor %}
+    </div>
+    <div class="rte">{{section.settings.text}}</div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "PDP - Color Popup",
+    "settings": [
+    {
+      "type":"richtext",
+      "id":"text",
+      "label":"Text"
+    }
+  	],
+	"blocks":[
+	{
+	  "type":"color",
+	  "name":"Color",
+	  "settings": [
+	    {
+		  "type":"text",
+		  "id":"title",
+		  "label":"Color Name"
+        },
+	    {
+		  "type":"image_picker",
+		  "id":"image",
+		  "label":"Image"
+        }
+	  ]
+	}
+	]
+  }
+{% endschema %}

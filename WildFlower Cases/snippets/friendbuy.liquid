@@ -1,0 +1,21 @@
+
+  <script type="application/javascript">
+  window["friendbuyAPI"] = friendbuyAPI = window["friendbuyAPI"] || [];
+  friendbuyAPI.merchantId = "668379e6-2f38-42d7-b046-e4edb991efe9";
+  friendbuyAPI.shopify = {
+    page: "{{ page_title }}",
+    {% if customer and customer.id and customer.email %}
+    {% assign fbtMessage = "now" | date: "%s" | append: ":" | append: customer.email | append: ":" | append : customer.id %}
+    {% assign fbSignature = fbtMessage | hmac_sha256: "0ff3c294-d1ff-416f-a05f-a317414ade3c" %}
+    authMessage: "{{ fbtMessage }}",
+    authSignature: "{{ fbSignature }}",
+    customer: {
+      id: "{{ customer.id }}",
+      email: "{{ customer.email }}",
+      firstName: "{{ customer.first_name }}",
+      lastName: "{{ customer.last_name }}",
+    },
+    {% endif %}
+  }
+  </script>
+  

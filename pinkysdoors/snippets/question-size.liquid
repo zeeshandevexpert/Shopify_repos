@@ -1,0 +1,57 @@
+{%- assign product_tags = product.tags | join:',' -%}
+{%- if product_tags contains 'special-order' -%}
+{%- assign special_order = true -%}
+{%- endif -%}
+
+{%- case product.type -%}
+
+{%- when 'Thermally Broken Doors' -%}
+
+
+<h4>THERMAL BREAK DOOR THICKNESS</h4>
+<ul>
+  <li>Our thermally broken doors are 1/8” thicker than our regular iron doors.</li>
+  <li>Thermal Break Door Thickness:  2 1/8”</li>
+  <li>In stock Jamb:  6”</li>
+</ul>
+
+{% include 'question-size--how' %}
+{% include 'question-size--opening' %}
+
+<h4>PHOTOS OF THERMAL BREAK IN JAMB &amp; DOOR</h4>
+<div class="grid flex flex--wrap thermal-break-images">
+{%- for i in (1..5) -%}
+	{%- capture img -%}thermal-break-{{i}}.jpg{%- endcapture -%}
+    <div class="grid__item one-third">{{img | file_url | img_tag}}</div>
+{%- endfor -%}
+</div>
+
+
+{%- when 'Bi-Fold/Accordion' %}
+
+{% if special_order %}
+<div class="">
+  <div class="bi-fold-bage__textz">We can customize any bi-fold door design with any customized size measurements and any door swing configurations.  Email us at <a href="mailto:info@pinkysirondoors.com"><strong>info@pinkysirondoors.com</strong></a> or call us at <strong>844-746-1692</strong> for more information.</div>
+  <div class="bi-fold-badge__img">{{'bifold_badge.png' | file_url | img_tag }}</div>
+</div>
+
+{% capture  content %}{{pages.pdp-size-bi-fold.content | replace: 'In-Stock', 'Special Order' | replace: 'in-stock', 'special order' | replace: 'IN-STOCK', 'SPECIAL ORDER' }}{% endcapture %}
+{% else %}
+{% capture content %}{{pages.pdp-size-bi-fold.content}}{% endcapture %}
+{% endif %}
+
+
+{% include 'shortcode' load: content %}
+
+
+{%- when 'Merchandise' %}
+
+<div class="text-center"><h4>Coming Soon</h4></div>
+
+
+{%- else -%}
+
+{% include 'question-size--how' %}
+{% include 'question-size--opening' %}
+
+{%- endcase -%}

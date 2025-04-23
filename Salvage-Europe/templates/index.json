@@ -1,0 +1,358 @@
+{
+  "sections": {
+    "1626985554485b7627": {
+      "type": "slideshow",
+      "blocks": {
+        "1626985554485b7627-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/des.png",
+            "overlay_color": "#000000",
+            "overlay_opacity": 19,
+            "caption_position": "bottom_left",
+            "hide_caption_background": false,
+            "heading": "French Oak Flooring",
+            "subheading": "",
+            "link": "shopify:\/\/pages\/wood-flooring",
+            "button_text": "",
+            "second_link": "shopify:\/\/collections",
+            "second_button_text": "",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "1626985554485b7627-1"
+      ],
+      "settings": {
+        "display_wide": true,
+        "slideshow_size": "fixed_height",
+        "desktop_height": 800,
+        "mobile_height": 500,
+        "caption_below": false,
+        "pager": "dots",
+        "transition": "fade",
+        "slider_speed": 5,
+        "video_audio": "off",
+        "slide_heading_size": 50,
+        "subheading_size": 20,
+        "no_bottom_margin": false
+      }
+    },
+    "2ff95c04-e0dc-4b86-8e6a-04a62838053c": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--18994102927646__2ff95c04-e0dc-4b86-8e6a-04a62838053c-16853958890e251e0a-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--18994102927646__2ff95c04-e0dc-4b86-8e6a-04a62838053c-16853958890e251e0a-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "921c9b54-f8ee-4fc5-a1e0-3d857e560f7e": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--18994102927646__2ff95c04-e0dc-4b86-8e6a-04a62838053c-16853958890e251e0a-1",
+        "template--18994102927646__2ff95c04-e0dc-4b86-8e6a-04a62838053c-16853958890e251e0a-2",
+        "921c9b54-f8ee-4fc5-a1e0-3d857e560f7e"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Spotlight on",
+        "rich_text": "<p>Add some editorial columns to your page<\/p>",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "",
+        "padding": 30
+      }
+    },
+    "6c1d2de2-02f3-4ec0-952a-8a18bd4b4444": {
+      "type": "collection-list",
+      "disabled": true,
+      "settings": {
+        "title": "Collection list",
+        "collection_list": [
+          "reclaimed-stone",
+          "french-oak",
+          "stone"
+        ],
+        "grid": 3,
+        "mobile_single": true,
+        "hide_empty": false
+      }
+    },
+    "16269855569eec17a5": {
+      "type": "gallery",
+      "blocks": {
+        "16269855569eec17a5-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/71.jpg",
+            "title_text": "PRE FINISHED FLOORING",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/french-oak",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 8,
+            "column_size": 2
+          }
+        },
+        "16269855569eec17a5-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/29.jpg",
+            "title_text": "RECLAIMED TERRACOTTA",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/reclaimed-terracotta",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 11,
+            "column_size": 2
+          }
+        },
+        "16269855569eec17a5-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/STONE_1.jpg",
+            "title_text": "EUROPEAN STONE",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/european-limestone",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20,
+            "column_size": 2
+          }
+        },
+        "74cf842f-3308-4097-8730-4279d09560a6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FLOORBOARDS_pro.jpg",
+            "title_text": "RECLAIMED FRENCH OAK",
+            "text": "",
+            "button_text": "",
+            "link": "",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 22,
+            "column_size": 2
+          }
+        },
+        "396233ad-b4bc-4ee6-8e64-0e789cdc2fbf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/36.jpg",
+            "title_text": "RECLAIMED STONE",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/reclaimed-stone-1",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 18,
+            "column_size": 2
+          }
+        },
+        "30478b8f-f466-4a66-b92e-8ccab6d2dac7": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/55.jpg",
+            "title_text": "BELGIAN BLUESTONE",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/belgian-bluestone",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 18,
+            "column_size": 2
+          }
+        },
+        "4b41944c-ce0e-47a6-aca6-2d455a16a5d5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/8A0CF7F3-5E87-4BB6-9455-768DBF7A924F_3c9a4961-e498-4875-85c0-74fa6031c420.jpg",
+            "title_text": "RECLAIMED BEAMS",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/beams",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 18,
+            "column_size": 2
+          }
+        },
+        "e7e57057-1f2c-45c0-97c4-5cea4a033a8c": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_0393.heic",
+            "title_text": "FRENCH OAK LUMBER",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/beams-lumber",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 18,
+            "column_size": 2
+          }
+        },
+        "008d3456-8adb-44a5-b2f8-e7e6e6992edc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/75FDD258-1901-4A4F-AAB1-BF42FB0E41A5.jpg",
+            "title_text": "ARCHITECTURAL ELEMENTS",
+            "text": "",
+            "button_text": "",
+            "link": "shopify:\/\/collections\/furniture-architectural-elements",
+            "caption_bottom": false,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 25,
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "16269855569eec17a5-0",
+        "16269855569eec17a5-1",
+        "16269855569eec17a5-2",
+        "74cf842f-3308-4097-8730-4279d09560a6",
+        "396233ad-b4bc-4ee6-8e64-0e789cdc2fbf",
+        "30478b8f-f466-4a66-b92e-8ccab6d2dac7",
+        "4b41944c-ce0e-47a6-aca6-2d455a16a5d5",
+        "e7e57057-1f2c-45c0-97c4-5cea4a033a8c",
+        "008d3456-8adb-44a5-b2f8-e7e6e6992edc"
+      ],
+      "settings": {
+        "full_width": false,
+        "no_space": false,
+        "heading": "Our Collection",
+        "mobile_scroll": true,
+        "image_height": 400,
+        "mobile_image_height": 300,
+        "heading_size": 24,
+        "text_size": 15
+      }
+    },
+    "1626985717d60f1b9e": {
+      "type": "newsletter",
+      "disabled": true,
+      "settings": {
+        "heading": "Subscribe to our newsletter",
+        "newsletter_subheading": "<p>Signup to receive news and updates<\/p>",
+        "show_social_icons": false,
+        "padding": 30,
+        "text_color": "#000000",
+        "background_color": "#f7f7f7"
+      }
+    },
+    "1719286648883b87a7": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_Kk8qjT": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "Our Instagram",
+            "title_color": "",
+            "title_size": 24,
+            "alignment": "center",
+            "margin_top": 30,
+            "margin_bottom": 30,
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_Kk8qjT"
+      ],
+      "settings": {
+        "full_width": false
+      }
+    },
+    "16269856419b86506c": {
+      "type": "image-with-text-overlay",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1B7B91FF-74C9-4259-849B-871C2AA525A6.jpg",
+        "parallax_scroll": true,
+        "page_height": 500,
+        "overlay_color": "#393939",
+        "overlay_opacity": 0,
+        "caption_position": "center",
+        "heading": "",
+        "subheading": "<p>Speak with our highly skilled team today to learn more about what we can do for you and your project.<\/p>",
+        "button_text": "Contact us",
+        "button_link": "shopify:\/\/pages\/contact",
+        "text_color": "#000000",
+        "button_color": "#ffffff",
+        "button_background": "#000000",
+        "background": "#ffffff",
+        "no_bottom_margin": false
+      }
+    }
+  },
+  "order": [
+    "1626985554485b7627",
+    "2ff95c04-e0dc-4b86-8e6a-04a62838053c",
+    "6c1d2de2-02f3-4ec0-952a-8a18bd4b4444",
+    "16269855569eec17a5",
+    "1626985717d60f1b9e",
+    "1719286648883b87a7",
+    "16269856419b86506c"
+  ]
+}

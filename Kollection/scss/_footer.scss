@@ -1,0 +1,140 @@
+.footer-block{
+    background-color: #242424;
+    padding: 0 20px;
+    .footer-wrapper{
+        max-width: 1600px;
+        margin: 0 auto;
+        padding-top: 20px;
+    //    *{
+    //     color: $whitealt;
+    //    }
+    .footer__content-top{
+        border-top: 1px solid #3D4432;
+        border-bottom: 1px solid #3D4432;
+        padding: 50px 0;
+    }
+    .footer__content-bottom{
+        padding-bottom: 10px;
+        .footer__copyright{
+            .copyright__content{
+                font-family: $karla;
+                font-size: 16px;
+                color: #AFAFAF;
+            }
+        }
+    }
+       .footer__blocks-wrapper{
+        
+        @media (min-width:1300px) {
+            flex-wrap: nowrap;        
+        }
+
+        @media (max-width:1300px) {
+            justify-content: space-between;
+        }
+        .footer-block{
+            @media (min-width:1300px) {
+                flex: 1 1 auto;    
+            }
+            @media (max-width:1300px) {
+                width: 30%;
+                max-width: 30%;
+            }
+            @media (max-width:390px) {
+                width: 48%;
+                max-width: 49%;
+            }
+            &:first-child{
+                @media (min-width:1300px) {
+                    flex: 0 0 700px;
+                }
+                @media (max-width:1300px) {
+                   width: 100%;
+                   max-width: 100%;
+                }
+                
+            }
+            .footer-block__heading{
+                color: $whitealt;
+                font-family: $karla;
+                font-size: 13px;
+                color: $whitealt;
+                font-weight: 400;
+                text-transform: uppercase;
+
+            }
+            .footer-block__details-content{
+                color: $whitealt;
+            }
+            .footer-block__details-content{
+                li{
+                    a{
+                        
+                        color: $whitealt;
+                        font-family: $karla;
+                        font-size: 13px;
+                        color: $whitealt;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        @media (max-width:767px) {
+                            padding: 5px;
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+            .footer-block__newsletter{
+                
+                text-align: left;
+                @media (min-width:1300px) {
+                    width: 600px;
+                }
+                .footer-block__heading{
+                    font-family: $karla;
+                    font-size: 24px;
+                    color: $whitealt;
+                    font-weight: 400;
+                    text-transform: unset;
+                    @media (max-width:991px) {
+                        font-size: 18px;
+                    }
+                }
+
+                .footer__newsletter{
+                    max-width: 100%;
+
+                    .newsletter-form__field-wrapper{
+                        max-width: 100%;
+                        .field{
+                            .field__input{
+                               background-color: #343333;
+                               border: 0;
+                               margin: 0;
+                               &::placeholder{
+                                color: #6F6F6F !important;
+                                font-family: $karla;
+                               }
+                            }
+                            .field__label{
+                                color: #6F6F6F !important;
+                                font-family: $karla;
+                            }
+                            .submit-btn{
+                                background-color: #3D4432;
+                                text-transform: uppercase;
+                                font-family: $karla;
+                                font-size: 16px;
+                                font-weight: 400;
+                                padding:0 30px;
+                                display: flex;
+                                align-items: center;
+                                color: $whitealt;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       }
+    }
+}

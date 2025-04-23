@@ -1,0 +1,51 @@
+
+    <div class="container-style container-large">
+        <div class="general-more-products-top">
+            <h2>{{ section.settings.title_plp }}</h2>
+            <a href="{{ section.settings.view_all_link }}">view all</a>
+        </div>
+    </div>
+    <div class="general-more-products-row">
+        {% for block in section.blocks %}
+            {% include "product-grid", product: block.settings.product %}
+        {% endfor %}
+    </div>
+
+
+{% schema %}
+{
+  "name": "Experiments - Products",
+  "tag": "section",
+  "class": "general-more-products-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title_plp",
+      "label": "Products List Title"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Links"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "settings":[
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experiments - Products"
+    }
+  ]
+}
+{% endschema %}

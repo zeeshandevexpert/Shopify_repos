@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "1656073119271e84c3": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "1653979377789bdf4d": {
+      "type": "index-vintage",
+      "settings": {
+        "text_color": "#f4f6f8",
+        "title": "vintage molecules",
+        "description": "cycora<sup>®<\/sup> is a high quality yarn and fabric created from <span class=\"linked-drophover\">regenerated<i><strong>regenerated<\/strong>regenerative fashion practices not only aim to have minimal impact on the environment, it also contributes to its restoration and improvement.<\/i><\/span> textile <span class=\"linked-drophover\">waste<i><strong>waste<\/strong>waste is a perception of material that has been deemed with no value. we’re on a mission to reimagine waste streams.<\/i><\/span>",
+        "button_title": "",
+        "button_link": "shopify:\/\/blogs\/zine",
+        "media_type": "vimeo_youtube_video",
+        "image": "shopify:\/\/shop_images\/thumbnail.png",
+        "image_mobile": "shopify:\/\/shop_images\/thumbnail.png",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/980930634?share=copy",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/881af15503824c7492497e270b747215.mp4"
+      }
+    },
+    "index_textiles_block_ViUHCE": {
+      "type": "index-textiles-block",
+      "settings": {
+        "heading": "using textiles of the past to make clothing of the future",
+        "image": "shopify:\/\/shop_images\/Group_25.png",
+        "description": "we’re on a mission to regenerate the global closet, inspiring individuals, designers, and businesses to work together so we can live in\n <span class=\"linked-drophover\">material  harmony.<i><strong>material  harmony<\/strong>is a concept in which we create a circular system where clothing can be used, reused, and recycled, minimizing waste and environmental impact.<\/i><\/span>"
+      }
+    },
+    "929cb9f9-0788-42ed-bf55-1f8121bbe712": {
+      "type": "index-partnership-block",
+      "disabled": true,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "heading": "using textiles of the past to make clothing of the future.",
+        "description": "<p>we’re on a mission to regenerate the global closet, inspiring individuals, designers, and businesses to work together so we can live in material harmony<\/p>",
+        "color": "#111d22",
+        "button_title": "",
+        "button_link": "shopify:\/\/pages\/our-process"
+      }
+    },
+    "index_partnership_block_Q3VqTL": {
+      "type": "index-partnership-block",
+      "disabled": true,
+      "custom_css": [
+        ".partnership-section .partnership-block-content .home-partnership-top {padding: 50px 0;}"
+      ],
+      "settings": {
+        "heading": "less impact, long wear.",
+        "description": "<p>durable performance at a fraction of the environmental cost<\/p>",
+        "color": "#000000",
+        "button_title": "",
+        "button_link": "shopify:\/\/pages\/our-process"
+      }
+    },
+    "index_experiment_MwNNWy": {
+      "type": "index-experiment",
+      "settings": {
+        "show_top_content": true,
+        "heading": "performance in harmony with nature",
+        "text": "we design products and partner with leading brands utilizing high-quality cycora® circular material.",
+        "title": "our partners",
+        "image_bg": "shopify:\/\/shop_images\/Rectangle_29.png",
+        "button_title": "explore",
+        "button_link": "",
+        "show_content": true,
+        "title2": "our design",
+        "button_title2": "cycora®.lab",
+        "button_link2": "shopify:\/\/pages\/cycora-lab",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/Rectangle_28.png",
+        "vimeo_youtube_video": "",
+        "video_file": ""
+      }
+    },
+    "165397959584b1fd2a": {
+      "type": "index-circularity",
+      "disabled": true,
+      "custom_css": [
+        "h3 {color: #ffffff;}",
+        "h4 {color: #e7f0c4;}",
+        "p {color: #ffffff;}",
+        ".home-circularity-section {background-image: url(\" https:\/\/cdn.shopify.com\/s\/files\/1\/0646\/7790\/4638\/files\/original_fac08a379187195bb3819bd7c35546fd.jpg?v=1720645182\");}",
+        ".home-circularity-middle {display: none;}"
+      ],
+      "settings": {
+        "title_2": "<p>let’s change the cycle<\/p>",
+        "block_1_title": "> 100b.",
+        "block_1_desc": "<p>garments are landfilled <\/p><p>or incinerated every year<\/p>",
+        "block_2_title": "> 50%",
+        "block_2_desc": "<p>of global fiber <\/p><p>production is polyester<\/p>",
+        "block_3_logo": "shopify:\/\/shop_images\/Group.svg",
+        "block_3_desc": "<p>is made by diverting this material<\/p><p>away from landfills and burn pits  <\/p>",
+        "media_type": "image",
+        "vimeo_youtube_video": "",
+        "video_file": "",
+        "title": "",
+        "button_title": "shop now",
+        "button_link": "shopify:\/\/products\/twill-jacket"
+      }
+    },
+    "index_cycle_slider_Q3qh7M": {
+      "type": "index-cycle-slider",
+      "blocks": {
+        "slide_A6fBLA": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/Rectangle_35.png",
+            "heading": "let’s change the cycle",
+            "sub_heading": "cycora® is reducing dependence on Earth’s raw resources.",
+            "title": "3.5 million",
+            "text": "pounds of textile waste diverted from landfills.",
+            "btn_text": "join  our  universe",
+            "button_link": "#"
+          }
+        },
+        "slide_qWqj6F": {
+          "type": "slide",
+          "settings": {
+            "bg_image": "shopify:\/\/shop_images\/Rectangle_35_1.png",
+            "heading": "let’s change the cycle",
+            "sub_heading": "cycora® is reducing dependence on Earth’s raw resources.",
+            "title": "~50%",
+            "text": "CO2 reduction compared to virgin polyester production.",
+            "btn_text": "join  our  universe",
+            "button_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "slide_A6fBLA",
+        "slide_qWqj6F"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "1656073119271e84c3",
+    "1653979377789bdf4d",
+    "index_textiles_block_ViUHCE",
+    "929cb9f9-0788-42ed-bf55-1f8121bbe712",
+    "index_partnership_block_Q3VqTL",
+    "index_experiment_MwNNWy",
+    "165397959584b1fd2a",
+    "index_cycle_slider_Q3qh7M"
+  ]
+}

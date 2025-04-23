@@ -1,0 +1,31 @@
+
+    <div class="container-style article-top-container">
+        <h1>{{ article.title }}</h1>
+        <p>{{ article.excerpt }}</p>
+        <span class="scrollable-element" data-scroll="#section2">scroll down</span>
+    </div>
+    
+    <div class="img-holder">
+        <img src="{{ article.image | img_url: '10x' }}"
+             class="lazyload"
+             data-src="{{ article.image | img_url: 'master' }}"
+             data-widths="[1900]"
+             data-sizes="auto"
+             tabindex="-1"
+        />
+    </div>
+
+{% schema %}
+{
+  "name": "Article - Head",
+  "tag": "section",
+  "class": "article-top-section",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Article - Head"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "disabled": true,
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "MEET THE TEAM",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "61fc4a13-7075-4145-bd65-af8837521b1a": {
+      "type": "slideshow",
+      "blocks": {
+        "template--19133072343326__61fc4a13-7075-4145-bd65-af8837521b1a-16850573680fd811c0-0": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/FBACF212-F513-40D1-92A5-150A0D0DBF2E.jpg",
+            "overlay_color": "#000000",
+            "overlay_opacity": 35,
+            "caption_position": "middle_center",
+            "hide_caption_background": false,
+            "heading": "FROM THE SOURCE",
+            "subheading": "",
+            "link": "",
+            "button_text": "Add a button",
+            "second_link": "",
+            "second_button_text": "Button 2 text",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_background": "#000000",
+            "caption_background": "rgba(0,0,0,0)"
+          }
+        }
+      },
+      "block_order": [
+        "template--19133072343326__61fc4a13-7075-4145-bd65-af8837521b1a-16850573680fd811c0-0"
+      ],
+      "settings": {
+        "display_wide": false,
+        "slideshow_size": "fixed_height",
+        "desktop_height": 600,
+        "mobile_height": 300,
+        "caption_below": false,
+        "pager": "dots",
+        "transition": "fade",
+        "slider_speed": 5,
+        "video_audio": "off",
+        "slide_heading_size": 22,
+        "subheading_size": 14,
+        "no_bottom_margin": false
+      }
+    },
+    "340b3515-9055-4704-9290-842fdd87ef49": {
+      "type": "editorial-columns",
+      "blocks": {
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-0": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3_18d5d741-fdb1-44d8-ac36-159419dba359.jpg",
+            "title": "INN OF RANCHO SANTA FE",
+            "richtext": "<p>CALIFORNIA<\/p>",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/inn-of-rancho-santa-fe",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-1": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/42BEE914-35B1-4ABF-807F-C8D5ED8793B5_1_105_c.jpg",
+            "title": "VERBIER",
+            "richtext": "<p>SWITZERLAND<\/p>",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/le-verbier-chalet",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-2": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/StudioP_Sydney_Warehouse_DSCF2255_47d0cf11-588a-4ac6-8a54-8f592fdde980.jpg",
+            "title": "REDFERN",
+            "richtext": "<p>SYDNEY<\/p>",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/red-fern",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-0",
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-1",
+        "template--19133072343326__340b3515-9055-4704-9290-842fdd87ef49-1685491323906bc94e-2"
+      ],
+      "settings": {
+        "title": "SELECTION OF OUR WORK",
+        "rich_text": "",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "#ffffff",
+        "padding": 30
+      }
+    },
+    "editorial_columns_8bMCmA": {
+      "type": "editorial-columns",
+      "blocks": {
+        "image_with_text_UekiFW": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/broad-0013-high.jpg",
+            "title": "BROAD BAY",
+            "richtext": "<p>GOLD COAST<\/p>",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/broad-bay",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "image_with_text_RgMPxT": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/darlingpt2-14-high_c4c87230-8e93-4d23-bc9f-f76852b6da06.jpg",
+            "title": "DARLING",
+            "richtext": "<p>SYDNEY<\/p>",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/darling",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "image_with_text_9UEgCW": {
+          "type": "image_with_text",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/elizabeth-bay-3_c07d269b-828f-47ea-8911-41a59a2b0d8b.jpg",
+            "title": "ELIZABETH",
+            "richtext": "<p>SYDNEY<\/p>",
+            "button_text": "",
+            "link": "shopify:\/\/pages\/elizabeth",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_UekiFW",
+        "image_with_text_RgMPxT",
+        "image_with_text_9UEgCW"
+      ],
+      "settings": {
+        "title": "",
+        "rich_text": "",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "#ffffff",
+        "padding": 30
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "61fc4a13-7075-4145-bd65-af8837521b1a",
+    "340b3515-9055-4704-9290-842fdd87ef49",
+    "editorial_columns_8bMCmA"
+  ]
+}

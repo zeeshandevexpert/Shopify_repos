@@ -1,0 +1,53 @@
+{% assign separator = ' | ' %}
+{% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+
+
+<div id="breadcrumbs">
+  <div class="page-width">
+    <nav class="flex breadcrumb c" role="navigation" aria-label="breadcrumbs">
+      <div class="breadcrumb-inner">
+        <a href="/" title="Home">Home</a>
+        {% if template contains 'page' %}
+        <span aria-hidden="true">&rsaquo;</span>
+        <span>{{ page.title }}</span>
+        {% elsif template contains 'product' %}
+        {% if collection.url %}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        {{ collection.title | link_to: collection.url }}
+        {% endif %}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        <span>{{ product.title }}</span>
+        {% elsif template contains 'collection' and collection.handle %}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        {% if current_tags %}
+        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+        {{ collection.title | link_to: url }}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        <span>{{ current_tags | join: " + " }}</span>
+        {% else %}
+        <span>{{ collection.title }}</span>
+        {% endif %}
+        {% elsif template == 'blog' %}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        {% if current_tags %}
+        {{ blog.title | link_to: blog.url }}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        <span>{{ current_tags | join: " + " }}</span>
+        {% else %}
+        <span>{{ blog.title }}</span>
+        {% endif %}
+        {% elsif template == 'article' %}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        {{ blog.title | link_to: blog.url }}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        <span>{{ article.title }}</span>
+        {% else %}
+        <span class="separator" aria-hidden="true">{{separator}}</span>
+        <span>{{ page_title }}</span>
+        {% endif %}
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% endunless %}

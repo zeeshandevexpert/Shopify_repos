@@ -1,0 +1,404 @@
+{%- liquid
+
+  assign number = section.settings.products_per_page
+  assign sidebar_enabled = false
+  assign sort_by = false
+  assign subcollections = false
+  assign disable_filters = false
+
+  case section.settings.grid
+    when 2
+      assign grid_item_width = 'span-6'
+    when 3
+      assign grid_item_width = 'span-4 md-span-4'
+    when 4
+      assign grid_item_width = 'span-3 md-span-4'
+  endcase
+
+  if section.settings.mobile_single == true
+    assign mobile_width = 'sm-span-12'
+  else
+    assign mobile_width = 'sm-span-6'
+  endif
+
+  if section.settings.sort_by
+    assign sort_by = true
+  endif
+
+  if section.settings.show_subcollection_grid
+    assign subcollections = true
+  endif
+
+
+  for block in section.blocks
+    if block.type == 'sidebar_menu' or block.type == 'sidebar_subcollections' or block.type == 'sidebar_filter' or block.type == 'sidebar_image' or block.type == 'sidebar_text_note'
+      assign sidebar_enabled = true
+    endif
+  endfor
+
+  assign filter_count = 0
+  for filter in collection.filters
+    if filter.type == 'price_range'
+      if filter.min_value.value != nil or filter.max_value.value != nil
+        assign filter_count = 1
+      endif
+    endif
+
+    assign filter_count = filter_count | plus: filter.active_values.size
+  endfor
+
+  assign is_sticky = false
+  if section.settings.sticky_sidebar
+    assign is_sticky = true
+  endif
+
+-%}
+
+
+<section id="collection__page-template" class="collection__detail-wrapper"
+data-section-id="{{ section.id }}"
+data-section-type="collection-section"
+data-collection-link="{{ collection_link }}"
+data-aos="{{ settings.scroll_animation }}">
+ <form id="main-collection-form">
+  {% paginate collection.products by number %}
+
+    {%- liquid
+
+      if section.blocks.size == 1
+        for block in section.blocks
+          if block.type == 'sidebar_filter' and paginate.items >= 1000
+            assign disable_filters = true
+          endif
+        endfor
+      endif
+
+    -%}
+
+    <div id="CollectionProductGrid" class="row grid__wrapper">
+
+      <div class="collection__control-bar span-12 auto">
+        {% if sidebar_enabled and disable_filters == false %}
+          <div class="filter__view--toggle">
+            <a id="filter--toggle" class="show js-collection-side-toggle show-filter" href="#" aria-label="Open filters" title="{{ 'collections.general.refine' | t }}">
+              <span class="vib-center">{{ 'collections.general.refine' | t }}</span>
+              {% render 'snip-icons',
+               wrapper: '.js-collection-side-toggle',
+               type: 'apollo',
+               icon: 'filter',
+               classes: 'js-collection-side-toggle vib-center',
+               size: '14px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+               {% render 'snip-icons',
+                wrapper: '.js-collection-side-toggle',
+                type: 'apollo',
+                icon: 'right-carrot',
+                classes: 'js-collection-side-toggle vib-center',
+                size: '10px',
+                fill: 'var(--text-color)',
+                hover: 'var(--text-color)' %}
+            </a>
+          </div>
+        {% endif %}
+
+        {% if sort_by %}
+          <div class="collection__page-sort" data-collection-filters>
+            <div class="collection__upper-pagination">
+              <p class="mb0">{{ paginate.items }} {{ 'collections.general.products' | t }}</p>
+            </div>
+            <div class="collection__horizontal-toolbar sort-by__wrapper" data-collection-sort-by>
+              {% render 'snip-icons',
+               wrapper: '.sort-by__wrapper',
+               type: 'apollo',
+               icon: 'down-carrot',
+               classes: 'sort-by__wrapper vib-center',
+               size: '8px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+              <div class="collection__filtering js-hz-filter">
+                <input class="chosen-value js-hz-filter-input" type="text" value="" data-filter-type="sort-by" data-placeholder="{{ 'collections.general.sort_by_placeholder' | t }}" data-generic-placeholder="{{ 'collections.general.sort_by_placeholder' | t }}" placeholder="{{ 'collections.general.sort_by_placeholder' | t }}">
+                <ul class="value-list js-hz-filter-list">
+                  {% for option in collection.sort_options %}
+                    {%- liquid
+                      if option.value == collection.sort_by
+                        assign status = 'current'
+                      else
+                        assign status = 'available'
+                      endif
+                    -%}
+                    <li class="{{ status }}" data-placeholder="{{ option.name }}" data-option-value="{{ option.value }}">
+                      <input type="checkbox"
+                             name="sort_by"
+                             value="{{ option.value | escape }}"
+                             id="Sortby-{{ option.name | escape }}-{{ forloop.index }}">
+                      <label class="js-hz-filter-label" for="Sortby-{{ option.name | escape }}-{{ forloop.index }}">{{ option.name }}</label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      {% if sidebar_enabled and disable_filters == false %}
+        <div id="collection__sidebar" class="collection__sidebar-container hidden span-3 md-span-12 sm-span-12 auto open">
+          <div id="CollectionSidebarFiltersForm" {% if is_sticky %}class="is_sticky" {% endif %}data-collection-sidebar-filters>
+              {% render 'collection-sidebar', collection: collection %}
+          </div>
+        </div>
+      {% endif %}
+
+      <div id="collection__grid--container" class="{% if sidebar_enabled and disable_filters == false %}span-9 {% else %}span-12 {% endif %}md-span-12 sm-span-12 auto">
+
+        {% if subcollections %}
+          <div class="collection__subcollections collection__grid-loop row grid__wrapper five_column_grid" {{ block.shopify_attributes }}>
+            {% render 'subcollections' %}
+          </div>
+          <div class="clear"></div>
+        {% endif %}
+
+        {% if filter_count > 0 %}
+          <div id="current-filters" class="filtering__results js-filters-reset collection__filters--cur_wrapper span-12 md-span-12 sm-span-12 auto">
+            <ul class="current_tags">
+              {%- for filter in collection.filters -%}
+                {%- for value in filter.active_values -%}
+                  <li class="current_filters--filter current_tag">
+                    <a class="js-current-filter" href="{{ value.url_to_remove }}">
+                      {{ value.label | escape }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+                {% if filter.type == "price_range" %}
+                  {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                    <li class="current_filters--filter current_tag">
+                      <a class="js-current-filter" href="{{ filter.url_to_remove }}">
+                        {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
+                      </a>
+                    </li>
+                  {%- endif -%}
+                {% endif %}
+              {%- endfor -%}
+              <li><a class="current_filters--clear js-current-filter clear-tags" href="{{ collection.url }}" aria-label="{{ 'collections.general.clear_all_tags' | t }}" aria-role="button">{{ 'collections.general.clear_all_tags' | t }}</a></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+        {% endif %}
+
+        {%- if collection.products.size >= 1 -%}
+          <div id="main-collection-product-grid"
+            class="collection__grid-loop grid__wrapper edge"
+            data-aos="{{ settings.scroll_animation }}"
+            data-id="{{ section.id }}">
+
+            {% for product in collection.products %}
+              <div class="product-index-loop {{ grid_item_width }} {{ mobile_width }} auto"
+                    data-product-id="{{ product.id }}"
+                    data-alpha="{{ product.title }}"
+                    data-price="{{ product.price }}"
+                    data-color-options="{%- render 'product-listing-color-options', product: product, collection: collection -%}"
+                    data-size-options="{%- render 'product-listing-size-options', product: product, collection: collection -%}">
+                    {% render 'product-listing-custom', product: product, collection: collection, grid: section.settings.grid %}
+              </div>
+            {% endfor %}
+
+            <div class="span-12 auto">
+              {% render 'pagination', paginate: paginate %}
+            </div>
+
+          </div>
+
+        {%- else -%}
+          <div id="main-collection-product-grid"
+            class="collection__grid-loop grid__wrapper"
+            data-id="{{ section.id }}">
+            <div class="span-12 auto">
+              <p class="rte">{{ 'collections.general.use_fewer_filters_html' | t: link: collection.url, class: "underline" }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {% endpaginate %}
+  </form><!-- /#MainCollectionForm -->
+</section>
+
+
+{% schema %}
+{
+  "name": "Collection Page",
+  "settings": [
+    {
+      "type": "range",
+      "id": "grid",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Products per row",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_single",
+      "label": "1 per row mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 2,
+      "max": 50,
+      "step": 1,
+      "label": "Products per page",
+      "default": 46
+    },
+    {
+      "type":"checkbox",
+      "id":"sort_by",
+      "label":"Show sort by",
+      "default":false
+    },
+    {
+      "type":"checkbox",
+      "id":"show_subcollection_grid",
+      "label":"Show subcollections",
+      "default":false
+    },
+    {
+      "type":"checkbox",
+      "id":"sticky_sidebar",
+      "label":"Make sidebar stick on scroll",
+      "default":true
+    }
+  ],
+  "blocks":[
+    {
+      "type": "sidebar_filter",
+      "name": "Sidebar filter",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Learn how to add storefront filters [here](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/os20\/customize\/filters)"
+        },
+        {
+          "type":"checkbox",
+          "id":"default_open_accordion",
+          "label":"Open by default"
+        },
+        {
+          "type": "select",
+          "id": "color_filter_options",
+          "label": "Color filters",
+          "default": "swatch_with_label",
+          "options": [
+            {
+              "value": "swatch_with_label",
+              "label": "Color swatch with label"
+            },
+            {
+              "value": "swatch_only",
+              "label": "Color swatch only"
+            },
+            {
+              "value": "swatch_hidden",
+              "label": "Color label only"
+            }
+          ]
+        }
+      ]
+    },
+     {
+       "type":"sidebar_menu",
+       "name":"Sidebar menu",
+       "settings":[
+         {
+           "type": "link_list",
+           "id": "side_nav",
+           "label": "Sidebar menu",
+           "info":"This menu has limited support for dropdown items"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Menu title",
+           "default": "Explore"
+         },
+         {
+           "type":"checkbox",
+           "id":"default_open_accordion",
+           "label":"Open by default"
+         }
+       ]
+     },
+     {
+       "type":"sidebar_subcollections",
+       "name":"Sidebar sub collections",
+       "settings":[
+         {
+           "type": "link_list",
+           "id": "menu",
+           "label": "Sub collections",
+           "info":"Show a menu of collections and sub collections"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Menu title",
+           "default": "Explore"
+         },
+         {
+           "type":"checkbox",
+           "id":"default_open_accordion",
+           "label":"Open by default"
+         }
+       ]
+     },
+     {
+       "type":"sidebar_image",
+       "name":"Sidebar image",
+       "settings":[
+         {
+           "type":"paragraph",
+           "content":"Visible on desktop only"
+         },
+         {
+           "type":"image_picker",
+           "id":"image",
+           "label":"Image",
+           "info" : "400px x 400px recommended"
+         },
+         {
+           "type":"url",
+           "id":"link",
+           "label":"Link",
+           "info":"Optional"
+         }
+       ]
+     },
+     {
+       "type":"sidebar_text_note",
+       "name":"Sidebar text",
+       "settings":[
+         {
+           "type":"paragraph",
+           "content":"Visible on desktop only"
+         },
+         {
+           "type":"text",
+           "id":"textbox_heading",
+           "label":"Heading",
+           "default": "Heading"
+         },
+         {
+           "type":"richtext",
+           "id":"textbox_subheading",
+           "label":"Subheading",
+           "default": "<p>Subheading</p>"
+         }
+       ]
+     }
+   ]
+}
+{% endschema %}

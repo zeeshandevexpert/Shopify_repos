@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "1655277611fb101077": {
+      "type": "article-head",
+      "settings": {
+      }
+    },
+    "165527796428cd910f": {
+      "type": "article-content",
+      "settings": {
+      }
+    },
+    "c75644a9-bbc4-4fe5-8e7c-742a1d04ff8b": {
+      "type": "article-content-full",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16552817345454312b": {
+      "type": "article-share",
+      "settings": {
+        "title": "share this post"
+      }
+    },
+    "165521410096244eae": {
+      "type": "blog-bottom",
+      "blocks": {
+        "1f5f7d5e-a6d5-44d1-a933-d11d5707bffb": {
+          "type": "point",
+          "settings": {
+            "title": "2023",
+            "link": "shopify:\/\/blogs\/zine\/zara-circularity-meets-performance",
+            "description": "ZARA Athleticz",
+            "point_1": "launch",
+            "point_2": "product",
+            "point_3": ""
+          }
+        },
+        "50738004-f4a5-4213-b69a-6d0d8188afe2": {
+          "type": "point",
+          "settings": {
+            "title": "2023",
+            "link": "shopify:\/\/blogs\/zine\/knarli-x-cycora®",
+            "description": "Kozaburo SS2024",
+            "point_1": "launch",
+            "point_2": "product",
+            "point_3": ""
+          }
+        },
+        "470ab405-7608-4020-bf06-e9b059e59d2b": {
+          "type": "point",
+          "settings": {
+            "title": "2023",
+            "link": "shopify:\/\/blogs\/news\/tombogo™-x-cycora®",
+            "description": "TOMBOGO SS24",
+            "point_1": "launch",
+            "point_2": "product",
+            "point_3": ""
+          }
+        },
+        "9afbb378-983a-49f7-bd0c-f02837ba0c4c": {
+          "type": "point",
+          "settings": {
+            "title": "2023",
+            "link": "shopify:\/\/blogs\/news\/the-journey-of-a-t-shirt",
+            "description": "journey of a t-shirt",
+            "point_1": "educational",
+            "point_2": "",
+            "point_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "1f5f7d5e-a6d5-44d1-a933-d11d5707bffb",
+        "50738004-f4a5-4213-b69a-6d0d8188afe2",
+        "470ab405-7608-4020-bf06-e9b059e59d2b",
+        "9afbb378-983a-49f7-bd0c-f02837ba0c4c"
+      ],
+      "settings": {
+        "title": "related blog posts",
+        "description": "read more about our recent collaborations and thoughts from our team",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-29_at_10.43.14_AM.png"
+      }
+    },
+    "16552141063f22a5a8": {
+      "type": "blog-text",
+      "settings": {
+        "text_1": "shop cycora®",
+        "text_2": "",
+        "drophover_title": "",
+        "drophover_text": "",
+        "button_title": "marketplace",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    }
+  },
+  "order": [
+    "1655277611fb101077",
+    "165527796428cd910f",
+    "c75644a9-bbc4-4fe5-8e7c-742a1d04ff8b",
+    "16552817345454312b",
+    "165521410096244eae",
+    "16552141063f22a5a8"
+  ]
+}

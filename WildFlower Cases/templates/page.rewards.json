@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": true,
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "padding_top": 28,
+        "padding_bottom": 0,
+        "page_width": "page-width--narrow"
+      }
+    },
+    "0af46069-8a85-4f26-ab84-5bdab508c48e": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14959056388144__0af46069-8a85-4f26-ab84-5bdab508c48e-16783949592e68bd0d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "template--14959056388144__0af46069-8a85-4f26-ab84-5bdab508c48e-16783949592e68bd0d-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Join Now",
+            "button_link_1": "https://www.wildflowercases.com/account/register",
+            "button_style_secondary_1": false
+          }
+        },
+        "513bc0e3-4214-472b-98d7-fc3462fd2bde": {
+          "type": "text",
+          "settings": {
+            "text": "With more ways to unlock exciting perks, this is your all access pass to exclusive rewards.",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14959056388144__0af46069-8a85-4f26-ab84-5bdab508c48e-16783949592e68bd0d-0",
+        "template--14959056388144__0af46069-8a85-4f26-ab84-5bdab508c48e-16783949592e68bd0d-1",
+        "513bc0e3-4214-472b-98d7-fc3462fd2bde"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Wildflower-Cases-Antonio-Garza-Collab-Image-01_9ad7df07-fb06-4b94-b2b9-5094f4efb1c4.jpg",
+        "image_mobile": "shopify://shop_images/333683522_736783624691128_4914951071947070698_n.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "dark",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
+    },
+    "b32a46a8-1166-4ae3-b067-5089547ca142": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14959056388144__b32a46a8-1166-4ae3-b067-5089547ca142-1678395173befe5358-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Already have an account?</p>"
+          }
+        },
+        "template--14959056388144__b32a46a8-1166-4ae3-b067-5089547ca142-1678395173befe5358-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Sign in",
+            "button_link": "https://www.wildflowercases.com/account/login",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14959056388144__b32a46a8-1166-4ae3-b067-5089547ca142-1678395173befe5358-1",
+        "template--14959056388144__b32a46a8-1166-4ae3-b067-5089547ca142-1678395173befe5358-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "0af46069-8a85-4f26-ab84-5bdab508c48e",
+    "b32a46a8-1166-4ae3-b067-5089547ca142"
+  ]
+}

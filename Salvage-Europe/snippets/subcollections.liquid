@@ -1,0 +1,41 @@
+{% assign current_collection = collection %}
+
+{% for link in linklists.main-menu.links %}
+
+   {% if link.current %}
+     {% for sub_link in link.links %}
+       {% if sub_link.type == 'collection_link' %}
+       {%- assign collection = sub_link.object -%}
+       <div class="product-index {{ column_width }} auto" data-alpha="{{ sub_link.title }}">
+         {% if collection %}
+           {% render 'collection-grid-item', collection: collection grid: 0 %}
+         {% endif %}
+       </div>
+       {% endif %}
+     {% endfor %}
+   {% endif %}
+
+   {% for sub_link in link.links %}
+     {% if sub_link.links != blank %}
+       {% if sub_link.active %}
+         {% for sub_sub_link in sub_link.links %}
+           {% if sub_sub_link.type == 'collection_link' %}
+           {%- assign collection = sub_sub_link.object -%}
+              {% unless collection == current_collection %}
+                 <div class="product-index {{ column_width }} auto" data-alpha="{{ collection.title }}">
+                  {% if collection %}
+                    {% render 'collection-grid-item', collection: collection grid: 0 %}
+                  {% endif %}
+                 </div>
+               {% endunless %}
+           {% endif %}
+         {% endfor %}
+
+       {% else %}
+
+       {% endif %}
+
+     {% endif %}
+   {% endfor %}
+
+{% endfor %}

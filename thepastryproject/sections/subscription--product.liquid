@@ -1,0 +1,1205 @@
+{{ 'section-featured-product.min.css' | asset_url | stylesheet_tag }}
+{{ 'custom-subscription-app.css' | asset_url | stylesheet_tag }}
+{{ 'subscription-modal-popup.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="homepage-sections-wrapper subscription-product {% if section.settings.font_padding != blank %}section-padding{% endif %}"
+  style="background-color: {{ section.settings.subscription--background-color }};"
+>
+  {%- liquid
+    assign product = section.settings.subscription_product
+    assign current_variant = product.selected_or_first_available_variant 
+  -%}
+
+  {% comment %}
+    Check if the product is on sale and set a variable to be used below.
+  {% endcomment %}
+  {% liquid 
+    assign on_sale = false
+    if current_variant.compare_at_price > current_variant.price
+      assign on_sale = true
+    endif 
+  %}
+
+  <div
+    class="container product--featured-product"
+    data-wetheme-section-type="product--featured-product"
+    data-wetheme-section-id="{{ section.id }}"
+  >
+    <div class="row" id="product-box" data-section-id="{{ section.id }}">
+      <div class="col-12 col-lg-6 product-images wow">
+        {% if settings.show_sale_badge %}
+          <div class="fresh-badge sale-badge product-price__sale-label-{{ section.id }}{% unless on_sale %} hide{% endunless %}">
+            {{ 'products.general.sale' | t }}
+          </div>
+        {% endif %}
+        {% if product != empty and product.media.size > 0 %}
+          <div class="homepage-sections--indiv-product-slider product-single__thumbnails">
+            <div class="swiper-container" data-slides-per-view="1">
+              <div class="swiper-wrapper">
+                {% assign featured_media = current_variant.featured_media | default: product.featured_media %}
+                {% render 'product-media',
+                  product: product,
+                  section_id: section.id,
+                  featured_media_id: featured_media.id,
+                  enable_image_zoom: false,
+                  enable_video_loop: section.settings.enable_video_loop,
+                  autoplay: false
+                %}
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        {% else %}
+          <div class="homepage-sections--indiv-product-slider">
+            <ul class="slides">
+              <li>
+                {{ 'product-1' | placeholder_svg_tag: 'icon--placeholder' }}
+              </li>
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="col-12 col-lg-6 mt-5 mt-lg-0">
+        <section class="product-description-main-wrapper wow {% if settings.enable_store_pickup %}store-pickup-enabled{% endif %}">
+          {% unless product == empty %}
+            {% if settings.show_vendor or section.settings.show_SKU %}
+              <div class="row">
+                {% if settings.show_vendor %}
+                  <div class="indiv-product-vendor-text col-{% if section.settings.show_SKU %}6{% else %}12{% endif %}">
+                    {{ product.vendor }}
+                  </div>
+                {% endif %}
+                {% if section.settings.show_SKU %}
+                  <div class="indiv-product-sku-text col-{% if settings.show_vendor %}6 text-right{% else %}12{% endif %}{% unless current_variant.sku %} hide{% endunless %}">
+                    {{ current_variant.sku }}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endunless %}
+
+          {% if section.settings.show_title %}
+            {% if product == empty %}
+              <h2>{{ 'general.onboarding.product_title' | t }}</h2>
+            {% else %}
+              <a class="homepage-headline-text__link" href="{{ product.url }}">
+                <h2 class="sectionHeading">{{ product.title }}</h2>
+              </a>
+            {% endif %}
+          {% endif %}
+
+          {% if section.settings.show_product_description %}
+            {% unless product == empty %}
+              <div class="entry-content product-description-wrapper">
+                {{ product.description | strip_html | truncate: 180 }}
+              </div>
+            {% else %}
+              <p>
+                {{ 'general.onboarding.product_description' | t }}
+              </p>
+            {% endunless %}
+          {% endif %}
+
+          {% unless product == empty %}
+            {% if product.available %}
+              <product-form>
+              {% form 'product', product, id: 'add-to-cart-form' %}
+                <!-- <input type="hidden" id="cart-link" value="{{ routes.cart_url }}" /> -->
+                <input type="hidden" name="return_to" value="/checkout/">
+
+                {% if section.settings.show_price %}
+                  <ul class="product-page--pricing{% unless section.settings.show_discount == 'hide' %} discount-badge{% endunless %}">
+                    {% render 'product-pricing', current_variant: current_variant %}
+                    {% render 'unit-price-measurement-variant', current_variant: current_variant %}
+                  </ul>
+                {% endif %}
+
+                <div class="shopify-payment-terms__container">
+                  {{ form | payment_terms }}
+                </div>
+
+                {% assign hide_default_title = false %}
+                {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+                  {% assign hide_default_title = true %}
+                {% endif %}
+
+                <div class="row homepage-sections--indiv-product-slider-variants">
+                  {% if product.variants.size > 0 %}
+                    {% for option in product.options_with_values %}
+                      <div class="product-form-option--featured-product col-md-6 col-sm-12 col-12{% if hide_default_title == true %} hide{% endif %}">
+                        <div class="input-field product-option-select">
+                          <wetheme-dropdown fit="parent">
+                            <select id="SingleOptionSelector-{{ forloop.index0 }}" class="wetheme-dropdown__select">
+                              {% for value in option.values %}
+                                {% if option.selected_value == value %}
+                                  {% assign props = 'selected' %}
+                                {% else %}
+                                  {% assign props = '' %}
+                                {% endif %}
+
+                                {% comment %}
+                                  Hide out of stock variants
+                                  {% assign hide = false %}
+                                  {% if product.options_with_values.size == 1 and section.settings.hide_out_of_stock %}
+                                    {% assign hide = true %}
+                                    {% for v in product.variants %}
+                                      {% if v.option1 == value and v.available %}
+                                        {% assign hide = false %}
+                                      {% endif %}
+                                    {% endfor %}
+                                  {% endif %}
+                                {% endcomment %}
+                                {% unless hide %}
+                                  <option {{ props }} value="{{ value | escape }}">{{ value }}</option>
+                                {% endunless %}
+                              {% endfor %}
+                            </select>
+                            <label for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}:</label>
+                          </wetheme-dropdown>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+
+                  <select
+                    name="id"
+                    id="ProductSelect-{{ section.id }}"
+                    data-section="{{ section.id }}"
+                    class="form-control original-select product-form__variants no-js"
+                  >
+                    {% for variant in product.variants %}
+                      {% if variant.available %}
+                        <option
+                          {% if variant == current_variant %}
+                            selected
+                          {% endif %}
+                          value="{{ variant.id }}"
+                        >
+                          {{ variant.title }}
+                        </option>
+                      {% else %}
+                        <option disabled>{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+
+                  {% if section.settings.show_quantity_selector %}
+                    <div class="quantity-controls__outer selector-wrapper col-md-6 col-sm-12 col-12">
+                      <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+
+                      <div class="quantity-controls">
+                        <button
+                          type="button"
+                          class="qty-minus alt-focus"
+                          aria-label="Reduce item quantity by one"
+                        >
+                          -
+                        </button>
+                        <label for="quantity" class="sr-only"></label>
+                        <input
+                          id="quantity"
+                          class="quantity-selector"
+                          value="1"
+                          min="1"
+                          type="text"
+                          name="quantity"
+                        >
+                        <button
+                          type="button"
+                          class="qty-plus alt-focus"
+                          aria-label="Increase item quantity by one"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  <div class="col-md-12 col-sm-12 col-12 featured-product--submit-action">
+                    <span
+                      class="appstle_stand_alone_selector homeAppstle"
+                      data-product-data="{{ all_products[product.handle] | json | escape }}"
+                      style="display:none;"
+                    ></span>
+
+                    <!-- Modal start popup -->
+
+                    <!-- Button trigger modal -->
+                    <button
+                      type="button"
+                      class="btn btn-primary subscriptionModal"
+                      data-target="#modal"
+                      data-toggle="modal"
+                    >
+                      {{ 'products.product.add_to_cart' | t }}
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="fade modalLayer"></div>
+                    <div
+                      class="modal fade subscriptionModalPopup"
+                      id="modal"
+                      role="dialog"
+                      aria-labelledby="modalLabel"
+                      tabindex="-1"
+                    >
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            {% if section.settings['title-popup'] %}
+                              <h2 class="popupHeading">{{ section.settings['title-popup'] }}</h2>
+                            {% endif %}
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <svg
+                                version="1.1"
+                                xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 20 20"
+                              >
+                                <path fill="#cf6a28" d="M10.707 10.5l5.646-5.646c0.195-0.195 0.195-0.512 0-0.707s-0.512-0.195-0.707 0l-5.646 5.646-5.646-5.646c-0.195-0.195-0.512-0.195-0.707 0s-0.195 0.512 0 0.707l5.646 5.646-5.646 5.646c-0.195 0.195-0.195 0.512 0 0.707 0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146l5.646-5.646 5.646 5.646c0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146c0.195-0.195 0.195-0.512 0-0.707l-5.646-5.646z"></path>
+                              </svg>
+                            </button>
+                          </div>
+
+                          <div class="modal-body">
+                            {% if section.settings['title-popup-month'] %}
+                              <label class="label">{{ section.settings['title-popup-month'] }}</label>
+                            {%- endif %}
+                            
+                            <div class="FormGroup">
+                              <div class="FormItem">
+                                <label class="label" for="Property-sender-{{ section.id }}">
+                                  {{ 'products.recipient.your_name' | t }}</span>
+                                </label>
+                            
+                                <div class="line-item-property__field">
+                                  <input
+                                    class="form-input"
+                                    id="Property-sender-{{ section.id }}"
+                                    type="text"
+                                    placeholder="Your First Name & Last Name"
+                                    name="properties[Your name]"
+                                    value="{% if customer %}{{ customer.name }}{% endif %}"
+                                  >
+                                </div>
+                              </div>
+                                
+                              <div class="FormItem">
+                                <label class="label" for="Property-name-{{ section.id }}">
+                                  {{- 'products.recipient.recipient_name' | t -}}
+                                </label>
+                            
+                                <div class="line-item-property__field">  
+                                  <input
+                                    class="form-input"
+                                    type="text"
+                                    id="Property-name-{{ section.id }}"
+                                    placeholder="First Name & Last Name"
+                                    name="properties[Recipient name]"
+                                    value="{{ form.name }}"
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                      
+                            <div class="FormItem">
+                              {%- assign max_chars_message = 200 -%}
+                              {%- assign max_chars_message_rendered = 'products.recipient.max_characters' | t: max_chars: max_chars_message -%}
+                              {%- assign message_label_rendered = 'products.recipient.message_placeholder' | t -%}
+                              
+                              <div class="split-label">
+                                <label class="label" for="Property-message-{{ section.id }}">
+                                  {{ 'products.recipient.message_label' | t }}
+                                </label>
+                                <span class="optional_message">
+                                  (optional - this note will be placed in the first shipment)
+                                </span>
+                              </div>
+                        
+                              <div class="line-item-property__field">
+                                <textarea
+                                    rows="4"
+                                    id="Property-message-{{ section.id }}"
+                                    class="form-input"
+                                    name="properties[Order Note]"
+                                    placeholder="{{ message_label_rendered }}"
+                                    maxlength="{{ max_chars_message }}"
+                                    aria-label="{{ message_label_rendered }} {{ max_chars_message_rendered }}"
+                                  >{{ form.message }}</textarea>
+                                  <label class="label label-support">
+                                    <span>{{ max_chars_message_rendered }}</span>
+                                  </label>  
+                              </div>
+                            </div>
+                        
+                            <div class="FormItem">
+                              <label class="label" for="Property-start-on-{{ section.id }}">
+                                {{- 'products.recipient.recipient_address' | t -}}
+                              </label>
+
+                              <div class="line-item-property__field">  
+                                  <input
+                                    class="form-input"
+                                    autocomplete="address-line1"
+                                    type="text"
+                                    id="Property-address-{{ section.id }}"
+                                    name="properties[Recipient Address]"
+                                    placeholder="124 Main Street Suit/Unit/Apt Number"
+                                    value=""
+                                  >
+                                </div>
+
+                              <div class="FormSubGroup">    
+                                <div class="FormItem--sub">
+                                  <div class="line-item-property__field">  
+                                    <input
+                                      class="form-input"
+                                      autocomplete="address-level2"
+                                      type="text"
+                                      placeholder="City"
+                                      id="Property-city-{{ section.id }}"
+                                      name="properties[Recipient City]"
+                                      value=""
+                                    >
+                                  </div>
+                                </div>
+                                <div class="FormItem--sub">
+                                  <div class="line-item-property__field">  
+                                    <input
+                                      class="form-input"
+                                      autocomplete="address-level1"
+                                      type="text"
+                                      placeholder="State"
+                                      id="Property-state-{{ section.id }}"
+                                      name="properties[Recipient State]"
+                                      value=""
+                                    >
+                                  </div>
+                                </div>
+                                <div class="FormItem--sub">
+                                  <div class="line-item-property__field">  
+                                    <input
+                                      class="form-input"
+                                      autocomplete="postal-code"
+                                      type="text"
+                                      placeholder="Zip"
+                                      id="Property-zip-{{ section.id }}"
+                                      name="properties[Recipient Zip]"
+                                      value=""
+                                    >
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="FormGroup">
+                              <div class="FormItem">
+                                <label class="label" for="Property-email-{{ section.id }}">
+                                  <span class="recipient-email-label required">{{ 'products.recipient.recipient_email' | t }}</span>
+                                </label>
+                                <span class="optional_message">
+                                  (optional - we will send monthly baking tips during the subscription)
+                                </span>
+                            
+                                <div class="line-item-property__field">
+                                  <input
+                                    class="form-input"
+                                    id="Property-email-{{ section.id }}"
+                                    type="email"
+                                    name="properties[Recipient email]"
+                                    value="{{ form.email }}"
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="FormItem">
+                                <label class="label" for="Property-email-{{ section.id }}">
+                                  <span class="recipient-email-label required">{{ 'products.recipient.ship_month' | t }}</span>
+                                </label>
+                                <span class="optional_message">
+                                  (This will be the month we ship their first kit out)
+                                </span>
+                            
+                                <div class="line-item-property__field">
+                                  <select name="properties[Starting Month]">
+                                    <option value="">--Select Month--</option>
+                                    <option selected value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="product-form__error-message-wrapper" role="alert" hidden>
+                              <span class="product-form__error-message"></span>
+                            </div>
+
+                            <button
+                              type="submit"
+                              name="add"
+                              id="purchase-btn"
+                              data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                              class="btn w-100 {% if block.settings.show_smart_checkout and product.selling_plan_groups.size == 0 %} secondary-button{% endif %}subscription-item"
+                              {% if disabled %}
+                                disabled
+                              {% endif %}
+                            >
+                              {% render 'spinner-border' %}
+
+                              {% if current_variant.available %}
+                                {{ 'products.product.purchase' | t }}
+                              {% else %}
+                                {{ 'products.product.sold_out' | t }}
+                              {% endif %}
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal end popup -->
+
+                    {% if section.settings.show_smart_checkout and product.available %}
+                      {{ form | payment_button }}
+                    {% endif %}
+                  </div>
+                </div>
+              {% endform %}
+            </product-form>
+
+            {% else %}
+              <div class="col-md-12 col-sm-12 col-12">
+                <div class="product-out-of-stock">{{ 'products.product.sorry_stock' | t }}</div>
+              </div>
+            {% endif %}
+
+          {% else %}
+            <span class="money">$16.99</span>
+            <div class="onboarding--sold-out">
+              <a class="btn" href="#">
+                {{ 'products.product.sold_out' | t }}
+              </a>
+            </div>
+          {% endunless %}
+
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'text-with-icon' %}
+                {% render 'text-with-icon',
+                  icon: block.settings.icon,
+                  text: block.settings.text,
+                  link: block.settings.link,
+                  block_attributes: block.shopify_attributes
+                %}
+
+              {% when 'custom-liquid' %}
+                <div {{ block.shopify_attributes }}>{{ block.settings['custom-liquid'] }}</div>
+
+              {% when 'product-rating' %}
+                {% if block.settings.rating != blank %}
+                  {% if block.settings['rating-label'] != blank %}
+                    <p class="rating-label">{{ block.settings['rating-label'] }}</p>
+                    {% assign rating_aria_label = block.settings['rating-label'] %}
+                  {% else %}
+                    {% assign rating_aria_label = 'Rating' %}
+                  {% endif %}
+
+                  {% if block.settings['rating-icon-full'] %}
+                    {% liquid
+                      assign rating_decimal = 0
+                      assign decimal = block.settings.rating | modulo: 1
+                      if decimal >= 0.3 and decimal <= 0.7
+                        assign rating_decimal = 0.5
+                      elsif decimal > 0.7
+                        assign rating_decimal = 1
+                      endif
+
+                      assign full_icons = block.settings.rating | floor | plus: rating_decimal | floor
+                      assign empty_icons = block.settings['rating-max'] | round | minus: full_icons
+                      if rating_decimal == 0.5
+                        assign empty_icons = empty_icons | minus: 1
+                      endif
+
+                      assign full_alt = block.settings['rating-icon-full'].alt | default: 'Full icon'
+                      assign empty_alt = block.setting['rating-icon-empty'].alt | default: 'Empty icon'
+                    %}
+
+                    <div
+                      class="rating-icons"
+                      role="img"
+                      aria-label="{{ rating_aria_label }} - {{ block.settings.rating }} out of {{ block.settings.rating-max }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% for i in (1..full_icons) %}
+                        <div class="rating-icons__icon" aria-hidden="true">
+                          {% render 'responsive-image' with block.settings['rating-icon-full'], alt: full_alt %}
+                        </div>
+                      {% endfor %}
+
+                      {% if block.settings['rating-icon-empty'] %}
+                        {% if rating_decimal == 0.5 %}
+                          <div class="rating-icons__icon rating-icons__icon--half" aria-hidden="true">
+                            <div class="rating-icons__image--full">
+                              {% render 'responsive-image' with block.settings['rating-icon-full'], alt: full_alt %}
+                            </div>
+                            <div class="rating-icons__image--empty">
+                              {% render 'responsive-image' with block.settings['rating-icon-empty'], alt: empty_alt %}
+                            </div>
+                          </div>
+                        {% endif %}
+
+                        {% for i in (1..empty_icons) %}
+                          <div class="rating-icons__icon" aria-hidden="true">
+                            {% render 'responsive-image' with block.settings['rating-icon-empty'], alt: empty_alt %}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <p>{{ block.settings.rating }} / {{ block.settings['rating-max'] }}</p>
+                  {% endif %}
+                {% endif %}
+
+              {% when 'image-offer' %}
+                <div class="image-offer-container" {{ block.shopify_attributes }}>
+                  {% if block.settings.link != blank and block.settings.image != blank %}
+                    <a href="{{ block.settings.link }}" class="image-offer-container--is-link">
+                  {% endif %}
+
+                  {% if block.settings.image == blank %}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'icon--placeholder' }}
+                  {% else %}
+                    {% capture alt %}{{ block.settings.image.alt | default: shop.name }}{% endcapture %}
+                    {% render 'responsive-image' with block.settings.image, blur: 'center', alt: alt %}
+                  {% endif %}
+
+                  {% if block.settings.link != blank and block.settings.image != blank %}
+                    </a>
+                  {% endif %}
+                </div>
+
+                <style>
+                  .image-offer-container--is-link:hover img {
+                    border-color: {{ block.settings.hover_border_color }};
+                  }
+                </style>
+            {% endcase %}
+          {% endfor %}
+        </section>
+      </div>
+      {% unless product == empty %}
+        <script type="application/json" class="product-json" id="ProductJson-{{ section.id }}">
+          {{ product | json }}
+        </script>
+      {% endunless %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Subscription product",
+  "class": "homepage-section--indiv-product-wrapper",
+  "settings": [
+    {
+      "type": "range",
+      "id": "font_padding",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "subscription--background-color",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    },
+
+    {
+      "type": "product",
+      "id": "subscription_product",
+      "label": {
+        "en": "Product",
+        "de": "Produkt",
+        "es": "Producto",
+        "fr": "Produit",
+        "pt-PT": "Produto"
+      }
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show Title",
+      "default": false
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Show Price",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_SKU",
+      "label": {
+        "en": "Show SKU",
+        "de": "Bestandseinheit anzeigen",
+        "es": "Mostrar SKU",
+        "fr": "Afficher SKU",
+        "pt-PT": "Mostrar SKU"
+      },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": {
+        "en": "Show quantity selector",
+        "de": "Anzahlauswähler anzeigen",
+        "es": "Mostrar selector de cantidad",
+        "fr": "Afficher le sélecteur de quantité",
+        "pt-PT": "Mostrar selecionador de quantidade"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_smart_checkout",
+      "label": {
+        "en": "Show dynamic checkout button",
+        "de": "Dynamischen Bezahlbutton anzeigen",
+        "es": "Mostar el botón de compra dinámica",
+        "fr": "Afficher le bouton de paiement dynamique",
+        "pt-PT": "Mostrar botão de checkout dinâmico"
+      },
+      "default": true,
+      "info": {
+        "en": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "de": "Lässt Kunden direkt unter Verwendung einer bekannten Zahlungsmethode bezahlen. [Mehr erfahren](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "es": "Permita a los clientes finalizar su compra directamente utilizando un método de pago que les sea familiar. [Aprenda más](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "fr": "Permet aux clients de payer directement en utilisant un mode de paiement familier. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "pt-PT": "Permita que os clientes façam checkout diretamente utilizando um método de pagamento familiar. [Saber mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_description",
+      "label": {
+        "en": "Show product description",
+        "de": "Produktbezeichnung anzeigen",
+        "es": "Mostrar la descripción del producto",
+        "fr": "Afficher la description du produit",
+        "pt-PT": "Mostrar descrição do produto"
+      },
+      "default": true
+    },
+
+    {
+      "type": "header",
+      "content": {
+        "en": "Media",
+        "de": "Medien",
+        "es": "Medios de comunicación",
+        "fr": "Médias",
+        "pt-PT": "Multimédia"
+      },
+      "info": {
+        "en": "Learn more about [media types](https://help.shopify.com/manual/products/product-media)",
+        "de": "Mehr Informationen über [Medientypen ](https://help.shopify.com/manual/products/product-media)",
+        "es": "Más información sobre [tipos de archivos multimedia](https://help.shopify.com/manual/products/product-media)",
+        "fr": "En savoir plus sur les [types de supports multimédia](https://help.shopify.com/manual/products/product-media)",
+        "pt-PT": "Saiba mais sobre [media types](https://help.shopify.com/manual/products/product-media)"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_loop",
+      "label": {
+        "de": "Videschleife aktivieren",
+        "en": "Enable video looping",
+        "es": "Habilitar la reproducción de video en bucle",
+        "fr": "Activer le bouclage de la vidéo",
+        "pt-PT": "Ativar ciclo de vídeo"
+      },
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "title-popup",
+      "label": "Popup Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Text with icon",
+      "type": "text-with-icon",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": {
+            "en": "Icon",
+            "de": "Symbol",
+            "es": "Icono",
+            "fr": "Icône",
+            "pt-PT": "Ícone"
+          },
+          "default": "takeaway",
+          "options": [
+            {
+              "value": "none",
+              "label": {
+                "en": "None",
+                "de": "Keiner",
+                "es": "Ninguno",
+                "fr": "Aucun",
+                "pt-PT": "Nenhum"
+              }
+            },
+            {
+              "value": "home-smile",
+              "label": {
+                "en": "Home with smile",
+                "de": "Haus mit Lächeln",
+                "es": "Hogar con sonrisa",
+                "fr": "Accueil souriant",
+                "pt-PT": "Casa com sorriso"
+              }
+            },
+            {
+              "value": "store",
+              "label": {
+                "en": "Store",
+                "de": "Speichern",
+                "es": "Tienda",
+                "fr": "Magasin",
+                "pt-PT": "Loja"
+              }
+            },
+            {
+              "value": "flag",
+              "label": {
+                "en": "Flag",
+                "de": "Flagge",
+                "es": "Bandera",
+                "fr": "Drapeau",
+                "pt-PT": "Bandeira"
+              }
+            },
+            {
+              "value": "service",
+              "label": {
+                "en": "Customer service",
+                "de": "Kundendienst",
+                "es": "Servicio al cliente",
+                "fr": "Service clients",
+                "pt-PT": "Serviço ao cliente"
+              }
+            },
+            {
+              "value": "chat",
+              "label": {
+                "en": "Chat bubble",
+                "de": "Chat-Blase",
+                "es": "Burbuja de chat",
+                "fr": "Bulle de chat",
+                "pt-PT": "Bolha de conversa"
+              }
+            },
+            {
+              "value": "chat-smile",
+              "label": {
+                "en": "Chat bubble with smile",
+                "de": "Chat-Blase mit Lächeln",
+                "es": "Burbuja de chat con sonrisa",
+                "fr": "Bulle de chat avec sourire",
+                "pt-PT": "Bolha de conversa com sorriso"
+              }
+            },
+            {
+              "value": "question-answer",
+              "label": {
+                "en": "Question and answer",
+                "de": "Frage und Antwort",
+                "es": "Pregunta y respuesta",
+                "fr": "Question et réponse",
+                "pt-PT": "Pergunta e resposta"
+              }
+            },
+            {
+              "value": "wallet",
+              "label": {
+                "en": "Wallet",
+                "de": "Geldbörse",
+                "es": "Cartera",
+                "fr": "Portefeuille",
+                "pt-PT": "Carteira"
+              }
+            },
+            {
+              "value": "price-tag",
+              "label": {
+                "en": "Price tag",
+                "de": "Preisschild",
+                "es": "Etiqueta de precio",
+                "fr": "Étiquette de prix",
+                "pt-PT": "Etiqueta de preço"
+              }
+            },
+            {
+              "value": "vip",
+              "label": {
+                "en": "VIP",
+                "de": "VIP",
+                "es": "VIP",
+                "fr": "VIP",
+                "pt-PT": "VIP"
+              }
+            },
+            {
+              "value": "crown",
+              "label": {
+                "en": "Crown",
+                "de": "Krone",
+                "es": "Corona",
+                "fr": "Couronne",
+                "pt-PT": "Coroa"
+              }
+            },
+            {
+              "value": "exchange",
+              "label": {
+                "en": "Exchange",
+                "de": "Austausch",
+                "es": "Intercambio",
+                "fr": "Échange",
+                "pt-PT": "Trocar"
+              }
+            },
+            {
+              "value": "gift",
+              "label": {
+                "en": "Gift",
+                "de": "Geschenk",
+                "es": "Regalo",
+                "fr": "Cadeau",
+                "pt-PT": "Presente"
+              }
+            },
+            {
+              "value": "24-hours",
+              "label": {
+                "en": "24 Hours",
+                "de": "24 Stunden",
+                "es": "24 horas",
+                "fr": "24 heures",
+                "pt-PT": "24 Horas"
+              }
+            },
+            {
+              "value": "heart",
+              "label": {
+                "en": "Heart",
+                "de": "Herz",
+                "es": "Corazón",
+                "fr": "Cœur",
+                "pt-PT": "Coração"
+              }
+            },
+            {
+              "value": "map-pin",
+              "label": {
+                "en": "Map pin",
+                "de": "Karten-Nadel",
+                "es": "Pin de mapa",
+                "fr": "Épingle de carte",
+                "pt-PT": "Alfinete no mapa"
+              }
+            },
+            {
+              "value": "car",
+              "label": {
+                "en": "Car",
+                "de": "Auto",
+                "es": "Coche",
+                "fr": "Voiture",
+                "pt-PT": "Automóvel"
+              }
+            },
+            {
+              "value": "takeaway",
+              "label": {
+                "en": "Takeaway",
+                "de": "Imbissbude",
+                "es": "Para llevar",
+                "fr": "Emporter",
+                "pt-PT": "Comida para fora"
+              }
+            },
+            {
+              "value": "restaurant",
+              "label": {
+                "en": "Restaurant",
+                "de": "Restaurant",
+                "es": "Restaurante",
+                "fr": "Restaurant",
+                "pt-PT": "Restaurante"
+              }
+            },
+            {
+              "value": "cup",
+              "label": {
+                "en": "Cup",
+                "de": "Körbchen",
+                "es": "Taza",
+                "fr": "Tasse",
+                "pt-PT": "Caneca"
+              }
+            },
+            {
+              "value": "goblet",
+              "label": {
+                "en": "Goblet",
+                "de": "Kelch",
+                "es": "Copa",
+                "fr": "Gobelet",
+                "pt-PT": "Cálice"
+              }
+            },
+            {
+              "value": "star",
+              "label": {
+                "en": "Star",
+                "de": "Stern",
+                "es": "Estrella",
+                "fr": "Étoile",
+                "pt-PT": "Estrela"
+              }
+            },
+            {
+              "value": "sun",
+              "label": {
+                "en": "Sun",
+                "de": "Sonne",
+                "es": "Sol",
+                "fr": "Soleil",
+                "pt-PT": "Sol"
+              }
+            },
+            {
+              "value": "moon",
+              "label": {
+                "en": "Moon",
+                "de": "Mond",
+                "es": "Luna",
+                "fr": "Lune",
+                "pt-PT": "Lua"
+              }
+            },
+            {
+              "value": "cake",
+              "label": {
+                "en": "Cake",
+                "de": "Kuchen",
+                "es": "Pastel",
+                "fr": "Gâteau",
+                "pt-PT": "Bolo"
+              }
+            },
+            {
+              "value": "handbag",
+              "label": {
+                "en": "Handbag",
+                "de": "Handtasche",
+                "es": "Bolso",
+                "fr": "Sac à main",
+                "pt-PT": "Mala de mão"
+              }
+            },
+            {
+              "value": "umbrella",
+              "label": {
+                "en": "Umbrella",
+                "de": "Regenschirm",
+                "es": "Paraguas",
+                "fr": "Parapluie",
+                "pt-PT": "Guarda-chuva"
+              }
+            },
+            {
+              "value": "recycle",
+              "label": {
+                "en": "Recycle",
+                "de": "Recyceln",
+                "es": "Reciclar",
+                "fr": "Recycler",
+                "pt-PT": "Reciclar"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": {
+            "en": "Text",
+            "de": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "pt-PT": "Texto"
+          },
+          "default": {
+            "en": "Free shipping",
+            "de": "Kostenloser versand",
+            "es": "Envío gratis",
+            "fr": "Livraison gratuite",
+            "pt-PT": "Envio Grátis"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link",
+            "de": "Link",
+            "es": "Enlace",
+            "fr": "Lien",
+            "pt-PT": "Ligação"
+          },
+          "info": {
+            "en": "Optional",
+            "de": "Optional",
+            "es": "Opcional",
+            "fr": "Facultatif",
+            "pt-PT": "Opcional"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Custom Liquid",
+      "type": "custom-liquid",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom-liquid",
+          "label": "Custom Liquid",
+          "default": "<p>Add app snippets or other Liquid code to create advanced customizations.</p>"
+        }
+      ]
+    },
+    {
+      "name": "Product rating",
+      "type": "product-rating",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rating-label",
+          "label": "Label",
+          "default": "Rating"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Rating",
+          "info": "To display a rating, add a [product rating metafield](/admin/metafields/product)"
+        },
+        {
+          "type": "image_picker",
+          "id": "rating-icon-full",
+          "label": "Full icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "rating-icon-empty",
+          "label": "Empty icon",
+          "info": "Optional"
+        },
+        {
+          "type": "number",
+          "id": "rating-max",
+          "label": "Maximum",
+          "default": 5,
+          "info": "Select a maximum equal to the rating metafield's [scale maximum](/admin/metafields/product)"
+        }
+      ]
+    },
+    {
+      "name": "Image with offers",
+      "type": "image-offer",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link",
+            "de": "Link",
+            "es": "Enlace",
+            "fr": "Lien",
+            "pt-PT": "Ligação"
+          },
+          "info": {
+            "en": "Optional",
+            "de": "Optional",
+            "es": "Opcional",
+            "fr": "Facultatif",
+            "pt-PT": "Opcional"
+          }
+        },
+        {
+          "type": "color",
+          "id": "hover_border_color",
+          "label": {
+            "en": "Link hover border color",
+            "de": "Link hover border color",
+            "es": "Link hover border color",
+            "fr": "Link hover border color",
+            "pt-PT": "Link hover border color"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Subscription product"
+      },
+      "category": {
+        "en": "Product",
+        "de": "Produkt",
+        "es": "Producto",
+        "fr": "Produit",
+        "pt-PT": "Produto"
+      }
+    }
+  ],
+  "enabled_on": {
+    "templates": ["404", "article", "blog", "cart", "collection", "list-collections", "index", "page", "search"]
+  }
+}
+{% endschema %}

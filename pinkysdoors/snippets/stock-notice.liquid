@@ -1,0 +1,13 @@
+{% if product.available and variant.available %}
+<div class="product-single__stock-notice small--one-whole small--text-center">
+  <div class="in-stock stock-notice__inner">
+    {% unless product.title contains 'Sample' %}
+    {% if variant.inventory_management %}
+    <p><b>IN STOCK.</b>There's only <b class="variant-inventory">{{variant.inventory_quantity}}</b> left. <b style="display: none;">Act now!</b></p>
+    {% endif %}
+    {% endunless %}
+  </div>
+</div>
+{% endif %}
+
+

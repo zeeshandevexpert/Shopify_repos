@@ -1,0 +1,56 @@
+<div class="footer-icon-box">
+    <div class="wrapper-box">
+        <div class="footer-logo">
+            <img src="{{ section.settings.logo |  img_url: 'master' }}" alt="">
+        </div>
+        <div class="footer-features">
+            {% for block in section.blocks %}
+                <div class="feature">
+                    <div class="icon">
+                        <img src="{{ block.settings.icon |  img_url: 'master' }}" alt="">
+                    </div>
+                    <p>{{ block.settings.text }}</p>
+                </div>
+            {% endfor %}    
+        </div>
+    </div>
+
+</div>
+
+
+{% schema %}
+    {
+        "name": "Footer Icon Box",
+        "settings": [
+            {
+                    "type": "image_picker",
+                    "id": "logo",
+                    "label": "Logo"
+                    }
+
+            ],
+            "blocks": [
+                {
+                "type": "Item",
+                "name": "Icon",
+                "settings": [
+                    {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                    },
+                    {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                    }
+                ]
+                }
+            ],
+            "presets": [
+                {
+                    "name": "Footer Icon Box"
+                }
+            ]
+    }
+    {% endschema %}

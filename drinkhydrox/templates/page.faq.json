@@ -1,0 +1,377 @@
+{
+  "sections": {
+    "hero": {
+      "type": "section-hero",
+      "blocks": {
+        "kicker-block": {
+          "type": "kicker",
+          "disabled": true,
+          "settings": {
+            "kicker": "<p>Introducing<\/p>",
+            "enable_line": false,
+            "text_size": 3
+          }
+        },
+        "text_8mm33D": {
+          "type": "text",
+          "settings": {
+            "richtext": "<h1><strong>科研成果Q&A<\/strong><\/h1>",
+            "text_size": 6
+          }
+        }
+      },
+      "block_order": [
+        "kicker-block",
+        "text_8mm33D"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/1000052454.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/1000052454.jpg",
+        "height": "use_pixels_500",
+        "overlay_opacity": 50,
+        "overlay_color": "#000000",
+        "enable_overlay_text": false,
+        "preload_image": true,
+        "content_width": 2000,
+        "text_align": "align--middle-center",
+        "text_color": "text--white",
+        "color_bg": "hero__content--transparent",
+        "width": "wrapper--none",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "section_double_7GwpeN": {
+      "type": "section-double",
+      "blocks": {
+        "text_XNz37m": {
+          "type": "text",
+          "settings": {
+            "kicker": "安德魯·胡伯曼博士是斯坦福醫學院神經生物學系和心理學與行為科學系的正教授，擁有神經科學博士學位。",
+            "title": "",
+            "text": "<p><strong>安德魯·胡伯曼博士主張每日飲用氫水取代普通水，他認為日常飲用氫水可以顯著改善人體認知功能和身體健康。<\/strong><\/p>",
+            "font_size": 5,
+            "text_columns": 1,
+            "align_text": "text-left",
+            "button_text": "",
+            "button_url": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line",
+            "text_color": "text--neutral",
+            "bg_color": ""
+          }
+        },
+        "image_LdRnW9": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IG_Billboard_Square.png",
+            "overlay_opacity": 0,
+            "overlay_color": "#000000",
+            "enable_overlay_text": true,
+            "kicker": "",
+            "title": "",
+            "richtext": "",
+            "text_align": "align--middle-center",
+            "text_color": "text--white",
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--white",
+            "button_style": "btn"
+          }
+        }
+      },
+      "block_order": [
+        "text_XNz37m",
+        "image_LdRnW9"
+      ],
+      "settings": {
+        "height": "use_image",
+        "brick_gutter": 0,
+        "borders": false,
+        "bg_color": "",
+        "preload_image": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_featured_article_pmVfmA": {
+      "type": "section-featured-article",
+      "blocks": {
+        "kicker_K4rwPw": {
+          "type": "kicker",
+          "settings": {
+            "show_author": true,
+            "show_date": true
+          }
+        },
+        "heading_HhNQre": {
+          "type": "heading",
+          "settings": {
+            "title": "科學研究",
+            "text_size": 8
+          }
+        },
+        "text_rAEMLM": {
+          "type": "text",
+          "settings": {
+            "richtext": "<p>多項由權威來源如Nature.com和美國國家醫學圖書館發表的研究證實了活性氫對炎症反應的舒緩功效。<\/p>",
+            "text_size": 5
+          }
+        },
+        "button_8RkCXH": {
+          "type": "button",
+          "settings": {
+            "link_text": "",
+            "link": "",
+            "button_color": "btn--neutral",
+            "button_style": "btn-text-thick-line"
+          }
+        }
+      },
+      "block_order": [
+        "kicker_K4rwPw",
+        "heading_HhNQre",
+        "text_rAEMLM",
+        "button_8RkCXH"
+      ],
+      "custom_css": [
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "article": "",
+        "image": "shopify:\/\/shop_images\/1000051675.png",
+        "image_full_width": true,
+        "height": "use_screen_one_half",
+        "overlay_opacity": 15,
+        "overlay_color": "#000000",
+        "enable_overlay_text": false,
+        "color_bg": "",
+        "text_align": "align--bottom-center",
+        "text_alignment": "text-center",
+        "text_color": "text--neutral",
+        "text_color_bg": "palette--light bg--accent",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_columns_AgT6KE": {
+      "type": "section-columns",
+      "blocks": {
+        "text_block_JVWPiA": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "shape_class": "",
+            "title": "",
+            "text": "<h4>重點研究1：<\/h4><h4>富氫水可減少健康成人的發炎反應並防止週邊血球凋亡：一項隨機、雙盲、對照試驗<\/h4><h3><\/h3><p>Scientific Reports volume 10, Article number: 12130 (2020)<\/p>",
+            "button_label": "閱讀更多",
+            "button_link": "shopify:\/\/pages\/关于-hydrox",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_CzybQG": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "shape_class": "",
+            "title": "",
+            "text": "<h4>重點研究2：<\/h4><h4>氫分子透過抑制氧化壓力來減緩類風濕性關節炎的進展<\/h4><h3><\/h3><h3><\/h3><p>Am J Transl Res. 2016; 8(10): 4472–4477<\/p>",
+            "button_label": "閱讀更多",
+            "button_link": "shopify:\/\/pages\/关于-hydrox",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_QF674H": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "shape_class": "",
+            "title": "",
+            "text": "<h4>重點研究3：<\/h4><h4>7天攝取富氫水對受訓及未受訓受試者身體表現的影響。<\/h4><h3><\/h3><p>Biol Sport. 2021 Jun;38(2):269-275. doi:10.5114\/biolsport.2020.98625<\/p>",
+            "button_label": "閱讀更多",
+            "button_link": "shopify:\/\/pages\/关于-hydrox",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        },
+        "text_block_zW3tN9": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": false,
+            "shape_class": "",
+            "title": "",
+            "text": "<h4>重點研究4：<\/h4><h4>飲用氫水可增強耐力並緩解心理疲勞：一項隨機、雙盲、安慰劑對照研究。<\/h4><h3><\/h3><p>Can J Physiol Pharmacol. 2019 Sep;97(9):857-862. doi:10.1139\/cjpp-2019-0059<\/p>",
+            "button_label": "閱讀更多",
+            "button_link": "shopify:\/\/pages\/关于-hydrox",
+            "button_color": "btn--neutral",
+            "button_style": "btn--soft",
+            "enable_video": false,
+            "video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "video_button_color": "text--white"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_JVWPiA",
+        "text_block_CzybQG",
+        "text_block_QF674H",
+        "text_block_zW3tN9"
+      ],
+      "custom_css": [
+        "div.accent-title-large.strong.mb-2 {font-size: 20px; font-weight: bold;}",
+        "p {font-size: 17px;}"
+      ],
+      "settings": {
+        "title": "",
+        "bg": "palette--light bg--neutral",
+        "align_text": "text-left",
+        "scale_image": false,
+        "wh_ratio": 0.5,
+        "grid_large": 4,
+        "grid_medium": 3,
+        "grid_mobile": 1.2,
+        "progress_bar_mobile": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_faq_JpUNCJ": {
+      "type": "section-faq",
+      "blocks": {
+        "text_a9dbtd": {
+          "type": "text",
+          "settings": {
+            "title": "1.HydroX活性氫水與機器製氫水有何不同",
+            "content": "<p>HydroX 的活性氫水之所以脫穎而出，是因為它的活性氫特性不會像氫水機產生的氫特性那樣消失。這確保了在整個消費過程中有益效果仍然有效。<\/p>"
+          }
+        },
+        "text_Ym8P6p": {
+          "type": "text",
+          "settings": {
+            "title": "2. HydroX 活性氫水的反應特性與注氫水相比如何？",
+            "content": "<p>HydroX 的活性氫水俱有極高的反應特性，與通常會消散氫氣的注氫水相比，它能更有效地中和體內有害的自由基。<\/p>"
+          }
+        },
+        "text_YFN63F": {
+          "type": "text",
+          "settings": {
+            "title": "3. HydroX的活性氫水可以安全飲用嗎？",
+            "content": "<p>絕對安全，HydroX 的活性氫水經過嚴格測試，以確保安全和品質。它旨在為您的日常補水提供安全有效的補充。<\/p>"
+          }
+        },
+        "text_LDkezc": {
+          "type": "text",
+          "settings": {
+            "title": "4. HydroX 的活性氫水是否僅注入氫氣，還是有其他功效？",
+            "content": "<p>除了活性氫含量外，HydroX 的水呈現天然鹼性，並富含支持身體整體健康和補水需求的必需礦物質。<\/p>"
+          }
+        },
+        "text_g7YFiK": {
+          "type": "text",
+          "settings": {
+            "title": "5. HydroX 的活性氫水可以取代我飲食中的普通水嗎？",
+            "content": "<p>可以，將 HydroX 的水與您平常的飲水量結合可以提供增強的水合作用和抗氧化支持。我們每日建議攝取量為1.5L - 2L。<\/p>"
+          }
+        },
+        "text_rm6dbA": {
+          "type": "text",
+          "settings": {
+            "title": "6. 我應該如何儲存HydroX的活性氫水以保持其質量？",
+            "content": "<p>為了保持 HydroX 活性氫水的功效和新鮮度，請將其存放在陰涼乾燥的地方，避免陽光直射。<\/p>"
+          }
+        },
+        "text_j7JeTP": {
+          "type": "text",
+          "settings": {
+            "title": "7. 哪裡可以買到HydroX的活性氫水？",
+            "content": "<p>HydroX 的活性氫水可透過其官方網站和指定零售店在線購買。從授權賣家購買以確保產品的真實性和品質非常重要。<\/p>"
+          }
+        },
+        "text_Hw9i79": {
+          "type": "text",
+          "settings": {
+            "title": "8. 兒童和孕婦可以安全飲用HydroX的活性氫水嗎？",
+            "content": "<p>雖然HydroX 的活性氫水對於大多數人（包括兒童和孕婦）通常是安全的，但在對您的補水習慣進行重大改變之前，最好先諮詢醫療保健專業人士，尤其是在懷孕期間或幼兒時期。<\/p>"
+          }
+        },
+        "text_Kz8LJg": {
+          "type": "text",
+          "settings": {
+            "title": "9. 我應該多久喝一次HydroX的活性氫水才能體驗它的好處？",
+            "content": "<p>飲用 HydroX 活性氫水的頻率可根據個人需求和健康目標而有所不同。將其納入您的日常補水程序有助於最大限度地發揮其對整體健康和補水支持的益處。<\/p>"
+          }
+        },
+        "text_YigjYA": {
+          "type": "text",
+          "settings": {
+            "title": "10. HydroX的活性氫水有獨特的味道嗎？",
+            "content": "<p>HydroX的活性氫水保持了純淨水的清爽口感，風味沒有明顯差異。它提供清潔和保濕的體驗，使其可以輕鬆融入您的日常生活中。<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_a9dbtd",
+        "text_Ym8P6p",
+        "text_YFN63F",
+        "text_LDkezc",
+        "text_g7YFiK",
+        "text_rm6dbA",
+        "text_j7JeTP",
+        "text_Hw9i79",
+        "text_Kz8LJg",
+        "text_YigjYA"
+      ],
+      "settings": {
+        "title": "常見問題",
+        "title_align": "text-left",
+        "title_size": 4,
+        "heading_size": 5,
+        "text_size": 5,
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "page",
+      "settings": {
+        "kicker": "",
+        "kicker_size": 3,
+        "show_title": false,
+        "title_size": 8,
+        "show_content": true,
+        "content_size": 5,
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper--narrow",
+        "padding_top": 64,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "section_double_7GwpeN",
+    "section_featured_article_pmVfmA",
+    "section_columns_AgT6KE",
+    "section_faq_JpUNCJ",
+    "main"
+  ]
+}

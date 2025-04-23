@@ -1,0 +1,40 @@
+
+    <div class="container-style container-large">
+        <h1>{{ section.settings.title }}</h1>
+        <div class="search-top-section-row">
+            <div class="search-top-section-col-left">
+                <h2 id="q_search"></h2>
+            </div>
+            <div class="search-top-section-col-right">
+                <h3 id="result_count"></h3>
+                <button class="search-element">{{ section.settings.button_title }}</button>
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Search - Head",
+  "tag": "section",
+  "class": "search-top-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "search"
+    },
+    {
+      "type": "textarea",
+      "id": "button_title",
+      "label": "Button Title",
+      "default": "try another search"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search - Head"
+    }
+  ]
+}
+{% endschema %}

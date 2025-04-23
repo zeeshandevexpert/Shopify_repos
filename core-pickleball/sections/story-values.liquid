@@ -1,0 +1,61 @@
+<section>
+  <div class="heading-part">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    {{ section.settings.text }}
+  </div>
+  <div class="content">
+    {% for block in section.blocks %}
+    <div class="content-block">
+      <h3>{{ block.settings.title }}</h3>
+      {{ block.settings.sub_title }}
+    </div>
+    {% endfor %}
+  </div>
+  
+  <img class="lazyload story-back-img img1" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+  <img class="lazyload story-back-img img2" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+  <img class="lazyload story-back-img img3" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+</section>
+
+{% schema %}
+  {
+    "name": "Story Values",
+	"class":  "store-values story-index",
+    "settings": [
+		{
+			"type"  :  "text",
+			"id"    :  "title",
+			"label" :  "Title"
+		},
+		{
+			"type"  :  "richtext",
+			"id"    :  "text",
+			"label" :  "Text"
+		}
+	],
+	"blocks": [
+		{
+			"type"  :  "text",
+			"name"  :  "Value Text Block",
+			"settings": [
+				{
+					"type"  :  "text",
+					"id"    :  "title",
+					"label" :  "Title"
+				},
+				{
+					"type"  :  "richtext",
+					"id"    :  "sub_title",
+					"label" :  "Sub Title"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

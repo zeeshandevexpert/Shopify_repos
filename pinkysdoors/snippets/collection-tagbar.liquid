@@ -1,0 +1,36 @@
+{% include 'advanced-tag-loop' %}
+{% comment %}
+Loop through tag categories
+{% endcomment %}
+
+<div class="flex page-width">
+  <div class="browse-tags">
+    {% for cat_item in cat_array %}
+    {% comment %}
+    Ignore if tag category is empty
+    {% endcomment %}
+    {% unless cat_item == '' %}
+    <label class="visually-hidden">{{ cat_item }}</label>
+    <select class="advanced-filters">
+      {% comment %}
+      Loop through collection tags
+      {% endcomment %}
+      <option value="">{{cat_item}}</option>
+      {% for custom_tag in collection.all_tags %}
+      {% if custom_tag contains cat_item %}
+      {% comment %}
+      Strip out tag category prefix and add/remove link for tag filtering
+      {% endcomment %}
+      {% capture show_tag %}{{ custom_tag | remove: cat_item | remove: '_' }}{% endcapture %} 
+      {% if current_tags contains custom_tag %}
+      <option class="advanced-filter active-filter" value="{{ custom_tag | handle }}" data-group="{{ cat_item }}" selected="selected" data-handle="{{ custom_tag | handleize }}">{{ show_tag | strip | capitalize }}</option>
+      {% else %}
+      <option class="advanced-filter" value="{{ custom_tag | handle }}" data-group="{{ cat_item }}">{{ show_tag | strip | capitalize }}</option>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </select>
+    {% endunless %}
+    {% endfor %}
+  </div>
+</div>

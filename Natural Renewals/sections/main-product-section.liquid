@@ -1,0 +1,499 @@
+
+{{ 'custom-product-style.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+
+{% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" /> {% endcomment %}
+
+<section class="banner">
+    <div class="inner">
+        <div class="col-left">
+            <div class="mobile-product-text">
+                <div class="mobile-box">
+                    <div class="product-name">
+                        <h2>{{ product.title }}</h2>
+                    </div>
+                    <div class="powered-by">
+                        <a href="#" class="powered-btn">{{ product.metafields.custom.product_sub_title }}</a>
+                    </div>
+                </div>
+                <div class="mob-top-info">cycora.lab</div> 
+            </div>
+            <div class="image"> 
+                  <div class="loop-img">  
+                      {% for variant in product.variants %} 
+                          <div class="variants {{ variant.title }}" data-psize="{{ variant.title | split: ' ' | first }}">
+                              <img src="{{ variant.image | img_url : " master", size: 'large' }}" alt="">  
+                          </div> 
+                        {% endfor %}
+                  </div> 
+            </div>
+        </div>
+        <div class="col-right">
+            <div class="text-wrap">
+                <div class="top-info">cycora.lab</div>
+                <div class="product-name">
+                    <h2>{{ product.title }}</h2>
+                </div>
+                <div class="powered-by">
+                    <a href="#" class="powered-btn">{{ product.metafields.custom.product_sub_title }}</a>
+                </div>
+              {% if product.metafields.custom.tab_1_title %} 
+                <div class="tab">
+                    <div class="tab-wrap">
+                        <div class="tab-head"> 
+                                <div class="tab-item active">{{ product.metafields.custom.tab_1_title }}</div>  
+                                <div class="tab-item">{{ product.metafields.custom.tab_2_title }}</div>  
+                                <div class="tab-item">{{ product.metafields.custom.tab_3_title }}</div>  
+                        </div> 
+                        <div class="tab-text">
+                                <div class="tab-desc active">{{ product.metafields.custom.tab_1_desc }}  </div>
+                                <div class="tab-desc">{{ product.metafields.custom.tab_2_desc }}  </div>
+                                <div class="tab-desc">{{ product.metafields.custom.tab_3_desc }}  </div>
+                        </div>
+                    </div>
+                </div> 
+              {% endif %}
+               
+              
+                <div class="product-buy-size custom">
+                {% assign counter = 1 %}
+                {% for variant in product.variants %}
+                <input class="pdp-all-variants" {% if counter==1 %}id="default_product_variant" {% endif %}
+                    type="hidden" data-available="{{ variant.available }}" data-option1="{{ variant.option1 }}"
+                    data-option2="{{ variant.option2 }}" data-variant_id="{{ variant.id }}" data-colors="{{ variant.option1 }}"/>
+                {% assign counter = counter | plus: 1 %}
+                {% endfor %}
+
+                <div class="product-buy-size-title">
+                    <h2>Size</h2><a class="popup-size">Size guide</a>
+                </div>
+                <div class="product-buy-size-row" id="product-size-row">
+                    {% for size_option in product.options_by_name['Size'].values %}
+                    <div class="product-buy-radio-col"  data-id="{{ size_option }}">
+                        <input class="pdp-size-swatcher" type="radio" name="size" id="size_{{ size_option }}"
+                            value="{{ size_option }}" />
+                        <label for="size_{{ size_option }}">{{ size_option }}</label>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+            <div class="product-buy-color custom">
+                <h2>Color</h2>
+                <div class="product-buy-color-row">
+                    {% assign start_index = 0 %}
+                    {% for color_option in product.options_by_name['Color'].values %}
+                    <div class="product-buy-color-col desk" data-color="{{ color_option }}" data-index="{{ start_index }}" >
+                         <input class="pdp-color-swatcher" type="radio" name="color" id="color_{{ color_option }}"
+                            value="{{ color_option }}" />
+                        <label for="color_{{ color_option }}" style="background-color: {{ color_option }}"></label> 
+                    </div>
+                    {% assign start_index = start_index | plus: 1 %}
+                    {% endfor %}
+                </div>
+            </div>
+            
+                <div class="product-btn">
+                    <a class="addtocart" id="buy_button" onclick="addItemToCart();">
+                        add to cart
+                    </a>
+                    <div class="product-price">
+                        {{ product.price | money }}
+                    </div>
+                </div>
+
+              {% if product.metafields.custom.tab_1_title %} 
+                     <div class="mob-tab">
+                    <div class="tab-wrap">
+                        <div class="tab-head"> 
+                                <div class="tab-item active">{{ product.metafields.custom.tab_1_title }}</div>  
+                                <div class="tab-item">{{ product.metafields.custom.tab_2_title }}</div>  
+                                <div class="tab-item">{{ product.metafields.custom.tab_3_title }}</div>  
+                        </div> 
+                        <div class="tab-text">
+                                <div class="tab-descs active">{{ product.metafields.custom.tab_1_desc }}  </div>
+                                <div class="tab-descs">{{ product.metafields.custom.tab_2_desc }}  </div>
+                                <div class="tab-descs">{{ product.metafields.custom.tab_3_desc }}  </div>
+                        </div>
+                    </div>
+                </div>
+              {% endif %}
+              
+           
+
+            </div>
+        </div>
+    </div>
+
+<!-- Popup -->
+<div class="overlay"></div>
+<div class="popup">
+    <div class="main-popup">
+        <div class="popup-wrap">
+            <div class="popup-head">
+                <div class="text">size guide</div>
+                <div class="close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                        <path d="M1.72717 1L25 24.2728" stroke="#ADADAD" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M1 24.2729L24.2728 1.00011" stroke="#ADADAD" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="popup-body">
+                <div class="left-content">
+                    <div class="wrap">
+                        <div class="measurment-size">showing measurements for size:</div> 
+                        {% comment %} <div class="product-size-tab">
+                            {% assign start_index = 0 %}
+                            {% for color_option in product.options_by_name['Color'].values %}
+                            <div class="product-buy-color-col size-tab" data-id="{{ color_option }}" data-index="{{ start_index }}">
+                                <input class="pdp-color-swatcher" type="radio" name="color" id="color_{{ color_option }}"
+                                    value="{{ color_option }}" />
+                                <label for="color_{{ color_option }}" style="background-color: {{ color_option }}"></label>
+                            </div>
+                            {% assign start_index = start_index | plus: 1 %}
+                            {% endfor %}
+                        </div> {% endcomment %}
+
+                        <div class="product-buy-col">
+                          
+                           {% assign counter = 1 %}
+                            {% for variant in product.variants %}
+                            <!-- <input class="pdp-all-variants" {% if counter==1 %}id="default_product_variant" {% endif %}
+                                type="hidden" data-available="{{ variant.available }}" data-option1="{{ variant.option1 }}"
+                                data-option2="{{ variant.option2 }}" data-variant_id="{{ variant.id }}" /> -->
+                            {% assign counter = counter | plus: 1 %}
+                            {% endfor %}
+                          
+                            {% assign product_variant_count = product.variants | size %}
+                            <input type="hidden" id="product_variant_count" value="{{ product_variant_count }}" />
+                            {% if product_variant_count > 1 %}
+                                <div class="product-buy-color" id="product-col-size">
+                                    <h2>Size</h2>
+                                    <div class="product-buy-size-row" id="product-buy-size-row">
+                                        {% for size_option in product.options_by_name['Size'].values %}
+                                        <div class="product-buy-radio-col" data-size="{{ size_option }}" >
+                                            <input class="pdp-size-swatcher" type="radio" name="size" id="size_{{ size_option }}" value="{{ size_option }}" />
+                                            <labels for="size_{{ size_option }}">{{ size_option }}</labels>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+
+
+
+                    </div>
+                    <div class="model-measurment">model measurements:</div>
+                    <div class="border"></div>
+                    <div class="wearing-size">model is 6’ 1” and wearing size large.</div>
+                </div>
+                <div class="right-content">
+                    <div class="popup-img">
+                        <div class="product-buy-col-image">
+                            <img src="{{ product.metafields.custom.size_guide_image | img_url: '1000x' }}" class="lazyload feature_imgs"
+                                data-src="{{ product.metafields.custom.size_guide_image | img_url: '1000x' }}" data-widths="[1000]" data-sizes="auto" tabindex="-1" />
+                            <div class="img-wrapper">
+                                {% for variant in product.variants %} 
+                                  <div class="variantss {{ variant.title }}">
+                                      <img src="{{ product.metafields.custom.size_guide_image | img_url : " master", size: 'large' }}" alt="">
+                                  </div> 
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<div class="wrap-two-column-block">
+    {% for block in section.blocks %}
+    <section class="launch-product {% if block.settings.reverse %} reverse{% endif %}">
+      
+    <div class="inner">
+        <div class="left-col">
+            <div class="title">
+            {% if block.settings.title != blank %} <h3 class="{% if block.settings.reverse %} reverse{% endif %}">{{ block.settings.title }}</h3>  {% endif %}
+                    {% if block.settings.powered_image != blank %}
+                        <img src="{{ block.settings.powered_image |  img_url: 'master' }}" alt="" class="powered">      
+                    {% endif %}
+                  
+                </div>                
+            <div class="subtitle">{{ block.settings.description }}</div>
+        </div>
+     
+        <div class="right-col">
+      
+        {% include "loop-media-block" %}
+            {% comment %} <div class="img">
+                <img src="{{ block.settings.image |  img_url: 'master' }}" alt="">
+            </div> {% endcomment %}
+      
+        </div>
+      
+    </div> 
+     
+</section>
+{% endfor %}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+
+$(".tab-head .tab-item").click(function(){
+    var index = $(this).index(); 
+    if(!$(this).hasClass("active")){
+        $(".tab-head .tab-item").removeClass("active")
+        $(this).addClass("active");
+        $(".tab-text .tab-desc").removeClass("active");
+        $(".tab-text .tab-descs").removeClass("active");
+        $(".tab-text .tab-desc:eq("+index+")").addClass("active");
+        $(".tab-text .tab-descs:eq("+index+")").addClass("active"); 
+    } 
+});
+
+    // slider
+  
+
+    function initializeSlick() {
+    $('.loop-img').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1, 
+        arrows: false,
+        autoplay: true,
+        dots: true,
+        speed: 500,
+        autoplaySpeed: 2000,
+        responsive: [  
+            {
+                breakpoint: 2047,
+                settings: "unslick"
+            },
+            {      
+                breakpoint: 1024, 
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false, 
+                }
+            },        
+            {      
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: false, 
+                }
+            },        
+        ]
+    });
+}
+
+function destroySlick() {
+    if ($('.loop-img').hasClass('slick-initialized')) {
+        $('.loop-img').slick('unslick');
+    }
+}
+
+function isMobile() {
+    return $(window).width() <= 1024;
+}
+
+// Initialize or destroy Slick carousel based on window width
+function toggleSlick() {
+    if (isMobile()) {
+        initializeSlick();
+    } else {
+        destroySlick();
+    }
+}
+
+// Initial setup
+toggleSlick();
+
+// Re-initialize or destroy Slick carousel on window resize
+$(window).resize(function() {
+    toggleSlick();
+});
+
+
+
+// Popup
+$(".popup-size").click(function(){
+    $(".overlay").addClass("active")
+    $(".popup").addClass("popup-active");
+});
+
+$(".close-btn").click(function(){
+    $(".overlay").removeClass("active")
+    $(".popup").removeClass("popup-active");
+})
+ //Desktop button 
+   $(".product-buy-size .product-buy-size-row .product-buy-radio-col").click(function () {
+    var id = $(this).data("id");  
+    $(".product-buy-color-col").attr("data-sizes", id);
+     
+    $(".product-buy-size .product-buy-size-row .product-buy-radio-col").removeClass("active");
+    $(this).addClass("active");   
+    $(".image .loop-img .variants").removeClass("active");
+    $(".image .loop-img .variants."+ id + ":first").addClass("active"); 
+    // var activeVariantPosition = $(".image .loop-img .variants.active").position().top;  
+    // var offset = -40;  
+    // var targetPosition = activeVariantPosition - offset;
+    // $('html, body').animate({scrollTop: targetPosition}, 'medium'); 
+    var index = $(".image .loop-img .slick-list .slick-track .variants."+ id + ":first").closest(".slick-slide").index();  
+    setTimeout(function() {
+        $(".image .loop-img").slick("slickGoTo", index);
+    }, 100);   
+    
+});
+
+
+
+
+document.querySelectorAll('.product-buy-color-row .desk').forEach(function(element) {
+    element.addEventListener('click', function() {
+        var clickedSizes = this.getAttribute('data-sizes');
+        var clickedIndex = this.getAttribute('data-index');
+        var index = [];
+        document.querySelectorAll('.loop-img .variants').forEach(function(variant) {
+            var currentIndex = variant.getAttribute('data-psize');
+            variant.classList.remove('active');
+            if (clickedSizes === currentIndex) {
+                index.push(variant);
+            }
+        });
+        index[clickedIndex].classList.add('active');
+      
+        var activeVariantPosition = $(".image .loop-img .variants.active").position().top; 
+        var offset = -40;  
+        var targetPosition = activeVariantPosition - offset;
+        $('html, body').animate({scrollTop: targetPosition}, 'medium'); 
+    });
+});
+
+ 
+
+
+
+  
+
+ $("#product-col-size #product-buy-size-row .product-buy-radio-col").click(function () {
+        var size = $(this).data("size"); 
+        $(".popup-img .product-buy-col-image .feature_imgs").hide();
+        $("#product-col-size #product-buy-size-row .product-buy-radio-col").removeClass("active");
+        $(this).addClass("active");   
+        $(".popup-img .product-buy-col-image .img-wrapper .variantss").hide();
+        $(".popup-img .product-buy-col-image .img-wrapper .variantss."+ size + ":first").fadeIn('slow'); 
+           
+    });
+  
+  
+
+</script>
+
+{% schema %}
+    {
+    "name": "Product Custom Block",
+    "tag": "section",
+    "class": "product-custom-section",
+    "settings": [
+    
+    ],
+    "blocks": [
+    {
+      "name": "Two Column Block",
+      "type": "two-column",
+      "settings":[
+        {
+        "type": "checkbox",
+        "id": "reverse",
+        "label": "Reverse Blog"
+        },
+        {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+        },
+        {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+        },
+        {
+        "type": "image_picker",
+        "id": "powered_image",
+        "label": "Image"
+        },
+        {
+        "type": "richtext",
+        "id": "description",
+        "label": "Description"
+        },
+        {
+              "type": "header",
+              "content": "Media Block"
+            },
+            {
+              "type": "select",
+              "id": "media_type",
+              "label": "Media Type",
+              "options": [
+                {
+                  "value": "image",
+                  "label": "image"
+                },
+                {
+                  "value": "vimeo_youtube_video",
+                  "label": "YouTube or Vimeo Video"
+                },
+                {
+                  "value": "video_file",
+                  "label": "HTML5 Video"
+                }
+              ],
+              "default": "image"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_normal",
+              "label": "Image"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_mobile",
+              "label": "Image Mobile"
+            },
+            {
+              "type": "video_url",
+              "id": "vimeo_youtube_video",
+              "label": "YouTube or Vimeo Video",
+              "accept": [
+                "youtube",
+                "vimeo"
+              ]
+            },
+            {
+              "type": "text",
+              "id": "video_file",
+              "label": "HTML5 Video File URL"
+            }
+      ]
+    }
+  ],
+    "presets": [
+    {
+    "name": "Product Custom Block"
+    }
+    ]
+    }
+    {% endschema %}

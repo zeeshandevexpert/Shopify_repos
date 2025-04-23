@@ -1,0 +1,135 @@
+{%- liquid
+
+  assign blog = blogs[section.settings.blog]
+  assign post_limit = section.settings.post_limit
+  assign published_at = article.published_at | date: format: 'month_date_year'
+
+-%}
+<div class="global__section" data-section-id="{{ section.id }}" data-section-type="featured-blog-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="featured__blog row">
+    {% if section.settings.title != blank %}
+     <div class="section-heading">
+       <a href="{{ blog.url }}">
+         <h2>{{ section.settings.title | escape }}</h2>
+       </a>
+       <span class="section-border">
+         {%- if settings.header_border_style == 'zigzag' -%}<div class="zigzag"></div>{% endif %}
+       </span>
+     </div>
+   {% endif %}
+
+    <ul class="featured-posts grid__wrapper">
+      {% if blog.articles.size == 0 %}
+        {% render 'onboard-blog', post_limit: post_limit %}
+      {% else %}
+        {% for article in blog.articles limit: post_limit %}
+          <li class="span-4 sm-span-12 auto" data-aos="{{ settings.scroll_animation }}" data-aos-delay="{{ forloop.index | times: 150  }}">
+            <div class="article-body a-center">
+              {% if article.image %}
+                <a href="{{ article.url }}">
+                  {% render 'basic-responsive-image',
+                    type: article.image,
+                    width: 800
+                  %}
+                </a>
+              {% endif %}
+              <h3>
+                <a href="{{ article.url }}">
+                  {{ article.title }}
+                </a>
+              </h3>
+              <p>{{ article.content | strip_html | truncate: 90 }}</p>
+              {% assign show_bullet = false %}
+              {% if section.settings.show_date or section.settings.show_author %}
+                <div class="article-meta a-center">
+                  <div class="article-meta-inner">
+                    <div class="article-data">
+                      {% if section.settings.show_date %}
+                      {% assign show_bullet = true %}
+                        <span class="date">{{ article.created_at | date: "%b %d, %y" }}&nbsp;</span>
+                      {% endif %}
+                      {% if section.settings.show_author %}
+                        <span class="author">{% if show_bullet %}•&nbsp;&nbsp;{% endif %}By {{ article.user.first_name }}</span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </li>
+        {% endfor %}
+      {% endif %}
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>
+<style>
+  .article-meta .article-data {
+    width: 100% !important;
+  }
+  .article-meta {
+    padding-left: 0 !important;
+  }
+  span.author, span.date {
+    padding: 0;
+  }
+</style>
+{% schema %}
+{
+  "name": "Featured blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "label": "Posts shown",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show published date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": true
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  },
+  "presets": [
+    {
+      "name": "Featured blog"
+    }
+  ]
+}
+{% endschema %}

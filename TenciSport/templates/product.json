@@ -1,0 +1,156 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "icon_box_FbpWeQ": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_2.png",
+            "text": "FREE SHIPPING RETURN POLICY"
+          }
+        },
+        "icon_box_tCxrVU": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_3.png",
+            "text": "90-DAY WARRANTY"
+          }
+        },
+        "icon_box_cHKejA": {
+          "type": "icon-box",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_4.png",
+            "text": "NEW PRODUCT OFFERINGS & DEALS"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "vendor",
+        "price",
+        "description",
+        "variant_picker",
+        "buy_buttons",
+        "share",
+        "icon_box_FbpWeQ",
+        "icon_box_tCxrVU",
+        "icon_box_cHKejA"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "background-1",
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "custom_tabs_r4XUhe": {
+      "type": "custom-tabs",
+      "blocks": {
+        "tab_k7Q4Yh": {
+          "type": "tab",
+          "settings": {
+            "heading": "DESCRIPTION",
+            "tab_content": "{{ product.metafields.custom.tab_description | metafield_tag }}"
+          }
+        },
+        "tab_i4Xf4J": {
+          "type": "tab",
+          "settings": {
+            "heading": "ADDITIONAL INFORMATION",
+            "tab_content": "{{ product.metafields.custom.additional_description | metafield_tag }}"
+          }
+        },
+        "tab_Y8DXyT": {
+          "type": "tab",
+          "settings": {
+            "heading": "REVIEW",
+            "tab_content": "{{ product.metafields.custom.review | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "tab_k7Q4Yh",
+        "tab_i4Xf4J",
+        "tab_Y8DXyT"
+      ],
+      "settings": {
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "heading": "Related Products",
+        "sub_heading": "Lorem Ipsum",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "color_scheme": "background-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_tabs_r4XUhe",
+    "related-products"
+  ]
+}

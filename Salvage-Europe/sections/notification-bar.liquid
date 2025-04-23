@@ -1,0 +1,121 @@
+<section class="shop-notification section-{{ section.id }}">
+  {% if section.settings.image %}
+
+    {{ section.settings.image | image_url: width: 2400 | image_tag: class: 'notification--background' }}
+
+  {% endif %}
+  <div class="notification-wrapper">
+    <div class="row grid__wrapper">
+      {% if section.settings.text != blank %}
+        <div class="rte span-12 auto">
+          {{ section.settings.text }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+.shop-notification.section-{{ section.id }} {
+  background-color: {{ section.settings.background }};
+  height: {{ section.settings.height }}px;
+  position: relative;
+}
+.notification--background {
+  height: {{ section.settings.height }}px;
+  object-fit: cover;
+  object-position: {{ section.settings.image.presentation.focal_point }};
+}
+.shop-notification.section-{{ section.id }} .notification-wrapper {
+  height: {{ section.settings.height }}px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.shop-notification.section-{{ section.id }} .notification-wrapper .grid__wrapper {
+  color: {{ section.settings.color }};
+  text-align: {{ section.settings.text_alignment }};
+  height: 100%;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-row-gap: 0;
+}
+.shop-notification.section-{{ section.id }} .notification-wrapper a,
+.shop-notification.section-{{ section.id }} .notification-wrapper p {
+  font-size: {{ section.settings.text_size }}px;
+  color: {{ section.settings.color }};
+}
+.notification-wrapper p {
+  margin: 0;
+}
+
+
+</style>
+
+{% schema %}
+{
+  "name": "Notification",
+  "settings": [
+    {
+      "type": "range",
+      "id": "height",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Section height",
+      "default": 50
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Content",
+      "default": "<p>Add a notification bar to inform customers of promotions, holiday hours or updated policies</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 14,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 18
+    },
+    {
+       "type": "select",
+       "id": "text_alignment",
+       "options": [
+          { "value": "left", "label": "Left"},
+          { "value": "center", "label": "Center"},
+          { "value": "right", "label": "Right"}
+       ],
+       "label": "Text alignment"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image",
+      "info": "Will override background color"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Notification bar"
+    }
+  ]
+}
+{% endschema %}

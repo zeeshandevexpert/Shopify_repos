@@ -1,0 +1,61 @@
+<section class="how-to-use-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+<div class="wrap-how-to-use">
+    <h2 class="heading">
+     {{ section.settings.heading }}
+    </h2>
+    <div class="step-wrapper">
+        {% for block in section.blocks %}
+            <div class="step">
+                <div class="image-block">
+                    <img src="{{ block.settings.image |  img_url: 'master' }}" alt="">
+                </div>
+                <div class="title">
+                   {{ block.settings.title }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</section> 
+
+{% schema %}
+    {
+        "name": "How Use Block",
+        "settings": [
+            
+                {
+                    "type": "image_picker",
+                    "id": "bg_image",
+                    "label": "Background Image"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                }
+            ],
+            "blocks": [
+                    {
+                    "type": "steps",
+                    "name": "Step",
+                    "settings": [
+                        {
+                            "type": "image_picker",
+                            "id": "image",
+                            "label": "image"
+                        },
+                        {
+                            "type": "text",
+                            "id": "title",
+                            "label": "Title"
+                        }
+                    ]
+                    }
+                ],
+                "presets": [
+                    {
+                        "name": "How Use Block"
+                    }
+                ]
+    }
+    {% endschema %}

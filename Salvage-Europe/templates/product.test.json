@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_size_chart": false,
+            "size_chart_page": "",
+            "size_chart_label": "Size chart"
+          }
+        },
+        "sku": {
+          "type": "sku",
+          "settings": {
+          }
+        },
+        "quantity": {
+          "type": "quantity",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "product_availability": {
+          "type": "pickup_availability",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "product_description",
+          "settings": {
+          }
+        },
+        "collection_navigation": {
+          "type": "collection_navigation",
+          "settings": {
+          }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "price",
+        "variant_picker",
+        "sku",
+        "quantity",
+        "product_availability",
+        "description",
+        "collection_navigation",
+        "buttons"
+      ],
+      "settings": {
+        "click_to_enlarge": true,
+        "image_options": "static",
+        "thumbnail_position": "bottom",
+        "thumbs_to_show": 3,
+        "slide_controls": "arrows",
+        "enable_video_looping": false,
+        "product_form_bg": "#ffffff",
+        "product_form_border": "#ffffff",
+        "show_socials": true
+      }
+    },
+    "16269859708cbadfce": {
+      "type": "editorial-columns",
+      "blocks": {
+        "16269859708cbadfce-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "16269859708cbadfce-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        },
+        "e2e1a152-218b-4b38-94c0-2f82b36dadc3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Our collections",
+            "richtext": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "text_align": "a-center",
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "16269859708cbadfce-1",
+        "16269859708cbadfce-2",
+        "e2e1a152-218b-4b38-94c0-2f82b36dadc3"
+      ],
+      "settings": {
+        "title": "Additional content",
+        "rich_text": "<p>Add some editorial columns to your product pages<\/p>",
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "no_bottom_margin": false,
+        "color": "#000000",
+        "background": "",
+        "padding": 30
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Recommended products",
+        "grid": 4,
+        "limit": 4
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "16269859708cbadfce",
+    "product-recommendations"
+  ]
+}

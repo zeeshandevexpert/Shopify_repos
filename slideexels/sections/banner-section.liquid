@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="main-header">
+    <h1 class="title">{{ section.settings.heading }}</h1>
+    <p class="subtext">{{ section.settings.sub_heading }}</p>
+    <div class="icons">
+      <button class="shop_button" id="shop-button">
+       <a href="{{ section.settings.btn_url }}"> <span class="btn-text">{{ section.settings.btn_text }}</span></a>
+        
+        <span class="btn-price"><img src="//infograpia.com/cdn/shop/files/download_icon.svg?v=1158503713928817129"></span>
+      </button>
+      <div class="compatible_container">
+        <span class="compatible_text">Compatible with </span>
+        <div class="compatible_icons">
+          {% for block in section.blocks %}
+            <img src="{{ block.settings.icon |  img_url: 'masater'}}">  
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Banner section",
+    "settings": [
+        
+        {
+            "type":"text",
+            "id":"heading",
+            "label":"MAIN HEADING"
+  
+    },
+        {
+            "type":"text",
+            "id":"sub_heading",
+            "label":"SUB HEADING"
+  
+    },
+    {
+            "type":"text",
+            "id":"btn_text",
+            "label":"Button Text"
+  
+    },
+    {
+            "type":"url",
+            "id":"btn_url",
+            "label":"Button url"
+  
+    },
+    {
+            "type":"text",
+            "id":"icon_heading",
+            "label":"Icon Heading"
+  
+    }
+
+        ],
+        "blocks": [
+          {
+            "type": "link",
+            "name": "Link",
+            "settings": [
+              {
+                "id": "icon",
+                "type": "image_picker",
+                "label": "Icon"
+              }
+            ]
+          }
+      ],
+        "presets": [
+            {
+                "name": "Banner section"
+            }   
+        ]
+}
+{% endschema %}

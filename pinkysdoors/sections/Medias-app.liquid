@@ -1,0 +1,33 @@
+<div class="page-width">
+  <div class="medias-app-section">
+    {% if section.settings.media_group_id != blank %}
+    <medias-app medias-group-id="{{ section.settings.media_group_id }}"></medias-app>
+    <script src="https://pinkys.viewsite.link/medias-app/front-end/script.js"></script>
+    <link rel="stylesheet" href="https://pinkys.viewsite.link/medias-app/front-end/style.css">
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Medias App",
+    "settings": [
+      {
+        "type": "text",
+        "id": "media_group_id",
+        "label": "Media Group ID"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Medias App",
+        "category": "Medias App"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

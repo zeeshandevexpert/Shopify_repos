@@ -1,0 +1,128 @@
+{% style %}
+  @media (max-width: 767px){
+  .contact-intro-section{
+    background-image: url({{ section.settings.bg_image_mob |  img_url: 'master' }}) !important;
+  }
+}
+{% endstyle %}
+
+<div class="contact-intro-section" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+    <div class="container-style contact-intro-container">
+        <div class="contact-intro-row">
+            <div class="contact-intro-col-left">
+                <h2>{{ section.settings.heading }}</h2>
+                {% comment %} <p>after submission, we’ll be in touch shortly</p> {% endcomment %}
+               <div class="desc"> {{ section.settings.description }}</div>
+            </div>
+            <div class="contact-intro-col-right">
+                {% comment %} <h3>kindly complete this form</h3> {% endcomment %}
+              <div class="klaviyo-form-SXPFLL"></div>
+
+              {% comment %}
+                {% form 'contact' %}
+                    <div class="contact-intro-input-row">
+                      
+                        <div class="contact-intro-input-col">
+                            <input type="text" name="contact[first_name]" placeholder="first name" required="required">
+                        </div>
+                        <div class="contact-intro-input-col">
+                            <input type="text" name="contact[last_name]" placeholder="last name" required="required">
+                        </div>
+                     
+                        <div class="contact-intro-input-col contact-intro-input-col-fullwidth">
+                          <input type="email" name="contact[email]" placeholder="email address" required="required">
+                        </div>
+                     
+                    </div>
+                    <div class="contact-intro-input-submit">
+                        <input type="submit" value="sign up">
+                        
+                {% if form.posted_successfully? %}
+                  <div class="contact-intro-input-row-success">
+                  
+                      <div style="color:white">success!</div>
+                  </div>
+              {% else %}
+                  {{ form.errors | default_errors }}
+                {% endif %}
+                  </div>
+
+               {% endform %}
+{% endcomment %}
+            </div>
+        </div>
+
+    </div>
+  </div>
+{% schema %}
+{
+  "name": "Newsletter - Template",
+  "tag": "section",
+  // "class": "contact-intro-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sliders_title",
+      "label": "Sliders Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mob",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings":[
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact - Template"
+    }
+  ]
+}
+{% endschema %}

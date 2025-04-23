@@ -1,0 +1,103 @@
+<section class="gallery-block">
+    <div class="wrap-gallery-block">
+        <div class="gallery">
+            <div class="gallery__item--1">
+                <a href="{{ section.settings.image1_link }}">
+            <img
+                            alt="Image"
+                           
+                            
+                            src="{{ section.settings.image1 |  img_url: 'master' }}"
+                            decoding="async" data-nimg="fill"
+                            >
+                           
+                            </a>
+            </div>
+            <div class="gallery__item--2">
+                <a href="{{ section.settings.image2_link }}">
+               <img
+                            alt="Image"
+                           
+                           
+                            src="{{ section.settings.image2 |  img_url: 'master' }}"
+                            decoding="async" data-nimg="fill"
+                            ></a>
+            </div>
+            <div class="gallery__item--3">
+                <a href="{{ section.settings.image3_link }}">
+                   <img
+                            alt="Image"
+                           
+                           
+                            src="{{ section.settings.image3 |  img_url: 'master' }}"
+                            decoding="async" data-nimg="fill"
+                            ></a>
+            </div>
+            <div class="gallery__item--4">
+                <a href="{{ section.settings.image4_link }}"><img
+                            alt="Image"
+                           
+                           
+                            src="{{ section.settings.image4 |  img_url: 'master' }}"
+                            decoding="async" data-nimg="fill"
+                            ></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "Gallery Block",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image1",
+                "label": "Image 1"
+            },
+            {
+                "type": "url",
+                "id": "image1_link",
+                "label": "Image 1 Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "image2",
+                "label": "Image 2"
+            },
+            {
+                "type": "url",
+                "id": "image2_link",
+                "label": "Image 2 Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "image3",
+                "label": "Image 3"
+            },
+            {
+                "type": "url",
+                "id": "image3_link",
+                "label": "Image 3 Link"
+            },
+            {
+                "type": "image_picker",
+                "id": "image4",
+                "label": "Image 4"
+            },
+            {
+                "type": "url",
+                "id": "image4_link",
+                "label": "Image 4 Link"
+            }
+            ],
+            
+                "presets": [
+                    {
+                        "name": "Gallery Block"
+                    }
+                ]
+    }
+    {% endschema %}

@@ -1,0 +1,255 @@
+{
+  "sections": {
+    "banner_block_dcRGwP": {
+      "type": "banner-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_1492.png",
+        "text": "<p>מוצרים טבעיים לטיפול והקלת סימפטומים המלווים התקררות אצל ילדים<\/p>",
+        "btn_text": "לחנות",
+        "btn_link": ""
+      }
+    },
+    "image_blurb_block_rRDfWj": {
+      "type": "image-blurb-block",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Leaf.png",
+        "heading": "בית טבע לילדים מאת רויטל אלגור",
+        "text": "<p>ללי טבע הוא מותג טבעי הכולל סדרת מוצרים שפותחה במיוחד כדי להתאים לצרכים של ילדים, תוך דגש על איכות בלתי מתפשרת ושימוש נכון ומושכל בטבע. ללי טבע הוא מותג טבעי לילדים הכולל סדרת מוצרים שפותחה במיוחד כדי להתאים לצרכים של ילדים.<\/p>"
+      }
+    },
+    "collection_list_VfwNBj": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_CMw3He": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "winter-ready"
+          }
+        },
+        "featured_collection_TEwrFd": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "winter-ready-1"
+          }
+        },
+        "featured_collection_jyLaCq": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "winter-ready"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_CMw3He",
+        "featured_collection_TEwrFd",
+        "featured_collection_jyLaCq"
+      ],
+      "settings": {
+        "title": "המארזים שלנו",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "color_scheme": "scheme-2",
+        "show_view_all": true,
+        "show_view_all_text": "לכל המארזים",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_aYmDp7": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "הכירו סדרת צמחי מרפא לילדים",
+        "heading_size": "h1",
+        "link_text": "<p>לכל המוצרים<\/p>",
+        "link_url": "",
+        "show_description": true,
+        "description_style": "body",
+        "collection": "winter-ready",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-2",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bg_image_with_text_block_x4aMja": {
+      "type": "bg-image-with-text-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/7955340_1.jpg",
+        "heading": "המארזים שלנו",
+        "text": "<p>כמה מילים על המארזים<\/p>",
+        "btn_text": "לחנות",
+        "btn_link": ""
+      }
+    },
+    "icon_list_block_h7qQGP": {
+      "type": "icon-list-block",
+      "blocks": {
+        "icon_JBJTyT": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_1.png",
+            "heading": "SD Extractמיצוי איכותי"
+          }
+        },
+        "icon_GazNiq": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_2.png",
+            "heading": "מיוצר ומפוקח בישראל"
+          }
+        },
+        "icon_UbxMgp": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_3.png",
+            "heading": "נוסחה ייחודית בפיתוח אישי"
+          }
+        },
+        "icon_hTcWbV": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_4.png",
+            "heading": "כשר"
+          }
+        },
+        "icon_WVXrL4": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_5.png",
+            "heading": "טעם מתקתק וידידותי"
+          }
+        },
+        "icon_H6E3Um": {
+          "type": "icon",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icon_6.png",
+            "heading": "ללא חומרים משמרים"
+          }
+        }
+      },
+      "block_order": [
+        "icon_JBJTyT",
+        "icon_GazNiq",
+        "icon_UbxMgp",
+        "icon_hTcWbV",
+        "icon_WVXrL4",
+        "icon_H6E3Um"
+      ],
+      "settings": {}
+    },
+    "image_text_block_7tfQVX": {
+      "type": "image-text-block",
+      "settings": {
+        "bg_color": "",
+        "no_border": false,
+        "image": "shopify:\/\/shop_images\/riley-revell-IT9Pu_6rQQk-unsplash.jpg",
+        "heading": "על הפורמולות",
+        "text": "<p>הפורמולות פותחו יחד עם “ברא צמחים” פעלה ופועלת על מנת להפיק את הטוב והאיכותי שבעולם הצומח לטובת בני האדם והסביבה ומאמינה, בהשקעה ממוקדת באיכות ומצוינות.<\/p>"
+      }
+    },
+    "image_text_block_rXtBdr": {
+      "type": "image-text-block",
+      "settings": {
+        "bg_color": "#e6e2da",
+        "no_border": true,
+        "image": "shopify:\/\/shop_images\/Screenshot_2024-12-16_at_19.12.18.jpg",
+        "heading": "קצת עלי",
+        "text": "<p>אני רויטל אלגור,  נשואה לגלעד ואמא למיכאלה ואליאנה. התואר 'אמא' הפך אותי למי שאני היום.<br\/>עד לפני כמה שנים הייתי רו\"ח ומשפטנית. כשמיכאלה הגיעה לעולם, הלכתי איתה לסדנת ליווי התפתחותי ושם הבנתי שהלב שלי נמצא במקום אחר.<br\/>כיום אני מדריכה להתפתחות תינוקות בשיטת צעד ראשון, יועצת שינה בשיטת 0.1 כישורי שינה וסטודנטית להדרכת הורים באדלר.<br\/>תחום ההורות מרתק אותי ואני ברת מזל לחיות מדי יום את מה שאני אוהבת לעשות.<br\/>יש לי סטודיו בוטיקי בצפון תל אביב בו אני מארחת אמהות לסדנאות ליווי התפתחותי ושינה מגילאי לידה ואילך.<br\/>אשמח להכיר אותך בסדנאות שלי.<\/p>"
+      }
+    },
+    "rich_text_d8Lt96": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_7nUbU4": {
+          "type": "heading",
+          "settings": {
+            "heading": "חוות דעת",
+            "heading_size": "h1"
+          }
+        },
+        "text_aiE9Ct": {
+          "type": "text",
+          "settings": {
+            "text": "<p>\"רויטל המדהימה! חייבת לומר שהמפגש ביום שישי האחרון נתן לנו כלים להתמודד בצורה טובה יותר, חכמה יותר ולהבין את הצרכים של הבייבי שלנו לעומק! באופן חד משמעי זה הדבר הכי טוב שהענקנו לעצמנו ולילד שלנו מאז הלידה. הוא בן 3 שבועות כרגע ומצאנו איתו שפה משותפת בזכותך. מחכים לסדנאות הבאות!\"<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7nUbU4",
+        "text_aiE9Ct"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-2",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "gallery_block_FJXfFf": {
+      "type": "gallery-block",
+      "blocks": {
+        "image_ybwaCH": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_1.png"
+          }
+        },
+        "image_n8wC7g": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_2.png"
+          }
+        },
+        "image_rPcpRx": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_3.png"
+          }
+        },
+        "image_wjnAYz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_4.png"
+          }
+        }
+      },
+      "block_order": [
+        "image_ybwaCH",
+        "image_n8wC7g",
+        "image_rPcpRx",
+        "image_wjnAYz"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "banner_block_dcRGwP",
+    "image_blurb_block_rRDfWj",
+    "collection_list_VfwNBj",
+    "featured_collection_aYmDp7",
+    "bg_image_with_text_block_x4aMja",
+    "icon_list_block_h7qQGP",
+    "image_text_block_7tfQVX",
+    "image_text_block_rXtBdr",
+    "rich_text_d8Lt96",
+    "gallery_block_FJXfFf"
+  ]
+}

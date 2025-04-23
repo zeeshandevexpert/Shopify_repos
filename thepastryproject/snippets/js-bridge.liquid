@@ -1,0 +1,21 @@
+<script>
+  window.theme = {
+    packages: [],
+  };
+  theme.loadPackages = (packages) => {
+    packages.forEach((package) => {
+      if (!theme.packages.includes(package)) {
+        const placeholderScript = document.querySelector(`script[data-package="${package}"]`);
+        if (!placeholderScript) return;
+
+        const src = placeholderScript.dataset.src;
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = false;
+        script.defer = true;
+        document.body.append(script);
+        theme.packages.push(package);
+      }
+    });
+  };
+</script>

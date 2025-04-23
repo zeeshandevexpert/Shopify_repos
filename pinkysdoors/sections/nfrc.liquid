@@ -1,0 +1,131 @@
+<div class="nfrc-page">
+  {% for block in section.blocks %}
+  <div class="{% cycle 'odd','even' %}">
+    <div class="page-width flex flex--align-center nfrc-page-flex">
+      <div class="nfrc-text">
+        <h3>{{block.settings.title}}</h3>
+        <div class="rte">
+          {{block.settings.text}}
+        </div>
+      </div>
+      <div class="nfrc-image">
+
+        {%- assign loading = block.settings.image | img_url: '100x' -%}
+        {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        {% if block.settings.page %}
+        <a href="#block-{{forloop.index}}-popup">
+        {% endif %}
+        <img class="lazyload lazyfade"
+             src="{{loading}}"
+             data-src="{{ img_url }}"
+             data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+             data-sizes="auto"
+             width="100%"
+             alt="{{alt}}" />
+        {% if block.settings.page %}
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if block.settings.page %}
+  <div style="display: none;">
+    <div id="block-{{forloop.index}}-popup">
+      {{pages[block.settings.page].content}}
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <div class="page-width--tiny index-section small--page-width nfrcFormContainer">
+    <div class="contact-form form-vertical category-contact-form ">
+      {% include 'zoho-form' %}
+      {% comment %}
+      {%- assign formId = 'ContactForm' -%}
+      {% form 'contact', id: formId %}
+      {% include 'form-status', form_id: formId %}
+
+      <div class="grid grid--half-gutters">
+        <div class="grid__item medium-up--one-half">
+          <label for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
+          <input type="text" id="{{ formId }}-name" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+        </div>
+        <div class="grid__item medium-up--one-half">
+          <label for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+          <input
+                 type="email"
+                 id="{{ formId }}-email"
+                 name="contact[email]"
+                 autocorrect="off"
+                 autocapitalize="off"
+                 value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                 aria-required="true"
+                 {%- if form.errors contains 'email' -%}
+                 class="input--error"
+                 aria-invalid="true"
+                 aria-describedby="{{ formId }}-email-error"
+                 {%- endif -%}
+                 >
+          {%- if form.errors contains 'email' -%}
+          <span id="{{ formId}}-email-error" class="input-error-message">{% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+          {%- endif -%}
+        </div>
+
+        <div class="grid__item medium-up--one-half">
+          <label for="{{ formId }}-company">Company</label>
+          <input type="text" id="{{ formId }}-company" name="contact[company]" value="{% if form[company] %}{{ form[company] }}{% endif %}">
+        </div>
+
+        <div class="grid__item medium-up--one-half">
+          <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+          <input type="tel" id="{{ formId }}-phone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+        </div>
+      </div>
+
+
+
+      <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
+      <textarea rows="10" id="{{ formId }}-message" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+      <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+
+      {% endform %}
+      {% endcomment %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "NFRC Page",
+    "settings": [],
+	"blocks": [
+    {
+    "type":"block-image",
+    "name":"Block w/Image",
+    "settings": [
+      {
+        "type":"text",
+        "id":"title",
+        "label":"Title"
+      },
+	  {
+        "type":"textarea",
+        "id":"text",
+        "label":"Text (HTML allowed)"
+      },
+      {
+        "type":"image_picker",
+        "id":"image",
+        "label":"Image"
+      },
+	  {
+		"type":"page",
+		"id":"popup_page",
+		"label":"Popup Page",
+		"info":"if none set, no popup"
+	  }
+    ]
+    }
+    ]
+  }
+{% endschema %}

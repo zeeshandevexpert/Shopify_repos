@@ -1,0 +1,121 @@
+{% if section.blocks.size > 0 %}
+  <div class="custom-lwt" style="background: {{ section.settings.bg }}; color: {{ section.settings.fg }};">
+    <div class="custom-lwt-wrapper page-width">
+      <div class="custom-lwt-slider-top-wrapper">
+        <button type="button" class="custom-lwt-prev"><svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="icomoon-ignore"></g><path d="M12.792 15.233l-0.754 0.754 6.035 6.035 0.754-0.754-5.281-5.281 5.256-5.256-0.754-0.754-3.013 3.013z" fill="currentColor"></path></svg></button>
+        <div class="custom-lwt-slider-top">
+          {% for block in section.blocks %}
+            {% if block.settings.text != blank and block.settings.logo %}
+              <div>
+                <div class="custom-lwt-text">
+                  <p>{{ block.settings.text }}</p>
+                  {% if block.settings.stext != blank %}
+                    <span>{{ block.settings.stext }}</span>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <button type="button" class="custom-lwt-next"><svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="icomoon-ignore"></g><path d="M12.792 15.233l-0.754 0.754 6.035 6.035 0.754-0.754-5.281-5.281 5.256-5.256-0.754-0.754-3.013 3.013z" fill="currentColor"></path></svg></button>
+      </div>
+      <div class="custom-lwt-slider-bottom">
+        {% for block in section.blocks %}
+          {% if block.settings.text != blank and block.settings.logo %}
+            <div>
+              <div class="custom-lwt-img-wrapper">
+                <img src="{{ block.settings.logo | img_url: 'master' }}" class="custom-lwt-img" />
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<script>
+ $('#shopify-section-{{ section.id }} .custom-lwt-slider-top').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  asNavFor: '.custom-lwt-slider-bottom',
+  prevArrow:$('#shopify-section-{{ section.id }} .custom-lwt-prev'),
+  nextArrow: $('#shopify-section-{{ section.id }} .custom-lwt-next')
+});
+$('#shopify-section-{{ section.id }} .custom-lwt-slider-bottom').slick({
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  asNavFor: '.custom-lwt-slider-top',
+  dots: false,
+  arrows: false,
+  centerMode: true,
+  focusOnSelect: true,
+  swipeToSlide: true,
+  centerPadding: 0,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3
+      }
+    }
+  ]
+});
+</script>
+{% schema %}
+{
+  "name": "Custom Logo With Text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg",
+      "label": "Bg Color",
+      "default": "#f3f3f3"
+    },
+    {
+      "type": "color",
+      "id": "fg",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "Your text here"
+      },
+      {
+        "type": "text",
+        "id": "stext",
+        "label": "Small Text",
+        "default": "Text"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Logo With Text"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}

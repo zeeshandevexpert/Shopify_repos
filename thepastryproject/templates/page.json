@@ -1,0 +1,98 @@
+{
+  "sections": {
+    "main": {
+      "type": "template--page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1659204276119a3181": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "814851f0-f88d-4e2b-9ca0-248759340201": {
+          "type": "html",
+          "settings": {
+            "code": "",
+            "width": "100%"
+          }
+        },
+        "39041034-aba2-4d34-9541-9eed94f39c61": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<style>\n.split {\n  height: 100%;\n  width: 50%;\n  position: fixed;\n  z-index: 1;\n  top: 0;\n  overflow-x: hidden;\n  padding-top: 20px;\n}\n\n/* Control the left side */\n.left {\n  left: 0;\n  background-color: #111;\n}\n\n/* Control the right side */\n.right {\n  right: 0;\n  background-color: red;\n}\n\n\n.centered {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  text-align: center;\n}\n\n/* Style the image inside the centered container, if needed */\n.centered img {\n  width: 150px;\n  border-radius: 50%;\n}\n</style>\n\n\n<div class=\"split left\">\n  <div class=\"centered\">\n    <img src=\"img_avatar2.png\" alt=\"Avatar woman\">\n    <h2>Jane Flex</h2>\n    <p>Some text.</p>\n  </div>\n</div>\n\n<div class=\"split right\">\n  <div class=\"centered\">\n    <img src=\"img_avatar.png\" alt=\"Avatar man\">\n    <h2>John Doe</h2>\n    <p>Some text here too.</p>\n  </div>\n</div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "814851f0-f88d-4e2b-9ca0-248759340201",
+        "39041034-aba2-4d34-9541-9eed94f39c61"
+      ],
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "1659218387049e966a": {
+      "type": "advanced-layout--custom-html",
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "16592184092749c70e": {
+      "type": "image--logo-list",
+      "settings": {
+        "width": 190,
+        "subheading": "",
+        "title": ""
+      }
+    },
+    "1659740633a3429163": {
+      "type": "image--image",
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/emilyheathersig.png",
+        "parallax": true,
+        "hero_size": "medium",
+        "text-over-image-width": "full-width"
+      }
+    },
+    "053f3ca0-65d0-4823-bc4f-76a33316b2a4": {
+      "type": "product--featured-product",
+      "settings": {
+        "subheading": "",
+        "title": "Bun Bun Pre-order",
+        "featured_product": "take-bake-cinnamon-rolls-4-pack",
+        "tax_included": true,
+        "shipping_policy": false,
+        "show_discount": "hide",
+        "show_SKU": false,
+        "show_quantity_selector": true,
+        "show_smart_checkout": true,
+        "show_product_description": true,
+        "hide_out_of_stock": false,
+        "enable_video_loop": false
+      }
+    },
+    "165999283778ad6046": {
+      "type": "newsletter--newsletter",
+      "settings": {
+        "newsletter--background-color": "#ff8ac4",
+        "title": "Join our mailing list",
+        "subheading": "Let's be BBF's (Best Baking Friends)",
+        "newsletter_description": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1659204276119a3181",
+    "1659218387049e966a",
+    "16592184092749c70e",
+    "1659740633a3429163",
+    "053f3ca0-65d0-4823-bc4f-76a33316b2a4",
+    "165999283778ad6046"
+  ]
+}

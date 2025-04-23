@@ -1,0 +1,73 @@
+{% if collection.empty? %}
+  {% comment %}add default state for collection block in storefront editor{% endcomment %}
+  {% capture collection_title %}{{ 'general.onboard.collection_title' | t }}{% endcapture %}
+  {% capture collection_image_url %}{% endcapture %}
+{% else %}
+  {% capture collection_title %}{{ collection.title }}{% endcapture %}
+{% endif %}
+
+{%- liquid
+
+  if settings.collection_titles == 'floating'
+    assign col_title_style = 'floating'
+  elsif settings.collection_titles == 'below'
+    assign col_title_style = 'below'
+  elsif settings.collection_titles == 'boxed'
+    assign col_title_style = 'boxed'
+  elsif settings.collection_titles == 'screen'
+    assign col_title_style = 'screen'
+  endif
+
+  assign overlay = false
+  if settings.collection_image_overlay == true
+    assign overlay = true
+  endif
+
+  case grid
+  when 2
+    assign md_render = 'calc(100vw / 2)'
+    assign lg_render = 'calc(1600px / 2)'
+    assign width = '1000'
+  when 3
+    assign md_render = 'calc(100vw / 3)'
+    assign lg_render = 'calc(1600px / 3)'
+    assign width = '700'
+  else
+    assign md_render = 'calc(100vw / 4)'
+    assign lg_render = 'calc(1600px / 4)'
+    assign width = '500'
+  endcase
+
+-%}
+<div class="collection-image{% if overlay %} ci--overlay{% endif %} {{ settings.collection_image_ratio }}-images {{ col_title_style }}__titles{% if collection.products_count == 0 %} empty_collection{% endif %}">
+  <a href="{{ collection.url }}" title="{{ collection_title }}" tabindex="-1">
+    {% if collection.image %}
+      {% render 'collection-responsive-image',
+        type: collection.image,
+        width: width,
+        sm_render: '300px',
+        md_render: md_render,
+        lg_render: lg_render,
+      %}
+    {% elsif collection.products.first and collection.products.first.media != empty %}
+      {% render 'collection-responsive-image',
+        type: collection.products.first.featured_media.preview_image,
+        width: width,
+        sm_render: '300px',
+        md_render: md_render,
+        lg_render: lg_render,
+      %}
+    {% endif %}
+  </a>
+</div>
+<div class="collection-list collection-info {{ col_title_style }}__titles">
+  <a href="{{ collection.url }}" title="{{ collection_title }}">
+    <div class="prod-title">
+      <span class="collection__title--text h4">{{ collection.title }}</span>
+      {% if settings.show_collection_count %}
+        <span class="collection_item-count">{{ collection.products_count }} {{ 'collections.general.items' | t }}</span>
+      {% endif %}
+    </div>
+   
+  </a>
+</div>

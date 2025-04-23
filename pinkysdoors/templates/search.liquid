@@ -1,0 +1,189 @@
+{% render 'hs-defer-css' with filename: 'component-predictive-search.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}
+{% paginate search.results by 50 %}
+<div class="page-width ">
+  <div class="text-center search--top-text section-header">
+    <h1 class="h2 no-caps"><small>Use the search tool below to access the</small><br>LARGEST U.S. INVENTORY of 
+      <a href="/collections/iron-doors" title="Iron Doors">Iron Doors</a>, 
+      <a href="/collections/steel-doors">Steel Doors</a>, and 
+      <a href="/collections/steel-windows-special-order">Steel Windows</a>
+    </h1>
+  </div>
+
+ 
+      <div class="grid">
+        <div class="grid__item medium-up--two-fifths medium-up--push-three-tenths">
+          <predictive-search>
+            <form action="/search" method="get" role="search" class="search">
+              <div aria-live="polite" class="form-message form-message--error search-result-error-message hide" data-search-error-message>
+                <ul id="error-search-form">
+                  <li>{{ 'general.search.empty_search_message' | t }}</li>
+                </ul>
+              </div>
+
+              <div class="input-group">
+                <input type="search"
+                  id="SearchInput"
+                  class="input-group__field search__input"
+                  name="q"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results"
+                  aria-controls="predictive-search-results"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  value="{{ search.terms | escape }}"
+                  placeholder="Enter search term here"
+                  aria-label="{{ 'general.search.placeholder' | t }}"
+                  >
+                <input name="options[prefix]" type="hidden" value="last">
+                <span class="input-group__btn">
+                  <button id="SearchResultSubmit" class="btn search__submit" type="submit">{{ 'general.search.submit' | t }}</button>
+                </span>
+              </div>
+              <div class="predictive-search predictive-search--search-template" tabindex="-1" data-predictive-search>
+                <div class="predictive-search__loading-state">
+                  <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                  </svg>
+                </div>
+              </div>
+              <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+            </form>
+          </predictive-search>
+        </div>
+      </div>
+
+      {% if search.performed and search.results_count == 0 %}
+        <hr class="hr--small hr--invisible" aria-hidden="true" />
+        <div class="rte">
+          <p>{{ 'general.search.no_results_html' | t: terms: search.terms }}</p>
+        </div>
+      {% endif %}
+  </div>
+</div>
+
+<style>
+  .site-footer__newsletter-wrapper {
+    display: none;
+  }
+  .search--top-text {
+    padding-top: 15px;
+  }
+  .search--top-text a {
+    text-decoration: underline;
+  }
+</style>
+
+
+{% if search.performed %}
+  {% assign the_products = '' %}
+  {% assign the_articles = '' %}
+  {% assign the_pages = '' %}
+  {% assign alreadyChecked = false %}
+  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
+  <div id="search-results--wrapper" data-page="{{ pagination.current_page }}" class="page-width">
+    {% for item in search.results %}
+        {% if item.product.tags contains 'hidden' %}{% continue %}{% endif %}
+     	{% if item.object_type == 'product' and item.available %}
+            {%  if item.title contains 'Custom' %}{% continue %}{%  endif %}
+    		{% capture the_products %}{{the_products}}
+    		<div class="grid__item medium-up--one-third small--one-half">
+              {% include 'product-card-grid', product: item %}
+    		</div>
+    		{% endcapture %}
+    	{% endif %}
+    	{% if item.object_type == 'article' %}
+    		{% capture the_articles %}{{the_articles}}
+    		{% include 'article-card-grid', article: item %}
+    		{% endcapture %}
+    	{% endif %}
+    	{% if item.object_type == 'page' %}
+    	{% unless item.title contains 'PDP' %}
+    		{% capture the_pages %}{{the_pages}}
+            {% assign show_search = true %}
+            {% capture item_url %}/pages/{{ item.handle }}{% endcapture %}
+            {% for link in linklists['no-index'].links %}
+              {% if item_url == link.url %}
+                {% assign show_search = false %}
+              {% endif %}
+            {% endfor %}
+            {% if show_search %}
+    		<div class="grid__item one-half search-item__page">
+              <h3 class="h4">{{item.title | link_to: item.url}}</h3>
+              <div class="rte small--hide">{{item.content | strip_html | truncate: 250}}</div>
+              <a class="btn btn--tertiary btn--small" href="{{item.url}}">Read More</a>
+              <hr />
+    		</div>
+            {% endif %}
+    		{% endcapture %}
+    	{% endunless %}
+    	{% endif %}
+        {% if item.collections and alreadyChecked == false %}
+        	{%- assign alreadyChecked = true -%}
+        	{%- assign all_collections = item.collections -%}
+    	{% endif %}
+    {% endfor %}
+    <div class="search-page__headings text-center">
+    {% if the_products != '' %}
+      <a class="search-page__heading" href="#" data-filter-by="search-page__products">Products</a>
+    {% endif %}
+    {% if all_collections.size > 0 %}
+      <a class="search-page__heading" href="#" data-filter-by="search-page__collections">Collections</a>
+    {% endif %}
+    {% if the_articles != '' %}
+      <a class="search-page__heading" href="#" data-filter-by="search-page__articles">Articles</a>
+    {% endif %}
+    {% if the_pages != '' %}
+      <a class="search-page__heading" href="#" data-filter-by="search-page__pages">Pages</a>
+    {% endif %}
+    </div>
+    
+    {% if the_products != '' %}
+    <div class="search-page__products search-page__tab" style="display: none">
+      <div class="search-page__inner grid flex flex--wrap">{{the_products}}</div>
+    </div>
+    {% endif %}
+    {% if all_collections.size > 0 %}
+    <div class="search-page__collections search-page__tab"  style="display: none">
+      <div class="search-page__inner grid flex flex--wrap">
+        {% for col in all_collections %}
+          {% if col.image %}
+        	{% assign img = col.image %}
+          {% else %}
+        	{% assign img = col.products[0].images[0] %}
+          {% endif %}
+          <div class="grid__item medium-up--one-third small--one-half text-center">
+          {% include 'collection-grid-item', collection: col, shape: 'square', position: 'below' %}
+          </div>
+          {% comment %}
+          <div class="grid__item medium-up--one-third small--one-half text-center">
+            {{img | img_url: '600x' | img_tag | link_to: col.url}}
+            <h4>{{col.title | link_to: col.url}}</h4>
+          </div>
+          {% endcomment%}        
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+    {% if the_articles != '' %}
+    <div class="search-page__articles search-page__tab" style="display: none">
+      <div class="search-page__inner grid flex flex--wrap">{{the_articles}}</div>
+    </div>
+    {% endif %}
+    {% if the_pages != '' %}
+    <div class="search-page__pages search-page__tab" style="display: none">
+      <div class="search-page__inner grid flex flex--wrap">{{the_pages}}</div>
+    </div>
+    {% endif %}
+    
+    {% include 'pagination' %}
+    
+  </div>
+
+  
+{% endif %}
+
+{% endpaginate %}
+<script defer src="{{ 'search-form.min.js' | asset_url }}"></script>
+<script defer src="{{ 'predictive-search.min.js' | asset_url }}"></script>

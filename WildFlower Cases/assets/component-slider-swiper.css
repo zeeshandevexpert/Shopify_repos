@@ -1,0 +1,9 @@
+.collection-slider .swiper-wrapper .swiper-slide{
+    height: 100%;
+}
+
+.collection-slider .swiper-wrapper .swiper-slide .card__content.flex-box .card__information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

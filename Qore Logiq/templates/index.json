@@ -1,0 +1,324 @@
+{
+  "sections": {
+    "banner_section_qYjQYh": {
+      "type": "banner-section",
+      "blocks": {
+        "slide_QbteR9": {
+          "type": "slide",
+          "settings": {
+            "heading": "GYNECOMASTIA <span>COMPRESSION SHIRTS<\/span> FOR MEN",
+            "text": "<ul><li>Perfect for men<\/li><li>High performance compression<\/li><li>Quality fabric<\/li><\/ul>",
+            "btn_text": "Shop NOW",
+            "btn_link": "#",
+            "slide": false,
+            "image": "shopify:\/\/shop_images\/Frame_2.png",
+            "before": "shopify:\/\/shop_images\/before_Image.png",
+            "after": "shopify:\/\/shop_images\/after_Image.png"
+          }
+        },
+        "slide_Y8BKbD": {
+          "type": "slide",
+          "settings": {
+            "heading": "GYNECOMASTIA <span>COMPRESSION SHIRTS<\/span> FOR MEN",
+            "text": "<ul><li>Perfect for men<\/li><li>High performance compression<\/li><li>Quality fabric<\/li><\/ul>",
+            "btn_text": "ggg",
+            "btn_link": "",
+            "slide": true,
+            "image": "shopify:\/\/shop_images\/after_Image.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_QbteR9",
+        "slide_Y8BKbD"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Main_Bg.png"
+      }
+    },
+    "iconlist_section_WJciib": {
+      "type": "iconlist-section",
+      "blocks": {
+        "icons_BqkheA": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_2.png",
+            "icon_heading": "HIGH PERFORMANCE\nCOMPRESSION",
+            "Subtitle": "3-tier compression. Provides smooth shaping under clothes."
+          }
+        },
+        "icons_N3AMKe": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_149.png",
+            "icon_heading": "EXTRA CHEST\nCOMPRESSION",
+            "Subtitle": "Minimizes the look of gynecomastia."
+          }
+        },
+        "icons_LhXP3d": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_3.png",
+            "icon_heading": "TOP NOTCH MATERIAL",
+            "Subtitle": "Blend of 93% Nylon, 7% Elastane holds firm."
+          }
+        },
+        "icons_DWWWMX": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_4.png",
+            "icon_heading": "BREATHABLE FABRIC",
+            "Subtitle": "Offers comfort, support and stability."
+          }
+        }
+      },
+      "block_order": [
+        "icons_BqkheA",
+        "icons_N3AMKe",
+        "icons_LhXP3d",
+        "icons_DWWWMX"
+      ],
+      "settings": {
+      }
+    },
+    "best_seller_section_hNGWgY": {
+      "type": "best-seller-section",
+      "settings": {
+        "reverse": false,
+        "bg_image": "shopify:\/\/shop_images\/Group_219.png",
+        "image": "shopify:\/\/shop_images\/man.png",
+        "heading": "OUR BEST SELLING PRODUCTS",
+        "text": "Gynecomastia Compression\nShirts for Men",
+        "info": "More colours available",
+        "price": "$29.99"
+      }
+    },
+    "product_info_section_jYbzyB": {
+      "type": "product-info-section",
+      "blocks": {
+        "icon_7zcEFD": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_1.png",
+            "heading": "High performance compression",
+            "text": "3-tier compression. Provides smooth shaping under clothes."
+          }
+        },
+        "icon_DNjAPW": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_2.png",
+            "heading": "Extra chest compression",
+            "text": "Minimizes the look of gynecomastia."
+          }
+        },
+        "icon_Uda9rE": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_3.png",
+            "heading": "Top notch material",
+            "text": "Blend of 93% Nylon, 7% Elastane holds firm."
+          }
+        },
+        "icon_f7rgJc": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_4.png",
+            "heading": "Breathable fabric",
+            "text": "Offers comfort, support and stability."
+          }
+        }
+      },
+      "block_order": [
+        "icon_7zcEFD",
+        "icon_DNjAPW",
+        "icon_Uda9rE",
+        "icon_f7rgJc"
+      ],
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/prod1.png",
+        "heading": "GYNECOSMATIA COMPRESSION SHIRTS FOR MEN",
+        "sub_heading": "TRANFORM YOUR SHAPE",
+        "text": "",
+        "btn_text": "Shop NOW",
+        "btn_url": "#"
+      }
+    },
+    "product_info_section_BGEqDE": {
+      "type": "product-info-section",
+      "blocks": {
+        "icon_ephN9w": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-sec_1.png",
+            "heading": "Perfect for men and women",
+            "text": ""
+          }
+        },
+        "icon_kKkGEi": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-sec_2.png",
+            "heading": "Reduces post surgery recovery time",
+            "text": ""
+          }
+        },
+        "icon_NTd4KW": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-sec_3.png",
+            "heading": "Provides back support\/pain relief",
+            "text": ""
+          }
+        },
+        "icon_ari8cL": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-sec_4.png",
+            "heading": "Can be worn under or over clothes",
+            "text": ""
+          }
+        },
+        "icon_aJqG8x": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon-sec_5.png",
+            "heading": "Creates slimming effect",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_ephN9w",
+        "icon_kKkGEi",
+        "icon_NTd4KW",
+        "icon_ari8cL",
+        "icon_aJqG8x"
+      ],
+      "settings": {
+        "reverse": true,
+        "image": "shopify:\/\/shop_images\/Mask_group.png",
+        "heading": "PLUS SIZE ABDOMINAL BINDER",
+        "sub_heading": "SAY GOODBYE TO YOUR ABDOMINAL PAIN",
+        "text": "This Plus Size Abdominal Binder helps support your belly, waist & hips post-pregnancy and makes you forget all your abdominal injuries.",
+        "btn_text": "Shop Now",
+        "btn_url": "#"
+      }
+    },
+    "content_icon_section_bbdwtD": {
+      "type": "content-icon-section",
+      "blocks": {
+        "icon_6NmwdX": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/blue_icon_1.png",
+            "heading": "SUPERIOR SUPPORT",
+            "text": ""
+          }
+        },
+        "icon_HV848g": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/blue_icon_2.png",
+            "heading": "FULLY ADJUSTABLE",
+            "text": ""
+          }
+        },
+        "icon_ERPzyW": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/blue_icon_3.png",
+            "heading": "MAINTAINS SHAPE",
+            "text": ""
+          }
+        },
+        "icon_acMGn9": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/blue_icon_4.png",
+            "heading": "WASHING MACHINE FRIENDLY",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_6NmwdX",
+        "icon_HV848g",
+        "icon_ERPzyW",
+        "icon_acMGn9"
+      ],
+      "settings": {
+        "reverse": true,
+        "bg_image": "shopify:\/\/shop_images\/Bg_icon__content.png",
+        "image": "shopify:\/\/shop_images\/Group_223.png",
+        "heading": "PLUS SIZE ABDOMINAL BINDER",
+        "sub_heading": "INNOVATIVE DUAL<br> COMPRESSION TECHNOLOGY",
+        "text": "",
+        "btn_text": "",
+        "btn_url": ""
+      }
+    },
+    "home_content_image_section_ebdXPP": {
+      "type": "home-content-image-section",
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/bg.png",
+        "heading": "BEST ABDOMINAL BINDING I'VE OWNED IN OVER A DECADE",
+        "content": "The quality of this abdominal binding surpasses anything that I have purchased in 15 years! It comes with a garment bag for washing a Velcro cover for washing. It's comfortable and easy to put on myself without the aid of anyone else!! I would highly recommend this binding if you wear an abdominal binding on a regular basis The sizes are incredibly accurate make sure you measure yourself or you're going to end up with an extra 2' of elastic..."
+      }
+    },
+    "video_section_9dzFAr": {
+      "type": "video-section",
+      "settings": {
+        "heading": "FEATURED ON <span>AMAZON.COM<\/span>",
+        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/948b7837002a4e85b69cd0443d683ff7.mp4"
+      }
+    },
+    "support_section_NX73DR": {
+      "type": "support-section",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_bg.png",
+        "image": "shopify:\/\/shop_images\/Group_220.png",
+        "content": "<p>At QORE LOGIQ we pride ourselves on enhancing the quality of your life, by providing comfort, support and stability to all your ‘QORE’ needs..<\/p><p><\/p><p>It's 'LOGIQ' really!<\/p>",
+        "btn_text": "see all our products",
+        "btn_url": "#"
+      }
+    },
+    "default_banner_section_RdrFrm": {
+      "type": "default-banner-section",
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Main_Bg.png",
+        "left_image": "shopify:\/\/shop_images\/left_img.png",
+        "heading": "ABOUT US",
+        "text": "QORE LOGIC is the top plus size abdominal binder company\u2028recommended by physicians, nurses, hospitals, doulas, fitness experts and of course, new moms.",
+        "right_image": "shopify:\/\/shop_images\/right_image.png"
+      }
+    },
+    "contact_form_Pen4qY": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "heading": "HOW CAN WE HELP?",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner_section_qYjQYh",
+    "iconlist_section_WJciib",
+    "best_seller_section_hNGWgY",
+    "product_info_section_jYbzyB",
+    "product_info_section_BGEqDE",
+    "content_icon_section_bbdwtD",
+    "home_content_image_section_ebdXPP",
+    "video_section_9dzFAr",
+    "support_section_NX73DR",
+    "default_banner_section_RdrFrm",
+    "contact_form_Pen4qY"
+  ]
+}

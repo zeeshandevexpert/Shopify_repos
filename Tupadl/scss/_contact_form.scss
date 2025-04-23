@@ -1,0 +1,141 @@
+.contact-form{
+    padding: 50px 20px;
+    margin-bottom: 50px;
+    .container{
+        max-width: 1600px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 70px;
+        @media screen and (max-width:991px) {
+            display: block;
+        }
+        .text-col{
+            @media screen and (max-width:991px) {
+                margin-bottom: 50px;
+            }
+            .heading{
+                margin-bottom: 30px;
+                h2{
+                    font-size: 45px;
+                    font-family: $sportingbold;
+                    color: $black;
+                    @media screen and (max-width:1200px) {
+                        font-size: 38px;
+                    }
+                    @media screen and (max-width:991px) {
+                        font-size: 32px;
+                    }
+                    @media screen and (max-width:567px) {
+                        font-size: 30px;
+                    }
+                }    
+            }
+            .subtext{
+                p{
+                    font-size: 14px;
+                    font-family: $sportingregular;
+                    color: $black;
+                    line-height: 23px;
+                }    
+            }   
+            .icons-wrapper{
+                margin-top: 100px;
+                .icon-box{
+                    display: flex;
+                    gap: 50px;
+                    margin-bottom: 30px;
+                    align-items: center;
+                    .icon{
+                        img{}
+                    }
+                    .text{
+                        font-family: $sportingbold;
+                        font-size: 20px;
+                        text-transform: uppercase;
+                        color: $black;
+                    }
+                }
+            } 
+        }
+        .form-col{
+            form{
+                .contact-intro-input-row{
+                    .wrapper-field{
+                        display: flex;
+                        gap: 50px;
+                           .input__field{
+                            flex: 50%;
+                           }
+                    }
+                    .input__field{
+                        input,
+                        textarea{
+                            border: none;
+                            border-bottom: 1px solid $black;
+                            margin-bottom: 50px;
+                            width: 100%;
+                            padding: 10px 0;
+                            font-family: $sportingregular;
+                            font-size: 18px;
+                            color: $black;
+                            opacity: 0.8;
+                            outline: none;
+                            box-shadow: none;
+                            @media screen and (max-width:1300px) {
+                                width: 45%;
+                            }
+                            @media screen and (max-width:567px) {
+                                width: 100%;
+                            }
+                            &::focus{
+                                border: none !important;    
+                            }
+                             &.message{
+                                height: 70px;
+                                width: 100%;
+                                margin-bottom: 60px;
+                            }   
+                            &.email{
+                                margin-left: 30px; 
+                                @media screen and (max-width:567px) {
+                                    margin-left: 0px;
+                                }   
+                            }
+                        } 
+
+                    }
+                }
+                .contact-intro-input-submit{
+                    input{
+                        display: block;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 300px;
+                        height: 70px;
+                        border: 2px solid $black;
+                        font-size: 22px;
+                        font-family: $sportingregular;
+                        color: $black;
+                        background: #FFFFFF;
+                        transition: all 0.3s ease;
+                        cursor: pointer;
+                        
+                        &:hover{
+                            background: $black;
+                            color: $whitealt;    
+                        }                 
+                        @media screen and (max-width:567px) {
+                                width: 100%;
+                        }   
+                    } 
+                }
+                
+                 
+            }    
+        }    
+    }    
+}

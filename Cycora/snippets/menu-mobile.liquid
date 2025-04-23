@@ -1,0 +1,8 @@
+<ul class="header-mobile-only-top">
+    {% for link in linklists['main-menu-mobile'].links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+</ul>
+<div class="header-mobile-only-bottom">
+    <a href="/pages/legal">legal</a>
+</div>

@@ -1,0 +1,214 @@
+{%- liquid
+
+  assign is_carousel = false
+  assign collection = collections[section.settings.look_collection]
+  assign grid_item_width = 'Shop__TheLook-product'
+  assign product_limit = 6
+  assign current_variant = product.selected_or_first_available_variant
+
+  assign enough_to_wrap = true
+  if collection.products.size <= 3
+    assign enough_to_wrap = false
+  endif
+
+-%}
+
+<div id="shop-the-look-{{ section.id }}"
+  class="Shop__TheLook global__section"
+  data-section-id="{{ section.id }}"
+  data-section-type="shoplook"
+  data-aos="{{ settings.scroll_animation }}">
+
+  <div class="row">
+
+    {% capture desktop_image_layout %}
+      <div class="Shop__TheLook-image desktop">
+        {% if section.settings.image != blank %}
+          {% render 'basic-responsive-image',
+            type: section.settings.image,
+            width: 1000
+          %}
+        {% else %}
+          <div class="onboard">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    {% endcapture %}
+    {% capture mobile_image_layout %}
+      <div class="Shop__TheLook-image mobile">
+        {% if section.settings.image != blank %}
+          {% render 'basic-responsive-image',
+            type: section.settings.image,
+            width: 500
+          %}
+        {% else %}
+          <div class="onboard">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+      </div>
+    {% endcapture %}
+
+    <div class="Shop__TheLook-wrapper">
+      {% if section.settings.layout == 'left' %}
+        {{ desktop_image_layout }}
+      {% endif %}
+
+      <div class="Shop__TheLook-content {% if section.settings.text_align == 'center' %} text-centered{% endif %}">
+
+        {% if section.settings.title != blank %}
+          <div class="section-heading">
+            {% render 'section-headings', type: section.settings.title %}
+          </div>
+        {% endif %}
+
+        {{ mobile_image_layout }}
+
+        {% capture slideshow_config %}{
+          "wrapAround":{{ enough_to_wrap }},
+          "cellAlign": "left",
+          "draggable": {{ enough_to_wrap }},
+          "dragThreshold":"15",
+          "pauseAutoPlayOnHover":false,
+          "prevNextButtons":{{ enough_to_wrap }},
+          "pageDots": false
+       }{% endcapture %}
+
+        <div
+          class="Shop__TheLook-products flickity__section js-carousel"
+          data-flickity='{{ slideshow_config }}'
+          data-slider-index="{{ forloop.index }}">
+
+          {% if collection == blank %}
+            {% render 'onboard-product',  product_limit: product_limit, grid_item_width: grid_item_width %}
+          {% else %}
+            {% for product in collection.products %}
+              <div class="product-index Shop__TheLook-product"
+                data-alpha="{{ product.title }}"
+                data-price="{{ product.price }}"
+                data-product-id="{{ product.id }}"
+                data-id="{{ current_variant.id }}">
+                <a href="{{ product.url | within: collection }}">
+                  <div class="reveal {% if settings.image_ratio == 'square' %}square-images{% elsif settings.image_ratio == 'vertical' %}vertical-images{% elsif settings.image_ratio == 'horizontal' %}horizontal-images{% endif %}">
+                    {% render 'basic-responsive-image',
+                      type: product.featured_media.preview_image,
+                      width: 300
+                    %}
+                    {% if settings.display_options == 'image-switch' and product.media.size > 1 %}
+                    <div class="hidden">
+                      {% render 'basic-responsive-image',
+                        type: product.media[1],
+                        width: 300
+                      %}
+                    </div>
+                    {% endif %}
+                    {% if product.available %}
+                      {% for col in product.collections %}
+                        {% if col.handle == 'new' %}
+                          <div class="new icn">{{ 'products.general.new' | t }}</div>
+                        {% endif %}
+                      {% endfor %}
+                      {% if product.price < product.compare_at_price %}
+                        <div class="sale-item icn">{{ 'products.general.sale' | t }}</div>
+                      {% endif %}
+                    {% else %}
+                      <div class="so icn">{{ 'products.general.sold' | t }}</div>
+                    {% endif %}
+                  </div>
+                </a>
+                <div class="product-info">
+                  {% if section.settings.show_buy_buttons %}
+                    {% render 'product-grid-add', product: product %}
+                  {% endif %}
+
+                  <a href="{{ product.url | within: collection }}">
+                    {% if settings.vendor %}
+                      <p><em>{{ product.vendor }}</em></p>
+                    {% endif %}
+                    <div class="prod-title">{{ product.title }}</div>
+                  </a>
+                  {% render 'product-price-listing', product: product %}
+                </div>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+        </div>
+      </div>
+
+      {% if section.settings.layout == 'right' %}
+        {{ desktop_image_layout }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Shop the Look",
+    "class": "global__section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Shop the Look"
+      },
+      {
+        "type": "collection",
+        "id": "look_collection",
+        "label": "Choose collection"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_buy_buttons",
+        "label": "Show options and add to cart buttons",
+        "default": false
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info" : "800px x 800px recommended"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Layout",
+        "default": "right",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      }
+    ],
+    "enabled_on": {
+      "templates": [
+        "404",
+        "article",
+        "blog",
+        "cart",
+        "collection",
+        "index",
+        "list-collections",
+        "page",
+        "product",
+        "search",
+        "customers/account"
+      ]
+    },
+    "presets": [
+      {
+        "name": "Shop the Look"
+      }
+    ]
+  }
+{% endschema %}

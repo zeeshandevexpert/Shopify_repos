@@ -1,0 +1,138 @@
+<div class="custom-main-section">
+  <div class="custom-main-slider-container">
+
+    {% if section.settings.img %}
+    <div>
+      <div class="custom-main-slide-item">
+        <img src="{{ section.settings.img | img_url: 'master' }}" alt="" class="custom-main-img" />
+        <img src="{{ section.settings.mbl-img | img_url: 'master' }}" alt="" class="mbl-custom-main-img" />
+        <div class="custom-main-text-box">
+          {% if section.settings.text != blank %}
+          <h1 class="custom-main-h1">{{ section.settings.text }}</h1>
+          {% endif %}
+          {% if section.settings.btn-text != blank %}
+          <a href="{{ section.settings.btn-link }}" class="custom-main-a">{{ section.settings.btn-text }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+<style>
+
+.custom-main-slide-item{
+  position: relative;
+}
+  .mbl-custom-main-img{
+    display:none;
+  }
+.custom-main-img{
+    width: 100%;
+    object-fit: cover;
+  display:block;
+}
+.custom-main-text-box{
+      position: absolute;
+    padding: 15px;
+      bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.custom-main-h1{
+font-size: 32px;
+    color: white;
+    text-align: center;
+    display: none;
+}
+.custom-main-a{
+    border: 0;
+    text-decoration: none;
+    color: {{section.settings.t-color}};
+    background: {{section.settings.b-color}};
+    padding: 15px 50px;
+    display: block;
+    font-size: 18px;
+    transition: 0.3s;
+    font-weight:600;
+    width:370px;
+  text-align:center;
+}
+
+  @media only screen and (max-width:767px){
+    .custom-main-a{
+    font-size: 16px; 
+      padding:10px;
+    width:170px;
+}
+    .custom-main-text-box{
+      bottom:20px;
+    }
+   .custom-main-img{
+    display:none !important;
+  }
+   .mbl-custom-main-img{
+    display:block;
+     width:100%;
+  }
+
+  }
+</style>
+
+{% schema %}
+{
+    "name": "Custom Main Banner",
+    "settings": [
+        {
+            "id": "img",
+            "type": "image_picker",
+            "label": "Image"
+        },
+        {
+            "id": "mbl-img",
+            "type": "image_picker",
+            "label": "Mobile Image"
+        },
+        {
+            "id": "text",
+            "type": "text",
+            "label": "Title",
+            "default": "Your Title Here"
+        },
+        {
+            "id": "btn-text",
+            "type": "text",
+            "label": "Button text",
+            "default": "Button Text"
+        },
+        {
+            "id": "btn-link",
+            "type": "url",
+            "label": "Button Link"
+        },
+        {
+            "type": "color",
+            "id": "t-color",
+            "label": "Button Label Color",
+            "default": "#fff"
+        },
+        {
+            "type": "color",
+            "id": "b-color",
+            "label": "Button background Color",
+            "default": "#fff"
+        }
+    ],
+    "presets": [{
+        "name": "Custom Main Banner",
+        "category": "Custom"
+    }]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

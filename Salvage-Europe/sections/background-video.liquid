@@ -1,0 +1,292 @@
+{%- liquid
+
+  assign hide_caption = false
+  assign has_heading = false
+  assign has_subheading = false
+  assign has_button = false
+  assign fixed_height = false
+  assign caption_below = false
+
+  if section.settings.heading != blank
+    assign has_heading = true
+    assign heading = section.settings.heading
+  endif
+
+  if section.settings.subheading != blank
+    assign has_subheading = true
+    assign subheading = section.settings.subheading
+  endif
+
+  if section.settings.link != blank and section.settings.button_text != blank
+    assign has_button = true
+    assign button_text = section.settings.button_text
+    assign link = section.settings.link
+  endif
+
+  if heading == blank and subheading == blank and button_text == blank
+    assign hide_caption = true
+  endif
+
+  assign text_color = section.settings.text_color
+  assign caption_background = section.settings.background_color
+  assign button_color = section.settings.button_color
+  assign button_background = section.settings.button_background
+
+  if section.settings.video_height == 'fixed_height'
+    assign fixed_height = true
+  endif
+
+  assign desktop_height = section.settings.desktop_height
+  assign mobile_height = section.settings.mobile_height
+
+  if section.settings.caption_below
+    assign caption_below = true
+  endif
+
+-%}
+
+<section
+  class="global__section global__section-{{ section.id }} background--video__section{% if section.settings.no_bottom_margin %} mb0{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-loaded="false"
+  data-section-type="background-video"
+  data-aos="{{ settings.scroll_animation }}">
+
+  {% capture caption %}
+    <div class="video--caption__container caption-{{ section.id }} a-center{% if caption_below %} caption--below__image{% endif %}">
+      {% if has_heading %}
+        <h2 class="video--caption__title">
+          {{ heading | escape }}
+        </h2>
+      {% endif %}
+      {% if has_subheading %}
+        <p>{{ subheading }}</p>
+      {% endif %}
+      {% if has_button %}
+        <a class="video--button button" href="{{ link }}">
+          {{ button_text | escape }}
+        </a>
+      {% endif %}
+    </div>
+  {% endcapture %}
+
+  <div class="background--video__content background-video-{{ section.id }}" data-video-type="{{ section.settings.video_url.type }}" data-video-mute="{{ section.settings.video_audio }}">
+    {% if section.settings.video_url.type == 'youtube' %}
+
+      {% assign video_url = "?controls=0&showinfo=0&autohide=1&autoplay=1&mute=1" %}
+
+      <div class="video--wrapper item youtube{% if fixed_height %} fixed--height{% endif %}" data-video-type="youtube">
+        <iframe allowfullscreen id="youtube-{{ section.id }}" title="{{ section.settings.description | escape }}" class="embed-player" frameborder="0" src="//www.youtube.com/embed/{{ section.settings.video_url.id }}{{ video_url }}"></iframe>
+      </div>
+
+    {% elsif section.settings.video_url.type == 'vimeo' %}
+
+      {% assign video_url = "?api=1&byline=0&portrait=0&title=0&sidedock=0&loop=1&autoplay=1&id=217885864?&showinfo=0&controls=0&muted=1" %}
+
+      <div class="video--wrapper item vimeo{% if fixed_height %} fixed--height{% endif %}" data-video-start="4" data-video-type="vimeo">
+        <iframe allowfullscreen title="{{ section.settings.description | escape }}" class="embed-player" frameborder="0" mozallowfullscreen src="//player.vimeo.com/video/{{ section.settings.video_url.id }}{{ video_url }}" webkitallowfullscreen></iframe>
+      </div>
+
+    {% else %}
+
+      <div class="video--wrapper item video{% if fixed_height %} fixed--height{% endif %}" data-video-type="video">
+        <video autoplay class="video--media" loop playsinline muted preload="metadata">
+          <source src="{{ section.settings.video_url_mp4 }}" type="video/mp4"/>
+        </video>
+      </div>
+
+    {% endif %}
+    {% unless hide_caption %}
+      {{ caption }}
+    {% endunless %}
+  </div>
+</section>
+
+<style>
+
+#shopify-section-{{ section.id }} {
+  --text-color: {{ text_color }};
+  --section-background: {{ caption_background }};
+  --button-text: {{ button_color }};
+  --button-color: {{ button_background }};
+  --section-overlay-color: {{ section.settings.overlay_color | color_to_rgb | remove: 'rgb(' | remove: ')' }};
+  --section-overlay-opacity: {{ section.settings.overlay_opacity | plus: 0 | divided_by: 100.0  }};
+  {% if fixed_height %}
+    --desktop-section-height: {{ desktop_height }}px;
+    --mobile-section-height: {{ mobile_height }}px;
+  {% endif %}
+}
+</style>
+{% schema %}
+{
+  "name": "Background video",
+  "settings":
+  [
+    {
+      "id": "video_url",
+      "type": "video_url",
+      "label": "Video URL",
+      "accept":
+      [
+        "youtube",
+        "vimeo"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+    },
+    {
+      "type": "text",
+      "id": "video_url_mp4",
+      "label": "MP4 URL",
+      "info": "Use for MP4 URL only."
+    },
+    {
+      "type": "radio",
+      "id": "video_height",
+      "label": "Section height",
+      "options": [
+        {
+          "value": "natural",
+          "label": "Natural"
+        },
+        {
+          "value": "fixed_height",
+          "label": "Fixed height"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "desktop_height",
+      "min": 500,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Desktop fixed height",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "mobile_height",
+      "min": 300,
+      "max": 650,
+      "step": 50,
+      "unit": "px",
+      "label": "Mobile fixed height",
+      "default": 600
+    },
+    {
+      "type": "checkbox",
+      "id": "caption_below",
+      "label": "Mobile caption below images",
+      "info":"When enabled, theme text color and background will be applied to the caption on mobile"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "default": "Describe the video for customers using screen readers",
+      "label": "Video alt text"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Caption Text"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Add a title to your video"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Tell your brand's story through video"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "info": "Add a link to the button",
+      "default":"/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Button",
+      "info": "Visible only if a link is chosen"
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Caption background color",
+      "default": "transparent"
+    },
+    {
+      "type":"checkbox",
+      "id":"no_bottom_margin",
+      "label":"Remove bottom margin",
+      "default": false
+    }
+  ],
+  "presets":
+  [
+    {
+      "name": "Background video"
+    }
+  ],
+  "enabled_on": {
+    "templates":
+    [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "product",
+      "search"
+    ]
+  }
+}
+{% endschema %}

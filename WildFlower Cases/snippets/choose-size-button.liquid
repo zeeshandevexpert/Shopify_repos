@@ -1,0 +1,13 @@
+<choose-size data-title="{{ title }}" data-id="{{ id }}">
+    <button id="choose-size--{{ id }}" aria-controls="chose-size__dropdown-{{ id }}" aria-expanded="false" type="button" class="choose-size__button">
+        <span class="choose-size__button-text">Choose Size</span>
+        {%- render 'icon-spinner' -%}
+    </button>
+    <div class="choose-size__dropdown" aria-labelledby="choose-size--{{ id }}">
+        <ul class="choose-size__ul list-unstyled"></ul>
+        <button class="choose-size__add-button" disabled>
+            <span class="choose-size__add-button-text">{{ 'products.product.add_to_cart' | t }}</span> - 
+            <span class="choose-size__price">{{ price | money_without_trailing_zeros }}</span>
+        </button>
+    </div>
+</choose-size>

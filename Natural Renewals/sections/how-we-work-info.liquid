@@ -1,0 +1,108 @@
+
+    <div class="container-style tech-poly-container">
+        <div class="tech-poly-row">
+            <div class="tech-poly-left">
+                <span>{{ section.settings.title1 }}</span>
+                {{ section.settings.description1 }}
+            </div>
+            <div class="tech-poly-center">
+                <div class="desktop-only">
+                  <div class="standard-cover">
+                      {% include "media-block" %}
+                  </div>
+                </div>
+              <div class="mobile-only">
+                <div class="standard-cover">
+                  {% include "media-block", mobile: 1 %}
+                </div>
+              </div>
+            </div>
+            <div class="tech-poly-right">
+                <span>{{ section.settings.title2 }}</span>
+                {{ section.settings.description2 }}
+            </div>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "How We Work - Info",
+  "tag": "section",
+  "class": "tech-poly-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title1",
+      "label": "Title 1"
+    },
+    {
+      "type": "richtext",
+      "id": "description1",
+      "label": "Description 1"
+    },
+    {
+      "type": "textarea",
+      "id": "title2",
+      "label": "Title 2"
+    },
+    {
+      "type": "richtext",
+      "id": "description2",
+      "label": "Description 2"
+    },
+    {
+      "type": "header",
+      "content": "Media Block"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "image"
+        },
+        {
+          "value": "vimeo_youtube_video",
+          "label": "YouTube or Vimeo Video"
+        },
+        {
+          "value": "video_file",
+          "label": "HTML5 Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image Mobile"
+    },
+    {
+      "type": "video_url",
+      "id": "vimeo_youtube_video",
+      "label": "YouTube or Vimeo Video",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "video_file",
+      "label": "HTML5 Video File URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How We Work - Info"
+    }
+  ]
+}
+{% endschema %}

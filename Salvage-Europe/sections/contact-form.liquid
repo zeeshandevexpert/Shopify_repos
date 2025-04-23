@@ -1,0 +1,181 @@
+<section class="global__section contact__form-section {% if section.settings.no_bottom_margin %}mb0 {% endif %}section-{{ section.id }}" data-section-id="{{ section.id }}" data-aos="{{ settings.scroll_animation }}">
+  <div class="contact__form-wrapper row grid__wrapper">
+    {% if section.settings.title != blank %}
+    <div class="contact__form-heading span-12">
+      {% render 'section-headings', type: section.settings.title %}
+    </div>
+    {% endif %}
+
+  {% form 'contact', class: 'span-12 auto'%}
+
+    <div class="contact__form--inner-wrapper">
+      {% if form.posted_successfully? %}
+        <div class="successForm feedback note-success">
+          <p>{{ 'sections.contact_form.post_success' | t }}</p>
+        </div>
+      {% endif %}
+
+      {% if form.errors %}
+        <div class="notice note-error">
+          <p>{{ 'general.forms.post_error' | t }}</p>
+          <ul class="disc">
+            {% for field in form.errors %}
+            {% if field == 'form' %}
+            <li>
+              {{ form.errors.messages[field] }}
+            </li>
+            {% else %}
+            <li>
+              <strong>{{ field | replace: 'body', 'Message' }}</strong> {{ form.errors.messages[field] }}
+            </li>
+            {% endif %}
+
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <div class="contact__form--input">
+        <label class="visually-hidden" for="contactFormName--{{ section.id }}">{{ 'sections.contact_form.name' | t }}</label>
+        <input type="text" id="contactFormName--{{ section.id }}" name="contact[name]" aria-label="{{ 'sections.contact_form.name' | t }}" placeholder="{{ 'sections.contact_form.name' | t }}" />
+      </div>
+
+      <div class="contact__form--input">
+        <label class="visually-hidden" for="contactFormEmail--{{ section.id }}">{{ 'sections.contact_form.email' | t }}</label>
+        <input type="email" id="contactFormEmail--{{ section.id }}" name="contact[email]" aria-label="{{ 'sections.contact_form.email' | t }}" placeholder="{{ 'sections.contact_form.email' | t }}" />
+      </div>
+
+      <div class="contact__form--input">
+        <label class="visually-hidden" for="contactFormTelephone--{{ section.id }}">{{ 'sections.contact_form.phone' | t }}</label>
+        <input type="text" id="contactFormTelephone--{{ section.id }}" name="contact[phone]" aria-label="{{ 'sections.contact_form.phone' | t }}" placeholder="{{ 'sections.contact_form.phone' | t }}" />
+      </div>
+
+      {% for block in section.blocks %}
+      <div class="contact__form--input">
+
+        {%-liquid
+
+           assign label = block.settings.label | escape
+           assign required = false
+           if block.settings.required
+            assign required = true
+           endif
+
+           -%}
+
+        {% case block.type %}
+          {% when 'text_input' %}
+            <label class="visually-hidden" for="contactForm{{ label | handleize }}--{{ section.id }}">{{ label  }}</label>
+            <input type="text" id="contactForm{{ label | handleize }}--{{ section.id }}" name="contact[{{ label }}]" placeholder="{{ label  }}" aria-label="{{ label  }}"{% if required %} required{% endif %} />
+            {%- if block.settings.required -%}
+              <small class="property--required">*&nbsp;{{ 'products.product.required' | t }}</small>
+            {%- endif -%}
+
+          {% when 'dropdown' %}
+            {% assign values = block.settings.values  | replace: ' ,', ',' | replace: ', ', ',' | split: ',' %}
+            <label class="visually-hidden" for="contactForm{{ label | handleize }}--{{ section.id }}">{{ label }}</label>
+            <select id="contactForm{{ label | handleize }}--{{ section.id }}" name="contact[{{ label }}]">
+                <option>{{ label }}</option>
+              {% for value in values %}
+                <option>{{ value }}</option>
+              {% endfor %}
+            </select>
+
+        {% endcase %}
+      </div>
+      {% endfor %}
+
+      <div class="contact__form--input">
+        <label class="visually-hidden" for="contactFormMessage--{{ section.id }}">{{ 'sections.contact_form.message' | t }}</label>
+        <textarea rows="15" cols="90" id="contactFormMessage--{{ section.id }}" name="contact[body]" aria-label="{{ 'sections.contact_form.message' | t }}" placeholder="{{ 'sections.contact_form.message' | t }}"></textarea>
+      </div>
+
+      <div class="contact__form--input">
+        <input type="submit" id="contactFormSubmit--{{ section.id }}" class="secondary button" value="{{ 'sections.contact_form.send' | t }}" />
+      </div>
+    </div>
+  {% endform %}
+  </div>
+  <style>
+    @media (min-width: 741px) {
+      .section-{{ section.id }} .contact__form--inner-wrapper {
+        width: {{ section.settings.width }}%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Contact form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Contact Form"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "min": 50,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Form width",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+    "type": "text_input",
+    "name": "Text input",
+    "settings": [
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label",
+        "default": "Custom field"
+      },
+      {
+        "type": "checkbox",
+        "id": "required",
+        "label": "Is required",
+        "default": false
+      }
+    ]
+  },
+  {
+  "type": "dropdown",
+  "name": "Dropdown",
+  "settings": [
+      {
+        "type": "text",
+        "id": "label",
+        "label": "Label",
+        "default": "Custom field"
+      },
+      {
+        "type": "text",
+        "id": "values",
+        "label": "Values",
+        "default": "value 1, value 2, value 3",
+        "info":"Separate each value with a comma"
+      }
+    ]
+  }],
+  "presets": [{
+    "name": "Contact form"
+  }],
+  "enabled_on": {
+    "templates": [
+      "index",
+      "404",
+      "article",
+      "page",
+      "product"
+    ]
+  }
+}
+{% endschema %}

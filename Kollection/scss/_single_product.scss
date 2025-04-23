@@ -1,0 +1,197 @@
+.single-product-template{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 40px;
+    // column-gap:100px;
+    .product__media-wrapper{
+        width: 60%;
+        margin-bottom: 15px;
+        .product__column-sticky{
+            display: flex;
+            flex-direction: row-reverse;
+            @media (max-width:676px) {
+                flex-wrap: wrap;
+            }
+            .main-image{
+                flex: 1 1 auto;
+                @media (max-width:676px) {
+                    flex: 100%;
+                }
+                .product__media-list{
+                    height: 100%;
+                }
+            }
+            .thumbnail-slider{
+                flex: 0 0 100px;
+                margin-right: 15px;
+                @media (max-width:991px) {
+                    margin-right: 0;
+                }
+                @media (max-width:676px) {
+                    flex: 100%;
+                    width: 100%;
+                }
+
+                .thumbnail-list{
+                    @media (min-width:676px) {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: right;
+                    }
+                  
+                    @media (max-width:991px) {
+                        // margin-right: 15px;
+                    }
+                  
+                    .thumbnail-list__item{
+                        @media (min-width:676px) {
+                            width: 75px;
+                            height: 75px;
+                        }   
+                        
+
+                    }
+                }
+            }
+        }
+
+    }
+    .product__info-wrapper{
+        width: 40% !important;
+        padding-left: 22px !important;
+        @media (max-width:991px) {
+            padding-left: 0 !important;
+        }
+        .product__info-container{
+            padding-left: 45px;
+            @media (max-width:991px) {
+                padding-left: 0 !important;
+            }
+            *{
+                font-family: $karla;
+            }
+            .product__title{
+                h1{
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    font-family: $karla;
+                    font-weight: 700;
+                }
+            }
+            .price{
+                .price__container{
+                    text-align: center;
+                    .price__regular{
+                        .price-item--regular{
+                            font-family: $karla;
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #414141;
+                        }
+                    }
+                    .price__sale{
+                        .price-item--regular{
+                            font-family: $karla;
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #414141; 
+                        }
+                        .price-item--sale{
+                            font-family: $karla;
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #414141;
+                        }
+                    }
+                    
+                }
+            }
+            .product__tax{
+                font-size: 12px;
+                font-family: $karla;
+                color: #000000;
+            }
+            .installment{
+                font-size: 12px;
+                padding-bottom: 25px;
+                border-bottom: 1px solid #00000050;
+                *{
+                    font-family: $karla;
+                    color: #000000;
+                }
+            }
+            variant-swatch-king{
+                *{
+                    font-family: $karla;
+                    // color: #000000;
+                }
+                .swatch-option-name{
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+                #swatch-group4387849{
+                    display: none;
+                }
+
+            }
+            .product-form{
+                .form{
+                    .product-form__buttons{
+                        width: 100%;
+                        border: 0;
+                        button{
+                            background-color: $green;
+                            border-radius: 25px;
+                            border: 0;
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            font-family: $karla;
+                            &::before{
+                                content: none;
+                            }
+                            &::after{
+                                content: none;
+                            }
+                        }
+                        .gpo-container{
+                            .gpo-app{
+                                .vairant-selector-custom{
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    .gpo-label{
+                                        margin-right: 5px;
+                                        .label-content{
+                                            font-size: 14px;
+                                            font-family: $karla;
+                                            font-weight: 600;
+                                            color: #000;
+                                        }
+                                    }
+                                    .gpo-selected-values{
+                                        font-family: $karla;
+                                        font-size: 14px;
+                                        font-size: 400;
+                                        color: #000;
+                                    }
+                                    .gpo-ov-wrapper{
+                                        width: 100%;
+                                        flex: 100%;
+                                    }
+                                    .color-swatches{
+                                        label{
+                                            border-radius: 50px;
+                                            .gpo-swatch__inner{
+                                                border-radius: 50px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

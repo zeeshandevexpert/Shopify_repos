@@ -1,0 +1,85 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "disabled": true,
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "blog-images": {
+      "type": "main-blog-images",
+      "blocks": {
+        "a5c618ba-e7af-4c2b-a9a3-12633022ac81": {
+          "type": "promo_image",
+          "settings": {
+            "text": "Image title",
+            "link": "shopify:\/\/blogs\/journal\/our-themes-are-being-updated"
+          }
+        },
+        "8aa11773-e52a-4451-a11b-7a9f91b09942": {
+          "type": "promo_image",
+          "settings": {
+            "text": "Image title",
+            "link": ""
+          }
+        },
+        "98935045-661d-4fef-ac0b-1ef38eedb008": {
+          "type": "promo_image",
+          "settings": {
+            "text": "Image title",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "a5c618ba-e7af-4c2b-a9a3-12633022ac81",
+        "8aa11773-e52a-4451-a11b-7a9f91b09942",
+        "98935045-661d-4fef-ac0b-1ef38eedb008"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "show_date": false,
+        "show_tag": true,
+        "show_author": false,
+        "recent_posts_layout": "list",
+        "recent_posts_heading": "Projects"
+      }
+    },
+    "162699211917340766": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured Collection",
+        "collection": "",
+        "show_all": true,
+        "show_more_text": "View all",
+        "carousel": true,
+        "grid": 4,
+        "products_shown": 4
+      }
+    },
+    "latest_blog_KHyxKm": {
+      "type": "latest-blog",
+      "settings": {
+        "heading": "Project archive"
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "blog-images",
+    "main",
+    "162699211917340766",
+    "latest_blog_KHyxKm"
+  ]
+}

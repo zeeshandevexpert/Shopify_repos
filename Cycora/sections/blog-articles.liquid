@@ -1,0 +1,128 @@
+
+    <div class="blog-listing-top">
+        <span>{{ section.settings.title }}</span>
+    </div>
+
+    {% comment %}
+        
+    {% assign counter = 1 %}
+
+    {% for article in blog.articles reversed %}
+
+        {% if counter == 2 %}
+            {% assign block_style = 'blog-listing-article-style2' %}
+            {% assign counter = 0 %}
+            <div class="blog-listing-article {{ block_style }}">
+                <div class="blog-listing-article-col">
+                    <div class="blog-listing-article-content">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.excerpt }}</p>
+                        <a href="{{ article.url }}">read more</a>
+                    </div>
+                </div>
+                <div class="blog-listing-article-col">
+                    <img src="{{ article.image | img_url: '10x' }}"
+                         class="lazyload"
+                         data-src="{{ article.image | img_url: 'master' }}"
+                         data-widths="[1000]"
+                         data-sizes="auto"
+                         tabindex="-1"
+                    />
+                </div>
+            </div>
+        {% else %}
+            {% assign block_style = 'blog-listing-article-style1' %}
+            <div class="blog-listing-article {{ block_style }}">
+                <div class="blog-listing-article-col">
+                    <img src="{{ article.image | img_url: '10x' }}"
+                         class="lazyload"
+                         data-src="{{ article.image | img_url: 'master' }}"
+                         data-widths="[1000]"
+                         data-sizes="auto"
+                         tabindex="-1"
+                    />
+                </div>
+                <div class="blog-listing-article-col">
+                    <div class="blog-listing-article-content">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.excerpt }}</p>
+                        <a href="{{ article.url }}">read more</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+        {% assign counter = counter | plus: 1 %}
+    {% endfor %}
+
+{% endcomment %}
+  
+
+    {% for block in section.blocks %}
+        {% assign article = block.settings.blogPost %}
+        <div class="blog-listing-article{% if block.settings.reverse %} blog-listing-article-style2{% else %} blog-listing-article-style1{% endif %}{% if block.settings.center %} blog-listing-center-image{% endif %}">
+            <div class="blog-listing-article-col">
+                <img src="{{ article.image | img_url: '10x' }}"
+                     class="lazyload"
+                     data-src="{{ article.image | img_url: 'master' }}"
+                     data-widths="[1000]"
+                     data-sizes="auto"
+                     tabindex="-1"
+                />
+            </div>
+            <div class="blog-listing-article-col">
+                <div class="blog-listing-article-content">
+                    <h2>{{ article.title }}</h2>
+                    {% comment %}
+                    <span class="general-more-products-variant linked-drophover-product">cloud knit<i><strong>textile 'waste'</strong>is discarded material that ends up in landfills. We don't see this material as waste, but as opportunity.</i></span>
+                    {% endcomment %}
+                    <p>{{ article.excerpt }}</p>
+                    <a href="{{ article.url }}">read more</a>
+                </div>
+            </div>
+        </div>
+      {% endfor %}
+
+
+{% schema %}
+{
+  "name": "Blog - Articles",
+  "tag": "section",
+  "class": "blog-listing-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "blog-articles",
+      "type": "articles",
+      "settings":[
+        {
+        "type": "checkbox",
+        "id": "reverse",
+        "label": "Reverse Blog"
+        },
+        {
+        "type": "checkbox",
+        "id": "center",
+        "label": "Center Image"
+        },
+        {
+        "type": "article",
+        "id": "blogPost",
+        "label": "Blog article"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog - Articles"
+    }
+  ]
+}
+{% endschema %}

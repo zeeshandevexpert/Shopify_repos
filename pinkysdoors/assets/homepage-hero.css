@@ -1,0 +1,69 @@
+@media screen and (max-width: 768px) {
+  .section--custom-content {
+    padding-top: 15px;
+  }
+  .custom__item {
+    margin-bottom: 0;
+  }
+  .custom_mainMO {
+    position: relative;
+  }
+  .homePageHero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+  .homePageHero > a {
+    display: block;
+  }
+  .homePageHero h1 {
+    position: absolute;
+    bottom: 64px;
+    width: 100%;
+    text-align: right;
+    right: 0;
+    color: white;
+    font-size: 27px;
+  }
+  .homePageHero .sectionLinks {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    color: white !important;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .homePageHero .sectionLinks p,
+  .homePageHero .sectionLinks a {
+    color: white;
+  }
+  .homePageHero .sectionLinks p {
+    padding: 0 3%;
+    float: none;
+    text-align: right;
+    font-size: 22px;
+  }
+  #wdgt-ftr-usr_profl {
+    display: none;
+  }
+
+  .custom_mainMO {
+    padding-bottom: 100%;
+  }
+  #shopify-section-1556664003633 .snptwdgt-rtd__f0tr {
+    display: none !important;
+    height: 0px !important;
+    overflow: hidden !important;
+    max-height: 0px !important;
+    visibility: hidden !important;
+    margin-top: 0px !important;
+
+  }
+  #shopify-section-1556664003633 {
+    padding-bottom: 0 !important;
+  }
+}

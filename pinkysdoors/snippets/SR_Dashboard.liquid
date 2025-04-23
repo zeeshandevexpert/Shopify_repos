@@ -1,0 +1,2543 @@
+<script>
+    function OpenNav(){
+      if(screen.width < 800)
+        {	
+          $("#AppFrameNav").show();
+        }
+    } 
+   
+</script>
+
+<style> 
+    table{
+        margin-bottom: 0px;
+    }
+    
+   .Polaris-Card{
+      margin-top: 2rem;
+   }
+     
+   .Polaris-DataTable__Cell--header {
+      font-weight: 700 !important;
+    }
+    
+    .Polaris-DataTable__Cell--numeric {
+       text-align: left !important;
+     }  
+
+</style>
+
+<!--Spinner-->
+<center>
+  <div id="loadGif" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);"><svg viewBox="0 0 44 44" class="Polaris-Spinner Polaris-Spinner--colorTeal Polaris-Spinner--sizeLarge" role="status">
+    <path d="M15.542 1.487A21.507 21.507 0 0 0 .5 22c0 11.874 9.626 21.5 21.5 21.5 9.847 0 18.364-6.675 20.809-16.072a1.5 1.5 0 0 0-2.904-.756C37.803 34.755 30.473 40.5 22 40.5 11.783 40.5 3.5 32.217 3.5 22c0-8.137 5.3-15.247 12.942-17.65a1.5 1.5 0 1 0-.9-2.863z"></path>
+  </svg></div>
+</center>
+
+<!--SalesRep App-->
+
+<div id="SR_App" style="display:none;--top-bar-background:rgb(28, 34, 96); --top-bar-color:#f9fafb; --top-bar-background-darker:rgb(0, 8, 75); --top-bar-background-lighter:rgb(67, 70, 127);">  
+      <div class="Polaris-Frame Polaris-Frame--hasNav Polaris-Frame--hasTopBar" data-polaris-layer="true" data-has-navigation="true">
+          
+     <!--Top bar--> 		  
+       <div class="Polaris-Frame__TopBar" data-polaris-layer="true" data-polaris-top-bar="true" id="AppFrameTopBar" style="position: absolute;">
+        <div class="Polaris-TopBar">
+				<button type="button" class="Polaris-TopBar__NavigationIcon" aria-label="Toggle menu" onclick="OpenNav()">
+				  <span class="Polaris-Icon Polaris-Icon--colorWhite">
+					 <svg class="Polaris-Icon__Svg" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+					  <path d="M30.4 17.6H1.6a1.6 1.6 0 1 1 0-3.2h28.8a1.6 1.6 0 1 1 0 3.2zm0-11.2H1.6a1.6 1.6 0 1 1 0-3.2h28.8a1.6 1.6 0 1 1 0 3.2zm0 22.4H1.6a1.6 1.6 0 1 1 0-3.2h28.8a1.6 1.6 0 1 1 0 3.2z"></path>
+					</svg>
+				  </span>
+				</button>
+				<div class="Polaris-TopBar__LogoContainer" style="color:white;">SALES REP</div>
+				<div class="Polaris-TopBar__Contents">  
+				   <div class="Polaris-TopBar-Menu__Activator" tabindex="0" aria-controls="Popover1" aria-owns="Popover1" aria-haspopup="true" aria-expanded="false">
+					<span class="Polaris-Navigation__Text">
+					<div class="logout">
+    					<a href="/account/logout" style="color:white;">Logout</a>
+     				</div>
+					</span>             
+				  </div> 			            
+				</div>
+          </div>
+        </div>
+
+        <!--Nav bar-->
+        <div>
+          <div class="Polaris-Frame__Navigation" id="AppFrameNav">
+            <nav class="Polaris-Navigation">
+             <div class="Polaris-Navigation__UserMenu"></div>
+              <ul class="Polaris-Navigation__Section">
+                  <li class="Polaris-Navigation__ListItem">
+                  <span class="Polaris-Navigation-UserMenu__Avatar" style="margin-left: 10px;">
+                      <div class="Polaris-MessageIndicator__MessageIndicatorWrapper"><span aria-label="Avatar with initials D" role="img" class="Polaris-Avatar Polaris-Avatar--styleThree Polaris-Avatar--sizeSmall">
+                        <span class="Polaris-Avatar__Initials"><svg class="Polaris-Avatar__Svg" viewBox="0 0 48 48"><text x="50%" y="50%" dy="0.35em" fill="currentColor" font-size="26" text-anchor="middle">{{customer.first_name| slice: 0 }}</text></svg></span></span></div>
+                    </span>
+                    <span class="Polaris-Navigation-UserMenu__Details" style="margin-top: 10px;margin-left: 10px;">
+                     <span class="Polaris-Navigation-UserMenu__Detail">{{customer.first_name}}</span></span>
+                </li>
+                </ul>
+              
+              <div class="Polaris-Navigation__PrimaryNavigation Polaris-Scrollable Polaris-Scrollable--vertical" data-polaris-scrollable="true" polaris="[object Object]">
+                
+                <ul class="Polaris-Navigation__Section Polaris-Navigation__Section--withSeparator">
+                 
+                  <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="Dashboard">
+                      <div class="Polaris-Navigation__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                            <path d="M19.664 8.252l-9-8a1 1 0 0 0-1.328 0L8 1.44V1a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v5.773L.336 8.252a1.001 1.001 0 0 0 1.328 1.496L2 9.449V19a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9.449l.336.299a.997.997 0 0 0 1.411-.083 1.001 1.001 0 0 0-.083-1.413zM16 18h-2v-5a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v5H4V7.671l6-5.333 6 5.333V18zm-8 0v-4h4v4H8zM4 2h2v1.218L4 4.996V2z" fill-rule="evenodd"></path>
+                          </svg></span></div><span class="Polaris-Navigation__Text">Dashboard</span>
+                    </button>
+                  </li>
+                  
+                  <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_CustomerOrder_head">
+                      <div class="Polaris-Navigation__Icon"><img class="lazyload hs-lazyload hs-id-6de30a90" data-src="{{ 'customericon.png' | asset_url }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="filter: brightness(0.3);"/></div><span class="Polaris-Navigation__Text">Client Invoice</span>
+                    </button>
+                  </li>
+                  
+                    <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Wholesale_head">
+                      <div class="Polaris-Navigation__Icon"><img class="lazyload hs-lazyload hs-id-ba0342b4" data-src="{{ 'wholesaleicon.png' | asset_url }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="filter: brightness(0.3);"/></div><span class="Polaris-Navigation__Text">Wholesale Order</span>
+                    </button></li>
+                  
+                    <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Affiliate_head">
+                      <div class="Polaris-Navigation__Icon"><img class="lazyload hs-lazyload hs-id-cb9fb85e" data-src="{{ 'affiliateicon.png' | asset_url }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="filter: brightness(0.3);"/></div><span class="Polaris-Navigation__Text">Affiliate Orders</span>
+                      </button>
+                    </li>
+                  
+                    <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Discount_head">
+                      <div class="Polaris-Navigation__Icon"><div class="p_2IX94"><span class="p_2-hnq"><svg class="p_v3ASA" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                        <g  fill-rule="evenodd">
+                        <path d="M7.742 17.655a2.205 2.205 0 0 0-1.558-.646h-.991a2.202 2.202 0 0 1-2.202-2.202v-.991c0-.584-.233-1.145-.646-1.558l-.7-.7a2.203 2.203 0 0 1 0-3.115l.7-.7c.413-.413.646-.974.646-1.558v-.991c0-1.216.986-2.202 2.202-2.202h.991c.584 0 1.145-.233 1.558-.646l.7-.7c.86-.86 2.255-.86 3.115 0l.7.7c.414.413.974.646 1.558.646h.991c1.216 0 2.202.986 2.202 2.202v.991c0 .584.233 1.145.646 1.558l.7.7c.86.86.86 2.255 0 3.115l-.7.7a2.205 2.205 0 0 0-.646 1.558v.991a2.202 2.202 0 0 1-2.202 2.202h-.991c-.584 0-1.144.233-1.558.646l-.7.7c-.86.86-2.255.86-3.115 0l-.7-.7z" fill="currentColor"/><path d="M19.06 7.734l-.7-.7a1.217 1.217 0 0 1-.353-.851v-.991a3.206 3.206 0 0 0-3.203-3.202h-.99c-.32 0-.623-.125-.85-.353l-.7-.7a3.207 3.207 0 0 0-4.53 0l-.7.7c-.229.228-.53.353-.852.353h-.99A3.206 3.206 0 0 0 1.99 5.192v.99c0 .317-.129.628-.352.852l-.7.7a3.207 3.207 0 0 0 0 4.529l.7.7c.223.224.352.534.352.85v.992a3.206 3.206 0 0 0 3.203 3.202h.99c.321 0 .623.125.851.353l.7.7a3.192 3.192 0 0 0 2.265.936c.82 0 1.64-.312 2.265-.936l.7-.7c.228-.228.53-.353.851-.353h.99a3.206 3.206 0 0 0 3.203-3.202v-.991c0-.317.13-.627.352-.851l.702-.7a3.208 3.208 0 0 0 0-4.53M12.288 6.29l-6 6a.999.999 0 1 0 1.414 1.414l6-6A.999.999 0 1 0 12.29 6.29M7.496 8.996a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m5 2a1.5 1.5 0 1 0 .001 3.001 1.5 1.5 0 0 0 0-3m5.15-.148l-.702.7a3.181 3.181 0 0 0-.938 2.265v.99c0 .664-.539 1.203-1.203 1.203h-.99a3.18 3.18 0 0 0-2.265.939l-.7.7a1.205 1.205 0 0 1-1.702 0l-.7-.7a3.178 3.178 0 0 0-2.265-.94h-.99a1.203 1.203 0 0 1-1.203-1.201v-.991c0-.856-.333-1.66-.938-2.265l-.7-.7a1.203 1.203 0 0 1 0-1.701l.7-.7c.605-.605.938-1.41.938-2.265v-.991c0-.663.54-1.202 1.203-1.202h.99c.856 0 1.66-.333 2.265-.94l.7-.7a1.205 1.205 0 0 1 1.702 0l.7.7a3.18 3.18 0 0 0 2.265.94h.99c.664 0 1.203.539 1.203 1.202v.99c0 .856.333 1.66.938 2.266l.701.7a1.204 1.204 0 0 1 0 1.7" />
+                        </g></svg></span></div></div><span class="Polaris-Navigation__Text">Discount Coupon</span>
+                     </button>
+                   </li>
+                  
+                  <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Yourbio_head">
+                      <div class="Polaris-Navigation__Icon">
+                        <div class="p_2IX94"><span class="p_2-hnq"><svg class="p_v3ASA" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                          
+                          <g  fill-rule="evenodd"><path d="M10 13c-4 0-7 3-7 3l1 3h12l1-3s-3-3-7-3" fill="currentColor"/>
+                            <path d="M17.707 15.293a.999.999 0 0 1 .241 1.023l-1 3A.999.999 0 0 1 16 20H4a1 1 0 0 1-.949-.684l-1-3a.999.999 0 0 1 .242-1.023C2.427 15.158 5.635 12 10 12c4.364 0 7.572 3.158 7.707 3.293zM15.28 18l.562-1.687c-.92-.752-3.155-2.313-5.84-2.313-2.704 0-4.928 1.558-5.844 2.31L4.72 18h10.56zM10 2c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zm0 8c2.757 0 5-2.243 5-5s-2.243-5-5-5-5 2.243-5 5 2.243 5 5 5" />
+                          </g></svg></span></div></div><span class="Polaris-Navigation__Text">Your Bio</span>
+                        </button>
+                    </li>  
+                  
+                  <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Team_head">
+                      <div class="Polaris-Navigation__Icon">
+                       <img class="lazyload hs-lazyload hs-id-cb9fb85e" data-src="{{ 'affiliateicon.png' | asset_url }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="filter: brightness(0.3);"/></div><span class="Polaris-Navigation__Text">Team</span>
+                        </button>
+                  </li>    
+					
+				   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Lead_head">
+                      <div class="Polaris-Navigation__Icon">
+                       <img class="lazyload hs-lazyload hs-id-6de30a90" data-src="{{ 'customericon.png' | asset_url }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="filter: brightness(0.3);"/></div><span class="Polaris-Navigation__Text">Add Lead</span>
+                        </button>
+                   </li> 
+				   
+				   <li class="Polaris-Navigation__ListItem"><button type="button" class="Polaris-Navigation__Item" id="sr_Clients_head">
+                      <div class="Polaris-Navigation__Icon">
+                       <img class="lazyload hs-lazyload hs-id-6de30a90" data-src="{{ 'customericon.png' | asset_url }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="filter: brightness(0.3);"/></div><span class="Polaris-Navigation__Text">My Clients</span>
+                        </button>
+                   </li>                                     
+                </ul>
+              </div>
+            </nav>
+            
+          </div>
+        </div>  
+		    
+ <!--Main Frame -->       
+ <main class="Polaris-Frame__Main" id="AppFrameMain" data-has-global-ribbon="false" style="padding-top: 1.6rem;">
+   <div class="Polaris-Frame__Content">
+     <div class="Polaris-Page" style="max-width: 140.8rem;">
+  
+<!-- Dashboard-->   
+              
+<div id="SR_Dashboard" style="display:none;">  
+ <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+            <div class="Polaris-Page-Header__Title">
+                 <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Dashboard</h1>
+                  </div>
+                           
+            </div>
+         </div></h2>
+    </div>
+    <div class="Polaris-Card__Section">        
+          <div class="Polaris-Page__Content">
+              <!-- Page Content -->
+              <div class="page_content" id="dashboardpage">
+			  <h2 id="dashheader"></h2>
+                 <div id="dash_card">            
+
+                        <div class="Polaris-Card card" style="height:100%;" id="ClientWidget">
+                          <div class="Polaris-Card__Header">
+                            <h2 class="Polaris-Heading">CLIENT INVOICE</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Earnings</h3>
+                            </div>
+                            <p id="CustomerOrders_Earning"></p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Summary" class="Polaris-Subheading">Invoice Sent</h3>
+                            </div>
+                            <p id="CustomerOrders_Sent"></p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Summary" class="Polaris-Subheading">Invoice Paid</h3>
+                            </div>
+                            <p id="CustomerOrders_Paid"></p>
+                          </div>
+                        </div>
+
+                         <div class="Polaris-Card card" style="height:100%;" id="WholesaleWidget">
+                          <div class="Polaris-Card__Header">
+                            <h2 class="Polaris-Heading">WHOLESALE ORDERS</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Earnings</h3>
+                            </div>
+                            <p id="WholesaleOrders_Earning"></p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Summary" class="Polaris-Subheading">Invoice Sent</h3>
+                            </div>
+                            <p id="WholesaleOrders_Sent"></p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Summary" class="Polaris-Subheading">Invoice Paid</h3>
+                            </div>
+                            <p id="WholesaleOrder_Paid"></p>
+                          </div>
+                        </div>
+
+
+                         <div class="Polaris-Card card" style="height:100%;" id="AffiliateWidget">
+                          <div class="Polaris-Card__Header">
+                            <h2 class="Polaris-Heading">AFFILIATE ORDERS</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Earnings</h3>
+                            </div>
+                            <p id="AffiliateOrders_Earning"></p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Summary" class="Polaris-Subheading">Orders Paid</h3>
+                            </div>
+                            <p id="AffiliateOrders_Paid"></p>
+                          </div>
+                        </div>
+
+                        <div class="Polaris-Card card" style="height:100%;" id="CouponeCodeWidget">
+                          <div class="Polaris-Card__Header" >
+                            <h2 class="Polaris-Heading">DISCOUNT COUPON</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Earnings</h3>
+                            </div>
+                            <p id="DiscountCode_Earning"></p>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Summary" class="Polaris-Subheading">Orders Paid</h3>
+                            </div>
+                            <p id="DiscountCodeOrders_Paid"></p>
+                          </div>
+                        </div>
+
+                          <div class="Polaris-Card card" style="height:100%;" id="CustomerWidget">
+                          <div class="Polaris-Card__Header">
+                            <h2 class="Polaris-Heading">CUSTOMER COMMISSION</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Commission</h3>
+                            </div>
+                            <p id="Customer_Commission"></p>
+                          </div>
+                           <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Orders</h3>
+                            </div>
+                            <p id="TagCustomerOrders_Paid"></p>
+                            </div>                         
+                        </div>
+
+                        <div class="Polaris-Card card" style="height:100%;" id="TeamleadWidget">
+                          <div class="Polaris-Card__Header">
+                            <h2 class="Polaris-Heading">TEAM LEAD COMMISSION</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Commission</h3>
+                            </div>
+                            <p id="TeamLead_Commission"></p>
+                            </div>
+                        </div>
+                   
+                   <div class="Polaris-Card card" style="height:100%;" id="POSWidget">
+                          <div class="Polaris-Card__Header">
+                            <h2 class="Polaris-Heading">POS COMMISSION</h2>
+                          </div>
+                          <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Commission</h3>
+                            </div>
+                            <p id="POS_Commission"></p>
+                          </div>
+                           <div class="Polaris-Card__Section">
+                            <div class="Polaris-Card__SectionHeader">
+                              <h3 aria-label="Reports" class="Polaris-Subheading">Orders</h3>
+                            </div>
+                            <p id="POSOrders_Paid"></p>
+                            </div>                         
+                        </div>
+
+                        </div>
+                      <br>
+
+                      <div class="Polaris-Page__Content">
+                        <div class="Polaris-Card">
+                          <div class="">
+                            <div class="Polaris-DataTable__Navigation">
+                              <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                        <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                      </svg></span></span></span></button>
+                              <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                        <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                      </svg></span></span></span></button>
+                            </div>
+                            <div class="Polaris-DataTable">
+                              <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                                <table class="Polaris-DataTable__Table" id="orderTable">
+
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 </div>
+              </div>
+          </div>
+  <br>
+  </div>
+ 
+      
+<!--Client Invoice -->
+  
+<div id="SR_CustomerOrder" style="display:none;">
+  <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Client Invoices</h1>
+                  </div>
+                  <div></div>
+                </div>
+         </div>
+      </h2>
+    </div>
+    <div class="Polaris-Card__Section">  
+         
+          <!--View Client Orders Page Content--> 
+	      <div class="page_content" id="ViewOrders" style="display:none;"> 
+      
+               <br/>
+               <div>
+                   <div class="Polaris-ButtonGroup__Item"><button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="BacktoClientPage()"><span class="Polaris-Button__Content"><span>Back</span></span></button></div>
+               </div>
+
+                     <br/>
+                      <div><p id="noclientorder" style="display:none;">No Client Invoice Orders</p></div>
+
+           <div class="Polaris-Page__Content">
+              <div class="Polaris-Card">
+                <div class="">
+                  <div class="Polaris-DataTable__Navigation">
+                    <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                              <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                            </svg></span></span></span></button>
+                    <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                              <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                            </svg></span></span></span></button>
+                  </div>
+                  <div class="Polaris-DataTable">
+                    <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                      <table class="Polaris-DataTable__Table" id="ViewClientOrders">
+
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+               <br/>
+       </div>
+         
+          <!--View Client Orders Page Content--> 
+          <div class="page_content" id="clientorder">
+            <br/>	           
+                <div>
+                   <div class="Polaris-ButtonGroup__Item"><button type="button" id="Order_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="ViewInvoiceOrders()"><span class="Polaris-Button__Content"><span>View Previous Orders</span></span></button></div>
+                </div>
+                <br>
+                <label class="Polaris-Label__Text">You can send invoices to customers at special discounted prices. You will get a commission once the customer pays the invoice. Select products in your cart, then come to this page and click "Create Invoice".</label>
+			  
+            	<br/>   
+       
+                <div class="allcustomers">
+                  <div class="Polaris-Labelled__LabelWrapper">
+                      <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Customer:</label></div>
+                    </div> 					  
+				   <select id="custname" onmousedown="this.value='';" onchange="showSelected(this);" style="width:100%;">
+                         
+			       </select>    			
+  				</div> 
+           
+               <br/>
+			    <div class="ProRep">
+  		               <label class="Polaris-Choice" for="reppro"><span class="Polaris-Choice__Control"><span class="Polaris-Checkbox"><input id="reppro" type="checkbox" class="Polaris-Checkbox__Input" aria-invalid="false" role="checkbox" aria-checked="false" value="pro"><span class="Polaris-Checkbox__Backdrop"></span>
+                  <span class="Polaris-Checkbox__Icon"><span class="Polaris-Icon">
+                  <svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                  <path d="M8.315 13.859l-3.182-3.417a.506.506 0 0 1 0-.684l.643-.683a.437.437 0 0 1 .642 0l2.22 2.393 4.942-5.327a.437.437 0 0 1 .643 0l.643.684a.504.504 0 0 1 0 .683l-5.91 6.35a.437.437 0 0 1-.642 0"></path>
+                </svg></span></span></span></span><span class="Polaris-Choice__Label">Select checkbox to send pro invite</span></label>
+                </div>
+                
+				<br/>
+                <br>
+            
+                  <div class="">
+                    <div class="Polaris-Labelled__LabelWrapper">
+                      <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Customer Email Id: </label></div>
+                    </div>
+                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="sr_customer_email" placeholder="Email Address" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+                      <div class="Polaris-TextField__Backdrop"></div>
+                    </div>
+                  </div>
+                 <br>
+
+                 <div class="">
+                    <div class="Polaris-Labelled__LabelWrapper">
+                      <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Customer First name: </label></div>
+                    </div>
+                    <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="sr_customer_fname" placeholder="First Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+                      <div class="Polaris-TextField__Backdrop"></div>
+                    </div>
+                  </div>
+
+                <br>
+                <div class="DiscountChoice" id="Choice">
+  					<div class="Polaris-Labelled__LabelWrapper" id="discountChoiceLabel">
+                      <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Discount:</label></div>
+                    </div>
+						<select id="DiscountType" onmousedown="this.value='';" onchange="ApplyDiscount(this.value);" style="width:100%;">
+						    <option value="-1" selected>Full Price- no discount</option>
+							<option value="0">Gold Discount</option>
+							<option value="1">Silver Discount</option>
+							<option value="2">Bronze Discount</option>
+						</select>				
+  				</div>
+             
+               
+               <br>
+                <div class="Polaris-TextField">
+                        <div class="Polaris-TextField__Prefix" id="TextField2Prefix"><span class="Polaris-Icon Polaris-Icon--colorSkyDark Polaris-Icon--isColored"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                              <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414" fill-rule="evenodd"></path>
+                            </svg></span></div><input id="ProductSearchInput" placeholder="Search Products" class="Polaris-TextField__Input" aria-label="Search customers" aria-labelledby="TextField2Label TextField2Prefix" aria-invalid="false" value="">
+                        <div class="Polaris-TextField__Backdrop"></div>
+                 </div>
+                  
+             <br><br>
+        
+              <div class="Polaris-Page" style="display:none;" id="clientinvoicetable">  
+                <div class="Polaris-Page__Content">
+                  <div class="Polaris-Card">
+                    <div class="">
+                      <div class="Polaris-DataTable__Navigation"><button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                  <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                </svg></span></span></span></button><button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                  <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                </svg></span></span></span></button></div>
+                      <div class="Polaris-DataTable">
+                        <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                          <table class="Polaris-DataTable__Table" id="clienttable">                       
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <span class="Polaris-TextStyle--variationNegative" id="sr_customerOrder_error1" style="display:none;">
+                   * all customer fields are mandatory. Please enter the customer's  email and first name  
+              </span> 
+            	<br>
+	  			<p id="SalesRep_order" class="third" style="color: #3f4eae !important; font-size: 16px;"> </p>
+  				<br>
+             <div id="CreateInvoice">
+               <div class="Polaris-ButtonGroup__Item">
+                 <button type="button" id="draft_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DraftOrder()">
+                   <span class="Polaris-Button__Content"><span>Create Invoice</span></span></button></div>
+            </div>
+            	<br>
+            <div id="CustomDiscount">
+               <div class="Polaris-ButtonGroup__Item">
+                 <button type="button" id="Customedraft_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="CustomDiscountDraftOrder()">
+                   <span class="Polaris-Button__Content"><span>Create Invoice</span></span></button></div>
+            </div>
+            	
+  				<p id="productnotselect1" class="third"> </p>
+            	<br>
+               <div class="Polaris-Page__Content">
+                        <div class="Polaris-Card">
+                          <div class="">
+                            <div class="Polaris-DataTable__Navigation">
+                              <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                        <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                      </svg></span></span></span></button>
+                              <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                        <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                      </svg></span></span></span></button>
+                            </div>
+                            <div class="Polaris-DataTable">
+                              <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                                <table class="Polaris-DataTable__Table" id="productTable">
+
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                 </div>  			
+          </div>
+    </div>
+ </div>
+  <br>
+</div>
+
+ 
+<!--Wholesale Orders-->      
+      
+<div id="SR_Wholesale" style="display:none;">
+
+  <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Wholesale Order</h1>
+                  </div>
+                  <div></div>
+                </div>
+              </div></h2>
+    </div>
+    <div class="Polaris-Card__Section">  
+  
+          	<div class="page_content">
+            <br>
+              <label class="Polaris-Label__Text"> You can purchase products at special wholesale prices. </label>
+              	
+             <br>       
+              <div class="Polaris-TextField">
+                    <div class="Polaris-TextField__Prefix" id="TextField2Prefix"><span class="Polaris-Icon Polaris-Icon--colorSkyDark Polaris-Icon--isColored"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                          <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414" fill-rule="evenodd"></path>
+                        </svg></span></div><input id="WholesaleProductSearchInput" placeholder="Search Products" class="Polaris-TextField__Input" aria-label="Search customers" aria-labelledby="TextField2Label TextField2Prefix" aria-invalid="false" value="">
+                    <div class="Polaris-TextField__Backdrop"></div>
+              </div>
+
+            
+            <br><br>
+            
+            
+        <div class="Polaris-Page" style="display:none;" id="wholesaleinvoicetable">  
+                <div class="Polaris-Page__Content">
+                  <div class="Polaris-Card">
+                    <div class="">
+                      <div class="Polaris-DataTable__Navigation"><button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                  <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                </svg></span></span></span></button><button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                  <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                </svg></span></span></span></button></div>
+                      <div class="Polaris-DataTable">
+                        <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                          <table class="Polaris-DataTable__Table" id="wholesaletable">                        
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <br>
+   
+   				<p  id="SalesRepWholesale_order" class="third" style="color:rgba(0,149,136,1.0) !important;font-size: 14px;"> </p>
+   				<br>
+                  
+                      <div class="Polaris-ButtonGroup__Item">
+                      <button type="button" id="draftWholesale_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="DraftWholesaleOrder()">
+                      <span class="Polaris-Button__Content"><span>Check Out</span></span></button></div>
+                    <br>         				
+               <div><span id="totalPrice"></span><br><span id="DiscountedPrice"></span><br></div>
+	
+  				<p id="productnotselect" class="third"> </p>
+              <br>
+   				
+               <div class="Polaris-Page__Content">
+                        <div class="Polaris-Card">
+                          <div class="">
+                            <div class="Polaris-DataTable__Navigation">
+                              <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                        <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                      </svg></span></span></span></button>
+                              <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                        <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                      </svg></span></span></span></button>
+                            </div>
+                            <div class="Polaris-DataTable">
+                              <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                                <table class="Polaris-DataTable__Table" id="prodTable">
+
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          	</div>
+    </div>  
+</div>
+</div>
+      
+<!--Affiliate Orders -->      
+   
+<div id="SR_ViewCustomerOrder" style="display:none;">
+ <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Affiliate Orders</h1>
+                  </div>
+                  <div></div>
+                </div>
+        </div>
+      </h2>
+    </div>
+    <div class="Polaris-Card__Section">  
+      
+      <!--View Affiliate Orders-->
+           <div class="page_content" id="View_AffiliateOrders" style="display:none;">      
+               <br/>
+               <div>
+                   <div class="Polaris-ButtonGroup__Item">
+                     <button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="BacktoAffiliatePage()">
+                       <span class="Polaris-Button__Content"><span>Back</span></span></button></div>
+               </div>
+
+                     <br/>
+                     <span class="Polaris-TextStyle--variationNegative" id="noaffiliateorder" style="display:none;">No Affiliate Orders</span>
+
+                 <div class="Polaris-Page__Content">
+                    <div class="Polaris-Card">
+                      <div class="">
+                        <div class="Polaris-DataTable__Navigation">
+                          <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                    <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                  </svg></span></span></span></button>
+                          <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                    <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                  </svg></span></span></span></button>
+                        </div>
+                        <div class="Polaris-DataTable">
+                          <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                            <table class="Polaris-DataTable__Table" id="AffiliateOrders">
+
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+               <br/>
+           </div>
+      
+        <!-- Affiliate Page -->
+          <div class="page_content" id="affiliateorder">          	
+                <br/>	
+             <div>
+               <div class="Polaris-ButtonGroup__Item">
+                 <button type="button" id="AffiliateOrder_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="ViewAffiliateOrders()">
+                   <span class="Polaris-Button__Content"><span> View Affiliate Orders</span></span></button></div>
+             </div>
+
+                <br/>
+                <br>
+                <label class="Polaris-Label__Text">
+                        Share your affiliate link on your social media and email. You will get an affiliate commission for every order from your affiliate link!
+                </label>
+                    <br />
+                    <div>
+                        <label class="Polaris-Label__Text">Your Affiliate Link: <br />
+                          <a style="color:#3f4eae !important; font-size: 15px;" id="affiliate_link" target="_blank"></a></label> 
+                    </div>
+                    <br />
+                    <div>
+                         <a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="{{shop.url}}?rep={{customer.first_name}}{{customer.id | modulo:1000}}" data-ssbp-site="Pinterest_force" target="_blank">
+                         <img alt="Pinterest" class="lazyload hs-lazyload hs-id-3b2d1be1" data-src="https://simplesharebuttons.com/images/somacro/pinterest.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/> </a>
+                         <a href="http://instagram.com/###?ref={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}" class="ig-b- ig-b-32"  target="_blank"><img alt="Instagram" class="lazyload hs-lazyload hs-id-ebadad81" data-src="https://badges.instagram.com/static/images/ig-badge-32.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></a>
+                         <a href="https://twitter.com/share?url={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}&amp;text={{shop.name}}" target="_blank"><img alt="Twitter" class="lazyload hs-lazyload hs-id-b174ceb4" data-src="https://simplesharebuttons.com/images/somacro/twitter.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/> </a>
+                         <a href="http://www.facebook.com/sharer.php?u={{shop.url}}?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}" target="_blank"><img alt="Facebook" class="lazyload hs-lazyload hs-id-cd8d8e16" data-src="https://simplesharebuttons.com/images/somacro/facebook.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>					
+                    </div>
+                    <br />
+					  <div class="Polaris-TextField">
+                        <div class="Polaris-TextField__Prefix" id="TextField2Prefix"><span class="Polaris-Icon Polaris-Icon--colorSkyDark Polaris-Icon--isColored"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                              <path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8m9.707 4.293l-4.82-4.82A5.968 5.968 0 0 0 14 8 6 6 0 0 0 2 8a6 6 0 0 0 6 6 5.968 5.968 0 0 0 3.473-1.113l4.82 4.82a.997.997 0 0 0 1.414 0 .999.999 0 0 0 0-1.414" fill-rule="evenodd"></path>
+                            </svg></span></div><input id="AffiliateProductSearchInput" placeholder="Search Products" class="Polaris-TextField__Input" aria-label="Search customers" aria-labelledby="TextField2Label TextField2Prefix" aria-invalid="false" value="">
+                        <div class="Polaris-TextField__Backdrop"></div>
+                 </div>
+                  
+               <br><br>        
+                     <div class="Polaris-Page" style="display:none;" id="AffiliateProductTable">  
+						<div class="Polaris-Page__Content">
+						  <div class="Polaris-Card">
+							<div class="">
+							  <div class="Polaris-DataTable__Navigation"><button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+										  <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+										</svg></span></span></span></button><button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+										  <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+										</svg></span></span></span></button></div>
+							  <div class="Polaris-DataTable">
+								<div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+								  <table class="Polaris-DataTable__Table" id="affiliatetable" style="width: 124%;">                       
+								  </table>
+								</div>
+							  </div>
+							</div>
+						  </div>
+						</div>
+					  </div>  
+      	  </div>
+     </div>
+   </div>
+</div>
+      
+<!--Discount Coupon -->      
+   
+<div id="SR_Discount" style="display:none;height:100%">
+  <div class="Polaris-Card">
+    
+     <!--View One Time Discount Coupon Page Content -->
+	 <div class="page_content" id="View_DiscountCoupons" style="display:none;">
+            <div class="Polaris-Card__Header">
+              <h2 class="Polaris-Heading"> 
+                <div class="Polaris-Page-Header">
+                        <div class="Polaris-Page-Header__Title">
+                          <div>
+                            <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">One Time Discount Coupon</h1>
+                          </div>
+                          <div></div>
+                        </div>
+                </div>
+              </h2>
+            </div>
+            <div class="Polaris-Card__Section">      
+
+               <br/>
+                 <div>
+                   <div class="Polaris-ButtonGroup__Item">
+                     <button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="BacktoCouponPage()">
+                       <span class="Polaris-Button__Content"><span> Back </span></span></button></div>
+                 </div>
+
+                     <br/>
+                   <span class="Polaris-TextStyle--variationNegative" id="nodiscountcoupon" style="display:none;">You have not created any Discount Coupon</span>         
+
+                 <div class="Polaris-Page__Content">
+                    <div class="Polaris-Card">
+                      <div class="">
+                        <div class="Polaris-DataTable__Navigation">
+                          <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                    <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                  </svg></span></span></span></button>
+                          <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                    <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                  </svg></span></span></span></button>
+                        </div>
+                        <div class="Polaris-DataTable">
+                          <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                            <table class="Polaris-DataTable__Table" id="OneTimeCoupons">
+
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+               <br/>
+               </div>		
+     </div>
+    
+      <!-- Discount Coupon Page Content -->
+     <div class="page_content" id="Discount_Coupon">
+              
+                <div class="Polaris-Card__Header">
+                  <h2 class="Polaris-Heading"> 
+                    <div class="Polaris-Page-Header">
+                            <div class="Polaris-Page-Header__Title">
+                              <div>
+                                <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Discount Coupon</h1>
+                              </div>
+                              <div></div>
+                            </div>
+                    </div>
+                  </h2>
+                </div>
+              
+              <br>
+             <div class="Polaris-Card__Section">  
+              	<label class="Polaris-Label__Text">
+  					Share your Discount Coupon Code on your social media and email. You will get a commission for everytime your Discount Coupon Code is used!
+				</label>
+              	<br />
+              	<div>
+ 					<h5 class="affiliatelink">Your Coupon Code is : <span id="CouponCode" style="color:#3f4eae !important; font-size: 18px;"></span></h5>
+ 					<br>
+ 					<h5 class="affiliatelink">Discount Amount : <span id="dis_amt" style="color:#3f4eae !important; font-size: 18px;"></span></h5>
+  					<br>
+   					<h5 class="affiliatelink">Commision : <span id="com_amt" style="color:#3f4eae !important; font-size: 18px;"></span></h5>
+  					<br>
+                   <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="myInput" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+                       <div class="Polaris-TextField__Backdrop"></div>
+                   </div>
+ 					
+                   <div>
+                     <div class="Polaris-ButtonGroup__Item">
+                       <button type="button" id="btnmsg" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="myFunction()">
+                         <span class="Polaris-Button__Content"><span> Copy text </span></span></button></div>
+                   </div>
+					
+ 				</div>
+              	<br>
+  				<div class="sr_body">
+				    <a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url={{shop.url}}" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="{{shop.url}}" data-ssbp-site="Pinterest_force" target="_blank"><img alt="Pinterest" class="lazyload hs-lazyload hs-id-3b2d1be1" data-src="https://simplesharebuttons.com/images/somacro/pinterest.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/> </a>
+                    <a href="http://instagram.com/###?ref={{shop.url}}" class="ig-b- ig-b-32"  target="_blank" ><img alt="Instagram" class="lazyload hs-lazyload hs-id-d0a7d011" data-src="https://badges.instagram.com/static/images/ig-badge-32.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></a>
+    				<a href="https://twitter.com/share?url={{shop.url}}&amp;text={{shop.name}}" target="_blank"><img alt="Twitter" class="lazyload hs-lazyload hs-id-b174ceb4" data-src="https://simplesharebuttons.com/images/somacro/twitter.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/> </a>
+   					<a href="http://www.facebook.com/sharer.php?u={{shop.url}}" target="_blank"><img alt="Facebook" class="lazyload hs-lazyload hs-id-cd8d8e16" data-src="https://simplesharebuttons.com/images/somacro/facebook.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>
+   				</div>
+              	<br>
+               </div>
+       </div>
+   </div>
+  
+     <!--One Time Discount Coupon Page Content -->
+    <div class="page_content" id="salesrepcoupon">
+         <div class="Polaris-Card">
+                  
+            <div class="Polaris-Card__Header">
+                  <h2 class="Polaris-Heading"> 
+                    <div class="Polaris-Page-Header">
+                            <div class="Polaris-Page-Header__Title">
+                              <div>
+                                <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Create one time use discount coupons for clients</h1>
+                              </div>
+                              <div></div>
+                            </div>
+                    </div>
+                  </h2>
+                </div>
+                  	
+                  <br>
+                  <div class="Polaris-Card__Section">
+                   <div>
+                     <div class="Polaris-ButtonGroup__Item">
+                       <button type="button" id="Coupon_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="ShowCouponTable()">
+                         <span class="Polaris-Button__Content"><span> View Coupons </span></span></button></div>
+                   </div>
+                
+                 <br/>
+                    <br/>
+                     <div>
+                      	<h5 class="affiliatelink">Maximum allowed Discount : <span id="max_dis_amt" style="color:#3f4eae !important; font-size: 18px;"></span></h5>
+  						<br>
+   						<h5 class="affiliatelink">Commision : <span id="commission" style="color:#3f4eae !important; font-size: 18px;"></span></h5>
+  						<br>
+ 					 <div class="">
+                        <div class="Polaris-Labelled__LabelWrapper">
+                          <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Coupon Code: </label></div>
+                        </div>
+
+                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="DiscountCouponCode" placeholder="Please Enter Coupon Code" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+                          <div class="Polaris-TextField__Backdrop"></div>
+                        </div>
+                      </div>
+                       <br>
+                      <div class="">
+                        <div class="Polaris-Labelled__LabelWrapper">
+                          <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Discount: </label></div>
+                        </div>
+
+                        <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="Discount" placeholder="Less than Max allowed Discount" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+                          <div class="Polaris-TextField__Backdrop"></div>
+                        </div>
+                      </div>
+                       <span class="Polaris-TextStyle--variationNegative" id="sr_coupon_error1" style="display:none">Please enter the coupon code and discount</span> 
+                       <span class="Polaris-TextStyle--variationNegative" id="couponempty"></span>
+                        
+                       <br>
+                        <div>
+                           <div class="Polaris-ButtonGroup__Item">
+                             <button type="button" id="submit" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="CreateCoupon()">
+                               <span class="Polaris-Button__Content"><span>Create Coupon</span></span></button></div>
+                        </div>                      	
+
+                  </div>
+              	</div>
+          	</div>
+       </div>
+
+  <br>
+</div>
+      
+<!--Your Bio-->      
+   
+<div id="SR_YourBio" style="display:none;">
+  <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Your Bio</h1>
+                  </div>
+                </div>
+         </div>
+      </h2>
+    </div>
+    <div class="Polaris-Card__Section"> 
+    
+     <!-- Page Content -->
+           <div class="page_content" id="salesrepbio">      
+              <br>		
+              <br>
+              <div>
+
+        <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Unique Link </label></div>
+          </div>
+        <a style="color:#3f4eae !important; font-size: 15px;" id="aff_link" target="_blank"></a>  
+          <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="uniquelink" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+          </div>
+        </div>
+              <br>
+                  <span class="Polaris-TextStyle--variationNegative" id="error_link" style="display:none;">Link Already Taken. Please try different</span>
+
+         <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Your Bio </label></div>
+          </div>
+
+           <div class="Polaris-TextField Polaris-TextField--hasValue Polaris-TextField--multiline">
+					<textarea id="repbio" class="Polaris-TextField__Input" placeholder="Enter in 100 words" aria-label="Shipping address" aria-labelledby="TextField14Label" aria-invalid="false" aria-multiline="true" style="height: 59px;"></textarea>
+					<div class="Polaris-TextField__Backdrop"></div>
+          </div>
+          </div>
+              <br>
+              <br>
+              <div>
+                 <div class="Polaris-ButtonGroup__Item">
+                   <button type="button" id="save_btn" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="SaveBio()">
+                     <span class="Polaris-Button__Content"><span> Save </span></span></button></div>
+               </div>
+
+
+           </div>
+      </div>
+    </div>
+</div>
+</div>
+              
+<!--Team Details-->
+
+<div id="SR_TeamDetails" style="display:none;">
+  <div class="Polaris-Card">    
+    
+     <!--Team Details Page Content -->
+     <div class="page_content" id="teamdetails">
+         <div class="Polaris-Card__Header">
+            <h2 class="Polaris-Heading"> 
+              <div class="Polaris-Page-Header">
+                      <div class="Polaris-Page-Header__Title">
+                        <div>
+                          <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Team Details</h1>
+                        </div>
+                      </div>
+               </div>
+            </h2>
+         </div>
+         <div class="Polaris-Card__Section">
+              <br>
+                <span class="Polaris-TextStyle--variationNegative" id="NoTeamDetails" style="display:none;">No Team Details</span>
+                 <div>
+                    <div class="Polaris-Labelled__LabelWrapper">
+                        <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select SalesRep:</label></div>
+                      </div> 					  
+                     <select id="repname" onmousedown="this.value='';" onchange="showTeamDetails(this);" style="width:100%;">
+
+                     </select>    			
+                  </div> 
+
+             <br><br>
+               <h2 id="teamdata" style="display:none;"><b>Current Month Data</b></h2>
+           <!--Client Invoice Details -->
+              <div class="Polaris-Page__Content" id="ClientOrderTeamMember" style="display:none;">
+                <h3><b>Client Invoice Details</b></h3>
+                      <div class="Polaris-Card">
+                        <div class="">
+                          <div class="Polaris-DataTable__Navigation">
+                            <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                            <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                          </div>
+                          <div class="Polaris-DataTable">
+                            <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                              <table class="Polaris-DataTable__Table" id="ViewClientOrderTeamMember">
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+           
+           <!--Wholesale Orders Details -->
+              <div class="Polaris-Page__Content" id="WholesaleOrderTeamMember" style="display:none;">
+                <h3><b>Wholesale Orders Details</b></h3>
+                      <div class="Polaris-Card">
+                        <div class="">
+                          <div class="Polaris-DataTable__Navigation">
+                            <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                            <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                          </div>
+                          <div class="Polaris-DataTable">
+                            <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                              <table class="Polaris-DataTable__Table" id="ViewWholesaleOrderTeamMember">
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+           
+           <!--Coupon Orders Details -->
+              <div class="Polaris-Page__Content" id="CouponOrderTeamMember" style="display:none;">
+                <h3><b>Coupon Orders Details</b></h3>
+                      <div class="Polaris-Card">
+                        <div class="">
+                          <div class="Polaris-DataTable__Navigation">
+                            <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                            <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                          </div>
+                          <div class="Polaris-DataTable">
+                            <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                              <table class="Polaris-DataTable__Table" id="ViewCouponOrderTeamMember">
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+           
+           <!--Affiliate Orders Details -->
+              <div class="Polaris-Page__Content" id="AffiliateOrderTeamMember" style="display:none;">
+                <h3><b>Affiliate Orders Details</b></h3>
+                      <div class="Polaris-Card">
+                        <div class="">
+                          <div class="Polaris-DataTable__Navigation">
+                            <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                            <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                          </div>
+                          <div class="Polaris-DataTable">
+                            <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                              <table class="Polaris-DataTable__Table" id="ViewAffiliateOrderTeamMember">
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+           
+           <!--Tagged Customer Orders Details -->
+              <div class="Polaris-Page__Content" id="TagCustomerOrderTeamMember" style="display:none;">
+                <h3><b>Tagged Customer Orders Details</b></h3>
+                      <div class="Polaris-Card">
+                        <div class="">
+                          <div class="Polaris-DataTable__Navigation">
+                            <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                            <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                          </div>
+                          <div class="Polaris-DataTable">
+                            <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                              <table class="Polaris-DataTable__Table" id="ViewTagCustomerOrderTeamMember">
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+           
+        </div>	
+     </div>
+  </div>
+</div> 
+
+ <!--Add Customer Lead -->
+<div id="SR_Lead" style="display:none;">
+  <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Add Lead</h1>
+                  </div>
+                  <div></div>
+                </div>
+         </div>
+      </h2>
+    </div>
+    
+<div class="Polaris-Card__Section">       
+    <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Customer First name: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_fname" placeholder="First Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Customer Last name: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_lname" placeholder="Last Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+       </div>
+     </div>
+  
+  <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+             <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Phone No: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_phoneno" placeholder="Phone No" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+             <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Enter Customer Email Id: </label></div>
+           </div>
+          <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_email" placeholder="Email Address" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+             <div class="Polaris-TextField__Backdrop"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   <div class="Polaris-FormLayout__Items">
+     <div class="Polaris-FormLayout__Item">
+       <div class="">
+           <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Note </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_note" placeholder="Note" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+       </div>
+     </div>
+    <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+            <div class="">
+  					<div class="Polaris-Labelled__LabelWrapper">
+                      <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Lead Status:</label></div>
+                    </div>
+						<select id="LeadStatus" style="width:100%;">
+                            <option value="">--SELECT--</option>
+						    <option value="Unqualified">Unqualified</option>
+							<option value="Qualified">Qualified</option>
+							<option value="Contacted">Contacted</option>
+							<option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+						</select>				
+  				</div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+         
+               <div class="">
+  					<div class="Polaris-Labelled__LabelWrapper">
+                      <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Lead Rating:</label></div>
+                    </div>
+						<select id="LeadRating" style="width:100%;">
+						    <option value="">--SELECT--</option>
+							<option value="Hot">Hot</option>
+							<option value="Warm">Warm</option>
+							<option value="Cold">Cold</option>
+						</select>				
+  				</div>
+          </div>
+        <div class="Polaris-FormLayout__Item">
+				
+                <div class="">
+  					<div class="Polaris-Labelled__LabelWrapper">
+                      <div class="Polaris-Label"><label id="Select7Label" for="Select7" class="Polaris-Label__Text">Select Sales Program:</label></div>
+                    </div>
+						<select id="SalesProgram" style="width:100%;">
+                            <option value="">--SELECT--</option>
+						    <option value="Sales Channel">Sales Channel</option>
+						</select>				
+  				</div>
+        </div>
+      </div>
+    </div>
+  </div>       
+    
+<div class="Polaris-Card__Section"> 
+     <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="">
+             <div class="Polaris-Labelled__LabelWrapper">
+              <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Personal Address: </label></div>
+              </div>
+             <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_address" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+              <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+          </div>
+        </div>       
+      </div>
+    </div>
+     <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">City: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_city" placeholder="First Name" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Country: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_country" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+   
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">State: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_state" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Pin Code: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="customer_pincode" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+  </div>
+  
+  <div class="Polaris-Card__Section"> 
+     <div role="group" class="Polaris-FormLayout--condensed">
+      <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="">
+             <div class="Polaris-Labelled__LabelWrapper">
+              <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Company Address: </label></div>
+              </div>
+             <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="cust_company_address"  class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+              <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+          </div>
+        </div>       
+      </div>
+    </div>
+     <div class="Polaris-FormLayout__Items">
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">City: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="cust_company_city" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Country: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="cust_company_country" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+   
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+          <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">State: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="cust_company_state" class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+        <div class="Polaris-FormLayout__Item">
+          <div class="">
+            <div class="Polaris-Labelled__LabelWrapper">
+            <div class="Polaris-Label"><label id="TextField5Label" for="TextField5" class="Polaris-Label__Text">Pin Code: </label></div>
+            </div>
+           <div class="Polaris-TextField Polaris-TextField--hasValue"><input id="cust_company_pincode"  class="Polaris-TextField__Input" aria-label="Store name" aria-labelledby="TextField5Label" aria-invalid="false" value="">
+            <div class="Polaris-TextField__Backdrop"></div>
+             </div>
+          </div>
+        </div>
+     </div>
+     <div class="Polaris-FormLayout__Items">
+         <div class="Polaris-FormLayout__Item">
+                 <div class="Polaris-ButtonGroup__Item">
+                       <button type="button" id="leadsave" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="CreateLead()">
+                         <span class="Polaris-Button__Content"><span> Save </span></span></button>
+                 </div>
+         </div>
+      </div>
+</div>
+
+    </div>
+  </div>
+
+<!--Tagged Clients To Rep -->    
+<div id="SR_Clients" style="display:none;">
+  <div class="Polaris-Card">
+    <div class="Polaris-Card__Header">
+      <h2 class="Polaris-Heading"> 
+        <div class="Polaris-Page-Header">
+                <div class="Polaris-Page-Header__Title">
+                  <div>
+                    <h1 class="Polaris-DisplayText Polaris-DisplayText--sizeLarge">Your Clients</h1>
+                  </div>
+                </div>
+         </div>
+      </h2>
+    </div>
+    <div class="Polaris-Card__Section"> 
+    <!--View Client Orders-->
+           <div class="page_content" id="ViewRepClientOrders" style="display:none;">      
+               <br/>
+               <div>
+                   <div class="Polaris-ButtonGroup__Item">
+                     <button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="BacktoYourClientPage()">
+                       <span class="Polaris-Button__Content"><span>Back</span></span></button></div>
+               </div>
+
+                     <br/>
+                     <span class="Polaris-TextStyle--variationNegative" id="norepclientorder" style="display:none;">No Client Orders</span>
+
+                 <div class="Polaris-Page__Content">
+                    <div class="Polaris-Card">
+                      <div class="">
+                        <div class="Polaris-DataTable__Navigation">
+                          <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                    <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                  </svg></span></span></span></button>
+                          <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                    <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                  </svg></span></span></span></button>
+                        </div>
+                        <div class="Polaris-DataTable">
+                          <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                            <table class="Polaris-DataTable__Table" id="ViewRepClientOrdersDetails">
+
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+               <br/>
+           </div>
+
+       <!-- All Clients -->
+           <div class="page_content" id="Clientdetails">      
+              <br>		
+              <br>
+             <div>
+			  <span class="Polaris-TextStyle--variationNegative" id="norepclients" style="display:none;">No Clients</span>               
+              <div class="Polaris-Page__Content" id="TaggedClient" style="display:none;">
+               
+                      <div class="Polaris-Card">
+                        <div class="">
+                          <div class="Polaris-DataTable__Navigation">
+                            <button type="button" class="Polaris-Button Polaris-Button--disabled Polaris-Button--plain Polaris-Button--iconOnly" disabled="" aria-label="Scroll table left one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M12 16a.997.997 0 0 1-.707-.293l-5-5a.999.999 0 0 1 0-1.414l5-5a.999.999 0 1 1 1.414 1.414L8.414 10l4.293 4.293A.999.999 0 0 1 12 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                            <button type="button" class="Polaris-Button Polaris-Button--plain Polaris-Button--iconOnly" aria-label="Scroll table right one column"><span class="Polaris-Button__Content"><span class="Polaris-Button__Icon"><span class="Polaris-Icon"><svg class="Polaris-Icon__Svg" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+                                      <path d="M8 16a.999.999 0 0 1-.707-1.707L11.586 10 7.293 5.707a.999.999 0 1 1 1.414-1.414l5 5a.999.999 0 0 1 0 1.414l-5 5A.997.997 0 0 1 8 16" fill-rule="evenodd"></path>
+                                    </svg></span></span></span></button>
+                          </div>
+                          <div class="Polaris-DataTable">
+                            <div class="Polaris-DataTable__ScrollContainer" style="margin-left: -0.5rem;">
+                              <table class="Polaris-DataTable__Table" id="ViewTaggedClient">
+
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+             </div>
+      </div>
+    </div>
+</div>
+</div>
+     
+   <!--End-->
+            </div>
+          </div>             
+       </main>
+    <!--End Main Frame -->
+    </div>                                                   
+</div>
+<!--End SalesRep App-->
+
+<script>
+  var serverData={};
+  globalTotalDiscountAmt=0;
+   var j=0;
+  var ClientInvoiceDiscount ="";
+  var Index=-1;
+  var discountname ="";
+  var moneyformate,currencyFormat;
+  var format = "{% raw %}{{amount_with_comma_separator}}{% endraw %}";
+  var shopname = "{{shop.name}}";
+  
+//calculate fixed wholesale discount
+function CalculateFixedAmountDiscount(totalprice,price,discount,qty)
+{
+	return totalprice-((discount).toFixed(2)*qty);
+}
+ 
+//Calculate discount   
+function Calculate(totalprice,price,discount,qty)
+{
+	return totalprice-((price*discount).toFixed(2)*qty);
+}  
+
+//Calculate Commission
+function Commission(price,percentage)  
+{
+    return price*percentage;
+}
+    
+ //Get Product Price
+ function getproductprice(productprice)
+  {
+    if(moneyformate == format)
+		{
+			var item_price = productprice.replace(".","");
+			return Product_Price = item_price.replace(",",".");
+      
+	    }
+	  else{
+    
+		  return Product_Price = productprice.replace(",","");
+	  }
+   }
+    
+      
+//Get Wholesale Discount       
+function getDiscount(productArr,discountAr,currencyFormat,FixedWholesaleDiscount,wholesaleqtydiscount)
+{	
+ var totalDiscount=0;   
+ var Product_Price,Item_price;
+ for(singleproduct in productArr)
+ {
+        var quantity=0;
+        var Amount=0;
+    	var getProductType = productArr[singleproduct].product_type;
+		 Product_Price = (productArr[singleproduct].product_price);
+         Item_price = (productArr[singleproduct].Item_Price);
+  
+		//if product type is not set 
+        if(getProductType == "")
+        {
+          	getProductType = "All Other Products";
+            
+        }
+      if(wholesaleqtydiscount)
+      {
+         for(var discount in discountAr)
+    	 {
+    	   var responseProductType = discountAr[discount].type;              
+           if(getProductType.toLowerCase() == responseProductType.toLowerCase() &&  productArr[singleproduct].product_quantity >= discountAr[discount].quantity)
+           {
+             if(discountAr[discount].quantity>quantity)
+             {
+               if(productArr[singleproduct].product_quantity>quantity)
+               {
+                 quantity=discountAr[discount].quantity; 
+                 Amount=(discountAr[discount].DiscountAmt);
+               }
+                
+             }
+           }
+         }
+        if(quantity>0)
+        {
+          CalculateDiscountedPrice(Amount);  
+        }
+        else
+        {
+          wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";  
+        }
+        function CalculateDiscountedPrice(Amount)
+        {
+          var discountAmount = Calculate(parseFloat(Product_Price),parseFloat(Item_price), parseFloat(Amount),parseFloat(productArr[singleproduct].product_quantity));
+          totalDiscount=totalDiscount+discountAmount;
+          discountAmount = discountAmount.toFixed(2);
+          if(moneyformate == format)
+		  {
+		     discountAmount = discountAmount.replace(".",",");
+		  }
+          wholesaleProduct[singleproduct]["Discounted_Amount"] = discountAmount.toString();
+        }
+                          
+      }
+                  
+      else
+      {
+        for(var discount in discountAr)
+    	{ 
+          var responseProductType = discountAr[discount].type;
+          if(getProductType.toLowerCase() == responseProductType.toLowerCase())
+          {
+            if(FixedWholesaleDiscount)
+            {
+               var discountAmount = CalculateFixedAmountDiscount(parseFloat(Product_Price),parseFloat(Item_price), parseFloat(discountAr[discount].DiscountAmt),parseFloat(productArr[singleproduct].product_quantity));
+               totalDiscount=totalDiscount+discountAmount;
+            }
+            else
+            {
+              var discountAmount = Calculate(parseFloat(Product_Price),parseFloat(Item_price), parseFloat(discountAr[discount].DiscountAmt),parseFloat(productArr[singleproduct].product_quantity));
+              totalDiscount=totalDiscount+discountAmount;
+            }
+            discountAmount = discountAmount.toFixed(2);
+		    if(moneyformate == format)
+		    {
+			   discountAmount = discountAmount.replace(".",",");
+			}
+			//if discounted amount and actual price are same then show "No Discount" else show discounted price
+            if(discountAr[discount].DiscountAmt == 0)
+            {
+               wholesaleProduct[singleproduct]["Discounted_Amount"] = "No Discount";  
+            }
+            else
+            {
+              wholesaleProduct[singleproduct]["Discounted_Amount"] = discountAmount.toString();
+            }        
+    	  }
+        }
+      }      
+	}
+
+       globalTotalDiscountAmt=parseFloat(totalDiscount);
+       finalDiscount=subtotal-parseFloat(globalTotalDiscountAmt);
+  
+         $('#totalPrice').html('Total Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+ subtotal.toFixed(2)+"</b>");
+       if(finalDiscount==0){
+           $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(finalDiscount).toFixed(2)+"</b>"); 
+       }
+       else{
+          $('#DiscountedPrice').html(' Your Discounted Price: '+"<b>"+currencyFormat+"</b>"+" "+"<b>"+(subtotal- finalDiscount).toFixed(2)+"</b>"); 
+      } 
+}
+ 
+//Get Customer Discount and Salesrep Commission
+function getCommission(productArr,commissionAr,currencyFormat)
+{
+ var Product_Price,Item_price;
+	for(singleproduct in productArr)
+	{
+      var getProductType = productArr[singleproduct].product_type;
+      Product_Price = (productArr[singleproduct].product_price);
+      Item_price = (productArr[singleproduct].Item_Price);
+      if(getProductType == "" )
+        {
+            var getProductType = "All Other Products";          
+        }
+       
+      for(var discount in commissionAr)
+    	{
+    			var responseProductType = commissionAr[discount].type;
+        		if(getProductType.toLowerCase() == responseProductType.toLowerCase())
+              	{
+                  console.log(commissionAr[discount].GoldDiscount);
+        			    var GolddiscountAmount = (Calculate(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].GoldDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
+                		var SilverdiscountAmount = (Calculate(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].SilverDiscunt),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
+                		var BronzediscountAmount = (Calculate(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].BronzeDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
+                		
+                      	var GoldCommissionAmount = (Commission(GolddiscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+                      	var SilverCommissionAmount = (Commission(SilverdiscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+                      	var BronzeCommissionAmount = (Commission(BronzediscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+						var FullPriceCommissionAmount = (Commission(parseFloat(Product_Price),parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+                      
+					   if(moneyformate == format)
+					   {
+						    GolddiscountAmount = GolddiscountAmount.replace(".",",");
+							SilverdiscountAmount = SilverdiscountAmount.replace(".",",");
+							BronzediscountAmount = BronzediscountAmount.replace(".",",");
+                    
+							GoldCommissionAmount = GoldCommissionAmount.replace(".",",");
+							SilverCommissionAmount = SilverCommissionAmount.replace(".",",");
+							BronzeCommissionAmount = BronzeCommissionAmount.replace(".",",");
+							FullPriceCommissionAmount = FullPriceCommissionAmount.replace(".",",");
+                      }
+                    
+
+					  // checking discounted price of product and original price are same or not. if same then show no discount that means there is no discount discount or discount is not set 	
+                      //checking for applying gold dicount	
+                      if(commissionAr[discount].GoldDiscount == 0)
+                        {
+                          productArr[singleproduct]["Gold_Discount_For_Customer"] = "No Discount";
+                        }
+                      else{
+                        	productArr[singleproduct]["Gold_Discount_For_Customer"] = currencyFormat +" "+GolddiscountAmount.toString();
+                      }
+                      //checking for applying silver dicount
+                      if(commissionAr[discount].SilverDiscunt == 0)
+                        {
+                          productArr[singleproduct]["Silver_Discount_For_Customer"] = "No Discount";
+                        }
+                      else{
+                        	productArr[singleproduct]["Silver_Discount_For_Customer"] = currencyFormat +" "+SilverdiscountAmount.toString();
+                      }
+                      //checking for applying bronze dicount
+                      if(commissionAr[discount].BronzeDiscount == 0)
+                        {
+                          productArr[singleproduct]["Bronze_Discount_For_Customer"] = "No Discount";
+                        }
+                      else{
+                        	productArr[singleproduct]["Bronze_Discount_For_Customer"] = currencyFormat +" "+BronzediscountAmount.toString();
+                      }
+                      //checking for applying gold commission		
+                      if(commissionAr[discount].Commissionforsalerep == 0 )
+                      	{
+                        	productArr[singleproduct]["Gold_Commission_Amount"] = "No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["Gold_Commission_Amount"] = currencyFormat +" "+ GoldCommissionAmount.toString();                      	
+    			     	}
+						//checking for applying silver commission	
+                      if(commissionAr[discount].Commissionforsalerep == 0)
+                      	{
+                        	productArr[singleproduct]["Silver_Commission_Amount"] = "No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["Silver_Commission_Amount"] = currencyFormat +" "+ SilverCommissionAmount.toString();                      	
+    			     	}
+						//checking for applying bronze commission	
+                      if(commissionAr[discount].Commissionforsalerep == 0)
+                      	{
+                        	productArr[singleproduct]["Bronze_Commission_Amount"]="No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["Bronze_Commission_Amount"]=currencyFormat +" "+ BronzeCommissionAmount.toString();                      	
+    			     	}
+						//checking for applying fullprice commission	
+                      if(commissionAr[discount].Commissionforsalerep == 0)
+                      	{
+                        	productArr[singleproduct]["FullPriceCommissionAmount"]="No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["FullPriceCommissionAmount"]=currencyFormat +" "+ FullPriceCommissionAmount.toString();                      	
+    			     	}
+              	}
+    		}
+
+	}
+}
+
+//Get Customer Discount and Salesrep Commission per rep
+function getCommissionPerRep(productArr,commissionAr,currencyFormat)
+{
+ var Product_Price,Item_price;
+	for(singleproduct in productArr)
+	{
+      var getSalesRepId = "{{customer.id}}";
+      Product_Price = (productArr[singleproduct].product_price);
+      Item_price = (productArr[singleproduct].Item_Price);
+     
+       
+      for(var discount in commissionAr)
+    	{
+    			var responseSalesRepId = commissionAr[discount].SalesRepId;
+        		if(getSalesRepId == responseSalesRepId)
+              	{
+                  console.log(commissionAr[discount].GoldDiscount);
+        			    var GolddiscountAmount = (Calculate(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].GoldDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
+                		var SilverdiscountAmount = (Calculate(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].SilverDiscunt),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
+                		var BronzediscountAmount = (Calculate(parseFloat(Product_Price),parseFloat(Item_price),parseFloat(commissionAr[discount].BronzeDiscount),parseFloat(productArr[singleproduct].product_quantity))).toFixed(2);
+                		
+                      	var GoldCommissionAmount = (Commission(GolddiscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+                      	var SilverCommissionAmount = (Commission(SilverdiscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+                      	var BronzeCommissionAmount = (Commission(BronzediscountAmount,parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+						var FullPriceCommissionAmount = (Commission(parseFloat(Product_Price),parseFloat(commissionAr[discount].Commissionforsalerep))).toFixed(2);
+                      
+					   if(moneyformate == format)
+					   {
+						    GolddiscountAmount = GolddiscountAmount.replace(".",",");
+							SilverdiscountAmount = SilverdiscountAmount.replace(".",",");
+							BronzediscountAmount = BronzediscountAmount.replace(".",",");
+                    
+							GoldCommissionAmount = GoldCommissionAmount.replace(".",",");
+							SilverCommissionAmount = SilverCommissionAmount.replace(".",",");
+							BronzeCommissionAmount = BronzeCommissionAmount.replace(".",",");
+							FullPriceCommissionAmount = FullPriceCommissionAmount.replace(".",",");
+                      }
+                    
+
+					  // checking discounted price of product and original price are same or not. if same then show no discount that means there is no discount discount or discount is not set 	
+                      //checking for applying gold dicount	
+                      if(commissionAr[discount].GoldDiscount == 0)
+                        {
+                          productArr[singleproduct]["Gold_Discount_For_Customer"] = "No Discount";
+                        }
+                      else{
+                        	productArr[singleproduct]["Gold_Discount_For_Customer"] = currencyFormat +" "+GolddiscountAmount.toString();
+                      }
+                      //checking for applying silver dicount
+                      if(commissionAr[discount].SilverDiscunt == 0)
+                        {
+                          productArr[singleproduct]["Silver_Discount_For_Customer"] = "No Discount";
+                        }
+                      else{
+                        	productArr[singleproduct]["Silver_Discount_For_Customer"] = currencyFormat +" "+SilverdiscountAmount.toString();
+                      }
+                      //checking for applying bronze dicount
+                      if(commissionAr[discount].BronzeDiscount == 0)
+                        {
+                          productArr[singleproduct]["Bronze_Discount_For_Customer"] = "No Discount";
+                        }
+                      else{
+                        	productArr[singleproduct]["Bronze_Discount_For_Customer"] = currencyFormat +" "+BronzediscountAmount.toString();
+                      }
+                      //checking for applying gold commission		
+                      if(commissionAr[discount].Commissionforsalerep == 0 )
+                      	{
+                        	productArr[singleproduct]["Gold_Commission_Amount"] = "No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["Gold_Commission_Amount"] = currencyFormat +" "+ GoldCommissionAmount.toString();                      	
+    			     	}
+						//checking for applying silver commission	
+                      if(commissionAr[discount].Commissionforsalerep == 0)
+                      	{
+                        	productArr[singleproduct]["Silver_Commission_Amount"] = "No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["Silver_Commission_Amount"] = currencyFormat +" "+ SilverCommissionAmount.toString();                      	
+    			     	}
+						//checking for applying bronze commission	
+                      if(commissionAr[discount].Commissionforsalerep == 0)
+                      	{
+                        	productArr[singleproduct]["Bronze_Commission_Amount"]="No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["Bronze_Commission_Amount"]=currencyFormat +" "+ BronzeCommissionAmount.toString();                      	
+    			     	}
+						//checking for applying fullprice commission	
+                      if(commissionAr[discount].Commissionforsalerep == 0)
+                      	{
+                        	productArr[singleproduct]["FullPriceCommissionAmount"]="No Commission";
+                      	}
+                      else{
+                      		productArr[singleproduct]["FullPriceCommissionAmount"]=currencyFormat +" "+ FullPriceCommissionAmount.toString();                      	
+    			     	}
+              	}
+    		}
+
+	}
+}  
+    
+  
+  // Apply selected discount type on customer discount (default tiers)
+  function ApplyDiscount(value)
+	{
+      Index = value;
+      var _currencyFormat = currencyFormat;
+      var rowcount = 0;
+	  if(Clientproduct != 0)
+      {
+       var customersalerows = '<tr id="ClientInvoicerow">'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Name</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Size</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Quantity </th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Item Price</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Total Price</th>'+
+  			'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Discounted Price for Customer</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">SalesRep Commission</th>'+
+            '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Remove Product</th></tr>';
+    	switch(value)
+		{
+		   case "-1": 
+        			//Selected Products Table in Customer Order Page
+            
+    				console.log(Clientproduct);
+    				for(var data in Clientproduct)
+    				{
+                      	customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img src='+Clientproduct[data].Image+' height=100></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].title)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_size)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_quantity)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].Item_Price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].product_price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">No Discount</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+ (Clientproduct[data].FullPriceCommissionAmount)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+
+    				}
+     				document.getElementById( 'productTable' ).innerHTML = customersalerows;
+					break;
+
+			case "0": 
+        			//Selected Products Table in Customer Order Page
+    				console.log(Clientproduct);
+    				for(var data in Clientproduct)
+    				{
+                      	customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img src='+Clientproduct[data].Image+' height=100></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].title)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_size)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_quantity)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].Item_Price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].product_price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].Gold_Discount_For_Customer)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].Gold_Commission_Amount)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+    				}
+     				document.getElementById( 'productTable' ).innerHTML = customersalerows;
+    
+					break;
+			case "1": 
+        			//Selected Products Table in Customer Order Page
+	    			console.log(Clientproduct);
+    				for(var data in Clientproduct)
+    				{
+                      customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img src='+Clientproduct[data].Image+' height=100></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].title)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_size)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_quantity)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].Item_Price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].product_price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].Silver_Discount_For_Customer)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].Silver_Commission_Amount)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+           			}
+    	 			document.getElementById( 'productTable' ).innerHTML = customersalerows;
+			        break;
+			case "2": 
+        			//Selected Products Table in Customer Order Page
+    				console.log(Clientproduct);
+    				for(var data in Clientproduct)
+    				{
+                      customersalerows += '<tr id="row' + (Clientproduct[data].variantId) +'" class = "class="Polaris-DataTable__TableRow"">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img src='+Clientproduct[data].Image+' height=100></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].title)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_size)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].product_quantity)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].Item_Price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(currencyFormat +" "+ Clientproduct[data].product_price)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].Bronze_Discount_For_Customer)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+(Clientproduct[data].Bronze_Commission_Amount)+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><div class="Polaris-ButtonGroup__Item"><button type="button" class="Polaris-Button Polaris-Button--primary" style="font-size:18px;padding-left: 35px;padding-right: 35px;" onclick="RemoveClientInvoiceProduct('+Clientproduct[data].variantId+')"><span class="Polaris-Button__Content"><span>Remove</span></span></button></td></tr>';
+                   	}
+     				document.getElementById( 'productTable' ).innerHTML = customersalerows;
+					break;
+
+			}
+		}
+}
+  
+  //Client Invoice Tiers discount and Commission
+   function ApplyInvoiceDiscount(thisObj , rowid)
+	{
+      var _currencyFormat = currencyFormat;
+      var price = 0;
+      discountname = thisObj.options[thisObj.selectedIndex].text;
+      var Producttitle = document.getElementById("Title"+rowid).innerHTML.replace("&amp;", "&");
+  	  
+	  for(var singleProduct in Clientproduct)
+      {
+        	if(Clientproduct[singleProduct].title == Producttitle)
+            {
+        		price = (Clientproduct[singleProduct].product_price);
+            }
+      }
+
+      for(var count in  ClientInvoiceDiscount)
+      {
+        	var discountName2 = ClientInvoiceDiscount[count].DiscountName.toString();
+        	if(discountName2.toLowerCase() == discountname.toLowerCase())
+            {
+            	var discount = ClientInvoiceDiscount[count].DiscountRate;
+        		var commission = ClientInvoiceDiscount[count].CommissionRate;
+        	  	var _discount =  (parseFloat(price) - (parseFloat(price*discount))).toFixed(2);
+              	var _commission = (Commission(parseFloat(_discount ),commission)).toFixed(2);
+    			document.getElementById("Discount"+rowid).innerHTML = _currencyFormat + _discount;
+              	document.getElementById("Commission"+rowid).innerHTML = _currencyFormat + _commission;
+            }
+      }
+
+	  if(discountname == "No DiscountType")
+      {
+        document.getElementById("Discount"+rowid).innerHTML = "No Discount";
+        document.getElementById("Commission"+rowid).innerHTML = "No Commission";
+      }
+	}
+  
+  //Base Model function
+  var onSuccessGetbaseModel = function (response) {
+    
+      var currency = "{{shop.currency}}";         
+	  currencyFormat = response.moneyformat;
+      money = "{{shop.money_format}}"; 
+      var Splitemoney = money.split(" ");
+	  moneyformate = Splitemoney[0];
+	  console.log(moneyformate);
+
+       $("#CustomerOrders_Sent").text(response.AllOrdersCount.TotalCustomerOrdersInvoiceSent);
+	   $("#CustomerOrders_Paid").text(response.AllOrdersCount.TotalCustomerOrderInvoicePaid); 
+       $("#WholesaleOrders_Sent").text(response.AllOrdersCount.TotalWholesaleOrdersInvoiceSent); 
+	   $("#WholesaleOrder_Paid").text(response.AllOrdersCount.TotalWholesaleOrderInvoicePaid); 
+	   $("#AffiliateOrders_Paid").text(response.AllOrdersCount.TotalAffiliatePaidOrders);
+       $("#DiscountCodeOrders_Paid").text(response.AllOrdersCount.TotalCouponCodePaidOrders); 
+	   $("#TagCustomerOrders_Paid").text(response.AllOrdersCount.TotalCustomerOrders);   
+	   $("#POSOrders_Paid").text(response.AllOrdersCount.TotalPOSOrder);   
+
+	   $("#CustomerOrders_Earning").text(currency+" "+response.AllOrdersEarnings.CustomerOrdersEarning.toString()); 
+       $("#WholesaleOrders_Earning").text(currency+" "+response.AllOrdersEarnings.WholesaleOrdersEarning.toString());
+	   $("#AffiliateOrders_Earning").text(currency+" "+response.AllOrdersEarnings.AffiliateOrdersEarning.toString());
+       $("#DiscountCode_Earning").text(currency+" "+response.AllOrdersEarnings.CouponCodeEarning.toString());
+	   $("#TeamLead_Commission").text(currency+" "+response.AllOrdersEarnings.ReferralCommission.toString()); 
+	   $("#Customer_Commission").text(currency+" "+response.AllOrdersEarnings.CustomerCommission.toString());         		
+       $("#POS_Commission").text(currency+" "+response.AllOrdersEarnings.POSCommission.toString());         		
+
+      if(response.CouponCodeForSalesRep == null)
+  		 {
+ 		   $("#CouponCode").text("Coupon Code Not Set");
+         }
+		 else
+		 {
+          	$("#myInput").val("Hey use my discount coupon code "+response.CouponCodeForSalesRep.DiscountCode+" and get discounted products");
+          	$("#CouponCode").text(response.CouponCodeForSalesRep.DiscountCode);
+          	$("#dis_amt").text(response.CouponCodeForSalesRep.CustomerDiscount+"%");
+          	$("#com_amt").text(response.CouponCodeForSalesRep.SalesRepCommission+"%");
+		 }        
+
+	   if(response.select.Tagcustomer)
+		{  
+			var options;  
+			for(var cust in response.ShopifyCustomers)
+			  {
+			   options += '<option value="'+j+'" id="'+response.ShopifyCustomers[cust].email+'">'+ response.ShopifyCustomers[cust].firstName +" "+ response.ShopifyCustomers[cust].lastName + '</option>';
+				j++;
+			  }  
+			document.getElementById('custname').innerHTML = options;
+			 }
+		else
+		{	  
+          $("#CustomerWidget").hide();
+		  $(".allcustomers").hide();
+		}
+
+    
+var i;
+    
+var orderRow = '<tr>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric month" scope="col" style="height: 54px;">Month </th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric clientInvoice" scope="col" style="height: 54px;">Client Invoice Orders</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric clientInvoice" scope="col" style="height: 54px;">Client Invoice Commission</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric wholesaleColoumn" scope="col" style="height: 54px;">Wholesale Orders</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric wholesaleColoumn" scope="col" style="height: 54px;">Total Wholesale Purchase</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric affiliateColumn" scope="col" style="height: 54px;">Affiliate Orders </th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric affiliateColumn" scope="col" style="height: 54px;">Affilate Commission</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric couponeColumn" scope="col" style="height: 54px;">CouponCode Orders </th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric couponeColumn" scope="col" style="height: 54px;">CouponCode Commission</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric customerColumn" scope="col" style="height: 54px;">Customer Orders </th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric customerColumn" scope="col" style="height: 54px;">Customer Commission</th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric POSColumn" scope="col" style="height: 54px;">POS Orders </th>'+
+'<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric POSColumn" scope="col" style="height: 54px;">POS Commission</th></tr>';    
+    for(var count = 0; count<6; count++)
+    {
+      orderRow += '<tr id="row' +count +'" class = "class="Polaris-DataTable__TableRow"">'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric month" style="height: 72px;">'+(response.salesrepCustomerOrders[count].Month)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric clientInvoice" style="height: 72px;">'+(response.salesrepCustomerOrders[count].CustomerOrderCount)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric clientInvoice" style="height: 72px;">'+(currency +" "+ response.salesrepCustomerOrders[count].CustomerOrderCommission.toString())+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric wholesaleColoumn" style="height: 72px;">'+(response.salesrepWholesaleOrders[count].WholesaleOrderCount)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric wholesaleColoumn" style="height: 72px;">'+(currency +" "+ response.salesrepWholesaleOrders[count].WholesalePerchase)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric affiliateColumn" style="height: 72px;">'+(response.salesrepAffiliateOrders[count].AffiliateOrderCount)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric affiliateColumn" style="height: 72px;">'+(currency + " " + response.salesrepAffiliateOrders[count].AffiliateOrderCommission.toString())+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric couponeColumn" style="height: 72px;">'+(response.salesrepCouponOrders[count].CouponCodeOrderCount)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric couponeColumn" style="height: 72px;">'+(currency+ " " + response.salesrepCouponOrders[count].CouponCodeOrderCommission.toString())+'</td>'+
+	  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric customerColumn" style="height: 72px;">'+(response.TaggedCustomerOrdersDetails[count].TagCustomerOrderCount)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric customerColumn" style="height: 72px;">'+(currency+ " " + response.TaggedCustomerOrdersDetails[count].TagCustomerCommission.toString())+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric POSColumn" style="height: 72px;">'+(response.POSOrdersDetails[count].POSOrderCount)+'</td>'+
+      '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric POSColumn" style="height: 72px;">'+(currency+ " " + response.POSOrdersDetails[count].POSCommission.toString())+'</td></tr>';
+    } 
+    document.getElementById('orderTable').innerHTML = orderRow;
+	
+    
+    if(!response.select.CustomerInvoice && !response.select.ClientDiscount && !response.select.DecimalClientInvoice &&!response.select.CommissionPerRep)
+    {
+      	    document.getElementById("sr_CustomerOrder_head").style.display = "none";
+      		document.getElementById("ClientWidget").style.display = "none";
+      		
+      		var ClientElement = [];
+      		ClientElement = document.getElementsByClassName("clientInvoice");
+      		var i;
+    		for (i = 0; i < ClientElement.length; i++) 
+            {
+        		ClientElement[i].style.display = "none";
+    		}      		
+    }
+
+    if(!response.select.WholesaleInvoice && !response.select.wholesaleqtydiscount && !response.select.FixedWholesaleDiscount)
+    {
+      		document.getElementById("sr_Wholesale_head").style.display = "none";
+      		document.getElementById("WholesaleWidget").style.display = "none";
+      		
+      		var WholesaleElement = [];
+      		WholesaleElement = document.getElementsByClassName("wholesaleColoumn");
+      		var i;
+    		for (i = 0; i < WholesaleElement.length; i++) 
+            {
+        		WholesaleElement[i].style.display = "none";
+    		}
+      		
+    }
+
+    if(!response.select.AffiliateLink && !response.select.AffiliateLinkCommissionPerRep)
+    {
+      		document.getElementById("sr_Affiliate_head").style.display = "none";
+      		document.getElementById("AffiliateWidget").style.display = "none";
+      		
+      		var affiliateElement = [];
+      		affiliateElement = document.getElementsByClassName("affiliateColumn");
+      		var i;
+    		for (i = 0; i < affiliateElement.length; i++) 
+            {
+        		affiliateElement[i].style.display = "none";
+    		}
+      		
+    }
+
+    if(!response.select.CouponeCode)
+    {
+      		document.getElementById("sr_Discount_head").style.display = "none";
+     		document.getElementById("CouponeCodeWidget").style.display = "none";
+      		
+      		var CouponeElement = [];
+      		CouponeElement = document.getElementsByClassName("couponeColumn");
+      		var i;
+    		for (i = 0; i < CouponeElement.length; i++) 
+            {
+        		CouponeElement[i].style.display = "none";
+    		}
+    }
+    
+    if(!response.select.POS)
+    {
+      		document.getElementById("POSWidget").style.display = "none";
+      		
+      		var ClientElement = [];
+      		ClientElement = document.getElementsByClassName("POSColumn");
+      		var i;
+    		for (i = 0; i < ClientElement.length; i++) 
+            {
+        		ClientElement[i].style.display = "none";
+    		}      		
+    }
+		
+    if(!response.select.referralpage)
+    {     
+	   document.getElementById("sr_Team_head").style.display = "none"; 	  
+       $("#TeamleadWidget").hide();  	  		      
+    }
+	else
+	{
+	 //Get Team Details
+	  if(response.teammemberdetails!= 0)
+	   {   
+		 console.log(response.teammemberdetails);
+		 var option;
+		   for(var info in response.teammemberdetails)
+			{ 
+			  option += '<option value="'+j+'" id="'+response.teammemberdetails[info].Id+'">'+ response.teammemberdetails[info].Name + '</option>';
+			  j++;			
+			}
+		   document.getElementById('repname').innerHTML = option;  
+		}
+	  else
+	   {         
+		$("#NoTeamDetails").show();
+		document.getElementById("sr_Team_head").style.display = "none"; 	  
+		$("#TeamleadWidget").hide(); 
+	   }
+	}
+
+	if(!response.select.microsites)
+    {
+       document.getElementById("sr_Yourbio_head").style.display = "none";
+	   document.getElementById("affiliate_link").innerHTML = "{{shop.url}}/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}";
+	   $("#affiliate_link").attr('href',"{{shop.url}}/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}");
+    }
+	else
+	{
+		  $("#repbio").val(response.rep_info.bio);
+		  if(response.rep_info.uniquelink == null || response.rep_info.uniquelink == " ")
+		  {	                       
+			  document.getElementById("affiliate_link").innerHTML = "{{shop.url}}/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}";
+			  $("#affiliate_link").attr('href',"{{shop.url}}/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}");                                  
+		  }
+		  else{
+			  $("#uniquelink").val(response.rep_info.uniquelink);
+			  document.getElementById("affiliate_link").innerHTML = "{{shop.url}}/" + response.rep_info.uniquelink;
+			  $("#affiliate_link").attr('href',"{{shop.url}}/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}");
+			  document.getElementById("aff_link").innerHTML = "{{shop.url}}/" + response.rep_info.uniquelink;
+			  $("#aff_link").attr('href',"{{shop.url}}/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}");
+         
+		  }
+	}
+
+	//Select OneTimeCoupons table from Discount page
+    //Check One time coupon feature is selected or not
+    if(!response.select.SalesrepCoupon)
+    {
+    	document.getElementById("salesrepcoupon").style.display = "none";
+    }    
+    else
+    {
+      	if(response.DiscountAndCommissionForCoupon != null)
+		{
+      		$("#max_dis_amt").text(response.DiscountAndCommissionForCoupon.SalesRepMaxDiscount+"%");
+      		$("#commission").text(response.DiscountAndCommissionForCoupon.SalesRepCommission+"%");
+		}   	
+    }
+  
+   if("{{shop.name}}" != "enzo-milano")
+	{
+	   $(".ProRep").hide();
+	}
+
+	if("{{shop.url}}" != "https://ajmal-perfumes.myshopify.com")
+	{  
+      $("#dashheader").text("Current Month");
+    }    
+    else{
+         $("#dashheader").text("Current Month cycle: 5th - 4th");
+    }
+    
+     //Get Tagged Clients to Salesrep
+  if(response.select.Tagcustomer)
+  {
+    
+    if(response.repcustomers != 0)
+	{
+		 var clientrows = '<tr>'+
+				  '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Name</th></tr>';
+
+		 for(var client in response.repcustomers)
+		 {
+			  clientrows += '<tr class="Polaris-DataTable__TableRow">'+                
+			  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><span id="SpecialSpan" style="cursor: pointer; cursor: hand;" onclick="ClientOrdersDetails(\''+response.repcustomers[client].CustomerId+'\',\''+response.repcustomers[client].CustomerName+'\')">'+ (response.repcustomers[client].CustomerName)+'</span></td></tr>';
+		 }
+		document.getElementById( 'ViewTaggedClient' ).innerHTML = clientrows;
+		$("#TaggedClient").show();
+	}
+	else
+	{
+	  $("#norepclients").show();      
+	}
+  }
+  else
+    {
+       document.getElementById("sr_Clients_head").style.display = "none";
+       document.getElementById("sr_Lead_head").style.display = "none";     
+	    var CustomerElement = [];
+        CustomerElement = document.getElementsByClassName("customerColumn");
+      		var i;
+    		for (i = 0; i < CustomerElement.length; i++) 
+            {
+        		CustomerElement[i].style.display = "none";
+    		}
+    }  
+	 
+	 //Client Invoice button
+	  if(response.select.ClientDiscount==true){
+		$("#Choice").hide();
+	  }
+	  else{
+		$("#Choice").show();
+	  }
+
+  if(response.select.ClientDiscount){
+      $('#DiscountType').hide();
+      $('#discountChoiceLabel').hide();
+    } 
+    else{
+      $('#DiscountType').show();
+      $('#discountChoiceLabel').show();
+    }
+  };
+    
+      //Get Products for Search function
+  var onSuccessGetProducts = function (response) {
+       var currency = "{{shop.currency}}";
+       var productarray = response.products;     
+       console.log(productarray);
+   
+    
+  //searchKeywords the client products by product title
+    $('#ProductSearchInput').keyup( function () {
+    var filter = $(this).val().toLowerCase();
+	var orderRow = '<tr>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Add Product </th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Image</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Title</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Variant Title</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Price</th>'+
+        '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Add Quantity</th></tr>';      
+	
+	if(filter) {
+
+       for(var singleproduct in productarray)
+          {
+            for(var variant in productarray[singleproduct].variants)
+            {
+
+             for(var images in productarray[singleproduct].productImages)
+             {
+               if(productarray[singleproduct].productTitle.includes(filter) || productarray[singleproduct].variants[variant].variantTitle.includes(filter))
+                 {
+                     
+                         if(productarray[singleproduct].productImages[images].imageId == productarray[singleproduct].variants[variant].image_id)
+                         {
+                              orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage lazyload hs-lazyload hs-id-6971a5aa" data-src="{{ 'plusIcon.png' | asset_url }}" onclick="AddProductInClientInvoice(\''+productarray[singleproduct].productTitle+'\',\''+productarray[singleproduct].variants[variant].variantPrice+'\',\''+productarray[singleproduct].productImages[images].src+'\',\''+productarray[singleproduct].product_type+'\',\''+productarray[singleproduct].variants[variant].variantId+'\',\''+productarray[singleproduct].variants[variant].variantTitle+'\')" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="cursor: pointer;"/></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[singleproduct].productImages[images].src+'"></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].productTitle+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantTitle+'</td>'+     
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantPrice +  " " +currency+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="ClientInvoicequantity_'+productarray[singleproduct].variants[variant].variantId+'" placeholder="Quantity"></td></tr>';
+                                 
+                           } 
+
+                           //if variant don't have image then show product image
+                            if(productarray[singleproduct].variants[variant].image_id==0)
+                            {                          
+                             orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage lazyload hs-lazyload hs-id-6971a5aa" data-src="{{ 'plusIcon.png' | asset_url }}" onclick="AddProductInClientInvoice(\''+productarray[singleproduct].productTitle+'\',\''+productarray[singleproduct].variants[variant].variantPrice+'\',\''+productarray[singleproduct].productImages[images].src+'\',\''+productarray[singleproduct].product_type+'\',\''+productarray[singleproduct].variants[variant].variantId+'\',\''+productarray[singleproduct].variants[variant].variantTitle+'\')" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="cursor: pointer;"/></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[singleproduct].productImages[images].src+'"></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].productTitle+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantTitle+'</td>'+     
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantPrice +  " " +currency+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="ClientInvoicequantity_'+productarray[singleproduct].variants[variant].variantId+'" placeholder="Quantity"></td></tr>';
+                               break;
+                             } 
+                         }
+                         
+                    }
+              }
+          }
+       
+         document.getElementById('clienttable').innerHTML = orderRow; 
+         $('#clientinvoicetable').show();
+	  } 
+    else {
+           $('#clientinvoicetable').hide();			
+      }
+	    return false;
+     })
+     
+     
+ //filter the wholesale products by product title
+    $('#WholesaleProductSearchInput').keyup( function () {
+	var filter = $(this).val().toLowerCase();
+	var orderRow = '<tr>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Add Product </th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Image</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Title</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Variant Title</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Price</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Add Quantity</th></tr>';
+      
+	if(filter) {
+
+ for(var singleproduct in productarray)
+          {
+            for(var variant in productarray[singleproduct].variants)
+            {
+
+             for(var images in productarray[singleproduct].productImages)
+             {      
+               if(productarray[singleproduct].productTitle.includes(filter) || productarray[singleproduct].variants[variant].variantTitle.includes(filter))
+                 {
+                     
+                       if(productarray[singleproduct].productImages[images].imageId == productarray[singleproduct].variants[variant].image_id)
+                        {
+                             orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage lazyload hs-lazyload hs-id-bfa17c95" data-src="{{ 'plusIcon.png' | asset_url }}" onclick="AddProduct(\''+productarray[singleproduct].productTitle+'\',\''+productarray[singleproduct].variants[variant].variantPrice+'\',\''+productarray[singleproduct].productImages[images].src+'\',\''+productarray[singleproduct].product_type+'\',\''+productarray[singleproduct].variants[variant].variantId+'\',\''+productarray[singleproduct].variants[variant].variantTitle+'\')" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="cursor: pointer;"/></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[singleproduct].productImages[images].src+'"></td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].productTitle+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantTitle+'</td>'+     
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantPrice +  " " +currency+'</td>'+
+                                '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="quantity_'+productarray[singleproduct].variants[variant].variantId+'" placeholder="Quantity"></td></tr>';
+                            } 
+
+                        //if variant don't have image then show product image
+                        if(productarray[singleproduct].variants[variant].image_id==0)
+                         {
+
+                              orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage lazyload hs-lazyload hs-id-bfa17c95" data-src="{{ 'plusIcon.png' | asset_url }}" onclick="AddProduct(\''+productarray[singleproduct].productTitle+'\',\''+productarray[singleproduct].variants[variant].variantPrice+'\',\''+productarray[singleproduct].productImages[images].src+'\',\''+productarray[singleproduct].product_type+'\',\''+productarray[singleproduct].variants[variant].variantId+'\',\''+productarray[singleproduct].variants[variant].variantTitle+'\')" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="cursor: pointer;"/></td>'+
+                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[singleproduct].productImages[images].src+'"></td>'+
+                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].productTitle+'</td>'+
+                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantTitle+'</td>'+     
+                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantPrice +  " " +currency+'</td>'+
+                                  '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><input type="text" style="width:90px;" id="quantity_'+productarray[singleproduct].variants[variant].variantId+'" placeholder="Quantity"></td></tr>';
+                             break;
+                             }      
+                      }
+                      }
+                   }
+                 }
+               
+
+           
+         document.getElementById('wholesaletable').innerHTML = orderRow; 
+         $('#wholesaleinvoicetable').show();     
+	  } 
+	   else {
+              $('#wholesaleinvoicetable').hide();			
+			}
+	    return false;
+     })
+
+ //filter the affiliate products  by product title
+    $('#AffiliateProductSearchInput').keyup( function () {
+	var filter = $(this).val().toLowerCase();
+	var orderRow = '<tr>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product </th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Product Title</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Price</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Commission</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Affiliate Link</th>'+
+              '<th data-polaris-header-cell="true" class="Polaris-DataTable__Cell Polaris-DataTable__Cell--header Polaris-DataTable__Cell--numeric" scope="col" style="height: 54px;">Share Link</th></tr>';
+
+	if(filter) {
+        for(var singleproduct in productarray)
+          {
+            for(var variant in productarray[singleproduct].variants)
+            {
+
+             for(var images in productarray[singleproduct].productImages)
+             {
+               var producttype = productarray[singleproduct].product_type ;
+                if(producttype == "")
+                {
+                  producttype = "all other products";
+                }
+                for(var productdata in response.AffiliateCommission)
+                 {
+                    if(producttype.toLowerCase() == response.AffiliateCommission[productdata].type)
+                    {
+                         var currency = "{{shop.currency}}";
+                         var url = "{{shop.url}}/products/"+productarray[singleproduct].handle+"/?ambassador={{customer.first_name}}{{customer.id | modulo:1000}}";
+                         if(productarray[singleproduct].productImages[images].imageId == productarray[singleproduct].variants[variant].image_id)
+                         {
+                             orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[singleproduct].productImages[images].src+'"></td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].productTitle+'</td>'+     
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantPrice +  " " +currency+'</td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.AffiliateCommission[productdata].Commission+'%</td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                              '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                              '<img alt="Pinterest" class="lazyload hs-lazyload hs-id-3b2d1be1" data-src="https://simplesharebuttons.com/images/somacro/pinterest.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>'+
+                              '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img alt="Instagram" class="lazyload hs-lazyload hs-id-ebadad81" data-src="https://badges.instagram.com/static/images/ig-badge-32.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></a>'+
+                              '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img alt="Twitter" class="lazyload hs-lazyload hs-id-b174ceb4" data-src="https://simplesharebuttons.com/images/somacro/twitter.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>'+
+                              '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img alt="Facebook" class="lazyload hs-lazyload hs-id-cd8d8e16" data-src="https://simplesharebuttons.com/images/somacro/facebook.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>'+                               
+                              '</td></tr>';
+                         
+                         }
+
+                        //if variant don't have image then show product image
+                         if(productarray[singleproduct].variants[variant].image_id==0)
+                          {
+                             orderRow += '<tr class="Polaris-DataTable__TableRow">'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;"><img class="sr_productImage" style="width:60px;" src="'+productarray[singleproduct].productImages[images].src+'"></td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].productTitle+'</td>'+     
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+productarray[singleproduct].variants[variant].variantPrice +  " " +currency+'</td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+response.AffiliateCommission[productdata].Commission+'%</td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+url+'</td>'+
+                              '<td class="Polaris-DataTable__Cell Polaris-DataTable__Cell--numeric" style="height: 72px;">'+
+                              '<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url='+url+'" class="ssbp-btn ssbp-pinterest" rel="nofollow"  data-ssbp-url="'+url+'" data-ssbp-site="Pinterest_force" target="_blank">'+ 
+                              '<img alt="Pinterest" class="lazyload hs-lazyload hs-id-3b2d1be1" data-src="https://simplesharebuttons.com/images/somacro/pinterest.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>'+
+                              '<a href="http://instagram.com/###?ref='+url+'" class="ig-b- ig-b-32"  target="_blank"><img alt="Instagram" class="lazyload hs-lazyload hs-id-ebadad81" data-src="https://badges.instagram.com/static/images/ig-badge-32.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/></a>'+
+                              '<a href="https://twitter.com/share?url='+url+'&amp;text='+shopname+'" target="_blank"><img alt="Twitter" class="lazyload hs-lazyload hs-id-b174ceb4" data-src="https://simplesharebuttons.com/images/somacro/twitter.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>'+
+                              '<a href="http://www.facebook.com/sharer.php?u='+url+'" target="_blank"><img alt="Facebook" class="lazyload hs-lazyload hs-id-cd8d8e16" data-src="https://simplesharebuttons.com/images/somacro/facebook.png" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width:35px;"/></a>'+                               
+                              '</td></tr>';
+
+                             break;
+                           } 
+                      }
+                   }
+               }
+             }
+          } 
+    
+         document.getElementById('affiliatetable').innerHTML = orderRow; 
+         $('#AffiliateProductTable').show();
+	  } 
+	   else {
+               $('#AffiliateProductTable').hide();			
+			}
+	    return false;
+     })
+     
+		.keyup( function () {
+			$(this).change();
+		});
+    };
+  
+    
+  function GetBaseModelData(){
+	 {% if customer.default_address != null %}
+		var urlVal="{{shop.url}}/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=1&city={{customer.default_address.city}}";
+	{% else %}
+		var urlVal="{{shop.url}}/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=1";
+	{% endif %}
+
+      $.get(
+       	   urlVal,
+           function (data, status) {
+                 onSuccessGetbaseModel(data);
+        		         		 
+                  $("#SR_App").show();
+				  $("#SR_Dashboard").show();
+                  $("#loadGif").hide();
+                  serverData=data;
+          }
+       );    
+  }      
+        
+  function GetProductsForSearch(){
+
+	 var urlVal="{{shop.url}}/apps/SalesRep?customerId={{customer.id}}&customerName={{customer.first_name }}&data=14";
+      
+      $.get(
+       	   urlVal,
+           function (data, status) {
+                 onSuccessGetProducts(data);        		         		                
+          }
+       );    
+  }      
+ 
+</script>

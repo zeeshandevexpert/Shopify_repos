@@ -1,0 +1,208 @@
+!function(e){var n;if("function"==typeof define&&define.amd&&(define(e),n=!0),"object"==typeof exports&&(module.exports=e(),n=!0),!n){var t=window.Cookies,o=window.Cookies=e();o.noConflict=function(){return window.Cookies=t,o}}}(function(){function f(){for(var e=0,n={};e<arguments.length;e++){var t=arguments[e];for(var o in t)n[o]=t[o]}return n}function a(e){return e.replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent)}return function e(u){function c(){}function t(e,n,t){if("undefined"!=typeof document){"number"==typeof(t=f({path:"/"},c.defaults,t)).expires&&(t.expires=new Date(1*new Date+864e5*t.expires)),t.expires=t.expires?t.expires.toUTCString():"";try{var o=JSON.stringify(n);/^[\{\[]/.test(o)&&(n=o)}catch(e){}n=u.write?u.write(n,e):encodeURIComponent(String(n)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),e=encodeURIComponent(String(e)).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent).replace(/[\(\)]/g,escape);var r="";for(var i in t)t[i]&&(r+="; "+i,!0!==t[i]&&(r+="="+t[i].split(";")[0]));return document.cookie=e+"="+n+r}}function n(e,n){if("undefined"!=typeof document){for(var t={},o=document.cookie?document.cookie.split("; "):[],r=0;r<o.length;r++){var i=o[r].split("="),c=i.slice(1).join("=");n||'"'!==c.charAt(0)||(c=c.slice(1,-1));try{var f=a(i[0]);if(c=(u.read||u)(c,f)||a(c),n)try{c=JSON.parse(c)}catch(e){}if(t[f]=c,e===f)break}catch(e){}}return e?t[e]:t}}return c.set=t,c.get=function(e){return n(e,!1)},c.getJSON=function(e){return n(e,!0)},c.remove=function(e,n){t(e,"",f(n,{expires:-1}))},c.defaults={},c.withConverter=e,c}(function(){})});
+
+$(function() {
+  // Set up the vars
+  var timerLimit = 15; //in minutes;
+  var popupShowsAfter = 30;  //in seconds
+  var couponCode = 'HURRY';
+  var countdownTimer;
+  var mouseY = false;
+  var popupCounter = 0;
+  var littleTimer = $('<div style="display: none;" class="little-timer timer"><span class="minutes"></span>:<span class="seconds"></span> remaining for your 5% off deal, Hurry!</div>').appendTo('body');
+  var removeCookies = $('<a class="remove-cookies" href="#">Reset <small>(DEV ONLY)</small></a>').hide().appendTo('body');
+
+  function hideTheCode() {
+    $(".reduction-code__text:contains('HURRY')").text('5% off!').css('display','inline').closest('.tag__wrapper').addClass('on-the-bubble');
+    
+  }
+  
+  hideTheCode();
+  
+
+  $("body").on('DOMSubtreeModified', "#order-summary", function() {
+    hideTheCode();
+  });
+
+  
+  Number.prototype.zeroPad = function() {
+    return ('0'+this).slice(-2);
+  };
+  
+  function runTimer(end) {
+    var newNow = new Date();
+    var distance = end - newNow;
+    // Time calculations for days, hours, minutes and seconds
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    // Show it
+    $('.timer .minutes').text(minutes.zeroPad());
+    $('.timer .seconds').text(seconds.zeroPad());
+    if(minutes == 0 && seconds == 0) {
+      clearInterval(countdownTimer);
+      tooBadSoSad();
+    }
+  }
+  
+  function tooBadSoSad() {
+    Cookies.remove('end_date');
+    clearInterval(countdownTimer);
+    littleTimer.fadeOut();
+    $('.content').css('padding-top','0');
+    $('.on-the-bubble .tag__button').trigger('click');
+  }
+  
+  if(window.location.href.indexOf('&cc=1')) {
+    Cookies.remove('we_tried');
+  }
+  
+  $(document).on('click','.remove-cookies',function(e) {
+    e.preventDefault();
+    $('.on-the-bubble .tag__button').trigger('click');
+    Cookies.remove('we_tried');
+    Cookies.remove('end_date');
+    clearInterval(countdownTimer);
+    littleTimer.fadeOut();
+    $('.content').css('padding-top','0');
+    $('.popup-wrapper').fadeIn();
+    $('.popup').hide();
+    var resetCheck = setInterval(function() {
+      if(!$('.on-the-bubble').length) {
+        clearInterval(resetCheck);
+        resetCheck = 0;
+        location.reload();
+      }
+    },250);
+    
+  });
+  
+  
+  $(document).on('click','.on-the-bubble .tag__button',function() {
+    Cookies.remove('end_date');
+    clearInterval(countdownTimer);
+    littleTimer.fadeOut();
+    $('.content').css('padding-top','0');
+    //$(this).closest('form').submit();
+  });
+  
+  
+  //  Start stuff
+  // If the code is not yet set 
+  if($('.reduction-code').length == 0) {  
+    
+    function startTimer(now,then) {
+      var now = new Date();
+      var then = new Date(now.getTime() + timerLimit * 60000);
+      Cookies.set('end_date', then, { expires: 7 });
+      countdownTimer = setInterval(function() {
+        runTimer(then);
+      }, 1000);
+    }
+
+    function showPopup() {
+      if(popupCounter < 1 && Cookies.get('we_tried') != 'true') {
+        startTimer();
+        $('body').addClass('no-scroll');
+        $('.popup-wrapper').fadeIn();
+        popupCounter++;
+      }
+    }
+
+    function closePopup() {
+      $('body').removeClass('no-scroll');
+      $('.popup-wrapper').fadeOut();
+    }
+     
+
+    setTimeout(showPopup,popupShowsAfter*1000);
+    //showPopup();
+
+    $(document).on('click','.popup-close',function(e) {
+      e.preventDefault();
+      $('.popup-wrapper').fadeOut();
+      Cookies.set('we_tried', 'true', { expires: 7 });
+      popupCounter ++;
+    });
+
+    $(document).mousemove(function(e) {
+      mouseY = e.pageY;
+    });
+
+    $(document).mouseleave(function () {
+      if(mouseY <=10) {
+        if (popupCounter < 1) {
+          showPopup();
+        }
+      }
+    });
+    
+    $(document).on('click','.apply-code',function(e) {
+      e.preventDefault();
+      var currentURL = window.location.href;
+      var discountURL = window.location.protocol + '//' + window.location.hostname +'/discount/' + couponCode + '?redirect=/checkout';
+      var tagsFilled = $('<svg id="tags-filled"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path d="M17.78 3.09C17.45 2.443 16.778 2 16 2h-5.165c-.535 0-1.046.214-1.422.593l-6.82 6.89c0 .002 0 .003-.002.003-.244.253-.412.554-.5.874L.74 8.055c-.56-.953-.24-2.178.712-2.737L9.823.425c.46-.27 1.01-.345 1.527-.205l4.99 1.337c.755.203 1.293.814 1.44 1.533z" fill-opacity=".55"></path><path d="M10.835 2H16c1.105 0 2 .895 2 2v5.172c0 .53-.21 1.04-.586 1.414l-6.818 6.818c-.777.778-2.036.782-2.82.01l-5.166-5.1c-.786-.775-.794-2.04-.02-2.828.002 0 .003 0 .003-.002l6.82-6.89C9.79 2.214 10.3 2 10.835 2zM13.5 8c.828 0 1.5-.672 1.5-1.5S14.328 5 13.5 5 12 5.672 12 6.5 12.672 8 13.5 8z"></path></svg></svg>');
+      var tagRemove = $('<svg id="remove"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13"><path d="M1.5 1.5l10.05 10.05M11.5 1.5L1.45 11.55" fill="none"></path></svg></svg>');
+      $('.popup').fadeOut();
+      //window.location.href = discountURL;
+      $.get(discountURL,function() {
+        $.get(currentURL,function(data) {
+          $('#order-summary').html($(data).find('#order-summary').html());
+          hideTheCode();
+          closePopup();
+          $('.reduction-code svg use').append(tagsFilled);
+          $('.tag__button svg use').append(tagRemove);
+          littleTimer.show();
+          $('.content').css('padding-top',littleTimer.outerHeight());
+          Cookies.set('we_tried', 'true', { expires: 7 });
+          
+        });
+      });
+    });
+    
+  } else {
+    
+    var now = new Date();
+    var endDate = Cookies.get('end_date');
+    if(endDate != undefined) {
+      littleTimer.show();
+      $('.content').css('padding-top',littleTimer.outerHeight());
+      var then = new Date(endDate);
+      countdownTimer = setInterval(function() {
+        runTimer(then);
+      }, 1000);
+      
+      /*
+      setTimeout(function() {
+        tooBadSoSad();
+      },2000);
+      */
+    }
+    
+  }
+  
+  /*
+  if($('.section__title:contains("Pickup address: Please do not change this address")').length >= 0) {
+    var $this = $(this);
+    var shippingAddress = '.section--shipping-address';
+    //$this.parent()
+    $('#checkout_shipping_address_company').attr('readonly','readonly');
+    $('#checkout_shipping_address_address1').attr('readonly','readonly');
+    $('#checkout_shipping_address_city').attr('readonly','readonly');
+    $('#checkout_shipping_address_zip').attr('readonly','readonly');
+    //$('#checkout_shipping_address_address1').attr('readonly','readonly');
+    //$('#checkout_shipping_address_address1').attr('readonly','readonly');
+  }
+  */
+  $(document).on("page:load page:change", function() {
+    // Add your customizations
+    console.log(Shopify.Checkout.step);
+    if(Shopify.Checkout.step == "payment_method") {
+      console.log('payment_method');
+      theme.addNoAmex();
+    }
+  });
+});
+
+var theme = theme || {};
+theme.addNoAmex = function() {
+};
+

@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "section_richtext_ih7PaT": {
+      "type": "section-richtext",
+      "blocks": {
+        "heading_Hjcc8j": {
+          "type": "heading",
+          "settings": {
+            "heading": "關注痛風及關節等各種炎症反應",
+            "text_size": 8
+          }
+        }
+      },
+      "block_order": [
+        "heading_Hjcc8j"
+      ],
+      "custom_css": [
+        "h5 {font-size: 17px;}",
+        "p {font-size: 39px;}"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "content_width": 2000,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "secondary": {
+      "type": "section-list-collections-products",
+      "blocks": {
+        "list-collections-products-block-0": {
+          "type": "all_collections",
+          "settings": {
+            "title": "",
+            "link_text": "View all",
+            "enable_item": true,
+            "item_link_text": "Shop all [name]",
+            "background_color": "#fcfaf7",
+            "text_color": "text--neutral",
+            "link_size": 3
+          }
+        }
+      },
+      "block_order": [
+        "list-collections-products-block-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Catalog",
+        "bg": "palette--light bg--neutral",
+        "grid": 3,
+        "rows": 2,
+        "enable_scroll_mobile": true,
+        "grid_small": 1.2,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 108
+      }
+    },
+    "section_collection_QxdyWD": {
+      "type": "section-collection",
+      "settings": {
+        "title": "",
+        "collection": "frontpage",
+        "grid": 3,
+        "rows": 1,
+        "grid_mobile": "2",
+        "bg": "palette--light bg--neutral",
+        "show_view_all": false,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_gallery_text_yfN7aY": {
+      "type": "section-gallery-text",
+      "blocks": {
+        "text_rUfUeN": {
+          "type": "text",
+          "settings": {
+            "title": "三款活性氫水產品系列：",
+            "title_size": 6,
+            "text": "<ul><li>痛風和關節炎：專為緩解痛風和關節炎症狀而配製，我們的產品能夠舒緩疼痛，支持關節健康。<\/li><li>運動恢復：設計用於幫助激烈運動後的恢復過程，我們的運動恢復系列有助於減輕肌肉疲勞，促進更快的康復時間。<\/li><li>抗氧化劑和整體健康：富含抗氧化劑，量身定制的日常保健系列，我們的產品減輕身體慢性炎症，增強身體活力，促進健康的生活方式。<\/li><\/ul>",
+            "body_size": 4,
+            "text_align": "text-left"
+          }
+        }
+      },
+      "block_order": [
+        "text_rUfUeN"
+      ],
+      "settings": {
+        "bg": "palette--light bg--neutral",
+        "grid_large": 1,
+        "grid_medium": 1,
+        "grid_mobile": 1,
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "section_richtext_ih7PaT",
+    "secondary",
+    "section_collection_QxdyWD",
+    "section_gallery_text_yfN7aY"
+  ]
+}

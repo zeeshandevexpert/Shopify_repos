@@ -1,0 +1,166 @@
+
+{%- liquid
+
+  case section.blocks.size
+    when 1
+      assign grid = 'span-12 auto'
+    when 2
+      assign grid = 'span-6 auto'
+    when 3
+      assign grid = 'span-4 auto'
+  endcase
+
+-%}
+
+{% style %}
+@media screen and (min-width: 981px) {
+  section.blog-promos .gallery__column-image .box-ratio {
+      padding-bottom: 300px !important;
+  }
+  section.blog-promos .gallery__column-image .box-ratio img {
+      height: 300px;
+  }
+  section.blog-promos .gallery__column-image {
+      height: 300px;
+  }
+  section.blog-promos .onboard {
+      height: 300px;
+  }
+}
+
+@media screen and (min-width: 741px) and (max-width: 980px) {
+  section.blog-promos .gallery__column-image .box-ratio {
+      padding-bottom: 230px !important;
+  }
+  section.blog-promos .gallery__column-image .box-ratio img {
+      height: 230px;
+  }
+  section.blog-promos .gallery__column-image {
+      height: 230px;
+  }
+  section.blog-promos .onboard {
+      height: 230px;
+  }
+}
+
+
+@media screen and (max-width: 740px) {
+  section.blog-promos .gallery__column-image .box-ratio {
+      padding-bottom: 200px !important;
+  }
+
+  section.blog-promos .gallery__column-image .box-ratio img {
+      height: 200px;
+  }
+  section.blog-promos .gallery__column-image {
+      height: 200px;
+  }
+  section.blog-promos .onboard {
+      height: 200px;
+  }
+}
+
+section.blog-promos .onboard {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+section.blog-promos .gallery__column-image .box-ratio img {
+  object-fit: cover;
+}
+
+{% endstyle %}
+
+<section class="blog-promos row main__section" data-section-id="{{ section.id }}" data-section-type="blog-images-section">
+  <div class="grid__wrapper" data-aos="{{ settings.scroll_animation }}">
+
+    {%- for block in section.blocks -%}
+
+      {%- liquid
+
+        assign has_image = false
+        assign has_link = false
+        assign has_text = false
+
+        if block.settings.image != blank
+          assign has_image = true
+        endif
+
+        if block.settings.link != blank
+          assign has_link = true
+        endif
+
+        if block.settings.text != blank
+          assign has_text = true
+        endif
+
+      -%}
+
+
+        <div class="gallery__column block-{{ block.id }} block-{{ forloop.index0 }} {{ grid }} sm-span-12">
+            <div class="gallery__column-image">
+              {% if block.settings.link != blank %}<a href="{{ block.settings.link }}">{% endif %}
+                {% if block.settings.image != blank %}
+                  {% render 'basic-responsive-image',
+                    type: block.settings.image,
+                    sm_render: '300px',
+                    md_render: md_render,
+                    lg_render: lg_render,
+                    width: width
+                  %}
+                {% else %}
+                  <div class="onboard">
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {% endif %}
+              {% if block.settings.link != blank %}</a>{% endif %}
+            </div>
+            <div class="gallery__image--caption">
+              {%- if has_text -%}
+                <div class="promo-caption section-heading">
+                  <h3>{{ block.settings.text | escape }}</h3>
+                </div>
+              {%- endif -%}
+            </div>
+        </div>
+
+    {%- endfor -%}
+
+  </div>
+</section>
+
+
+</style>
+{% schema %}
+  {
+    "name": "Blog images",
+    "settings": [
+    ],
+    "max_blocks": 3,
+    "blocks": [
+     {
+       "type": "promo_image",
+       "name": "Promotional image",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image",
+           "info" : "600px x 400px recommended"
+         },
+         {
+           "id": "text",
+           "type": "text",
+           "label": "Promo Text",
+           "default": "Image title"
+         },
+         {
+           "type": "url",
+           "id": "link",
+           "label": "Link"
+         }
+       ]
+     }
+    ]
+  }
+{% endschema %}

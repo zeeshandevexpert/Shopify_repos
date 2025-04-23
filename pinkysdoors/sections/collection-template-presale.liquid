@@ -1,0 +1,264 @@
+{% case section.settings.grid %}
+  {% when 2 %}
+    {%- assign max_height = 530 -%}
+  {% when 3 %}
+    {%- assign max_height = 345 -%}
+  {% when 4 %}
+    {%- assign max_height = 250 -%}
+  {% when 5 %}
+    {%- assign max_height = 195 -%}
+{% endcase %}
+
+{% if section.settings.layout == 'grid' %}
+  {%- assign limit = 24 -%}
+{% else %}
+  {%- assign limit = 16 -%}
+{% endif %}
+
+{% paginate collection.products by limit %}
+
+{% if collection.handle == 'jeremiah-brent' %}
+  {% assign show_collection_image = true %}
+  {% assign collection_image = collection.image | img_url: 'master' %}
+{% endif %}
+{% if collection.handle == 'thermally-broken-doors' or collection.handle == 'thermally-broken-doors-special-order' %}
+  {% assign show_collection_image = true %}
+  {% assign thermally_broken_collection = true %}
+  {% assign collection_image = 'thermally-broken-hero.jpg'  | file_img_url: 'master' %}
+{% endif %}
+
+
+{% assign cd = collection.description | split: '<!--split-->' %}
+
+{% assign presale_banner_image = 'hero-desktop_c6908c10-1fa1-44c7-a24c-efacd3e45f17.jpg' | file_img_url: 'master' %}
+
+
+{% assign collection_description_top = cd[0] %}
+
+
+{% capture all_page_urls %}{% for i in (1..paginate.pages) %}{% unless forloop.first %}:::{% endunless %}/collections/{{ collection.handle }}/{{ current_tags | handle | join:'+' }}?page={{ i }}&view=infinite-scroll{% endfor %}{% endcapture %}
+
+
+<div data-section-id="{{ section.id }}" data-section-type="collection-template" data-total-products="{{collection.all_products_count}}">
+  <div class="page-width" id="Collection" data-collection-title="{{collection.title}}"  {% if collection.image %}data-collection-image="{{ collection.image | img_url: 'master' }}"{% endif %}>
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+      <div id="collection-grid" class="grid grid--uniform grid--half-gutters flex flex--wrap products" data-current-page="{{ current_page }}" data-total-pages="{{ paginate.pages }}" data-all-pages='{{ all_page_urls | split: ':::' | join: ',' }}' data-current-page-url="/collections/{{ collection.handle }}/{{ current_tags | join:'+' }}?page={{ current_page }}"  data-collection-handle="{{collection.handle}}">
+        {% for product in collection.products %}   
+        {% assign date = false %}
+        {% for tag in product.tags %}
+            {% if tag contains 'ETA:' %}	
+                {% assign date = tag | remove: 'ETA:' | strip %}
+            {% endif %}
+        {% endfor %}
+        <div id="product-card-{{ product.id }}" class="relative grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="checks-balances"><small>{{checks_balances}}</small></div>
+          {% include 'product-card-grid', product: product %}
+        </div>
+        {% endfor %}
+          
+      </div>
+    {% if paginate.next.is_link %}
+    {% include 'pagination' %}
+    {% endif %}
+
+    <div class="small--text-center none-available--wrapper" style="display: none;">
+      <div class="index-section">
+        <h3 class="text-center none-available">Sorry there are no in-stock products with these settings.<br><small>Please adjust the filters or <a href="/collections/{{collection.handle}}">Start Over</a></small></h3>
+      </div>
+    </div>   
+  </div>
+</div>
+
+<div class="page-width index-section" style="display:none;">
+  <h3>collection.all_tags (current_tags highlighted)</h3>
+  <div class="flex flex--wrap">
+    {% for tag in collection.all_tags %}
+    <div style="padding: 10px; background: #f0f0f0; margin: 10px; {% if current_tags contains tag %}border: 1px solid black;{% endif %}">
+      {{tag | handle}}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endpaginate %}
+
+
+{% comment %} If there's already content, use the second of the split array {% endcomment %}
+{% if cd[1] %}
+{% assign collection_description = cd[1] %}
+{% else %}
+{% assign collection_description = cd[0] %}
+{% endif %}
+
+{% comment %} If it's a special order collection, use the in-stock collection image (more are set up) {% endcomment %}
+{% if collection.handle contains 'special-order' %}
+	{% assign in_stock_version = collection.handle | remove: '-special-order' %}
+	{% if collections[in_stock_version].image %}
+		{% assign collection_image = collections[in_stock_version].image %}
+	{% endif %}
+{% else %}
+	{% assign collection_image = collection.image %}
+{% endif %}
+
+{% if collection_description != blank  %}
+<div class="collection-seo" data-collection-image="{{collection_image}}">
+  <div class="flex flex--wrap">
+    <div class="{% if collection_image %}two-thirds{% endif %} small--one-whole rte collection-seo__text">
+      {{collection_description}}
+    </div>
+    {% if collection_image %}
+    <div class="one-third small--one-whole collection-seo__image lazyload lazyfade" 
+         data-bgset="{% include 'bgset', image: collection_image %}"
+     	 data-sizes="auto"
+     	 data-parent-fit="cover"
+     	 style="background-image: url('{{ collection_image | img_url: '600x' }});"></div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": {
+    "de": "Kategorie-Seiten",
+    "en": "Collection pages",
+    "es": "Páginas de colección",
+    "fr": "Pages de collections",
+    "it": "Pagine delle collezioni",
+    "ja": "コレクションページ",
+    "pt-BR": "Páginas de coleções"
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": {
+        "de": "Layout",
+        "en": "Layout",
+        "es": "Diseño",
+        "fr": "Mise en page",
+        "it": "Layout",
+        "ja": "レイアウト",
+        "pt-BR": "Layout"
+      },
+      "default": "grid",
+      "options": [
+        {
+          "value": "grid",
+          "label": {
+            "de": "Raster",
+            "en": "Grid",
+            "es": "Cuadrícula",
+            "fr": "Grille",
+            "it": "Griglia",
+            "ja": "グリッド",
+            "pt-BR": "Grade"
+          }
+        },
+        {
+          "value": "list",
+          "label": {
+            "de": "Liste",
+            "en": "List",
+            "es": "Lista",
+            "fr": "Liste",
+            "it": "Elenco",
+            "ja": "リスト",
+            "pt-BR": "Lista"
+          }
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": {
+        "de": "Produkte per Reihe (nur Raster)",
+        "en": "Products per row (grid only)",
+        "es": "Productos por fila (solo cuadrícula)",
+        "fr": "Produits par rangée (grille uniquement)",
+        "it": "Prodotti per riga (solo griglia)",
+        "ja": "行あたりの商品数（グリッドのみ）",
+        "pt-BR": "Produtos por linha (somente grade)"
+      },
+      "default": 4,
+      "min": 2,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": {
+        "de": "Reihen per Seite (nur Raster)",
+        "en": "Rows per page (grid only)",
+        "es": "Filas por página (solo cuadrícula)",
+        "fr": "Rangées par page (grille uniquement)",
+        "it": "Righe per pagina (solo griglia)",
+        "ja": "ページあたりの行数（グリッドのみ）",
+        "pt-BR": "Linhas por página (somente grade)"
+      },
+      "default": 2,
+      "min": 2,
+      "max": 16,
+      "step": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "label": {
+        "de": "Kategorie-Foto anzeigen",
+        "en": "Show collection image",
+        "es": "Mostrar imagen de la colección",
+        "fr": "Afficher l'image de la collection",
+        "it": "Mostra immagine collezione",
+        "ja": "コレクションの画像を表示する",
+        "pt-BR": "Exibir imagem da coleção"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": {
+        "de": "Produkt-Lieferanten anzeigen",
+        "en": "Show product vendors",
+        "es": "Mostrar proveedores del producto",
+        "fr": "Afficher les vendeurs",
+        "it": "Mostra fornitori prodotto",
+        "ja": "商品の販売元を表示する",
+        "pt-BR": "Exibir fornecedores do produto"
+      },
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_enable",
+      "label": {
+        "de": "Sortieren erlauben",
+        "en": "Enable sorting",
+        "es": "Habilitar la función ordenar",
+        "fr": "Activer le tri",
+        "it": "Permetti di ordinare",
+        "ja": "並べ替えを有効にする",
+        "pt-BR": "Ativar classificação"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "tags_enable",
+      "label": {
+        "de": "Tag-Filtern erlauben",
+        "en": "Enable tag filtering",
+        "es": "Habilitar filtro de etiquetas",
+        "fr": "Activer le filtrage par balises",
+        "it": "Attiva filtro tag",
+        "ja": "タグでの絞り込みを有効にする",
+        "pt-BR": "Ativar filtragem de tags"
+      },
+      "default": true
+    }
+  ]
+}
+{% endschema %}

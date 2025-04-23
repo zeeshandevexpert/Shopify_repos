@@ -1,0 +1,34 @@
+{% comment %}
+snippets/basic-responsive-image.liquid
+Renders a responsive image with featured.
+Accepts:
+- type:      {Object} Image object. (required)
+- width:     {Number} Explicit image width. (optional)
+- lg_render: {String} Width of image for large viewports. (optional)
+- md_render: {String} Width of image for medium viewports. (optional)
+- img_class: {String} CSS Classes added to the img element. (optional)
+- class:     {String} CSS Classes added to the parent .box-ratio element. (optional)
+- loading:   {String} Set the loading attribute. By default is 'lazy'. (optional)
+Usage:
+{%
+  render 'basic-responsive-image',
+  type: product.image,
+  width: 1200,
+  lg_render: lg_render,
+  md_render: md_render,
+  img_class: class,
+  class: class,
+  loading: 'eager'
+%}
+{% endcomment %}
+{% assign image_box_ratio = type.height | append: ".0" | times: 1 | divided_by: type.width | times: 100 | append: "%" %}
+{% capture sizes %}(min-width: 1601px) {{ lg_render | default: '2000px' }},(min-width: 768px) and (max-width: 1600px) {{ md_render | default: '1200px' }},(max-width: 767px) {{ sm_render | default: '100vw' }}, 900px{% endcapture %}
+{% capture loading %}{{ loading | default: 'lazy' }}{% endcapture %}
+<div class="featured_image {{ class }}" >
+  {{ type | image_url: width: width | default: 1200 | image_tag:
+    loading: loading,
+    sizes: sizes,
+    widths: '200, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000'
+  }}
+</div>
+<noscript>{{ type | image_url: width: width | image_tag }}</noscript>

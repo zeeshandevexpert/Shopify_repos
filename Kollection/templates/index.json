@@ -1,0 +1,229 @@
+{
+  "sections": {
+    "banner_section_8eFUBD": {
+      "type": "banner-section",
+      "blocks": {
+        "heading_7bUQ6f": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>NOW UP TO <\/p><h4>70% OFF<\/h4>"
+          }
+        },
+        "buttons_wwiJ6j": {
+          "type": "buttons",
+          "settings": {
+            "button_label": "Learn More",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_7bUQ6f",
+        "buttons_wwiJ6j"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_7_1.png"
+      }
+    },
+    "image_slider_text_blurb_NA9n8Y": {
+      "type": "image-slider-text-blurb",
+      "blocks": {
+        "slide_6ULmPX": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_pcfKgY": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_gjMgJa": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_MyBWib": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_7REJUH": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_mfbdr4": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6ULmPX",
+        "slide_pcfKgY",
+        "slide_gjMgJa",
+        "slide_MyBWib",
+        "slide_7REJUH",
+        "slide_mfbdr4"
+      ],
+      "settings": {
+        "reverse": false,
+        "collection": "vintage-collection",
+        "heading": "A Unique Watch That Fits Your Style",
+        "description": "<p>The new Lawson collection is already here! This quartz Lawson Franklin 38 model, designed with simplicity and elegance, is truly a cherry on the cake. Comes in different sizes and band colors, has a stainless steel back for a personalized engraving.<\/p>",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Vintage Watches",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "vintage-collection",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-5",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "image_slider_text_blurb_NA9n8Z": {
+      "type": "image-slider-text-blurb",
+      "blocks": {
+        "slide_6ULmPX": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_pcfKgY": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_gjMgJa": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_MyBWib": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_7REJUH": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        },
+        "slide_mfbdr4": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "new arrivals"
+          }
+        }
+      },
+      "block_order": [
+        "slide_6ULmPX",
+        "slide_pcfKgY",
+        "slide_gjMgJa",
+        "slide_MyBWib",
+        "slide_7REJUH",
+        "slide_mfbdr4"
+      ],
+      "settings": {
+        "reverse": true,
+        "collection": "vintage-collection",
+        "heading": "A Unique Watch That Fits Your Style",
+        "description": "<p>The new Lawson collection is already here! This quartz Lawson Franklin 38 model, designed with simplicity and elegance, is truly a cherry on the cake. Comes in different sizes and band colors, has a stainless steel back for a personalized engraving.<\/p>",
+        "button_label": "Learn More",
+        "button_link": ""
+      }
+    },
+    "featured_collection_reverse": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Arrivals",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "free-product-collection",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-5",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "none",
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "1722573976b97cb76b": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_4bi9TG": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "background_color": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_4bi9TG"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "banner_section_8eFUBD",
+    "image_slider_text_blurb_NA9n8Y",
+    "featured_collection",
+    "image_slider_text_blurb_NA9n8Z",
+    "featured_collection_reverse",
+    "1722573976b97cb76b"
+  ]
+}

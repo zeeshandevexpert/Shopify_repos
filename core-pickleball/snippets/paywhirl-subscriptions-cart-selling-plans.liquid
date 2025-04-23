@@ -1,0 +1,59 @@
+<ul class="paywhirl-product-details product-details{% if item.product.has_only_default_variant and property_size == 0 and item.selling_plan_allocation == nil %} hide{% endif %}" data-cart-item-details aria-label="{{ 'cart.label.product_details' | t }}">
+    {%- for option in variant_options -%}
+        <li class="product-details__item product-details__item--variant-option{% if item.product.has_only_default_variant %} hide{% endif %}" data-cart-item-option>{{ option.name }}: {{ option.value }}</li>
+    {%- endfor -%}
+
+    {%- comment -%}
+    Optional, loop through custom product line items if available
+
+    Line item properties come in as having two parts. The first part will be passed with the default form,
+    but p.last is the actual custom property and may be blank. If it is, don't show it.
+
+    For more info on line item properties, visit:
+    - http://docs.shopify.com/support/your-store/products/how-do-I-collect-additional-information-on-the-product-page-Like-for-a-monogram-engraving-or-customization
+    {%- endcomment -%}
+
+    {%- assign properties = 'template ' | split: ' ' -%}
+    {%- if property_size > 0 -%}
+        {%- assign properties = item.properties -%}
+    {%- endif -%}
+
+    {%- for p in properties -%}
+        {%- unless p.last == blank -%}
+            <li class="product-details__item product-details__item--property{%if property_size == 0%} hide{% endif %} hide" data-cart-item-property>
+                <span class="product-details__item-label" data-cart-item-property-name>{{ p.first }}: </span>
+
+                {%- comment -%}
+                Check if there was an uploaded file associated
+                {%- endcomment -%}
+                <span data-cart-item-property-value>
+      {%- if p.last contains '/uploads/' -%}
+          <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+      {%- else -%}
+          {{ p.last }}
+      {%- endif -%}
+    </span>
+            </li>
+        {%- endunless -%}
+    {%- endfor -%}
+
+    <li class="product-details__item product-details__item--selling-plan-name
+             {% if item.selling_plan_allocation == empty  %} hide {% endif %}"
+        data-cart-item-selling-plan-name>
+        {{item.selling_plan_allocation.selling_plan.name}}
+    </li>
+
+</ul>
+<style>
+.hide {
+    display:none;
+}
+.paywhirl-product-details {
+    list-style: none;
+    margin: 0;
+}
+[data-cart-item-details] {
+    padding: 0;
+    font-size: 80%;
+}
+</style>

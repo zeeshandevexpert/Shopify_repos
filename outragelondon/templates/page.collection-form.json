@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main": {
+      "type": "klaform",
+      "settings": {
+        "heading": "The Mayfair Collection",
+        "form": "<div class=\"klaviyo-form-TA4wYE\"><\/div>",
+        "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-10-21T113203.984.png",
+        "mimage": "shopify:\/\/shop_images\/Untitled_600_x_900_px_1.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

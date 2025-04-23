@@ -1,0 +1,58 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {
+        "kicker": "",
+        "kicker_size": 3,
+        "show_title": false,
+        "title_size": 8,
+        "show_content": false,
+        "content_size": 5,
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "width": "wrapper",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "section_richtext_GY3J4a": {
+      "type": "section-richtext",
+      "blocks": {
+        "heading_rMEPiw": {
+          "type": "heading",
+          "settings": {
+            "heading": "Return or exchange policy",
+            "text_size": 8
+          }
+        },
+        "text_DR4ypy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>所有退貨或更換安排均受 條款及細則  約束。<br\/> <br\/>1. 除下述規定外，概不接受退貨或更換貨物。<br\/> <br\/>2. 倘閣下訂購的商品出現故障、有缺陷或損壞(並非閣下的錯失)，或商品並非閣下所訂購，可於收貨日期的十四(14)天內退貨或更換，惟需：<br\/> <br\/>2.1. 商品未經使用並處於原先出售的狀態，連同與貨物提供的所有零件及配件，包括說明書、證書、標籤、標記、消耗品、袋及盒；<br\/> <br\/>2.2. 商品的包裝必須處於交付予閣下時的狀態；<br\/> <br\/>2.3. 退貨或更換的要求寄送至我們的客戶服務代表，商品已退回予我們；及<br\/> <br\/>2.4. 閣下同意及接受，是否接受商品更換須視乎存貨供應。<br\/> <br\/>退貨或更換安排<br\/> <br\/>3. 如客戶發現上述情況而需進行退貨或更換，客戶可經以下方式聯絡我們的客戶服務部：<br\/> <br\/>3.1. 致電：+852 5378 3076<br\/>(辦工時間：星期一至五 早上9時至下午1時，下午2時至6時。星期六、日及公眾假期休息);<br\/> <br\/>3.2. Whatsapp：+852 5378 3076；或<br\/> <br\/>3.3. 電郵：hello@drinkhydrox.com。<br\/> <br\/>4. 我們的客戶服務專員會提供退貨及更換的進一步訊息；<br\/> <br\/>5. 一般的情況下，我們均不接受退款要求。在特殊情況（如，但不限於，缺貨引致不能安排更換有缺陷的商品）下，退款安排會於我們確認後三十日內完成。客戶服務專員會通知詳細安排。<br\/> <br\/>6. 我們保留一切權利，可於任何時間及不時終止或更改上述政策及安排，而無需作出通知。如有任何爭議，我們的決定將是最終及具決定性。<\/p>",
+            "text_size": 4,
+            "text_columns": 1
+          }
+        }
+      },
+      "block_order": [
+        "heading_rMEPiw",
+        "text_DR4ypy"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "text_color": "text--neutral",
+        "bg": "palette--light bg--neutral",
+        "content_width": 2000,
+        "width": "wrapper--narrow",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "section_richtext_GY3J4a"
+  ]
+}

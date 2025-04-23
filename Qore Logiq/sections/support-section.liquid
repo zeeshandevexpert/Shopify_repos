@@ -1,0 +1,80 @@
+<section class="support-block">
+    <div class="wrap-support-block" style="background-image: url({{ section.settings.bg_image |  img_url: "master" }});">
+        <div class="image-block">
+            <img src="{{ section.settings.image |  img_url: 'master' }}" alt="">
+        </div>
+        <div class="content-block">
+            <div class="content">
+                {{ section.settings.content }}
+            </div>
+            <a href="{{ section.settings.btn_url }}" class="global_button">{{ section.settings.btn_text }}</a>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+    {
+        "name": "Support Text Block",
+        "settings": [
+               
+                {
+                "type": "image_picker",
+                "id": "bg_image",
+                "label": "Background Image"
+                },
+                {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+                },
+               
+                {
+                "type": "richtext",
+                "id": "content",
+                "label": "Heading"
+                },
+            
+                {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text"
+                },
+                {
+                "type": "url",
+                "id": "btn_url",
+                "label": " Button Link"
+                }
+               
+            ],
+            "blocks": [
+            {
+            "name": "Icon",
+            "type": "icon",
+            "settings":[
+                    {
+                    "type": "image_picker",
+                    "id": "icon",
+                    "label": "Icon"
+                    },
+                    {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                    },
+                    {
+                    "type": "text",
+                    "id": "text",
+                    "label": "Text"
+                    }
+                   
+                ]
+            }
+        ],
+            "presets": [
+                {
+                    "name": "Support Text Block"
+                }
+            ]
+    }
+    {% endschema %}

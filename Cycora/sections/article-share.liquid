@@ -1,0 +1,28 @@
+
+    <h2>{{ section.settings.title }}</h2>
+    <div class="article-content-share-row">
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url | escape }}{{ article.url | escape }}" target="_blank">facebook</a>
+        <a href="http://twitter.com/home?status={{ shop.url | escape }}{{ article.url | escape }}" target="_blank">twitter</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ shop.url | escape }}{{ article.url | escape }}" target="_blank">linkedin</a>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Article - Share",
+  "tag": "section",
+  "class": "article-content-share-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article - Share"
+    }
+  ]
+}
+{% endschema %}

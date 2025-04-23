@@ -1,0 +1,70 @@
+<div class="need-custom flex">
+  <div class="need-custom__image-wrapper one-third">
+    <div class="need-custom__image lazyload lazyfade"
+         {% if section.settings.image %}
+         data-bgset="{% include 'bgset', image: section.settings.image %}"
+         data-sizes="auto"
+         data-parent-fit="cover"
+         {% endif %}
+         ></div>
+  </div>
+  <div class="need-custom__text two-thirds text-center">
+    {% if section.settings.title != blank %}
+    <h2 class="h1 mega-title">{{ section.settings.title | escape }}</h2>
+    {% endif %}
+
+    {% if section.settings.paragraph != blank %}
+    <div class="rte-setting mega-paragraph">{{ section.settings.paragraph | newline_to_br }}</div>
+    {% endif %}
+
+    {% if section.settings.subtitle != blank %}
+    <div class="rte-setting mega-subtitle">{{ section.settings.subtitle }}</div>
+    {% endif %}
+    <div class="mega-link">
+      <a href="tel:844-843-6677">call us at (844) 843-6677</a>
+    </div>
+  </div>
+</div>
+
+
+<noscript>
+  <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+</noscript>
+
+
+{% schema %}
+  {
+    "name": "Homepage Need Custom?",
+    "settings": [
+	{
+		"type":"image_picker",
+		"id":"image",
+		"label":"Image (desktop)"
+	},
+	{
+		"type":"text",
+		"id":"title",
+		"label":"Title",
+		"default":"Need Custom?"
+	},
+	{
+		"type":"text",
+		"id":"subtitle",
+		"label":"Subtitle",
+		"default":"Up to 30% off"
+	},
+	{
+		"type":"textarea",
+		"id":"paragraph",
+		"label":"Paragraph",
+		"default":"Customize Anything<br>Our design consultants are here to help."
+	}
+	],
+	"presets": [
+    {
+      "name": "Homepage Need Custom?",
+      "category": "Image"
+    }
+  ]
+  }
+{% endschema %}

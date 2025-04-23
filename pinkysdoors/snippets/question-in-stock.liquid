@@ -1,0 +1,16 @@
+<h4>TIMELINE</h4>
+{% case type %}
+
+{% when 'Locks' %}
+
+<p>In stock will ship within 1 to 7 days from Los Angeles, California.</p>
+
+{% else %}{% comment %} DEFAULT VALUES {% endcomment %}
+
+
+<p>In stock will ship within 24 to 48 hours from Los Angeles, California.</p>
+
+<p>Pre-sale will ship within 5 to 6 weeks from Los Angeles, California.</p>
+
+
+{% endcase %}

@@ -1,0 +1,58 @@
+<section class="services">
+    <div class="services-container">
+      {% for block in section.blocks %}
+        <div class="service">
+            <div class="img">
+                <img src="{{ block.settings.icon | img_url: 'master' }}" alt="">
+            </div>
+            <div class="title">
+                <p>{{ block.settings.title }}</p>
+            </div>
+            {% if block.settings.subtext %}
+                <div class="subtext">
+                    <p>{{ block.settings.subtext }}</p>
+                </div>      
+            {% endif %}
+          
+        </div>
+      {% endfor %}
+    </div>
+</section>
+
+
+{% schema %}
+    {
+      "name": "Icon Box Section",
+      "settings": [
+      ],
+      "blocks": [
+        {
+          "name": "Icon Box",
+          "type": "icon",
+          "settings":[
+            {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Icon"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+            },
+            {
+              "type": "text",
+              "id": "subtext",
+              "label": "Sub Text"
+            }
+          
+          ]
+        }
+      ],
+      "presets": [
+        {
+            "name": "Icon Box Section"
+        }
+      ]
+    }
+    {% endschema %}

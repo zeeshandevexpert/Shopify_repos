@@ -1,0 +1,200 @@
+<div class="page-width" data-section="collection-list">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title | escape }}</h2>
+    </div>
+  {% endif %}
+
+  {% case section.settings.grid %}
+    {% when 2 %}
+      {%- assign grid_item_width = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign grid_item_width = 'small--one-whole medium-up--one-third' -%}
+    {% when 4 %}
+      {%- assign grid_item_width = 'small--one-whole medium-up--one-quarter' -%}
+    {% when 5 %}
+      {%- assign grid_item_width = 'small--one-whole medium-up--one-fifth' -%}
+  {% endcase %}
+
+  <div class="collection-grid">
+    <div class="grid grid--uniform flex small--flex-columns">
+      {% for block in section.blocks limit: section.blocks.size %}
+        <div class="grid__item {{ grid_item_width }}" {{ block.shopify_attributes }}>
+          {%- assign collection = collections[block.settings.collection] -%}
+          {% if block.settings.image %}
+          {% include 'collection-grid-item', image: block.settings.image, shape: section.settings.box_shape, position: section.settings.text_position %}
+          {% else %}
+          {% include 'collection-grid-item', shape: section.settings.box_shape, position: section.settings.text_position %}
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% if section.settings.btn_text != ''%}
+  <div class="text-center section-btn">
+    <a class="btn" href="{{section.settings.btn_link}}">{{section.settings.btn_text}}</a>
+  </div>
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</div>
+
+
+
+{% schema %}
+{
+  "name": {
+    "de": "Kategorien-Liste",
+    "en": "Collection list",
+    "es": "Lista de colecciones",
+    "fr": "Liste des collections",
+    "it": "Elenco delle collezioni",
+    "ja": "コレクションリスト",
+    "pt-BR": "Lista de coleções"
+  },
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "de": "Titel",
+        "en": "Heading",
+        "es": "Título",
+        "fr": "En-tête",
+        "it": "Heading",
+        "ja": "見出し",
+        "pt-BR": "Título"
+      },
+      "default": {
+        "de": "Kategorien-Liste",
+        "en": "Collection list",
+        "es": "Lista de colecciones",
+        "fr": "Page de liste des collections",
+        "it": "Elenco delle collezioni",
+        "ja": "コレクションリスト",
+        "pt-BR": "Lista de coleções"
+      }
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": {
+        "de": "Kategorien per Reihe",
+        "en": "Collections per row",
+        "es": "Colecciones por fila",
+        "fr": "Collections par rangée",
+        "it": "Collezioni per riga",
+        "ja": "行あたりのコレクション数",
+        "pt-BR": "Coleções por linha"
+      },
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 3
+    },
+	{
+	  "type":"radio",
+	  "id":"text_position",
+	  "label":"Text Position",
+	  "options": [
+	    { "value":"none","label":"None"},
+		{ "value":"overlay","label":"Overlay + Centered"},
+		{ "value":"below","label":"Below Image"}
+	  ],
+	  "default":"none"
+	},
+	{
+	  "type":"radio",
+	  "id":"box_shape",
+	  "label":"Box Shape",
+	  "options": [
+	    { "value":"square","label":"Square"},
+		{ "value":"rectangle_wide","label":"Rectangle (Wide)"},
+		{ "value":"rectangle_tall","label":"Rectangle (Tall)"}
+	  ],
+	  "default":"square"
+	},
+	{
+	  "type":"url",
+	  "id":"btn_link",
+	  "label":"Button Link"
+	},
+	{
+	  "type":"text",
+	  "id":"btn_text",
+	  "label":"Button Text",
+	  "info":"If Blank, no button will show"
+	}
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": {
+        "de": "Kategorie",
+        "en": "Collection",
+        "es": "Colección",
+        "fr": "Collection",
+        "it": "Collezione",
+        "ja": "コレクション",
+        "pt-BR": "Coleção"
+      },
+      "settings": [
+        {
+          "label": {
+            "de": "Kategorie",
+            "en": "Collection",
+            "es": "Colección",
+            "fr": "Collection",
+            "it": "Collezione",
+            "ja": "コレクション",
+            "pt-BR": "Coleção"
+          },
+          "id": "collection",
+          "type": "collection"
+        },
+		{
+			"type":"image_picker",
+			"id":"image",
+			"label":"Image"
+		}
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "de": "Kategorien-Liste",
+        "en": "Collection list",
+        "es": "Lista de colecciones",
+        "fr": "Page de liste des collections",
+        "it": "Elenco delle collezioni",
+        "ja": "コレクションリスト",
+        "pt-BR": "Lista de coleções"
+      },
+      "category": {
+        "de": "Kategorie",
+        "en": "Collection",
+        "es": "Colección",
+        "fr": "Collection",
+        "it": "Collezione",
+        "ja": "コレクション",
+        "pt-BR": "Coleção"
+      },
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

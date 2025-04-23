@@ -1,0 +1,193 @@
+<script src="{{ 'ajaxinate.js' | asset_url }}"></script>
+  {% if section.settings.enable_password == true %}
+  <div class="pearl-coll-head">
+    <div class="page-width">
+      <div class="pearl-coll-inner">
+        {% if section.settings.heading != blank %}
+          <div class="heading">
+            <h2>{{ section.settings.heading }}</h2>
+          </div>
+          {% endif %}
+        <div class="password-form-area">
+          <form class="password-form" action="" method="post">
+            
+            <input type="hidden" class="default-password" value="{{ section.settings.password_value }}" />
+            <div class="password-input">
+              <input type="text" value="" placeholder="Enter Password" />
+            </div>
+            <div class="password-submit">
+              <button type="submit">Submit</button>
+            </div>
+            {% if section.settings.password_error_message != blank %}
+            <div class="error-message">
+              <span>{{ section.settings.password_error_message }}</span>
+            </div>
+              {% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+    {% if section.settings.desktop_image !=blank %}
+     <div class='password-form-img desktop'>
+  <img src="{{ section.settings.desktop_image | img_url:'master' }}">
+     </div>
+  {% endif %}
+ {% if section.settings.mobile_image !=blank %}
+     <div class='password-form-img mobile'>
+  <img src="{{ section.settings.mobile_image | img_url:'master' }}">
+     </div>
+  {% endif %}
+  </div>
+    {% endif %}
+  <div class="pearl-collection-template custom-main-collection">
+  <div class="custom-main-collection-wrapper">
+    {% if collection.image %}
+      <img src="{{ collection.image | img_url: 'master' }}" class="custom-main-collection-img" />
+    {% endif %}
+    <div class="custom-main-collection-header">
+      <div class="custom-main-collection-header-wrapper">
+        <h2 class="custom-main-collection-heading">{{ collection.title }}</h2>
+        {% if collection.description != blank %}
+          <div class="custom-main-collection-description">{{ collection.description }}</div>
+        {% endif %}
+      </div>
+    </div>
+    <div id="custom-coltest">
+    {% paginate collection.products by 16 %}
+      <div id="AjaxinateContainer" class="custom-main-collection-flex">
+        {% for product in collection.products %}
+          {% render 'custom-product-grid', product: product %}
+        {% endfor %}
+      </div>
+      <div id="AjaxinatePagination">
+        {%- if paginate.next -%}
+          <a href="{{ paginate.next.url }}">Loading More</a>
+        {%- endif -%}
+      </div>
+    {% endpaginate %}
+    </div>
+  </div>
+</div>
+
+<style>
+  {% if section.settings.enable_password == true %}
+.pearl-collection-template {
+  display: none;
+}
+    {% else %}
+    pearl-collection-template {
+      display: block;
+    }
+    {% endif %}
+</style>
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  var endlessScroll = new Ajaxinate({
+    container: '#AjaxinateContainer',
+    pagination: '#AjaxinatePagination',
+    offset: 1000,
+    callback: function(){
+      console.log("testtt");
+      document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+    }
+  });
+  document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+});
+
+$(document).ready(function() {
+  $('.password-input input').val('');
+  var default_password = $('.default-password').val();
+  $(document).on('click','.password-submit button',function(e) {
+    e.preventDefault();
+    var entered_password = $('.password-input input').val();
+    if(default_password == entered_password) {
+      $('.pearl-coll-head, .error-message').hide();
+      $('.pearl-collection-template').css('display','block');
+    }
+    else {
+      $('.pearl-coll-head, .error-message').show();
+      $('.pearl-collection-template').css('display','none');
+    }
+  });
+});
+//   document.addEventListener("DOMContentLoaded", function() {
+//     var endlessScroll = new Ajaxinate({
+//       container: '#AjaxinateContainer',
+//       pagination: '#AjaxinatePagination'
+//     }, function(){
+//       console.log("workinggg");
+//     });
+//     document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+
+//         document.querySelector("#AjaxinateContainer").addEventListener("DOMNodeInserted", function (ev) {
+// document.dispatchEvent(new CustomEvent("swym:collections-loaded"));
+// }, false);
+//   });
+  
+  // var timer;
+  // var active = false;
+  // $(".custom-main-collection-grid-image-wrapper").hover(function(){
+  //   console.log("mouseenter");
+  //   let totalImages = parseInt($(this).attr("data-images"));
+  //   let delay = 1000;
+  //   timer = null;
+  //   active = true;
+  //   $(this).find(".custom-main-collection-grid-image").each(function(index){
+  //     let $this = $(this);
+  //     timer = setTimeout(function(){
+  //       if(active){
+  //         $this.addClass("active");
+  //       }
+  //     }, delay * index)
+  //   });
+  // }, function(){
+  //   console.log("mouseleave", $(this));
+  //   active = false;
+  //   clearTimeout(timer);
+  //   $(this).find(".custom-main-collection-grid-image").removeClass("active");
+  //   $(this).find(".custom-main-collection-grid-image").eq(0).addClass("active");
+  // });
+
+
+
+</script>
+
+{% schema %}
+  {
+    "name": "Collection Head",
+    "class": "main-collection-area",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_password",
+        "label": "Enable Password"
+      },
+      {
+        "type": "textarea",
+        "id": "password_error_message",
+        "label": "Password Error Message"
+      },
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Password Page Heading"
+      },
+      {
+        "type": "text",
+        "id": "password_value",
+        "label": "Password Value"
+      },
+      {
+        "type": "image_picker",
+        "id": "desktop_image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,12 @@
+<div class="pagination--wrapper text-center grid__item one-whole text-center">
+  {% if paginate.next.is_link %}
+  <div class="pagination">
+    <span class="paginate-next btn btn--secondary btn--narrow">
+      Loading More Products
+    </span>
+  </div>
+  <div data-paginate-next-url="{{paginate.next.url}}" data-current-url="/collections/{{ collection.handle }}/?page={{ paginate.current_page }}" data-current-page="{{ paginate.current_page }}" data-next-page="{{ paginate.current_page | plus: 1 }}" class="next-page-preloader">
+    <span class="next-page-preloader__svg">{% include 'icon-preloader' %}</span>
+  </div>
+  {% endif %}
+</div>

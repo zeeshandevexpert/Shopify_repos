@@ -1,0 +1,71 @@
+{
+  "wrapper": ".collection__template--container",
+  "sections": {
+    "collection-header": {
+      "type": "main-collection-header",
+      "settings": {
+        "show_collection_image": false,
+        "image_height": 400,
+        "parallax_scroll": false,
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "settings": {
+      }
+    },
+    "ab704169-cbec-486e-98e0-55eaecd1ab4a": {
+      "type": "product-list",
+      "disabled": true,
+      "settings": {
+        "title": "New Wood",
+        "product_list": [
+          "tongued-grooved",
+          "engineered",
+          "chevron-herringbone"
+        ],
+        "hide_empty": false,
+        "carousel": true,
+        "grid": 4
+      }
+    },
+    "collection-description": {
+      "type": "main-collection-description",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "bf8b6184-b7f0-43b9-8802-81a2198c9b94": {
+          "type": "sidebar_filter",
+          "disabled": true,
+          "settings": {
+            "default_open_accordion": true,
+            "color_filter_options": "swatch_with_label"
+          }
+        }
+      },
+      "block_order": [
+        "bf8b6184-b7f0-43b9-8802-81a2198c9b94"
+      ],
+      "settings": {
+        "grid": 4,
+        "mobile_single": false,
+        "products_per_page": 30,
+        "sort_by": true,
+        "show_subcollection_grid": false,
+        "sticky_sidebar": true
+      }
+    }
+  },
+  "order": [
+    "collection-header",
+    "breadcrumbs",
+    "ab704169-cbec-486e-98e0-55eaecd1ab4a",
+    "collection-description",
+    "main"
+  ]
+}

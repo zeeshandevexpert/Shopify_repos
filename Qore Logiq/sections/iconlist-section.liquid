@@ -1,0 +1,66 @@
+<div class="icons-section{% if template contains 'product' %} no-padding{% endif %}" id="iconList">
+  <div class="container">
+    <div class="icons-wrap">
+      {% for block in section.blocks %}
+        <div class="icon-single">
+          <div class="icon-image">
+            {%- if block.settings.image1 != blank -%}
+              <img height="auto" width="auto" src="{{ block.settings.image1 | img_url: 'master' }}">
+            {%- endif -%}
+          </div>
+          <div class="icon-content-wrap">
+            <div class="icon-heading">
+              {%- if block.settings.icon_heading != blank -%}
+                <h5>{{ block.settings.icon_heading }}</h5>
+              {%- endif -%}
+            </div>
+            <div class="icon-subheading">
+              {%- if block.settings.Subtitle != blank -%}
+                <p>
+                  {{ block.settings.Subtitle }}
+                </p>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Icons",
+    "max_blocks": 4,
+    "settings": [
+      
+    ],
+    "blocks": [
+      {
+        "type": "icons",
+        "name": "Icons",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "Icon"
+          }, {
+            "type": "textarea",
+            "id": "icon_heading",
+            "label": "Heading"
+          }, {
+            "type": "textarea",
+            "id": "Subtitle",
+            "label": "Subtitle"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Icon List"
+      }
+    ]
+  }
+{% endschema %}

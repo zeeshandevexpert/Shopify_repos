@@ -1,0 +1,71 @@
+{% if section.settings.display_status == true %}
+    <div class="container-style container-large">
+        <div class="general-more-products-top">
+            <h2>{{ section.settings.title_plp }}</h2>
+            <a href="{{ section.settings.view_all_link }}">view all</a>
+        </div>
+    </div>
+    <div class="general-more-products-row">
+        {% for block in section.blocks %}
+            {% include "product-grid", product: block.settings.product %}
+        {% endfor %}
+    </div>
+    <div class="general-more-products-bottom">
+        <h4>{{ section.settings.title_after_plp }}</h4>
+        <a href="{{ section.settings.learn_more }}">learn more</a>
+    </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Related Products",
+  "tag": "section",
+  "class": "general-more-products-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_status",
+      "label": "Display This Section",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "title_plp",
+      "label": "Products List Title"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Links"
+    },
+    {
+      "type": "textarea",
+      "id": "title_after_plp",
+      "label": "After Products List Title"
+    },
+    {
+      "type": "url",
+      "id": "learn_more",
+      "label": "Learn More Link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Product",
+      "type": "product",
+      "limit" : 3,
+      "settings":[
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Related Products"
+    }
+  ]
+}
+{% endschema %}

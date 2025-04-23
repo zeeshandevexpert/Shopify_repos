@@ -1,0 +1,18 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "details": "<p>התחייה 14, תל- אביב<\/p><p>03.78654546<\/p><p>office@tomgrow.com<\/p>",
+        "menu": "footer",
+        "logo": "shopify:\/\/shop_images\/Logo.png",
+        "copyright": "@All rights reserved to Lali Teva LTD"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

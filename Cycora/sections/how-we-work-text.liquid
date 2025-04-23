@@ -1,0 +1,35 @@
+
+    <div class="container-style tech-text-container">
+        <h2>{{ section.settings.title }}</h2>
+        <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+    </div>
+
+{% schema %}
+{
+  "name": "How We Work - Text",
+  "tag": "section",
+  "class": "tech-text-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "How We Work - Text"
+    }
+  ]
+}
+{% endschema %}

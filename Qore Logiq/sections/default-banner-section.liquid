@@ -1,0 +1,51 @@
+<section class="default-banner"{% if section.settings.bg_image %} style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});" {% endif %}>
+    <div class="wrap-default-banner">
+        <div class="content-wrapper">
+            <div class="image"> <img src="{{ section.settings.left_image |  img_url: 'master' }}" alt=""> </div>
+            <div class="content">
+                <h2 class="heading">{{ section.settings.heading }}</h2>
+                <div class="text">{{ section.settings.text }}</div>
+            </div>
+            <div class="image right"> <img src="{{ section.settings.right_image |  img_url: 'master'  }}" alt=""></div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Default Banner Block",
+        "settings": [
+                    {
+                    "type": "image_picker",
+                    "id": "bg_image",
+                    "label": "Background Image"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "left_image",
+                    "label": "Left Image"
+                    },
+                    {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                    },
+                    {
+                    "type": "textarea",
+                    "id": "text",
+                    "label": "Content"
+                    },
+                    {
+                    "type": "image_picker",
+                    "id": "right_image",
+                    "label": "Right Image"
+                    }
+          
+            ],
+            "presets": [
+                    {
+                        "name": "Default Banner Block"
+                    }
+            ]
+    }
+    {% endschema %}

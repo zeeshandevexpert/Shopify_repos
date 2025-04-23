@@ -1,0 +1,52 @@
+
+    <div class="img-holder">
+        <img src="{{ section.settings.image | img_url: '10x' }}"
+             class="lazyload"
+             data-src="{{ section.settings.image | img_url: 'master' }}"
+             data-widths="[1900]"
+             data-sizes="auto"
+             tabindex="-1"
+        />
+    </div>
+    <div class="container-style container-large">
+        <div class="blog-cover1-top-content">
+            <h2>{{ section.settings.title }}</h2>
+            <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+        </div>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Blog - Head",
+  "tag": "section",
+  "class": "blog-cover1-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog - Head"
+    }
+  ]
+}
+{% endschema %}

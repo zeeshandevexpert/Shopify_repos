@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "pf-dad70ab1": {
+      "type": "pf-dad70ab1",
+      "disabled": true,
+      "settings": {}
+    },
+    "20a97366-fd26-43fb-acc8-81d3259f6a24": {
+      "type": "featured-image",
+      "settings": {
+        "full_width": true,
+        "image": "shopify:\/\/shop_images\/core-banner.png",
+        "section_style": "",
+        "image_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "1701352088545367c8": {
+      "type": "apps",
+      "blocks": {
+        "7d910b4c-8fdc-483f-9239-9c8208a8d52f": {
+          "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/form-block\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+          "settings": {
+            "form_uuid": "P8k3XU_QRhlCUIumzCwlMw",
+            "form_settings": false,
+            "font_color": "#000000",
+            "size": 14,
+            "input_background_color": "#FFF",
+            "input_background_color_focus": "#F4DADA",
+            "input_border_radius": 1,
+            "input_border_color": "#ebe9e9",
+            "input_border_color_focus": "#2D2727",
+            "input_font_color": "#3D3131",
+            "input_size": 14,
+            "border_color": "#121212",
+            "border_radius": 2,
+            "border": 1,
+            "fill_color": "#EBE9E9",
+            "padding": 35,
+            "form_width": 600,
+            "btn_text": "Submit",
+            "sub_btn_txt_color": "#F3F3F3",
+            "sub_btn_bg_color": "#3F3333",
+            "sub_btn_font_size": 14,
+            "sub_btn_bdr_color": "#FFFFFF",
+            "sub_btn_bdr_rad": 3,
+            "sub_btn_bdr_width": 1,
+            "fonts": "Times New Roman"
+          }
+        }
+      },
+      "block_order": [
+        "7d910b4c-8fdc-483f-9239-9c8208a8d52f"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "pf-dad70ab1",
+    "20a97366-fd26-43fb-acc8-81d3259f6a24",
+    "1701352088545367c8"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "heading_banner_VCgQQf": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_2_884de3f6-e9ca-4e67-b4ac-a2d5f4cfcb01.webp",
+        "heading": "CONTACT US",
+        "sub_heading": "",
+        "font_size": 30,
+        "content": ""
+      }
+    },
+    "contact_icon_box_LjxKrf": {
+      "type": "contact-icon-box",
+      "blocks": {
+        "item_4aKTjn": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_5.png",
+            "heading": "Need help finding the perfect racket?"
+          }
+        },
+        "item_JekPEx": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_6.png",
+            "heading": "Just want to chat about padel?"
+          }
+        },
+        "item_fkyfry": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/CU1.webp",
+            "heading": "Have questions?"
+          }
+        }
+      },
+      "block_order": [
+        "item_4aKTjn",
+        "item_JekPEx",
+        "item_fkyfry"
+      ],
+      "settings": {
+        "sub_text": "<p>We're here for you! Reach out to us using the form below, or give us a call during business hours.<\/p><p>We're passionate about padel and dedicated to providing exceptional customer service. We'll get back to you as soon as possible.<\/p>"
+      }
+    },
+    "google_map_x3xgWg": {
+      "type": "google-map",
+      "settings": {
+        "embed_code": "<iframe width=\"100%\" height=\"600\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https:\/\/maps.google.com\/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"><a href=\"https:\/\/www.gps.ie\/\">gps tracker sport<\/a><\/iframe>"
+      }
+    },
+    "contact_form_block_NByGyK": {
+      "type": "contact-form-block",
+      "blocks": {
+        "item_bR7mNk": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_213.png",
+            "heading": "09:00am to 06:00am"
+          }
+        },
+        "item_GLzVXq": {
+          "type": "Item",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_7.png",
+            "heading": "Lorem Ipsum is simply dummy text of the printing and"
+          }
+        }
+      },
+      "block_order": [
+        "item_bR7mNk",
+        "item_GLzVXq"
+      ],
+      "settings": {
+        "heading": "GET IN TOUCH WITH US",
+        "description": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "heading_banner_VCgQQf",
+    "contact_icon_box_LjxKrf",
+    "google_map_x3xgWg",
+    "contact_form_block_NByGyK"
+  ]
+}

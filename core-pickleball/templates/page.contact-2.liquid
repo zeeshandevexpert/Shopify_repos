@@ -1,0 +1,121 @@
+<!-- /templates/page.contact.liquid -->
+<div class="grid">
+  <div class="grid__item large--eight-twelfths push--large--two-twelfths">
+
+    <div class="section-header">
+      <h1 class="page-title h1">{{ page.title }}</h1>
+    </div>
+
+    {% unless page.content == blank %}
+      <div class="rte">
+        {{ page.content }}
+      </div>
+    {% endunless %}
+
+    <div class="form-vertical">
+      {% form 'contact' %}
+
+        {% comment %}
+          Successful message
+        {% endcomment %}
+        {% if form.posted_successfully? %}
+          <p class="note form-success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
+
+        {{ form.errors | default_errors }}
+		<div class="grid grid--small">
+            <div class="grid__item one-whole">
+                <label for="ContactBusinessName" class="hidden-label">Business name</label>
+                <input type="text" id="ContactBusinessName" class="input-full" name="contact[name]" placeholder="Business name" required>
+            </div>
+            <div class="grid__item one-whole">
+                <label for="ContactMailingAddress" class="hidden-label">Mailing address</label>
+                <input type="text" id="ContactMailingAddress" class="input-full" name="contact[Mailing address]" placeholder="Mailing address" required>
+            </div>
+            <div class="grid__item one-whole">
+                <label for="ContactShippingAddress" class="hidden-label">Shipping address</label>
+                <input type="text" id="ContactShippingAddress" class="input-full" name="contact[Shipping address]" placeholder="Shipping address" required>
+            </div>
+            <div class="grid__item medium--one-quarter one-half">
+                <label for="ContactCity" class="hidden-label">City</label>
+                <input type="text" id="ContactCity" class="input-full" name="contact[City]" placeholder="City" required>
+            </div>
+            <div class="grid__item medium--one-quarter one-half">
+                <label for="ContactState" class="hidden-label">State</label>
+                <input type="text" id="ContactState" class="input-full" name="contact[State]" placeholder="State" required>
+            </div>
+            <div class="grid__item medium--one-quarter one-half">
+                <label for="ContactZip" class="hidden-label">Zip Code</label>
+                <input type="text" id="ContactZip" class="input-full" name="contact[Zip]" placeholder="Zip Code" required>
+            </div>
+            <div class="grid__item medium--one-quarter one-half">
+                <label for="ContactPhone" class="hidden-label">Phone</label>
+                <input type="tel" id="ContactPhone" class="input-full" name="contact[Phone]" placeholder="Phone" required>
+            </div>
+            <div class="grid__item one-half">
+                <label for="ContactMobile" class="hidden-label">Mobile</label>
+                <input type="tel" id="ContactMobile" class="input-full" name="contact[Mobile]" placeholder="Mobile">
+            </div>
+            <div class="grid__item one-half">
+                <label for="ContactEmail" class="hidden-label">Email</label>
+                <input type="email" id="ContactEmail" class="input-full" name="contact[email]" placeholder="Email" required>
+            </div>
+            <div class="grid__item one-whole">
+                <label for="ContactResaleTaxID" class="hidden-label">Resale Tax ID #</label>
+                <input type="text" id="ContactResaleTaxID" class="input-full" name="contact[Resale tax id]" placeholder="Resale Tax ID">
+            </div>
+            <div class="grid__item one-half">
+                <label for="ContactOwner" class="hidden-label">Owner Name</label>
+                <input type="text" id="ContactOwner" class="input-full" name="contact[Owner]" placeholder="Owner Name">
+            </div>
+            <div class="grid__item one-half">
+                <label for="ContactBuyer" class="hidden-label">Buyer Name</label>
+                <input type="text" id="ContactBuyer" class="input-full" name="contact[Buyer]" placeholder="Buyer Name">
+            </div>
+            <div class="grid__item one-half">
+                <label for="ContactTypeOfBusiness" class="hidden-label">Type of business</label>
+                <input type="text" id="ContactTypeOfBusiness" class="input-full" name="contact[Type of business]" placeholder="Type of business" required>
+            </div>
+            <div class="grid__item one-half">
+                <label for="ContactWholesaleRetail" class="hidden-label">Wholesale/Retail</label>
+                <input type="text" id="ContactWholesaleRetail" class="input-full" name="contact[Wholesale/Retail]" placeholder="Wholesale/Retail">
+            </div>
+            <div class="grid__item one-whole">
+                <label for="ContactAboutUs" class="hidden-label">How did you hear about us?</label>
+              	<input type="text" id="ContactAboutUs" class="input-full" name="contact[How did you hear about us]" placeholder="How did you hear about us?" required>
+            </div>
+            <div class="grid__item one-whole checkbox-hr">
+                <p class="h6">Method of payment: <small class="form-error"> Please choose the method of payment</small></p>
+              	<div><label><input type="checkbox" name="contact[Method of payment:Credit card]" value="yes">Credit card</label></div>
+               	<div><label><input type="checkbox" name="contact[Method of payment:Check]" value="yes">Check</label></div>
+               	<div><label><input type="checkbox" name="contact[Method of payment:Other]" value="yes">Other</label></div>
+            </div>
+        </div>
+        <div class="text-right">
+          <button type="submit" class="btn btn--primary">
+            {{ 'contact.form.send' | t }} <span class="fa fa-arrow-right" aria-hidden="true"></span>   
+          </button>
+        </div>
+
+      {% endform %}
+    </div>
+
+  </div>
+</div>
+<script>
+jQuery(document).ready(function($){
+  $('#contact_form').on('submit', function(){
+  var checkboxes = $(this).find('.checkbox-hr input[type=checkbox]');
+  var FoundChecked = false;
+  checkboxes.each(function(){
+    if( $(this).is(':checked') ) FoundChecked = true;
+  });
+    if( !FoundChecked ) {
+      $(this).find('.checkbox-hr .form-error').show();
+      return false;
+    }
+});
+})
+</script>

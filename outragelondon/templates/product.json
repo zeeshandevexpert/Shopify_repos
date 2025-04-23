@@ -1,0 +1,437 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "loox_reviews_loox_rating_EWVEXC": {
+          "type": "shopify:\/\/apps\/loox-reviews\/blocks\/loox-rating\/5c3b337f-fd14-4df5-b1d6-80ec13e6e28e",
+          "disabled": true,
+          "settings": {
+            "contentSize": 16,
+            "pattern": "",
+            "hideText": false,
+            "alignment": "",
+            "layout": "",
+            "textColor": "",
+            "starColor": "",
+            "showAllReviews": false,
+            "looxOpenFloatingWidget": false,
+            "emptyRatingWidget": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "text_AqimcH": {
+          "type": "text",
+          "settings": {
+            "text": "Tax included. <a href=\"\/pages\/shipping-info\">Shipping<\/a> calculated at checkout."
+          }
+        },
+        "separator_cpMH9G": {
+          "type": "separator",
+          "settings": {}
+        },
+        "custom_colorswatches_gr9Tye": {
+          "type": "custom_colorswatches",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "enable_sizeguide": true,
+            "sizeguide_title": "Size Guide",
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "guide_cMb44L": {
+          "type": "guide",
+          "settings": {
+            "title": "Size Guide",
+            "page": "{{ product.metafields.custom.product_size_guide.value }}"
+          }
+        },
+        "cstock_xbTt7K": {
+          "type": "cstock",
+          "settings": {
+            "limit": 1
+          }
+        },
+        "sales_point": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "globe",
+            "text": "Free worldwide shipping"
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "klarna_on_site_messaging_app_block_j4iaCw": {
+          "type": "shopify:\/\/apps\/klarna-on-site-messaging\/blocks\/app-block\/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "top-strip-promotion-standard",
+            "locale_option": "geolocation",
+            "locale_fallback": "",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        },
+        "rt_tCHk8c": {
+          "type": "rt",
+          "disabled": true,
+          "settings": {
+            "rrt": "<p>✓   <strong>IN STOCK - <\/strong>Need it Tomorrow?<strong> <\/strong>Order With next day delivery Before 2:00pm.<\/p><p>✓   Free Delivery available on orders over £50<\/p>"
+          }
+        },
+        "custom_icon_pos_UQPreV": {
+          "type": "custom_icon_pos",
+          "settings": {}
+        },
+        "custom_K9yLcr": {
+          "type": "custom",
+          "settings": {
+            "code": "<p class=\"ad-main-title\"> Our material guarantees that <span>OUTRAGE will last forever.<\/span><\/p>"
+          }
+        },
+        "custom_advance_content_MFcqfw": {
+          "type": "custom-advance-content",
+          "settings": {
+            "code": "<p class=\"bold\"> Lifetime Guarantee<\/p>\n<p>Handmade with premium sourced materials, our jewelry is designed to last a lifetime<\/p>",
+            "ad_image": "shopify:\/\/shop_images\/guarantee-icon.png"
+          }
+        },
+        "custom_advance_content_4n8UFq": {
+          "type": "custom-advance-content",
+          "settings": {
+            "code": "<p class=\"bold\">Water, Heat & Sweat-Proof<\/p>\n<p>Sick of taking your jewelry off for daily activity? Our Jewelry is built for running, Swimming and all daily activities<\/p>",
+            "ad_image": "shopify:\/\/shop_images\/waterproof-icon.png"
+          }
+        },
+        "custom_advance_content_rDHJYW": {
+          "type": "custom-advance-content",
+          "settings": {
+            "code": "<p class=\"bold\">Hypoallergenic No Green Skin<\/p>\n<p>Made from Premium 316L Stainless steel and perfect for people with sensitive skin<\/p>",
+            "ad_image": "shopify:\/\/shop_images\/hypo-icon.png"
+          }
+        },
+        "desc_6bP6tV": {
+          "type": "desc",
+          "settings": {
+            "title": "------ Description"
+          }
+        },
+        "acc_U4dt3z": {
+          "type": "acc",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\"><path d=\"M14.41 3.37L8.27 1.41a1 1 0 00-.61 0L1.52 3.37a1 1 0 00-.7.95v7.86c0 .41.25.78.63.93l6.14 2.46c.24.1.5.1.75 0l6.14-2.46a1 1 0 00.62-.93V4.32a1 1 0 00-.69-.95zM7.96 2.36l6.05 1.93-2.7.9L5.35 3.2l2.63-.84zm-.46 12.1l-5.68-2.28V5.3L7.5 7.2v7.26zM8 6.3L1.96 4.28l2.58-.82 5.99 2L8 6.3zm6.1 5.89l-5.6 2.24V7.19l5.6-1.87v6.87z\"><\/path><\/svg>",
+            "title": "Delivery & Returns",
+            "text": "<p><strong>DELIVERY:<\/strong><\/p><ul><li><strong>Standard<\/strong> £2.99 or FREE over £40  or when you buy 2 items or more (1-2 Working Days)<\/li><li><strong>Next-Day <\/strong>from £4.99 (1 Working Days)<\/li><\/ul><p><strong>RETURNS:<\/strong><\/p><p>If you find that the item you've received isn't the right size or style, fret not – returning it to us is hassle-free!<\/p>"
+          }
+        },
+        "acc_t8feCn": {
+          "type": "acc",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\"><path d=\"M7.48 10.57v1.83a.5.5 0 001 0v-1.81a1.1 1.1 0 10-1-.02z\"><\/path>\n        <path d=\"M13.15 5.66h-2.08V3.79a3.7 3.7 0 00-.8-2.3C9.76.88 8.98.5 8 .5c-.98 0-1.76.37-2.29 1a3.7 3.7 0 00-.79 2.3v1.86H2.83a.5.5 0 00-.5.5V15c0 .28.23.5.5.5h10.32a.5.5 0 00.5-.5V6.16a.5.5 0 00-.5-.5zM5.9 3.92v-.08-.02c.03-.7.22-1.28.56-1.68.32-.39.81-.64 1.52-.64s1.2.26 1.52.64c.34.4.54.98.56 1.68v1.84H5.91V3.92zm6.74 10.58H3.33V6.66h9.32v7.84z\"><\/path><\/svg>",
+            "title": "Backed by Lifetime Warranty",
+            "text": "<p>Our jewellery is <strong>Built to endure the passage of time<\/strong> and engineered for longevity.<\/p><p>While we understand that accidents can occur,<strong> rest assured<\/strong> that each piece is accompanied by a <strong>Full Lifetime Warranty.<\/strong><\/p><p>Should you encounter a snapped chain or a damaged pendant, <strong>we've got you covered<\/strong>. <\/p><p><strong>It's important<\/strong> to note that our Lifetime Warranty exclusively applies to <strong>accidental damage<\/strong>. Therefore, please be aware that we are unable to provide coverage for instances where the piece is <strong>lost, stolen, or damaged.<\/strong><\/p>"
+          }
+        },
+        "acc_AhEqiR": {
+          "type": "acc",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\"><path fill-rule=\"evenodd\" d=\"M14.441 3.733a.5.5 0 010 .707l-7.94 7.94a.5.5 0 01-.707 0L2.52 9.105a.5.5 0 11.707-.707l2.922 2.922 7.586-7.587a.5.5 0 01.707 0z\" clip-rule=\"evenodd\"><\/path><\/svg>",
+            "title": "Care Guide",
+            "text": "<p>Outrage Londons general care information on how to best look after your jewellery.<\/p><ul><li>Store in it's Outrage London Leather pouch or a jewellery box, separate from other items<\/li><li>Avoid contact with chemicals such as household cleaners, perfume, moisturisers etc.<\/li><li>Clean Once per month with a cloth to remove any excess materials laying on the metal<\/li><\/ul>"
+          }
+        },
+        "custom_reviews_yrjbyw": {
+          "type": "custom-reviews",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\"><path d=\"M8 1c.21 0 .4.13.47.33l1.62 4.54 4.92.1a.5.5 0 01.29.9l-3.92 2.9 1.42 4.58a.5.5 0 01-.75.56L8 12.17 3.95 14.9a.5.5 0 01-.75-.56l1.42-4.58L.7 6.87a.5.5 0 01.29-.9l4.92-.1 1.62-4.54A.5.5 0 018 1zm0 2L6.74 6.52a.5.5 0 01-.46.33l-3.8.08L5.5 9.17a.5.5 0 01.18.55l-1.1 3.56 3.14-2.13a.5.5 0 01.56 0l3.15 2.13-1.1-3.56a.5.5 0 01.17-.55l3.02-2.23-3.8-.08a.5.5 0 01-.46-.33L8 2.99z\"><\/path><\/svg>",
+            "title": "Reviews"
+          }
+        },
+        "custom_icon_P9LEg6": {
+          "type": "custom_icon",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\" style=\"width: 30px;height: 30px;\"><path d=\"M15.64 6.92L9.5 5.12V4a.5.5 0 00-.5-.5H1a.5.5 0 00-.5.5v8.5c0 .28.22.5.5.5h1.27a2.1 2.1 0 004.06 0h3.94a2.1 2.1 0 004.06 0h1.17a.5.5 0 00.5-.5V7.4a.5.5 0 00-.36-.48zM4.3 13.6a1.1 1.1 0 110-2.2 1.1 1.1 0 010 2.2zM6.33 12a2.1 2.1 0 00-4.06 0H1.5V4.5h7V12H6.33zm5.97 1.6a1.1 1.1 0 110-2.2 1.1 1.1 0 010 2.2zM15 12h-.67a2.1 2.1 0 00-4.06 0H9.5V6.17l5.5 1.6V12z\"><\/path><\/svg>",
+            "title": "Express shipping"
+          }
+        },
+        "custom_icon_A6wXMW": {
+          "type": "custom_icon",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\" style=\"width: 30px;height: 30px;\"><path d=\"M9 .5a.5.5 0 000 1h1a4.5 4.5 0 110 9H2.2l3.15-3.15a.5.5 0 10-.7-.7l-4 4a.5.5 0 000 .7l4 4a.5.5 0 00.7-.7L2.21 11.5H10a5.5 5.5 0 100-11H9z\"><\/path><\/svg>",
+            "title": "Easy 60-day returns"
+          }
+        },
+        "custom_icon_dVMqeA": {
+          "type": "custom_icon",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\" style=\"width: 30px;height: 30px;\"><path d=\"M7.48 10.57v1.83a.5.5 0 001 0v-1.81a1.1 1.1 0 10-1-.02z\"><\/path>\n        <path d=\"M13.15 5.66h-2.08V3.79a3.7 3.7 0 00-.8-2.3C9.76.88 8.98.5 8 .5c-.98 0-1.76.37-2.29 1a3.7 3.7 0 00-.79 2.3v1.86H2.83a.5.5 0 00-.5.5V15c0 .28.23.5.5.5h10.32a.5.5 0 00.5-.5V6.16a.5.5 0 00-.5-.5zM5.9 3.92v-.08-.02c.03-.7.22-1.28.56-1.68.32-.39.81-.64 1.52-.64s1.2.26 1.52.64c.34.4.54.98.56 1.68v1.84H5.91V3.92zm6.74 10.58H3.33V6.66h9.32v7.84z\"><\/path><\/svg>",
+            "title": "Water & sweatproof"
+          }
+        },
+        "custom_icon_jJEFbH": {
+          "type": "custom_icon",
+          "settings": {
+            "svg": "<svg class=\"cc-icon\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewbox=\"0 0 16 16\" style=\"width: 30px;height: 30px;\"><circle stroke=\"currentColor\" fill=\"none\" cx=\"8.1081667\" cy=\"5.6658235\" r=\"4.3742652\"><\/circle>\n        <polyline stroke=\"currentColor\" fill=\"none\" points=\"8.21 13.89 7 23 12 20 17 23 15.79 13.88\" transform=\"matrix(0.624895,0,0,0.624895,0.60942571,0.66666362)\"><\/polyline><\/svg>",
+            "title": "Lifetime warranty"
+          }
+        }
+      },
+      "block_order": [
+        "loox_reviews_loox_rating_EWVEXC",
+        "price",
+        "text_AqimcH",
+        "separator_cpMH9G",
+        "custom_colorswatches_gr9Tye",
+        "variant_picker",
+        "guide_cMb44L",
+        "cstock_xbTt7K",
+        "sales_point",
+        "inventory_status",
+        "buy_buttons",
+        "klarna_on_site_messaging_app_block_j4iaCw",
+        "rt_tCHk8c",
+        "custom_icon_pos_UQPreV",
+        "custom_K9yLcr",
+        "custom_advance_content_MFcqfw",
+        "custom_advance_content_4n8UFq",
+        "custom_advance_content_rDHJYW",
+        "desc_6bP6tV",
+        "acc_U4dt3z",
+        "acc_t8feCn",
+        "acc_AhEqiR",
+        "custom_reviews_yrjbyw",
+        "custom_icon_P9LEg6",
+        "custom_icon_A6wXMW",
+        "custom_icon_dVMqeA",
+        "custom_icon_jJEFbH"
+      ],
+      "settings": {
+        "sticky": true,
+        "bg": "#000000",
+        "fg": "#ffffff",
+        "obg": "#545454"
+      }
+    },
+    "custom_richtext_TDDfWL": {
+      "type": "custom-richtext",
+      "disabled": true,
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "ANYTIME. ANYWHERE.",
+        "heading": "Designed to suit you.",
+        "text": "<p>Whether you're going for a formal look or opting for a more relaxed style, Outrage London offers jewellery perfect for every occasion. Our timeless classics are meticulously built from the finest sourced materials, ensuring durability that lasts a lifetime. You can confidently wear them in the shower or during workouts without worry. From sentimental pieces to versatile designs, our collection has something for everyone. It's time to discover our extensive range of exclusive designs.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_YcGEBR": {
+      "type": "custom-iwt",
+      "disabled": true,
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Untitled_2000_x_2000_px_6.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Trusted By Thousands",
+        "heading": "Why Outrage London?",
+        "text": "<p>Its not just our unique designs and premium quality we care about. <\/p><p>At Outrage London we care about you. Your not just a customer to us, we become your family. Any issues big or small we are here to help. Wrong Size? We got you. Want to return? No problem. Have a question? Just reach out.<\/p><p>Being rated the fastest-growing jewellery brand on the planet is an achievement we take immense pride in, and we are committed to consistently delivering on our promises.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_image_text_reviews_6aVngA": {
+      "type": "custom-image-text-reviews",
+      "settings": {
+        "swap": false,
+        "enable_video": true,
+        "img": "shopify:\/\/shop_images\/WhatsApp_Image_2023-12-01_at_2.02.06_AM.jpg",
+        "video": "shopify:\/\/files\/videos\/a29228a3407e4a6da7a8e108911bf85b.mp4",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "WE TESTED OUR CHAINS IN EXTREME CIRCUMSTANCES AND HOW DID THEY HOLD UP?",
+        "text": "<p>At Outrage London, quality isn't just a feature, it's a promise. Our timeless classics remain resilient to daily wear, free from tarnish, breakage, or discolouration. Wear your jewellery daily with freedom. Shower ✓ Working out ✓ Strength Test ✓ Scratch proof ✓ Comfort✓<\/p>",
+        "customer_image": "shopify:\/\/shop_images\/Black_Modern_Toys_Shop_Etsy_Icon_Logo_1.png",
+        "customer_name": "William Scott",
+        "customer_review": "“I've been shopping with Outrage London for over a year now and wear their jewellery everyday in the shower and to the gym. It never fails to let me down. I've tried a few other brands and they just don't hit the same level Outrage does, I just wanted to thankyou on a personal note for your outstanding customer service and quality”",
+        "verified_text": "VERIFIED PURCHASE",
+        "bg": "#ffffff",
+        "review_bg": "#f8f8f8",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_UA4J7m": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-09T103617.735.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "OUTRAGE LONDON GUARANTEES",
+        "heading": "The quality you deserve",
+        "text": "<p>Our team is committed to crafting premium, distinctive pieces that endure through the ages. We're so certain of our quality that we provide a money-back guarantee if our products fail to meet your expectations. <\/p><p>Each piece draws inspiration from architecture and is meticulously designed to have sentimental value.<\/p><p>Precisely handmade with traditional techniques and made from premium source materials.<\/p><p>Join Thousands and make Outrage your one stop jewellery brand.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_RHzjWi": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Leather_Pouch_and_box_16.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "AN UNFORGETTABLE EXPERIENCE",
+        "heading": "The art of giving",
+        "text": "<p>Your order will be premiumly packed in our gift box and leather pouches, ensuring an unforgettable unboxing experience that makes you or your loved ones feel truly valued and loved.<\/p><p><strong>What's inside?<\/strong><\/p><p>• Premium protective Leather branded pouch<br\/>• Gift Wrap Jewellery box <\/p><p><strong>Gifts this good Don't go un-noticed.<\/strong><\/p><p>Make it an unforgettable day for yourself or a loved one with our sentimental jewellery. It's An experience like no other.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials-0": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        },
+        "testimonials-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "author": "Author's name",
+            "author_info": "Los Angeles, CA"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials-0",
+        "testimonials-1",
+        "testimonials-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Testimonials",
+        "align_text": "center",
+        "round_images": true,
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Frequently bought together",
+        "related_count": 6
+      }
+    },
+    "custom_fc_3pybnL": {
+      "type": "custom-fc",
+      "settings": {
+        "coll": "shop-all",
+        "limit": 6,
+        "button_text": "Explore All",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "recent_count": 10
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "custom_richtext_TDDfWL",
+    "custom_iwt_YcGEBR",
+    "custom_image_text_reviews_6aVngA",
+    "custom_iwt_UA4J7m",
+    "custom_iwt_RHzjWi",
+    "sub",
+    "testimonials",
+    "product-recommendations",
+    "custom_fc_3pybnL",
+    "recently-viewed",
+    "collection-return"
+  ]
+}

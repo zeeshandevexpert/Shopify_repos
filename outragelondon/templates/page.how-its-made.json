@@ -1,0 +1,148 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-banner",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Outrage_17.png",
+        "heading": "Hand made jewellery",
+        "subheading": "How Its Made",
+        "fg": "#ffffff"
+      }
+    },
+    "custom_richtext_j9KFWz": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "The process",
+        "text": "<p>Each of our jewelry pieces undergoes a meticulous process, with careful consideration given to every detail before they are introduced to the market. Discover the full journey of our designs below.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#eeeeee",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_WeFYbA": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/eau_de_parfum_1.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "Our Sketching Process",
+        "text": "<p>The genesis of every one of our distinctive designs commences with a singular spark of inspiration. From this initial concept, we meticulously transform it into intricate sketches, laying the cornerstone for our unique pieces.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_yUMfHG": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-10T204841.279.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "CAD DESIGNING",
+        "text": "<p>Transforming sketches into reality, our 3D modeling process intricately refines and brings to life the final piece, meticulously attending to every detail.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_banner_HVCmNf": {
+      "type": "custom-banner",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Outrage_18.png",
+        "heading": "",
+        "subheading": "",
+        "fg": "#ffffff"
+      }
+    },
+    "custom_richtext_MPM4jG": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Craftmanship",
+        "text": "<p>Expert hands diligently craft designs into tangible masterpieces, weaving magic into each creation.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#eeeeee",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_CJXtYT": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Copy_of_Untitled_Design_2000_x_2000_px_1.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "Handmade Process",
+        "text": "<p>All our jewelry is meticulously handcrafted from the finest sourced materials. Our dedicated team is committed to designing the highest quality pieces that are built to endure a lifetime.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_7WYAzR": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/Copy_of_Untitled_Design_2000_x_2000_px.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "Quality Assurance",
+        "text": "<p>Quality isn’t merely promised; it's guaranteed. Each of our pieces undergoes rigorous testing to ensure they exceed the highest standards of craftsmanship. We even offer a lifetime warranty on all our product.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_richtext_j9KFWz",
+    "custom_iwt_WeFYbA",
+    "custom_iwt_yUMfHG",
+    "custom_banner_HVCmNf",
+    "custom_richtext_MPM4jG",
+    "custom_iwt_CJXtYT",
+    "custom_iwt_7WYAzR"
+  ]
+}

@@ -1,0 +1,1445 @@
+{
+  "current": {
+    "color_body_bg": "#fff",
+    "color_default": "#f7f7f7",
+    "color_headings": "#202020",
+    "color_body_text": "#515151",
+    "color_primary": "#3a3a3a",
+    "color_buy": "#3a3a3a",
+    "color_button_text": "#fff",
+    "color_secondary": "#3a3a3a",
+    "color_sale": "#fa4545",
+    "color_nav_bg": "#ffffff",
+    "color_nav_text": "#202020",
+    "color_announcement_bg": "#202020",
+    "color_announcement_text": "#fff",
+    "color_drawer_bg": "#ffffff",
+    "color_drawer_default": "#f7f7f7",
+    "color_drawer_text": "#202020",
+    "color_drawer_primary": "#3a3a3a",
+    "color_drawer_buy": "#3a3a3a",
+    "color_drawer_button_text": "#fff",
+    "color_drawer_overlay": "#202020",
+    "color_drawer_overlay_opacity": 65,
+    "color_overlay": "#202020",
+    "color_transparent_nav_text": "#fff",
+    "opacity_overlay": 50,
+    "color_footer_bg": "#202020",
+    "color_footer_text": "#fff",
+    "color_footer_default": "#161616",
+    "color_footer_primary": "#3a3a3a",
+    "color_footer_button_text": "#fff",
+    "color_copyright_bg": "#161616",
+    "color_copyright_text": "#fff",
+    "header_family": "helvetica_n4",
+    "header_font_size": 34,
+    "header_font_size_big": 60,
+    "header_spacing": 0,
+    "header_transform": "initial",
+    "accent_family": "helvetica_n4",
+    "accent_spacing": 0.5,
+    "accent_transform": "initial",
+    "button_uppercase": true,
+    "base_family": "helvetica_n4",
+    "base_font_size": 17,
+    "share_image": "shopify:\/\/shop_images\/core_fav.png",
+    "social_facebook_link": "https:\/\/www.facebook.com\/corepickleballusa\/",
+    "social_twitter_link": "https:\/\/twitter.com\/corepickleball",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/core_pickleball\/",
+    "social_snapchat_link": "",
+    "social_google_plus_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "favicon": "shopify:\/\/shop_images\/core_fav_7fa017b9-7e98-44c4-95e3-f4b6ac4a0fd9.png",
+    "cart_top_button": true,
+    "cart_notes_enable": false,
+    "cart_spacer": true,
+    "enable_payment_button": false,
+    "cart_type": "drawer",
+    "cart_icon": "cart",
+    "browsing_button_style": "btn--primary",
+    "checkout_icon": "lock",
+    "search_enabled": true,
+    "search_product": true,
+    "search_button_style": "btn--primary",
+    "review_section_style": "default-section",
+    "review_widget": "review_widget_above",
+    "review_badge": "review_badge_under",
+    "review_badge_grid": "review_badge_under",
+    "sticky_header": true,
+    "hero_header": true,
+    "show_announcement": true,
+    "show_announcement_home": false,
+    "hide_announcement_mobile": false,
+    "announcement_text": "Free Shipping on Orders $35+* Terms Apply",
+    "announcement_link": "shopify:\/\/pages\/free-shipping",
+    "announcement_size": "small",
+    "grid_product_vendor": false,
+    "color_product": false,
+    "sale_type": "amount",
+    "tag_placement": "top-left",
+    "tag_text": true,
+    "show_currency_selector": false,
+    "auto_currency_selector": false,
+    "position_currency_converter": "announcement",
+    "show_author": true,
+    "show_date": true,
+    "show_hero": true,
+    "parallax_enabled": true,
+    "section_height": "small",
+    "section_height_mobile": "xsmall",
+    "border_radius": 3,
+    "border_width": "1",
+    "show_top_button": true,
+    "top_button_mobile": true,
+    "top_button_position": "right",
+    "show_breadcrumbs": false,
+    "transition_hover_enabled": true,
+    "image_effect": true,
+    "browsing_link": "shopify:\/\/collections\/all",
+    "buy_now_text": "",
+    "more_payment_text": "",
+    "zindex_drawer": "999999999",
+    "dbtfy_addtocart_animation": false,
+    "dbtfy_addtocart_animation_type": "shake",
+    "dbtfy_addtocart_animation_speed": "",
+    "dbtfy_addtocart_animation_interval": 6,
+    "dbtfy_cart_countdown": true,
+    "dbtfy_cart_countdown_icon": "check-circle",
+    "dbtfy_cart_countdown_prefix": "Your cart is saved for the next",
+    "dbtfy_cart_countdown_suffix": "",
+    "dbtfy_cart_countdown_time_mins": 10,
+    "dbtfy_cart_countdown_m": "m",
+    "dbtfy_cart_countdown_s": "s",
+    "dbtfy_cart_discount": false,
+    "dbtfy_cart_discount_label": "",
+    "dbtfy_cart_discount_placeholder": "Enter coupon code here",
+    "dbtfy_cart_goal": false,
+    "dbtfy_cart_goal_before_text": "Buy",
+    "dbtfy_cart_goal_amount": 35,
+    "dbtfy_cart_goal_after_text": "more to enjoy FREE shipping!",
+    "dbtfy_cart_goal_reached_text": "You are eligible for FREE shipping!",
+    "dbtfy_cart_goal_icon": "shipping-fast",
+    "dbtfy_chat_box": false,
+    "dbtfy_chat_box_mobile": false,
+    "dbtfy_chat_box_new": true,
+    "dbtfy_chat_box_image": "",
+    "dbtfy_chat_box_link": "",
+    "dbtfy_chat_box_position": "left",
+    "dbtfy_chat_box_animation": "bounceInLeft",
+    "dbtfy_chat_box_height": 59,
+    "dbtfy_collection_addtocart": true,
+    "dbtfy_collection_addtocart_full": false,
+    "dbtfy_collection_addtocart_button_style": "btn--buy",
+    "dbtfy_color_swatches": true,
+    "dbtfy_color_swatches_color": "Color",
+    "dbtfy_color_swatches_file": "jpg",
+    "dbtfy_cookie_box": false,
+    "dbtfy_cookie_box_text": "<p><strong>Do you like cookies?<\/strong> 🍪 We use cookies to ensure you get the best experience on our website.<\/p>",
+    "dbtfy_cookie_box_animation": "fadeIn",
+    "dbtfy_cookie_box_button_label": "I agree",
+    "dbtfy_cookie_box_button_style": "btn--primary",
+    "dbtfy_cookie_box_position": "right",
+    "dbtfy_delivery_time": false,
+    "dbtfy_delivery_time_icon": "shipping-fast",
+    "dbtfy_delivery_time_prefix": "Get it between",
+    "dbtfy_delivery_time_separator": "-",
+    "dbtfy_delivery_time_suffix": "",
+    "dbtfy_delivery_time_date": true,
+    "dbtfy_delivery_time_from": 7,
+    "dbtfy_delivery_time_to": 14,
+    "dbtfy_delivery_time_format": "%b %d",
+    "dbtfy_discount_saved": false,
+    "dbtfy_inventory_quantity": true,
+    "dbtfy_inventory_quantity_icon": "stopwatch",
+    "dbtfy_inventory_quantity_prefix": "Only",
+    "dbtfy_inventory_quantity_suffix": "left in stock",
+    "dbtfy_inventory_quantity_temp": true,
+    "dbtfy_inventory_quantity_min": 3,
+    "dbtfy_inventory_quantity_max": 14,
+    "dbtfy_linked_options": false,
+    "dbtfy_live_view": false,
+    "dbtfy_live_view_prefix": "",
+    "dbtfy_live_view_people": "Poeple",
+    "dbtfy_live_view_suffix": "are viewing this right now",
+    "dbtfy_live_view_icon": "eye",
+    "dbtfy_live_view_min": 2,
+    "dbtfy_live_view_max": 14,
+    "dbtfy_live_view_interval": 3,
+    "dbtfy_newsletter_popup": false,
+    "dbtfy_newsletter_popup_width": "600",
+    "dbtfy_newsletter_popup_image": "shopify:\/\/shop_images\/Core_Pickeball_Ball_1_0620f62e-60cf-4af0-a28f-39255bec73d1.png",
+    "dbtfy_newsletter_popup_image_position": "center center",
+    "dbtfy_newsletter_popup_title": "Sign up now",
+    "dbtfy_newsletter_popup_text": "<p>&nbsp;to be notified when we&rsquo;re back in stock. Be first in line to get your order!<\/p>",
+    "dbtfy_newsletter_popup_close": "No thanks",
+    "dbtfy_newsletter_popup_icon": "envelope",
+    "dbtfy_newsletter_popup_animation": "zoomIn",
+    "dbtfy_newsletter_popup_time_trigger": true,
+    "dbtfy_newsletter_popup_timeout": 5,
+    "dbtfy_newsletter_popup_title_success": "Thank you!",
+    "dbtfy_newsletter_popup_text_success": "<p>Thank you!<\/p>",
+    "dbtfy_newsletter_popup_apply": "Continue shopping",
+    "dbtfy_newsletter_popup_coupon": "",
+    "dbtfy_product_video": false,
+    "dbtfy_product_video_autoplay": true,
+    "dbtfy_product_video_animation": "bounceIn",
+    "dbtfy_quick_view": false,
+    "dbtfy_quick_view_hide_mobile": true,
+    "dbtfy_quick_view_quantity_selector": false,
+    "quick_view_animation": "pulse",
+    "quick_view_icon": "eye",
+    "icon_placement": "top-right",
+    "dbtfy_sales_countdown": false,
+    "dbtfy_sales_countdown_bg": true,
+    "dbtfy_sales_countdown_icon": "hourglass-half",
+    "dbtfy_sales_countdown_prefix": "Sale ends in",
+    "dbtfy_sales_countdown_suffix": "",
+    "dbtfy_sales_countdown_date": "",
+    "dbtfy_sales_countdown_time_hours": 2,
+    "dbtfy_sales_countdown_time_mins": 48,
+    "dbtfy_sales_countdown_type": "",
+    "dbtfy_sales_countdown_tag": "",
+    "dbtfy_sales_countdown_product": "",
+    "dbtfy_sales_countdown_collection": "",
+    "dbtfy_sales_countdown_d": "d",
+    "dbtfy_sales_countdown_h": "h",
+    "dbtfy_sales_countdown_m": "m",
+    "dbtfy_sales_countdown_s": "s",
+    "dbtfy_sales_pop": false,
+    "dbtfy_sales_pop_mobile": false,
+    "dbtfy_sales_pop_collection": "",
+    "dbtfy_sales_pop_timeago": 30,
+    "dbtfy_sales_pop_display": 4,
+    "dbtfy_sales_pop_interval": 6,
+    "dbtfy_sales_pop_name": "Someone in",
+    "dbtfy_sales_pop_city": "New York, Atlanta",
+    "dbtfy_sales_pop_purchase": "has purchased",
+    "dbtfy_sales_pop_emoji": "👏",
+    "dbtfy_sales_pop_prefix": "",
+    "dbtfy_sales_pop_suffix": "ago",
+    "dbtfy_sales_pop_icony": "check-circle",
+    "dbtfy_sales_pop_verified": "Verified",
+    "dbtfy_sales_pop_minute": "minute",
+    "dbtfy_sales_pop_minutes": "minutes",
+    "dbtfy_sales_pop_hour": "hour",
+    "dbtfy_sales_pop_hours": "hours",
+    "dbtfy_sales_pop_day": "day",
+    "dbtfy_sales_pop_days": "days",
+    "dbtfy_shop_protect": false,
+    "dbtfy_shop_protect_image": true,
+    "dbtfy_shop_protect_drag": true,
+    "dbtfy_shop_protect_text_product": true,
+    "dbtfy_shop_protect_text_article": true,
+    "dbtfy_shop_protect_collection": true,
+    "dbtfy_skip_cart": false,
+    "dbtfy_smart_search": false,
+    "dbtfy_smart_search_price": true,
+    "dbtfy_smart_search_vendor": false,
+    "dbtfy_smart_search_limit": 4,
+    "dbtfy_smart_search_products": "Products",
+    "dbtfy_smart_search_collections": "Collections",
+    "dbtfy_smart_search_articles": "Articles",
+    "dbtfy_smart_search_pages": "Pages",
+    "dbtfy_smart_search_all": "Show all results for",
+    "dbtfy_sticky_addtocart": true,
+    "dbtfy_sticky_addtocart_reviews": true,
+    "dbtfy_sticky_addtocart_animation": false,
+    "dbtfy_sticky_addtocart_inventory": false,
+    "dbtfy_sticky_addtocart_countdown": false,
+    "dbtfy_sticky_addtocart_mobile": false,
+    "dbtfy_sticky_addtocart_wrapper": "wrapper-fluid",
+    "dbtfy_sticky_addtocart_position": "bottom",
+    "gift_card_layout": "global_image",
+    "gift_card_image": "shopify:\/\/shop_images\/GIFTCARD.png",
+    "dbtfy_trust_badge": false,
+    "dbtfy_trust_badge_product": true,
+    "dbtfy_trust_badge_cart": true,
+    "dbtfy_trust_badge_background": true,
+    "dbtfy_trust_badge_text_small": false,
+    "dbtfy_trust_badge_image": "",
+    "dbtfy_trust_badge_text": "Guaranteed safe & secure checkout",
+    "dbtfy_trust_badge_text_position": "under",
+    "dbtfy_trust_badge_width": "600",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#f7f7f7",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#5600e3",
+    "checkout_button_color": "#5600e3",
+    "checkout_error_color": "#ed5358",
+    "currency_custom": false,
+    "currency_symbol": true,
+    "currency_transparent": false,
+    "announcement_position": "above",
+    "dbtfy_instagram_feed": false,
+    "dbtfy_instagram_feed_background_section": true,
+    "dbtfy_instagram_feed_full_width": false,
+    "dbtfy_instagram_hide_home": false,
+    "dbtfy_instagram_feed_icon": true,
+    "dbtfy_instagram_feed_access_token": "",
+    "dbtfy_instagram_feed_title": "",
+    "dbtfy_instagram_feed_subtitle": "",
+    "dbtfy_instagram_feed_position": "under",
+    "dbtfy_instagram_feed_resolution": "low_resolution",
+    "dbtfy_instagram_feed_rows": "1",
+    "dbtfy_instagram_feed_desktop_grid": "6",
+    "dbtfy_instagram_feed_mobile_grid": "3",
+    "dbtfy_sales_pop_separator": "-",
+    "dbtfy_sales_pop_icon": "clock",
+    "dbtfy_sales_pop_speed": "fast",
+    "sections": {
+      "drawer-menu": {
+        "type": "drawer-menu",
+        "settings": {
+          "drawer_link_toggle": true,
+          "show_social_medias": true,
+          "drawer_top_link_list": "main-menu-new",
+          "drawer_bottom_link_list": ""
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "default_logo": "shopify:\/\/shop_images\/CORE_black.png",
+          "height_logo": 40,
+          "navigation_type": "center",
+          "navigation_wrapper": "fluid",
+          "main_menu_link_list": "main-menu-new",
+          "height_logo_mobile": 40
+        }
+      },
+      "hero": {
+        "type": "hero",
+        "settings": {
+          "section_height": "xlarge",
+          "section_height_mobile": "xlarge",
+          "autoplay": true,
+          "dots": true,
+          "arrows": false,
+          "autoplayspeed": 5
+        }
+      },
+      "guarantee": {
+        "type": "guarantee",
+        "settings": {
+          "section_style": "bg-section",
+          "icon_size": "fa-2x"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "1567916034743": {
+            "type": "text",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/core_image_no_black_bg-small.png",
+              "height_logo": 100,
+              "title": "Info",
+              "email": "customercare@corepickleballusa.com",
+              "phone": "",
+              "text": "<p>CORE Pickleball LLC, 184 South Livingston Ave, Suite 9-108, Livingston NJ, 07039<br\/>    <\/p>"
+            }
+          },
+          "1567915289405": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick Links",
+              "footer_link_list": "footer"
+            }
+          },
+          "1567916075846": {
+            "type": "social_medias",
+            "settings": {
+              "title": "Follow us"
+            }
+          },
+          "1567916051811": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Stay Connected!",
+              "subtitle": "",
+              "send_icon": "fa-envelope"
+            }
+          }
+        },
+        "block_order": [
+          "1567916034743",
+          "1567915289405",
+          "1567916075846",
+          "1567916051811"
+        ],
+        "settings": {
+          "show_payment_icons": true
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "image_layout": "thumbnail",
+          "product_photo_alignement": "left",
+          "enable_zoom": false,
+          "product_vendor": false,
+          "product_title_size": false,
+          "product_header_alignement": "",
+          "product_selector": "select",
+          "quantity_enabled": false,
+          "button_cart_icon": true,
+          "enable_payment_button": true,
+          "show_description": true,
+          "social_sharing_products": true,
+          "show_product_tags": false,
+          "dbtfy_product_tabs_first": true,
+          "amazon_enable": false,
+          "amazon_link": "https:\/\/www.amazon.com\/Core-Pickleball-Balls-Pickleballs-Engineered\/dp\/B0855TQ21K\/ref=sr_1_5?crid=7KQKC68HO5JN&dchild=1&keywords=core+pickleball+balls&qid=1616083941&sprefix=core+pickleball%2Caps%2C172&sr=8-5",
+          "amazon_button_label": "Buy on AMAZON"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": false,
+          "title": "You may also like",
+          "subtitle": "Customers who bought this item also bought",
+          "section_style": "bg-section",
+          "rows": "2",
+          "desktop_grid": "3",
+          "mobile_grid": "1",
+          "slider_related_products": true,
+          "autoplay": true,
+          "dots": true,
+          "arrows": true,
+          "autoplayspeed": 5
+        }
+      },
+      "related-product": {
+        "type": "related-product",
+        "settings": {
+          "show_related_products": false,
+          "related_collection": true,
+          "same_vendor": false,
+          "same_type": false,
+          "never_empty": true,
+          "title": "Similar products",
+          "subtitle": "Customers who viewed this item also viewed",
+          "section_style": "",
+          "rows": "2",
+          "desktop_grid": "4",
+          "mobile_grid": "2",
+          "slider_related_products": true,
+          "autoplay": true,
+          "dots": true,
+          "arrows": true,
+          "autoplayspeed": 5
+        }
+      },
+      "quotes": {
+        "type": "quotes",
+        "settings": {
+          "title": "Testimonials",
+          "subtitle": "",
+          "section_style": "border-section",
+          "quote_width": "60",
+          "quote_auto": true,
+          "quote_dots": false,
+          "quote_arrows": false,
+          "quote_auto_speed": 3
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "collection_tags_enable": false,
+          "collection_sort_enable": true,
+          "show_label": true,
+          "tag_selector": "button",
+          "rows": "3",
+          "desktop_grid": "4",
+          "mobile_grid": "2"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "section_height": "medium"
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "show_rss": true,
+          "rows": "2",
+          "grid": "3",
+          "show_image": true,
+          "show_tags": true,
+          "word_count": 22
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "social_sharing_blog": true,
+          "show_tags": true
+        }
+      },
+      "dbtfy-upsell-bundles": {
+        "type": "dbtfy-upsell-bundles",
+        "settings": {
+          "dbtfy_upsell_bundles": false,
+          "dbtfy_upsell_bundles_title": "Frequently bought togheter",
+          "dbtfy_upsell_bundles_subtitle": "",
+          "dbtfy_upsell_bundles_total": "Total price:",
+          "dbtfy_upsell_bundles_icon": "cart-plus",
+          "dbtfy_upsell_bundles_cart": "Add selected items",
+          "dbtfy_upsell_bundles_current": "This item:",
+          "dbtfy_upsell_bundles_redirect": false,
+          "dbtfy_upsell_bundles_reviews": false,
+          "dbtfy_upsell_bundles_limit": "2",
+          "dbtfy_upsell_bundles_position": "product"
+        }
+      },
+      "dbtfy-upsell-popup": {
+        "type": "dbtfy-upsell-popup",
+        "settings": {
+          "dbtfy_upsell_popup_width": "600",
+          "dbtfy_upsell_popup_description": "See product details",
+          "dbtfy_upsell_popup_cart": "No thanks",
+          "dbtfy_upsell_popup_checkout": "Go to checkout→",
+          "dbtfy_upsell_popup_animation": "bounceIn",
+          "text_alignment": "text-center",
+          "dbtfy_upsell_popup_range": 75
+        }
+      },
+      "dbtfy-faq-page": {
+        "type": "dbtfy-faq-page",
+        "blocks": {
+          "1596803314303": {
+            "type": "text_block",
+            "settings": {
+              "title": "Where are the CORE Pickleballs made?",
+              "text": "<p>We developed these pickleballs in New Jersey, but we manufacture in China, as most of our competitors do.  We would love to manufacture here in the USA, but we have yet to find the partner to do so, that can meet our quality and quantity necessities.<\/p>"
+            }
+          },
+          "1596803326362": {
+            "type": "text_block",
+            "settings": {
+              "title": "Where can I buy CORE Pickleballs?",
+              "text": "<p>On our store online, Walmart.com, Facebook Shop, and select retailers around the US. We plan to expand this rapidly as well.  If you would like to purchase CORE pickleballs for resale, please send an email to <a href=\"mailto:sales@corepickleballusa.com\">sales@corepickleballusa.com<\/a>.<\/p>"
+            }
+          },
+          "1596803336808": {
+            "type": "text_block",
+            "settings": {
+              "title": "Are CORE Pickleballs USAPA approved?",
+              "text": "<p>Yes. our pickleballs are approved by the USAPA!<\/p>"
+            }
+          },
+          "1596803346757": {
+            "type": "text_block",
+            "settings": {
+              "title": "Where is CORE Pickleball headquartered?",
+              "text": "<p>New Jersey, USA<\/p>"
+            }
+          },
+          "1596803368625": {
+            "type": "text_block",
+            "settings": {
+              "title": "How do I become a brand ambassador?",
+              "text": "<p>We’re flattered!  Fill out our <a title=\"https:\/\/corepickleballusa.com\/a\/buzzbassador\/ambassador-page\" href=\"https:\/\/corepickleballusa.com\/a\/buzzbassador\/ambassador-page\">form here<\/a> to apply! <\/p>"
+            }
+          },
+          "4461469e-c0cc-4682-bbcf-95d753236e1f": {
+            "type": "text_block",
+            "settings": {
+              "title": "What does the 100% guarantee cover?",
+              "text": "<p>We guarantee that you are satisfied with your purchase!  Please note that this is only valid for 3, 6, and 12 packs that are not discounted more than 10%. <\/p><p>If for some reason you are unsatisfied, please email us at customercare@corepickleballusa.com for a full refund.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1596803314303",
+          "1596803326362",
+          "1596803336808",
+          "1596803346757",
+          "1596803368625",
+          "4461469e-c0cc-4682-bbcf-95d753236e1f"
+        ],
+        "settings": {
+          "dbtfy_faq_searchbox": true,
+          "dbtfy_faq_search_placeholder": "Search our questions...",
+          "dbtfy_faq_page_first": true,
+          "dbtfy_faq_bannerbox": true,
+          "dbtfy_faq_banner_text": "Didn't find your answer?",
+          "dbtfy_faq_btn": "Get in Touch",
+          "dbtfy_faq_link": "shopify:\/\/pages\/contact-us"
+        }
+      },
+      "page-quality-guarantee": {
+        "type": "page-quality-guarantee",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/QualityGuarantee-banner.jpg"
+        }
+      },
+      "story-mission": {
+        "type": "story-mission",
+        "settings": {
+          "title": "Our Mission",
+          "image": "shopify:\/\/shop_images\/story-mission-banner.png",
+          "text": "<p>CORE designs premium, durable, USAPA-approved pickleball equipment to enable great experiences for every player, both on and off the court. Our products strike the ideal balance between professional play and pure fun.<\/p>"
+        }
+      },
+      "story-section": {
+        "type": "story-section",
+        "settings": {
+          "title": "Our Story",
+          "text1": "<p>CORE Pickleball was founded with the mission to change the game from within by making pro-level, high-quality, and crack resistant equipment accessible to everyone. <br\/><\/p><p><\/p><p>We believe in making our own moments. That’s why we created the ball we wanted to most play with: a pickleball that plays fast, stays round, and cracks less at an affordable price. Turns out, we weren’t the only ones.<\/p>",
+          "image": "shopify:\/\/shop_images\/story-core-logo.png",
+          "text2": "<p>CORE isn’t just a ball, it’s a grassroots community of athletes and enthusiasts coming together to create meaningful experiences through the sport we love. With the belief of friends, players, investors, advisors, and, most importantly, my supportive wife and three crazy children, we’ve grown CORE Pickleball from a one-man start-up to distribution through the world’s largest retailers in less than one year.<br\/><\/p><p><\/p><p>Our company was built with passion in the USA. We tested countless prototypes first-hand on our home court until we could confidently deliver you the ideal pickleball experience: a moment to have more fun, play better, and play just One More Game.<\/p>"
+        }
+      },
+      "story-values": {
+        "type": "story-values",
+        "blocks": {
+          "949cc686-c466-425c-80d6-1be68eb57c46": {
+            "type": "text",
+            "settings": {
+              "title": "Disruption",
+              "sub_title": "<p>Our change starts on the court, not in the boardroom.<\/p>"
+            }
+          },
+          "301e6078-c071-4926-8940-087a84973152": {
+            "type": "text",
+            "settings": {
+              "title": "Passion",
+              "sub_title": "<p>We share the love and purpose the sport gives us.<\/p>"
+            }
+          },
+          "e1b85e03-f6a1-44a6-8df3-9fee64b7b86e": {
+            "type": "text",
+            "settings": {
+              "title": "Innovation",
+              "sub_title": "<p>We’re always searching for fresh ways to grow the game.<\/p>"
+            }
+          },
+          "6d873a83-a89a-4ccd-9c93-8fca1fe91911": {
+            "type": "text",
+            "settings": {
+              "title": "Accessibility",
+              "sub_title": "<p>We believe everyone has the right to a great experience.<\/p>"
+            }
+          },
+          "cbfd08dd-1333-4370-9c91-b9e39b9018b4": {
+            "type": "text",
+            "settings": {
+              "title": "Quality",
+              "sub_title": "<p>Other balls tend to break. Ours hold up.<\/p>"
+            }
+          },
+          "0a6192ed-7081-4cdd-bbec-7b3524559658": {
+            "type": "text",
+            "settings": {
+              "title": "Integrity",
+              "sub_title": "<p>We believe in treating our community right. Always.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "949cc686-c466-425c-80d6-1be68eb57c46",
+          "301e6078-c071-4926-8940-087a84973152",
+          "e1b85e03-f6a1-44a6-8df3-9fee64b7b86e",
+          "6d873a83-a89a-4ccd-9c93-8fca1fe91911",
+          "cbfd08dd-1333-4370-9c91-b9e39b9018b4",
+          "0a6192ed-7081-4cdd-bbec-7b3524559658"
+        ],
+        "settings": {
+          "title": "Our Values",
+          "text": "<p>Values are the difference between making change and making noise—and we’re here to change the game. That’s why we made these values the CORE of everything we do.<\/p>"
+        }
+      },
+      "story-beyond-the-court": {
+        "type": "story-beyond-the-court",
+        "settings": {
+          "title": "Beyond the Court",
+          "image": "shopify:\/\/shop_images\/story-background.png",
+          "text": "<p>We love to give back to the sport that’s given us so much. CORE Pickleball donates equipment to several initiatives, including charitable tournaments, fundraisers, and Tonga’s efforts to expand the sport’s presence throughout the country.<\/p>"
+        }
+      },
+      "story-products": {
+        "type": "story-products",
+        "settings": {
+          "title": "Our Products",
+          "text": "<p>CORE designs durable, USAPA-approved pickleballs in the USA in order to enable premium experiences for every player—both on and off the court. Our equipment strikes the ideal balance between fast play, perfect bounce, and pure fun.<\/p>",
+          "image": "shopify:\/\/shop_images\/story-circle-product.png"
+        }
+      },
+      "home-page": {
+        "type": "home-page",
+        "settings": {
+          "link": "shopify:\/\/products\/core-pickleball",
+          "image": "shopify:\/\/shop_images\/home-banner.jpg"
+        }
+      },
+      "partner-section": {
+        "type": "partner-section",
+        "blocks": {
+          "daaadd2a-d6a7-4f35-8f5b-93cc1cf30407": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo1.png"
+            }
+          },
+          "2505f1e2-883b-4f2d-953c-9669e7339811": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo2.png"
+            }
+          },
+          "4c57fe04-0a28-45ec-a2f3-1139082f533d": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo3.png"
+            }
+          },
+          "5699c709-9f58-4c8b-86a9-e4766e058818": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo4.png"
+            }
+          },
+          "3c97c6b5-1819-4ff7-b2fd-92db238da3ab": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo6.png"
+            }
+          }
+        },
+        "block_order": [
+          "daaadd2a-d6a7-4f35-8f5b-93cc1cf30407",
+          "2505f1e2-883b-4f2d-953c-9669e7339811",
+          "4c57fe04-0a28-45ec-a2f3-1139082f533d",
+          "5699c709-9f58-4c8b-86a9-e4766e058818",
+          "3c97c6b5-1819-4ff7-b2fd-92db238da3ab"
+        ],
+        "settings": {
+          "title": "Our Partners"
+        }
+      },
+      "core-tech-section": {
+        "type": "core-tech-section",
+        "blocks": {
+          "3ee36662-ee57-4dea-b92b-1f562da19b42": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/bounce-8.png",
+              "icon_title": "EXTRA DURABLE"
+            }
+          },
+          "3053ca11-cef5-4b31-b1c3-c21f07597d79": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/weather-8.png",
+              "icon_title": "TRUE BOUNCE"
+            }
+          },
+          "3ac8051e-4d0e-4f1e-a477-2a96297d1688": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/flight-8.png",
+              "icon_title": "TRUE FLIGHT"
+            }
+          },
+          "1d2277bc-6b59-4568-ab56-004f0956cf63": {
+            "type": "icon",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/durable-8.png",
+              "icon_title": "ALL WEATHER TESTED"
+            }
+          }
+        },
+        "block_order": [
+          "3ee36662-ee57-4dea-b92b-1f562da19b42",
+          "3053ca11-cef5-4b31-b1c3-c21f07597d79",
+          "3ac8051e-4d0e-4f1e-a477-2a96297d1688",
+          "1d2277bc-6b59-4568-ab56-004f0956cf63"
+        ],
+        "settings": {
+          "chemical_image": "shopify:\/\/shop_images\/chemical-icon.png",
+          "text1": "Polyurethane Plastic",
+          "text2": "Seamless Construction",
+          "text3": "Rotationally Molded",
+          "text4": "40 Hole Design",
+          "image": "shopify:\/\/shop_images\/ROTATIONAL-MOLDIN.png"
+        }
+      },
+      "product-new-top": {
+        "type": "product-new-top",
+        "settings": {
+          "image_layout": "thumbnail",
+          "product_photo_alignement": "left",
+          "enable_zoom": true,
+          "product_vendor": true,
+          "product_title_size": false,
+          "product_header_alignement": "",
+          "product_selector": "radio",
+          "quantity_enabled": true,
+          "button_cart_icon": true,
+          "enable_payment_button": false,
+          "show_description": true,
+          "social_sharing_products": true,
+          "show_product_tags": true,
+          "dbtfy_product_tabs_first": true,
+          "amazon_enable": true,
+          "amazon_link": "",
+          "amazon_button_label": ""
+        }
+      },
+      "featured-image": {
+        "type": "featured-image",
+        "settings": {
+          "full_width": true,
+          "image": "shopify:\/\/shop_images\/home-banner.jpg",
+          "section_style": "",
+          "image_link": ""
+        }
+      },
+      "custom-html": {
+        "type": "custom-html",
+        "blocks": {
+          "f7ba37db-c0d3-4c68-b76f-8ec46282b2c3": {
+            "type": "html",
+            "settings": {
+              "code": "<h2>QUALITY APPAREL ON AND OFF THE COURTS!\n<\/h2><p>FREE SHIPPING ON ALL ORDERS OVER $25\n<\/p>\n<a class=\"btn btn--buy\" href=\"https:\/\/corepickleballusa.com\/products\/core-pickleball\">Shop Now<\/a>",
+              "width": "100%",
+              "text_alignment": "text-center"
+            }
+          }
+        },
+        "block_order": [
+          "f7ba37db-c0d3-4c68-b76f-8ec46282b2c3"
+        ],
+        "settings": {
+          "padding_section": true,
+          "section_style": "",
+          "wrapper_size": ""
+        }
+      },
+      "contact-distribution": {
+        "type": "contact-distribution",
+        "settings": {
+          "productLocations": "Store\/Pro Shop, Website, Other"
+        }
+      },
+      "ef52a9d5-65db-4b4b-818d-ebf5b0f59ed7": {
+        "type": "featured-products",
+        "settings": {
+          "title": "Featured Products",
+          "subtitle": "",
+          "section_style": "",
+          "home_featured_products": "feature-products",
+          "rows": "1",
+          "desktop_grid": "4",
+          "mobile_grid": "2",
+          "show_view_all": false,
+          "button_style": "",
+          "slider_related_products": false,
+          "autoplay": false,
+          "dots": false,
+          "arrows": false,
+          "autoplayspeed": 3,
+          "ticktextclass": "home-featured-products-section"
+        }
+      },
+      "e6f4ba76-7b06-46ec-a775-646522912a05": {
+        "type": "featured-columns-rd",
+        "blocks": {
+          "e6f4ba76-7b06-46ec-a775-646522912a05-1672897213ef3f2cab-0": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/88d238247c7e80bc88b0b128f7d5c15a.png",
+              "title": "Custom Paddles",
+              "text": "",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": "shopify:\/\/pages\/core-pickleball-customised-paddle"
+            }
+          },
+          "e6f4ba76-7b06-46ec-a775-646522912a05-1672897213ef3f2cab-1": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Chalk_Paddle_Girl1_1.jpg",
+              "title": "Graphic Print Paddles",
+              "text": "",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": "shopify:\/\/pages\/core-pickleball-lp-paddle"
+            }
+          },
+          "e6f4ba76-7b06-46ec-a775-646522912a05-1672897213ef3f2cab-2": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/KX_Paddle_Home.png",
+              "title": "Core Paddles",
+              "text": "",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": "shopify:\/\/collections\/paddles"
+            }
+          },
+          "4267b93f-e4fd-4ea6-9191-b8d7654f820f": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/xxl_blob_7ebe87db-5642-492f-abba-d1f1eea3f5cb.jpg",
+              "title": "Invest",
+              "text": "",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": "https:\/\/coreathletics.com\/pages\/contact-us"
+            }
+          }
+        },
+        "block_order": [
+          "e6f4ba76-7b06-46ec-a775-646522912a05-1672897213ef3f2cab-0",
+          "e6f4ba76-7b06-46ec-a775-646522912a05-1672897213ef3f2cab-1",
+          "e6f4ba76-7b06-46ec-a775-646522912a05-1672897213ef3f2cab-2",
+          "4267b93f-e4fd-4ea6-9191-b8d7654f820f"
+        ],
+        "settings": {
+          "title": "Gear Up For Your Next Match",
+          "subtitle": "",
+          "section_style": "",
+          "text_align": "",
+          "grid_desktop_block_width": "large--six-twelfths",
+          "grid_mobile_block_width": "medium--full",
+          "ticktextclass": "home-gear-up-section"
+        }
+      },
+      "2d51d952-1036-4600-8c0c-921a14ee7aee": {
+        "type": "featured-image",
+        "disabled": true,
+        "settings": {
+          "full_width": true,
+          "image": "shopify:\/\/shop_images\/Landing_Page_Banner.jpg",
+          "section_style": "",
+          "image_link": "https:\/\/corepickleballusa.com\/collections\/balls",
+          "ticktextclass": ""
+        }
+      },
+      "e619973d-c74a-4940-9433-ba1d46666517": {
+        "type": "featured-content",
+        "settings": {
+          "title": "",
+          "text": "<p>CORE designs premium, durable, USAPA-approved pickleball equipment to enable great experiences for every player, both on and off the court. Our products strike the ideal balance between professional play and pure fun.<\/p>",
+          "section_style": "",
+          "text_size": "large",
+          "text_alignment": "text-center",
+          "button_style": "btn--primary",
+          "button_label": "",
+          "button_link": "",
+          "ticktextclass": "home-content-section-bg"
+        }
+      },
+      "010028c8-b9d5-43e5-8249-60b37c64b29f": {
+        "type": "featured-columns-rd",
+        "blocks": {
+          "010028c8-b9d5-43e5-8249-60b37c64b29f-16728989511e2c0ff0-0": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/extra-durable.png",
+              "title": "EXTRA DURABLE",
+              "text": "<p>Play hard and play long with these reinforced outdoor pickleballs. Outlasting the competition you can play more games with fewer balls.<\/p>",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "010028c8-b9d5-43e5-8249-60b37c64b29f-16728989511e2c0ff0-1": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/true-bounce.png",
+              "title": "TRUE BOUNCE",
+              "text": "<p>Engineered for a consistent bounce game after game. These outdoor pickleballs will give you the confidence to trust your shot.<\/p>",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "010028c8-b9d5-43e5-8249-60b37c64b29f-16728989511e2c0ff0-2": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/true-flight.png",
+              "title": "TRUE FLIGHT",
+              "text": "<p>We used precision drilling to optimize the placement of each hole on the ball. This improves airflow ensuring every shot flies straight and true.<\/p>",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "4477f2b2-055f-42fd-aaa5-50e41acd4b77": {
+            "type": "text_block",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/all-weather-tested.png",
+              "title": "ALL WEATHER TESTED",
+              "text": "<p>40 precision drilled holes reduce the impact of wind on your shots. The ball is also weighed for extra wind resistance, making it perfect for outdoor games.<\/p>",
+              "button_style": "btn--primary",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "010028c8-b9d5-43e5-8249-60b37c64b29f-16728989511e2c0ff0-0",
+          "010028c8-b9d5-43e5-8249-60b37c64b29f-16728989511e2c0ff0-1",
+          "010028c8-b9d5-43e5-8249-60b37c64b29f-16728989511e2c0ff0-2",
+          "4477f2b2-055f-42fd-aaa5-50e41acd4b77"
+        ],
+        "settings": {
+          "title": "PRODUCT FEATURES",
+          "subtitle": "",
+          "section_style": "",
+          "text_align": "",
+          "grid_desktop_block_width": "large--six-twelfths",
+          "grid_mobile_block_width": "medium--six-twelfths",
+          "ticktextclass": "home-product-features-section"
+        }
+      },
+      "984cb65f-29ea-4c16-8381-0f827c4c86c2": {
+        "type": "logo-list",
+        "blocks": {
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-1": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/FoxIcon.png",
+              "link": ""
+            }
+          },
+          "b6c8c949-b6ff-4cef-905d-eb641b7c0ee7": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/BloombergIcon.png",
+              "link": ""
+            }
+          },
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-2": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/NBCIcon.png",
+              "link": ""
+            }
+          },
+          "44d036e8-c1b2-4f0e-b4f7-eaa18453ca03": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/HaraldIcon.png",
+              "link": ""
+            }
+          },
+          "logo_473kcc": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Good_Morning_America.png",
+              "link": ""
+            }
+          },
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-3": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ABCIcon.png",
+              "link": ""
+            }
+          },
+          "3a0aa7a2-ccc3-4f75-9c91-edca7cd20cca": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/SportsIllustrated.png",
+              "link": ""
+            }
+          },
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-4": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/CBSIcon.png",
+              "link": ""
+            }
+          },
+          "logo_brPnJ7": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo-pickleheads.jpg",
+              "link": ""
+            }
+          },
+          "logo_jYqTkC": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/logo-dink.jpg",
+              "link": ""
+            }
+          },
+          "logo_zXHbU8": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/PickleBaller_Logo_8863857d-0212-46ce-916c-d4e952499320.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-1",
+          "b6c8c949-b6ff-4cef-905d-eb641b7c0ee7",
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-2",
+          "44d036e8-c1b2-4f0e-b4f7-eaa18453ca03",
+          "logo_473kcc",
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-3",
+          "3a0aa7a2-ccc3-4f75-9c91-edca7cd20cca",
+          "984cb65f-29ea-4c16-8381-0f827c4c86c2-logo-4",
+          "logo_brPnJ7",
+          "logo_jYqTkC",
+          "logo_zXHbU8"
+        ],
+        "custom_css": [
+          "@media (max-width: 767px) {.logo-bar {display: grid; grid-template-columns: repeat(2, 1fr); \/* Two equal columns *\/ gap: 10px; justify-content: center; \/* Centers the grid horizontally *\/ align-content: center; \/* Centers the grid vertically *\/ margin: 0 auto; \/* Centers the grid within the container *\/ width: 50%; max-width: 600px; } .logo-bar__item {display: flex; justify-content: center; align-items: center; background-color: transparent; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }}"
+        ],
+        "settings": {
+          "title": "As Seen On:",
+          "subtitle": "",
+          "section_style": "",
+          "logo_width": "100px"
+        }
+      },
+      "product-template-t-icons-section": {
+        "type": "product-template-t-icons-section",
+        "custom_css": [
+          "\/* hide buy on amazon btn on pdp *\/form a.btn.amazon-button {display: none !important;}"
+        ],
+        "settings": {
+          "image_layout": "thumbnail",
+          "product_photo_alignement": "left",
+          "enable_zoom": true,
+          "product_vendor": false,
+          "product_title_size": false,
+          "product_header_alignement": "",
+          "product_selector": "select",
+          "quantity_enabled": false,
+          "button_cart_icon": true,
+          "enable_payment_button": false,
+          "show_description": true,
+          "social_sharing_products": true,
+          "show_product_tags": true,
+          "dbtfy_product_tabs_first": true,
+          "amazon_enable": true,
+          "amazon_link": "",
+          "amazon_button_label": ""
+        }
+      },
+      "collection-template-infinite-scroll": {
+        "type": "collection-template-infinite-scroll",
+        "settings": {
+          "collection_tags_enable": true,
+          "collection_sort_enable": true,
+          "show_label": true,
+          "tag_selector": "select",
+          "rows": "2",
+          "desktop_grid": "4",
+          "mobile_grid": "2"
+        }
+      },
+      "hero_gPGq7y": {
+        "type": "hero",
+        "blocks": {
+          "slide_JeV68w": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Landing_Page_Banner.jpg",
+              "image_position": "top center",
+              "overlay": false,
+              "title": "",
+              "text": "",
+              "text_alignment": "text-center",
+              "button_label": "Shop Now",
+              "button_link": "shopify:\/\/pages\/best-selling-products",
+              "button_style": "btn--primary"
+            }
+          },
+          "slide_kp6nc9": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Landing_Page_Banner_Paddle_and_Ball_1.jpg",
+              "image_position": "bottom center",
+              "overlay": false,
+              "title": "",
+              "text": "",
+              "text_alignment": "text-center",
+              "button_label": "Shop Now",
+              "button_link": "shopify:\/\/pages\/best-selling-products",
+              "button_style": "btn--primary"
+            }
+          }
+        },
+        "block_order": [
+          "slide_JeV68w",
+          "slide_kp6nc9"
+        ],
+        "settings": {
+          "section_height": "xlarge",
+          "section_height_mobile": "xlarge",
+          "autoplay": true,
+          "dots": true,
+          "arrows": true,
+          "autoplayspeed": 5
+        }
+      },
+      "best-selling-products": {
+        "type": "best-selling-products",
+        "settings": {
+          "title": "Best selling products",
+          "subtitle": "",
+          "section_style": "",
+          "best_selling_products": "best-selling-products",
+          "rows": "3",
+          "desktop_grid": "4",
+          "mobile_grid": "2",
+          "show_view_all": false,
+          "button_style": "btn-outline-primary",
+          "slider_related_products": false,
+          "autoplay": false,
+          "dots": false,
+          "arrows": false,
+          "autoplayspeed": 5,
+          "ticktextclass": ""
+        }
+      },
+      "featured_product_JCJfAK": {
+        "type": "featured-product",
+        "disabled": true,
+        "custom_css": [
+          ".text-link.continue-link {display: none;}",
+          ".dbtfy.dbtfy-color_swatches {display: none;}",
+          ".review-section {display: flex; align-items: center; margin-bottom: 20px;}",
+          ".selected-design {display: flex; align-items: center; margin-bottom: 20px;}",
+          ".variant-title {font-weight: bold;}",
+          ".qty-and-cart {margin-top: 20px; display: flex; align-items: center; justify-content: space-between;}",
+          ".product-single__quantity.product-form__item {margin-right: 20px;}",
+          ".content-section {background: #e5a5560f; padding: 20px; border-radisu: 8px;}"
+        ],
+        "settings": {
+          "featured_product": "print-paddles",
+          "image_layout": "thumbnail",
+          "product_photo_alignement": "left",
+          "enable_zoom": false,
+          "product_vendor": false,
+          "product_title_size": false,
+          "product_header_alignement": "",
+          "product_selector": "select",
+          "quantity_enabled": true,
+          "button_cart_icon": true,
+          "enable_payment_button": false,
+          "show_description": false,
+          "social_sharing_products": false,
+          "show_product_tags": false,
+          "dbtfy_product_tabs_first": false,
+          "amazon_enable": false,
+          "amazon_link": "",
+          "amazon_button_label": "",
+          "ticktextclass": ""
+        }
+      }
+    },
+    "content_for_index": [
+      "2d51d952-1036-4600-8c0c-921a14ee7aee",
+      "hero_gPGq7y",
+      "e619973d-c74a-4940-9433-ba1d46666517",
+      "984cb65f-29ea-4c16-8381-0f827c4c86c2",
+      "ef52a9d5-65db-4b4b-818d-ebf5b0f59ed7",
+      "featured_product_JCJfAK",
+      "010028c8-b9d5-43e5-8249-60b37c64b29f",
+      "e6f4ba76-7b06-46ec-a775-646522912a05"
+    ],
+    "blocks": {
+      "11944173544948763772": {
+        "type": "shopify:\/\/apps\/b2b-login-lock-hide-price\/blocks\/bss-login\/2f6e9bdf-2dd6-42c6-8d67-58be57506f80",
+        "disabled": true,
+        "settings": {}
+      },
+      "12107416968155278870": {
+        "type": "shopify:\/\/apps\/paywhirl\/blocks\/paywhirl-customer-portal\/41e95d60-82cf-46e8-84de-618d7e4c37b7",
+        "disabled": false,
+        "settings": {
+          "show_subscriptions_link": false,
+          "show_customer_login_note": false,
+          "show_address_change_note": false,
+          "container_selector": "main"
+        }
+      },
+      "6908103338091368037": {
+        "type": "shopify:\/\/apps\/social-boost-giveaways\/blocks\/widget-sdk\/072269ca-5022-4741-9ef1-c4d1607e7b98",
+        "disabled": true,
+        "settings": {}
+      },
+      "14549625726302301791": {
+        "type": "shopify:\/\/apps\/stamped-loyalty-referrals\/blocks\/referral-modal\/93b8fd18-14d4-464f-a49a-0093afb7e10a",
+        "disabled": true,
+        "settings": {
+          "frequency": "once",
+          "background_image_url": "",
+          "style_color_background": "",
+          "style_color_button": "",
+          "style_color_link": "",
+          "subtitle": "",
+          "title": "",
+          "description": "",
+          "button_text": "",
+          "subtitle_two": "",
+          "text_disclaimer": "",
+          "text_share_manual": "",
+          "button_text_send": ""
+        }
+      },
+      "471852632697159186": {
+        "type": "shopify:\/\/apps\/stamped-loyalty-referrals\/blocks\/rewards-launcher\/93b8fd18-14d4-464f-a49a-0093afb7e10a",
+        "disabled": true,
+        "settings": {}
+      },
+      "7612553728132747764": {
+        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/net-promoter-score-form-modal\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "disabled": true,
+        "settings": {
+          "email": "",
+          "name": "",
+          "title": "",
+          "message": "Enable advanced features and increase your monthly order limit to match your business's needs.",
+          "reason": "",
+          "thank_you": "",
+          "label_name": "",
+          "label_email": ""
+        }
+      },
+      "4697538150380142411": {
+        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/reviews-popup\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "disabled": true,
+        "settings": {
+          "layout": "vertical",
+          "effect": "slidetop",
+          "delay_seconds": 3,
+          "show_seconds": 10,
+          "pause_seconds": 10,
+          "position": "bottomleft",
+          "color_background": "",
+          "color_star": "",
+          "color_text": "",
+          "review_ids": "",
+          "product_ids": "",
+          "category": "",
+          "product_brand": "",
+          "tags": "",
+          "min_rating": "5",
+          "fill_empty": false,
+          "random": false,
+          "with_photos": false
+        }
+      },
+      "1575957009345749421": {
+        "type": "shopify:\/\/apps\/stamped-product-reviews-ugc\/blocks\/side-drawer\/a103faaf-2125-4b0e-89fa-de5149736723",
+        "disabled": true,
+        "settings": {
+          "show_avatar": true,
+          "position": "left",
+          "text": "",
+          "title": "",
+          "link": "",
+          "link_text": "",
+          "background_color": "",
+          "style_color_button_text": "",
+          "style_color_star": "",
+          "style_color_text": "",
+          "style_color_link": "",
+          "review_ids": "",
+          "product_ids": "",
+          "category": "",
+          "product_brand": "",
+          "tags": "",
+          "min_rating": "none",
+          "fill_empty": false,
+          "random": false,
+          "with_photos": false
+        }
+      },
+      "319724205969189013": {
+        "type": "shopify:\/\/apps\/hulk-form-builder\/blocks\/app-embed\/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": false,
+        "settings": {}
+      },
+      "4918592460924562117": {
+        "type": "shopify:\/\/apps\/optimonk-popup-cro-a-b-test\/blocks\/app-embed\/0b488be1-fc0a-4fe6-8793-f2bef383dba8",
+        "disabled": false,
+        "settings": {}
+      },
+      "15683396631634586217": {
+        "type": "shopify:\/\/apps\/inbox\/blocks\/chat\/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#202a36",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi! How can we help you?"
+        }
+      },
+      "11560147490181472608": {
+        "type": "shopify:\/\/apps\/rivo-loyalty-referrals\/blocks\/app-embed\/580e9665-b2cd-4dbc-b6ba-6445ac9e6871",
+        "disabled": false,
+        "settings": {}
+      },
+      "7555218208816688692": {
+        "type": "shopify:\/\/apps\/rivo-popups-email-pop-ups\/blocks\/app-embed\/48a5a3ef-b6ff-431f-842f-6f17862c4a63",
+        "disabled": false,
+        "settings": {}
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {}
+      },
+      "18228966181090706294": {
+        "type": "shopify:\/\/apps\/selleasy\/blocks\/app-embed\/790c1a03-a71f-4bc1-9869-00dad526d3c2",
+        "disabled": false,
+        "settings": {
+          "storefrontAccessToken": "3b4bae049648e4e335eef0dbfe982022"
+        }
+      },
+      "11528542189587280957": {
+        "type": "shopify:\/\/apps\/varia-variants-on-collection\/blocks\/app-embed\/f02b93b5-bd75-4d2b-b5d3-f13575a5d9da",
+        "disabled": false,
+        "settings": {}
+      },
+      "17428600031447253342": {
+        "type": "shopify:\/\/apps\/attentive\/blocks\/attn-tag\/8df62c72-8fe4-407e-a5b3-72132be30a0d",
+        "disabled": false,
+        "settings": {}
+      },
+      "pagefly-page-builder": {
+        "type": "shopify:\/\/apps\/pagefly-page-builder\/blocks\/app-embed\/83e179f7-59a0-4589-8c66-c0dddf959200",
+        "disabled": false,
+        "settings": {}
+      }
+    }
+  },
+  "platform_customizations": {
+    "custom_css": []
+  }
+}

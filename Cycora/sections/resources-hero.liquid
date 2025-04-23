@@ -1,0 +1,72 @@
+
+    <div class="container-style container-large">
+        <h1>{{ section.settings.title }}</h1>
+        <h2>{{ section.settings.subtitle }}</h2>
+        <div class="resources-page-top-row">
+            {% for block in section.blocks %}
+                <div class="resources-page-top-col">
+                    <div class="image-cover">
+                        <img src="{{ block.settings.image | img_url: "master" }}">
+                    </div>
+                    <div class="resources-page-top-content">
+                        <span class="resources-page-top-category">{{ block.settings.subtitle }}</span>
+                        <h3><a target="_blank" href="{{ block.settings.link }}">{{ block.settings.title }}</a></h3>
+                        <a target="_blank" class="resources-page-top-readmore" href="{{ block.settings.link }}">read more</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Resources - Hero",
+  "tag": "section",
+  "class": "resources-page-top-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sub Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Article",
+      "type": "article",
+      "settings":[
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Sub Title"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Resources - Hero"
+    }
+  ]
+}
+{% endschema %}

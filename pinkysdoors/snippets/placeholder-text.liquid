@@ -1,0 +1,21 @@
+{%- capture placeholder_text -%}
+{%- if words != blank -%}
+{%- assign all_words = "Lorem ipsum dolor amet sartorial cornhole palo santo adaptogen portland offal venmo fam unicorn man bun blog. Mumblecore post-ironic copper mug shabby chic salvia, hot chicken quinoa health goth hell of dreamcatcher bushwick food truck narwhal flexitarian. Drinking vinegar vice biodiesel swag, lo-fi lyft taiyaki prism man braid food truck retro readymade green juice meh ramps. Authentic viral portland tumblr, scenester retro tousled mlkshk fashion axe venmo air plant. Asymmetrical cliche tilde, jean shorts prism hell of iceland pabst offal tote bag messenger bag." -%}
+{{ all_words | truncate: words }}
+{%- endif -%}
+{%- if paragraphs != blank and paragraphs > 0 -%}
+<p>Lorem ipsum dolor amet sartorial cornhole palo santo adaptogen portland offal venmo fam unicorn man bun blog. Mumblecore post-ironic copper mug shabby chic salvia, hot chicken quinoa health goth hell of dreamcatcher bushwick food truck narwhal flexitarian. Drinking vinegar vice biodiesel swag, lo-fi lyft taiyaki prism man braid food truck retro readymade green juice meh ramps. Authentic viral portland tumblr, scenester retro tousled mlkshk fashion axe venmo air plant. Asymmetrical cliche tilde, jean shorts prism hell of iceland pabst offal tote bag messenger bag.</p>
+{%- if paragraphs > 1 -%}
+<p>Succulents yr kombucha unicorn vice fashion axe, beard direct trade irony. Echo park irony af, marfa organic taxidermy snackwave adaptogen copper mug chartreuse master cleanse etsy. Mlkshk umami man bun, venmo truffaut raclette palo santo unicorn fingerstache letterpress sartorial. Kogi freegan pabst raw denim, skateboard iceland tattooed squid disrupt listicle. Viral deep v cliche, ethical lumbersexual schlitz la croix snackwave 90's cornhole pinterest pop-up tumeric flexitarian wayfarers. Helvetica poke cray live-edge af pickled gluten-free poutine hexagon taiyaki. Stumptown kitsch four dollar toast fingerstache chartreuse thundercats.</p>
+{%- if paragraphs > 2 -%}
+<p>Aesthetic sriracha lo-fi poke succulents pabst pok pok +1 venmo pork belly. Kickstarter cardigan fashion axe umami photo booth health goth semiotics cronut. Heirloom +1 lomo aesthetic meggings, marfa man braid. Raclette post-ironic sartorial next level. Direct trade keffiyeh twee, pickled godard small batch freegan disrupt lyft man braid pabst yr vaporware roof party shoreditch. Beard enamel pin snackwave prism, keytar farm-to-table meditation fam. Wayfarers banh mi church-key, salvia before they sold out cornhole hella pickled fingerstache knausgaard irony prism.</p>
+{%- if paragraphs > 3 -%}
+<p>Tilde leggings prism la croix ethical. Drinking vinegar shabby chic cornhole cardigan hoodie hot chicken meggings twee. Cornhole truffaut live-edge semiotics lumbersexual seitan butcher coloring book VHS tbh keytar. Tote bag put a bird on it banjo, lyft knausgaard 90's austin gastropub pok pok normcore small batch mustache woke. Gastropub fashion axe 90's fixie, stumptown skateboard butcher lyft meditation.</p>
+{%- if paragraphs > 5 -%}
+<p>Post-ironic twee venmo, cronut drinking vinegar whatever shabby chic normcore jianbing. Succulents heirloom brooklyn farm-to-table, williamsburg keytar vinyl literally hexagon before they sold out seitan. Narwhal kickstarter echo park austin photo booth keytar. Hot chicken lyft butcher, chicharrones portland pour-over shaman tbh poutine chambray pok pok. Farm-to-table marfa chambray, next level offal microdosing brunch asymmetrical pitchfork locavore succulents +1 put a bird on it jean shorts pabst. Kale chips bushwick affogato waistcoat, bitters readymade coloring book pop-up quinoa cred post-ironic pork belly gastropub typewriter keffiyeh.</p>
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+{%- endcapture -%}{{placeholder_text}}<p>&nbsp;</p>

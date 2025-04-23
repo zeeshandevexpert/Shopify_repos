@@ -1,0 +1,123 @@
+.material-detail-top-section {
+    padding: 220px 0 88px 0;
+    background: var(--colorlightgray);
+}
+
+.material-detail-top-row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+.material-detail-top-left,.material-detail-about-top-right {
+	width:50%;
+}
+
+.material-detail-top-row h1, .material-detail-top-row h2 {
+	color:var(--colorlightblack);
+	font-size:60px;
+	line-height: 1.1em;
+	margin:0;
+	letter-spacing: -0.04em;
+}
+
+.material-detail-about-section {
+	padding:0 0 15px 0;
+}
+
+.material-detail-about-middle {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+	padding-bottom:54px;
+	border-bottom:1px solid #DAE4E7;
+}
+
+.material-detail-about-middle span {
+	color: #000;
+    display: inline-flex;
+    font-size: 14px;
+    line-height: 1em;
+    letter-spacing: 0.02em;
+    background: url(arrow-bottom.svg) center right no-repeat;
+    padding: 20px 18px 20px 0;
+	margin: 0 0 15px 0;
+}
+
+.material-detail-about-middle-left, .material-detail-about-middle-right {
+	width:50%;
+	position: relative;
+}
+
+.material-detail-about-middle-left:after, .material-detail-about-middle-right:after {
+	content:"";
+	position: absolute;
+	height:1px;
+	background:#DAE4E7;
+	left:0;
+	right:0;
+	top:50px;
+}
+
+.material-detail-about-middle-left .image-cover {
+	display:block;
+	width:437px;
+	height:437px;
+	border-radius: 50%;
+	overflow:hidden;
+}
+
+.material-detail-about-middle-left img {
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+
+.material-detail-about-middle-right p {
+	color:var(--colorlightblack);
+	font-size:14px;
+	line-height: 1.5em;
+	margin:0;
+}
+
+@media (max-width:991px) {
+	.material-detail-top-section {
+		padding:197px 0 52px 0;
+	}
+
+	.material-detail-top-row h1, .material-detail-top-row h2 {
+		font-size:45px;
+		line-height: 1em;
+		letter-spacing: -0.03em;
+	}
+
+	.material-detail-about-middle {
+		flex-wrap: wrap;
+		border-bottom: none;
+		padding-bottom: 65px;
+	}
+
+	.material-detail-about-middle-left:after, .material-detail-about-middle-right:after {
+		display:none;
+	}
+
+	.material-detail-about-middle-left, .material-detail-about-middle-right {
+		width:100%;
+	}
+
+	.material-detail-about-middle-left {
+		padding-bottom:44px;
+	}
+
+	.material-detail-about-middle span {
+		color:var(--colorlightblack);
+		margin: 0;
+	}
+
+	.material-detail-about-middle-left .image-cover {
+		width:345px;
+		height:345px;
+		margin: 0 auto;
+	}
+}

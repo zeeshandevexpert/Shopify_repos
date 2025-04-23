@@ -1,0 +1,16 @@
+.custom-form-wrapper .ace-cf-panel-default {
+  border-color: transparent !important;
+}
+
+.custom-form-wrapper .form-control {
+  box-shadow: initial !important;
+  border-radius: 0 !important;
+}
+
+.custom-form-wrapper .cf-btn {
+  border-radius: 0 !important;
+}
+
+body #PageContainer #MainContent .ace-cf-panel-body form + div {
+  display: none !important;
+}

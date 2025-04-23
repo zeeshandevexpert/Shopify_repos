@@ -1,0 +1,624 @@
+{
+  "sections": {
+    "b88cfcb9-bc07-4d7e-87ff-cd3fb8be3602": {
+      "type": "custom-slideshow",
+      "blocks": {
+        "slide_YjwRcq": {
+          "type": "slide",
+          "settings": {
+            "heading": "Red Gingham Hearts",
+            "image": "shopify:\/\/shop_images\/red-g-heart-desktop-banner.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/red-g-heart-mobile-banner.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/red-gingham-hearts",
+            "position": "bottom"
+          }
+        },
+        "slide_7CbfWg": {
+          "type": "slide",
+          "settings": {
+            "heading": "Sweet Berries",
+            "image": "shopify:\/\/shop_images\/Sweet_Berries-desktopbanner.png",
+            "image_mobile": "shopify:\/\/shop_images\/Sweet_Berries-mobilebanner.png",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/sweet-berries",
+            "position": "bottom"
+          }
+        },
+        "slide_aBThX3": {
+          "type": "slide",
+          "settings": {
+            "heading": "Lil Angel & Lil Devil",
+            "image": "shopify:\/\/shop_images\/AngelsAndDevils-desktopbanner.png",
+            "image_mobile": "shopify:\/\/shop_images\/AngelsAndDevils-mobilebanner_V2.png",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/lil-angel-lil-devil",
+            "position": "bottom"
+          }
+        },
+        "slide_PeWLK6": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Raspberry Polka",
+            "image": "shopify:\/\/shop_images\/Desktop.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Mobile.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/raspberry-polka-dot",
+            "position": "bottom"
+          }
+        },
+        "slide_VJwXUA": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Daisy Lynn",
+            "image": "shopify:\/\/shop_images\/daisy-lynn-floral-desktop.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/daisy-lynn-floral-mobile.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/daisy-lynn-floral",
+            "position": "bottom"
+          }
+        },
+        "slide_nFeiPc": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Bugs n' Berries",
+            "image": "shopify:\/\/shop_images\/Bugs-n-Berries-Desktop.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Bugs-n-Berries-Mobile.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/bugs-n-berries",
+            "position": "bottom"
+          }
+        },
+        "2338c694-256b-4d26-911b-5dd3d00a1b7b": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Dream Star",
+            "image": "shopify:\/\/shop_images\/DreamStar-desktopbanner.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/DreamStar-mobilebanner.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/dream-star",
+            "position": "bottom"
+          }
+        },
+        "1428ab0f-9888-4fd2-ad5c-c3f85b1c9962": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Emi Jay",
+            "image": "shopify:\/\/shop_images\/emijaycollab-desktopbanner_V2.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/emijaycollab-mobilebanner_V2.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/emi-jay-x-wildflower-cases",
+            "position": "bottom"
+          }
+        },
+        "1e466248-5699-4653-a545-50bf2bc438f5": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Ming Lee",
+            "image": "shopify:\/\/shop_images\/minglee-desktopbanner_93042cf0-435d-47e2-9202-7c18e736b196.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/minglee-mobilebanner.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/ming-lee-x-wildflower-cases",
+            "position": "bottom"
+          }
+        },
+        "template--15185035788336__b88cfcb9-bc07-4d7e-87ff-cd3fb8be3602-slide-2": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Lilac and Blue Floral",
+            "image": "shopify:\/\/shop_images\/wildflower-cases-LBFL-Lilac-Blue-Floral-dt.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/wildflower-cases-LBFL-Lilac-Blue-Floral-mb.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/lilac-blue-floral",
+            "position": "bottom"
+          }
+        },
+        "template--15185035788336__b88cfcb9-bc07-4d7e-87ff-cd3fb8be3602-slide-1": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Pink Bunnies",
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Pink-Bunnies-DT_80de2149-0b66-430e-a8f5-f6404665d2d4.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Wildflower-Cases-Pink-Bunnies-MB_7ee32e37-b33c-4a45-8d2e-0a69ef877413.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/pink-bunnies",
+            "position": "bottom"
+          }
+        },
+        "594761ba-7ac6-4ed7-966c-4cb14ce526e0": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "heading": "Cat Camo",
+            "image": "shopify:\/\/shop_images\/Wildflower-Cases-Cat-Camo-DT_c6813c70-b94e-4d76-8f09-17357e6a803f.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Wildflower-Cases-Cat-Camo-MB_facde177-c0ac-44c9-87db-76f98dc3eeef.jpg",
+            "title": "",
+            "call_to_action": "Shop Now",
+            "url": "shopify:\/\/collections\/cat-camo",
+            "position": "bottom"
+          }
+        }
+      },
+      "block_order": [
+        "slide_YjwRcq",
+        "slide_7CbfWg",
+        "slide_aBThX3",
+        "slide_PeWLK6",
+        "slide_VJwXUA",
+        "slide_nFeiPc",
+        "2338c694-256b-4d26-911b-5dd3d00a1b7b",
+        "1428ab0f-9888-4fd2-ad5c-c3f85b1c9962",
+        "1e466248-5699-4653-a545-50bf2bc438f5",
+        "template--15185035788336__b88cfcb9-bc07-4d7e-87ff-cd3fb8be3602-slide-2",
+        "template--15185035788336__b88cfcb9-bc07-4d7e-87ff-cd3fb8be3602-slide-1",
+        "594761ba-7ac6-4ed7-966c-4cb14ce526e0"
+      ],
+      "settings": {
+        "autoplay_enabled": true,
+        "autoplay_delay": 4000
+      }
+    },
+    "1663015232c6c326ba": {
+      "type": "image-banner",
+      "blocks": {
+        "cf337913-f4b2-410e-b970-8ac539801778": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
+        "70e75976-dc6e-400c-8cf2-e3b73bd24eab": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "1663015231924546c5-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/ice-skates",
+            "button_style_secondary_1": false
+          }
+        }
+      },
+      "block_order": [
+        "cf337913-f4b2-410e-b970-8ac539801778",
+        "70e75976-dc6e-400c-8cf2-e3b73bd24eab",
+        "1663015231924546c5-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/Ice-Skates-Website-desktop-banner.jpg",
+        "image_mobile": "shopify://shop_images/Ice-Skates-Website-mobile-banner.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "bottom-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "light",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "7be17f42-c8d1-4d48-bcfd-212007536a8d": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Drops",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-releases",
+        "products_to_show": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "choose_size": true,
+        "view_all_style": "solid",
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "show_secondary_image": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "31e819db-006b-418b-a586-6443020d9134": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14961327702064__31e819db-006b-418b-a586-6443020d9134-1666795464d2b05515-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Featured Collabs</p>",
+            "heading_size": "h1"
+          }
+        },
+        "template--14961327702064__31e819db-006b-418b-a586-6443020d9134-1666795464d2b05515-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop our latest collaboration with @mingleesimmons. <br/>      </p>"
+          }
+        },
+        "template--14961327702064__31e819db-006b-418b-a586-6443020d9134-1666795464d2b05515-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "https://www.wildflowercases.com/pages/collabs",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14961327702064__31e819db-006b-418b-a586-6443020d9134-1666795464d2b05515-0",
+        "template--14961327702064__31e819db-006b-418b-a586-6443020d9134-1666795464d2b05515-1",
+        "template--14961327702064__31e819db-006b-418b-a586-6443020d9134-1666795464d2b05515-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "9f32aedd-8037-43eb-9afc-7f5b2f297767": {
+      "type": "featured-row",
+      "blocks": {
+        "223bb083-1ae3-4bf4-8f25-827c687c53c0": {
+          "type": "video",
+          "disabled": true,
+          "settings": {
+            "heading": "Emi Jay",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/1f8321073ea64940abccdcb070d99a77.mp4",
+            "image": "shopify://shop_images/Wildflower-Cases-Emi-Jay-Brown-Floral-Image-02_e7af85c6-723c-4e02-8278-f46703d9f2a2.jpg",
+            "link": "shopify://collections/emi-jay-x-wildflower-cases"
+          }
+        },
+        "54251bfc-a75e-41b5-a1b9-6d1fd727f554": {
+          "type": "video",
+          "settings": {
+            "heading": "Ming Lee",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/2187acc760c545d48ae01186d0563718.mp4",
+            "image": "shopify://shop_images/wildflower-cases-ming-lee-collab-main-image-01.jpg",
+            "link": "shopify://collections/ming-lee-x-wildflower-cases"
+          }
+        },
+        "5d944856-8c45-4da1-8851-1cb54e249498": {
+          "type": "video",
+          "settings": {
+            "heading": "Nessa Barrett",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/1d7a32836c37410e945ca0ec5f04917b.mp4",
+            "image": "shopify://shop_images/wildflower-cases-nessa-barrett-collab-main-image-01.jpg",
+            "link": "shopify://collections/nessa-barrett-x-wildflower-cases"
+          }
+        },
+        "38e7401d-a15e-477e-aecd-d1dd4ae990a7": {
+          "type": "video",
+          "settings": {
+            "heading": "Taylor Giavasis",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/aabb5cca361f4646af12f84d282cd5ee.mp4",
+            "image": "shopify://shop_images/Wildflower-Cases-Taylor-Giavasis-Collab-Hover-01_25cf0350-00f4-4ef6-b486-c20d98079b4a.jpg",
+            "link": "shopify://collections/taylor-giavasis-x-wildflower-cases"
+          }
+        },
+        "c56230e5-0eaa-43ce-b92d-bde44f27ed2e": {
+          "type": "video",
+          "settings": {
+            "heading": "Caroline Ricke",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/5b6e13ee3b02456b93be80239e10ae94.mp4",
+            "image": "shopify://shop_images/Wildflower-Cases-Caroline-Collab-Cover-Image-05_753dfeed-afd3-463f-8744-0a2ef256518f.jpg",
+            "link": "shopify://collections/caroline-ricke-x-wildflower-cases"
+          }
+        },
+        "34177352-076b-41e0-9dea-6be348e0b6fa": {
+          "type": "video",
+          "settings": {
+            "heading": "Bretman Rock",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/3d833eb9a0d2410fb654a26eb65a5eb1.mp4",
+            "image": "shopify://shop_images/Wildflower-Cases-Bretman-Rock-02_91dca53e-38e0-43f4-bc84-6cd296efa1e7.jpg",
+            "link": "shopify://collections/bretman-rock-x-wildflower-cases"
+          }
+        },
+        "f65f1b20-3b2c-4dab-8295-d304d0d6a75b": {
+          "type": "video",
+          "settings": {
+            "heading": "Enya Umanzor",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/a826ecf678a94982be5d87e3e6e7f263.mp4",
+            "image": "shopify://shop_images/Wildflower-Cases-Enya-Page-Image-01.jpg",
+            "link": "#"
+          }
+        },
+        "49d5340d-083c-4ff6-b91f-fdd2db72a99d": {
+          "type": "video",
+          "settings": {
+            "heading": "Nailea Devora",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/0e4a46d163d84711a3cca314787adcbd.mp4",
+            "image": "shopify://shop_images/Wildflower-Cases-Nailea-Devora-Collab-Cover-01_8791901e-e9f8-4711-b2cb-7e0fdef080ff.jpg",
+            "link": "shopify://collections/nailea-devora-x-wildflower-cases"
+          }
+        },
+        "f03aec5f-551c-4b4e-a755-c76fa83140a5": {
+          "type": "video",
+          "settings": {
+            "heading": "Olivia O' Brien",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/cc748b4dcfbb4d75854e2478a52940c0.mp4",
+            "image": "shopify://shop_images/Olivia-Wildflower-Collab-Image-01_b3e83faa-f9bf-4f29-8a90-fc028deac31d.jpg",
+            "link": "shopify://collections/olivia-obrien-x-wildflower-cases"
+          }
+        },
+        "e6da2955-610b-48d4-9de5-2a338448f974": {
+          "type": "video",
+          "settings": {
+            "heading": "Salem Mitchell",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/34efe9deb94e4c45927ad5f664f57ace.mp4",
+            "image": "shopify://shop_images/Salem-Mitchell-Collab-Page-Wildflower-Image-01_f70beb62-9767-4679-939d-e1e9ef6b8e19.jpg",
+            "link": "shopify://collections/salem-mitchell-x-wildflower-cases"
+          }
+        }
+      },
+      "block_order": [
+        "223bb083-1ae3-4bf4-8f25-827c687c53c0",
+        "54251bfc-a75e-41b5-a1b9-6d1fd727f554",
+        "5d944856-8c45-4da1-8851-1cb54e249498",
+        "38e7401d-a15e-477e-aecd-d1dd4ae990a7",
+        "c56230e5-0eaa-43ce-b92d-bde44f27ed2e",
+        "34177352-076b-41e0-9dea-6be348e0b6fa",
+        "f65f1b20-3b2c-4dab-8295-d304d0d6a75b",
+        "49d5340d-083c-4ff6-b91f-fdd2db72a99d",
+        "f03aec5f-551c-4b4e-a755-c76fa83140a5",
+        "e6da2955-610b-48d4-9de5-2a338448f974"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "columns_desktop": 3,
+        "full_width": true,
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 12,
+        "padding_bottom": 60
+      }
+    },
+    "6b76d0b3-56c6-49e5-9009-544ae1e7a52b": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop Our Collabs",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "wildflower-collab-collection",
+        "products_to_show": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "choose_size": true,
+        "view_all_style": "solid",
+        "color_scheme": "background-1",
+        "image_ratio": "portrait",
+        "show_secondary_image": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1663081900b6a3bfb6": {
+      "type": "rich-text",
+      "blocks": {
+        "166308190082f270df-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Express your selfie with limited edition designs by Devon Lee, Sydney and Michelle Carlson</p>",
+            "heading_size": "h1"
+          }
+        },
+        "166308190082f270df-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "READ MORE ABOUT OUR FOUNDERS",
+            "button_link": "shopify://pages/our-founders",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "166308190082f270df-0",
+        "166308190082f270df-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-2",
+        "full_width": true,
+        "padding_top": 32,
+        "padding_bottom": 64
+      }
+    },
+    "d3019d53-e49d-4535-a174-74069f40c382": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Sale Up to 70% Off",
+        "heading_size": "h1",
+        "description": "<p>While we have inventory then they're gone for good!</p>",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "sale",
+        "products_to_show": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "choose_size": true,
+        "view_all_style": "solid",
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "166308102970c3c238": {
+      "type": "foursixty",
+      "blocks": {
+        "fb867795-3d75-4f7b-82ae-11c9afcd1b6a": {
+          "type": "title",
+          "settings": {
+            "title": "Post & tag @wildflowercases"
+          }
+        },
+        "4ec8037d-eb27-4b5a-bde4-57bf6185ac2c": {
+          "type": "paragraph",
+          "settings": {
+            "title": "<p>on Instagram. We see every single post!</p>"
+          }
+        },
+        "34a3f2fb-0373-48ab-b565-497b7994af70": {
+          "type": "feed",
+          "disabled": true,
+          "settings": {
+            "feed_id": "wildflower-cases",
+            "total_images": 10,
+            "big_first_image": false,
+            "per_row": 5,
+            "image_margin": 5,
+            "feed_type": "slider"
+          }
+        },
+        "40e3cc29-109b-4e31-b5e4-20541c149572": {
+          "type": "embed_code",
+          "settings": {
+            "feed_script": "<div class=\"fssscript\"><script src=\"//foursixty.com/media/scripts/fs.slider.v2.5.js\" data-feed-id=\"wildflower-cases\" data-theme=\"slider_v2_5\" data-show-okendo-stars=\"true\" data-cell-size=\"20%\"></script></div>\n<style>.fs-has-links::after { padding:5px 7.5px;background-color:#ffffff;color:rgba(0, 0, 0, 0.8);content:\"SHOP IT\"; } .fs-wrapper { height:auto; } .fs-slider_v2_5  .fs-entry-container { height:0 !important;width:20%!important;padding-top:30%!important; } .fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title { font-family:Times New Roman, serif;font-style:normal;font-weight:normal;font-size:14px; } div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text { font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:normal;font-size:14px; } .fs-slider-next-button, .fs-slider-prev-button { opacity:1; background-color: transparent; } .fs-wrapper div.fs-text-container * { color:#ffffff; } .fs-wrapper div.fs-text-container { background-color:rgba(0, 0, 0, 0.8);margin:0px; } div.fs-entry-date { display:none; } div.fs-entry-title { display:none; } .fs-slider_v2_5 .fs-wrapper div.fs-timeline-entry { margin:7px; }  .fs-wrapper { margin:auto; width: calc(100% - 120px) }  \n.fs-slider-next-button .fs-arrow, .fs-slider-prev-button .fs-arrow { stroke: #000; stroke-width: 3px; }\n@media only screen and (max-width: 768px) {\n        .fs-timeline { max-width: calc(100% - 60px); margin: auto; }\n        .fs-wrapper { width: auto !important; } \n        .fs-slider-next-button, .fs-slider-prev-button { opacity: 1 !important; min-width: 30px; display: flex !important; background-color: transparent;}\n        .fssscript .fs-wrapper div.fs-entry-container { height: 0; width: 75% !important; padding-top: 65% !important; } }\n.fs-slider-next-button, .fs-slider-prev-button { z-index:1 }\n@media only screen and (max-width: 768px) {\n        .fs-timeline { max-width: calc(100% - 60px); margin: auto; }\n        .fs-wrapper { width: auto !important; } \n        .fs-slider-next-button, .fs-slider-prev-button { opacity: 1 !important; min-width: 30px; display: flex !important; background-color: transparent;}\n        .fssscript .fs-wrapper div.fs-entry-container { height: 0; width: 75% !important; padding-top: 65% !important; } }\n</style>"
+          }
+        }
+      },
+      "block_order": [
+        "fb867795-3d75-4f7b-82ae-11c9afcd1b6a",
+        "4ec8037d-eb27-4b5a-bde4-57bf6185ac2c",
+        "34a3f2fb-0373-48ab-b565-497b7994af70",
+        "40e3cc29-109b-4e31-b5e4-20541c149572"
+      ],
+      "settings": {
+        "width": "page-width",
+        "padding_top": 25,
+        "padding_bottom": 35,
+        "margins": 6,
+        "border_top": false,
+        "text_align": "center"
+      }
+    },
+    "16630177491ebece6a": {
+      "type": "multicolumn",
+      "blocks": {
+        "1663017749d0e8303f-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Wildflower-Female-Owned-Icon.png",
+            "title": "Female Owned",
+            "text": "<p>Founded and operated by Michelle Carlson and her two daughters, Devon and Sydney Carlson.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663017749d0e8303f-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Wildflower-Protective-Icon.png",
+            "title": "Cute & Protective",
+            "text": "<p>Our limited edition iPhone cases are not only perfect for selfies, but it's protective too.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "1663017749d0e8303f-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Wildflower-Shipping-Icon.png",
+            "title": "Free Shipping on US Orders $50+",
+            "text": "<p>Just $2.95 shipping on all US orders less than $50. International Shipping options available.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663017749d0e8303f-0",
+        "1663017749d0e8303f-1",
+        "1663017749d0e8303f-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "no_padding": false,
+        "image_width": "sixth",
+        "image_ratio": "circle",
+        "columns_desktop": 3,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3f551571-e36f-47f7-87a3-cdbe1d4a2789": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "On The Blog",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "background-2",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "b88cfcb9-bc07-4d7e-87ff-cd3fb8be3602",
+    "1663015232c6c326ba",
+    "7be17f42-c8d1-4d48-bcfd-212007536a8d",
+    "31e819db-006b-418b-a586-6443020d9134",
+    "9f32aedd-8037-43eb-9afc-7f5b2f297767",
+    "6b76d0b3-56c6-49e5-9009-544ae1e7a52b",
+    "1663081900b6a3bfb6",
+    "d3019d53-e49d-4535-a174-74069f40c382",
+    "166308102970c3c238",
+    "16630177491ebece6a",
+    "3f551571-e36f-47f7-87a3-cdbe1d4a2789"
+  ]
+}

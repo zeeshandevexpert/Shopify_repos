@@ -1,0 +1,464 @@
+{% render 'hs-defer-css' with filename: 'template-collection.css', pages: 'collection,index,product' | split: ',', local: true %}
+{% render 'hs-defer-css' with filename: 'component-loading-overlay.css', pages: 'collection,index,product' | split: ',', local: true %}
+{% render 'hs-defer-css' with filename: 'component-card.css', pages: 'collection,index,product' | split: ',', local: true %}
+{% render 'hs-defer-css' with filename: 'component-price.css', pages: 'collection,index,product' | split: ',', local: true %}
+{{ 'ajaxinate.min.js' | asset_url | script_tag }}
+
+{%- liquid
+   if section.settings.collection_override != blank
+     assign collection = section.settings.collection_override
+   endif
+-%}
+
+{%- if section.settings.enable_quick_add -%}
+  <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
+  <script defer src="{{ 'quick-add.js' | asset_url }}"></script>
+  <script defer src="{{ 'product-form.js' | asset_url }}"></script>
+{%- endif -%}
+<noscript>{% render 'hs-defer-css' with filename: 'component-rte.css', pages: 'collection,index,product' | split: ',', local: true %}</noscript>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  if section.settings.button_style == "choose_size"
+    assign pick_size = true
+  else
+    assign pick_size = false
+  endif
+
+  assign products_per_page = 25
+
+  assign total_products = collection.products_count
+
+  if pick_size == true
+    assign total_products = 0
+
+    assign product_styles = ''
+
+    assign products_per_page = products_per_page | minus: 1
+
+    for product in collection.products
+      assign product_style = product.title | split: 'iPhone' | first | handle
+
+      if product_styles contains product_style
+        assign products_per_page = products_per_page | minus: 1
+      else
+        if product_styles != ''
+          assign product_styles = product_styles | append: ',' | append: product_style
+        else
+          assign product_styles = product_style
+        endif
+      endif
+    endfor
+
+    assign products_per_page = product_styles | split: ',' | size
+
+    assign total_products = products_per_page
+  endif
+
+  for block in section.blocks
+    if block.type == 'marketing_tile'
+      assign tile_value = block.settings.tile_size | remove: 'x' | plus: 0
+
+      if pick_size
+        assign products_per_page = products_per_page | plus: tile_value
+      else
+        assign products_per_page = products_per_page | minus: tile_value
+      endif
+    endif
+  endfor
+-%}
+
+
+<div class="section-{{ section.id }}-padding">
+  {%- liquid
+    assign shop_by_size = section.settings.shop_by_size
+
+    if shop_by_size
+      render 'collection-shop-by-size'
+    endif
+  -%}
+
+  <div class="product-grid-container" id="ProductGridContainer">
+    {%- paginate collection.products by products_per_page -%}
+      {%- if collection.products.size == 0 -%}
+        <div class="collection collection--empty page-width small-full-width" id="product-grid" data-id="{{ section.id }}">
+          <div class="loading-overlay gradient"></div>
+          <div class="title-wrapper center">
+            <h2 class="title title--primary">
+              {{ 'sections.collection_template.empty' | t }}<br>
+              {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+            </h2>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width small-full-width{% endif %}" data-total-products="{{ collection.products.size }}">
+          <div class="loading-overlay gradient"></div>
+
+          {% assign myIndex = 1 %}
+
+          <ul id="product-grid" data-id="{{ section.id }}" class="
+            grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+            grid--{{ section.settings.columns_desktop }}-col-desktop">
+            {%- assign product_styles = "" | split: "" %}
+
+            {%- for product in collection.products -%}
+              {%- liquid
+                assign product_style = product.title | split: "iPhone" | first | strip
+
+                assign lazy_load = false
+
+                if forloop.index > 3
+                  assign lazy_load = true
+                endif
+
+                if product.tags contains 'hidden' or product.type == 'hidden' or product.tags contains 'hide_from_collections'
+                  continue
+                endif
+
+                assign same_style = false
+
+                for style in product_styles
+                  if style == product_style
+                    assign same_style = true
+                    break
+                  endif
+                endfor
+
+                if same_style
+                  continue
+                endif
+
+                if pick_size == true
+                  assign product_style_handle = product_style | split: "-<-@"
+                  assign product_styles = product_styles | concat: product_style_handle
+                endif
+
+                assign myIndex = myIndex | plus: 1
+              -%}
+
+              <li class="grid__item">
+                {% render 'card-product',
+                  card_product: product,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  show_secondary_image: section.settings.show_secondary_image,
+                  show_rating: section.settings.show_rating,
+                  lazy_load: lazy_load,
+                  show_quick_add: section.settings.enable_quick_add,
+                  section_id: section.id,
+                  choose_size: pick_size
+                %}
+              </li>
+
+              {%- liquid
+                for block in section.blocks
+                  assign block_position = block.settings.position | plus: 0
+
+                  if block_position == myIndex
+                    render 'card-marketing-tile', block: block, media_size: section.settings.image_ratio
+                    assign myIndex = myIndex | plus: 1
+                  endif
+                endfor
+              -%}
+            {%- endfor -%}
+          </ul>
+
+          {%- unless template contains "collab" -%}
+            {%- if paginate.pages > 1 and collection.products_count > products_per_page -%}
+              {% render 'pagination', paginate: paginate, anchor: '' %}
+            {%- endif -%}
+          {%- endunless -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</div>
+
+<script>
+  const totalGridItems = document.querySelectorAll('#product-grid .grid__item').length;
+
+  if (totalGridItems < 3) {
+    document.getElementById('product-grid').classList.add('product-grid--centered')
+  }
+</script>
+
+{%- render 'seo-text', text: collection.metafields.seo.text -%}
+
+<script>
+const endlessCollection = new Ajaxinate({
+container: '#product-grid',
+pagination: '.infinite_next',
+});
+</script>
+
+{% schema %}
+  {
+    "name": "t:sections.main-collection-product-grid.name",
+    "class": "section",
+    "settings": [
+      {
+        "type": "collection",
+        "id": "collection_override",
+        "label": "Collection"
+      },
+      {
+        "type": "range",
+        "id": "columns_desktop",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "default": 4,
+        "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.main-collection-product-grid.settings.header__3.content"
+      },
+      {
+        "type": "select",
+        "id": "image_ratio",
+        "options": [
+          {
+            "value": "adapt",
+            "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+          },
+          {
+            "value": "portrait",
+            "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+          },
+          {
+            "value": "square",
+            "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+          }
+        ],
+        "default": "adapt",
+        "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_secondary_image",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_rating",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+        "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_quick_add",
+        "default": false,
+        "label": "t:sections.main-collection-product-grid.settings.enable_quick_buy.label"
+      },
+      {
+        "type": "select",
+        "id": "button_style",
+        "options": [
+          {
+            "value": "choose_size",
+            "label": "Choose size"
+          },
+          {
+            "value": "add_to_cart",
+            "label": "Add to cart"
+          }
+        ],
+        "default": "add_to_cart",
+        "label": "Button style"
+      },
+      {
+        "type": "checkbox",
+        "id": "shop_by_size",
+        "default": true,
+        "label": "Shop by size"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
+      },
+      {
+        "type": "select",
+        "id": "columns_mobile",
+        "default": "2",
+        "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
+        "options": [
+          {
+            "value": "1",
+            "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
+          },
+          {
+            "value": "2",
+            "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }
+    ],
+    "blocks": [
+      {
+        "type": "marketing_tile",
+        "name": "Marketing Tile",
+        "settings": [
+          {
+            "type": "select",
+            "id": "tile_size",
+            "default": "1x",
+            "label": "Tile size",
+            "options": [
+              {
+                "value": "1x",
+                "label": "1x"
+              },
+              {
+                "value": "2x",
+                "label": "2x"
+              },
+              {
+                "value": "full-width",
+                "label": "Full width"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "range",
+            "id": "position",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "label": "Position",
+            "default": 5
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading"
+          },
+          {
+            "type": "richtext",
+            "id": "paragraph",
+            "label": "Paragraph"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text"
+          },
+          {
+            "type": "checkbox",
+            "id": "hide_text_mobile",
+            "label": "Hide text on mobile",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "quote_tile",
+        "name": "Quote Tile",
+        "settings": [
+          {
+            "type": "select",
+            "id": "tile_size",
+            "default": "1x",
+            "label": "Tile size",
+            "options": [
+              {
+                "value": "1x",
+                "label": "1x"
+              },
+              {
+                "value": "2x",
+                "label": "2x"
+              },
+              {
+                "value": "full-width",
+                "label": "Full width"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "range",
+            "id": "position",
+            "min": 0,
+            "max": 24,
+            "step": 1,
+            "label": "Position",
+            "default": 5
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "quote"
+          },
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Product grid"
+      }
+    ]
+  }
+{% endschema %}

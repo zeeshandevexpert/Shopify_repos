@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "1656623928ae705075": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default",
+        "sticky_header": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "settings": {
+      }
+    },
+    "main_product_section_ELkKLk": {
+      "type": "main-product-section",
+      "blocks": {
+        "two_column_BhTpz4": {
+          "type": "two-column",
+          "settings": {
+            "reverse": false,
+            "image": "{{ product.metafields.custom.product_image_1.value }}",
+            "title": "{{ product.metafields.custom.product_heading_1.value }}",
+            "description": "<p><\/p>{{ product.metafields.custom.product_description_1 | metafield_tag }}",
+            "media_type": "image",
+            "image_normal": "{{ product.metafields.custom.product_image_1.value }}",
+            "image_mobile": "{{ product.metafields.custom.product_image_1.value }}",
+            "vimeo_youtube_video": "",
+            "video_file": ""
+          }
+        },
+        "two_column_J8KeHk": {
+          "type": "two-column",
+          "settings": {
+            "reverse": true,
+            "image": "{{ product.metafields.custom.product_image_2.value }}",
+            "title": "{{ product.metafields.custom.product_heading_2.value }}",
+            "powered_image": "{{ product.metafields.custom.product_heading_image_2.value }}",
+            "description": "{{ product.metafields.custom.product_description_2 | metafield_tag }}",
+            "media_type": "video_file",
+            "image_normal": "{{ product.metafields.custom.product_image_2.value }}",
+            "image_mobile": "{{ product.metafields.custom.product_image_2.value }}",
+            "vimeo_youtube_video": "",
+            "video_file": "{{ product.metafields.custom.product_image_2_link.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "two_column_BhTpz4",
+        "two_column_J8KeHk"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "1656623928ae705075",
+    "main",
+    "main_product_section_ELkKLk"
+  ]
+}

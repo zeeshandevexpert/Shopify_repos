@@ -1,0 +1,26 @@
+.logo-slider {
+    background-color: $green;
+    .title{
+        font-family: $karla;
+        font-size: 21px;
+        font-weight: bold;
+        margin: 10px 0px;
+        padding: 0 15px;
+       text-transform: uppercase;
+       color: $whitealt;
+       border-left: 2px solid $whitealt;
+       border-right: 2px solid $whitealt;
+       @media (max-width:576px) {
+        font-size: 15px;
+    }
+    }
+    .logo{
+        padding: 30px 50px;
+    }
+}
+
+.logo-slider {
+    // padding: 20px 0;
+    overflow: hidden; /* Ensures smooth marquee scrolling stays within bounds */
+
+}

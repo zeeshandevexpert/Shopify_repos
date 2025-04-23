@@ -1,0 +1,53 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "content_width": 80,
+        "pagelist": "",
+        "page_sidebar_title": "Page sidebar title"
+      }
+    },
+    "featured_collection_all_peQL3Y": {
+      "type": "featured-collection-all",
+      "settings": {
+        "collection": "beams",
+        "featured_product": "old-growth-french-oak-beams",
+        "show_all": false,
+        "show_more_text": "View all",
+        "carousel": false,
+        "grid": 4,
+        "products_shown": 30
+      }
+    },
+    "featured_collection_all_dQ3gVb": {
+      "type": "featured-collection-all",
+      "settings": {
+        "collection": "lumber",
+        "featured_product": "reclaimed-french-oak-lumber-copy",
+        "show_all": false,
+        "show_more_text": "View all",
+        "carousel": false,
+        "grid": 4,
+        "products_shown": 30
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main",
+    "featured_collection_all_peQL3Y",
+    "featured_collection_all_dQ3gVb"
+  ]
+}

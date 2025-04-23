@@ -1,0 +1,73 @@
+{%- layout none -%}
+{%- paginate search.results by 250 -%}
+{%- assign current_page = 1 -%}
+{%- if pagination.current_page != blank -%}
+{%- assign current_page = pagination.current_page -%}
+{%- endif -%}
+{{- search.results | json -}}
+{%- comment -%}
+<div data-total-products="{{search.results_count}}">
+  <div class="page-width" id="Collection" data-collection-title="{{collection.title}}"  {% if collection.image %}data-collection-image="{{ collection.image | img_url: 'master' }}"{% endif %}>
+      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+        
+        <div id="collection-grid" class="grid grid--uniform grid--half-gutters flex flex--wrap products" data-current-page="{{ current_page }}" data-total-pages="{{ paginate.pages }}" data-current-page-url="/collections/{{ collection.handle }}/{{ current_tags | join:'+' }}?page={{ current_page }}"  data-collection-handle="{{collection.handle}}">
+          
+         
+        {% for product in search.results %}   
+          
+          
+          {% assign date = false %}
+          
+          {% for tag in product.tags %}
+          {% if tag contains 'ETA:' %}	
+          {% assign date = tag | remove: 'ETA:' | strip %}
+          {% endif %}
+          {% endfor %}
+
+          
+          {% if product.available %}
+          
+          {% assign my_sizes = '' %}
+          {% assign vals = '' %}
+          {% assign my_sizes_full = '' %}
+          
+          {% assign available = true %}
+          
+          {% if current_tags.size > 0 %}
+           
+          	{% assign checks_balance = '' %}
+          
+          {% endif %}
+          
+
+          {% if available == true %}
+          <div id="product-card-{{ product.id }}" class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {% if hide_me %}hide-me{% endif %}" {% if hide_me %}style="display:none;"{% endif %}>
+            <div class="checks-balances"><small>{{checks_balances}}</small></div>
+            {% include 'product-card-grid', product: product %}
+			{% if date %}
+          	{% include 'presale-clock', date: date %}
+            {% endif %}
+          </div>
+          {% endif %}
+          	
+          
+          {% endif %}
+        {% endfor %}
+          
+      </div>
+
+
+    {% include 'pagination' %}
+
+    <div class="small--text-center none-available--wrapper" style="display: none;">
+      <div class="index-section">
+        <h3 class="text-center none-available">Sorry there are no in-stock products with these settings.<br><small>Please adjust the filters or <a href="/collections/{{collection.handle}}">Start Over</a></small></h3>
+      </div>
+    </div>   
+    
+  </div>
+  
+</div>
+{%- endcomment -%}
+{%- endpaginate -%}
+

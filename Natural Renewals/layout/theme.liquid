@@ -1,0 +1,292 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+  <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ settings.favicon_image | img_url: "32x32" }}" />
+
+    {% if template == 'index' %}
+      <title>{{ shop.name }} | {{ page_title }}</title>
+    {% elsif template == '404' %}
+      <title>Page Not Found | {{ shop.name }}</title>
+    {% else %}
+      <title>{{ page_title }} | {{ shop.name }}</title>
+    {% endif %}
+
+    {{ 'custom-style.css' | asset_url | stylesheet_tag }}
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description }}" />
+    {% endif %}
+
+    {{ content_for_header }}
+    {% include 'ets_cf_assets' %}
+
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="{{ 'fonts.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    {% if page.template_suffix == 'process' %}
+
+    {% comment %} <style>
+        header.sticky-header{
+            padding-top: 50px;
+        }
+    </style> {% endcomment %}
+    {% endif %}
+  </head>
+
+  <body>
+    {% if template.name != 'cart' %}
+      {% include "small-cart-modal" %}
+    {% endif %}
+
+    {% include "search-modal" %}
+
+    {% assign show_dark_skin = 0 %} 
+    {% if template.name == 'article' and blog.handle != 'materials' %}
+      {% assign show_dark_skin = 1 %}
+    {% endif %}
+
+    <header class="{% if template.name == 'blog' or show_dark_skin == 1 or page.template_suffix == 'press' or page.template_suffix == 'experiments' %}header-dark-skin{% else %}header-light-skin{% endif %}">
+      {% section 'header' %}
+    </header>
+
+    <link rel="stylesheet" href="{{ 'swiper-bundle.css' | asset_url }}" />
+
+    {% if page.template_suffix == 'legal' %}<link rel="stylesheet" href="{{ 'style-legal.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'search' %}<link rel="stylesheet" href="{{ 'style-search.css' | asset_url }}" />{% endif %}
+    {% if template contains 'cycora-lab' %} <link rel="stylesheet" href="{{ 'style-index.css' | asset_url }}" />{% endif %}
+
+
+      {% if template == 'index' %}
+    <link rel="stylesheet" href="{{ 'style-index.css' | asset_url }}" />
+    <link rel="stylesheet" href="{{ 'newsletter-index.css' | asset_url }}" />
+<style>
+
+        #shopify-section-header{
+          max-width: 1920px;
+          padding: 0 50px;
+        }
+
+        @media (max-width:1720px) {
+          .container-style{
+            padding: 0 100px !important;
+          }
+        }
+        @media (max-width:991px) {
+          .container-style{
+            padding: 0 50px !important;
+          }
+        }
+        @media (max-width:576px) {
+          .container-style{
+            padding: 0 20px !important;
+          }
+        }
+
+
+</style>
+
+
+<div id="newsletter" class="newsletter-content-wrap-stick">
+  <h2>{{ settings.news_title }} <div class="close-icon" onclick="closeDiv()"><img src="{{ "close-icon.svg" | asset_url }}" /></div> </h2>
+  {{ settings.email_subscribe_code }}
+</div>
+
+<script>
+  window.onload = function() {
+    // Get the reference to the div
+    var myDiv = document.getElementById('newsletter');
+    
+    // Show the div by changing its style.display property
+
+    setTimeout(function() {
+      // Set the opacity to 1 after the delay (fully visible)
+      myDiv.style.opacity = 1;
+    }, 2000); // 2000 milliseconds = 2 seconds
+
+  };
+
+
+  function closeDiv() {
+    var myDiv = document.getElementById('newsletter');
+    myDiv.style.opacity = 0;
+    // Optionally, you can set display to none if you want it completely hidden
+    // myDiv.style.display = 'none';
+  }
+
+
+</script>
+
+  {% endif %}
+    {% if page.template_suffix == 'how-we-work' %}<link rel="stylesheet" href="{{ 'style-technology.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'process' %}<link rel="stylesheet" href="{{ 'style-process.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'resources' %}<link rel="stylesheet" href="{{ 'style-resources.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'collection' %}<link rel="stylesheet" href="{{ 'style-materials.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'schedule' %}<link rel="stylesheet" href="{{ 'style-schedule.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'overview' %}<link rel="stylesheet" href="{{ 'style-overview.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'experiments' %}<link rel="stylesheet" href="{{ 'style-experiments.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'support' %}<link rel="stylesheet" href="{{ 'style-support.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'blogs' or template.name == 'blog' or template.name == 'article' %}
+      {% if blog.handle == 'materials' %}<link rel="stylesheet" href="{{ 'style-material-detail.css' | asset_url }}" />{% endif %}
+      {% if blog.handle == 'news' %}<link rel="stylesheet" href="{{ 'style-blog.css' | asset_url }}" /><link rel="stylesheet" href="{{ 'style-article.css' | asset_url }}" />{% endif %}
+      {% if blog.handle == 'zine' %}<link rel="stylesheet" href="{{ 'style-blog.css' | asset_url }}" /><link rel="stylesheet" href="{{ 'style-article.css' | asset_url }}" />{% endif %}
+    {% endif %}
+    {% if template.name == 'product' %}<link rel="stylesheet" href="{{ 'style-product.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'cart' %}<link rel="stylesheet" href="{{ 'style-cart.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'login' %}<link rel="stylesheet" href="{{ 'style-login.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'register' %}<link rel="stylesheet" href="{{ 'style-signup.css' | asset_url }}" />{% endif %}
+    {% if template.name == 'account' %}<link rel="stylesheet" href="{{ 'style-account.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'contact' %}<link rel="stylesheet" href="{{ 'style-contact.css' | asset_url }}" />{% endif %}
+    {% if page.template_suffix == 'press' %}<link rel="stylesheet" href="{{ 'style-press.css' | asset_url }}" />{% endif %}
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+    <main>
+      {% if request.path == '/challenge' %}
+        {% include 'challenge' %}
+      {% else %}
+        {% if page.template_suffix == 'how-we-work' %}
+          <div class="gradients-contain">
+            <span class="gradient-top"></span>
+            <span class="gradient-middle"></span>
+            <span class="gradient-bottom"></span>
+            {{ content_for_layout }}
+          </div>
+          {% section "how-we-work-template" %}
+          {% section "related-products" %}
+        {% else %}
+          {{ content_for_layout }}
+        {% endif %}
+      {% endif %}
+    </main>
+
+    {% if page.template_suffix == 'process' %} 
+
+    {% else %}
+    {% section 'footer' %}
+    
+    {% endif %}
+
+    {{ 'swiper-bundle.min.js' | asset_url | script_tag }}
+
+    {{ 'lazysizes.min.js' | asset_url | script_tag }}
+    {{ 'script-cart.js' | asset_url | script_tag }}
+    {{ 'main.js' | asset_url | script_tag }}
+
+    {% if template.name == 'search' %}
+      {{ 'script-search.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if template.name == 'index' %}
+      {{ 'script-index.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if template.name == 'collection' %}
+      {% if collection.handle == 'materials' %}
+        {{ 'script-materials.js' | asset_url | script_tag }}
+      {% else %}
+        {{ 'script-collection.js' | asset_url | script_tag }}
+      {% endif %}
+    {% endif %}
+    {% if page.template_suffix == 'overview' %}
+      {{ 'script-overview.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if page.template_suffix == 'support' %}
+      {{ 'script-support.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if template.name == 'product' %}
+      {{ 'script-product.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if template.name == 'account' %}
+      {{ 'script-account.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if page.template_suffix == 'press' %}
+      {{ 'colcade.js' | asset_url | script_tag }}
+      {{ 'script-press.js' | asset_url | script_tag }}
+    {% endif %}
+    {% if page.template_suffix == 'schedule' %}
+      {{ 'script-schedule.js' | asset_url | script_tag }}
+    {% endif %}
+
+    {% if customer %}
+      <script>
+        $(document).ready(function() {
+          var check_first_user_registration = getCookie('user_registered');
+
+          if (! check_first_user_registration) {
+            setCookie('user_registered', 1, 3500);
+            document.location.href = '/account';
+          }
+        });
+      </script>
+    {% else %}
+      <script>
+        $(document).ready(function() {
+          setCookie('user_registered', 0, 0);
+        });
+      </script>
+    {% endif %}
+
+    <!--CDE APP CODE START -->
+    {% if request.path != '/challenge' %}
+      {% render 'CDE_template-customer-address' %} {% render 'CDE_script-edit-customer-fields' %}
+      {% if request.path != '/account/login' and request.path != '/account/register' and request.path != '/account' %}
+        {% render 'CDE_script-login-register' %}
+      {% endif %}
+    {% endif %}
+    <!--CDE APP CODE END -->
+
+    <script>
+      $(document).ready(function() {
+        if ($('header').hasClass('individual-header-type')) {
+          return;
+        } else {
+          $('header').addClass('{{ settings.header_type }}');
+        }
+      })
+    </script>
+
+    <script>
+      window.onUsersnapCXLoad = function(api) {
+        api.init();
+      }
+      var script = document.createElement('script');
+      script.defer = 1;
+      script.src = 'https://widget.usersnap.com/global/load/a771c875-ab03-4db9-8f54-7c39ffbd4a61?onload=onUsersnapCXLoad';
+      document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+
+    <!-- Start of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js.hs-scripts.com/22646017.js"></script>
+    <!-- End of HubSpot Embed Code -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true, 
+      });
+    </script>
+  </body>
+</html>

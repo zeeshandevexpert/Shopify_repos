@@ -1,0 +1,66 @@
+<section class="content_section{% if section.settings.reverse %} reverse{% endif %}" {% if section.settings.image_left %} style="background-image: url({{ section.settings.image |  img_url: 'master' }});" {% endif %}>
+  
+
+    {% if section.settings.image_left %}
+        <div class="wrapper-image">
+            <img src="{{ section.settings.image_left |  img_url: 'master' }}" alt="" />
+        </div>        
+    {% else %}
+    <div class="image">
+        <img src="{{ section.settings.image |  img_url: 'master' }}" alt="" />
+    </div>      
+    {% endif %}
+
+    <div class="content_section-wrapper{% if section.settings.image_left %} remove-padding{% endif %}">
+        <div class="content">
+            <div class="title">{{ section.settings.heading }}</div>
+            <hr class="blue_line" width="60" />
+            <div class="info">
+                {{ section.settings.content }}
+            </div>
+        </div>
+        <div class="image-place"></div>
+    </div>
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "Content Block",
+        "settings": [
+                {
+                "type": "checkbox",
+                "id": "reverse",
+                "label": "Reverse Column"
+                },
+                {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Background Image"
+                },
+                {
+                "type": "image_picker",
+                "id": "image_left",
+                "label": "Single Image"
+                },
+               
+                {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+                },
+                {
+                "type": "textarea",
+                "id": "content",
+                "label": "Content"
+                }
+        
+            ],
+            "presets": [
+                {
+                    "name": "Content Block"
+                }
+            ]
+    }
+    {% endschema %}

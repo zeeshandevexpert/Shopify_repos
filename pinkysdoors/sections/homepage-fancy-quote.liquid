@@ -1,0 +1,47 @@
+<div class="page-width--thin text-center fancy-quote">
+  <div class="fancy-quote__open-quote"><svg width="44" height="34" viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg"><path d="M38.93.4l1.08 1.68c-7.92 5.16-11.16 10.2-11.16 14.64 0 2.88 1.8 4.08 3.24 4.32l5.04-4.68c2.76.96 6.36 3.84 6.36 8.4 0 5.28-4.32 8.76-9.6 8.76-6.48 0-10.8-4.2-10.8-11.52 0-9.12 6.96-16.08 15.84-21.6zM16.37.4l1.08 1.68C9.53 7.24 6.29 12.28 6.29 16.72c0 2.88 1.8 4.08 3.24 4.32l5.04-4.68c2.76.96 6.36 3.84 6.36 8.4 0 5.28-4.32 8.76-9.6 8.76C4.85 33.52.53 29.32.53 22 .53 12.88 7.49 5.92 16.37.4z" fill="#000" fill-rule="nonzero"/></svg></div>
+  <div class="fancy-quote__text1">{{section.settings.text1}}</div>
+  <div class="fancy-quote__text2">{{section.settings.text2}}</div>
+  <div class="fancy-quote__lines"><svg width="127" height="111" viewBox="0 0 127 111" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd" stroke-linecap="square" stroke="#000"><path d="M63.5.5v110M.5 110.5h126"/></g></svg></div>
+  <div class="fancy-quote__name">{{section.settings.name}}</div>
+  <div class="fancy-quote__title">{{section.settings.title}}</div>
+</div>
+
+{% comment %}
+I really looked for materials that echoed the art–unique and handcrafted," explains Brent. "I wanted pieces that are not too polished or precious, that could stand the test of me getting down and dirty in the space. I chose this amazing metallic-glazed tile from Clé Tiles that had natural imperfections and went with the beautiful iron and glass doors from PInky's.
+{% endcomment %}
+
+{% schema %}
+  {
+    "name": "Fancy Quote",
+	"class":"index-section",
+    "settings": [
+	{
+	  "type":"textarea",
+	  "id":"text1",
+	  "label":"Normal Text"
+	},
+	{
+	  "type":"textarea",
+	  "id":"text2",
+	  "label":"Bold Text"
+	},
+	{
+	  "type":"text",
+	  "id":"name",
+	  "label":"Name"
+	},
+	{
+	  "type":"text",
+	  "id":"title",
+	  "label":"Title"
+	}
+	],
+	"presets": [
+    {
+      "name": "Fancy Quote",
+      "category": "Text"
+    }
+  ]
+  }
+{% endschema %}

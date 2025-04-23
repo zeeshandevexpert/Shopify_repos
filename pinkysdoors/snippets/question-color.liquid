@@ -1,0 +1,20 @@
+{% case type %}
+{% when 'Locks' %}
+{% capture content %}{{pages.pdp-color-locks.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+{%- when 'Merchandise' %}
+
+<div class="text-center"><h4>Coming Soon</h4></div>
+
+{% else %}
+
+{% capture content %}{{pages.pdp-color.content}}{% endcapture %}
+{% include 'shortcode' load: content %}
+
+{% endcase %}
+
+{% assign color_specials = 'Locks,Door Handles,Merchandise' %}
+{% unless color_specials contains product.type %}
+<ul style="margin-top: -1em;"><li>Because all of our products are hand made and painted, color may differ a little from the photo.  This ensures each order is one of a kind.</li></ul>
+{% endunless %}

@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Winner Sans Cond';
+    src: url('WinnerSans-CondRegular.woff2') format('woff2'),
+        url('WinnerSans-CondRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+$winner: 'Winner Sans Cond';
+$industry : "Spectral", serif;
+$mont : "Montserrat", sans-serif;
+$gray: #444444;
+$white : #FFFFFF;
+$blue: #4dc1ef;
+
+// body{
+//     font-family: "Montserrat", sans-serif;
+// }
+
+.main-content{
+    .wrapper{
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+        .hero-banner{    
+            margin-bottom: 50px;
+            .hero-banner__holder{
+                padding: 7.5rem 2.5rem 2.5rem;
+                position: relative;
+                padding-top: 15rem;
+                .hero-banner__media{
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    border-radius:8px;
+                    margin-bottom: 0;
+                    overflow: hidden;
+                    z-index: 1;
+                    margin: 0;
+                    .hero-banner__img{
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                    &:after{
+                        background:  linear-gradient(0deg, #0c2b44, #fff0 60%);                    ;
+                        content: "";
+                        height: 100%;
+                        left: 0;
+                        position: absolute;
+                        top: 0;
+                        width: 100%;
+                    }
+                }
+                .hero-banner__content{
+                    color: $white;
+                    position: relative;
+                    z-index: 2;
+                    .hero-banner__heading{
+                        font-size: 48px;
+                        margin: 0;
+                        font-family: $winner;
+                        font-weight: 600;
+                        color: $white;
+                        @media (max-width:991px) {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+        .image-blurb-content{
+            margin-bottom: 50px;
+            .image-blurb-content__holder{
+                .content-wrapper{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: center;
+                    justify-content: space-between;
+                    .right-block{
+                        flex: 0 0 auto;
+                        width: calc(50% - 24px);
+                        padding: 0 12px;
+                        display: flex;
+                        align-items: center;
+                        @media (max-width:991px) {
+                            width: 100%;
+                        }
+                        .content-block{
+                            padding: 20px;
+                            @media (max-width:991px) {
+                                padding: 0;
+                            }
+                            .sub-heading{
+                                font-size: 18px;
+                                margin-top: 10px;
+                                margin-bottom: 20px;
+                                color: $gray;
+                                font-family: $winner;
+                                font-weight: 600;
+                            }
+                            .heading{
+                                font-family: $winner;
+                                font-size: 40px;
+                                font-weight:600;
+                                color: $gray;
+                                margin: 0;
+                                @media (max-width:767px) {
+                                    font-size: 28px;
+                                }
+                            }
+                            .content{
+                                font-family: $mont;
+                                margin-bottom: 0;
+                                margin-top: 1.25rem;
+                                font-size: 16px;
+                                color: $gray;
+                                @media (max-width:767px) {
+                                    font-size: 14px;
+                                }
+                                h5{
+                                    font-family: $mont;
+                                    font-weight: bold;
+                                    font-size: 1em;
+                                }
+                                a{
+                                    color: $blue;
+                                    transition: all .3s ease-in-out;
+                                }
+                                p{
+                                    margin-bottom: 16px;
+                                }
+                            }
+                            .buttons{
+                                a{
+                                    display: inline-flex;
+                                    align-items: center;
+                                    background-color: $blue;
+                                    border-color: $blue;
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    cursor: pointer;
+                                    font-size: 14px;
+                                    font-weight: 700;
+                                    padding: .625em 1.25em;
+                                    text-decoration: none;
+                                    transition: all .3s ease-in-out;
+                                    color: $white;
+                                    svg{
+                                        margin-left: .625rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .left-block{
+                        flex: 0 0 auto;
+                        width: calc(50% - 24px);
+                        padding: 0 12px;
+                        display: flex;
+                        // align-items: center;
+                        @media (max-width:991px) {
+                            width: 100%;
+                            padding: 0;
+                        }
+                        .image-block{
+                            margin: 0;
+                            img{
+                                height: 100%;
+                                object-fit: cover;
+                                width: 100%;
+                                border-radius: 8px;
+                            }
+                        }
+                    }
+                    &.revert{
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+        
+        }
+        .upcoming-tournaments{
+            margin-bottom: 100px;
+            .upcoming-tournaments__holder{
+                .upcoming-tournaments__header{
+                    display: flex;
+                    align-items: center;
+                    // flex-direction: row;
+                    justify-content: space-between;
+                    @media (max-width:767px) {
+                        flex-wrap: wrap;
+                        margin-bottom: 15px;
+                    }
+                    .upcoming-tournaments__heading{
+                        font-size: 32px;
+                        font-weight: 600;
+                        font-family: $winner;
+                        color: $gray;
+                        text-transform: uppercase;
+                        @media (max-width:767px) {
+                            font-size: 22px;
+                        }
+                    }
+                    .upcoming-tournaments__button{
+                        .button{
+                            align-items: center;
+                            display: inline-flex;
+                            border-color: #0000;
+                                border-width: 0 0 2px;
+                                color:$gray;
+                                padding: 0;
+                                text-align: left;
+                                transition: all .3s ease-in-out;
+                                text-decoration: none;
+                            .button__icon{
+                                // background-color: initial;
+                                margin-left: .625rem;
+                                
+                            }
+                        }
+                    }
+                }
+                .upcoming-tournaments__slider{
+                    // width: 100%;
+                    // height: 100%;
+                    margin: -.75rem;
+                    padding: .75rem;
+                    .swiper-wrappers{
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 25px;
+                        justify-content: center;
+                    }
+                    .upcoming-tournaments__item{
+                        background-color: #fff;
+                        border-radius: .5rem;
+                        box-shadow: 0 4px 10px 0 #0000001f;
+                        height: auto;
+                        .upcoming-tournaments__item-link{
+                            color: inherit;
+                            display: block;
+                            padding: .75rem;
+                            text-decoration: inherit;
+                            
+                            .upcoming-tournaments__item-media{
+                                aspect-ratio: 200 / 140;
+                                margin: 0;
+                                margin-bottom: .75rem;
+                                position: relative;
+                                width: 100%;
+                                .upcoming-tournaments__item-img{
+                                    border-radius: .1875rem;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    object-position: center;
+                                    width: 100%;
+                                }
+                                .upcoming-tournaments__item-logo {
+                                    height: auto;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    width: 25%;
+                                }
+                            }
+                            .upcoming-tournaments__item-content{
+                                .upcoming-tournaments__item-date{
+                                    font-size: 12px;
+                                    margin-bottom: 4px;
+                                    color: $gray;
+                                    font-family: $mont;
+                                }
+                                .upcoming-tournaments__item-heading{
+                                    font-size: 16px;
+                                    margin-bottom: 4px;
+                                    color: $gray;
+                                    font-family: $winner;
+                                    font-weight: 600;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .testimonial{
+            margin-bottom: 100px;
+            .testimonial__holder{
+                .testimonial__header{
+                    display: flex;
+                    align-items: center;
+                    // flex-direction: row;
+                    justify-content: center;
+                    .testimonial__heading{
+                        font-size: 32px;
+                        font-weight: 600;
+                        font-family: $winner;
+                        color: $gray;
+                        text-transform: uppercase;
+                    }
+                    .testimonial__button{
+                        .button{
+                            align-items: center;
+                            display: inline-flex;
+                            border-color: #0000;
+                                border-width: 0 0 2px;
+                                color:$gray;
+                                padding: 0;
+                                text-align: left;
+                                transition: all .3s ease-in-out;
+                                text-decoration: none;
+                            .button__icon{
+                                // background-color: initial;
+                                margin-left: .625rem;
+                                
+                            }
+                        }
+                    }
+                }
+                .testimonial__slider{
+                    // width: 100%;
+                    // height: 100%;
+                    // margin: -.75rem;
+                    padding: .75rem;
+                    .testimonial__item{
+                        background-color: #fff;
+                        border-radius: .5rem;
+                        box-shadow: 0 4px 10px 0 #0000001f;
+                        height: auto;
+                        width: 33.33%;
+                        @media (max-width:767px) {
+                            // width: 75% !important;
+                        }
+                        .testimonial__item-link{
+                            color: inherit;
+                            display: block;
+                            padding: .75rem;
+                            text-decoration: inherit;
+
+                            .testimonial__item-content{
+                                text-align: center;
+                                .testimonial__item-date{
+                                    font-size: 12px;
+                                    margin-bottom: 4px;
+                                    color: $gray;
+                                    font-family: $mont;
+                                }
+                                .testimonial__item-heading{
+                                    font-size: 16px;
+                                    margin-bottom: 4px;
+                                    color: $gray;
+                                    font-family: $winner;
+                                    font-weight: 600;
+                                    text-transform: uppercase;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .skills_level_camp{
+            margin-bottom: 100px;
+            .skills_level_camp__holder{
+                .skills_level_camp__header{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .skills_level_camp__heading{
+                        font-size: 32px;
+                        font-weight: 600;
+                        font-family: $winner;
+                        color: $gray;
+                        text-transform: uppercase;
+                    }
+                }
+                .wrap-skills-card{
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    .skills_level_camp__card{
+                        margin: 15px 10px;
+                        width: calc(33.33% - 20px);
+                        flex: 0 0 auto;
+                        @media (max-width:1024px) {
+                            width: calc(50% - 20px);
+                        }
+                        @media (max-width:600px) {
+                            width: 100%;
+                            margin: 15px 0;
+                        }
+                        .skills_level_camp__item{
+                            background-color: #fff;
+                            border-radius: .5rem;
+                            box-shadow: 0 4px 10px 0 #0000001f;
+                            // height: auto;
+                            .skills_level_camp__item-link{
+                                color: inherit;
+                                display: block;
+                                // padding: .75rem;
+                                text-decoration: inherit;
+                                padding: 20px;
+                                .skills_level_camp__item-content{
+        
+                                    .skills_level_camp__item-heading{
+                                        font-size: 22px;
+                                        margin-bottom: 4px;
+                                        color: $gray;
+                                        font-family: $winner;
+                                        font-weight: 600;
+                                        text-transform: uppercase;
+                                    }
+        
+                                    .skills_sub-title{
+                                        color: $blue;
+                                        font-size: 20px;
+                                        padding-top: 10px;
+                                        font-family: $mont;
+                                        p{
+                                            margin: 0;
+                                        }
+                                    
+                                    }
+        
+                                    .skills_level_camp__item-description{
+                                        font-size: 14px;
+                                        margin-bottom: 4px;
+                                        color: $gray;
+                                        font-family: $mont;
+                                        h5{
+                                            font-size: 16px;
+                                            font-weight: bold;
+                                            font-family: $mont;
+                                        }
+                                        ul{
+                                            li{
+                                                margin-bottom: 12px;
+                                            }
+                                        }
+                                    }
+        
+                                }
+                            }
+                        }
+        
+                    }
+                }
+            
+            }
+        }
+    }
+}
+
+.user-block-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    .user_block__header{
+        display: flex;
+        align-items: center;
+        // flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        @media (max-width:767px) {
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .user_block__heading{
+            font-size: 40px;
+            font-weight: 600;
+            font-family: $winner;
+            color: $gray;
+            text-align: center;
+            text-transform: uppercase;
+            @media (max-width:767px) {
+                font-size: 22px;
+            }
+        }
+    }
+    .user-image{
+        width: calc(33.33% - 20px);
+        position: relative;
+        height: 400px;
+        @media (max-width:991px) {
+            width: calc(50% - 20px);
+        }
+        @media (max-width:500px) {
+            // width: calc(100% - 20px);
+            height: 200px;
+        }
+        &:hover{
+            .name{
+                visibility: visible;
+                opacity: 1;
+                .view-details{
+                    text-decoration: underline;
+                }
+            }
+        }
+        img{
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+            border-radius: 8px;
+            object-position: top;
+        }
+
+        .name{
+            cursor: pointer;
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            text-align: center;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all ease;
+            background-color: #00000096;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #FFFFFF;
+            .view-details{
+                font-size: 18px;
+                margin-top: 15px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+    .image-blurb-content__holder{
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #00000096;
+        z-index: 9;
+        .content-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            max-width: 1320px;
+            margin: 0 auto;
+            width: 100%;
+            justify-content: center;
+            // background-color: #fff;
+            height: 100%;
+            .pop-container{
+                display: flex;
+                background: white;
+                padding: 25px;
+                position: relative;
+                width: 100%;
+                height: 75vh;
+                @media (max-width:991px) {
+                    flex-wrap: wrap;
+                    overflow: scroll;
+                    margin: 25px;
+                }
+                #close-icon{
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    cursor: pointer;
+                    svg{
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+                .right-block{
+                    flex: 0 0 auto;
+                    width: calc(50% - 24px);
+                    padding: 0 12px;
+                    display: flex;
+                    align-items: center;
+                    @media (max-width:991px) {
+                        width: 100%;
+                    }
+                    .content-block{
+                        padding: 20px;
+                        @media (max-width:991px) {
+                            padding: 0;
+                        }
+                        .sub-heading{
+                            font-size: 18px;
+                            margin-top: 10px;
+                            margin-bottom: 20px;
+                            color: $gray;
+                            font-family: $winner;
+                            font-weight: 600;
+                        }
+                        .heading{
+                            font-family: $winner;
+                            font-size: 40px;
+                            font-weight:600;
+                            color: $gray;
+                            margin: 0;
+                            @media (max-width:767px) {
+                                font-size: 28px;
+                            }
+                        }
+                        .content{
+                            font-family: $mont;
+                            margin-bottom: 0;
+                            margin-top: 1.25rem;
+                            font-size: 16px;
+                            color: $gray;
+                            @media (max-width:767px) {
+                                font-size: 14px;
+                            }
+                            h5{
+                                font-family: $mont;
+                                font-weight: bold;
+                                font-size: 1em;
+                            }
+                            a{
+                                color: $blue;
+                                transition: all .3s ease-in-out;
+                            }
+                            p{
+                                margin-bottom: 16px;
+                            }
+                        }
+                        .buttons{
+                            a{
+                                display: inline-flex;
+                                align-items: center;
+                                background-color: $blue;
+                                border-color: $blue;
+                                border-style: solid;
+                                border-width: 1px;
+                                cursor: pointer;
+                                font-size: 14px;
+                                font-weight: 700;
+                                padding: .625em 1.25em;
+                                text-decoration: none;
+                                transition: all .3s ease-in-out;
+                                color: $white;
+                                svg{
+                                    margin-left: .625rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                .left-block{
+                    flex: 0 0 auto;
+                    width: calc(50% - 24px);
+                    padding: 0 12px;
+                    display: flex;
+                    padding: 0;
+                    // align-items: center;
+                    @media (max-width:991px) {
+                        width: 100%;
+                       
+                    }
+                    .image-block{
+                        margin: 0;
+                        width: 100%;
+                        text-align: center;
+                        img{
+                            height: 100%;
+                            object-fit: cover;
+                            // width: 100%;
+                            border-radius: 8px;
+                            object-position: top;
+                            @media (max-width:991px) {
+                                width: auto;
+                                height: auto;
+                                margin: 0 auto;
+
+                            }
+                        }
+                    }
+                }
+            }
+            &.revert{
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+#ProductGridContainer{
+    .collection{
+        display: flex;
+    .side-bar-block{
+            width: 230px;
+            
+     .common__plp__sidebar {
+        border-top: 1px solid #cccccc; }
+         .common__plp__sidebar .common__plp__group {
+          border-bottom: 1px dashed #cccccc; }
+           .common__plp__sidebar .common__plp__group .common__plp__primary a {
+            align-items: center;
+            color: #313d76;
+            display: flex;
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            // height: 64px;
+            // position: relative;
+            // z-index: -1;
+            justify-content: space-between; }
+             .common__plp__sidebar .common__plp__group .common__plp__primary a .accordion-header__indicator.plus {
+              display: block; }
+             .common__plp__sidebar .common__plp__group .common__plp__primary a .accordion-header__indicator.minus {
+              display: none; }
+           .common__plp__sidebar .common__plp__group .common__plp__primary.active a {
+            color: #4a5baf; }
+             .common__plp__sidebar .common__plp__group .common__plp__primary.active a .accordion-header__indicator.plus {
+              display: none; }
+             .common__plp__sidebar .common__plp__group .common__plp__primary.active a .accordion-header__indicator.minus {
+              display: block; }
+           .common__plp__sidebar .common__plp__group .common__plp__secondary {
+            display: none;
+            padding: 10px 0 30px 0; }
+             .common__plp__sidebar .common__plp__group .common__plp__secondary.active {
+              display: block; }
+             .common__plp__sidebar .common__plp__group .common__plp__secondary ul {
+              list-style: none; }
+               .common__plp__sidebar .common__plp__group .common__plp__secondary ul li a {
+                color: #4a5baf; }
+               .common__plp__sidebar .common__plp__group .common__plp__secondary ul li + li {
+                margin: 30px 0 0 0; }
+               .common__plp__sidebar .common__plp__group .common__plp__secondary ul li.active a {
+                color: #00c4d1;
+                font-weight: bold; }
+  
+  
+     
+   
+        }
+        #product-grid{
+            width: 100%;
+            flex-basis: calc(100% - 230px);
+        }
+    }
+}
+
+

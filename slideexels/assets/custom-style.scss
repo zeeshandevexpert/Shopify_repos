@@ -1,0 +1,244 @@
+
+$mont: "Montserrat", sans-serif;
+
+.blurb-section{
+    .wrap-blurb-section{
+        .container-fluid{
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0 50px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            
+
+            .image-block{
+                flex: 50%;
+                margin: 0 20px;
+                flex-basis: calc(50% - 40px);
+                img{
+                    width: 100%;
+                }
+            }
+            .content-block{
+                flex: 50%;
+                margin: 0 20px;
+                flex-basis: calc(50% - 40px);
+                .content{
+                    .heading{
+                        color: #0e1623;
+                        font-size: 52px;
+                        line-height: 1.2;
+                        margin: 0;
+                        font-family:$mont;
+                        font-weight: bold;
+                    }
+                    .description{
+                        color: #afafbb;
+                        width: 75%;
+                        font-family:$mont;
+                        font-weight: 500;
+                    }
+                    .full-table{
+                        margin-top: 40px;
+                        margin-bottom: 0;
+                        color: #0e1623;
+                        border-spacing: 0;
+                        font-family:$mont;
+                        tr{
+                            th{
+                                border: 1px solid #afafbb;
+                                font-size: 14px;
+                                letter-spacing: 4px;
+                                line-height: 20px;
+                                font-weight: 700;
+                                // padding: 2vh 2vw;
+                                padding: 20px 40px;
+                                text-align: center;
+                                border-right: 0;
+                                &:last-child{
+                                    border: 1px solid #afafbb;
+                                }
+                                p{
+                                    margin: 0px;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+
+.collections-tab-section{
+    max-width: 1600px;
+    margin:0 auto;
+    padding: 50px;
+    .tabs{
+        .ui-tabs-nav{
+            display: flex;
+            justify-content: center;
+            .ui-tabs-tab{
+                margin: 0 20px;
+                list-style: none;
+                a{                
+                    display: block;
+                    background: transparent;
+                    color: #000;
+                    border: 0px;
+                    
+                }
+                &.ui-tabs-active{
+                    a{
+                        // background-color: #afafbb;
+                        border: 1px solid #000;
+                    }
+                }
+            }
+        }
+        .ui-tabs-panel{
+
+        }
+    }
+}
+
+.wrap-search-bar{
+    margin-bottom: 50px;
+    form{
+        margin: 0 auto;
+    }
+}
+
+
+// footer-style
+
+#pagefooter{
+    padding-top:30px ;
+    background: #212430;
+    .footer{
+        .grid-container{
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+           
+         
+            @media (min-width: 768px) {
+                    width: 938px;
+            }
+            @media (min-width: 992px) {
+                width: 962px;
+        }
+            @media (min-width: 1200px) {
+                width: 1170px;
+        }
+        .wrapper{
+            width: 100%;
+                .columns{
+                    float: left;
+                    display: inline;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    &.seven{
+                        width: 32%;
+                    }
+                    &.two{
+                        width: 20%;
+                    }
+                    &.sixteen{
+                        width: 90%;
+                        hr {
+                            border: none;
+                            width: 100%;
+                            color: transparent;
+                            border-bottom: 1px solid #DFE4EA;
+                            height: 9px;
+                            margin: 1em 0;
+                        }
+                        .six{
+                            width: 430px;
+                        }
+                     
+                    }
+                    .subtitle{
+                        letter-spacing: 2px;
+                        color: #fff;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 22px;
+                    }
+                    .co_nfo{
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 26px;
+                        max-width: 270px;
+                        margin-top: 1em;
+                        margin-bottom: 1em;
+                        color: #fff;
+                    }
+                    .footer_menu{
+                        margin-left: 0;
+                        padding: 0;
+                        li{
+                            list-style: none;
+                            font-size: 16px;
+                            line-height: 26px;
+                            padding: 4px 0;
+                            a{
+                                color: #fff;
+                                font-size: 16px;
+                                background: transparent;
+                                border: 0;
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            .wrap-icon-text{
+                display: flex;
+                justify-content: space-between;
+                width: 90%;
+                .copyright_text{
+                    .credits{
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 26px;
+                        margin-top: 1em;
+                        margin-bottom: 1em;
+                        color: #fff;
+                    }
+                }
+                .social-links{
+                    ul{
+                        display: flex;
+                        list-style: none;
+                        li{
+                            a{
+                                color: #fff;
+                                font-size: 16px;
+                                background: transparent;
+                                border: 0;
+                                padding: 0;
+                                margin: 0 8px;
+                                svg{
+                                    width: 15px;
+                                    height: 15px;
+                                    vertical-align: top;
+                                    g{
+                                        fill: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

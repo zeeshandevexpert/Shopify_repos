@@ -1,0 +1,31 @@
+<svg width="51" height="50" viewBox="0 0 51 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_2117_70" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="51" height="50">
+<rect width="51" height="50" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_2117_70)">
+<mask id="mask1_2117_70" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="34" width="30" height="23">
+<path d="M34.9399 34.1421H5.55225V56.9992H34.9399V34.1421Z" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask1_2117_70)">
+<path d="M20.2461 48.6627C28.0852 48.6627 34.44 42.3079 34.44 34.4688C34.44 26.6297 28.0852 20.2749 20.2461 20.2749C12.4071 20.2749 6.05225 26.6297 6.05225 34.4688C6.05225 42.3079 12.4071 48.6627 20.2461 48.6627Z" stroke="white"/>
+</g>
+<mask id="mask2_2117_70" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="34" y="15" width="24" height="31">
+<path d="M34.9351 15.8569V45.2446H57.7922V15.8569H34.9351Z" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask2_2117_70)">
+<path d="M49.4555 30.5507C49.4555 22.7117 43.1007 16.3568 35.2616 16.3568C27.4226 16.3568 21.0677 22.7117 21.0677 30.5507C21.0677 38.3898 27.4226 44.7446 35.2616 44.7446C43.1007 44.7446 49.4555 38.3898 49.4555 30.5507Z" stroke="white"/>
+</g>
+<mask id="mask3_2117_70" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="16" y="-7" width="31" height="23">
+<path d="M16.6489 15.8569L46.0366 15.8569V-7.00017L16.6489 -7.00017L16.6489 15.8569Z" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask3_2117_70)">
+<path d="M31.3427 1.33632C23.5036 1.33632 17.1488 7.69115 17.1488 15.5302C17.1488 23.3693 23.5036 29.7241 31.3427 29.7241C39.1818 29.7241 45.5366 23.3693 45.5366 15.5302C45.5366 7.69115 39.1818 1.33632 31.3427 1.33632Z" stroke="white"/>
+</g>
+<mask id="mask4_2117_70" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="-7" y="4" width="24" height="31">
+<path d="M16.6538 34.1421L16.6538 4.75439L-6.20329 4.75439L-6.20329 34.1421H16.6538Z" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask4_2117_70)">
+<path d="M2.13332 19.4483C2.13332 27.2874 8.48814 33.6422 16.3272 33.6422C24.1663 33.6422 30.5211 27.2874 30.5211 19.4483C30.5211 11.6092 24.1663 5.25439 16.3272 5.25439C8.48814 5.25439 2.13332 11.6092 2.13332 19.4483Z" stroke="white"/>
+</g>
+</g>
+</svg>

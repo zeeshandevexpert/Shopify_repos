@@ -1,0 +1,184 @@
+{%- liquid
+  assign show_filters = false
+
+if section.settings.show_filters
+  assign show_filters = true
+endif
+
+assign filter_count = 0
+for filter in search.filters
+  if filter.type == 'price_range'
+    if filter.min_value.value != nil or filter.max_value.value != nil
+      assign filter_count = 1
+    endif
+  endif
+
+  assign filter_count = filter_count | plus: filter.active_values.size
+endfor
+
+-%}
+<section class="search__page-section"
+data-section-id="{{ section.id }}"
+data-section-type="search-section">
+
+  {% paginate search.results by 24 %}
+    <div id="searchResultsWrapper" class="row grid__wrapper">
+      <div id="search-bar" class="span-12 auto">
+        <form action="{{ routes.search_url }}" method="get">
+          <label class="visually-hidden" for="search-{{ section.id }}">{{ 'sections.search.placeholder' | t }}</label>
+          <input type="text" name="q" id="search-{{ section.id }}" placeholder="{{ 'sections.search.placeholder' | t }}" title="{{ 'sections.search.title' | t }}" />
+          {% if settings.search_show_products_only %}
+            <input type="hidden" name="type" value="product">
+          {% endif %}
+        </form>
+      </div>
+
+      {%- if search.performed -%}
+        {%- if search.results_count < 1 -%}
+          <div id="main-search-results"
+            class="search--empty span-12 auto"
+            data-id="{{ section.id }}">
+            <span class="span-12 auto rte">{{ 'collections.general.use_fewer_filters_search_html' | t: link: routes.search_url, class: "underline" }}</span>
+          </div>
+        {%- else -%}
+         <div id="main-search-results"
+          class="span-12 auto"
+          data-id="{{ section.id }}">
+
+            <div class="collection__grid-loop grid__wrapper-nest grid__wrapper edge">
+              <div class="collection__control-bar span-12 auto">
+                {% if show_filters %}
+
+                <div class="filter__view--toggle">
+                  <a id="filter--toggle" class="show js-search-side-toggle show-filter" href="" title="{{ 'collections.general.refine' | t }}">
+                    <span class="vib-center">{{ 'collections.general.refine' | t }}</span>
+                    {% render 'snip-icons',
+                     wrapper: '.js-search-side-toggle',
+                     type: 'apollo',
+                     icon: 'filter',
+                     classes: 'js-search-side-toggle vib-center',
+                     size: '14px',
+                     fill: 'var(--text-color)',
+                     hover: 'var(--text-color)' %}
+                     {% render 'snip-icons',
+                      wrapper: '.js-collection-side-toggle',
+                      type: 'apollo',
+                      icon: 'right-carrot',
+                      classes: 'js-collection-side-toggle vib-center',
+                      size: '10px',
+                      fill: 'var(--text-color)',
+                      hover: 'var(--text-color)' %}
+                  </a>
+                </div>
+
+                {% endif %}
+                <div class="search--results__text">
+                  <p>{{ 'sections.search.results_for_html' | t: terms: search.terms }}</p>
+                </div>
+              </div>
+
+              {% if show_filters %}
+                <div id="search__sidebar" class="search__sidebar-container hidden span-3 md-span-12 sm-span-12 auto open">
+                  <form id="SearchSidebarFiltersForm" class="is_sticky" data-search-sidebar-filters>
+                    {% render 'search-sidebar' %}
+                  </form>
+                </div>
+              {% endif %}
+              <div id="search__grid--container" class="{% if show_filters %}span-9 {% else %}span-12 {% endif %} sm-span-12 auto">
+                {% if filter_count > 0 and show_filters %}
+                  <div id="current-filters" class="filtering__results js-filters-reset collection__filters--cur_wrapper span-12 md-span-12 sm-span-12 auto">
+                    <ul class="current_tags">
+                      {%- for filter in search.filters -%}
+                        {%- for value in filter.active_values -%}
+                          <li class="current_filters--filter current_tag">
+                            <a class="js-current-filter" href="{{ value.url_to_remove }}">
+                              {{ value.label | escape }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                        {% if filter.type == "price_range" %}
+                          {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                            <li class="current_filters--filter current_tag">
+                              <a class="js-current-filter" href="{{ filter.url_to_remove }}">
+                                {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
+                              </a>
+                            </li>
+                          {%- endif -%}
+                        {% endif %}
+                      {%- endfor -%}
+                      <li><a class="current_filters--clear js-current-filter clear-tags" href="{{ routes.search_url }}" aria-label="{{ 'collections.general.clear_all_tags' | t }}" aria-role="button">{{ 'collections.general.clear_all_tags' | t }}</a></li>
+                    </ul>
+                  </div>
+                {% endif %}
+
+                <div class="grid__wrapper">
+                  {% for item in search.results %}
+                    <div class="product-index span-4 auto sm-span-6">
+                      {% if item.object_type == 'article' %}
+                        <!--'item' is an article All article object properties can be accessed. -->
+                        {% if item.image %}
+                          <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                            {% render 'basic-responsive-image',
+                              type: item.image,
+                              width: 600
+                            %}
+                          </a>
+                        {% else %}
+                          <div class="search-content prod-image">
+                            {{ item.content | strip_html | truncate: 250 }}
+                          </div>
+                        {% endif %}
+                        <div class="product-info">
+                          <a href="{{ item.url }}">
+                            <p>{{ item.title | escape }}</p>
+                          </a>
+                        </div>
+                      {% elsif item.object_type == 'page' %}
+                        <!--'item' is a page. All page object properties can be accessed. -->
+                        {% if item.content contains "img" %}
+                          {% assign feat_image = item.content | split: 'src="' %}
+                          {% assign feat_image = feat_image[1] | split: '"' | first | replace: '//cdn', 'http://cdn' | replace: 'http:http://', 'http://' | remove: 'https:'  %}
+                          <div class="collection-image">
+                            <a href="{{ item.url }}" title="{{ item.title | escape }}">
+                              <img src="{{ feat_image }}" alt="{{ item.title }}">
+                            </a>
+                          </div>
+                        {% else %}
+                          <div class="search-content">
+                          {{ item.content | strip_html | truncate: 90 }}
+                          </div>
+                        {% endif %}
+                        <div class="product-info">
+                          <a href="{{ item.url }}">
+                            <p>{{ item.title | escape }}</p>
+                          </a>
+                        </div>
+                      {% else %}
+                        {% render 'product-listing', product: item, collection: collection, grid: 4 %}
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            {% render 'pagination', paginate: paginate %}
+         </div>
+        {%- endif -%}
+      {%- endif -%}
+    </div>
+  {% endpaginate %}
+</section>
+{% schema %}
+{
+  "name": "Search",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_filters",
+      "label": "Show search filters",
+      "info": "Learn how to add storefront filters [here](https:\/\/help.shopify.com\/en\/manual\/online-store\/themes\/os20\/customize\/filters)"
+    }
+  ]
+}
+{% endschema %}

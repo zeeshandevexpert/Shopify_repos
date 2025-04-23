@@ -1,0 +1,141 @@
+{%- liquid
+  assign cart_item_handles = cart.items | map: "product" | map: "handle"
+
+  assign current_product_size = product.title | split: "iPhone" | last
+  assign current_product_size = current_product_size | split: "Case" | first
+  assign current_product_size = current_product_size | prepend: "iPhone" | strip
+
+  assign bling_variant_ids_by_size = "iPhone 11:silver-camera-bling-12-11, iPhone 12 mini:silver-camera-bling-12-11, iPhone 11 Pro:silver-camera-bling-11p-pm, iPhone 11 Pro Max:silver-camera-bling-11p-pm, iPhone 12 Pro:silver-camera-bling-12p, iPhone 12 Pro Max:silver-camera-bling-12pm, iPhone 13:silver-camera-bling-13-13m, iPhone 13 mini:silver-camera-bling-13-13m, iPhone 13 Pro:silver-camera-bling-13p-13pm, iPhone 13 Pro Max:silver-camera-bling-13p-13pm, iPhone 14:silver-iphone-14-14-plus-bling, iPhone 14 Plus:silver-iphone-14-14-plus-bling, iPhone 14 Pro:silver-iphone-14-pro-14-pro-max-bling, iPhone 14 Pro Max:silver-iphone-14-pro-14-pro-max-bling, iPhone 15:camera-bling-silver-iphone-15-15-plus, iPhone 15 Plus:camera-bling-silver-iphone-15-15-plus, iPhone 15 Pro:camera-bling-silver-iphone-15-pro-15-pro-max, iPhone 15 Pro Max:camera-bling-silver-iphone-15-pro-15-pro-max" | split: ", "
+
+  assign products = "" | split: ""
+
+
+  if product.title contains "iPhone" and product.title contains "Case"
+    assign product_handle_array = "screen-protectors" | split: "-<-@"
+    assign products = products | concat: product_handle_array
+  endif
+
+  for tag in product.tags
+    if tag contains "charm" and tag contains "-"
+      assign product_handle_array = tag | split: "-<-@"
+      assign products = products | concat: product_handle_array
+    endif
+
+    if tag contains "upsell:"
+      assign product_handle_array = tag | split: "upsell:" | last | split: "-<-@"
+      assign products = products | concat: product_handle_array
+    endif
+  endfor
+
+  for bling in bling_variant_ids_by_size
+    assign size = bling | split: ":" | first
+    assign product_handle_array = bling | split: ":" | last | split: "-<-@"
+
+    if size == current_product_size
+      assign products = products | concat: product_handle_array
+      break
+    endif
+  endfor
+
+
+  assign products = products | uniq
+
+  assign call_to_action = "+ Add"
+-%}
+
+{%- assign limit = 3 -%}
+
+{%- assign count = 0 -%}
+
+{%- for product_handle in products -%}
+  {%- liquid
+    if cart_item_handles contains product_handle
+      continue
+    endif
+
+    assign product = all_products[product_handle]
+
+    unless product.available
+      continue
+    endunless
+
+    assign count = count | plus: 1
+
+    if count > limit
+      break
+    endif
+
+    assign variant = product.first_available_variant
+
+    assign image = product.featured_image
+
+    assign image_url = image | image_url: width: 200
+
+    assign product_title = product.title | split: " - " | first
+  -%}
+
+  {% unless product_title  == blank %}
+    <product-upsell class="product-upsell">
+      <script type="application/json">
+        {
+          "id": {{ variant.id | json }},
+          "quantity": 1
+        }
+      </script>
+  
+
+      <div class="product-upsell-grid">
+        <div>
+          <a href="{{ product.url }}" class="product-upsell-image">
+            <img loading="lazy" src="{{ image_url }}" alt="{{ image.alt }}" width height/>
+          </a>
+        </div>
+  
+        <div>
+          <h5 class="product-upsell-heading">
+            {{ product_title }}
+          </h5>
+  
+          <div class="product-upsell-price">
+            {{ variant.price | money }}
+          </div>
+  
+          {%- if product.variants.size > 1 -%}
+            <select class="product-upsell-select">
+              {%- for size in product.options_with_values[0].values -%}
+                {%- liquid
+                  for variant in product.variants
+                    if variant.option1 == size
+                      assign id = variant.id
+                      break
+                    endif
+                  endfor
+  
+                  if size == current_product_size
+                    assign selected = true
+                  else
+                    assign selected = false
+                  endif
+                -%}
+  
+                <option value="{{ id }}" {% if selected %}selected="selected"{% endif %}>
+                  {{ size }}
+                </option>
+              {%- endfor -%}
+            </select>
+          {%- endif -%}
+        </div>
+  
+        <div>
+          <button type="button" class="button product-upsell-button">
+            <span>
+              {{ call_to_action }}
+            </span>
+          </button>
+        </div>
+      </div>
+    </product-upsell>
+  {% endunless %}
+  
+
+{%- endfor -%}

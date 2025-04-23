@@ -1,0 +1,115 @@
+<section class="image-text-blurb">
+    {% if section.settings.bg_image %}
+        <div class="bg-img">
+        <img src="{{ section.settings.bg_image |  img_url: 'master' }}" alt="">
+    </div>    
+    {% endif %}
+
+  <div class="image-text-blurb-container{% if section.settings.reverse %} revert{% endif %}{% if section.settings.small %} small-font-style{% endif %}">
+        <div class="blurb-content">
+            <div class="blurb-heading">
+                <h2>{{ section.settings.heading }} </h2>
+            </div>
+            <div class="blurb-subtext">
+              {{ section.settings.description }}
+            </div>
+            {% if section.settings.button_title != blank %}
+                <div class="blurb-button">
+                    <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+                </div>
+            {% endif %}
+        </div>
+        <div class="blurb-image image-slider">
+            {% for block in section.blocks %}
+              <div class="image-wrap">
+                <img src="{{ block.settings.icon |  img_url: 'master' }}" alt="">
+              </div>
+            {% endfor %}     
+        </div>  
+            
+      
+      
+        {% comment %} <?php if($block['video_or_image'] == "image"){ ?>
+          
+        <?php } ?>
+        <?php if($block['video_or_image'] == "video"){ ?>
+      
+        <?php } ?> {% endcomment %}
+    </div>
+</section>
+
+<script>
+
+$('.image-slider').slick({
+  dots: false,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  slidesToShow: 1,
+  arrows: true,
+});
+
+</script>
+
+{% schema %}
+    {
+      "name": "Slider Blurb Section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bg_image",
+          "label": "Background Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "small",
+          "label": "Small Font",
+          "default":false
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse Block"
+        },   
+       
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ],
+      "blocks": [
+        {
+          "name": "Icon Box",
+          "type": "icon",
+          "settings":[
+            {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Icon"
+            }
+          
+          ]
+        }
+      ],
+      "presets": [
+        {
+            "name": "Slider Blurb Section"
+        }
+      ]
+    }
+    {% endschema %}

@@ -1,0 +1,417 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ settings.text_direction }}">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16508766349"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-16508766349');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MN447B4P');</script>
+<!-- End Google Tag Manager -->
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+  <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
+  <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.googleapis.com">
+  <link rel="dns-prefetch" href="https://maps.gstatic.com">
+
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- endif -%}
+
+  {%- render 'seo-title' -%}
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- render 'social-meta-tags' -%}
+
+  {%- render 'font-face' -%}
+  {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
+  {{ 'custom.css' | asset_url | stylesheet_tag: preload: true }}
+  {%- render 'css-variables' -%}
+
+  <script>
+        
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.routes = {
+      home: "{{ routes.root_url }}",
+      cart: "{{ routes.cart_url | append: '.js' }}",
+      cartPage: "{{ routes.cart_url }}",
+      cartAdd: "{{ routes.cart_add_url | append: '.js' }}",
+      cartChange: "{{ routes.cart_change_url | append: '.js' }}",
+      search: "{{ routes.search_url }}",
+      predictiveSearch: "{{ routes.predictive_search_url }}"
+    };
+    theme.strings = {
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      inStockLabel: {{ 'products.product.in_stock_label' | t | json }},
+      oneStockLabel: {{ 'products.product.stock_label.one' | t: count: '[count]' | json }},
+      otherStockLabel: {{ 'products.product.stock_label.other' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }},
+      searchCollections: {{ 'general.search.collections' | t | json }},
+      searchPages: {{ 'general.search.pages' | t | json }},
+      searchArticles: {{ 'general.search.articles' | t | json }},
+      productFrom: {{ 'products.general.from_text_html' | t: price: '' | json }},
+      maxQuantity: {{ 'cart.general.max_quantity' | t: quantity: '[quantity]', title: '[title]' | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      isCustomerTemplate: {% if request.page_type contains 'customers/' %}true{% else %}false{% endif %},
+      moneyFormat: {{ shop.money_format | json }},
+      saveType: {{ settings.product_save_type | json }},
+      productImageSize: {{ settings.product_grid_image_size | json }},
+      productImageCover: {{ settings.product_grid_image_fill }},
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      predictiveSearchVendor: {{ settings.predictive_search_show_vendor | json }},
+      predictiveSearchPrice: {{ settings.predictive_search_show_price | json }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Impulse',
+      themeVersion: "7.4.1"
+    };
+  </script>
+
+  {{ content_for_header }}
+
+  <script src="{{ 'vendor-scripts-v11.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+  {%- if shop.enabled_currencies.size > 1 -%}
+    <link rel="stylesheet" href="{{ 'country-flags.css' | asset_url | split: '?' | first }}">
+  {%- endif -%}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+{% if template.name == 'product' and product.tags contains 'coming-soon' %}
+  <script>
+// Get the target date from Shopify settings schema
+var countdown_target = {{ settings.countdown_target | json }};
+
+// Parse the date and time from the string
+var target = new Date(countdown_target).getTime();
+
+var x = setInterval(function() {
+
+    var now = new Date().getTime();
+
+    var distance = target - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+{% endif %}
+
+  
+  {% if request.design_mode %}
+    <script src="https://api.archetypethemes.co/design-mode.js" defer="defer"></script>
+  {% endif %}
+
+</head>
+
+<body data-money="{{ shop.money_format }}" class="template-{{ template.suffix }} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-center-text="{{ settings.type_body_align_text }}" data-button_style="{{ settings.button_style }}" data-type_header_capitalize="{{ settings.type_header_capitalize }}" data-type_headers_align_text="{{ settings.type_headers_align_text }}" data-type_product_capitalize="{{ settings.type_product_capitalize }}" data-swatch_style="{{ settings.swatch_style }}" {% if settings.disable_animations %}data-disable-animations="true"{% endif %}>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MN447B4P"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+      
+<!-- { % section 'custom-ann' %} -->
+      
+    {%- sections 'header-group' -%}
+      
+    {%- sections 'popup-group' -%}
+
+      <main class="main-content" id="MainContent">
+        {{ content_for_layout }}
+      </main>
+
+    {%- sections 'footer-group' -%}
+
+    </div>
+  </div>
+
+  {%- liquid
+    render 'video-modal'
+    render 'photoswipe-template'
+    render 'tool-tip'
+  -%}
+
+  {% comment %} Image markup used when building product grid item via JS {% endcomment %}
+  <template id="naturalImageMarkup">
+    <div class="image-wrap" style="height: 0;">
+      <image-element data-aos="image-fade-in" data-aos-offset="150">
+        <img class="grid-product__image image-element" width height src srcset loading="lazy" alt>
+      </image-element>
+    </div>
+  </template>
+  <template id="fixedRatioImageMarkup">
+    <div class="grid__image-ratio">
+      <image-element data-aos="image-fade-in" data-aos-offset="150">
+        <img class="image-element" width height src srcset loading="lazy" alt>
+      </image-element>
+    </div>
+  </template>
+  
+  <script src="{{ 'custom.js' | asset_url }}"></script>
+  <script>
+  function swymCallbackFn(swat){
+    // your API calls go here
+    document.addEventListener("swym:collections-loaded", function(){
+      swat.initializeActionButtons("#AjaxinateContainer");
+    })
+  }
+  if(!window.SwymCallbacks){
+    window.SwymCallbacks = [];
+  }
+  window.SwymCallbacks.push(swymCallbackFn);
+  </script>
+
+
+  <style> 
+klarna-placement::part(osm-container) {
+    background-color: #ffffff !important;
+    font-size: 12px;
+    color: #6d6f73 !important;
+      text-align: left !important;
+    display: block;
+  font-weight:400;
+  
+}
+
+    
+  </style>
+  
+{% if page.handle == "instagram" %}
+<style>
+      .index-section .page-width {
+          max-width: 1200px !important;
+      }
+  
+      @media only screen and (max-width: 767px){
+      .index-section .page-width {
+          /* max-width: 1200px !important; */
+      }
+    }
+</style>
+{% endif %}
+
+{% if template == "index" %}
+ <style>
+  img.c-heart {
+    filter: invert(1) ;
+  }
+ </style>
+{% endif %}
+
+{% if product %}
+<script>
+window.addEventListener('load', function() {
+var _learnq = window._learnq || [];
+function addedToCart() {
+  fetch('${window.location.origin}/cart.js')
+  .then(res => res.clone().json().then(data => {
+    var cart = {
+      total_price: data.total_price/100,
+      $value: data.total_price/100,
+      total_discount: data.total_discount,
+      original_total_price: data.original_total_price/100,
+      items: data.items
+    }
+    if (item !== 'undefined') {
+      cart = Object.assign(cart, item)
+    }
+    if (klAjax) {
+        _learnq.push(['track', 'Added to Cart', cart]);
+        klAjax = false;
+      }
+  }))
+};
+(function (ns, fetch) {
+  ns.fetch = function() {
+    const response = fetch.apply(this, arguments);
+    response.then(res => {
+      if ('${window.location.origin}/cart/add.js'
+      	.includes(res.url)) {
+        	addedToCart()
+      }
+    });
+    return response
+  }
+}(window, window.fetch));
+var klAjax = true;
+var atcButtons = document.querySelectorAll("form[action*='/cart/add'] button[type='submit']");
+for (var i = 0; i < atcButtons.length; i++) {
+    atcButtons[i].addEventListener("click", function() {
+      if (klAjax) {
+        _learnq.push(['track', 'Added to Cart', item]);
+        klAjax = false;
+      }
+    })
+}
+});
+
+</script>
+{% endif %}
+
+  
+{% if settings.freeproduct_2 != blank %}
+    {% assign freeproduct2 = settings.freeproduct_2 %}
+    <input type="hidden" class="freeproduct2" data-key="{{ freeproduct_2.key }}" value="{{ freeproduct2.title }}" data-variant-id="{{ freeproduct2.variants.first.id }}" />
+    {% endif %}
+  {% if settings.freeproduct_3 != blank %}
+    {% assign freeproduct3 = settings.freeproduct_3 %}
+    <input type="hidden" class="freeproduct3" data-key="{{ freeproduct_3.key }}" value="{{ freeproduct3.title }}" data-variant-id="{{ freeproduct3.variants.first.id }}" />
+    {% endif %}
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56ZGQDNB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<script>
+  let checkBanner = setInterval(() => {
+        let bannerBody = document.querySelector('.shopify-pc__banner__body');
+        if (bannerBody) {
+            bannerBody.innerHTML += `
+                <h3>YOUR COOKIE PREFERENCES</h3>
+                <h4>WELCOME TO outrageldn.com</h4>
+                <p>
+                    Outrage London uses cookies, including third-party cookies, for functional reasons, for statistical analysis, 
+                    to personalise your experience, offer you content that targets your particular interests and analyse the performance of our advertising campaigns.<br><br>
+                    You can either accept these cookies by clicking "Accept and Continue", or click "Set cookie preferences" to set your preferences.
+                </p>
+            `;
+            clearInterval(checkBanner); // Stop checking once the element is found
+        }
+    }, 100); // Check every 100ms
+
+    let interval = setInterval(function () {
+        let target = $('.shopify-pc__banner__btns');
+        if (target.length) {
+            target.after(`
+                <div class="shopify-pc__banner__footer">
+                    <p>You can change your preferences at any time by going to the "Cookies" module or to the "Privacy Policy" sub-section of the "LEGAL & PRIVACY" section. They are accessible through links at the bottom of any outrageldn.com website page.</p>
+                    <p>For more information on our cookie policy, please <a id="shopify-pc__banner__body-policy-link" href="https://outrageldn.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer">click here.</a></p>
+                    <p class="footer-banner-logo"><a href="/">
+                      <img src="//outrageldn.com/cdn/shop/files/Outrage_LONDON_800_x_200_px_950_x_250_px_1200_x_300_px_1200_x_300_px_4.png?v=1708272716" alt=""></a>
+                    </p>
+                </div>
+            `);
+            clearInterval(interval); // Stop the interval once the element is found
+        }
+    }, 100); // Check every 100ms
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const cookieButtonInterval = setInterval(() => {
+            const button = document.getElementById("shopify-pc__banner__btn-manage-prefs");
+            if (button) {
+                button.textContent = "Set Cookie Preferences";
+                clearInterval(cookieButtonInterval); // Stop checking once the button is found and updated
+            }
+        }, 100); // Check every 100 milliseconds
+    });
+
+
+    const acceptButtonInterval = setInterval(() => {
+        const button = document.getElementById("shopify-pc__banner__btn-accept");
+        if (button) {
+            button.textContent = "Accept and Continue";
+            clearInterval(acceptButtonInterval); // Stop checking once the button is found and updated
+        }
+    }, 100); // Check every 100 milliseconds
+
+
+    const declineButtonInterval = setInterval(() => {
+        const button = document.getElementById("shopify-pc__banner__btn-decline");
+        if (button) {
+            button.textContent = "Continue without accepting"; // Update text
+    
+            // Add your event listener safely
+            button.addEventListener('click', () => {
+                console.log('Button clicked!');
+            });
+    
+            // Clear the interval once the button is found
+            clearInterval(declineButtonInterval);
+        }
+    }, 100);
+
+    // Get all checkbox elements within the specified class
+    document.addEventListener('DOMContentLoaded', () => {
+       document.body.addEventListener('click', function (event) {
+            if (event.target && event.target.id === 'shopify-pc__banner__btn-manage-prefs') {
+            const shopifyPrefsCheckboxes = document.querySelectorAll('.shopify-pc__prefs__option input[type="checkbox"]');
+            // Check all checkboxes by default and set the 'checked' attribute
+            shopifyPrefsCheckboxes.forEach(checkbox => {
+                checkbox.checked = true; // Set the checkbox state
+                checkbox.setAttribute('checked', 'checked'); // Update the attribute
+            });
+    
+            // Add event listeners to synchronize the 'checked' attribute with the state
+            shopifyPrefsCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function () {
+                    if (this.checked) {
+                        this.setAttribute('checked', 'checked'); // Add the attribute
+                    } else {
+                        this.removeAttribute('checked'); // Remove the attribute
+                    }
+                });
+            });
+          }
+        });
+    });
+</script>
+
+</body>
+</html>

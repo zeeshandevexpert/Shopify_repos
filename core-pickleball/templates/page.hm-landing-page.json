@@ -1,0 +1,238 @@
+{
+  "sections": {
+    "main": {
+      "type": "article-template",
+      "disabled": true,
+      "settings": {
+        "social_sharing_blog": true,
+        "show_tags": true
+      }
+    },
+    "hm_main_banner_a9EPhE": {
+      "type": "hm-main-banner",
+      "settings": {
+        "hm-main-banner-before-layer": "shopify:\/\/shop_images\/Rectangle_3.png",
+        "hm-main-banner-after-layer": "shopify:\/\/shop_images\/Rectangle_4.png",
+        "hm-main-banner-video": "shopify:\/\/files\/videos\/1022 [CORE hypevid] wo in-art.mp4",
+        "hm-main-banner-heading": "Experience Pickleball. Anytime.    Anywhere.",
+        "hm-main-banner-sub-heading": "#1 USA Pickleball Event Provider"
+      }
+    },
+    "hm_bring_all_section_aGBRTX": {
+      "type": "hm-bring-all-section",
+      "settings": {
+        "hm-bring-heading": "Pickleball Activation Experts",
+        "hm-bring-paragrah": "We bring the game to you with portable pickleball courts, premium nets, expert-led programming, and personalized swag for any event.",
+        "hm-bring-ancher-url": "https:\/\/coreathletics.com\/pages\/contact-us",
+        "hm-bring-ancher-text": "BOOK NOW"
+      }
+    },
+    "hm_video_testimonial_QRNKny": {
+      "type": "hm-video-testimonial",
+      "blocks": {
+        "testimonial_videos_M4y4a8": {
+          "type": "testimonial-videos",
+          "settings": {
+            "hm-block-testi-video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e08a7f985b154da5afdff26f17f65632.mp4",
+            "hm-video-thumbnail": "shopify:\/\/shop_images\/Screenshot_2024-11-18_013748.png",
+            "hm-block-testi-btn-img": "shopify:\/\/shop_images\/pause-btn.webp"
+          }
+        },
+        "testimonial_videos_88qpmX": {
+          "type": "testimonial-videos",
+          "settings": {
+            "hm-block-testi-video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/55ebaec67dcc4319ae11f6b079b84cb9.mp4",
+            "hm-video-thumbnail": "shopify:\/\/shop_images\/Screenshot_2024-11-18_013945.png",
+            "hm-block-testi-btn-img": "shopify:\/\/shop_images\/pause-btn.webp"
+          }
+        },
+        "testimonial_videos_nC7g4y": {
+          "type": "testimonial-videos",
+          "settings": {
+            "hm-block-testi-video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9295843937034029b298e6077b682c3e.mp4",
+            "hm-video-thumbnail": "shopify:\/\/shop_images\/Screenshot_2024-11-18_014034.png",
+            "hm-block-testi-btn-img": "shopify:\/\/shop_images\/pause-btn.webp"
+          }
+        },
+        "testimonial_videos_Rh69gG": {
+          "type": "testimonial-videos",
+          "settings": {
+            "hm-block-testi-video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f7474d1885c54e54a62fcda5f777d44e.mp4",
+            "hm-video-thumbnail": "shopify:\/\/shop_images\/Screenshot_2024-11-18_014017.png",
+            "hm-block-testi-btn-img": "shopify:\/\/shop_images\/pause-btn.webp"
+          }
+        },
+        "testimonial_videos_8mDb7A": {
+          "type": "testimonial-videos",
+          "settings": {
+            "hm-block-testi-video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/15b0782d3e234dfca02c1343a9db48cf.mp4",
+            "hm-video-thumbnail": "shopify:\/\/shop_images\/504e99d396367613d73728239f52eaea.png",
+            "hm-block-testi-btn-img": "shopify:\/\/shop_images\/pause-btn.webp"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_videos_M4y4a8",
+        "testimonial_videos_88qpmX",
+        "testimonial_videos_nC7g4y",
+        "testimonial_videos_Rh69gG",
+        "testimonial_videos_8mDb7A"
+      ],
+      "settings": {
+        "hm-testimonial-heading": "Our Video Testimonials"
+      }
+    },
+    "hm_place_top_section_bjJpnV": {
+      "type": "hm-place-top-section",
+      "blocks": {
+        "places_card_block_mhHyXn": {
+          "type": "places-card-block",
+          "settings": {
+            "places-card-heading": "Conferences & Trade Shows",
+            "places-card-paragraph": "Elevate your conference or trade show experience by incorporating pickleball into the mix. Our premium, portable courts will be the highlight of your event, leaving attendees with a memorable experience delivered in a unique and dynamic way.",
+            "places-card-img": "shopify:\/\/shop_images\/IMG_3956.jpg"
+          }
+        },
+        "places_card_block_xRML8V": {
+          "type": "places-card-block",
+          "settings": {
+            "places-card-heading": "Corporate Events",
+            "places-card-paragraph": "Boost team-building at corporate retreats or company events by offering pickleball on site! Let your employees, clients, and partners bond on the court, promoting collaboration, communication, and a healthy dose of friendly competition.",
+            "places-card-img": "shopify:\/\/shop_images\/image_4.png"
+          }
+        },
+        "places_card_block_NpK4TA": {
+          "type": "places-card-block",
+          "settings": {
+            "places-card-heading": "Sporting Events",
+            "places-card-paragraph": "Enhance the fan experience at sporting events by incorporating pickleball courts for both spectators and participants. Whether it's a halftime entertainment option or a dedicated pickleball tournament alongside the main event, our portable courts will create a buzz and engage sports enthusiasts of all ages.",
+            "places-card-img": "shopify:\/\/shop_images\/image_5_cebb00ac-8e01-4b70-99f8-226aeb5e6416.png"
+          }
+        },
+        "places_card_block_4B6wUt": {
+          "type": "places-card-block",
+          "settings": {
+            "places-card-heading": "Breweries & Entertainment Venues",
+            "places-card-paragraph": "Brewery Pickleball Pop Ups offer an exciting way to play pickleball at your favorite local brewery. This unique experience combines the fun of pickleball with the atmosphere of a brewery by setting up a pop-up court in the brewery's outdoor space.",
+            "places-card-img": "shopify:\/\/shop_images\/image_6.png"
+          }
+        }
+      },
+      "block_order": [
+        "places_card_block_mhHyXn",
+        "places_card_block_xRML8V",
+        "places_card_block_NpK4TA",
+        "places_card_block_4B6wUt"
+      ],
+      "settings": {
+        "hm-places-heading": "Places We Love Popping Up",
+        "hm-places-ancher-url": "https:\/\/coreathletics.com\/pages\/contact-us",
+        "hm-places-ancher-text": "BOOK NOW"
+      }
+    },
+    "hm_add_event_3XwMpr": {
+      "type": "hm-add-event",
+      "blocks": {
+        "event_cards_block_XCtaRp": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Vector.png",
+            "event-cards-heading": "BLACK LIGHT TOURNAMENT",
+            "event-cards-paragraph": "Glow it up. Host an event under black lights. Wear neon and have a blast."
+          }
+        },
+        "event_cards_block_EhFWfe": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Vector_1.png",
+            "event-cards-heading": "DINK AND DRINK",
+            "event-cards-paragraph": "Enjoy a few cocktails on the court while you play and network."
+          }
+        },
+        "event_cards_block_DVUfYm": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Group_23.png",
+            "event-cards-heading": "LEARN TO PLAY",
+            "event-cards-paragraph": "Get expert instruction on the rules and basics."
+          }
+        },
+        "event_cards_block_3iYkHE": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Group_24.png",
+            "event-cards-heading": "TEAM BUILDING",
+            "event-cards-paragraph": "Customized pickleball curriculum and instruction designed to build team cohesion."
+          }
+        },
+        "event_cards_block_73hRqF": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Group_25.png",
+            "event-cards-heading": "CUSTOM BARRIERS",
+            "event-cards-paragraph": "Brand the court! Increase brand exposure."
+          }
+        },
+        "event_cards_block_eLxLiL": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Group_26.png",
+            "event-cards-heading": "BRAND VS. BRAND CHALLENGE",
+            "event-cards-paragraph": "With team on team competitive matches."
+          }
+        },
+        "event_cards_block_GgPmkp": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/Group_27.png",
+            "event-cards-heading": "CUSTOM PADDLES",
+            "event-cards-paragraph": "An amazing giveaway and branding item."
+          }
+        },
+        "event_cards_block_EgkdyV": {
+          "type": "event-cards-block",
+          "settings": {
+            "event-cards-img": "shopify:\/\/shop_images\/imgpsh_thumbnail_sx.png",
+            "event-cards-heading": "VIP EXPERIENCE",
+            "event-cards-paragraph": "Special private 1 on 1 with celebrities."
+          }
+        }
+      },
+      "block_order": [
+        "event_cards_block_XCtaRp",
+        "event_cards_block_EhFWfe",
+        "event_cards_block_DVUfYm",
+        "event_cards_block_3iYkHE",
+        "event_cards_block_73hRqF",
+        "event_cards_block_eLxLiL",
+        "event_cards_block_GgPmkp",
+        "event_cards_block_EgkdyV"
+      ],
+      "settings": {
+        "event-bg-img": "shopify:\/\/shop_images\/304b60360d68deadddef5e946b50949c.png",
+        "event-ons-ancher-url": "#.",
+        "event-ons-ancher-text": "ADD ONS",
+        "event-main-heading": "EVENT ADD ONS",
+        "event-main-paragraph": "We bring the game to you with portable pickleball courts, premium nets, expert-led programming, and personalized swag for any event.",
+        "event-btn-1-url": "https:\/\/coreathletics.com\/pages\/contact-us",
+        "event-btn-1-text": "INQUIRE",
+        "event-btn-2-url": "https:\/\/coreathletics.com\/pages\/contact-us",
+        "event-btn-2-text": "BOOK EVENT",
+        "event-card-logo-img": "shopify:\/\/shop_images\/Group_34.png"
+      }
+    },
+    "hm_core_footer_EQcEXV": {
+      "type": "hm-core-footer",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "hm_main_banner_a9EPhE",
+    "hm_bring_all_section_aGBRTX",
+    "hm_video_testimonial_QRNKny",
+    "hm_place_top_section_bjJpnV",
+    "hm_add_event_3XwMpr",
+    "hm_core_footer_EQcEXV"
+  ]
+}

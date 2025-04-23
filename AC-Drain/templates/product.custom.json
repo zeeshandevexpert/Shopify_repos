@@ -1,0 +1,181 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "price",
+        "title",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "stacked",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "icon_box_section_mRYWtF": {
+      "type": "icon-box-section",
+      "blocks": {
+        "icon_a4CGdV": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_1.svg",
+            "title": "Automated Shipping",
+            "subtext": "Lorem Ipsum is simply dummy text of the printing and typesetting"
+          }
+        },
+        "icon_nKnKfV": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_2.svg",
+            "title": "Recurring Savings",
+            "subtext": "Lorem Ipsum is simply dummy text of the printing and typesetting"
+          }
+        },
+        "icon_X8EErG": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_3.svg",
+            "title": "Online Access",
+            "subtext": "Lorem Ipsum is simply dummy text of the printing and typesetting"
+          }
+        },
+        "icon_DE4YQR": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_4.svg",
+            "title": "Free Shipping",
+            "subtext": "Lorem Ipsum is simply dummy text of the printing and typesetting"
+          }
+        }
+      },
+      "block_order": [
+        "icon_a4CGdV",
+        "icon_nKnKfV",
+        "icon_X8EErG",
+        "icon_DE4YQR"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "blurb_section_WzQKpt": {
+      "type": "blurb-section",
+      "disabled": true,
+      "settings": {
+        "index": 6,
+        "small": false,
+        "reverse": true,
+        "large": false,
+        "type": "image",
+        "image": "shopify:\/\/shop_images\/Group_107.svg",
+        "video_media": "",
+        "heading": "$129.99What is AC Drain Clear?",
+        "description": "<p>AC Drain Clear is a patented system that uses the natural vacuum pressure of your AC unit to dispense an environmentally friendly cleaning agent into the condensation drain pan and through the drain line. <\/p>",
+        "button_title": "SHOP NOW",
+        "button_link": ""
+      }
+    },
+    "text_banner_section_UMA7GP": {
+      "type": "text-banner-section",
+      "settings": {
+        "heading": "Stop clogs before they start.",
+        "description": "<p>Unlike home remedies and other products on the market, AC Drain Clear stops the problem where it starts:  in your AC’s drain pan.  Our proprietary solution is non-toxic, non-acidic and environmentally friendly.  It keeps the toxic slime away without damaging your AC unit. <\/p>",
+        "button_title": "Order Today",
+        "button_link": "#"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "icon_box_section_mRYWtF",
+    "blurb_section_WzQKpt",
+    "text_banner_section_UMA7GP"
+  ]
+}

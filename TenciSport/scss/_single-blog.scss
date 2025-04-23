@@ -1,0 +1,140 @@
+.article-template{
+    
+    padding: 0 40px;
+    @media (max-width:767px) {
+        padding: 0 20px;
+    }
+    .article-template__content{
+        max-width: 1550px;
+        margin: 0 auto;
+        h2{
+            font-size: 50px;
+            font-family: $sportingbold;
+            color: $black;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            @media (max-width:767px) {
+                font-size: 36px;
+            }
+            @media (max-width:450px) {
+                font-size: 28px;
+            }
+        }
+        p{
+            font-family: $sportingregular;
+            font-size: 18px;
+            color: $black;
+            margin-bottom: 20px;
+            @media (max-width:767px) {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+
+.main-blog{
+    padding: 20px !important;
+    margin-top: 70px !important;
+    .title-wrapper-with-link{
+        justify-content: center;
+        display: block;
+        .sub_title{
+            font-family: $sportingregular;
+            font-size: 14px;
+            text-align: center;
+            color: $green;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .blog__title{
+                font-family: $sportingbold;
+                font-size: 40px;
+                color: $black;
+                text-align: center;
+                text-transform: uppercase;
+                @media screen and (max-width: 991px) {
+                    font-size: 38px;
+                }
+                @media screen and (max-width: 567px) {
+                    font-size: 28px;
+                }
+        }
+    }
+    .blog-articles{
+        column-gap: 50px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 80px;
+       display: grid;
+        @media (max-width:991px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media (max-width:576px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &.contains-card{
+            margin-top:20px;
+        }
+        .blog-articles__article{
+            .article-card-wrapper{
+                .article-card{
+                    .card__inner-wrap{
+                        .article-card__image-wrapper{
+                            .article-card__image{
+                                position: relative;
+                                img{
+                                    width: 100%;
+                                    object-fit: cover;
+                                    display: block;
+                                    height: 100%;
+                                }
+                                &:before{
+                                    content: "";
+                                    width: 3px;
+                                    height: 90%;
+                                    display: block;
+                                    position: absolute;
+                                    left: -27px;
+                                    top: 50%;
+                                    background: $green;
+                                    transform: translateY(-50%);
+                                }
+                            }
+                        }
+                    }
+                    .card__content{
+                        .card__information{
+                            padding-left: 0;
+                            .card__heading{
+                                a{
+                                    font-family: $sportingbold;
+                                    font-size: 22px;
+                                    text-transform: uppercase;
+                                    color: $green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-child(3n+1){
+                .article-card-wrapper{
+                    .article-card{
+                        .card__inner-wrap{
+                            .article-card__image-wrapper{
+                                .article-card__image{
+                                    &:before{
+                                        content: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

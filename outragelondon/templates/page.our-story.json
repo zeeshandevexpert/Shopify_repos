@@ -1,0 +1,124 @@
+{
+  "sections": {
+    "slideshow_WFYfqG": {
+      "type": "slideshow",
+      "blocks": {
+        "image_Tj64Vj": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-15T160106.891.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_Tj64Vj"
+      ],
+      "settings": {
+        "section_height": "450px",
+        "mobile_height": "auto",
+        "parallax": true,
+        "style": "bars",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "custom_richtext_j9KFWz": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "How it began",
+        "heading": "Outrage London History",
+        "text": "<p>OUTRAGE LONDON emerged from the creative mind of Kieran Ireland back in 2019, driven by his passion for fashion design. Kieran aimed to establish a brand that fostered a sense of family and community, a place where customers could shop with confidence and trust.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_WeFYbA": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/Copy_of_Untitled_1152_x_2048_px_2000_x_2000_px.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "The Journey",
+        "text": "<p>The journey began in 2017 when Kieran first conceived the idea for the brand. Spending over two years meticulously designing and crafting pieces in his home garage, he finally brought his creations to life in 2019. The debut OUTRAGE LONDON collection was an instant success, propelling Kieran into the spotlight as a respected artisan in the jewelry industry. Despite tempting offers from major brands seeking collaboration, Kieran remained committed to realizing his vision for OUTRAGE LONDON.<\/p><p>Driven by Kieran Ireland's vision of community-building alongside offering distinctive designs, OUTRAGE LONDON rapidly ascended to become one of the premier jewelry brands in the United Kingdom within a mere two years.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_fnUCek": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Copy_of_Untitled_1152_x_2048_px_2000_x_2000_px_3.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "Our Community",
+        "text": "<p>The initial triumph of OUTRAGE LONDON necessitated KIERAN's transition from his home garage to a nearby workshop in London in 2020, where he and his WIFE devoted countless hours to sustaining the early momentum. By 2021, the brand had expanded its reach globally and employed over 10 employees to facilitate its growth into multiple locations worldwide.<\/p><p>OUTRAGE LONDON is now worn by individuals from more than 100 countries globally. Standing as symbols of freedom and self-belief.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_yUMfHG": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/Copy_of_Untitled_1152_x_2048_px_2000_x_2000_px_2.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "",
+        "heading": "Our Vision",
+        "text": "<p>We aspire to build a distinctive jewellery brand that creates more than just jewellery. Rooted in the essence of enduring connections, our commitment lies in crafting longevity jewellery that resists the passage of time, maintaining its shine without fading, tarnishing, or discolouring. Through the artistry of our designs and the quality of our materials, we aim to symbolise not just moments, but lifetimes, creating pieces that become timeless pieces within the embrace of our extended growing family and community.<\/p><p>As OUTRAGE continues its remarkable journey, Kieran and his wife harbor ambitions beyond mere expansion. Their vision extends far beyond physical locations and employee headcounts. Their aspiration is to foster a vibrant community, one where enthusiasts and connoisseurs alike converge to celebrate the artistry of jewelry. They envision OUTRAGE LONDON not just as a brand but as the nucleus of a global jewelry community, where creativity, craftsmanship, and passion intertwine.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "slideshow_WFYfqG",
+    "custom_richtext_j9KFWz",
+    "custom_iwt_WeFYbA",
+    "custom_iwt_fnUCek",
+    "custom_iwt_yUMfHG"
+  ]
+}

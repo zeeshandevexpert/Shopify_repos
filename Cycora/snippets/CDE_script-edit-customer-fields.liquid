@@ -1,0 +1,559 @@
+{% comment %}
+Don't edit this file.
+This snippet is auto generated and will be overwritten.
+{% endcomment %}
+
+<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">\x3C/script>')</script>
+<script>
+    var shopName  = '{{ shop.permanent_domain }}';
+    var baseApiUrl = 'https://editaccount.markodesign.net/rest_api.php';
+    var apiVersion = '1_0';
+    var customerId = '{% if customer.id %}{{ customer.id }}{% else %}0{% endif %}';
+    var customerEmail = '{{ customer.email }}';
+    var CDE_default_country = 'United States';
+
+    async function CDE_get_access_token() {
+
+        var current_customer_email = '';
+
+        if(typeof $('input[name="CDE_current_customer_email"]').val() != 'undefined') {
+            current_customer_email = $('input[name="CDE_current_customer_email"]').val();
+        }else if(typeof $('#CDE_current_customer_email').val() != 'undefined'){
+            current_customer_email = $('#CDE_current_customer_email').val();
+        }
+
+        var data = {
+            'action'        : 'getAccessToken',
+            'apiVersion'    : apiVersion,
+            'customerId'    : customerId,
+            'customerEmail' : current_customer_email,
+            'shopName'      : shopName
+        };
+
+
+        let response = await CDE_send_request('GET',data);
+        var obj_res = jQuery.parseJSON(response);
+
+        if (obj_res.token) {
+            return obj_res.token;
+        }
+        return false;
+
+    }
+
+    async function CDE_send_request(type, data) {
+        return new Promise((resolve, reject) => {
+            $.ajax({
+                url: baseApiUrl,
+                data: data,
+                type: type,
+                timeout: 30000,
+                success: (response) => {
+                    resolve(response);
+                },
+                error: (response) => {
+                    reject(response);
+                }
+            })
+        })
+    }
+</script>
+
+{% if customer %}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ "customer_area.js"  | shopify_asset_url | script_tag }}
+
+    <script>
+        $(document).ready(function(){
+
+            var CDE_inputs_list = $(".CDE_input");
+            CDE_inputs_list.each(function(){
+                var input_type = $(this).data('input-type');
+                var input_id = $(this).data('input-id');
+
+                if(input_id!='') {
+                    $(this).after('<a href="javascript:void(0);" id="CDE_edit_'+input_id+'" class="CDE_edit_input" data-input-type="' + input_type + '">' + CDE_settings.editActionTitle + '</a><a id="CDE_save_'+input_id+'" href="javascript:void(0)" class="CDE_save_input" data-input-type="' + input_type + '">' + CDE_settings.saveActionTitle + '</a>');
+                }else{
+                    $(this).after('<a href="javascript:void(0);" class="CDE_edit_input" data-input-type="' + input_type + '">' + CDE_settings.editActionTitle + '</a><a href="javascript:void(0)" class="CDE_save_input" data-input-type="' + input_type + '">' + CDE_settings.saveActionTitle + '</a>');
+                }
+                $(this).prop('disabled', true);
+
+                if(input_type=='email'){
+                    $(this).after('<input type="hidden" id="CDE_current_customer_email" name="CDE_current_customer_email" value="' + customerEmail + '" />');
+                }
+            });
+
+
+            setTimeout(function (){
+
+                CDE_init_customer_address();
+
+                $('.CDE_edit_input').on('click', function(){
+                    var input_type = $(this).data('input-type');
+
+                    CDE_init_action_buttons();
+
+                    $(this).hide();
+                    $("a.CDE_save_input[data-input-type='" + input_type + "']").show();
+                    var input_element = $("input[data-input-type='" + input_type + "']");
+                    input_element.prop('disabled',false).focus();
+
+                    CDE_afterClickOnEditInput();
+                });
+                $('.CDE_save_input').on('click',async function(){
+                    var input_type = $(this).data('input-type');
+                    CDE_init_action_buttons();
+
+                    var input_element = $("input[data-input-type='" + input_type + "']");
+                    var input_value = input_element.val();
+                    let access_token = await CDE_get_access_token();
+                    if(access_token) {
+                        let send_post = await CDE_save_input(access_token, input_type, input_value);
+                        if(send_post){
+                            if(input_type=='email'){
+                                $('input[name="CDE_current_customer_email"]').val(input_value);
+                            }
+                            $("a.CDE_save_input[data-input-type='" + input_type + "']").after('<span class="CDE_succ_saved">' + CDE_settings.succSavedMessage + '</span>');
+                            setTimeout(function(){
+                                $('.CDE_succ_saved').fadeOut(500);
+                            },1000);
+
+                            CDE_afterClickOnSaveInput();
+                        }
+                    }
+                });
+            }, 500);
+
+        });
+
+        async function CDE_init_customer_address() {
+            if('#CDE_account_address_list') {
+
+                $('#CDE_account_address_list').html(CDE_settings.loadingMessage);
+                $('#CDE_add_new_address_form_container').after('<input type="hidden" id="CDE_current_customer_email" value="' + customerEmail + '" />');
+
+                $('.CDE-edit-customer-address-form, #CDE_add_new_address_form_container').empty().hide();
+
+                $('#CDE_submit_button_add_new_address').on('click', function(){
+                    CDE_submit_form_add_new_address();
+                });
+
+                let access_token = await CDE_get_access_token();
+
+                if (access_token) {
+                    let address_list = await CDE_get_customer_address(access_token);
+
+                    var addressHTMLTemplatePut = '';
+
+                    if (address_list.length > 0) {
+                        address_list.forEach((address) => {
+                            var addressHTMLTemplate = CDE_addressTemplate;
+
+                            addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_link_delete_address]', '<a href="javascript:void(0)" onclick="CDE_delete_address(' + address.id + '); return false" class="CDE-link-delete-address">' + CDE_settings.deleteAddressActionTitle + '</a>');
+                            addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_link_edit_address]', '<a href="javascript:void(0)"   onclick="CDE_edit_address(' + address.id + '); return false" class="CDE-link-edit-address">' + CDE_settings.editAddressActionTitle + '</a>');
+                            addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_address_id]', address.id);
+                            addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_address_id]', address.id);
+
+                            if (address.default == true) {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_default]', CDE_settings.defaultAddressTitle);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_default]', '');
+                            }
+                            if (address.first_name && address.first_name != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_first_name]', address.first_name);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_first_name]', '');
+                            }
+                            if (address.last_name && address.last_name != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_last_name]', address.last_name);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_last_name]', '');
+                            }
+                            if (address.address1 && address.address1 != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_address1]', address.address1);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_address1]', '');
+                            }
+                            if (address.address2 && address.address2 != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_address2]', address.address2);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_address2]', '');
+                            }
+                            if (address.city && address.city != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_city]', address.city);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_city]', '');
+                            }
+                            if (address.company && address.company != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_company]', address.company);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_company]', '');
+                            }
+                            if (address.country && address.country != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_country]', address.country);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_country]', '');
+                            }
+                            if (address.country_code && address.country_code != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_country_code]', address.country_code);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_country_code]', '');
+                            }
+                            if (address.country_name && address.country_name != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_country_name]', address.country_name);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_country_name]', '');
+                            }
+                            if (address.phone && address.phone != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_phone]', address.phone);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_phone]', '');
+                            }
+                            if (address.province && address.province != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_province]', address.province);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_province]', '');
+                            }
+                            if (address.province_code && address.province_code != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_province_code]', address.province_code);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_province_code]', '');
+                            }
+                            if (address.zip && address.zip != 'null') {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_zip]', address.zip);
+                            } else {
+                                addressHTMLTemplate = addressHTMLTemplate.replace('[CDE_zip]', '');
+                            }
+
+                            addressHTMLTemplatePut = addressHTMLTemplatePut + addressHTMLTemplate;
+                        });
+                    } else {
+                        var addressHTMLTemplatePut = CDE_noAddressTemplate;
+                    }
+
+                    //var html_add_new_address_button = "<a class=\"CDE-link-add-new-address\" href=\"javascript:void(0)\" onclick=\"CDE_button_add_new_address();\">" + CDE_settings.addAddressButtonTitle + "</a>";
+                    //var extraHtmlTemplate = CDE_addAddressButtonTemplate.replace('[CDE_add_new_address_button]', html_add_new_address_button);
+
+                    $('.CDE-link-add-new-address').show();
+
+                    $('#CDE_account_address_list').empty().html(addressHTMLTemplatePut);
+
+                }
+            }
+        }
+
+        async function CDE_get_customer_address(access_token) {
+            var data = {
+                'access_token'  : access_token,
+                'action'        : 'getCustomerAddress',
+                'apiVersion'    : apiVersion,
+                'shopName'      : shopName,
+                'customerId'    : customerId,
+                'customerEmail' : $('input[name="CDE_current_customer_email"]').val()
+            };
+            let response = await CDE_send_request('GET',data);
+            var obj_res = jQuery.parseJSON(response);
+
+            if (obj_res['succ']=='true') {
+                return obj_res.data;
+            }
+            return false;
+        }
+
+        async function CDE_save_input(access_token, input_type, input_value) {
+            var data = {
+                'access_token'  : access_token,
+                'action'        : 'saveCustomerData',
+                'apiVersion'    : apiVersion,
+                'shopName'      : shopName,
+                'input_type'    : input_type,
+                'input_value'   : input_value,
+                'customerId'    : customerId,
+                'customerEmail' : $('input[name="CDE_current_customer_email"]').val()
+            };
+            let response = await CDE_send_request('POST',data);
+            var obj_res = jQuery.parseJSON(response);
+
+            if (obj_res['succ']=='true') {
+                return true;
+            }else{
+                if(obj_res['message']!='') {
+                    return obj_res['message'];
+                }else{
+                    return 'Error!';
+                }
+            }
+        }
+
+        async function CDE_delete_address(address_id) {
+            if (confirm('You really want delete this address?')) {
+
+                $('#CDE_address_container_' + address_id).remove();
+
+                if(typeof $('input[name="CDE_current_customer_email"]').val() != 'undefined'){
+                    var current_customer_email = $('input[name="CDE_current_customer_email"]').val();
+                }else{
+                    var current_customer_email = $('#CDE_current_customer_email').val();
+                }
+                let access_token = await CDE_get_access_token();
+                var data = {
+                    'access_token'  : access_token,
+                    'action'        : 'deleteCustomerAddress',
+                    'addressId'     : address_id,
+                    'apiVersion'    : apiVersion,
+                    'shopName'      : shopName,
+                    'customerId'    : customerId,
+                    'customerEmail' : current_customer_email
+                };
+                let response = await CDE_send_request('GET',data);
+                var obj_res = jQuery.parseJSON(response);
+
+                if (obj_res['succ']=='true') {
+                    //CDE_init_customer_address();
+                }
+                if (obj_res['error']=='true') {
+                    alert(obj_res.message);
+                }
+            }
+        }
+
+        async function CDE_submit_form_add_new_address() {
+
+            $('input').removeClass('CDE-input-error');
+            $('.CDE-input-error-message').remove();
+
+            var defaultAddress = 'false';
+            if($('input[name="address[default]"]').is(":checked")){
+                defaultAddress = 'true';
+            }
+
+            var customer_address_data = {
+                'first_name' : $('input[name="address[first_name]"]').val(),
+                'last_name'  : $('input[name="address[last_name]"]').val(),
+                'phone'      : $('input[name="address[phone]"]').val(),
+                'company'    : $('input[name="address[company]"]').val(),
+                'address1'   : $('input[name="address[address1]"]').val(),
+                'address2'   : $('input[name="address[address2]"]').val(),
+                'country'    : $('select[name="address[country]"]').val(),
+                'city'       : $('input[name="address[city]"]').val(),
+                'province'   : $('select[name="address[province]"]').val(),
+                'zip'        : $('input[name="address[zip]"]').val(),
+                'default'    : defaultAddress
+            };
+
+            var error_required_fields = 0;
+            CDE_settings.addressRequiredFields.forEach((required_field) => {
+                if(customer_address_data[required_field] == ''){
+                    var input_element = $('input[name="address[' + required_field + ']"]');
+                    error_required_fields++;
+                    input_element.addClass('CDE-input-error');
+                    if(CDE_settings.show_error_message_for_address==1) {
+                        input_element.after('<div class="CDE-input-error-message">' + CDE_settings.required_error_message + '</div>');
+                    }
+                }
+            });
+
+            if(error_required_fields > 0){
+                return false;
+            }
+
+            if(typeof $('input[name="CDE_current_customer_email"]').val() != 'undefined'){
+                var current_customer_email = $('input[name="CDE_current_customer_email"]').val();
+            }else{
+                var current_customer_email = $('#CDE_current_customer_email').val();
+            }
+            let access_token = await CDE_get_access_token();
+            var data = {
+                'access_token'  : access_token,
+                'action'        : 'addCustomerAddress',
+                'apiVersion'    : apiVersion,
+                'shopName'      : shopName,
+                'customerId'    : customerId,
+                'customerEmail' : current_customer_email,
+                'customerAddressData' : customer_address_data
+            }
+
+            let response = await CDE_send_request('POST',data);
+            var obj_res = jQuery.parseJSON(response);
+
+            if (obj_res['succ']=='true') {
+                CDE_init_customer_address();
+                return true;
+            }
+            return false;
+
+        }
+
+        /*Create HTML form for Address edit*/
+        async function CDE_edit_address(address_id) {
+
+            var editAddressFormHtml = CDE_editAddressForm;
+            var editAddressContainer =  $('#CDE_edit_customer_address_form_' + address_id);
+
+            $('.CDE-edit-customer-address-form, #CDE_add_new_address_form_container').empty().hide();
+            editAddressContainer.html(CDE_settings.loadingMessage).show();
+
+            var current_customer_email = '';
+            if(typeof $('input[name="CDE_current_customer_email"]').val() != 'undefined'){
+                current_customer_email = $('input[name="CDE_current_customer_email"]').val();
+            }else{
+                current_customer_email = $('#CDE_current_customer_email').val();
+            }
+
+
+            let access_token = await CDE_get_access_token();
+
+            var data = {
+                'access_token'  : access_token,
+                'action'        : 'getCustomerAddressById',
+                'addressId'     : address_id,
+                'apiVersion'    : apiVersion,
+                'shopName'      : shopName,
+                'customerId'    : customerId,
+                'customerEmail' : current_customer_email
+            };
+            let response = await CDE_send_request('GET',data);
+            var obj_res = jQuery.parseJSON(response);
+
+            var CDE_all_countires = document.getElementById("CDE_countries_options_list").innerHTML;
+
+            for (const [key, value] of Object.entries(obj_res.address)) {
+                var input_key   = `${key}`;
+                var input_value = `${value}`;
+
+                editAddressFormHtml = editAddressFormHtml.replace('name="address[' + input_key + ']"', 'name="address[' + input_key + ']" value="' + input_value + '"');
+
+                if(input_key=='country') {
+                    editAddressFormHtml = editAddressFormHtml.replace('[CDE_default_country]', input_value);
+                    editAddressFormHtml = editAddressFormHtml.replace('[CDE_all_countires]', CDE_all_countires);
+                }
+
+                if(input_key=='default'){
+                    if(input_value=='true'){
+                        editAddressFormHtml = editAddressFormHtml.replace('name="address[' + input_key + ']"', 'name="address[' + input_key + ']" checked="checked" disabled');
+                    }
+                }
+            }
+
+            editAddressFormHtml = editAddressFormHtml.replace('[CDE_address_id]', address_id);
+
+            editAddressContainer.show().html(editAddressFormHtml);
+            CDE_init_country_province_selectors(obj_res.address.province);
+        }
+
+        async function CDE_submit_form_edit_address(address_id) {
+
+            $('input').removeClass('CDE-input-error');
+            $('.CDE-input-error-message').remove();
+
+            var defaultAddress = 'false';
+            if($('input[name="address[default]"]').is(":checked")){
+                defaultAddress = 'true';
+            }
+
+            var customer_address_data = {
+                'first_name' : $('input[name="address[first_name]"]').val(),
+                'last_name'  : $('input[name="address[last_name]"]').val(),
+                'phone'      : $('input[name="address[phone]"]').val(),
+                'company'    : $('input[name="address[company]"]').val(),
+                'address1'   : $('input[name="address[address1]"]').val(),
+                'address2'   : $('input[name="address[address2]"]').val(),
+                'country'    : $('select[name="address[country]"]').val(),
+                'city'       : $('input[name="address[city]"]').val(),
+                'province'   : $('select[name="address[province]"]').val(),
+                'zip'        : $('input[name="address[zip]"]').val(),
+                'default'    : defaultAddress
+            };
+
+            var error_required_fields = 0;
+            CDE_settings.addressRequiredFields.forEach((required_field) => {
+                if(customer_address_data[required_field] == ''){
+                    var input_element = $('input[name="address[' + required_field + ']"]');
+                    error_required_fields++;
+                    input_element.addClass('CDE-input-error');
+                    if(CDE_settings.show_error_message_for_address==1) {
+                        input_element.after('<div class="CDE-input-error-message">' + CDE_settings.required_error_message + '</div>');
+                    }
+                }
+            });
+
+            if(error_required_fields > 0){
+                return false;
+            }
+
+            if(typeof $('input[name="CDE_current_customer_email"]').val() != 'undefined'){
+                var current_customer_email = $('input[name="CDE_current_customer_email"]').val();
+            }else{
+                var current_customer_email = $('#CDE_current_customer_email').val();
+            }
+
+            let access_token = await CDE_get_access_token();
+            var data = {
+                'access_token'  : access_token,
+                'action'        : 'editCustomerAddress',
+                'addressId'     : address_id,
+                'apiVersion'    : apiVersion,
+                'shopName'      : shopName,
+                'customerId'    : customerId,
+                'customerEmail' : current_customer_email,
+                'customerAddressData' : customer_address_data
+            }
+
+            let response = await CDE_send_request('POST',data);
+            var obj_res = jQuery.parseJSON(response);
+
+            if (obj_res['succ']=='true') {
+                CDE_init_customer_address();
+                return true;
+            }
+            return false;
+        }
+
+        function CDE_init_add_new_address_form() {
+            var CDE_all_countires = document.getElementById("CDE_countries_options_list").innerHTML;
+            var addNewAddressFormHTML = CDE_addAddressForm;
+            addNewAddressFormHTML = addNewAddressFormHTML.replace('[CDE_default_country]', CDE_default_country);
+            addNewAddressFormHTML = addNewAddressFormHTML.replace('[CDE_all_countires]', CDE_all_countires);
+
+            $('.CDE-edit-customer-address-form, #CDE_add_new_address_form_container').empty().hide();
+            $('#CDE_add_new_address_form_container').html(addNewAddressFormHTML).show();
+            $('#address_country_new').html(CDE_all_countires);
+
+        }
+
+        function CDE_button_add_new_address() {
+            $('.CDE-link-add-new-address').hide();
+
+            CDE_init_add_new_address_form();
+            CDE_init_country_province_selectors();
+        }
+
+        function CDE_button_close_form_add_new_address() {
+            $('.CDE-link-add-new-address').show();
+            $('#CDE_add_new_address_form_container').empty().hide();
+            $('.CDE-edit-customer-address-form').empty().hide();
+        }
+
+        function CDE_init_country_province_selectors(province) {
+            new Shopify.CountryProvinceSelector('CDE_address_country_new', 'CDE_address_province_new', {
+                hideElement: 'CDE_province_container'
+            });
+            if(province && province!='') {
+                $('#CDE_address_province_new option').each(function (i, elem) {
+                    if ($(elem).val() == province) {
+                        $(elem).attr('selected','selected');
+                    }
+                });
+            }
+        }
+
+        function CDE_init_action_buttons() {
+            $('.CDE_edit_input').show();
+            $('.CDE_save_input').hide();
+            $('.CDE_input').prop('disabled',true);
+        }
+
+    </script>
+
+    <div id="CDE_countries_options_list" style="display: none;">{{ country_option_tags }}</div>
+{% endif %}

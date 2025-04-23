@@ -1,0 +1,68 @@
+
+    <div class="container-style container-large">
+        <div class="home-materials-top">
+            <h3>{{ section.settings.title }}</h3>
+            <h2>{{ section.settings.subtitle }}</h2>
+        </div>
+        <div class="home-materials-bottom">
+            <div class="home-materials-bottom-left">
+                <p>{{ section.settings.description }}</p>
+                <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+            </div>
+            <div class="home-materials-bottom-right">
+                <img src="{{ section.settings.image_bg | img_url: '10x' }}"
+                     class="lazyload"
+                     data-src="{{ section.settings.image_bg | img_url: '800x' }}"
+                     data-widths="[800]"
+                     data-sizes="auto"
+                     tabindex="-1"
+                />
+            </div>
+        </div>
+    </div>
+
+
+{% schema %}
+{
+  "name": "Index - Materials",
+  "tag": "section",
+  "class": "home-materials-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sub Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bg",
+      "label": "Image Background"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index - Materials"
+    }
+  ]
+}
+{% endschema %}

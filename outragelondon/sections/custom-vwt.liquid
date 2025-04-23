@@ -1,0 +1,254 @@
+<style>
+.custom-vwt-wrapper{
+  
+}
+.custom-vwt{
+  padding: 50px 0;
+      display: flex;
+    flex-wrap: wrap;
+  width: 100%;
+  gap: 100px;
+  align-items: center;
+}
+.custom-vwt-text-wrapper{
+      width: 60%;
+}
+.custom-vwt-heading{
+  font-size: 32px;
+  color: black;
+  margin: 0;
+      font-weight: 700;
+}
+.custom-vwt-subheading{
+    font-size: 16px;
+  color: black;
+  margin: 0;
+  margin-top: 20px;
+}
+.custom-vwt-quote{
+  padding: 16px 24px;
+  background: #F8F8F8;
+      margin-top: 15px;
+}
+.custom-vwt-img-wrapper{
+      display: flex;
+    flex-wrap: wrap;
+      align-items: center;
+}
+.custom-vwt-img-wrapper img{
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  max-width: 100%;section
+}
+.custom-vwt-img-wrapper > div{
+    padding-left: 20px;
+    width: calc(100% - 64px);
+}
+.custom-vwt-img-wrapper ul{
+      padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.custom-vwt-img-wrapper ul li{
+  
+}
+.custom-vwt-img-wrapper ul li svg{
+      display: block;
+    width: 13px;
+    height: 13px;
+    color: black;
+}
+.custom-vwt-img-wrapper p{
+  margin: 0;
+  font-size: 16px;
+  color: black;
+  font-weight: 600;
+}
+.custom-vwt-quote-text{
+        font-size: 14px;
+  color: black;
+  margin: 0;
+  margin-top: 15px;
+}
+.custom-vwt-verify{
+    color: #909090;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.custom-vwt-video-wrapper{
+        width: calc(40% - 100px);
+}
+.custom-vwt-video{
+      display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  max-height: 500px;
+}
+      .for--mbl{
+      display:none !important;
+    }
+
+  @media screen and (max-width: 1280px){
+    .custom-vwt{
+      gap: 20px;
+    }
+    .custom-vwt-text-wrapper{
+      width: 55%;
+    }
+    .custom-vwt-video-wrapper {
+    width: calc(45% - 20px);
+  }
+  }
+  @media screen and (max-width: 749px){
+    .custom-vwt{
+      flex-direction: column-reverse;
+    }
+    .custom-vwt-text-wrapper{
+      width: 100%;
+    }
+    .custom-vwt-video-wrapper {
+    width: 100%;
+  }
+    .custom-vwt-heading {
+    font-size: 24px;
+    }
+    .for--desk{
+      display:none;
+    }
+    .for--mbl{
+      display:block !important;
+      padding-bottom:20px;
+    }
+.custom-vwt-subheading {
+
+    margin-top: 0;
+}
+  }
+</style>
+
+<div class="custom-vwt-wrapper page-width">
+  <div class="custom-vwt">
+    <div class="custom-vwt-text-wrapper">
+      {% if section.settings.heading != blank %}
+        <h2 class="custom-vwt-heading for--desk">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="custom-vwt-subheading">{{ section.settings.subheading }}</p>
+      {% endif %}
+      <div class="custom-vwt-quote">
+        <div class="custom-vwt-img-wrapper">
+          {% if section.settings.img %}
+            <img src="{{ section.settings.img | img_url: '300x' }}" />
+          {% endif %}
+          <div>
+            {% if section.settings.star > 0 %}
+              <ul>
+                {% for i in (1..section.settings.star) %}
+                  <li>
+                    <svg fill="currentColor" height="15px" width="15px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    	 viewBox="0 0 473.486 473.486" xml:space="preserve">
+                    <polygon points="473.486,182.079 310.615,157.952 235.904,11.23 162.628,158.675 0,184.389 117.584,299.641 91.786,462.257 
+                    	237.732,386.042 384.416,460.829 357.032,298.473 "/>
+                    </svg>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            {% if section.settings.name != blank %}
+              <p>{{ section.settings.name }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% if section.settings.text != blank %}
+          <p class="custom-vwt-quote-text">{{ section.settings.text }}</p>
+        {% endif %}
+        {% if section.settings.enable %}
+          <p class="custom-vwt-verify"><img src="{{ 'verified.svg' | asset_url }}" /> VERIFIED PURCHASE</p>
+        {% endif %}
+      </div>
+    </div>
+    <div class="custom-vwt-video-wrapper">
+
+            {% if section.settings.heading != blank %}
+        <h2 class="custom-vwt-heading for--mbl">{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.video != blank %}
+        {{ section.settings.video | video_tag: image_size: '700x', loop: true, controls: false, muted: true, autoplay: true, playsinline: true, class: 'custom-vwt-video' }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "New Video With Text",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WE TESTED OUR CHAINS IN EXTREME SITUATIONS AND HOW DID THEY HOLD UP?"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "With Craftd chains, strength isn't just a feature, it's a promise. Crafted from premium materials, they can take a pull-up challenge or a car drive-over and still look fresh. They're the indestructible partner for your thrill-chasing lifestyle.<br><br>Surviving workouts and showers? Check. Perfect for an outdoors and active lifestyle? Absolutely. Wear it every day without worries? You bet."
+    },
+    {
+      "type": "range",
+      "id": "star",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": ".",
+      "label": "Star Rating",
+      "default": 5
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name",
+      "default": "Florian M."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Quote",
+      "default": "“These Craftd chains are legit! I've been sporting mine for months now, and it's still in mint condition. Quality is top-notch. I've put this thing through its paces - gym workouts, showers and even a few pulls, and it's held up like a champ.”"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Enable Verified Purchase Badge",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Video With Text"
+    }
+  ]
+}
+{% endschema %}

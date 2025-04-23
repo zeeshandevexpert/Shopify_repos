@@ -1,0 +1,155 @@
+<section class="global__section rich__text-section {% if section.settings.no_bottom_margin %}mb0 {% endif %}section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="rich-text-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="rich__text-wrapper grid__wrapper">
+    {% if section.settings.title != blank %}
+    <div class="rich__text-heading span-12">
+      {% if section.settings.background == settings.background or section.settings.background == '' or section.settings.background == 'rgba(0,0,0,0)' %}
+      {% render 'section-headings', type: section.settings.title %}
+      {% else %}
+      <h3 class="center">{{ section.settings.title | escape }}</h3>
+      {% endif %}
+    </div>
+    {% endif %}
+    <div class="rich__text-content rt-{{ section.id }} span-12{% if section.settings.alignment == 'center' %} centered{% endif %}">
+      {% unless section.settings.rich_text == blank %}
+        <div class="rte">
+          {{ section.settings.rich_text }}
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+
+  <style>
+    .rich__text-section.section-{{ section.id }} {
+      background: {{ section.settings.background }};
+      padding-top: {{ section.settings.padding }}px;
+      {% if section.settings.title != blank %}
+      padding-bottom: calc({{ section.settings.padding }}px + 25px);
+      {% else %}
+      padding-bottom: {{ section.settings.padding }}px;
+      {% endif %}
+    }
+    .rich__text-section.section-{{ section.id }} h3,
+    .rich__text-section.section-{{ section.id }} p,
+    .rich__text-section.section-{{ section.id }} a {
+      color: {{ section.settings.color }};
+    }
+    .rich__text-content.rt-{{ section.id }} {
+      max-width: {{ section.settings.text_width }}%;
+    }
+    @media screen and (max-width: 740px) {
+      .rich__text-content.rt-{{ section.id }} {
+        max-width: 90%;
+      }
+    }
+    .rich__text-content.rt-{{ section.id }} p {
+      font-size: {{ section.settings.text_size }}px;
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Welcome"
+    },
+    {
+      "type": "richtext",
+      "id": "rich_text",
+      "label": "Text",
+      "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+      "info": "Use this section to tell customers about your store."
+    },
+    {
+      "type":"select",
+      "id":"alignment",
+      "label":"Text alignment",
+      "default":"left",
+      "options":[
+        {
+          "value":"left",
+          "label":"Left"
+        },
+        {
+          "value":"center",
+          "label":"Center"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "text_width",
+      "min": 50,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Content width",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 13,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 30
+    },
+    {
+      "type":"color",
+      "label":"Text color",
+      "id":"color",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "label":"Background color",
+      "id":"background"
+    },
+    {
+      "type":"checkbox",
+      "id":"no_bottom_margin",
+      "label":"Remove bottom margin",
+      "default": false
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ],
+    "groups": [
+      "footer"
+    ]
+  },
+  "presets":[
+    {
+     "name":"Rich text"
+    }
+  ]
+}
+{% endschema %}

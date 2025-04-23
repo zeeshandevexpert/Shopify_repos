@@ -1,0 +1,67 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer_new_xC8fVA": {
+      "type": "footer-new",
+      "settings": {
+        "newsletter_enable": true,
+        "newsletter_heading": "Subscribe to our emails",
+        "newsletter_text": "",
+        "menu": "footer-menu",
+        "show_social": false,
+        "copyright": "© 2024, SECOND LANGUAGE"
+      }
+    },
+    "footer_new_eUTxtj": {
+      "type": "footer",
+      "blocks": {
+        "text_ypUn7w": {
+          "type": "text",
+          "settings": {
+            "heading": "SECOND LANGUAGE",
+            "subtext": ""
+          }
+        },
+        "link_list_mjUDKy": {
+          "type": "link_list",
+          "settings": {
+            "heading": "NAVIGATION",
+            "menu": "main-menu"
+          }
+        },
+        "text_fxPNeM": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subtext": "<p><strong>CONTACT<\/strong><\/p><p>Second Language<br\/>hello@secondlanuage.com<\/p><p><strong>PHONE<\/strong><\/p><p>Available on weekdays<br\/>from 12:30PM CET to 4:30pm CET<br\/>+45 85795217<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_ypUn7w",
+        "link_list_mjUDKy",
+        "text_fxPNeM"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": false,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer_new_xC8fVA",
+    "footer_new_eUTxtj"
+  ]
+}

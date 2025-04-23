@@ -1,0 +1,95 @@
+<div id="cart-ajax__wrapper">
+  <div style="display: none;">
+    <div id="CartCount" class="site-header__cart-count">
+      <span>{{ cart.item_count }}</span>
+      <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
+    </div>
+  </div>
+  <div class="cart-ajax">
+    <div class="inline-cart--loading" style="display: none;">{% include 'icon-preloader' %}</div>
+    <h5 class="cart-ajax__title">Cart</h5>
+    <div class="cart-ajax__list grid--uniform">
+      {% for item  in cart.items %}
+      {% assign variant_title = item.variant.title | replace:'"','˝' %}
+      <div class="cart-ajax__row {% if item.title contains 'Special Order' %}special-order--item{% endif %}" data-variant="{{item.variant.id}}" data-line="{{forloop.index}}" data-handle="{{item.product.handle}}" data-variant-title='{{variant_title}}'
+           {% for p in item.properties %}
+           data-{{p.first | handle}}="{{p.last}}" 
+           {% endfor %}>
+        <div class="cart-ajax__data flex">
+          <div class="one-third">
+            <div class="cart-ajax__image">
+              {{ item.image | img_url: '100x' | img_tag }}
+            </div>
+          </div>
+          <div class="grid__item two-thirds">
+            <div class="grid-view-item__title">
+              {{item.product.title}}
+            </div>
+            <div class="cart__meta-text" data-product-options>
+              {% for option in item.product.options %}
+              {{ option }}: {{ item.variant.options[forloop.index0] }}<br/>
+              {% endfor %}
+            </div>
+            {%- assign property_size = item.properties | size -%}
+            {% if property_size > 0 %}
+            <div class="cart__meta-text" data-item-properties>
+              {% for p in item.properties %}
+              {% unless p.last == blank or p.first == "_ZapietId" %}
+              {{ p.first | replace: 'See color options', '' | replace: 'Learn more here', '' | strip }}:
+              {{ p.last }}
+              <br/>
+              {% endunless %}
+              
+              {% endfor %}
+            </div>
+            {% endif %}
+            <div class="cart-ajax__quantity item-quantity">
+              <div class="item-quantity--input-wrapper">
+                <span class="item-quantity__increment item-quantity__increment--minus" data-qty-change="dec">-</span>
+                <input type="number" readonly="" class="cart-ajax__quantity-number item-quantity__input" value="{{item.quantity}}" min="0" {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %} max="{{ item.variant.inventory_quantity }}"  {% else %} max="100"  {% endunless %} pattern="[0-9]*">
+                <span class="item-quantity__increment item-quantity__increment--plus" data-qty-change="inc">+</span>
+              </div>
+              <a href="/cart/change?line=1&amp;quantity=0" class="cart-ajax__remove"><img class="cart-ajax__remove-icon" src="//cdn.shopify.com/s/files/1/2958/7314/t/3/assets/icon-cancel.svg?2483"></a>
+            </div>
+            <p class="cart-ajax__price" data-original-price="{{ item.original_price }}" data-price="{{ item.price }}">{{item.price | money }}</p>
+          </div>
+        </div>
+        
+      </div>
+      {% else %}
+      <p class="text-left cart-ajax__data">Your cart is currently empty</p>
+      {% endfor %}
+    </div>
+    <div class="cart-ajax__tools">
+      <div class="cart-ajax--total text-left">
+        <span class="cart-ajax--total-title">Order Total:</span>
+        <span class="cart-ajax--total-price">{{cart.total_price | money}}</span>
+      </div>
+      <div class="text-center">
+        <a href="/cart" class="btn">View Cart &amp; Checkout</a>
+      </div>
+    </div>
+  <script type="text/javascript">
+    {%- capture cartJSON -%}{
+      "results": [
+    {%- for item in cart.items -%}  
+	{%- capture item_variants -%}{%- for option in item.options_with_values -%}{% unless forloop.first %} / {% endunless %}{{option.value | escape}}{%- endfor -%}{%- endcapture -%}
+	{%- capture special_order -%}{% if item.title contains 'Special Order' %}true{% else %}false{% endif %}{%- endcapture -%} 
+    {%- unless forloop.first -%},{%- endunless -%}
+	{%- capture qty_total -%}{% if item.title contains 'Special Order' %}-1{% else %}{{item.variant.inventory_quantity}}{% endif %}{%- endcapture -%}
+    {
+      "title":"{{item.product.title | escape }}",
+	  "handle":"{{item.product.handle}}",
+	  "variant_id":{{item.variant.id}},
+	  "variant_title":"{{item_variants | escape }}",
+	  "special_order":{{special_order}},
+	  "qty_added":{{item.quantity}},
+      "qty_available":{{qty_total | minus: item.quantity}},
+	  "qty_total":{{qty_total}}
+    }
+        {%- endfor -%}]}
+    {%- endcapture -%}
+    var cartJSON =  {{ cartJSON }};
+  </script>
+  </div>
+</div>

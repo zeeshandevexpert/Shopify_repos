@@ -1,0 +1,88 @@
+
+    <div class="container-style container-large">
+        <h3>{{ section.settings.title }}</h3>
+
+        {% assign sections_list = '' %}
+        {% for block in section.blocks %}
+            {% assign sections_list = sections_list | append: block.settings.topic | append:", " %}
+        {% endfor %}
+
+        {% assign sections_list = sections_list | split: ", " | uniq %}
+
+        {% for section_block in sections_list %}
+            <div class="support-main-section-row">
+                <div class="support-main-section-col-left">
+                    <h2>{{ section_block }}</h2>
+                </div>
+                <div class="support-main-section-col-right">
+                    <div class="accordion-section">
+                        {% for block in section.blocks %}
+                            {% if block.settings.topic == section_block %}
+                                <div class="accordion-row">
+                                    <div class="accordion-title" data-search-text="{{ block.settings.title  | escape | downcase }}"><h4>{{ block.settings.title }}</h4></div>
+                                    <div class="accordion-content">
+                                        {{ block.settings.answer }}
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+{% schema %}
+{
+  "name": "Support - Content",
+  "tag": "section",
+  "class": "support-main-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "support"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Answers",
+      "type": "answers",
+      "settings":[
+        {
+          "type": "select",
+          "id": "topic",
+          "label": "Topic",
+          "options": [
+            {
+              "value": "common questions",
+              "label": "common questions"
+            },
+            {
+              "value": "all topics",
+              "label": "all topics"
+            }
+          ]
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Support - Content"
+    }
+  ]
+}
+{% endschema %}

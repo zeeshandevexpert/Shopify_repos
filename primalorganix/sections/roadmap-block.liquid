@@ -1,0 +1,95 @@
+<section class="roadmap-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+    <div class="wrap-roadmap-block">
+        <h2 class="main-heading">
+           {{ section.settings.heading }}
+        </h2>
+        <div class="roadmap-steps">
+            {% for block in section.blocks %}
+                          
+                <div class="step-block {% if block.settings.reverse %} reverse{% endif %}">
+                    <div class="title">
+                      {{ block.settings.title }}
+                    </div>
+                    <div class="calender">
+                        <div class="wrap-icon-line">
+                            <img src="{{ 'calender-icon.svg' |  asset_url }}" alt="">
+                            <div class="line-horizontal"></div>
+                        </div>
+                        
+                        <div class="line"></div>
+                        
+                    </div>
+                    <div class="content-box">
+                        <div class="title mob">
+                            {{ block.settings.title }}
+                        </div>
+                        <div class="text">
+                           {{ block.settings.text }}
+                        </div>
+                       
+                    </div>
+                </div>     
+            {% endfor %}
+        </div>
+        <div class="button-wrapper"><a href="{{ section.settings.btn_link }}"><button class="button-label" style="background-image: url({{ 'button-bg.png' |  asset_url }});">{{ section.settings.btn_text }}</button></a></div>
+    </div>
+</section> 
+
+
+
+{% schema %}
+    {
+        "name": "Roadmap Block",
+        "settings": [
+            
+                {
+                    "type": "image_picker",
+                    "id": "bg_image",
+                    "label": "Background Image"
+                },
+                {
+                    "type": "text",
+                    "id": "heading",
+                    "label": "Heading"
+                },
+                {
+                "type": "url",
+                "id": "btn_link",
+                "label": "Button Link"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text"
+            }
+            ],
+            "blocks": [
+                    {
+                    "type": "Icons",
+                    "name": "Icons",
+                    "settings": [
+                        {
+                            "type": "checkbox",
+                            "id": "reverse",
+                            "label": "Reverse"
+                        },
+                        {
+                            "type": "text",
+                            "id": "title",
+                            "label": "Title"
+                        },
+                        {
+                            "type": "richtext",
+                            "id": "text",
+                            "label": "Text"
+                        }
+                    ]
+                    }
+                ],
+                "presets": [
+                    {
+                        "name": "Roadmap Block"
+                    }
+                ]
+    }
+    {% endschema %}

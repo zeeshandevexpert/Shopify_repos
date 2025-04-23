@@ -1,0 +1,371 @@
+{% render 'hs-defer-css' with filename: 'collection.css', pages: 'collection,index,product' | split: ',', minify: true, local: true %}
+
+{%- liquid
+case section.settings.grid
+
+when 2
+  assign max_height = 530
+when 3
+  assign max_height = 345
+when 4
+  assign max_height = 250
+when 5
+  assign max_height = 195
+endcase
+
+if section.settings.layout == 'grid'
+  assign limit = 24
+else
+  assign limit = 16
+endif
+
+if collection.handle == 'jeremiah-brent'
+  assign show_collection_image = true
+  assign collection_image = collection.image | img_url: 'master'
+endif
+
+if collection.handle == 'thermally-broken-doors' or collection.handle == 'thermally-broken-doors-special-order' or collection.handle contains 'thermally-broken'
+  assign show_collection_image = false
+  assign thermally_broken_collection = true
+  assign collection_image = 'thermally-broken-hero.jpg'  | file_img_url: 'master'
+endif
+
+assign cd = collection.description | split: '<!--split-->'
+
+assign collection_description_top = cd[0]
+
+assign fixed_panel_collection = false
+for link in linklists.fixed-panel-collections.links
+  if link.object.handle == collection.handle
+    assign fixed_panel_collection = true
+  endif 
+endfor 
+
+-%}
+
+
+{% if show_collection_image and collection.image %}
+<div class="collection-hero collection-hero__filter {% if thermally_broken_collection %}thermally-broken-hero{% endif %}">
+  <div class="collection-hero__image lazyload hs-lazyload hs-id-42a57eff" data-bgset="{{collection_image}}" style=""></div>
+  <div class="collection-hero__title-wrapper page-width">
+    <h1 class="collection-hero__title h2">{{collection.title}}</h1>
+    <div class="rte collection-description page-width">
+      {{collection_description_top}}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Zoho -->      
+<script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "siqf376da2ccaf119813f3f4714d998919e1c03bc2bd3e6d2412586f85a6597d5e0", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zohopublic.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>    
+<!-- Zoho --> 
+
+{% paginate collection.products by limit %}
+
+{%- liquid
+assign current_page = 1
+if pagination.current_page != blank
+  assign current_page = pagination.current_page
+endif
+assign grid_item_width = 'small--one-half medium-up--one-quarter' 
+-%}
+
+{% capture all_page_urls %}{% for i in (1..paginate.pages) %}{% unless forloop.first %}:::{% endunless %}/collections/{{ collection.handle }}/{{ current_tags | handle | join:'+' }}?page={{ i }}&view=infinite-scroll{% endfor %}{% endcapture %}
+
+<div  data-section-id="{{ section.id }}" data-section-type="collection-template" data-total-products="{{collection.all_products_count}}">
+  <div class="page-width collection-box" id="Collection" data-collection-title="{{collection.title}}"  {% if collection.image %}data-collection-image="{{ collection.image | img_url: 'master' }}"{% endif %}>
+
+    <div id="collection-grid-0" 
+         class="grid grid--uniform grid--half-gutters flex flex--wrap products" 
+         data-current-page="{{ current_page }}" 
+         data-total-pages="{{ paginate.pages }}" 
+         data-all-pages='{{ all_page_urls | split: ':::' | join: ',' }}' 
+         data-current-page-url="/collections/{{ collection.handle }}/{{ current_tags | join:'+' }}?page={{ current_page }}"  
+         data-collection-handle="{{collection.handle}}"
+         data-all-tags='{{ collection.all_tags | json  | escape }}'
+         data-current-tags='{{ current_tags | json | escape }}'
+         >
+
+
+      {% assign thermal_count = 1 %}
+      {% assign fixed_count = 1 %}
+  
+      {% for product in collection.products %}    
+        {% if product.title contains "| Custom" %}{% continue %}{%  endif %}
+        {% if product.tags contains 'hidden' %}{% continue %}{% endif %}
+        {% if product.tags contains 'custom' %}{% continue %}{% endif %}
+      
+      {% if thermally_broken_collection %}
+        {% if thermal_count == 1 %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="thermal-video" width="100%" style="padding-top: 100%;">
+            <video class="thermal-video__video" width="100%" height="100%" src="https://cdn.shopify.com/s/files/1/0036/1745/6237/files/What_is_thermal_break_001.mp4?v=1650645706" playsinline autoplay muted loop controls></video>
+          </div>
+        </div>
+        {% endif %}
+        {% assign thermal_count = thermal_count | plus: thermal_count %}
+      {% endif %}
+
+      {% if fixed_panel_collection %}
+        {% if fixed_count == 1 %}
+        <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+          <div class="thermal-video" width="100%" style="padding-top: 100%;">
+            <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="lazyload hs-id-918b115b" data-src="https://www.youtube.com/embed/7I30EGrwN1A" frameborder="0" height="1207" title="PINKYS Modular Connections System" width="679"></iframe>
+          </div>
+        </div>
+        {% endif %}
+        {% assign fixed_count = fixed_count | plus: fixed_count %}
+      {% endif %}
+
+      {% assign preorder = false %}
+      {% assign date = false %}
+
+      {% if product.handle contains 'pre-sale' or product.title contains 'Pre-Sale' %}
+      {% assign preorder = true %}
+      {% endif %}
+
+      {% for tag in product.tags %}
+        {% if tag contains 'ETA:' %}	
+        {% assign date = tag | remove: 'ETA:' | strip %}
+        {% endif %}
+      {% endfor %}
+
+      {% unless collection.handle == 'color-samples' %}
+      {% unless product.available %}{% continue %}{% endunless %}
+      {% endunless %}
+      
+      <div id="product-card-{{ product.id }}" class="grid__item grid__item--{{section.id}} {{ grid_item_width }} {% if hide_me %}hide-me{% endif %}" {% if hide_me %}style="display:none;"{% endif %}>
+        <div class="checks-balances"><small>{{checks_balances}}</small></div>
+        {% render 'product-card-grid', product: product, first_available_variant: first_available_variant  %}
+
+      </div>
+
+      {% else %}
+      <div class="grid_-item one-whole" >
+        <div class="index-section">
+          <h3 class="text-center none-available">Sorry there are no in-stock products with these settings.<br><small>Please adjust the filters or <a href="/collections/{{collection.handle}}">Start Over</a></small></h3>
+        </div>
+      </div>
+      {% endfor %}
+
+      
+    </div>
+    {% include 'pagination' %}
+  </div>
+</div>
+<div class="page-width index-section" style="display:none;">
+  <h3>collection.all_tags (current_tags highlighted)</h3>
+  <div class="flex flex--wrap">
+    {% for tag in collection.all_tags %}
+    <div style="padding: 10px; background: #f0f0f0; margin: 10px; {% if current_tags contains tag %}border: 1px solid black;{% endif %}">
+      {{tag | handle}}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  const currentPage = {{ paginate.current_page | json }};
+  const totalPages = {{ paginate.pages | json }};
+  const currentPageEl = document.querySelector('.fixed-pagination__current');
+  const totalPagesEl = document.querySelector('.fixed-pagination__total');
+  if(currentPageEl && totalPagesEl) {
+    currentPageEl.textContent = currentPage;
+    totalPagesEl.textContent = totalPages;
+  }
+</script>
+
+{% endpaginate %}
+
+
+{% comment %} If there's already content, use the second of the split array {% endcomment %}
+{%- liquid
+if cd[1]
+  assign collection_description = cd[1]
+else
+  assign collection_description = cd[0]
+endif
+
+if collection.handle contains 'special-order'
+  assign in_stock_version = collection.handle | remove: '-special-order'
+  if collections[in_stock_version].image
+  assign collection_image = collections[in_stock_version].image
+  endif
+else
+  assign collection_image = collection.image
+endif
+-%}
+
+{% if collection_description != blank  %}
+<div class="collection-seo" data-collection-image="{{collection_image}}">
+  <div class="flex flex--wrap">
+    <div class="{% if collection_image %}two-thirds{% endif %} small--one-whole rte collection-seo__text">
+      {{collection_description}}
+    </div>
+    {% if collection_image %}
+    <div class="one-third small--one-whole collection-seo__image lazyload lazyfade" 
+         data-bgset="{% include 'bgset', image: collection_image %}"
+         data-sizes="auto"
+         data-parent-fit="cover"
+         style="background-image: url('{{ collection_image | img_url: '600x' }});"></div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+
+<script type="text/javascript">
+  const collectionProdutsJSON = {{ collection.products | json }};
+  const collectionJSON = {{ collection | json }};
+  const collectionTotal = {{ collection.all_products_count }};
+</script>
+
+
+
+
+
+{% schema %}
+{
+"name": {
+"de": "Kategorie-Seiten",
+"en": "Collection pages",
+"es": "Páginas de colección",
+"fr": "Pages de collections",
+"it": "Pagine delle collezioni",
+"ja": "コレクションページ",
+"pt-BR": "Páginas de coleções"
+},
+"settings": [
+{
+"type": "select",
+"id": "layout",
+"label": {
+"de": "Layout",
+"en": "Layout",
+"es": "Diseño",
+"fr": "Mise en page",
+"it": "Layout",
+"ja": "レイアウト",
+"pt-BR": "Layout"
+},
+"default": "grid",
+"options": [
+{
+"value": "grid",
+"label": {
+"de": "Raster",
+"en": "Grid",
+"es": "Cuadrícula",
+"fr": "Grille",
+"it": "Griglia",
+"ja": "グリッド",
+"pt-BR": "Grade"
+}
+},
+{
+"value": "list",
+"label": {
+"de": "Liste",
+"en": "List",
+"es": "Lista",
+"fr": "Liste",
+"it": "Elenco",
+"ja": "リスト",
+"pt-BR": "Lista"
+}
+}
+]
+},
+{
+"type": "range",
+"id": "grid",
+"label": {
+"de": "Produkte per Reihe (nur Raster)",
+"en": "Products per row (grid only)",
+"es": "Productos por fila (solo cuadrícula)",
+"fr": "Produits par rangée (grille uniquement)",
+"it": "Prodotti per riga (solo griglia)",
+"ja": "行あたりの商品数（グリッドのみ）",
+"pt-BR": "Produtos por linha (somente grade)"
+},
+"default": 4,
+"min": 2,
+"max": 5,
+"step": 1
+},
+{
+"type": "range",
+"id": "rows",
+"label": {
+"de": "Reihen per Seite (nur Raster)",
+"en": "Rows per page (grid only)",
+"es": "Filas por página (solo cuadrícula)",
+"fr": "Rangées par page (grille uniquement)",
+"it": "Righe per pagina (solo griglia)",
+"ja": "ページあたりの行数（グリッドのみ）",
+"pt-BR": "Linhas por página (somente grade)"
+},
+"default": 2,
+"min": 2,
+"max": 16,
+"step": 1
+},
+{
+"type": "checkbox",
+"id": "show_collection_image",
+"label": {
+"de": "Kategorie-Foto anzeigen",
+"en": "Show collection image",
+"es": "Mostrar imagen de la colección",
+"fr": "Afficher l'image de la collection",
+"it": "Mostra immagine collezione",
+"ja": "コレクションの画像を表示する",
+"pt-BR": "Exibir imagem da coleção"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "show_vendor",
+"label": {
+"de": "Produkt-Lieferanten anzeigen",
+"en": "Show product vendors",
+"es": "Mostrar proveedores del producto",
+"fr": "Afficher les vendeurs",
+"it": "Mostra fornitori prodotto",
+"ja": "商品の販売元を表示する",
+"pt-BR": "Exibir fornecedores do produto"
+},
+"default": false
+},
+{
+"type": "checkbox",
+"id": "sort_enable",
+"label": {
+"de": "Sortieren erlauben",
+"en": "Enable sorting",
+"es": "Habilitar la función ordenar",
+"fr": "Activer le tri",
+"it": "Permetti di ordinare",
+"ja": "並べ替えを有効にする",
+"pt-BR": "Ativar classificação"
+},
+"default": true
+},
+{
+"type": "checkbox",
+"id": "tags_enable",
+"label": {
+"de": "Tag-Filtern erlauben",
+"en": "Enable tag filtering",
+"es": "Habilitar filtro de etiquetas",
+"fr": "Activer le filtrage par balises",
+"it": "Attiva filtro tag",
+"ja": "タグでの絞り込みを有効にする",
+"pt-BR": "Ativar filtragem de tags"
+},
+"default": true
+}
+]
+}
+{% endschema %}

@@ -1,0 +1,87 @@
+{%- liquid
+  assign heading = section.settings.heading
+-%}
+
+<style>
+  .product__description-wrapper {
+    display: block;
+    background: rgba(var(--color-base-background-2), 1);
+    padding: 2.5rem 5rem;
+    padding-bottom: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  .product__description-title {
+    margin-top: 0;
+    padding: 1.5rem 0 0;
+  }
+
+  .product__description {
+    text-align: left;
+  }
+
+  .product__description {
+    max-width: 980px;
+    margin: 0px auto;
+  }
+</style>
+
+{%- if product.description != blank -%}
+  <product-description class="product__description-wrapper">
+    <h4 class="h2 product__description-title center">
+      {{ heading }}
+    </h4>
+
+    <div class="product__description rte">
+      {{ product.description }}
+    </div>
+  </product-description>
+
+  {%- render 'value-props' -%}
+{%- endif -%}
+
+<script>
+  (function () {
+    class ProductDescription extends HTMLElement {
+      constructor() {
+        super();
+
+        const component = this;
+
+        document.addEventListener("variant:changed", function (event) {
+          const url = event.detail.product.url + "?sections=product-description";
+          component.render(url);
+        });
+      }
+
+      render(url) {
+        return fetch(url)
+          .then((response) => response.text())
+          .then((response) => {
+            const string = JSON.parse(response)["product-description"];
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(string, "text/html");
+            const section = doc.querySelector("product-description");
+
+            document.querySelector("product-description").replaceWith(section);
+          });
+      }
+    }
+
+    customElements.define('product-description', ProductDescription);
+  })();
+</script>
+
+{%- schema %}
+{
+  "name": "Product description",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Overview"
+    }
+  ]
+}
+{% endschema %}

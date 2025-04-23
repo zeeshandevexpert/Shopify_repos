@@ -1,0 +1,241 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "rating_yqKrcc": {
+          "type": "rating",
+          "settings": {
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "rating_yqKrcc",
+        "description",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": false,
+        "color_scheme": "scheme-1",
+        "media_size": "small",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "hide",
+        "hide_variants": true,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+    "iconlist_section_kd9QMW": {
+      "type": "iconlist-section",
+      "blocks": {
+        "icons_P8xEtE": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_2.png",
+            "icon_heading": "HIGH PERFORMANCE\nCOMPRESSION",
+            "Subtitle": "3-tier compression. Provides smooth shaping under clothes."
+          }
+        },
+        "icons_eNkGGc": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_149.png",
+            "icon_heading": "EXTRA CHEST\nCOMPRESSION",
+            "Subtitle": "Minimizes the look of gynecomastia."
+          }
+        },
+        "icons_ECAXBc": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_3.png",
+            "icon_heading": "TOP NOTCH MATERIAL",
+            "Subtitle": "Blend of 93% Nylon, 7% Elastane holds firm."
+          }
+        },
+        "icons_pgzy3B": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_4.png",
+            "icon_heading": "BREATHABLE FABRIC",
+            "Subtitle": "Offers comfort, support and stability."
+          }
+        }
+      },
+      "block_order": [
+        "icons_P8xEtE",
+        "icons_eNkGGc",
+        "icons_ECAXBc",
+        "icons_pgzy3B"
+      ],
+      "settings": {
+      }
+    },
+    "video_section_HQ3T7D": {
+      "type": "video-section",
+      "settings": {
+        "heading": "",
+        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/f70ede02cf4d4aaa86d38f7c42b3ad39.mp4"
+      }
+    },
+    "product_info_section_GXyUBa": {
+      "type": "product-info-section",
+      "blocks": {
+        "icon_qrk7W4": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_1.png",
+            "heading": "High performance compression",
+            "text": "3-tier compression. Provides smoothshaping under clothes."
+          }
+        },
+        "icon_ztAK83": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_2.png",
+            "heading": "Extra chest compression",
+            "text": "Minimizes the look of gynecomastia."
+          }
+        },
+        "icon_NK3weF": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_3.png",
+            "heading": "Top notch material",
+            "text": "Blend of 93% Nylon, 7% Elastane holds firm."
+          }
+        },
+        "icon_4ajNVY": {
+          "type": "icon",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/icon_4.png",
+            "heading": "Breathable fabric",
+            "text": "Offers comfort, support and stability."
+          }
+        }
+      },
+      "block_order": [
+        "icon_qrk7W4",
+        "icon_ztAK83",
+        "icon_NK3weF",
+        "icon_4ajNVY"
+      ],
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/prod1.png",
+        "heading": "GYNECOSMATIA COMPRESSION SHIRTS FOR MEN",
+        "sub_heading": "TRANFORM YOUR SHAPE",
+        "text": "",
+        "btn_text": "Shop Now",
+        "btn_url": "#"
+      }
+    },
+    "home_content_image_section_ebdXP": {
+      "type": "home-content-image-section",
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/bg_image.png",
+        "image_left": "shopify:\/\/shop_images\/0L0A6934_1-min-1_1.png",
+        "heading": "ALL THE RIGHT PLACES",
+        "content": "Target key areas with pinpoint precision. Unlike other shirts with uniform compression, your mens slimming body shaper provides extra compression in the chest and stomach for all your shapewear needs."
+      }
+    },
+    "home_content_image_section_ebdXPP": {
+      "type": "home-content-image-section",
+      "settings": {
+        "reverse": true,
+        "image": "shopify:\/\/shop_images\/bg.png",
+        "heading": "BEST ABDOMINAL BINDING I'VE OWNED IN OVER A DECADE",
+        "content": "The quality of this abdominal binding surpasses anything that I have purchased in 15 years! It comes with a garment bag for washing a Velcro cover for washing. It's comfortable and easy to put on myself without the aid of anyone else!! I would highly recommend this binding if you wear an abdominal binding on a regular basis The sizes are incredibly accurate make sure you measure yourself or you're going to end up with an extra 2' of elastic..."
+      }
+    },
+    "heading_text_section_t6LnGi": {
+      "type": "heading-text-section",
+      "disabled": true,
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_224.png",
+        "heading": "QORE LOGIQ",
+        "text": "We hope you enjoy our products. Give us your feedback. Share your success with friends, and follow us on Facebook, Instagram and Twitter to learn about new products and offers."
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products",
+    "iconlist_section_kd9QMW",
+    "video_section_HQ3T7D",
+    "product_info_section_GXyUBa",
+    "home_content_image_section_ebdXP",
+    "home_content_image_section_ebdXPP",
+    "heading_text_section_t6LnGi"
+  ]
+}

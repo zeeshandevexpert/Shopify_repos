@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "165973331401d2c85d": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "11439dd2-00a2-48f4-aa8d-ff3d8eb4e0fb": {
+          "type": "html",
+          "settings": {
+            "code": "<div style=\"text-align:center;min-height:50vh;align-items:center;justify-content:center;justify-items:center;color:#a264a9; padding: 50px 0;\"><h2>We're Creating A Cookie Form For you! </h2></div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "11439dd2-00a2-48f4-aa8d-ff3d8eb4e0fb"
+      ],
+      "disabled": true,
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "1659219071326dc21c": {
+      "type": "advanced-layout--custom-html",
+      "blocks": {
+        "16592190717b58c6e4-0": {
+          "type": "html",
+          "disabled": true,
+          "settings": {
+            "code": "<style type=\"text/css\">\n.badgebox {\nposition: absolute;\n    top: 20vh;\n    left: 70vw;\n    width: 500px;\n    height: auto;\ntransform: rotate(10deg) scale(60%);\nz-index: 15;\n} \n\n.content {\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\ndisplay:flex;\n  -ms-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%) scale(120%);\npadding-left: 5px;\npadding-right: 5px;\n}\n\n@media only screen and (min-width:320px) and (max-width:1000px){\n\n.badgebox {\n  margin: 0;\n  position: absolute;\n  top: 350px;\n  left: 75%;\n  transform: translate(-50%, -50%) scale(20%) rotate(10deg);\n}\n\n.content {\n  margin: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -ms-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%) scale(70%);\npadding-left: 5px;\npadding-right: 5px;}\n\n}\n\n</style>\n\n<div class=\"badgebox\">\n<img src=\"https://cdn.shopify.com/s/files/1/0567/8923/7875/t/2/assets/purpleflower-05.svg?v=1658801322\">\n\n\n<div class=\"content\"><h4>\n<center><h1>\n\n\n</h1></center>\n</h4></div>\n</div>",
+            "width": "100%"
+          }
+        }
+      },
+      "block_order": [
+        "16592190717b58c6e4-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "margin_top": 0,
+        "margin_bottom": 0
+      }
+    },
+    "main": {
+      "type": "template--page-contact",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "16592194404f5647aa": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<style>\n#main-body {\n    background: #0195be;}\n\n#contact-form .form-control {\n    background: #ff8ac4;\nborder: 0px;\nborder-radius: 10px;\n}\n</style>\n\n<div class=\"title-bar custom-font\">\n\t\t<h1 class=\"main-heading\"> <h4>class request? collab? sweet note?<br>\nfill out this form and we will get back ASAP!\n\t\t<div class=\"clear\"></div>\n\t</div>\n\n\t<div class=\"row\">\n\t\t<div class=\"col-md-8 offset-md-2 col-12\">\n\n\t\t{% if page.content != blank %}\n\t\t<div class=\"contact-page__entry-content entry-content\">\n\t\t\t{{ page.content }}\n\t\t</div>\n\t\t{% endif %}\n\n\t  {% form 'contact' %}\n\n\t\t<p class=\"success-msg form-success{% unless form.posted_successfully? %} hide{% endunless %}\">\n\t\t\t{{ 'contact.form.post_success' | t }}\n\n\t\t</p>\n\n\t\t{% render 'form-errors-custom', form: form %}\n\n    <div id=\"contact-form\">\n\n\t\t\t<div class=\"row\">\n\n\t\t\t\t<div class=\"col-md-6 col-12\">\n\t\t      <div class=\"form-group\">\n\t\t\t\t\t\t<label for=\"name\">{{ 'contact.form.name' | t }}</label>\n\t\t\t\t\t\t<input type=\"text\"\n\t\t\t\t\t\t\tname=\"contact[name]\"\n\t\t\t\t\t\t\tid=\"name\"\n\t\t\t\t\t\t\tclass=\"form-control\"\n\t\t\t\t\t\t\tvalue=\"{% if customer %}{{ customer.name }}{% endif %}\">\n\t\t      </div>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"col-md-6 col-12\">\n\t\t      <div class=\"form-group\">\n\t\t\t\t\t\t<label for=\"email\">{{ 'contact.form.email' | t }}</label>\n\t\t\t\t\t\t<input type=\"email\"\n\t\t\t\t\t\t\tname=\"contact[email]\"\n\t\t\t\t\t\t\tid=\"email\"\n\t\t\t\t\t\t\tclass=\"form-control\"\n\t\t\t\t\t\t\tvalue=\"{% if customer %}{{ customer.email }}{% endif %}\"\n\t\t\t\t\t\t\tspellcheck=\"false\"\n\t\t\t\t\t\t\tautocomplete=\"off\"\n\t\t\t\t\t\t\tautocapitalize=\"off\">\n\t\t      </div>\n\t\t\t\t</div>\n\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-12\">\n\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t<label for=\"phone\">{{ 'contact.form.phone' | t }}</label>\n\t\t\t\t\t  <input type=\"tel\"\n\t\t\t\t\t    name=\"contact[phone]\"\n\t\t\t\t\t\t\tclass=\"form-control\"\n\t\t\t\t\t    id=\"phone\"\n\t\t\t\t\t    value=\"{% if customer %}{{ customer.phone }}{% endif %}\"\n\t\t\t\t\t    pattern=\"[0-9\\-]*\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-12\">\n\t\t      <div class=\"form-group\">\n\t\t        <label for=\"message\">{{ 'contact.form.message' | t }}</label>\n\t\t        <textarea id=\"message\" rows=\"10\" class=\"form-control\" name=\"contact[body]\"></textarea>\n\t\t      </div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n\t\t\t{{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}\n\t\t\t\n\t\t\t<div class=\"row\">\n\t\t\t\t<div class=\"col-md-12 btn-contact--wrapper\">\n\t\t      <div class=\"form-group\" id=\"newsletter-wrapper-{{ page.title | handle }}\">\n\t\t        <input type=\"submit\" class=\"btn\" {{ 'contact.form.send' | t }} />\n\t\t      </div>\n\t\t      <div class=\"lds-dual-ring newsletter-spinner hide\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\n    </div>\n\n\t  {% endform %}\n\n\t  </div>\n\t</div>\n</div>"
+      }
+    },
+    "new-contact-form": {
+      "type": "new-contact-form",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "165973331401d2c85d",
+    "1659219071326dc21c",
+    "main",
+    "16592194404f5647aa",
+    "new-contact-form"
+  ]
+}

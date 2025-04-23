@@ -1,0 +1,121 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "logo_slider_8bNtnd": {
+      "type": "logo-slider",
+      "blocks": {
+        "slide_VRT9Pj": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "jghjhgjhg",
+            "logo": "shopify:\/\/shop_images\/partner-logo-2_png.png"
+          }
+        },
+        "slide_ByJNRW": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "",
+            "logo": "shopify:\/\/shop_images\/partner-logo-1_png.png"
+          }
+        },
+        "slide_J7xMKM": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "",
+            "logo": "shopify:\/\/shop_images\/partner-logo-3_png.png"
+          }
+        },
+        "slide_wAhpi8": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "",
+            "logo": "shopify:\/\/shop_images\/partner-logo-4_png.png"
+          }
+        },
+        "slide_eCJWc7": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "",
+            "logo": "shopify:\/\/shop_images\/partner-logo-5_png.png"
+          }
+        },
+        "slide_jnYMfN": {
+          "type": "slide",
+          "settings": {
+            "slide_heading": "",
+            "logo": "shopify:\/\/shop_images\/partner-logo-6_png.png"
+          }
+        }
+      },
+      "block_order": [
+        "slide_VRT9Pj",
+        "slide_ByJNRW",
+        "slide_J7xMKM",
+        "slide_wAhpi8",
+        "slide_eCJWc7",
+        "slide_jnYMfN"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "slider_type": "image_slider"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter_bdJFpR": {
+          "type": "newsletter",
+          "settings": {
+            "newsletter_enable": true,
+            "newsletter_heading": "Sign up for our newsletter to receive special offers, news and great sales notifications."
+          }
+        },
+        "link_list_eTewNi": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "link_list_xJGL3k": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "link_list_7gx48t": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        }
+      },
+      "block_order": [
+        "newsletter_bdJFpR",
+        "link_list_eTewNi",
+        "link_list_xJGL3k",
+        "link_list_7gx48t"
+      ],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "enable_follow_on_shop": false,
+        "show_social": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": false,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "logo_slider_8bNtnd",
+    "footer"
+  ]
+}

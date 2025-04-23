@@ -1,0 +1,118 @@
+<form action="https://www.pinkysirondoors.com/review/product/post/id/1422/" method="post" id="review-form" class="page-width--thin">
+  <input name="form_key" type="hidden" value="PXvyuY1BOaxFBKvW">
+  <h3 class="text-center">Reviews</h3>
+  <fieldset>
+    <table class="data-table" id="product-review-table">
+      <thead>
+        <tr class="first last">
+          <td>&nbsp;</td>
+          <td>
+            <div class="rating-box">
+              <span class="star_1">
+                {% include 'star-full' %}
+                {% include 'star-empty' %}
+                {% include 'star-empty' %}
+                {% include 'star-empty' %}
+                {% include 'star-empty' %}
+              </span>
+            </div>	     
+          </td>
+          <td>
+            <div class="rating-box">
+              <span class="star_2">
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-empty' %}
+                {% include 'star-empty' %}
+                {% include 'star-empty' %}
+              </span>
+            </div>	     
+          </td>
+          <td>
+            <div class="rating-box">
+              <span class="star_3">
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-empty' %}
+                {% include 'star-empty' %}
+              </span>
+            </div>	     
+          </td>
+          <td>
+            <div class="rating-box">
+              <span class="star_4">
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-empty' %}
+              </span>
+            </div>	     
+          </td>
+          <td class="last">
+            <div class="rating-box">
+              <span class="star_5">
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+                {% include 'star-full' %}
+              </span>
+            </div>	     
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="first odd">
+          <td>Price</td>
+          <td class="value"><input type="radio" name="ratings[3]" id="Price_1" value="11" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[3]" id="Price_2" value="12" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[3]" id="Price_3" value="13" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[3]" id="Price_4" value="14" class="radio"></td>
+          <td class="value last"><input type="radio" name="ratings[3]" id="Price_5" value="15" class="radio"></td>
+        </tr>
+        <tr class="even">
+          <td>Value</td>
+          <td class="value"><input type="radio" name="ratings[2]" id="Value_1" value="6" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[2]" id="Value_2" value="7" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[2]" id="Value_3" value="8" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[2]" id="Value_4" value="9" class="radio"></td>
+          <td class="value last"><input type="radio" name="ratings[2]" id="Value_5" value="10" class="radio"></td>
+        </tr>
+        <tr class="last odd">
+          <td>Quality</td>
+          <td class="value"><input type="radio" name="ratings[1]" id="Quality_1" value="1" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[1]" id="Quality_2" value="2" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[1]" id="Quality_3" value="3" class="radio"></td>
+          <td class="value"><input type="radio" name="ratings[1]" id="Quality_4" value="4" class="radio"></td>
+          <td class="value last"><input type="radio" name="ratings[1]" id="Quality_5" value="5" class="radio"></td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="hidden" name="validate_rating" class="validate-rating" value="">
+    <ul class="form-list">
+      <li>
+        <label for="nickname_field" class="required"><em>*</em>Nickname</label>
+        <div class="input-box">
+          <input type="text" name="nickname" id="nickname_field" class="input-text required-entry" value="">
+        </div>
+      </li>
+      <li>
+        <label for="summary_field" class="required"><em>*</em>Summary of Your Review</label>
+        <div class="input-box">
+          <input type="text" name="title" id="summary_field" class="input-text required-entry" value="">
+        </div>
+      </li>
+      <li>
+        <label for="review_field" class="required"><em>*</em>Review</label>
+        <div class="input-box">
+          <textarea name="detail" id="review_field" cols="5" rows="3" class="required-entry"></textarea>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+  <div class="buttons-set">
+    <button type="submit" title="Submit Review" class="btn button"><span><span>Submit Review</span></span></button>
+  </div>
+</form>

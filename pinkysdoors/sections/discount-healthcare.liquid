@@ -1,0 +1,160 @@
+{% include 'discount-page', settings: section.settings, blocks: section.blocks %}
+
+
+{% schema %}
+  {
+    "name": "Healthcare Discount",
+    "settings": [
+	{
+		"type":"header",
+		"content":"Hero"
+	},
+	{
+		"type":"color",
+		"id":"color_hero_bg",
+		"label":"Hero Background Color"
+	},
+	{
+		"type":"image_picker",
+		"id":"image_hero_desktop",
+		"label":"Hero Image (desktop)"
+	},
+	{
+		"type":"image_picker",
+		"id":"image_hero_mobile",
+		"label":"Hero Image (mobile)"
+	},
+	{
+		"type":"text",
+		"id":"text_hero_heading",
+		"label":"Hero Heading"
+	},
+	{
+		"type":"text",
+		"id":"text_hero_percentage",
+		"label":"Hero Percentage Off",
+		"default":"7% Off"
+	},
+	{
+		"type":"richtext",
+		"id":"text_hero_paragraph",
+		"label":"Hero Paragraph"
+	},
+	{
+		"type":"text",
+		"id":"text_hero_btn",
+		"label":"Button Text",
+		"default":"Verify Eligibility"
+	},
+	{
+		"type":"textarea",
+		"id":"text_hero_below_btn",
+		"label":"Text below button",
+		"default":"Once verified, you will receive a single-use discount code to make your purchase. "
+	},
+	{
+		"type":"header",
+		"content":"Section 2 (Eligibility)"
+	},
+	{
+		"type":"text",
+		"id":"text_section2_heading",
+		"label":"Section 2 Heading",
+		"default":"Who is Eligible?"
+	},
+	{
+		"type":"richtext",
+		"id":"text_section2_paragraph",
+		"label":"Section 2 Paragraph"
+	},
+	{
+		"type":"header",
+		"content":"Section 3 (Text | Image)"
+	},
+	{
+		"type":"color",
+		"id":"color_section3_bg",
+		"label":"Section3 Background Color",
+		"default":"#f9f9f9"
+	},
+	{
+		"type":"color",
+		"id":"color_section3_text",
+		"label":"Section3 Text Color",
+		"default":"#FFFFFF"
+	},
+	{
+		"type":"text",
+		"id":"text_section3_heading",
+		"label":"Section 3 Heading",
+		"default":"Lorem Ipsum"
+	},
+	{
+		"type":"richtext",
+		"id":"text_section3_paragraph",
+		"label":"Section 3 Paragraph"
+	},
+	{
+		"type":"text",
+		"id":"text_section3_btn",
+		"label":"Button Text",
+		"default":"Verify Eligibility"
+	},
+	{
+		"type":"url",
+		"id":"link_section3_btn",
+		"label":"Button Link"
+	},
+	{
+		"type":"image_picker",
+		"id":"image_section3",
+		"label":"Section 3 Image"
+	},
+	{
+		"type":"header",
+		"content":"Section 4 (FAQs)"
+	},
+	{
+		"type":"text",
+		"id":"text_section4_heading",
+		"label":"Section 4 Heading",
+		"default":"FAQs"
+	},
+	{
+		"type":"richtext",
+		"id":"text_section4_paragraph",
+		"label":"Fine Print",
+		"default":"<p>*Our healthcare professionals discount is valid online at pinkys.com. Proper identification must be submitted. The code is valid for one-time use online. Valid on full-price merchandise only. Cannot be combined with any other offer. Pinky’s reserves the right to change or cancel this promotion at any time. No price adjustments will be made on previous purchases. Purchases made with this offer are not eligible for future price adjustments. Discount applies to merchandise only and not shipping &amp; handling, taxes, or packaging.</p>"
+	},
+	{
+		"type":"textarea",
+		"id":"sheer_id_embed",
+		"label":"Sheer ID embed code"
+	}
+	],
+	"blocks":[
+	{
+		"type":"faq",
+		"name":"FAQ",
+		"settings": [
+		{
+			"type":"text",
+			"id":"title",
+			"label":"Question"
+		},
+		{
+			"type":"richtext",
+			"id":"answer",
+			"label":"Answer"
+		}
+		]
+	}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

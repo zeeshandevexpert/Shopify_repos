@@ -1,0 +1,33 @@
+{% if page.handle == 'become-an-installer' %}
+  {% include 'page-become-an-installer' %}
+{% elsif page.handle == 'how-to' %}
+  {% section 'page-how-to' %}
+{% elsif page.handle == 'faq' %}
+  {% section 'page-faq' %}
+{% elsif page.handle == 'about-us' %}
+  {% section 'page-about-timeline' %}
+{% elsif page.handle == 'category-contact' %}
+  {% section 'page-category-contact' %}
+{% else %}
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div>
+	  {% if page.handle == 'reviews' %}
+      <div class="full-page--preloader text-center">
+        {% include 'icon-preloader' %}
+      </div>
+      {% endif %}
+      <div class="rte">
+        {% if page.content != blank %}
+        {{ page.content }} <!-- include 'wishlist-shared' -->
+        {% else %}
+        {% include 'placeholder-text', paragraphs: 4 %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

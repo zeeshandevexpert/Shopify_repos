@@ -1,0 +1,96 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-banner",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-15T165213.921.png",
+        "heading": "",
+        "subheading": "Bracelet Size Guide",
+        "fg": "#ffffff"
+      }
+    },
+    "custom_richtext_j9KFWz": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Need help with your ring size?",
+        "text": "<p>We've outlined two convenient methods for determining your bracelet size from the comfort of your home. Each method presented in this men's bracelet size chart ensures accurate measurements of your wrist size. One method utilizes a printer, while the other method only requires a ruler, scissors, and a piece of paper.<\/p><p>Excited to find out how to measure your wrist size? Uncover the details of both methods below.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_WeFYbA": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/Outrage_London_Bracelet_Size_Guide.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Method 1:",
+        "heading": "Print Out Our Size Guide",
+        "text": "<ol><li>Download the file and print it at 100% scale.<\/li><li>Ensure your banking card fits precisely between the lines on the printed sheet.<\/li><li>Cut out one of the sizing strips provided.<\/li><li>Wrap the strip snugly around your wrist.<\/li><li>Find your bracelet size at the intersection of the strip.<\/li><li>If between sizes on the men's bracelet chart, opt for the larger size.<\/li><li>Contact us if you need a customized size at no extra cost.<\/li><\/ol>",
+        "link_text": "",
+        "link": "https:\/\/file\/\/\/Users\/kieranireland\/Downloads\/Outrage%20Ldn%20ring%20size%20guide%20(1).pdf.pdf",
+        "button_text": "Download PDF",
+        "button_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0579\/0813\/4079\/files\/Outrage_London_Bracelet_Size_Guide.png?v=1713197343",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_yUMfHG": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/17.5_1.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Method 2:",
+        "heading": "Measuring tape",
+        "text": "<ol><li>Gather the following materials: scissors, a piece of paper, and either a ruler or measuring tape.<\/li><li>Wrap the paper tightly around your wrist to measure its circumference.<\/li><li>Choose a bracelet that is approximately 1 cm larger in circumference than your wrist measurement.<\/li><li>Refer to the men's bracelet size chart to find your appropriate size.<\/li><li>If you're between sizes, opt for the larger size.<\/li><li>If your exact size isn't listed, contact us for a custom bracelet at no extra cost.<\/li><\/ol>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_richtext_QwaVw3": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Need help with your Bracelet size?",
+        "text": "<p>If you need help reach out to us on our email or use the chat support. We aim to reply within 24 hrs.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "Contact Us",
+        "button_link": "shopify:\/\/pages\/contact-details",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_richtext_j9KFWz",
+    "custom_iwt_WeFYbA",
+    "custom_iwt_yUMfHG",
+    "custom_richtext_QwaVw3"
+  ]
+}

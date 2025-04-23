@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "63e36cf8-2b78-44a3-b658-ee48f5452532": {
+      "type": "custom-html",
+      "blocks": {
+        "template--16699659190490__63e36cf8-2b78-44a3-b658-ee48f5452532-1669961404cdbe91c2-0": {
+          "type": "html",
+          "settings": {
+            "code": "<div class=\"box bg-image-space\" style=\"background-image: url('https:\/\/cdn.shopify.com\/s\/files\/1\/0404\/4773\/8021\/files\/tradeshow-bg.jpg?v=1669962188');\">\n        <div class=\"wrapper\">\n          \n            <div class=\"grid featured-row\">\n                <div class=\"grid__item large--six-twelfths medium--six-twelfths small--one-whole featured-row__item featured-row-right\">                  \n                    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0404\/4773\/8021\/files\/TRANSHOW-IMAGE-2_ecaf9518-46de-420f-86a6-cca107fbdb60.png?v=1669982748\" alt=\"\">                  \n                <\/div>\n    \n                <div class=\"grid__item large--six-twelfths medium--six-twelfths small--one-whole feature-row__item\">\n                    <div class=\"max-w-480\">\n                        <h2 class=\"section-header__title\">Get Free CORE Merch<\/h2>\n                        <div class=\"rte \"><p>We’re giving away a bunch of free CORE Merch to trade show participants. Just enter your email below. <\/p><\/div>\n                        <div class=\"\">\n                            <div class=\"klaviyo-form-Vfwtwu\"><\/div>\n                        <\/div>\n                    <\/div>\n                <\/div>\n            <\/div>\n                      \n        <\/div>\n    <\/div>\n    <style>\n        .bg-image-space { background-size: cover; padding-top: 100px; padding-bottom: 100px;}\n        .max-w-480 {max-width: 480px; padding: 0 15px;}        \n        #trade-show main .wrapper {max-width: 100%; padding-left:0px; padding-right: 0px;}\n        #trade-show main .wrapper .wrapper {max-width:1150px;}\n        #trade-show main .section-header__title {font-weight: bold;}\n        @media screen and (min-width: 769px){\n            #trade-show main {padding-top: 0; padding-bottom: 0;}\n            #trade-show main .section-header__title {font-size: 44px;}\n        }\n        @media screen and (max-width: 769px){\n            .featured-row-right {padding: 0 20px 0 30px; margin-bottom: 50px;}\n        }\n    <\/style>",
+            "width": "100%",
+            "text_alignment": "text-left"
+          }
+        }
+      },
+      "block_order": [
+        "template--16699659190490__63e36cf8-2b78-44a3-b658-ee48f5452532-1669961404cdbe91c2-0"
+      ],
+      "settings": {
+        "padding_section": true,
+        "section_style": "",
+        "wrapper_size": "-fluid"
+      }
+    }
+  },
+  "order": [
+    "63e36cf8-2b78-44a3-b658-ee48f5452532"
+  ]
+}

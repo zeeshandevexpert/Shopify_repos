@@ -1,0 +1,153 @@
+{%- liquid
+
+  assign hide = false
+
+  assign collection_list = section.settings.collection_list
+
+  assign has_title = false
+
+  if section.settings.title != blank
+    assign has_title = true
+  endif
+
+  assign grid = section.settings.grid
+
+  case grid
+    when 2
+      assign grid_item_width = 'span-6'
+    when 3
+      assign grid_item_width = 'span-4'
+    when 4
+      assign grid_item_width = 'span-3 md-span-4'
+    when 5
+      assign five_column = true
+    when 6
+      assign grid_item_width = 'span-2 md-span-4'
+  endcase
+
+  if section.settings.mobile_single == true
+    assign mobile_width = 'sm-span-12'
+  else
+    assign mobile_width = 'sm-span-6'
+  endif
+
+  if settings.collection_titles == 'floating'
+    assign col_title_style = 'floating'
+  elsif settings.collection_titles == 'below'
+    assign col_title_style = 'below'
+  elsif settings.collection_titles == 'boxed'
+    assign col_title_style = 'boxed'
+  endif
+
+  if section.settings.hide_empty and collection_list == blank
+    assign hide = true
+  endif
+
+ -%}
+{% unless hide %}
+<section class="global__section featured__collection-list" data-section-id="{{ section.id }}" data-section-type="featured-collection-section" data-aos="{{ settings.scroll_animation }}">
+
+  <div class="row">
+
+    {% if has_title %}
+      {% render 'section-headings', type: section.settings.title, link: collection.url %}
+    {% endif %}
+
+    <div class="collection__grid-loop grid__wrapper{% if five_column == true %} five_column_grid{% endif %}">
+      {% if collection_list == blank %}
+      {% for i in (1..grid) %}
+        <div class="collection__grid-item product-index {{ grid_item_width }} {{ mobile_width }} auto" data-alpha="{{ collection.title }}" {{ block.shopify_attributes }} data-product-id="{{ product.id }}" data-aos="{{ settings.scroll_animation }}" data-aos-delay="{{ forloop.index | times: 150  }}">
+          <div class="onboarding">
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {%- assign placeholder = 'collection-' | append: current -%}
+            <div class="collection-image ci onboard {{ settings.collection_image_ratio }}-images {{ col_title_style }}__titles">
+              <a href="#" title="Collection image">
+                {{ placeholder | placeholder_svg_tag }}
+              </a>
+            </div>
+            <div class="collection-list collection-info {{ col_title_style }}__titles">
+              <a href="#" title="Collection title">
+                <div class="prod-title">
+                  Collection {{ forloop.index }}
+                  {% if settings.show_collection_count %}
+                    <span class="collection_item-count">5 {{ 'collections.general.items' | t }}</span>
+                  {% endif %}
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      {% else %}
+        {% for collection in collection_list %}
+          <div class="collection__grid-item product-index {{ grid_item_width }} {{ mobile_width }} auto" data-alpha="{{ collection.title }}" {{ block.shopify_attributes }} data-product-id="{{ product.id }}" data-aos="{{ settings.scroll_animation }}" data-aos-delay="{{ forloop.index | times: 150  }}">
+          {% render 'collection-grid-item', collection: collection, grid: section.settings.grid %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+<div class="clear"></div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Collection list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collection list"
+    },
+    {
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collections",
+        "limit": 20
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Collections per row",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_single",
+      "label": "1 per row mobile",
+      "default": true
+    },
+    {
+      "type":"checkbox",
+      "id":"hide_empty",
+      "label":"Hide when collection list empty",
+      "default":false
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  },
+  "presets": [
+    {
+      "name": "Collection list"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,36 @@
+<section class="content-block">
+    <div class="wrap-content-block">
+      
+        {% comment %} {% for block in section.blocks %} {% endcomment %}
+            <div class="wrapper">
+                <h2 class="heading"> {{ section.settings.heading }}</h2>
+                <div class="content">{{ section.settings.sub_text }}</div>
+                <div class="border"></div>
+            </div>
+            {% comment %} {% endfor %} {% endcomment %}
+        
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Content Block",
+    "settings": [
+            {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+            },
+            {
+            "type": "inline_richtext",
+            "id": "sub_text",
+            "label": "Sub Text"
+            }
+        ],
+            "presets": [
+                {
+                    "name": "Content Block"
+                }
+            ]
+}
+{% endschema %}

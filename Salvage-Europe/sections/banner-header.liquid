@@ -1,0 +1,196 @@
+{%- liquid
+
+  assign has_image = false
+  assign float_header = false
+  assign is_parallax = false
+  assign title_below_banner = false
+  assign center_heading = false
+
+  if section.settings.image != blank
+    assign has_image = true
+  endif
+
+  if section.settings.parallax_scroll
+    assign is_parallax = true
+  endif
+
+  if section.settings.float_header
+    assign float_header = true
+  endif
+
+  if section.settings.center_heading
+    assign center_heading = true
+  endif
+
+  assign heading = section.settings.heading
+
+  if heading == blank
+    case template
+      when '404'
+        assign heading = 'general.404.title' | t
+      when 'search'
+        assign heading = 'sections.search.title' | t
+      when 'list-collections'
+        assign heading = 'collections.general.all_collections' | t
+      when 'blog'
+        assign heading = blog.title
+      when 'customers/account'
+        assign heading = 'customer.account.title' | t
+    endcase
+
+    if template contains 'page'
+      assign heading = page.title
+    endif
+
+  endif
+
+  if has_image == false or float_header == false
+    assign title_below_banner = true
+  endif
+
+  assign sm_render = '100vw'
+  assign md_render = '100vw'
+  assign lg_render = '100vw'
+
+-%}
+
+<section class="main__section section__header section-{{ section.id }}"
+data-section-type="parallax-section"
+data-scale="1.2"
+data-aos="{{ settings.scroll_animation }}"
+data-section-id="{{ section.id }}">
+
+  {% if has_image %}
+    <div class="collection-banner {% if is_parallax %} parallax-banner parallax{% endif %}">
+      {% if is_parallax %}
+        <div class="row parallax__container">
+          <div class="parralax__image">
+            {% render 'basic-responsive-image',
+              type:  section.settings.image,
+              width: 2400,
+              loading: 'eager',
+              sm_render: sm_render,
+              md_render: md_render,
+              lg_render: lg_render
+            %}
+         </div>
+        </div>
+      {% else %}
+        <div class="background-image">
+          {% render 'basic-responsive-image',
+            type:  section.settings.image,
+            width: 2400,
+            loading: 'eager',
+            sm_render: sm_render,
+            md_render: md_render,
+            lg_render: lg_render
+          %}
+        </div>
+      {% endif %}
+
+      {% if float_header and heading != blank %}
+         <div class="banner-caption">
+           <h1>{{ heading }}</h1>
+         </div>
+      {% endif %}
+    </div>
+    <div class="clear"></div>
+  {% endif %}
+
+  {% if title_below_banner and heading != blank %}
+  <div class="main__section-heading grid__wrapper{% if center_heading %} center{% endif %}">
+    <h1 class="span-12 auto mb0">{{ heading }}</h1>
+  </div>
+  {% endif %}
+
+  <style>
+    .section__header.section-{{ section.id }} .collection-banner {
+      height: {{ section.settings.image_height }}px;
+    }
+    {% unless is_parallax %}
+      .section__header.section-{{ section.id }}  .collection-banner img {
+        height: {{ section.settings.image_height }}px;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+    {% endunless %}
+    {% if center_heading %}
+      .section__header.section-{{ section.id }}  .collection-banner .banner-caption {
+        position: absolute;
+        top: 50% !important;
+        left: 50% !important;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        margin-left: 0px !important;
+      }
+    {% endif %}
+    .section__header.section-{{ section.id }} .collection-banner .background-image {
+      background-size: cover;
+      background-position: center center;
+      height: {{ section.settings.image_height }}px;
+    }
+    @media screen and (min-width: 741px) {
+      .collection-banner .background-image .box-ratio {
+        padding-bottom: {{ section.settings.image_height }}px !important;
+      }
+    }
+    @media screen and (max-width: 740px) {
+      .section__header.section-{{ section.id }}  .collection-banner,
+      .section__header.section-{{ section.id }}  .collection-banner .background-image {
+        height: 250px;
+      }
+      .section__header.section-{{ section.id }} .collection .collection-banner img {
+        width: 100%;
+      }
+    }
+  </style>
+
+</section>
+
+{% schema %}
+{
+  "name": "Page header",
+  "settings":[
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info" : "1900px x 1000px recommended"
+    },
+    {
+      "type": "range",
+      "id": "image_height",
+      "min": 250,
+      "max": 500,
+      "step": 50,
+      "unit": "px",
+      "label": "Image height",
+      "default": 400
+    },
+    {
+      "type": "checkbox",
+      "id": "parallax_scroll",
+       "label": "Add parallax scrolling"
+    },
+    {
+     "type": "text",
+     "id": "heading",
+     "label": "Heading"
+    },
+   {
+     "type": "checkbox",
+     "id": "float_header",
+      "label": "Float header on image"
+   },
+   {
+     "type": "checkbox",
+     "id": "center_heading",
+      "label": "Center align",
+      "default": true
+   }
+  ]
+}
+{% endschema %}

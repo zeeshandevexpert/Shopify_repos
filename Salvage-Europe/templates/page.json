@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "content_width": 80,
+        "pagelist": "",
+        "page_sidebar_title": "Page sidebar title"
+      }
+    },
+    "gallery_6cqJRW": {
+      "type": "gallery",
+      "blocks": {
+        "image_mxiDwU": {
+          "type": "image",
+          "settings": {
+            "title_text": "Our collections",
+            "text": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "column_size": 2
+          }
+        },
+        "image_k7VEWV": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "title_text": "Our collections",
+            "text": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "column_size": 2
+          }
+        },
+        "image_zaHByh": {
+          "type": "image",
+          "settings": {
+            "title_text": "Our collections",
+            "text": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "column_size": 3
+          }
+        }
+      },
+      "block_order": [
+        "image_mxiDwU",
+        "image_k7VEWV",
+        "image_zaHByh"
+      ],
+      "settings": {
+        "full_width": false,
+        "no_space": false,
+        "heading": "",
+        "mobile_scroll": true,
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "heading_size": 15,
+        "text_size": 15
+      }
+    },
+    "gallery_aLQDLX": {
+      "type": "gallery",
+      "blocks": {
+        "image_KrbGna": {
+          "type": "image",
+          "settings": {
+            "title_text": "Our collections",
+            "text": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "column_size": 2
+          }
+        },
+        "image_4UXVfV": {
+          "type": "image",
+          "settings": {
+            "title_text": "Our collections",
+            "text": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "column_size": 2
+          }
+        },
+        "image_4K7aNT": {
+          "type": "image",
+          "settings": {
+            "title_text": "Our collections",
+            "text": "<p>Add text to your image<\/p>",
+            "button_text": "Button",
+            "link": "",
+            "caption_bottom": true,
+            "color": "#ffffff",
+            "button_text_color": "#ffffff",
+            "button_color": "#000000",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "column_size": 2
+          }
+        }
+      },
+      "block_order": [
+        "image_KrbGna",
+        "image_4UXVfV",
+        "image_4K7aNT"
+      ],
+      "settings": {
+        "full_width": false,
+        "no_space": false,
+        "heading": "",
+        "mobile_scroll": true,
+        "image_height": 400,
+        "mobile_image_height": 400,
+        "heading_size": 15,
+        "text_size": 15
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "main",
+    "gallery_6cqJRW",
+    "gallery_aLQDLX"
+  ]
+}

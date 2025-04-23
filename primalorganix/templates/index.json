@@ -1,0 +1,569 @@
+{
+  "sections": {
+    "multicolumn_jt4ggm": {
+      "type": "multicolumn",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "banner_block_my8kXk": {
+      "type": "banner-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/bg-image.png",
+        "image": "shopify:\/\/shop_images\/product-image-transparent.png",
+        "heading": "Real Beef OrganSuperfoods",
+        "labeltext": "Formulated For Women",
+        "text": "Introducing Primal Queen - 6 essential female-focused beef organssourced from 100% grass fed & pasture raised cattle for:",
+        "description": "<ul><li>More Energy<\/li><li>Balanced Hormones<\/li><li>Improved Mood<\/li><li>Optimal Menstruation<br\/><\/li><\/ul>",
+        "btn_link": "",
+        "btn_text": "JOIN PRIMAL ORGANI X"
+      }
+    },
+    "icon_list_block_hEzA64": {
+      "type": "icon-list-block",
+      "blocks": {
+        "icons_jQUMUT": {
+          "type": "Icons",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_34.svg",
+            "title": "Gluten Free"
+          }
+        },
+        "icons_AAqhPE": {
+          "type": "Icons",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_33.svg",
+            "title": "No Antibiotics"
+          }
+        },
+        "icons_pf3MfW": {
+          "type": "Icons",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_30.svg",
+            "title": "Grass Fed"
+          }
+        },
+        "icons_zQqpUB": {
+          "type": "Icons",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_35.svg",
+            "title": "Non-GMO"
+          }
+        },
+        "icons_NE88ya": {
+          "type": "Icons",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_32.svg",
+            "title": "No Hormones"
+          }
+        },
+        "icons_RfpXiz": {
+          "type": "Icons",
+          "settings": {
+            "icon": "shopify:\/\/shop_images\/Group_31_1.svg",
+            "title": "Pasture Raised"
+          }
+        }
+      },
+      "block_order": [
+        "icons_jQUMUT",
+        "icons_AAqhPE",
+        "icons_pf3MfW",
+        "icons_zQqpUB",
+        "icons_NE88ya",
+        "icons_RfpXiz"
+      ],
+      "settings": {
+        "heading": "PRIMAL ORGANI X"
+      }
+    },
+    "image_blurb_block_dGm7rL": {
+      "type": "image-blurb-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/bg-image-curve.png",
+        "sup_title": "Our Belief:",
+        "heading": "Organ Superfoods Are a VITAL Part of Any Female Diet And Need To Be Consumed With EVERY Meal.",
+        "text": "",
+        "description": "<p>But let's be honest, beef organs don't taste good. And if you've ever had greens, you know how much it sucks to keep taking something that tastes bad. We got rid of all that bogus.<\/p><p>Two capsules a day unleashes your inner Primal Queen -- and don't forget to use your free capsule keychain whenever you need to take one capsule with you on the go. After all, we're not staying at home all day, are we queens?<\/p>",
+        "btn_link": "",
+        "btn_text": "JOIN PRIMAL ORGANI X",
+        "image": "shopify:\/\/shop_images\/column-image.png"
+      }
+    },
+    "roadmap_block_6zYBAt": {
+      "type": "roadmap-block",
+      "blocks": {
+        "icons_YYzWnR": {
+          "type": "Icons",
+          "settings": {
+            "reverse": false,
+            "title": "1 Week",
+            "text": "<p>Likely lift in energy, mood, andcognition from consistent VitaminB12, Zinc, and Copper.*<\/p>"
+          }
+        },
+        "icons_AccR44": {
+          "type": "Icons",
+          "settings": {
+            "reverse": true,
+            "title": "1 Month",
+            "text": "<p>Likely reduction in iron deficiencyleading to increased vitality, sexdrive, and overall well-being.*<\/p>"
+          }
+        },
+        "icons_wj7yzc": {
+          "type": "Icons",
+          "settings": {
+            "reverse": false,
+            "title": "2 Months",
+            "text": "<p>Abundance of B vitamins frombeef organs leads to bettermood, higher energy, healthierimmune system, decreasedstress, and aids in red blood cellproduction.*<\/p>"
+          }
+        },
+        "icons_AFrk9A": {
+          "type": "Icons",
+          "settings": {
+            "reverse": true,
+            "title": "3 Months",
+            "text": "<p>Consistent natural Vitamin A from beef organs can lead to better skin health, delayed signs of aging, reduced acne, & bettervision.*<\/p>"
+          }
+        },
+        "icons_GxDiYg": {
+          "type": "Icons",
+          "settings": {
+            "reverse": false,
+            "title": "6 Months",
+            "text": "<p>Blend of vitamins, minerals, andamino acids found in beef organspeak for enhanced mental clarity,better muscle function, andimproved recovery after physicalactivities.*<\/p>"
+          }
+        },
+        "icons_Pi43be": {
+          "type": "Icons",
+          "settings": {
+            "reverse": true,
+            "title": "12 Months",
+            "text": "<p>Proteins that impact women’shealth have reached optimizedlevels which can result in optimalmenstruation & menstrual flow,properly balanced hormones, &less menstrual cramps & hotflashes.*<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "icons_YYzWnR",
+        "icons_AccR44",
+        "icons_wj7yzc",
+        "icons_AFrk9A",
+        "icons_GxDiYg",
+        "icons_Pi43be"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/roadmap-bg-image.png",
+        "heading": "What Should I Expect From Consistent Use of Primal Queen?",
+        "btn_link": "",
+        "btn_text": "i want to be a PRIMAL ORGANI X"
+      }
+    },
+    "two_column_block_XrqNpP": {
+      "type": "two-column-block",
+      "blocks": {
+        "two_section_T3jYJK": {
+          "type": "two-section",
+          "settings": {
+            "reverse": false,
+            "sup_title": "",
+            "title": "",
+            "description": "<p>Beef organs have always been a cherished and sought after food source…<\/p><p>It’s even been the most prized food source among many tribes.<\/p><p>But in the last 100 or so years, we’ve moved away from eating organs.<\/p>",
+            "image": "shopify:\/\/shop_images\/column-image2.png"
+          }
+        },
+        "two_section_RR8698": {
+          "type": "two-section",
+          "settings": {
+            "reverse": true,
+            "sup_title": "Why? Because big pharma & big processed food companies havechanged the way we treat our health and get nutrition.",
+            "title": "They don’t want you to treat the root cause of almost every health issue…",
+            "description": "<p>They want you to treat the symptoms with more lab-made pharmaceuticals and more processed comfort foods that ultimately result in billions of dollars in profits.<\/p><p>OR… they want to sell you individual synthetic vitamins, multivitamins, greens powders… that your body will likely never absorb.<\/p>",
+            "image": "shopify:\/\/shop_images\/column-image3.png"
+          }
+        }
+      },
+      "block_order": [
+        "two_section_T3jYJK",
+        "two_section_RR8698"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Vector_2.png",
+        "heading": "How Our Ancestors THRIVED Before Big Pharma & Processed Foods"
+      }
+    },
+    "product_details_block_8CAtnp": {
+      "type": "product-details-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_271.png",
+        "heading": "At Primal Queen, we believe that beef organ superfoods are the KEY to treating the ROOT cause of modern-day symptoms.",
+        "description": "<p>By giving your body incredibly dense nutrition that only beef organ superfoods can provide, we’re going back to our roots. Because they come straight from the source, vitamins and minerals in beef organs are absorbed more efficiently. We’re creating the future of health by blasting to the past. And we hope you’re coming with us.<\/p>",
+        "image": "shopify:\/\/shop_images\/product.png",
+        "btn_link": "",
+        "btn_text": "i want to be a PRIMAL ORGANI X",
+        "letter_text": "Interested In The Extensive Research Data?",
+        "letter_btn_text": "Medical White Paper"
+      }
+    },
+    "how_to_use_block_cBjKFt": {
+      "type": "how-to-use-block",
+      "blocks": {
+        "steps_GVyKLD": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/step1.png",
+            "title": "Open Bag & Enjoy The Smell.It's Peppermint!"
+          }
+        },
+        "steps_FpnGJK": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_113.png",
+            "title": "Pour Into Your Free BadassBamboo Lid Glass Jar."
+          }
+        },
+        "steps_8FMtwN": {
+          "type": "steps",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_112_1.png",
+            "title": "Take 1 Capsule With EachMeal. 2 daily."
+          }
+        }
+      },
+      "block_order": [
+        "steps_GVyKLD",
+        "steps_FpnGJK",
+        "steps_8FMtwN"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/how-work-bg.png",
+        "heading": "How To Use"
+      }
+    },
+    "organ_superfoods_block_CKQi9A": {
+      "type": "organ-superfoods-block",
+      "blocks": {
+        "items_LGYJqH": {
+          "type": "items",
+          "settings": {
+            "title": "Beef Liver",
+            "icon": "shopify:\/\/shop_images\/Group_220.svg",
+            "description": "<ul><li>Enhances energy level<\/li><li>Improves liver function<\/li><li>Improves liver's blood flow<\/li><li>Increased sex drive<\/li><\/ul>",
+            "highlight": "4.2X MORE Vitamin A than lettuce*"
+          }
+        },
+        "items_ak3R8G": {
+          "type": "items",
+          "settings": {
+            "title": "Beef Heart",
+            "icon": "shopify:\/\/shop_images\/Group_220_1.svg",
+            "description": "<ul><li>Strengthens immunity<\/li><li>Provides a boost in energy<\/li><li>Offers protection for the heart<\/li><li>Improves overall mood<\/li><\/ul>",
+            "highlight": "14,000X MORE CoQ10 than cauliflower*"
+          }
+        },
+        "items_wdXK98": {
+          "type": "items",
+          "settings": {
+            "title": "Beef Kidney",
+            "icon": "shopify:\/\/shop_images\/Group_220_2.svg",
+            "description": "<ul><li>Improves fertility<\/li><li>Enhanced eyesight<\/li><li>Boost energy levels<\/li><li>Supports health of the kidney<\/li><\/ul>",
+            "highlight": "3.4X MORE Iron than kale*"
+          }
+        },
+        "items_bKQ34D": {
+          "type": "items",
+          "settings": {
+            "title": "Beef Uterus",
+            "icon": "shopify:\/\/shop_images\/Group_220_3.svg",
+            "description": "<ul><li>Helps balance hormones<\/li><li>Lessen cramps and hot flashes<\/li><li>Improved health of uterus cells<\/li><li>Regulate menstruation & menstrual flow<\/li><\/ul>",
+            "highlight": "100X MORE Vitamin B12 than spinach*"
+          }
+        },
+        "items_nQfXVC": {
+          "type": "items",
+          "settings": {
+            "title": "Beef Fallopian Tubes",
+            "icon": "shopify:\/\/shop_images\/Group_220_2.svg",
+            "description": "<ul><li>Lessen inflammation in the fallopian tubes<\/li><li>Promote a healthy environment for the microorganisms<\/li><li>Boost the likelihood of egg fertilization<\/li><\/ul>",
+            "highlight": "11.25X MORE Zinc than broccoli*"
+          }
+        },
+        "items_tBUJkq": {
+          "type": "items",
+          "settings": {
+            "title": "Beef Ovaries",
+            "icon": "shopify:\/\/shop_images\/Group_220.svg",
+            "description": "<ul><li>Improve mood during premenstrual<\/li><li>Regulate menstruation & menstrual flow<\/li><li>Alleviate menstrual cramps & hot flashes<\/li><\/ul>",
+            "highlight": "2.2X MORE Selenium than oats*"
+          }
+        }
+      },
+      "block_order": [
+        "items_LGYJqH",
+        "items_ak3R8G",
+        "items_wdXK98",
+        "items_bKQ34D",
+        "items_nQfXVC",
+        "items_tBUJkq"
+      ],
+      "settings": {
+        "heading": "Primal Queen's Female-Focused Organ Superfoods are Hands Down THE MOST Nutrient-Rich On The Planet",
+        "btn_link": "",
+        "btn_text": "i want to be a PRIMAL ORGANI X"
+      }
+    },
+    "organs_details_block_7pXAVi": {
+      "type": "organs-details-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Group_274.png",
+        "image": "shopify:\/\/shop_images\/organs-image.png",
+        "heading": "Here’s Why I Fell In Love With Beef Organ Superfoods",
+        "left_items": "<ul><li>Boost Energy<\/li><li>Increase Strength<\/li><li>Improve Skin Health<\/li><li>Reduce Inflammation<\/li><li>Protect Heart Health<\/li><li>And much more<\/li><\/ul>",
+        "right_items": "<ul><li>Improve Mood<\/li><li>Balance Hormones<\/li><li>Enhance Eyesight<\/li><li>Regulate Menstruation<\/li><li>Diminish Uterus Cysts<\/li><li>Lessen PMS<\/li><\/ul>"
+      }
+    },
+    "two_column_block_a6RbCP": {
+      "type": "two-column-block",
+      "blocks": {
+        "two_section_N9AmWY": {
+          "type": "two-section",
+          "settings": {
+            "reverse": false,
+            "sup_title": "",
+            "title": "Here’s The Problem…",
+            "description": "<p>Eating beef organs is not fun (and yes, I tried it myself)<\/p><p>I wanted to get all the benefits, but in an easy way that I didn’t have to force myself to do.<\/p><p>That’s when Primal Queen movement was born (which is now an army of thousands of Queens that have taken back their health).<\/p>",
+            "image": "shopify:\/\/shop_images\/image-2.png"
+          }
+        },
+        "two_section_RwN7HR": {
+          "type": "two-section",
+          "settings": {
+            "reverse": true,
+            "sup_title": "",
+            "title": "One Single Capsule with Every Meal That Provides The Exact Beef Organ Superfoods You Need.",
+            "description": "<p>100% formulated by women, for women (sorry guys!)<\/p><p>What are the beef organ superfoods in Primal Queen?<\/p><p>Glad you asked!<\/p>",
+            "image": "shopify:\/\/shop_images\/image-3.png"
+          }
+        }
+      },
+      "block_order": [
+        "two_section_N9AmWY",
+        "two_section_RwN7HR"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/large-banner.png",
+        "heading": ""
+      }
+    },
+    "product_intro_block_qRA4dJ": {
+      "type": "product-intro-block",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/product-bg-image.png",
+        "heading": "Here’s Where The Magic Happens",
+        "image": "shopify:\/\/shop_images\/Product-front-back.png"
+      }
+    },
+    "featured_product_j33wfa": {
+      "type": "featured-product",
+      "blocks": {
+        "item1_txTRbb": {
+          "type": "item1",
+          "settings": {
+            "cross": false,
+            "title": "30-day supply",
+            "price": "$64"
+          }
+        },
+        "item1_R8eNqE": {
+          "type": "item1",
+          "settings": {
+            "cross": true,
+            "title": "30% off for life",
+            "price": "$20"
+          }
+        },
+        "item1_QRJDzk": {
+          "type": "item1",
+          "settings": {
+            "cross": true,
+            "title": "Free bamboo lid glass jar",
+            "price": "$24"
+          }
+        },
+        "item1_f7LPxD": {
+          "type": "item1",
+          "settings": {
+            "cross": true,
+            "title": "Free on-the-go pill case",
+            "price": "$9"
+          }
+        },
+        "item1_kMfczX": {
+          "type": "item1",
+          "settings": {
+            "cross": true,
+            "title": "Free mystery gift",
+            "price": "$9"
+          }
+        },
+        "item1_RMCFxb": {
+          "type": "item1",
+          "settings": {
+            "cross": false,
+            "title": "Free USA Shipping!",
+            "price": "$12"
+          }
+        },
+        "item2_Xbi8A6": {
+          "type": "item2",
+          "settings": {
+            "cross": false,
+            "title": "30-day supply",
+            "price": "$64"
+          }
+        },
+        "item2_Y3W6wL": {
+          "type": "item2",
+          "settings": {
+            "cross": true,
+            "title": "30% off for life",
+            "price": "$20"
+          }
+        },
+        "item2_DK8BtR": {
+          "type": "item2",
+          "settings": {
+            "cross": true,
+            "title": "Free bamboo lid glass jar",
+            "price": "$24"
+          }
+        },
+        "item2_apYLrE": {
+          "type": "item2",
+          "settings": {
+            "cross": true,
+            "title": "Free on-the-go pill case",
+            "price": "$9"
+          }
+        },
+        "item2_WfazPw": {
+          "type": "item2",
+          "settings": {
+            "cross": true,
+            "title": "Free mystery gift",
+            "price": "$9"
+          }
+        },
+        "item2_hrLjDn": {
+          "type": "item2",
+          "settings": {
+            "cross": false,
+            "title": "Free USA Shipping!",
+            "price": "$12"
+          }
+        }
+      },
+      "block_order": [
+        "item1_txTRbb",
+        "item1_R8eNqE",
+        "item1_QRJDzk",
+        "item1_f7LPxD",
+        "item1_kMfczX",
+        "item1_RMCFxb",
+        "item2_Xbi8A6",
+        "item2_Y3W6wL",
+        "item2_DK8BtR",
+        "item2_apYLrE",
+        "item2_WfazPw",
+        "item2_hrLjDn"
+      ],
+      "settings": {
+        "product": "primal-organi-x",
+        "product_title": "1 Month <br> Subscribe & Save",
+        "show_offer": true,
+        "offer_text": "Christmas Special Offer",
+        "product2": "primal-organi-x-copy",
+        "product_title2": "1 Month Supply One Time Purchase",
+        "show_offer2": false,
+        "offer_text2": "",
+        "title": "Join Primal Queen Today",
+        "sub_title": "ship today, December 12 if ordered within 3hr 10min 12 sec",
+        "bg_image": "shopify:\/\/shop_images\/product-package-bg_5d6d61be-3ead-472c-8cea-7e54d7dda669.png"
+      }
+    },
+    "faq_block_AdYYtK": {
+      "type": "faq-block",
+      "blocks": {
+        "icons_6wP3Ew": {
+          "type": "Icons",
+          "settings": {
+            "heading": "Is this lab tested?",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <\/p>"
+          }
+        },
+        "icons_JGR939": {
+          "type": "Icons",
+          "settings": {
+            "heading": "Can I take this during pregnancy?",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <\/p>"
+          }
+        },
+        "icons_U4YtQJ": {
+          "type": "Icons",
+          "settings": {
+            "heading": "What is the best time of day to take Primal Queen?",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <\/p>"
+          }
+        },
+        "icons_F8czUN": {
+          "type": "Icons",
+          "settings": {
+            "heading": "What are the ingredients in Primal Queen?",
+            "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "icons_6wP3Ew",
+        "icons_JGR939",
+        "icons_U4YtQJ",
+        "icons_F8czUN"
+      ],
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/FAq_bg-image_eac0a270-c093-4c9b-9b2f-0f67389546c4.png",
+        "heading": "Frequently Asked Questions",
+        "text": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. <\/p>",
+        "btn_link": "",
+        "btn_text": "i want to be a PRIMAL ORGANI X"
+      }
+    }
+  },
+  "order": [
+    "multicolumn_jt4ggm",
+    "banner_block_my8kXk",
+    "icon_list_block_hEzA64",
+    "image_blurb_block_dGm7rL",
+    "roadmap_block_6zYBAt",
+    "two_column_block_XrqNpP",
+    "product_details_block_8CAtnp",
+    "how_to_use_block_cBjKFt",
+    "organ_superfoods_block_CKQi9A",
+    "organs_details_block_7pXAVi",
+    "two_column_block_a6RbCP",
+    "product_intro_block_qRA4dJ",
+    "featured_product_j33wfa",
+    "faq_block_AdYYtK"
+  ]
+}

@@ -1,0 +1,55 @@
+<div id="cookies-popup" class="text-center" style="display: none;">
+  {% if section.settings.title  != blank %}
+  <h5>{{ section.settings.title }}</h5>
+  {% endif %}
+  <div class="rte">{{ section.settings.paragraph }}</div>
+</div>
+
+<script type="text/javascript">
+  theme.cookesPopupDelay = {{ section.settings.delay_time | json }};
+  theme.cookesPopupExpiration = {{ section.settings.cookies_expiration | json }};
+</script>
+{% schema %}
+  {
+    "name": "Cookies Popup",
+    "settings": [
+	{
+		"type":"text",
+		"id":"title",
+		"label":"Title",
+		"default":"Notice"
+	},
+	{
+		"type":"richtext",
+		"id":"paragraph",
+		"label":"paragraph"
+	},
+	{
+      "type": "range",
+      "id": "delay_time",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Popup Delay Time",
+      "default": 2
+    },
+	{
+      "type": "range",
+      "id": "cookies_expiration",
+      "min": 0,
+      "max": 365,
+      "step": 5,
+      "unit": "day",
+      "label": "Cookies Expiration",
+      "default": 30
+    }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,63 @@
+{%- liquid
+
+  assign five_column = false
+
+  case section.settings.grid
+    when 2
+      assign column_width = 'span-6'
+    when 3
+      assign column_width = 'span-4'
+    when 4
+      assign column_width = 'span-3 md-span-4'
+    when 5
+      assign five_column = true
+    when 6
+      assign column_width = 'span-2 md-span-4'
+  endcase
+
+  if section.settings.mobile_single == true
+    assign mobile_width = 'sm-span-12'
+  else
+    assign mobile_width = 'sm-span-6'
+  endif
+
+-%}
+
+<section class="main__section collection__list-template" data-section-id="{{ section.id }}">
+  {% paginate collections by 20 %}
+    <div class="collection__grid-loop row grid__wrapper {% if five_column %} five_column_grid{% endif %}" data-aos="{{ settings.scroll_animation }}">
+      {% for collection in collections %}
+        <div class="collection__grid-item product-index {{ column_width }} {{ mobile_width }} auto" data-alpha="{{ collection.title }}">
+          {% render 'collection-grid-item', collection: collection, grid: section.settings.grid %}
+        </div>
+      {% endfor %}
+    
+    </div>
+    <div class="span-12 auto">
+      {% render 'pagination', paginate: paginate %}
+    </div>
+  {% endpaginate %}
+</section>
+
+{% schema %}
+  {
+  "name": "All collections",
+    "settings": [
+     {
+       "type": "range",
+       "id": "grid",
+       "min": 2,
+       "max": 6,
+       "step": 1,
+       "label": "Collections per row",
+       "default": 3
+     },
+     {
+       "type": "checkbox",
+       "id": "mobile_single",
+       "label": "1 per row mobile",
+       "default": true
+     }
+    ]
+  }
+{% endschema %}

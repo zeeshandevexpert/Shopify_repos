@@ -1,0 +1,47 @@
+<div class="partners-block">
+    <div class="partners-container">
+        {% for block in section.blocks %}
+            <div class="partners-logo">
+                {% if block.settings.link %}
+                    <a href="{{ block.settings.link }}">     
+                {% endif %}  
+                 <img src="{{ block.settings.logo |  img_url: 'master' }}" alt="">
+                 {% if block.settings.link %}
+                   </a>
+                {% endif %}
+            </div>     
+        {% endfor %}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Partner Block",
+    "settings": [
+        
+        ],
+        "blocks": [
+            {
+            "type": "Item",
+            "name": "Partner Logo",
+            "settings": [
+                {
+                "type": "image_picker",
+                "id": "logo",
+                "label": "Logo"
+                },
+                {
+                "type": "url",
+                "id": "link",
+                "label": "Logo Link"
+                }
+            ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Partner Block"
+            }
+        ]
+}
+{% endschema %}

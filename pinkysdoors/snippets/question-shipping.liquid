@@ -1,0 +1,9 @@
+{% capture weight_table %}
+{% if product.title contains 'Double' %}
+{{pages.weight-double-door.content}}
+{% elsif product.title contains 'Single' %}
+{{pages.weight-single-door.content}}
+{% else %}
+{{pages.weight-double-door.content}}
+{% endif %}
+{% endcapture %}

@@ -1,0 +1,57 @@
+{% assign img = false %}
+
+<div class="grid--blog-article text-center">
+  {% if image != blank %}
+  	{% assign img = image %}
+  {% elsif article.image %}
+  	{% assign img = article.image %}
+  {% endif %}
+  
+  {% if img %}
+  <a href="{{ article.url }}" class="article__grid-image lazyload lazyfade"
+     data-bgset="{% include 'bgset', image: img, format 'jpg' %}"
+     data-sizes="auto"
+     data-parent-fit="cover"
+     >
+    <noscript>
+      <div class="article__grid-image-wrapper">
+        <img class="article__grid-image" src="{{ img | img_url: '345x' }}" alt="{{ article.title}}" width="{{ img.width }}" height="{{ img.height }}" />
+      </div>
+    </noscript>
+  </a>
+  {% endif %}
+
+  <h3 class="article__title{% if img %} article__title--has-image{% endif %}">
+    {{ article.title }}
+  </h3>
+
+
+  <div class="article__grid-meta{% if img %} article__grid-meta--has-image{% endif %}">
+    {% if section.settings.blog_show_author %}
+    <span class="article__author">{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+    {% endif %}
+
+    {% if section.settings.blog_show_date %}
+    <span class="article__date">
+      {{ article.published_at | time_tag: format: 'month_day_year' }}
+    </span>
+    {% endif %}
+
+    <div class="rte article__grid-excerpt">
+      {% if article.excerpt.size > 0 %}
+      {{ article.excerpt }}
+      {% else %}
+      {{ article.content | strip_html | truncate: 120 }}
+      {% endif %}
+    </div>
+
+    <ul class="list--inline article__meta-buttons">
+      <li>
+        <a href="{{ article.url }}" class="btn btn-thin btn--secondary" aria-label="{{ 'blogs.article.read_more_title' | t: title: article.title }}">
+          {{ 'blogs.article.read_more' | t }}
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</div>

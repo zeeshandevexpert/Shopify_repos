@@ -1,0 +1,54 @@
+{% unless settings.shipping_calculator == 'Disabled' %}
+<div id="shipping-calculator">
+  <h3 class="h4">{{ settings.shipping_calculator_heading | default: 'Get shipping estimates' }}</h3>
+  <div>
+    <p class="field" style="display: none;">
+      <label for="address_country">Country</label>
+      <select id="address_country" name="address[country]" data-default="{% if shop.customer_accounts_enabled and customer %}{{ customer.default_address.country }}{% elsif settings.shipping_calculator_default_country != '' %}{{ settings.shipping_calculator_default_country }}{% endif %}">{{ country_option_tags }}</select>
+    </p>
+    <p class="field" id="address_province_container">
+      <label for="address_province" id="address_province_label">Province</label>
+      <select id="address_province" name="address[province]" data-default="{% if shop.customer_accounts_enabled and customer and customer.default_address.province != '' %}{{ customer.default_address.province }}{% endif %}"></select>
+    </p>  
+    <p class="field">
+      <label for="address_zip">Zip/Postal Code</label>
+      <input type="text" id="address_zip" name="address[zip]"{% if shop.customer_accounts_enabled and customer %} value="{% if customer %}{{ customer.default_address.zip }}{% endif %}"{% endif %} />
+    </p>
+    <p class="field">
+      <button type="submit" class="get-rates btn button"><span class="inner-txt">{{ settings.shipping_calculator_submit_button_label | default: 'Calculate shipping' }}</span> {% include 'icon-preloader', color: '#ffffff' %}</button>
+    </p>
+  </div>
+  <div id="wrapper-response"></div>
+</div>
+{% endunless %}
+
+<script id="shipping-calculator-response-template" type="text/template">
+  {% raw %}
+  <p id="shipping-rates-feedback" {{#if success}} class="success" {{else}} class="error" {{/if}}>
+  {{#if success}}
+    {{#if rates}}
+      {{#rates}}
+        {{#if @first}}
+            Rates start at {{price}}.
+        {{/if}}
+      {{/rates}}
+    {{else}}
+      We do not ship to this destination.
+    {{/if}}    
+  {{else}}
+    {{ errorFeedback }}
+  {{/if}}
+  </p>
+  {% endraw %}
+</script>
+
+<!--[if lte IE 8]>
+<style> #shipping-calculator { display: none; } </style>
+<![endif]-->
+
+<div style="display: none;">
+  <div id="shipping-calculator-popup" class="regular-mfp-popup rte">
+    <h4>Do you ship to all states?</h4>
+    <div>Yes, we ship nationwide from our warehouse located in Vernon, California.</div>
+  </div>
+</div>

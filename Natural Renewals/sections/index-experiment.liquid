@@ -1,0 +1,90 @@
+
+    <div class="home-experiment-left">
+        <div class="standard-cover">
+            {% include "media-block" %}
+        </div>
+    </div>
+    <div class="home-experiment-right" style="background-image:url('{{ section.settings.image_bg | img_url: '1000x' }}');">
+        <div class="home-experiment-right-content">
+            <h2>{{ section.settings.title }}</h2>
+            <a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+        </div>
+    </div>
+
+{% schema %}
+{
+  "name": "Index - Experiment",
+  "tag": "section",
+  "class": "home-experiment-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_bg",
+      "label": "Image Background"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "Media Block"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "image"
+        },
+        {
+          "value": "vimeo_youtube_video",
+          "label": "YouTube or Vimeo Video"
+        },
+        {
+          "value": "video_file",
+          "label": "HTML5 Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video_url",
+      "id": "vimeo_youtube_video",
+      "label": "Video",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "video_file",
+      "label": "HTML5 Video File URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index - Experiment"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,121 @@
+{
+  "sections": {
+    "header_skin_4FppWW": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "main": {
+      "type": "page-template",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "vertical_slider_LYmqCL": {
+      "type": "vertical-slider",
+      "blocks": {
+        "text_block_3Dxwc9": {
+          "type": "text_block",
+          "settings": {
+            "heading": "we want to live in a beautiful world",
+            "text": "<p>our mission is to revolutionize the fashion industry by regenerating end-of-life-textiles into high-quality, circular materials.<br\/><br\/>we are committed to reducing our dependence on Earth’s raw resources and minimizing waste by using the materials we already have to make tomorrow’s clothes.<\/p>"
+          }
+        },
+        "text_block_PTtRPQ": {
+          "type": "text_block",
+          "settings": {
+            "heading": "performance in harmonywith nature",
+            "text": "<p>our clothes have always supported us through exploration and progress, from being able to reach the deep depths of the sea to the moon, but this advancement has often come at the expense of our Earth.<br\/><br\/>by partnering with leading brands, we provide them with a circular alternative to traditional materials, allowing them to create cutting-edge garments in harmony with nature.<\/p>"
+          }
+        },
+        "text_block_f4tD9w": {
+          "type": "text_block",
+          "settings": {
+            "heading": "join the movement",
+            "text": "<p>at cycora®, we are not just transforming textiles; we are transforming the relationship we have with our clothes.<br\/><br\/>our vision is to empower designers, creators, and consumers to work together to create a world in where fashion lives in harmony with our Earth.<br\/><br\/>explore our universe.<\/p><p><a href=\"#\" title=\"#\"><strong>material  partnerships<\/strong><\/a><strong>  |  <\/strong><a href=\"#\" title=\"#\"><strong>products<\/strong><\/a><strong>  |  <\/strong><a href=\"#\" title=\"#\"><strong>building  community<\/strong><\/a><\/p>"
+          }
+        },
+        "image_block_xqHJYX": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_36.png"
+          }
+        },
+        "image_block_379DEW": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_29_29a3c84c-88bb-4496-a3fc-ff0b385ab589.png"
+          }
+        },
+        "image_block_ECi9CQ": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_35_b78967ef-0a8e-4e69-9c7a-55b6feacd0a9.png"
+          }
+        },
+        "image_block_GCkM86": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_28_9033fa07-8331-498f-91b1-da80de8662be.png"
+          }
+        },
+        "image_block_GjXcxB": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_37.png"
+          }
+        },
+        "image_block_YnxJ6q": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_38.png"
+          }
+        },
+        "image_block_7dp9Um": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_39.png"
+          }
+        },
+        "image_block_8gJcVF": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_41.png"
+          }
+        },
+        "image_block_WmPP3n": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_40.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_3Dxwc9",
+        "text_block_PTtRPQ",
+        "text_block_f4tD9w",
+        "image_block_xqHJYX",
+        "image_block_379DEW",
+        "image_block_ECi9CQ",
+        "image_block_GCkM86",
+        "image_block_GjXcxB",
+        "image_block_YnxJ6q",
+        "image_block_7dp9Um",
+        "image_block_8gJcVF",
+        "image_block_WmPP3n"
+      ],
+      "settings": {
+        "heading": "",
+        "text": ""
+      }
+    }
+  },
+  "order": [
+    "header_skin_4FppWW",
+    "main",
+    "vertical_slider_LYmqCL"
+  ]
+}

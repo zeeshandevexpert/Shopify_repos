@@ -1,0 +1,16 @@
+{% assign upsell = all_products[settings.upsell_product] %}
+<div class="cart-upsell">
+  <h4 class="">Complete Your Purchase</h4>
+  <div class="flex flex--align-center">
+    <div class="cart__image-wrapper">
+      <div class="cart-ajax__image">
+        {{ upsell.featured_image | img_url: '100x' | img_tag }}
+      </div>
+    </div>
+    <div>
+      <div class="grid-view-item__title cart-upsell__title">{{ upsell.title }}</div>
+      <div class="cart-upsell__price">{{ upsell.price | money_without_trailing_zeros }}</div>
+      <a href="#" class="cart-upsell__btn" data-variant="{{ upsell.selected_or_first_available_variant.id }}">Add to Cart</a>
+    </div>
+  </div>
+</div>

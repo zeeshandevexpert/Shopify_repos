@@ -1,0 +1,242 @@
+{%- liquid
+
+  case section.settings.image_width
+  when '33%'
+    assign image_width = 'span-4'
+    assign image_offset = 'span-8'
+    assign width = '600'
+    assign md_render = 'calc(100vw / 3)'
+    assign lg_render = 'calc(1600px / 3)'
+  when '50%'
+    assign image_width = 'span-6'
+    assign image_offset = 'span-6'
+    assign width = '800'
+    assign md_render = 'calc(100vw / 2)'
+    assign lg_render = 'calc(1600px / 2)'
+  when '66%'
+    assign image_width = 'span-8'
+    assign image_offset = 'span-4'
+    assign width = '1000'
+    assign md_render = 'calc(100vw / 1)'
+    assign lg_render = 'calc(1600px / 1)'
+  endcase
+
+  assign single_image = false
+  if section.blocks.size == 1
+    assign single_image = true
+  endif
+
+  assign background = section.settings.background
+  assign color = section.settings.color
+
+-%}
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --text-color: {{ color }};
+    --section-background: {{ background }};
+  }
+{% endstyle %}
+<div class="global__section image__with-text--section {% if section.settings.no_bottom_margin %} mb0{% endif %}" data-section-id="{{ section.id }}" data-section-type="product-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="row">
+
+  {% if section.settings.main_heading != blank %}
+      <h2 class="main-heading-for-title">
+          {{ section.settings.main_heading }}
+      </h2>
+    {% endif %}
+    {% capture image_layout %}
+      <div class="{{ image_width }} sm-span-12 auto text-with-image image-section">
+        {% for block in section.blocks %}
+          <div class="image__block{% if single_image == false and forloop.last %} second--image__block{% endif %}{% if single_image %} single-image{% endif %}" data-aos="{{ settings.scroll_animation }}" data-aos-delay="{{ forloop.index | times: 150  }}" {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              {% render 'aboutus-blog-image',
+               type: block.settings.image,
+               width: width,
+               sm_render: '300px',
+               md_render: md_render,
+               lg_render: lg_render
+              %}
+            {% else %}
+              <div class="onboard">
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endcapture %}
+
+    <div class="image-with-text-wrapper grid__wrapper">
+      {% if section.settings.layout == 'left' %}
+        {{ image_layout }}
+      {% endif %}
+
+      <div class="{{ image_offset }} sm-span-12 auto text-with-image text_section{% if section.settings.text_align == 'center' %} center{% endif %}">
+        {% if section.settings.title != blank %}
+          <h3>{{ section.settings.title }}</h3>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="rte">
+            {{ section.settings.text }}
+          </div>
+        {% endif %}
+        {% if section.settings.button != blank and section.settings.link != blank %}
+          <a href="{{ section.settings.link }}" class="button">
+            {{ section.settings.button | escape }}
+          </a>
+        {% endif %}
+      </div>
+
+      {% if section.settings.layout == 'right' %}
+        {{ image_layout }}
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "Image with text",
+    "max_blocks":2,
+    "settings": [
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image position",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Image on left"
+          },
+          {
+            "value": "right",
+            "label": "Image on right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "main_heading",
+        "label": "Main Section Heading"
+      },
+      {
+        "type": "select",
+        "id": "image_width",
+        "label": "Image width",
+        "default": "50%",
+        "options": [
+          {
+            "value":"33%",
+            "label":"33%"
+          },
+          {
+            "value":"50%",
+            "label":"50%"
+          },
+          {
+            "value":"66%",
+            "label":"66%"
+          }
+        ]
+      },
+     {
+        "type": "select",
+        "id": "text_align",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair text with an image to give focus to your chosen content.</p>"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button text"
+      },
+      {
+        "type": "color",
+        "id": "color",
+        "label": "Text color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "background",
+        "label": "Background color",
+        "default": "#ded6c0"
+      },
+      {
+        "type":"checkbox",
+        "id":"no_bottom_margin",
+        "label":"Remove bottom margin",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type":"image",
+        "name":"Image",
+        "settings":[
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image",
+            "info" : "800px x 800px recommended"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with text",
+        "blocks": [
+            {
+              "type": "image"
+            },
+            {
+              "type": "image"
+            }
+          ]
+        }
+      ],
+    "enabled_on": {
+      "templates": [
+        "404",
+        "article",
+        "blog",
+        "cart",
+        "collection",
+        "index",
+        "list-collections",
+        "page",
+        "product",
+        "search",
+        "customers/account"
+      ]
+    }
+  }
+{% endschema %}

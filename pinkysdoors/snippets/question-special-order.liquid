@@ -1,0 +1,30 @@
+<h4>Timeline</h4>
+
+{%- case type -%}
+
+
+{%- when 'Color Samples' or 'Glass Samples' or 'Locks' -%}
+
+
+<p>Special Orders will ship within 2 to 4 weeks from Los Angeles, California.</p>
+
+
+{%- when 'Door Handles' -%}
+
+
+<p>Special Orders will ship within 6 to 8 weeks from Los Angeles, California.</p>
+
+
+{%- when 'Thermally Broken Doors' or 'Bi-Fold / Accordion' -%}
+
+
+<p>Special Orders will ship within 12 to 18 weeks from Los Angeles, California.</p>
+
+
+{%- else -%} {% comment %} DEFAULT VALUES {% endcomment %}
+
+
+<p>Special Orders will ship within 12 to 15 weeks from Los Angeles, California.</p>
+
+
+{%- endcase -%}

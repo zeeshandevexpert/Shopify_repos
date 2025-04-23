@@ -1,0 +1,127 @@
+{
+  "sections": {
+    "1656623928ae705075": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default",
+        "sticky_header": false
+      }
+    },
+    "main": {
+      "type": "product-template",
+      "settings": {
+      }
+    },
+    "1654509694b203a3cb": {
+      "type": "product-main-info",
+      "settings": {
+        "cycora_image": "shopify:\/\/shop_images\/chart1.png",
+        "cycora_description": "<p>cycora® is regenerated fabric created from post-consumer, landfill-destined textile 'waste.’ cycora® is regenerated fabric created from post-consumer.<\/p>"
+      }
+    },
+    "1654509711bfc23ab7": {
+      "type": "product-buy",
+      "blocks": {
+        "f2eee3eb-c497-44ed-a95f-615db324be26": {
+          "type": "material",
+          "settings": {
+            "title": "cycora®",
+            "description": "<p>20% of this garment comes from end-of-life garments<\/p>"
+          }
+        },
+        "dfe35bac-46f7-49c4-aeae-ba9e6bd88c20": {
+          "type": "material",
+          "settings": {
+            "title": "performance fabric",
+            "description": "<p><strong>textile 'waste'<br\/><\/strong>is discarded material that ends up in landfills. We don't see this material as waste, but as <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "f2eee3eb-c497-44ed-a95f-615db324be26",
+        "dfe35bac-46f7-49c4-aeae-ba9e6bd88c20"
+      ],
+      "settings": {
+      }
+    },
+    "16545097013323b570": {
+      "type": "product-detail-info",
+      "settings": {
+      }
+    },
+    "16545097060a5d0d99": {
+      "type": "product-fiber",
+      "blocks": {
+        "3f5e1214-6066-4380-a25e-029b1f69d1d2": {
+          "type": "slide",
+          "settings": {
+            "data": "",
+            "location": "",
+            "image": "shopify:\/\/shop_images\/3_6371d56f-6e7f-4a15-b551-9e8e8080c5dd.png",
+            "title": "landfill interception",
+            "description": "<p>garments were collected by the ambercycle team and diverted from landfill<\/p>"
+          }
+        },
+        "afeaa353-af79-4cef-b3d2-c0677ad51cf1": {
+          "type": "slide",
+          "settings": {
+            "data": "",
+            "location": "",
+            "image": "shopify:\/\/shop_images\/10.png",
+            "title": "Ambercycle technology",
+            "description": "<p>the garments were broken down to the molecular level, regenerated, and then built back up into base raw materials <\/p>"
+          }
+        },
+        "8549b819-e60f-4139-b31f-4f2b696449ad": {
+          "type": "slide",
+          "settings": {
+            "data": "",
+            "location": "",
+            "image": "shopify:\/\/shop_images\/6_c7dcf29d-db73-451e-8204-c2bcb223c040.png",
+            "title": "yarn spinning",
+            "description": "<p>the newly regenerated materials are spun into yarns<\/p>"
+          }
+        },
+        "cbe794e8-ac67-406c-a4c7-410b6b188b16": {
+          "type": "slide",
+          "settings": {
+            "data": "",
+            "location": "",
+            "image": "shopify:\/\/shop_images\/8_5912f1c5-eb55-4e24-a7f5-4be8ed9e5345.png",
+            "title": "fabric knitting and finishing",
+            "description": "<p>the yarns are then knitted and woven into cycora® fabrics <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3f5e1214-6066-4380-a25e-029b1f69d1d2",
+        "afeaa353-af79-4cef-b3d2-c0677ad51cf1",
+        "8549b819-e60f-4139-b31f-4f2b696449ad",
+        "cbe794e8-ac67-406c-a4c7-410b6b188b16"
+      ],
+      "settings": {
+        "fiber_title": "every fiber has a story",
+        "fiber_description": "learn the history behind yours"
+      }
+    },
+    "16545097160f19f876": {
+      "type": "product-related-products",
+      "settings": {
+        "title_plp": "more cycora® products",
+        "view_all_link": "shopify:\/\/collections\/all",
+        "title_bottom": "powered by cutting-edge material technology",
+        "learn_link": "shopify:\/\/pages\/technology"
+      }
+    }
+  },
+  "order": [
+    "1656623928ae705075",
+    "main",
+    "1654509694b203a3cb",
+    "1654509711bfc23ab7",
+    "16545097013323b570",
+    "16545097060a5d0d99",
+    "16545097160f19f876"
+  ]
+}

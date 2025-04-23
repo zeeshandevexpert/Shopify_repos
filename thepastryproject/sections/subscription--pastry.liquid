@@ -1,0 +1,906 @@
+{{ 'section-featured-product.min.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="homepage-sections-wrapper pastry-subscription-product {% if section.settings.font_padding != blank %}section-padding{% endif %}"
+  style="background-color: {{ section.settings.pastry-subscription--background-color }};"
+>
+  {%- liquid
+    assign product = section.settings['pastry-subscription_product']
+    assign current_variant = product.selected_or_first_available_variant
+  -%}
+
+  {% comment %}
+    Check if the product is on sale and set a variable to be used below.
+  {% endcomment %}
+  {%- liquid
+    assign on_sale = false
+    if current_variant.compare_at_price > current_variant.price
+      assign on_sale = true
+    endif
+  -%}
+
+  <div
+    class="container product--featured-product"
+    data-wetheme-section-type="product--featured-product"
+    data-wetheme-section-id="{{ section.id }}"
+  >
+    <div class="row align-items-center" id="product-box" data-section-id="{{ section.id }}">
+      <div class="col-12 col-lg-6">
+        <section class="product-description-main-wrapper wow {% if settings.enable_store_pickup %}store-pickup-enabled{% endif %}">
+          {% unless product == empty %}
+            {% if product.available %}
+              <product-form>
+              {% form 'product', product, id: 'add-to-cart-form' %}
+                <!-- <input type="hidden" id="cart-link" value="{{ routes.cart_url }}" /> -->
+                {% comment %} <input type="hidden" name="return_to" value="/checkout/"> {% endcomment %}
+
+                <div class="shopify-payment-terms__container">
+                  {{ form | payment_terms }}
+                </div>
+
+                {% assign hide_default_title = false %}
+                {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+                  {% assign hide_default_title = true %}
+                {% endif %}
+
+                <div class="homepage-sections--indiv-product-slider-variants">
+                  {% if product.variants.size > 0 %}
+                    {% for option in product.options_with_values %}
+                      <div class="product-form-option--featured-product col-md-6 col-sm-12 col-12{% if hide_default_title == true %} hide{% endif %}">
+                        <div class="input-field product-option-select">
+                          <wetheme-dropdown fit="parent">
+                            <select id="SingleOptionSelector-{{ forloop.index0 }}" class="wetheme-dropdown__select">
+                              {% for value in option.values %}
+                                {% if option.selected_value == value %}
+                                  {% assign props = 'selected' %}
+                                {% else %}
+                                  {% assign props = '' %}
+                                {% endif %}
+
+                                {% comment %}
+                                  Hide out of stock variants
+                                  {% assign hide = false %}
+                                  {% if product.options_with_values.size == 1 and section.settings.hide_out_of_stock %}
+                                    {% assign hide = true %}
+                                    {% for v in product.variants %}
+                                      {% if v.option1 == value and v.available %}
+                                        {% assign hide = false %}
+                                      {% endif %}
+                                    {% endfor %}
+                                  {% endif %}
+                                {% endcomment %}
+                                {% unless hide %}
+                                  <option {{ props }} value="{{ value | escape }}">{{ value }}</option>
+                                {% endunless %}
+                              {% endfor %}
+                            </select>
+                            <label for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}:</label>
+                          </wetheme-dropdown>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+
+                  <select
+                    name="id"
+                    id="ProductSelect-{{ section.id }}"
+                    data-section="{{ section.id }}"
+                    class="form-control original-select product-form__variants no-js"
+                  >
+                    {% for variant in product.variants %}
+                      {% if variant.available %}
+                        <option
+                          {% if variant == current_variant %}
+                            selected
+                          {% endif %}
+                          value="{{ variant.id }}"
+                        >
+                          {{ variant.title }}
+                        </option>
+                      {% else %}
+                        <option disabled>{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  </select>
+
+                  <div class="get-subscription-right-content">
+                    <h2 class="sectionHeading">{{ section.settings['title-pastry'] }}</h2>
+
+                    {{ section.settings['text-block-pastry'] }}
+                  </div>
+
+                  <style>
+                    button#purchase-btn {
+                      background: #feeee6 !important;
+                      color: #cf6a28 !important;
+                    }
+                    button#purchase-btn:hover {
+                      background: var(--button-background-hover-color) !important;
+                      color: var(--button-text-color) !important;
+                    }
+                  </style>
+
+                  <div class="col-md-12 col-sm-12 col-12 featured-product--submit-action">
+                    <span
+                      class="appstle_stand_alone_selector homeAppstle"
+                      data-product-data="{{ all_products[product.handle] | json | escape }}"
+                      style="display:none;"
+                    ></span>
+                    <button
+                      type="submit"
+                      name="add"
+                      id="purchase-btn"
+                      data-variant-id="{{ product.selected_or_first_available_variant.id }}"
+                      class="btn btn-primary {% if section.settings.show_smart_checkout and product.selling_plan_groups.size == 0 %}secondary-button{% endif %} subscription-pastry"
+                      data-cart-action="added"
+                      {% if template == 'cart' %}
+                        data-submit-type="featured-submit"
+                      {% endif %}
+                    >
+                      {% render 'spinner-border' %}
+                      {% if section.settings.button_text != blank %}
+                        {{ section.settings.button_text }}
+                      {% else %}
+                        {{ 'products.product.subscribe_button' | t }}
+                      {% endif %}
+                    </button>
+
+                    {% if section.settings.show_smart_checkout and product.available %}
+                      {{ form | payment_button }}
+                    {% endif %}
+
+                    <div class="product-form__error-message-wrapper" role="alert" hidden>
+                      <span class="product-form__error-message"></span>
+                    </div>
+                  </div>
+                </div>
+              {% endform %}
+            </product-form>
+
+            {% else %}
+              <div class="col-md-12 col-sm-12 col-12">
+                <div class="product-out-of-stock">{{ 'products.product.sorry_stock' | t }}</div>
+              </div>
+            {% endif %}
+
+          {% else %}
+            <div class="onboarding--sold-out">
+              <a class="btn" href="#">
+                {{ 'products.product.sold_out' | t }}
+              </a>
+            </div>
+          {% endunless %}
+
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'text-with-icon' %}
+                {% render 'text-with-icon',
+                  icon: block.settings.icon,
+                  text: block.settings.text,
+                  link: block.settings.link,
+                  block_attributes: block.shopify_attributes
+                %}
+
+              {% when 'custom-liquid' %}
+                <div {{ block.shopify_attributes }}>{{ block.settings['custom-liquid'] }}</div>
+
+              {% when 'product-rating' %}
+                {% if block.settings.rating != blank %}
+                  {% if block.settings['rating-label'] != blank %}
+                    <p class="rating-label">{{ block.settings['rating-label'] }}</p>
+                    {% assign rating_aria_label = block.settings['rating-label'] %}
+                  {% else %}
+                    {% assign rating_aria_label = 'Rating' %}
+                  {% endif %}
+
+                  {% if block.settings['rating-icon-full'] %}
+                    {% liquid
+                      assign rating_decimal = 0
+                      assign decimal = block.settings.rating | modulo: 1
+                      if decimal >= 0.3 and decimal <= 0.7
+                        assign rating_decimal = 0.5
+                      elsif decimal > 0.7
+                        assign rating_decimal = 1
+                      endif
+
+                      assign full_icons = block.settings.rating | floor | plus: rating_decimal | floor
+                      assign empty_icons = block.settings['rating-max'] | round | minus: full_icons
+                      if rating_decimal == 0.5
+                        assign empty_icons = empty_icons | minus: 1
+                      endif
+
+                      assign full_alt = block.settings['rating-icon-full'].alt | default: 'Full icon'
+                      assign empty_alt = block.setting['rating-icon-empty'].alt | default: 'Empty icon'
+                    %}
+
+                    <div
+                      class="rating-icons"
+                      role="img"
+                      aria-label="{{ rating_aria_label }} - {{ block.settings.rating }} out of {{ block.settings.rating-max }}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {% for i in (1..full_icons) %}
+                        <div class="rating-icons__icon" aria-hidden="true">
+                          {% render 'responsive-image' with block.settings['rating-icon-full'], alt: full_alt %}
+                        </div>
+                      {% endfor %}
+
+                      {% if block.settings['rating-icon-empty'] %}
+                        {% if rating_decimal == 0.5 %}
+                          <div class="rating-icons__icon rating-icons__icon--half" aria-hidden="true">
+                            <div class="rating-icons__image--full">
+                              {% render 'responsive-image' with block.settings['rating-icon-full'], alt: full_alt %}
+                            </div>
+                            <div class="rating-icons__image--empty">
+                              {% render 'responsive-image' with block.settings['rating-icon-empty'], alt: empty_alt %}
+                            </div>
+                          </div>
+                        {% endif %}
+
+                        {% for i in (1..empty_icons) %}
+                          <div class="rating-icons__icon" aria-hidden="true">
+                            {% render 'responsive-image' with block.settings['rating-icon-empty'], alt: empty_alt %}
+                          </div>
+                        {% endfor %}
+                      {% endif %}
+                    </div>
+                  {% else %}
+                    <p>{{ block.settings.rating }} / {{ block.settings['rating-max'] }}</p>
+                  {% endif %}
+                {% endif %}
+
+              {% when 'image-offer' %}
+                <div class="image-offer-container" {{ block.shopify_attributes }}>
+                  {% if block.settings.link != blank and block.settings.image != blank %}
+                    <a href="{{ block.settings.link }}" class="image-offer-container--is-link">
+                  {% endif %}
+
+                  {% if block.settings.image == blank %}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'icon--placeholder' }}
+                  {% else %}
+                    {% capture alt %}{{ block.settings.image.alt | default: shop.name }}{% endcapture %}
+                    {% render 'responsive-image' with block.settings.image, blur: 'center', alt: alt %}
+                  {% endif %}
+
+                  {% if block.settings.link != blank and block.settings.image != blank %}
+                    </a>
+                  {% endif %}
+                </div>
+
+                <style>
+                  .image-offer-container--is-link:hover img {
+                    border-color: {{ block.settings.hover_border_color }};
+                  }
+                </style>
+            {% endcase %}
+          {% endfor %}
+        </section>
+      </div>
+
+      <div class="col-12 col-lg-6 d-flex justify-content-lg-start justify-content-center justify-content-lg-end reverseContentColumn pdp-imageColumn">
+        <div class="contentImageColumnOuter position-relative">
+          <div class="get-subscription-image">
+            {% if section.settings.right_image != blank %}
+              <img
+                class=""
+                alt=""
+                src="{{ section.settings.right_image | img_url: ' ' }}"
+                width=""
+                height=""
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="get-subscription-freeShipping position-absolute">
+            {% if section.settings.arrow_image != blank %}
+              <div class="freeShipping-img">
+                <img
+                  class="arrow-img"
+                  alt=""
+                  src="{{ section.settings.arrow_image | img_url: 'large' }}"
+                  width=""
+                  height=""
+                  loading="lazy"
+                >
+              </div>
+            {% endif %}
+          </div>
+        </div>
+
+        {% comment %}
+          <div class="pdp-imageColumnInner position-relative">
+            {% if section.settings.right_image != blank %}
+              <img class="" alt="" src="{{ section.settings.right_image | img_url: ' ' }}" width="" height="" loading= "lazy" />
+            {% endif %}
+
+            <div class="get-subscription-freeShipping position-absolute">
+
+            {% if section.settings.arrow_image != blank %}
+            <div class="freeShipping-img"><img class="arrow-img" alt="" src="{{ section.settings.arrow_image | img_url: 'large' }}" width="" height="" loading= "lazy" /></div>
+            {% endif %}
+            </div>
+          </div>
+        {% endcomment %}
+      </div>
+      {% unless product == empty %}
+        <script type="application/json" class="product-json" id="ProductJson-{{ section.id }}">
+          {{ product | json }}
+        </script>
+      {% endunless %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Pastry subscription",
+  "class": "homepage-section--indiv-product-wrapper",
+  "settings": [
+    {
+      "type": "range",
+      "id": "font_padding",
+      "min": 12,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "pastry-subscription--background-color",
+      "label": "Section background",
+      "default": "#2D2D2D"
+    },
+
+    {
+      "type": "text",
+      "id": "title-pastry",
+      "label": {
+        "en": "Heading",
+        "de": "Überschrift",
+        "es": "Encabezado",
+        "fr": "Rubrique",
+        "pt-PT": "Título"
+      },
+      "default": {
+        "en": "Share brand or product details",
+        "de": "Marken- oder Produktdetails teilen",
+        "es": "Compartir marca o detalles del producto",
+        "fr": "Partager les infos sur la marque ou le produit",
+        "pt-PT": "Partilhar detalhes da marca ou produto"
+      }
+    },
+    {
+      "type": "html",
+      "id": "text-block-pastry",
+      "label": {
+        "en": "Text",
+        "de": "Text",
+        "es": "Texto",
+        "fr": "Texte",
+        "pt-PT": "Texto"
+      },
+      "default": {
+        "en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+        "de": "<p>Fügen Sie langen Texten ein Bild hinzu, um dem Produkt, der Kollektion oder dem Blogpost Ihrer Wahl Fokus zu verleihen. Fügen Sie Details bezüglich der Verfügbarkeit oder dem Stil hinzu oder stellen Sie sogar eine Rezension zur Verfügung.</p>",
+        "es": "<p> Combine texto grande con una imagen para focalizar la atención en su producto, colección o publicación del blog. Añada detalles sobre la disponibilidad, el estilo o, incluso, un comentario. </p>",
+        "fr": "<p>Associez un texte en gros caractères à une image pour mettre en valeur le produit, la collection ou l'article de blog que vous avez choisi. Ajoutez des détails sur la disponibilité et le style ou même fournissez un commentaire.</p>",
+        "pt-PT": "<p>Associe um texto de grandes dimensões a uma imagem para destacar o seu produto, coleção ou publicação no blog de eleição. Acrescente detalhes relativos à disponibilidade, estilo, ou até mesmo uma opinião.</p>"
+      }
+    },
+
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_image",
+      "label": "Right Icon Image"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+
+    {
+      "type": "product",
+      "id": "pastry-subscription_product",
+      "label": {
+        "en": "Product",
+        "de": "Produkt",
+        "es": "Producto",
+        "fr": "Produit",
+        "pt-PT": "Produto"
+      }
+    },
+
+    {
+      "type": "checkbox",
+      "id": "show_smart_checkout",
+      "label": {
+        "en": "Show dynamic checkout button",
+        "de": "Dynamischen Bezahlbutton anzeigen",
+        "es": "Mostar el botón de compra dinámica",
+        "fr": "Afficher le bouton de paiement dynamique",
+        "pt-PT": "Mostrar botão de checkout dinâmico"
+      },
+      "default": true,
+      "info": {
+        "en": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "de": "Lässt Kunden direkt unter Verwendung einer bekannten Zahlungsmethode bezahlen. [Mehr erfahren](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "es": "Permita a los clientes finalizar su compra directamente utilizando un método de pago que les sea familiar. [Aprenda más](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "fr": "Permet aux clients de payer directement en utilisant un mode de paiement familier. [En savoir plus](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "pt-PT": "Permita que os clientes façam checkout diretamente utilizando um método de pagamento familiar. [Saber mais](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Text with icon",
+      "type": "text-with-icon",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": {
+            "en": "Icon",
+            "de": "Symbol",
+            "es": "Icono",
+            "fr": "Icône",
+            "pt-PT": "Ícone"
+          },
+          "default": "takeaway",
+          "options": [
+            {
+              "value": "none",
+              "label": {
+                "en": "None",
+                "de": "Keiner",
+                "es": "Ninguno",
+                "fr": "Aucun",
+                "pt-PT": "Nenhum"
+              }
+            },
+            {
+              "value": "home-smile",
+              "label": {
+                "en": "Home with smile",
+                "de": "Haus mit Lächeln",
+                "es": "Hogar con sonrisa",
+                "fr": "Accueil souriant",
+                "pt-PT": "Casa com sorriso"
+              }
+            },
+            {
+              "value": "store",
+              "label": {
+                "en": "Store",
+                "de": "Speichern",
+                "es": "Tienda",
+                "fr": "Magasin",
+                "pt-PT": "Loja"
+              }
+            },
+            {
+              "value": "flag",
+              "label": {
+                "en": "Flag",
+                "de": "Flagge",
+                "es": "Bandera",
+                "fr": "Drapeau",
+                "pt-PT": "Bandeira"
+              }
+            },
+            {
+              "value": "service",
+              "label": {
+                "en": "Customer service",
+                "de": "Kundendienst",
+                "es": "Servicio al cliente",
+                "fr": "Service clients",
+                "pt-PT": "Serviço ao cliente"
+              }
+            },
+            {
+              "value": "chat",
+              "label": {
+                "en": "Chat bubble",
+                "de": "Chat-Blase",
+                "es": "Burbuja de chat",
+                "fr": "Bulle de chat",
+                "pt-PT": "Bolha de conversa"
+              }
+            },
+            {
+              "value": "chat-smile",
+              "label": {
+                "en": "Chat bubble with smile",
+                "de": "Chat-Blase mit Lächeln",
+                "es": "Burbuja de chat con sonrisa",
+                "fr": "Bulle de chat avec sourire",
+                "pt-PT": "Bolha de conversa com sorriso"
+              }
+            },
+            {
+              "value": "question-answer",
+              "label": {
+                "en": "Question and answer",
+                "de": "Frage und Antwort",
+                "es": "Pregunta y respuesta",
+                "fr": "Question et réponse",
+                "pt-PT": "Pergunta e resposta"
+              }
+            },
+            {
+              "value": "wallet",
+              "label": {
+                "en": "Wallet",
+                "de": "Geldbörse",
+                "es": "Cartera",
+                "fr": "Portefeuille",
+                "pt-PT": "Carteira"
+              }
+            },
+            {
+              "value": "price-tag",
+              "label": {
+                "en": "Price tag",
+                "de": "Preisschild",
+                "es": "Etiqueta de precio",
+                "fr": "Étiquette de prix",
+                "pt-PT": "Etiqueta de preço"
+              }
+            },
+            {
+              "value": "vip",
+              "label": {
+                "en": "VIP",
+                "de": "VIP",
+                "es": "VIP",
+                "fr": "VIP",
+                "pt-PT": "VIP"
+              }
+            },
+            {
+              "value": "crown",
+              "label": {
+                "en": "Crown",
+                "de": "Krone",
+                "es": "Corona",
+                "fr": "Couronne",
+                "pt-PT": "Coroa"
+              }
+            },
+            {
+              "value": "exchange",
+              "label": {
+                "en": "Exchange",
+                "de": "Austausch",
+                "es": "Intercambio",
+                "fr": "Échange",
+                "pt-PT": "Trocar"
+              }
+            },
+            {
+              "value": "gift",
+              "label": {
+                "en": "Gift",
+                "de": "Geschenk",
+                "es": "Regalo",
+                "fr": "Cadeau",
+                "pt-PT": "Presente"
+              }
+            },
+            {
+              "value": "24-hours",
+              "label": {
+                "en": "24 Hours",
+                "de": "24 Stunden",
+                "es": "24 horas",
+                "fr": "24 heures",
+                "pt-PT": "24 Horas"
+              }
+            },
+            {
+              "value": "heart",
+              "label": {
+                "en": "Heart",
+                "de": "Herz",
+                "es": "Corazón",
+                "fr": "Cœur",
+                "pt-PT": "Coração"
+              }
+            },
+            {
+              "value": "map-pin",
+              "label": {
+                "en": "Map pin",
+                "de": "Karten-Nadel",
+                "es": "Pin de mapa",
+                "fr": "Épingle de carte",
+                "pt-PT": "Alfinete no mapa"
+              }
+            },
+            {
+              "value": "car",
+              "label": {
+                "en": "Car",
+                "de": "Auto",
+                "es": "Coche",
+                "fr": "Voiture",
+                "pt-PT": "Automóvel"
+              }
+            },
+            {
+              "value": "takeaway",
+              "label": {
+                "en": "Takeaway",
+                "de": "Imbissbude",
+                "es": "Para llevar",
+                "fr": "Emporter",
+                "pt-PT": "Comida para fora"
+              }
+            },
+            {
+              "value": "restaurant",
+              "label": {
+                "en": "Restaurant",
+                "de": "Restaurant",
+                "es": "Restaurante",
+                "fr": "Restaurant",
+                "pt-PT": "Restaurante"
+              }
+            },
+            {
+              "value": "cup",
+              "label": {
+                "en": "Cup",
+                "de": "Körbchen",
+                "es": "Taza",
+                "fr": "Tasse",
+                "pt-PT": "Caneca"
+              }
+            },
+            {
+              "value": "goblet",
+              "label": {
+                "en": "Goblet",
+                "de": "Kelch",
+                "es": "Copa",
+                "fr": "Gobelet",
+                "pt-PT": "Cálice"
+              }
+            },
+            {
+              "value": "star",
+              "label": {
+                "en": "Star",
+                "de": "Stern",
+                "es": "Estrella",
+                "fr": "Étoile",
+                "pt-PT": "Estrela"
+              }
+            },
+            {
+              "value": "sun",
+              "label": {
+                "en": "Sun",
+                "de": "Sonne",
+                "es": "Sol",
+                "fr": "Soleil",
+                "pt-PT": "Sol"
+              }
+            },
+            {
+              "value": "moon",
+              "label": {
+                "en": "Moon",
+                "de": "Mond",
+                "es": "Luna",
+                "fr": "Lune",
+                "pt-PT": "Lua"
+              }
+            },
+            {
+              "value": "cake",
+              "label": {
+                "en": "Cake",
+                "de": "Kuchen",
+                "es": "Pastel",
+                "fr": "Gâteau",
+                "pt-PT": "Bolo"
+              }
+            },
+            {
+              "value": "handbag",
+              "label": {
+                "en": "Handbag",
+                "de": "Handtasche",
+                "es": "Bolso",
+                "fr": "Sac à main",
+                "pt-PT": "Mala de mão"
+              }
+            },
+            {
+              "value": "umbrella",
+              "label": {
+                "en": "Umbrella",
+                "de": "Regenschirm",
+                "es": "Paraguas",
+                "fr": "Parapluie",
+                "pt-PT": "Guarda-chuva"
+              }
+            },
+            {
+              "value": "recycle",
+              "label": {
+                "en": "Recycle",
+                "de": "Recyceln",
+                "es": "Reciclar",
+                "fr": "Recycler",
+                "pt-PT": "Reciclar"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": {
+            "en": "Text",
+            "de": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "pt-PT": "Texto"
+          },
+          "default": {
+            "en": "Free shipping",
+            "de": "Kostenloser versand",
+            "es": "Envío gratis",
+            "fr": "Livraison gratuite",
+            "pt-PT": "Envio Grátis"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link",
+            "de": "Link",
+            "es": "Enlace",
+            "fr": "Lien",
+            "pt-PT": "Ligação"
+          },
+          "info": {
+            "en": "Optional",
+            "de": "Optional",
+            "es": "Opcional",
+            "fr": "Facultatif",
+            "pt-PT": "Opcional"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Custom Liquid",
+      "type": "custom-liquid",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom-liquid",
+          "label": "Custom Liquid",
+          "default": "<p>Add app snippets or other Liquid code to create advanced customizations.</p>"
+        }
+      ]
+    },
+    {
+      "name": "Product rating",
+      "type": "product-rating",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rating-label",
+          "label": "Label",
+          "default": "Rating"
+        },
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Rating",
+          "info": "To display a rating, add a [product rating metafield](/admin/metafields/product)"
+        },
+        {
+          "type": "image_picker",
+          "id": "rating-icon-full",
+          "label": "Full icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "rating-icon-empty",
+          "label": "Empty icon",
+          "info": "Optional"
+        },
+        {
+          "type": "number",
+          "id": "rating-max",
+          "label": "Maximum",
+          "default": 5,
+          "info": "Select a maximum equal to the rating metafield's [scale maximum](/admin/metafields/product)"
+        }
+      ]
+    },
+    {
+      "name": "Image with offers",
+      "type": "image-offer",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": {
+            "en": "Link",
+            "de": "Link",
+            "es": "Enlace",
+            "fr": "Lien",
+            "pt-PT": "Ligação"
+          },
+          "info": {
+            "en": "Optional",
+            "de": "Optional",
+            "es": "Opcional",
+            "fr": "Facultatif",
+            "pt-PT": "Opcional"
+          }
+        },
+        {
+          "type": "color",
+          "id": "hover_border_color",
+          "label": {
+            "en": "Link hover border color",
+            "de": "Link hover border color",
+            "es": "Link hover border color",
+            "fr": "Link hover border color",
+            "pt-PT": "Link hover border color"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Pastry subscription"
+      },
+      "category": {
+        "en": "Product",
+        "de": "Produkt",
+        "es": "Producto",
+        "fr": "Produit",
+        "pt-PT": "Produto"
+      }
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "product",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "index",
+      "page",
+      "search"
+    ]
+  }
+}
+{% endschema %}

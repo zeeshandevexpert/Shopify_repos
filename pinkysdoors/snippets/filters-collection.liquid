@@ -1,0 +1,141 @@
+{% if collection.handle contains 'special-order' %}
+	{% assign specialOrder = true %}
+	{% assign normal_collection = collection.handle | remove: '-special-order' %}
+	{% assign presale_collection = collection.handle | remove: '-special-order' | append: '-pre-sale' %}
+	{% assign special_collection = collection.handle %}
+
+{% elsif collection.handle contains 'pre-sale' %}
+	{% assign presale = true %}
+	{% assign normal_collection = collection.handle | remove: '-pre-sale' %}
+	{% assign presale_collection = collection.handle %}
+	{% assign special_collection = collection.handle | remove: '-pre-sale' | append: '-special-order' %}
+	
+{% else %}
+	{% assign instock = true %}
+	{% assign normal_collection = collection.handle %}
+	{% assign presale_collection = collection.handle | append: '-pre-sale' %}
+	{% assign special_collection = collection.handle | append: '-special-order' %}
+
+{% endif %}
+
+{% assign special_order_link_links_to_contact = linklists.in-stock-contact-form-collections.links | map: 'handle' | join: ',' %}
+
+{% assign hide_customize = 'color-samples,glass-samples,locks,door-handles-special-order,merchandise,clearance' %}
+
+{% if collections[normal_collection].products.size >= 1 or collections[special_collection].products.size >=1 or collections[presale_collection].size >= 1 %}
+<div class="select-type__wrapper">
+  <div class="page-width">
+    <div class="select-type__links flex flex--align-center">
+      <span class="select-type__link small--hide">Select Type:</span>
+      {% if collection.title contains 'Clearance' %}
+      	{% assign ship_time = 'shipping.clearance' | t %}
+      {% else %}
+        {% assign ship_time = 'shipping.in_stock' | t %}
+      {% endif %}
+      <div class="select-type__link--wrapper" data-tooltip="{{ ship_time }}">
+        <a class="select-type__link in-stock--link {% if instock %}active{% endif %}" href="/collections/{{normal_collection}}"><span>In Stock</span></a>
+      </div>
+      {% assign shipping_header = ship_time %}
+      
+      {% if collections[presale_collection].products.size >= 1 %}
+      <div class="select-type__link--wrapper" {% unless hide_special_tooltip %}data-tooltip="Purchase before they arrive to stock"{% endunless %}>
+        <a class="select-type__link special-order--link {% if presale %}active{% endif %}" href="/collections/{{presale_collection}}" ><span>{{ 'general.presale.presale' | t }}</span></a>
+      </div>
+      {% endif %}
+      {% if presale %}
+      {% assign shipping_header = 'Purchase before they arrive to stock' %}
+      {% endif %}
+      
+      {% if collections[special_collection].products.size >= 1 or special_order_link_links_to_contact contains collection.handle %}
+      <div class="select-type__link--wrapper" {% unless hide_special_tooltip %}data-tooltip="Ships within {% include 'special-order-shipping-time' %}"{% endunless %}>
+        <a class="select-type__link special-order--link {% if specialOrder %}active{% endif %}" href="/collections/{{special_collection}}" ><span>Special Order</span></a>
+      </div>
+      
+      {% endif %}
+      {% if specialOrder %}
+      {% capture shipping_header %}Ships within {% include 'special-order-shipping-time' %}{% endcapture %}
+      {% endif %}
+      
+      {% unless hide_customize contains collection.handle %}
+      <div class="select-type__link--wrapper" data-tooltip="Ships within {{ 'shipping.custom' | t }}">
+        <a class="select-type__link" href="/pages/customize-anything/{{collection.handle}}"><span>Customize</span></a>
+      </div>
+      {% endunless %}
+    </div>
+    
+  </div>
+  <div class="fixed-pagination" style="display: none;">
+    Page <span class="fixed-pagination__current"></span> of <span class="fixed-pagination__total"></span>
+  </div>
+</div>
+{% endif %}
+
+{% assign has_eta = false %}
+{% for tag in current_tags %}
+{% if tag contains 'ETA:' %}
+  {% assign has_eta = tag %}
+{% endif %}
+{% endfor %}
+
+{% if collection.handle contains 'window' %}
+<h4 class="h5 live-inventory-notice small--hide text-center"><span>In-Stock Filters <small>USE FILTERS BELOW TO FIND AVAILABLE LIVE INVENTORY</small></span></h4>
+<div class="page-width collection-filters--wrapper flex text-center small--flex-wrap">
+
+  <div class="filters collection-filters" >
+    <div class="flex medium-up--hide flex--align-center">
+      <h4 class="filter-menu__link">
+        {% include 'icon-filter' %} <span>Filters</span>
+      </h4>
+      <p class="mobile-collection-shipping-text">
+        {{ shipping_header }}
+      </p>
+    </div>
+    <form id="CollectionFiltersForm" class="facets__form">
+      <div class="filters-inner flex flex--end small--flex-center small--flex-wrap">
+        {%- for filter in collection.filters -%}
+        {% if filter.label == 'Size' %}
+          {% include 'filter-item', name: "Door Swing", menu: "Door Swing", filter: filter %}     
+        {% elsif filter.label == 'Availability' %}
+        <input type="hidden" name="filter.v.availability" value="1">
+        {% else %}
+          {% include 'filter-item', name: "Door Swing", menu: "Door Swing", filter: filter %}     
+        {% endif %}
+        {%- endfor -%}
+
+      </div>
+    </form>
+    <a href="#" class="remove-all h4">&times; clear all</a>
+  </div>
+</div>
+{% elsif instock or presale or collection.title contains 'Doors' %}
+<h4 class="h5 live-inventory-notice small--hide text-center"><span>In-Stock Filters <small>USE FILTERS BELOW TO FIND AVAILABLE LIVE INVENTORY</small></span></h4>
+<div class="page-width collection-filters--wrapper flex text-center small--flex-wrap">
+
+  <div class="filters collection-filters" >
+    <div class="flex medium-up--hide flex--align-center">
+      <h4 class="filter-menu__link">
+        {% include 'icon-filter' %} <span>Filters</span>
+      </h4>
+      <p class="mobile-collection-shipping-text">
+        {{ shipping_header }}
+      </p>
+    </div>
+    <form id="CollectionFiltersForm" class="facets__form">
+      <div class="filters-inner flex flex--end small--flex-center small--flex-wrap">
+        {%- for filter in collection.filters -%}
+        {% if filter.label == 'Size' %}
+        {% include 'filter-item-size', collection: collection, name: "Single Door Size", menu: "Single Door Size", filter: filter %}
+        {% include 'filter-item-size', collection: collection, name: "Double Door Size", menu: "Double Door Size", filter: filter %}
+        {% elsif filter.label == 'Availability' %}
+        <input type="hidden" name="filter.v.availability" value="1">
+        {% else %}
+        {% include 'filter-item', name: "Door Swing", menu: "Door Swing", filter: filter %}     
+        {% endif %}
+        {%- endfor -%}
+
+      </div>
+    </form>
+    <a href="#" class="remove-all h4">&times; clear all</a>
+  </div>
+</div>
+{% endif %}

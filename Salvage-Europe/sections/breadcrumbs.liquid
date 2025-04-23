@@ -1,0 +1,157 @@
+<section class="breadcrumb__section"
+data-section-id="{{ section.id }}"
+data-aos="{{ settings.scroll_animation }}">
+  <div class="row grid__wraper">
+    <div id="breadcrumb" class="span-12 auto">
+      <a href="{{ routes.root_url }}" class="homepage-link" title="Back to the frontpage">
+        {{ 'general.breadcrumbs.home' | t }}
+      </a>
+      {% if template contains "product" %}
+        {% if collection %}
+          <span class="separator">
+            {% render 'snip-icons',
+               wrapper: '.breadcrumb__section',
+               type: 'apollo',
+               icon: 'right-carrot',
+               classes: 'breadcrumb__section--icon',
+               size: '8px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+          </span>
+          <span class="vib-center">
+            {% if collection.handle %}
+              {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+              {{ collection.title | link_to: url }}
+            {% elsif collection.all_products_count > 0 and collection.products.first.type == collection.title %}
+              {{ collection.title | link_to_type }}
+            {% elsif collection.all_products_count > 0 and collection.products.first.vendor == collection.title %}
+              {{ collection.title | link_to_vendor }}
+            {% endif %}
+          </span>
+        {% else %}
+          <span class="separator">
+            {% render 'snip-icons',
+               wrapper: '.breadcrumb__section',
+               type: 'apollo',
+               icon: 'right-carrot',
+               classes: 'breadcrumb__section--icon',
+               size: '8px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+          </span>
+          <span class="vib-center">{{ product.type | link_to_type }}</span>
+        {% endif %}
+        <span class="separator">
+          {% render 'snip-icons',
+             wrapper: '.breadcrumb__section',
+             type: 'apollo',
+             icon: 'right-carrot',
+             classes: 'breadcrumb__section--icon',
+             size: '8px',
+             fill: 'var(--text-color)',
+             hover: 'var(--text-color)' %}
+        </span>
+        <span class="page-title">{{ product.title }}</span>
+      {% elsif template == "article" %}
+        <span class="separator">
+          {% render 'snip-icons',
+             wrapper: '.breadcrumb__section',
+             type: 'apollo',
+             icon: 'right-carrot',
+             classes: 'breadcrumb__section--icon',
+             size: '8px',
+             fill: 'var(--text-color)',
+             hover: 'var(--text-color)' %}
+        </span>
+        <span class="vib-center">{{ blog.title | link_to: blog.url }}</span>
+        <span class="separator">
+          {% render 'snip-icons',
+             wrapper: '.breadcrumb__section',
+             type: 'apollo',
+             icon: 'right-carrot',
+             classes: 'breadcrumb__section--icon',
+             size: '8px',
+             fill: 'var(--text-color)',
+             hover: 'var(--text-color)' %}
+        </span>
+        <span class="page-title">{{ page_title }}</span>
+      {% elsif template contains "collection" %}
+        {% if current_tags.size > 0 %}
+          <span class="separator">
+            {% render 'snip-icons',
+               wrapper: '.breadcrumb__section',
+               type: 'apollo',
+               icon: 'right-carrot',
+               classes: 'breadcrumb__section--icon',
+               size: '8px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+          </span>
+          <span class="vib-center">{{ collection.title | link_to: collection.url }}</span>
+          <span class="separator">
+            {% render 'snip-icons',
+               wrapper: '.breadcrumb__section',
+               type: 'apollo',
+               icon: 'right-carrot',
+               classes: 'breadcrumb__section--icon',
+               size: '8px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+          </span>
+          <span class="page-title">{{ current_tags.first }}</span>
+        {% else %}
+          <span class="separator">
+            {% render 'snip-icons',
+               wrapper: '.breadcrumb__section',
+               type: 'apollo',
+               icon: 'right-carrot',
+               classes: 'breadcrumb__section--icon',
+               size: '8px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+          </span>
+          <span class="page-title">{{ page_title }}</span>
+        {% endif %}
+      {% else %}
+        <span class="separator">
+          {% render 'snip-icons',
+             wrapper: '.breadcrumb__section',
+             type: 'apollo',
+             icon: 'right-carrot',
+             classes: 'breadcrumb__section--icon',
+             size: '8px',
+             fill: 'var(--text-color)',
+             hover: 'var(--text-color)' %}
+        </span>
+        <span class="page-title">{{ page_title }}</span>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Breadcrumbs",
+  "settings": [
+  ],
+  "presets": [
+    {
+      "name": "Breadcrumbs"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  }
+}
+{% endschema %}

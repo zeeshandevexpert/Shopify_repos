@@ -1,0 +1,43 @@
+<section>
+  <h1>{{ section.settings.title }}</h1>
+  <div class="partner-blocks">
+    {% for block in section.blocks %}
+    <div class="partners">
+      <img class="lazyload" data-src="{{ block.settings.image | img_url: '200x' }}" />
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Partner Section",
+	"class":  "partner-section",
+    "settings": [
+		{
+			"type"  :  "text",
+			"id"    :  "title",
+			"label" :  "Title"
+		}
+	],
+	"blocks": [
+		{
+			"type"  :  "partner",
+			"name"  :  "Partner",
+			"settings":[
+				{
+					"type"  :  "image_picker",
+					"id"    :  "image",
+					"label" :  "Image"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

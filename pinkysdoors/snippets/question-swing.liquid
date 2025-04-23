@@ -1,0 +1,38 @@
+{% assign product_tags = product.tags | join: ',' %}
+{% if product_tags contains 'special-order' %}
+  {% assign special_order = true %}
+{% endif %}
+
+{% case type %}
+
+{% when 'Bi-Fold/Accordion' %}
+  
+  {% if special_order %}
+    {% capture  content %}{{pages.pdp-swing-bi-fold-accordion.content | replace: 'In-Stock', 'Special Order' | replace: 'in-stock', 'special order' | replace: 'IN-STOCK', 'SPECIAL ORDER' }}{% endcapture %}
+  {% else %}
+	{% capture content %}{{pages.pdp-swing-bi-fold-accordion.content}}{% endcapture %}
+  {% endif %}
+
+  {% include 'shortcode' load: content %}
+
+{% when 'Doors w/ Sidelight & Transom' %}
+
+	{{pages.pdp-swing-options-single.content}}
+
+{% else %}
+
+	
+  {% if title contains 'Pivot' %}
+	{{ pages.pdp-swing-options-pivot.content }}
+  {% elsif title == 'Air Lite Dutch - Full Arch' %}
+    {{pages.pdp-swing-options-single.content}}
+  {% elsif title contains 'Double' %}
+    {{pages.pdp-swing-options-double.content}}
+  {% elsif title contains 'Single' %}
+    {{pages.pdp-swing-options-single.content}}
+  {% else %}
+    {{pages.pdp-swing-options-double.content}}
+  {% endif %}
+
+{% endcase %}
+

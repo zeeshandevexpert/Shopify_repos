@@ -1,0 +1,86 @@
+
+<div class="banner-slider">
+{% for block in section.blocks %}
+       <div class="banner-block" style="background-image: url({{ block.settings.bg_image |  img_url: 'master' }});">
+        <div class="banner-container">
+            <div class="banner-slide"> 
+                <div class="heading">
+                    <h1>{{ block.settings.heading }}</h1>
+                </div>
+                <div class="sub-heading" style="font-size: {{ block.settings.font_size }}px;">
+                    {{ block.settings.sub_heading }}
+                </div>
+                <div class="subtext">
+                    {{ block.settings.content }}
+                </div>
+                {% if block.settings.btn_text != blank %}
+                    <a href="{{ block.settings.btn_link }}" class="button-link">{{ block.settings.btn_text }}</a>    
+                {% endif %}
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+{% endfor %}
+</div>
+{% schema %}
+{
+    "name": "Banner Block",
+    "settings": [
+        ],
+        "blocks": [
+                {
+                "type": "Item",
+                "name": "Slide",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "bg_image",
+                        "label": "Background Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "heading",
+                        "label": "Heading"
+                    },
+                    {
+                        "type": "text",
+                        "id": "sub_heading",
+                        "label": "Sub Heading"
+                    },
+                    {
+                        "type": "range",
+                        "id": "font_size",
+                        "label": "Heading",
+                        "default":30,
+                        "min": 0,
+                        "max": 60,
+                        "step": 1,
+                        "unit": "px"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "content",
+                        "label": "Content"
+                    },
+                    {
+                        "type": "text",
+                        "id": "btn_text",
+                        "label": "Button Text"
+                    },
+                    {
+                        "type": "url",
+                        "id": "btn_link",
+                        "label": "Button Link"
+                    }
+                ]
+                }
+            ],
+        
+        "presets": [
+            {
+                "name": "Banner Block"
+            }
+        ]
+}
+{% endschema %}

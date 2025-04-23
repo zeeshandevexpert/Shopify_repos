@@ -1,0 +1,81 @@
+<!-- SECTION--PLACES--POP -->
+    <section class="palces-pop">
+        <div class="primary-container">
+            <div class="places-heading">
+                <h3 class="ff-helvetica primary-heading white-c t-center t-uppercase">{{ section.settings.hm-places-heading }}</h3>
+            </div>
+            <div class="card-flex-wrap">
+                <div class="place-flex d-flex flex-wrap">
+                  {% for cards in section.blocks %}
+                    {% if cards.type == 'places-card-block' %}
+                      <div class="place-card-1">
+                        <div class="place-card-cont">
+                            <h3 class="ff-helvetica black-c secondary-heading">{{ cards.settings.places-card-heading }}</h3>
+                            <p class="ff-proxima black-c para-lh">{{ cards.settings.places-card-paragraph }}</p>
+                        </div>
+                        <div class="place-card-img">
+                            <img src="{{ cards.settings.places-card-img | img_url: 'master' }}" alt="" width="" height="">
+                        </div>
+                    </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+                <div class="">
+                    <a href="{{ section.settings.hm-places-ancher-url }}" class="secondary-btn ff-proxima black-c">{{ section.settings.hm-places-ancher-text }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION--PLACES--POP--END -->
+
+
+{% schema %}
+  {
+    "name": "HM Place Top Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "hm-places-heading",
+        "label": "Enter Places Heading"
+      },
+      {
+        "type": "url",
+        "id": "hm-places-ancher-url",
+        "label": "Enter Places Ancher URL"
+      },
+      {
+        "type": "text",
+        "id": "hm-places-ancher-text",
+        "label": "Enter Places Ancher Text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "places-card-block",
+        "name": "Places Card Blocks",
+        "settings": [
+          {
+            "type": "text",
+            "id": "places-card-heading",
+            "label": "Enter Places Card Heading"
+          },
+          {
+            "type": "text",
+            "id": "places-card-paragraph",
+            "label": "Enter Places Card Paragraph"
+          },
+          {
+            "type": "image_picker",
+            "id": "places-card-img",
+            "label": "Select Places Card Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "HM Place Top Section"
+      }
+    ]
+  }
+{% endschema %}

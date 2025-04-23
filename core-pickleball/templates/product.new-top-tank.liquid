@@ -1,0 +1,68 @@
+<!-- /templates/product.liquid -->
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+<div itemscope itemtype="http://schema.org/Product">
+  {% include 'donation' %}
+  {% section 'product-new-top' %}
+  {% section "dbtfy-upsell-bundles" %}  
+  
+  {% section 'product-recommendations' %}
+  
+  {% if settings.review_widget == 'review_widget_above' %}
+    {% include 'review-widget' %}
+  {% endif %}
+  
+  {% section 'related-product' %}
+
+  {% if settings.review_widget == 'review_widget_under' %}
+    {% include 'review-widget' %}
+  {% endif %}
+  
+  {% if collection %}
+    <div class="back-box">
+      <a href="{{ collection.url }}" class="btn btn--banner">
+        <span class="fas fa-arrow-left" aria-hidden="true"></span>
+        {{ 'products.general.collection_return' | t: collection: collection.title }}
+      </a>
+    </div>
+  {% endif %}
+  
+  {% section 'quotes' %}
+  
+
+</div>
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    Variant: {{ product.selected_or_first_available_variant.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.selected_or_first_available_variant.price|money|json }},
+    CompareAtPrice: {{ product.selected_or_first_available_variant.compare_at_price|money|json }}
+  };
+  
+  console.log(item)
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+{% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, auto_install: true, product: product %}

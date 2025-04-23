@@ -1,0 +1,140 @@
+{%- liquid
+
+  assign speed = section.settings.speed
+
+  if section.settings.scrolling_marquee_text != blank
+    assign scrolling_marquee_text = section.settings.scrolling_marquee_text
+  endif
+
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --font-size:  {{ section.settings.text_size }}px;
+    --text-color: {{ section.settings.color }};
+    --background: {{ section.settings.background }};
+  }
+  @media screen and (max-width: 740px) {
+    #shopify-section-{{ section.id }} {
+      --font-size:  calc({{ section.settings.text_size }}px - ({{ section.settings.text_size }}px * 0.15));
+    }
+  }
+  .scrolling__marquee-section {
+    padding: {{ section.settings.padding }}px 0;
+  }
+  .scrolling__marquee-section.section-{{ section.id }} .scrolling__marquee--content {
+    animation: marquee {{ speed }}s linear infinite;
+  }
+{% endstyle %}
+
+<section class="global__section scrolling__marquee-section {% if section.settings.no_bottom_margin %}mb0 {% endif %}section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="rich-text-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="scrolling__marquee--wrapper grid__wrapper edge">
+    <div class="scrolling__marquee--content scmq-{{ section.id }} span-12 auto">
+      {% unless scrolling_marquee_text == blank %}
+        <span class="scrolling__marquee--item">{{ section.settings.scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+        <span class="scrolling__marquee--item" aria-hidden="true">{{ scrolling_marquee_text }}</span>
+      {% endunless %}
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Scrolling marquee",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "scrolling_marquee_text",
+      "label": "Text",
+      "default": "<p>Scrolling marquee text</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 13,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "label": "Scroll speed",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Section padding",
+      "default": 30
+    },
+    {
+      "type":"color",
+      "label":"Text color",
+      "id":"color",
+      "default":"#000"
+    },
+    {
+      "type":"color",
+      "label":"Background color",
+      "id":"background"
+    },
+    {
+      "type":"checkbox",
+      "id":"no_bottom_margin",
+      "label":"Remove bottom margin",
+      "default": true
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ],
+    "groups": [
+      "footer"
+    ]
+  },
+  "presets":[
+    {
+     "name":"Scrolling marquee"
+    }
+  ]
+}
+{% endschema %}

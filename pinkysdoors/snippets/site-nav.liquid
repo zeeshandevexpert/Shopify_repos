@@ -1,0 +1,112 @@
+<ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav">
+  {% for link in linklists[section.settings.main_linklist].links %}
+  {%- assign child_list_handle = link.title | handleize -%}
+
+  {% comment %}
+  Check if third-level nav exists on each parent link.
+  {% endcomment %}
+  {%- assign three_level_nav = false -%}
+  {% if link.links != blank %}
+  {% if link.levels == 2 %}
+  {%- assign three_level_nav = true -%}
+  {% endif %}
+  {% endif %}
+
+  {% if link.links != blank %}
+  <li class="site-nav--has-dropdown{% if three_level_nav %} site-nav--has-mega site-nav--has-centered-dropdown{% else %} site-nav--has-regular{% endif %}{% if link.active %} site-nav--active{% endif %}" data-has-dropdowns>
+    <button class="site-nav__link site-nav__link--main site-nav__link--button{% if link.child_active %} site-nav__link--active{% endif %}" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}">
+      <span class="site-nav__label">{{ link.title | escape }}</span>{% include 'icon-chevron-down' %}
+    </button>
+
+    <div class="site-nav__dropdown{% if three_level_nav %} site-nav--mega site-nav__dropdown--centered{% else %} site-nav--regular-dropdown{% endif %}" id="SiteNavLabel-{{ child_list_handle }}">
+      {% if three_level_nav %}
+      <div class="site-nav__childlist">
+        <div class="site-nav__childlist-grid page-width">
+          {% if link.links != blank %}
+          <div class="column-break">
+            {% for childlink in link.links %}
+            {% if childlink.title == '+++' %}
+          </div>
+          <div class="column-break">
+            {% else %}
+            <div class="site-nav__childlist-item">                      
+              <h5 {% comment %}href="{{ childlink.url }}"{% endcomment %}
+                 {% if childlink.object.image %}
+                 data-image="{{childlink.object.image | img_url: '400x'}}"
+                 {% endif %}
+                 class="site-nav__link site-nav__child-link--parent"
+                 {% if childlink.current %} aria-current="page"{% endif %}
+                 >
+                <span class="site-nav__label">{{ childlink.title | escape }}</span>
+              </h5>
+
+              {% if childlink.links != blank %}
+              <ul>
+                {% for grandchildlink in childlink.links %}
+                {% assign grandchildcollection = grandchildlink.title | handle %}
+                
+                <li {% if grandchildlink.title == '[empty]' %}class="nav-item__hidden"{% endif %}>
+                  <a href="{{ grandchildlink.url }}{% if grandchildlink.url contains '/pages/category-contact' %}?ref={{grandchildlink.title | handle}}{% endif %}"
+                     class="site-nav__link site-nav__child-link"
+                     
+                     {% if grandchildlink.object.image != blank %}
+                     data-image="{{ grandchildlink.object.image | img_url: '400x' }}"
+                     
+                     {% elsif collections[grandchildcollection].image != blank and grandchildlink.title != "Pinky's Iron Doors X Jeremiah Brent" %}
+                     data-image="{{collections[grandchildcollection].image | img_url: '400x'}}"
+                     
+                     {% elsif grandchildlink.title == 'Steel Windows & Doors' or grandchildlink.url contains '/pages/steel-windows-doors-nfrc-rated' %}
+                     data-image="{{collections.steel-windows-doors-nfrc-rated.image | img_url: '400x' }}"
+                     
+                     {% else %}
+                     data-image="nothing to see here, try again."
+                     {% endif %}
+                     {% if grandchildlink.current %} aria-current="page"{% endif %}
+                     >
+                    <span class="site-nav__label">{{ grandchildlink.title | escape }}</span>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+            </div>
+            {% endif %}
+            {% endfor %}
+
+          </div>
+          {% endif %}
+          <div class="column-break">
+            <div class="site-nav__childlist-item mega-menu__image"></div>
+          </div>
+        </div>
+      </div>
+
+      {% else %}
+      <ul>
+        {% for childlink in link.links %}
+        <li>
+          <a href="{{ childlink.url }}"
+             class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %} link-with-arrow"
+             {% if childlink.current %} aria-current="page"{% endif %}
+             >
+            <span class="site-nav__label">{{ childlink.title | escape }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </li>
+  {% else %}
+  <li {% if link.active %} class="site-nav--active"{% endif %}>
+    <a href="{{ link.url }}"
+       class="site-nav__link site-nav__link--main{% if link.active %} site-nav__link--active{% endif %}"
+       {% if link.current %} aria-current="page"{% endif %}
+       >
+      <span class="site-nav__label">{{ link.title | escape }}</span>
+    </a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>

@@ -1,0 +1,230 @@
+{
+  "type": "footer",
+  "name": "t:sections.footer-group.name",
+  "sections": {
+    "custom_lwt_BfCifP": {
+      "type": "custom-lwt",
+      "blocks": {
+        "logo_FpKYJh": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/William_4.png",
+            "text": "\"My favourite jewellery brand, Outrage London my go-to\"",
+            "stext": "James Mrsaa"
+          }
+        },
+        "logo_knKX8m": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/William_2.png",
+            "text": "\"Outrage London makes unique jewellery that doesnt break the bank\"",
+            "stext": "William Scott"
+          }
+        },
+        "logo_JFJMKX": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/GIOVANNI_1.png",
+            "text": "\"Outrage London creates animated signet rings every time\"",
+            "stext": "Giovanni"
+          }
+        },
+        "logo_KTG8Tm": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/GIOVANNI_3.png",
+            "text": "\" WOW! Quality, Price and design is un-match. \"",
+            "stext": "Carlos Harris"
+          }
+        },
+        "logo_6ar4Xb": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/GIOVANNI_7.png",
+            "text": "\"My fifth purchase with Outrage London, Customer service and quality is amazing \"",
+            "stext": "Zac Fortier"
+          }
+        },
+        "logo_6N8kVH": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/GIOVANNI_4.png",
+            "text": "\"Exquisite, elaborate, and vintage. Those words are the exact reason why we’ve fallen in love with the brand Outrage London\"",
+            "stext": "TORBIAN"
+          }
+        }
+      },
+      "block_order": [
+        "logo_FpKYJh",
+        "logo_knKX8m",
+        "logo_JFJMKX",
+        "logo_KTG8Tm",
+        "logo_6ar4Xb",
+        "logo_6N8kVH"
+      ],
+      "settings": {
+        "bg": "#f3f3f3",
+        "fg": "#000000"
+      }
+    },
+    "custom_lwt2_HeexjF": {
+      "type": "custom-lwt2",
+      "blocks": {
+        "logo_UK8Ybx": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-08T104046.813.png",
+            "title": "Sponsors Mark",
+            "text": "Shows the company that made the product.",
+            "link_text": "Explore",
+            "link": "shopify:\/\/collections\/shop-all"
+          }
+        },
+        "logo_BcbR78": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/22.svg",
+            "title": "Material Source",
+            "text": "Outrage Jewellery is made from Premium Source materials.",
+            "link_text": "Explore",
+            "link": "shopify:\/\/collections\/shop-all"
+          }
+        },
+        "logo_TfJwGJ": {
+          "type": "logo",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/33.svg",
+            "title": "Authentic Steel and Silver",
+            "text": "Our jewellery is marked with the metal used.",
+            "link_text": "Explore",
+            "link": "shopify:\/\/collections\/shop-all"
+          }
+        }
+      },
+      "block_order": [
+        "logo_UK8Ybx",
+        "logo_BcbR78",
+        "logo_TfJwGJ"
+      ],
+      "settings": {
+        "bg": "#ffffff",
+        "fg": "#000000"
+      }
+    },
+    "footer-promotions": {
+      "type": "footer-promotions",
+      "blocks": {
+        "footer-promotions-0": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions-1": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        },
+        "footer-promotions-2": {
+          "type": "promotion",
+          "settings": {
+            "enable_image": true,
+            "image_mask": "none",
+            "title": "Site-wide promotion",
+            "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
+            "button_label": "Optional button",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "footer-promotions-0",
+        "footer-promotions-1",
+        "footer-promotions-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "hide_homepage": false
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-1": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "shop",
+            "container_width": 25
+          }
+        },
+        "menu_gjeJwk": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "footer",
+            "container_width": 25
+          }
+        },
+        "menu_VMNknb": {
+          "type": "menu",
+          "settings": {
+            "show_footer_title": true,
+            "menu": "explore",
+            "container_width": 25
+          }
+        },
+        "footer2": {
+          "type": "newsletter",
+          "settings": {
+            "show_footer_title": true,
+            "title": "Subscribe for the latest drops",
+            "text": "",
+            "container_width": 25
+          }
+        },
+        "footer-0": {
+          "type": "logo_social",
+          "settings": {
+            "logo": "shopify:\/\/shop_images\/Outrage_LONDON_800_x_200_px_950_x_250_px_1200_x_300_px_1200_x_300_px_1400_x_400_px_1.png",
+            "desktop_logo_height": 50,
+            "container_width": 100
+          }
+        }
+      },
+      "block_order": [
+        "footer-1",
+        "menu_gjeJwk",
+        "menu_VMNknb",
+        "footer2",
+        "footer-0"
+      ],
+      "settings": {
+        "show_locale_selector": false,
+        "show_currency_selector": true,
+        "show_currency_flags": true,
+        "bmenu": "bottom-menu",
+        "show_payment_icons": false,
+        "show_copyright": false,
+        "copyright_text": ""
+      }
+    }
+  },
+  "order": [
+    "custom_lwt_BfCifP",
+    "custom_lwt2_HeexjF",
+    "footer-promotions",
+    "footer"
+  ]
+}

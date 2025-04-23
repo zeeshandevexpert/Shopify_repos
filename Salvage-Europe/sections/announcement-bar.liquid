@@ -1,0 +1,259 @@
+{% liquid
+
+  if section.settings.full_width
+    assign full_width = 'full'
+  else
+    assign full_width = ''
+  endif
+
+  assign hd_locale_selector = false
+  assign hd_currency_selector = false
+
+  if section.settings.show_country_selector and localization.available_countries.size > 1
+    assign hd_currency_selector = true
+  endif
+
+  if section.settings.show_locale_selector and localization.available_languages.size > 1
+    assign hd_locale_selector = true
+  endif
+
+  assign no_blocks = false
+  assign single_block = false
+
+  if section.blocks.size == 0
+    assign no_blocks = true
+  endif
+
+  if section.blocks.size == 1
+    assign single_block = true
+  endif
+
+  assign show_mobile = false
+  if section.settings.show_mobile
+    assign show_mobile = true
+  endif
+
+%}
+<section class="announcement-bar__wrapper {% unless show_mobile %}device-hide {% endunless %}js-top-bar" data-section-id="{{ section.id }}" data-section-type="announcement-section">
+    <div class="announcement-bar_container grid__wrapper {{ full_width }}">
+
+        {% for block in section.blocks %}
+
+          {% if block.type == 'social_icons' %}
+            <ul class="announcement__bar-social--icons device-hide {% if section.blocks.size == 1 %}span-6 {% else %}span-4{% endif %} auto{% if section.blocks.size > 1 and forloop.last %} j-center{% endif %} v-center" {{ block.shopify_attributes }}>
+              {% render 'social-icons',
+              height: '14px',
+              fill_color: 'var(--announcement-text)',
+              wrapper: '.announcement__bar--icons'
+              %}
+            </ul>
+          {% endif %}
+
+          {% if block.type == 'search_box' %}
+          <div class="announcement-bar__search-container device-hide {% if section.blocks.size == 1 %}span-6 {% else %}span-4{% endif %} auto v-center a-left" {{ block.shopify_attributes }}>
+            {%- if settings.predictive_search_enabled -%}
+            <predictive-search
+              data-routes="{{ routes.predictive_search_url | default: '/search/suggest' }}"
+              data-input-selector='.announcement-bar__search-input'
+              data-enable-focus-out="true"
+              data-results-selector="#predictive-search"
+              >
+            {%- endif -%}
+              <form class="announcement-bar__search-form" action="{{ routes.search_url }}" method="get">
+                <div class="announcement-bar__search-form__inner">
+                  {% render 'snip-icons',
+                   wrapper: '.announcement-bar__search-form',
+                   type: 'mrparker',
+                   icon: 'search',
+                   classes: 'announcement-bar__search-form--icon vib-center',
+                   size: '14px',
+                   fill: 'var(--announcement-text)',
+                   hover: 'var(--announcement-text)' %}
+                <input
+                  class="announcement-bar__search-input mb0"
+                  type="text"
+                  name="q"
+                  id="search-{{ section.id }}"
+                  placeholder="{{ 'sections.search.placeholder' | t }}"
+                  title="{{ 'sections.search.title' | t }}"
+                  aria-label="{{ 'sections.search.title' | t }}"
+                  value="{{ search.terms | escape }}"
+                  {%- if settings.predictive_search_enabled -%}
+                    role="combobox"
+                    aria-expanded="false"
+                    aria-owns="predictive-search-results-list"
+                    aria-controls="predictive-search-results-list"
+                    aria-haspopup="listbox"
+                    aria-autocomplete="list"
+                    autocorrect="off"
+                    autocomplete="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                  {%- endif -%}
+                /></div>
+
+                <input name="options[prefix]" type="hidden" value="last">
+
+                {% if settings.search_show_products_only %}
+                  <input type="hidden" name="type" value="product">
+                {% endif %}
+
+                {%- if settings.predictive_search_enabled -%}
+                  <div id="predictive-search" class="predictive-search" tabindex="-1"></div>
+                {%- endif -%}
+              </form>
+            {%- if settings.predictive_search_enabled -%}
+            </predictive-search>
+            {%- endif -%}
+          </div>
+          {% endif %}
+
+          {% if block.type == 'menu' %}
+          {% assign menu = linklists[block.settings.menu] %}
+            <ul class="announcement__bar-linklist device-hide {% if section.blocks.size == 1 %}span-6 {% else %}span-4{% endif %} auto{% if section.blocks.size > 1 and forloop.last %} j-center{% endif %} v-center" {{ block.shopify_attributes }}>
+              {% for link in menu.links %}
+                <li>{{ link.title | link_to: link.url }}
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          {% if block.type == 'text' %}
+            <div class="announcement-bar__message md-span-12 sm-span-12 {% if section.blocks.size == 1 %}span-6 {% else %}span-4{% endif %} auto rte{% if section.blocks.size > 1 and forloop.last %} j-center{% endif %} v-center" {{ block.shopify_attributes }}>
+              {{ block.settings.announcement_text }}
+            </div>
+          {% endif %}
+
+        {% endfor %}
+
+      <div class="announcement-bar__cart-links-container{% if no_blocks %} span-12{% elsif single_block %} span-6{% else %} span-4{% endif %} auto a-right v-center device-hide">
+        {% if hd_locale_selector or hd_currency_selector %}
+          {{ 'component-header-disclosures.css' | asset_url | stylesheet_tag }}
+        {% endif %}
+        {% render 'header-cart-links',
+          icons_only: section.settings.icons_only,
+          hd_locale_selector: hd_locale_selector,
+          hd_currency_selector: hd_currency_selector,
+          cart_icon: settings.cart_icon,
+          fill_color: 'var(--announcement-text)',
+          wrapper: '.announcement-bar__cart-links-container' %}
+      </div>
+    </div>
+  <div class="clear"></div>
+  {% style %}
+    .announcement-bar__search-input::placeholder {
+      font-size: {{ section.settings.announcement_text_size }}px !important;
+    }
+    :root {
+      --announcement-text-size: {{ section.settings.announcement_text_size }}px;
+    }
+    button.js-mini-cart-trigger span.my-cart-text,
+    .announcement-bar__message p,
+    .cart-links__item a,
+    .cart-links_item i,
+    .announcement-bar__wrapper .disclosure__toggle,
+    input[type="text"].announcement-bar__search-input,
+    .announcement-bar__search-form:before,
+    a.cart__link {
+      font-size: {{ section.settings.announcement_text_size }}px !important;
+    }
+  {% endstyle %}
+</section>
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "class": "js-site-announcement-bar",
+  "max_blocks": 2,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "The announcement bar will appear above the header if header overlay is enabled."
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enable full width",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile",
+      "label": "Show on mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "icons_only",
+      "label": "Icon only for cart & account",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "announcement_text_size",
+      "min": 12,
+      "max": 19,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Language Selector",
+      "info": "To add a language, go to your [language settings.](/admin/settings/languages)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_locale_selector",
+      "label": "Show language selector",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Country/Region Selector",
+      "info": "To add a country/region, go to your [payment settings.](/admin/settings/payments)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_country_selector",
+      "label": "Show country/region selector",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type":"search_box",
+      "name":"Search",
+      "settings":[]
+    },
+    {
+      "type":"menu",
+      "name":"Menu",
+      "settings":[
+        {
+          "type":"link_list",
+          "id":"menu",
+          "label": "Choose a menu",
+          "info": "Shows only the first level ( no drop downs )"
+        }
+      ]
+    },
+    {
+      "type":"social_icons",
+      "name":"Social icons",
+      "settings":[]
+    },
+    {
+      "type":"text",
+      "name":"Text",
+      "settings":[
+        {
+          "type": "richtext",
+          "id": "announcement_text",
+          "label": "Announcement text",
+          "default": "<p>Share a short announcement or message</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

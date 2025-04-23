@@ -1,0 +1,20 @@
+<script type="text/javascript">
+  // (c) Copyright 2016 Caroline Schnapp. All Rights Reserved. Contact: mllegeorgesand@gmail.com
+  // See https://docs.shopify.com/themes/customization/navigation/link-product-options-in-menus
+
+  $(function() { 
+    var $addToCartForm = $('.product-form-product-template');
+    if (window.MutationObserver && $addToCartForm.length) {
+      if (typeof observer === 'object' && typeof observer.disconnect === 'function') {
+        observer.disconnect();
+      }
+      var config = { childList: true, subtree: true };
+      var observer = new MutationObserver(function() {      
+        Shopify.linkOptionSelectors({{ product | json }});	
+        observer.disconnect();
+      });  
+      observer.observe($addToCartForm[0], config);
+    }
+  });
+
+</script>

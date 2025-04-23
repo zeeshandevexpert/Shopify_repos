@@ -1,0 +1,257 @@
+{
+  "sections": {
+    "featured_content_EFUTNG": {
+      "type": "featured-content",
+      "custom_css": [
+        ".bg-section {background: black;}",
+        "h2 {color: white;}",
+        ".rte {color: red;}",
+        ".box {padding: 25px 0px 15px;}"
+      ],
+      "settings": {
+        "title": "Your Order Is Almost Complete",
+        "text": "<p><strong>WARNING:<\/strong>  Please do not hit the back button - it may cause issues with your order<\/p>",
+        "section_style": "bg-section",
+        "text_size": "medium",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "custom_html_eWDKaq": {
+      "type": "custom-html",
+      "blocks": {
+        "html_NqTpPT": {
+          "type": "html",
+          "settings": {
+            "code": "<h2><b>CONGRATULATIONS!<\/b><\/h2>\n<h4><b>Your premium Pickleball are ready, but before you finalize your order I have a one-time exclusive offer for you…<\/b><\/h4>\n<p>You’re only going to see this page <b>once (ever),<\/b> so read very carefully as this will disappear forever upon your exit.<\/p>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        },
+        "html_HtMqpm": {
+          "type": "html",
+          "settings": {
+            "code": "<script src=\"https:\/\/fast.wistia.com\/embed\/medias\/n4c37ewkmv.jsonp\" async><\/script><script src=\"https:\/\/fast.wistia.com\/assets\/external\/E-v1.js\" async><\/script><div class=\"wistia_responsive_padding\" style=\"padding:56.25% 0 0 0;position:relative;\"><div class=\"wistia_responsive_wrapper\" style=\"height:100%;left:0;position:absolute;top:0;width:100%;\"><div class=\"wistia_embed wistia_async_n4c37ewkmv seo=false videoFoam=true\" style=\"height:100%;position:relative;width:100%\"> <\/div><\/div><\/div>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "html_NqTpPT",
+        "html_HtMqpm"
+      ],
+      "custom_css": [
+        "h2 {font-size: 2.8em; color: #1fbf1f;}",
+        "video {margin-top: 20px;}"
+      ],
+      "settings": {
+        "padding_section": true,
+        "section_style": "bg-section",
+        "wrapper_size": ""
+      }
+    },
+    "custom_html_XM3qW3": {
+      "type": "custom-html",
+      "blocks": {
+        "html_jXRWAV": {
+          "type": "html",
+          "settings": {
+            "code": "<h2><b>Upgrade Your Order Right Now!<\/b><\/h2>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "html_jXRWAV"
+      ],
+      "custom_css": [
+        ".bg-section {background: black; padding: 15px 0px 5px;}",
+        "h2 {color: white; font-size: 2.4em;}"
+      ],
+      "settings": {
+        "padding_section": false,
+        "section_style": "bg-section",
+        "wrapper_size": ""
+      }
+    },
+    "custom_html_BPGg4F": {
+      "type": "custom-html",
+      "blocks": {
+        "html_kTziWm": {
+          "type": "html",
+          "settings": {
+            "code": "<h3>\"Unlock the Secrets to Pickleball Mastery with <b style=\" color: #0093ff; \">The Perfect Paddle Sequence Training System <\/b>\n<\/h3><h5>(Completely Free For 14 Days)...<br>…&amp; Instantly Unlock 31+ Training Videos<\/h5>\n<h5 style=\"text-align: left;\"><b>Inside, You’ll Unlock…<\/b><\/h5>\n\n<ul style=\"text-align: left;\">\n<li>The Perfect Paddle Sequence:  Your roadmap to mastering Pickleball created by top coach Bryant Salcedo.  Learn the strategies that have helped thousands eliminate shot confusion.<\/li>\n<li>Exclusive Video Training:  Over $544 worth of bonus videos, demonstrating techniques, strategies and drills.<\/li>\n<li>Personalized Action Plans:  Tailored strategies to over your specific challenges in Pickleball<\/li>\n<li>Community Access:  Join a network of passionate players, share experiences, and get exclusive tips<\/li>\n<li>Ongoing Support and Updates:  Get new strategies and updates as the game evolves<\/li>\n<\/ul>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "html_kTziWm"
+      ],
+      "custom_css": [
+        "h3 {font-size: 2.4em;}",
+        "h5 {font-size: 1.6em;}",
+        "ul {font-size: 1.2em;}"
+      ],
+      "settings": {
+        "padding_section": false,
+        "section_style": "bg-section",
+        "wrapper_size": ""
+      }
+    },
+    "featured_image_d9Hq7e": {
+      "type": "featured-image",
+      "custom_css": [
+        ".box {margin-top: 50px;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "image": "shopify:\/\/shop_images\/PPS_Display.webp",
+        "section_style": "",
+        "image_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "featured_content_FDP7AP": {
+      "type": "featured-content",
+      "settings": {
+        "title": "All of that and morecompletely free for 14 days…",
+        "text": "<h6>Just $19\/mo thereafter, cancel anytime<\/h6><h5><strong>(90% Off The Normal Price Of $197)<\/strong><\/h5>",
+        "section_style": "",
+        "text_size": "large",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "custom_html_UAQ4Jb": {
+      "type": "custom-html",
+      "blocks": {
+        "html_WtC4LP": {
+          "type": "html",
+          "settings": {
+            "code": "<a href=\"https:\/\/corepickleballusa.com\/cart\/add?id=44473393348826&amp;quantity=1&amp;selling_plan=25331761370&amp;return_to=\/checkout\" class=\"btn btn--primary\"><svg style=\"margin-bottom: -8px;\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"50\" height=\"34\" viewbox=\"0 0 24 24\" fill=\"#fff\"><path d=\"M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z\"><\/path><\/svg> Yes I Want To Save $197!<br><span style=\"font-size: 11px; font-weight: 400;     display: block;\n    margin-top: -5px;\">Upgrade Will Be Automatically Added To Your Order On CLICK<\/span><\/a>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "html_WtC4LP"
+      ],
+      "custom_css": [
+        ".btn {background: #1fbf1f; border: 2px solid #1fbf1f; color: #fff; text-transform: uppercase; font-size: 1.8em; font-weight: 900; padding: 10px 30px;}"
+      ],
+      "settings": {
+        "padding_section": false,
+        "section_style": "",
+        "wrapper_size": ""
+      }
+    },
+    "featured_content_rGGEgJ": {
+      "type": "featured-content",
+      "custom_css": [
+        "h5,h5 a {color: #0093ff;}",
+        "p {color: red;}"
+      ],
+      "settings": {
+        "title": "",
+        "text": "<h5><a href=\"\/cart\/checkout\" title=\"\/cart\/checkout\"><strong>No thanks, I’ve already mastered the art of Pickleball<\/strong><\/a><\/h5><p><strong>This 90% OFF offer will NOT be accessible after 15 MINUTES & you will not be able to find this price anywhere else.  Once time expires, so will this URL.<\/strong><\/p>",
+        "section_style": "",
+        "text_size": "large",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "featured_image_rPBgnK": {
+      "type": "featured-image",
+      "settings": {
+        "full_width": true,
+        "image": "shopify:\/\/shop_images\/PPS_Display.webp",
+        "section_style": "",
+        "image_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "featured_content_6rGjdb": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<h6>Just Click The Big Green Button Below & the Perfect Paddle Sequence Training System will be automatically added to your order, and login instructions sent immediately to your email.<\/h6>",
+        "section_style": "",
+        "text_size": "large",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    },
+    "custom_html_mXLyhK": {
+      "type": "custom-html",
+      "blocks": {
+        "html_bPxJzW": {
+          "type": "html",
+          "settings": {
+            "code": "<a href=\"https:\/\/corepickleballusa.com\/cart\/add?id=44473393348826&amp;quantity=1&amp;selling_plan=25331761370&amp;return_to=\/checkout\" class=\"btn btn--primary\"><svg style=\"margin-bottom: -8px;\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"50\" height=\"34\" viewbox=\"0 0 24 24\" fill=\"#fff\"><path d=\"M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z\"><\/path><\/svg> Yes I Want To Save $197!<br><span style=\"font-size: 11px; font-weight: 400;     display: block;\n    margin-top: -5px;\">Upgrade Will Be Automatically Added To Your Order On CLICK<\/span><\/a>",
+            "width": "100%",
+            "text_alignment": "text-center"
+          }
+        }
+      },
+      "block_order": [
+        "html_bPxJzW"
+      ],
+      "custom_css": [
+        ".btn {background: #1fbf1f; border: 2px solid #1fbf1f; color: #fff; text-transform: uppercase; font-size: 1.8em; font-weight: 900; padding: 10px 30px;}"
+      ],
+      "settings": {
+        "padding_section": false,
+        "section_style": "",
+        "wrapper_size": ""
+      }
+    },
+    "featured_content_zPnR9M": {
+      "type": "featured-content",
+      "custom_css": [
+        "h5,h5 a {color: #0093ff;}"
+      ],
+      "settings": {
+        "title": "",
+        "text": "<h5><a href=\"\/cart\/checkout\" title=\"\/cart\/checkout\"><strong>No thanks, I’ve already mastered the art of Pickleball<\/strong><\/a><\/h5>",
+        "section_style": "",
+        "text_size": "large",
+        "text_alignment": "text-center",
+        "button_style": "btn--primary",
+        "button_label": "",
+        "button_link": "",
+        "ticktextclass": ""
+      }
+    }
+  },
+  "order": [
+    "featured_content_EFUTNG",
+    "custom_html_eWDKaq",
+    "custom_html_XM3qW3",
+    "custom_html_BPGg4F",
+    "featured_image_d9Hq7e",
+    "featured_content_FDP7AP",
+    "custom_html_UAQ4Jb",
+    "featured_content_rGGEgJ",
+    "featured_image_rPBgnK",
+    "featured_content_6rGjdb",
+    "custom_html_mXLyhK",
+    "featured_content_zPnR9M"
+  ]
+}

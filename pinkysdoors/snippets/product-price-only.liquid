@@ -1,0 +1,9 @@
+<div class="price{% if available and compare_at_price > price %} price--on-sale{% endif %}" data-price>
+  <div class="price__sale">
+    <span class="visually-hidden visually-hidden--inline">Price: </span>
+    <span class="price-item__label" aria-hidden="true">Price: </span>
+    <span class="price-item price-item--sale" data-sale-price>
+      {{ product.price }}
+    </span>
+  </div>
+</div>

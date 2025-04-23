@@ -1,0 +1,198 @@
+{% if section.settings.notification != blank %}
+  <div class="notification-bar" id="notificationBar">
+    <div class="notification-bar-container">
+      <p class="notification-title">
+        {{ section.settings.notification }}
+      </p>
+    </div>
+  </div>
+{%endif %}
+<div class="header{% if template contains 'index' %} homepage{% endif %}" id="qoreLogicNav">
+  <div class="header-container">
+    <div class="header-wrap">
+      <div class="logo-container">
+       <div class="logo-wrapper">
+        <a href="{{ shop.url }}">
+           {% if template contains 'index' %}
+              <img src="https://cdn.shopify.com/s/files/1/0688/7401/0911/files/Logo-QORE_LOGIQ.png?v=1670514807" class="logo-bar__image logo">
+           {% else %}
+             <img src="//cdn.shopify.com/s/files/1/0515/5019/1816/files/ORE_1__clipped_rev_1_c3633b09-1ec2-4337-be1e-e1872251dac8.png?v=1613549044" class="logo-bar__image logo">
+           {% endif %}
+        </a>
+       </div>
+      </div>
+      <div class="header-links">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="navbar-container">
+            {% comment %} <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon text-navy"></span>
+            </button> {% endcomment %}
+            <div class="nav-list" id="navbarSupportedContent">
+              <ul class="nav-list-wrap">
+                {% if section.settings.menu.links == blank %}
+                  {% assign main_menu_linklist = linklists[section.settings.menu].links %}
+                {% else %}
+                  {% assign main_menu_linklist = section.settings.menu.links %}
+                {% endif %}
+
+                {% for link in main_menu_linklist %}
+                  <li class="nav-item">
+                    <a class="nav-link main-nav-link text-navy fw-normal text-white mont" href="{{ link.url }}">{{ link.title }}</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      {% for childlink in link.links %}
+                        <li>
+                          <a class="dropdown-item" href="{{ childlink.url }}">{{ childlink.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endfor %}
+                {% comment %} <li class="d-block d-lg-none nav-item" id="cartIcon">
+                  <a href="/cart" class="text-decoration-none nav-link text-navy fw-normal">
+                    Cart
+                  </a>
+                </li>
+                {% if customer %}
+                  <li class="d-block d-lg-none nav-item">
+                    <a href="/account/logout/" class="text-decoration-none nav-link text-navy fw-normal">
+                      Logout
+                    </a>
+                  </li>
+                {% else %}
+                  <li class="d-block d-lg-none nav-item">
+                    <a href="/account/login/" class="text-decoration-none nav-link text-navy fw-normal">
+                      Login
+                    </a>
+                  </li>
+                {% endif %} {% endcomment %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- End Row -->
+    </div>
+    <!-- End Container-->
+  </div>
+  <!-- End Container Fluid-->
+</div>
+
+
+<!-- Mobile Menu -->
+{% comment %} <div class="container-fluid d-lg-none" id="qoreLoginMobileMenu">
+  <div class="row">
+    <div class="col-6">
+     <div class="logo-wrapper">
+        <a href="{{ shop.url }}">
+           {% if template contains 'index' or template contains 'cart' or template contains 'login' or template contains 'about' or template contains 'contact' or template contains 'page' or template contains 'customers' %}
+              <img src="https://cdn.shopify.com/s/files/1/0688/7401/0911/files/Logo-QORE_LOGIQ.png?v=1670514807" class="logo-bar__image logo">
+           {% else %}
+             <img src="//cdn.shopify.com/s/files/1/0515/5019/1816/files/ORE_1__clipped_rev_1_c3633b09-1ec2-4337-be1e-e1872251dac8.png?v=1613549044" class="logo-bar__image logo">
+           {% endif %}
+        </a>
+       </div>
+  </div>
+  <div class="col-6 my-auto">
+    <div class="mobile-menu-icons-wrapper">
+      <ul class="mobile-menu-icon-list">
+        {% if customer %}
+          <li class="d-block d-lg-none nav-item me-2">
+            <a href="/account/logout/" class="text-decoration-none nav-link text-navy fw-normal">
+               {% render 'user' %}
+            </a>
+          </li>
+        {% else %}
+          <li class="d-block d-lg-none nav-item me-2">
+            <a href="/account/login/" class="text-decoration-none nav-link text-navy fw-normal">
+               {% render 'user' %}
+            </a>
+          </li>
+        {% endif %}
+        <li class="header-icons me-3" id="cartIcon">
+          <a href="/cart" class="text-orange">
+            {% render 'cart' %}
+          </a>
+        </li>
+        <li>
+          <a href="#" class="header-icons me-3" id="hamburgerMenu">
+            <img src="https://cdn.shopify.com/s/files/1/0688/7401/0911/files/Burger_menu.png?v=1670973250" width="25px">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</div>
+ <div class="mobile-menu-dropdown d-lg-none" id="mobileMenuDropdown">
+    <ul class="mobile-drop">
+    {% for link in main_menu_linklist %}
+      <li class="mont">
+        <a class="nav-link main-nav-link text-navy fw-normal mont text-white" href="{{ link.url }}">{{ link.title }}</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          {% for childlink in link.links %}
+            <li>
+              <a class="dropdown-item" href="{{ childlink.url }}">{{ childlink.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+    </ul>
+  </div> {% endcomment %}
+
+<script>
+  jQuery(document).ready(function($){
+    $('#hamburgerMenu').click(function(menu){
+      menu.preventDefault();
+      if(!$(this).hasClass('collapsed')){
+          $(this).addClass('collapsed');
+          $('#mobileMenuDropdown').slideDown();
+      }else{
+          $(this).removeClass('collapsed');
+          $('#mobileMenuDropdown').slideUp();
+      }
+    });
+  });
+</script>
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "text",
+        "id": "notification",
+        "label": "Notification"
+      }, {
+        "type": "text",
+        "id": "mobile_menu_title",
+        "default": "Menu",
+        "label": "Mobile Menu Title"
+      }, {
+        "type": "link_list",
+        "id": "menu",
+        "default": "main-menu",
+        "label": "Heading Navigation Menu"
+      }, {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Logo"
+      }
+    ]
+  }
+{% endschema %}
+
+{% style %}
+  {% if template contains 'index' %}
+
+  {% else %}
+    ul.navbar-nav li a {
+      color: #1C3447 !important;
+    }
+    #cartIcon svg,
+    #userIcon svg {
+      -webkit-filter: invert(100%);
+      filter: invert(100%);
+    }
+
+  {% endif %}
+{% endstyle %}

@@ -1,0 +1,103 @@
+<div class="custom-iwt2" style="background: {{ section.settings.bg }}; color: {{ section.settings.fg }};">
+  <div class="custom-iwt2-wrapper">
+    <div class="custom-iwt2-flex-wrapper">
+      <div class="custom-iwt2-flex-image-wrapper">
+        {% if section.settings.img %}
+          <img src="{{ section.settings.img | img_url: 'master' }}" class="custom-iwt2-img" />
+        {% endif %}
+      </div>
+      <div class="custom-iwt2-flex-text-wrapper">
+        <div class="custom-iwt2-text-wrapper">
+          {% if section.settings.heading != blank %}
+            <h2 class="custom-iwt2-heading">{{ section.settings.heading }}</h2>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% if section.settings.text != blank or section.settings.logo or section.settings.subheading != blank %}
+      <div class="custom-iwt2-bottom-wrapper">
+        {% if section.settings.text != blank %}
+          <div class="custom-iwt2-text">{{ section.settings.text }}</div>
+        {% endif %}
+        {% if section.settings.logo %}
+          <img src="{{ section.settings.logo | img_url: 'master' }}" class="custom-iwt2-logo" />
+        {% endif %}
+        {% if section.settings.btn-label != blank %}
+          <div class="btn-insta">
+          <a href="{{ section.settings.btn-link }}" class="custom-iwt2-btn">{{ section.settings.btn-label }}</a>
+          </div>
+        {% endif %}
+        {% if section.settings.subheading != blank %}
+          <p class="custom-iwt2-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Custom Image With Text 2",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    
+        {
+      "type": "text",
+      "id": "btn-label",
+      "label": "Button Label"
+    },
+        {
+      "type": "url",
+      "id": "btn-link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg",
+      "label": "Bg Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "fg",
+      "label": "Text Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image With Text 2"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}

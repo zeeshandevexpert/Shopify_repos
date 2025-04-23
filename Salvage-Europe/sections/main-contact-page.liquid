@@ -1,0 +1,163 @@
+<section id="page" class="contact__page-section row main__section" data-section-id="{{ section.id }}">
+  <div id="page-content" class="grid__wrapper">
+    <div class="contact__section-content{% if section.settings.contact_form_position == 'right' and page.content != blank %} span-6 sm-span-12 auto{% else %} span-12{% endif %}">
+      <div class="rte">
+      {{ page.content }}
+      </div>
+    </div>
+    <div class="contact__section-form{% if section.settings.contact_form_position == 'right' and page.content != blank %} span-6 sm-span-12 auto{% else %} span-12{% endif %}">
+      {% render 'custom-contact' type: section %}
+    </div>
+  </div>
+</section>
+
+<style>
+@media screen and (min-width: 981px) {
+  #page-content {
+    max-width: {{ section.settings.content_width }}%;
+  }
+}
+{% if section.settings.contact_form_position == 'below' %}
+@media screen and (min-width: 741px) {
+  div#contactFormWrapper {
+    margin-top: 30px;
+    max-width: 1480px;
+  }
+}
+{% endif %}
+</style>
+
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": [
+    {
+      "type": "select",
+      "id": "contact_form_position",
+      "label": "Contact form placement",
+      "options": [
+        {
+          "value": "right",
+          "label": "Next to page content"
+        },
+        {
+          "value": "below",
+          "label": "Beneath content"
+        }
+      ],
+      "default": "below"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 50,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Page content width",
+      "default": 80
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_first_name",
+      "label": "Show first name",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_last_name",
+      "label": "Show last name",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_company_name",
+      "label": "Show company name",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_address",
+      "label": "Show address",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_website_url",
+      "label": "Show website url",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_phone",
+      "label": "Show phone number",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Custom Field One"
+    },
+    {
+      "type": "checkbox",
+      "id": "cf_show_custom_field_one",
+      "label": "Show custom field one",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cf_custom_field_one",
+      "label": "Field Placeholder",
+      "default": "Custom Field One"
+    },
+    {
+     "type":      "select",
+     "id":        "cf_custom_field_one_type",
+     "label":     "Field Type",
+     "default":   "input",
+     "options": [
+       {
+         "value": "textarea",
+         "label": "Multiple line text"
+       },
+       {
+         "value": "input",
+         "label": "Single line text"
+       }
+     ]
+   },
+   {
+     "type": "header",
+     "content": "Custom Field Two"
+   },
+   {
+     "type": "checkbox",
+     "id": "cf_show_custom_field_two",
+     "label": "Show custom field two",
+     "default": false
+   },
+   {
+     "type": "text",
+     "id": "cf_custom_field_two",
+     "label": "Field Placeholder",
+     "default": "Custom Field Two"
+   },
+   {
+    "type":      "select",
+    "id":        "cf_custom_field_two_type",
+    "label":     "Field Type",
+    "default":   "input",
+    "options": [
+      {
+        "value": "textarea",
+        "label": "Multiple line text"
+      },
+      {
+        "value": "input",
+        "label": "Single line text"
+      }
+    ]
+  }
+  ]
+}
+{% endschema %}

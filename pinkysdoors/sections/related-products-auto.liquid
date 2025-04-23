@@ -1,0 +1,75 @@
+<div
+     id="related"
+     class="product-recommendations"
+     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+     >
+  <hr class="hr--invisible">
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+  <h2 class="text-center">{{ section.settings.title }}</h2>
+  <div class="page-width product-single__description">
+    {% unless heading == blank %}
+    <header class="section-header text-center">
+      <h2 class="section-header__title">{{ heading }}</h2>
+    </header>
+    {% endunless %}
+    <div class="flex flex--wrap products grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+      {% for product in recommendations.products %}
+        {% if product.tags contains 'custom' %}{% continue %}{% endif %}
+      <div class="grid__item small--one-half medium-up--one-quarter grid__item--{{section.id}} {{ grid_item_width }}">
+        {% include 'product-card-grid' %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {%- endif -%}
+</div>
+
+{% javascript %}
+  const handleIntersection = (entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+
+    observer.unobserve(productRecommendationsSection);
+
+    const url = productRecommendationsSection.dataset.url;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  };
+
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+
+  observer.observe(productRecommendationsSection);
+{% endjavascript %}
+
+<style>
+  .product-recommendations .presale-clock {
+    display: none;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Product recommendations",
+    "settings": [
+	{
+		"type":"text",
+		"id":"title",
+		"label":"Title",
+		"default":"You Might Also Like"
+	}
+	]
+  }
+{% endschema %}

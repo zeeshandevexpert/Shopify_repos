@@ -1,0 +1,45 @@
+{% if block.type == 'marketing_tile' %}
+<li class="grid__item marketing-tile marketing-tile-{{ block.settings.tile_size }} relative">
+    <div class="marketing-tile__inner relative">
+        {%- if block.settings.tile_size == '2x' -%}
+            {%- assign media_size =  60.5 -%}
+        {%- endif -%}
+        {%- render 'image-element', image: block.settings.image, image_ratio: media_size -%}
+        {% if block.settings.title != blank or block.settings.paragraph != blank %}
+        <div class="marketing-tile__content {% if block.settings.hide_text_mobile %}small-hide{% endif %}" >
+          {% if block.settings.title != blank %}
+          <h2 class="h3">{{ block.settings.title }}</h2>
+          {% endif %}
+          {% if block.settings.paragraph != blank %}
+          <div class="rte">{{ block.settings.paragraph }}</div>
+          {% endif %}
+          {% if block.settings.button_text != blank %}
+          <button type="button" class="button button--primary">{{ block.settings.button_text }}</button>
+          {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    <a href="{{ block.settings.link }}" class="link--fill-parent">
+        <span class="visually-hidden">
+        Link to {{ block.settings.link }}
+        </span>
+    </a>
+</li>
+{% else %}
+<li class="grid__item marketing-tile marketing-tile__quote marketing-tile-{{ block.settings.tile_size }} relative">
+    <div class="marketing-tile__inner relative center">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.8 0C1.8 2.80001 0 6.4 0 13.8V24.4H9.5V13.2H4.4V13C4.4 8.3 5.2 5.9 9.8 3.6L7.8 0ZM22.6 0C16.6 2.80001 14.7 6.4 14.7 13.8V24.4H24.2V13.2H19.2V13C19.2 8.3 20 5.9 24.6 3.6L22.6 0Z" fill="#FF0175"/>
+        </svg>
+        <h4 class="h1">{{ block.settings.title }}</h4>
+        {% if block.settings.logo != blank %}
+        <div class="marketing-tile__logo">
+            <img loading="lazy" class="lazyload hs-lazyload hs-id-93683c86" data-src="{{ block.settings.logo | image_url: width: 200 }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width height/>
+        </div>
+        {% endif %}
+        {% if block.settings.author != blank %}
+        <p class="marketing-tile__author">{{ block.settings.author }}</p>
+        {% endif %}
+    </div>
+</li>
+{% endif %}

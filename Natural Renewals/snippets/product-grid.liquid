@@ -1,0 +1,30 @@
+
+{% if product.title %}
+<div class="general-more-products-col">
+    {% if product.metafields.arena.external_link != blank %}
+        {% assign product_url = product.metafields.arena.external_link %}
+        {% assign external_link = 1 %}
+    {% else %}
+        {% assign product_url = product.url %}
+        {% assign external_link = 0 %}
+    {% endif %}
+
+    <span class="general-more-products-brand"><a href="{{ product_url }}" {% if external_link == 1 %}target="_blank" {% endif %}>{{ product.vendor }}</a></span>
+    <a {% if external_link == 1 %}target="_blank" {% endif %} class="general-more-products-image" href="{{ product_url }}">
+        <img src="{{ product.images[0] | img_url: '10x' }}"
+             class="lazyload"
+             data-src="{{ product.images[0] | img_url: '900x' }}"
+             data-widths="[900]"
+             data-sizes="auto"
+             tabindex="-1"
+        />
+    </a>
+    <h3 class="general-more-products-name"><a {% if external_link == 1 %}target="_blank" {% endif %} href="{{ product_url }}">{{ product.title }}</a></h3>
+
+    {% for tag in product.tags %}
+        <span class="general-more-products-variant">{{ tag }}</span>
+    {% endfor %}
+
+    <span class="general-more-prducts-price">usd {{ product.price | money }}</span>
+</div>
+{% endif %}

@@ -1,0 +1,331 @@
+{%- liquid
+
+  assign five_column = false
+  case section.settings.grid
+    when 2
+      assign grid_item_width = 'span-6 auto'
+      assign width = 50
+    when 3
+      assign grid_item_width = 'span-4 md-span-4 sm-span-6 auto'
+      assign width = 33.333
+    when 4
+      assign grid_item_width = 'span-3 md-span-4 sm-span-6 auto'
+      assign width = 25
+    when 5
+      assign five_column = true
+      assign width = 20
+    when 6
+      assign grid_item_width = 'span-2 md-span-4 sm-span-6 auto'
+      assign width = 16.6666667
+   endcase
+
+   assign product_limit = section.settings.products_shown
+
+   assign is_carousel = false
+   if section.settings.carousel
+     assign is_carousel = true
+   endif
+
+   assign collection = collections[section.settings.collection]
+
+   assign show_all = false
+
+   if section.settings.show_all
+    assign show_all = true
+   endif
+
+-%}
+
+<section class="global__section featured__collection-section section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="featured-collection" data-aos="{{ settings.scroll_animation }}">
+
+  <div class="row feat__collection-container">
+    {% comment %} {% if section.settings.title != blank %} {% endcomment %}
+     <div class="section-heading">
+       <a href="{{ collection.url }}">
+         <h2 id="{{ collection.title | replace: ' ', '-' | escape }}"  >{{ collection.title | escape }}</h2>
+       </a>
+
+       <div class="description">{{ collection.description }}</div>
+
+       <span class="section-border">
+         {%- if settings.header_border_style == 'zigzag' -%}<div class="zigzag"></div>{% endif %}
+       </span>
+       <div class="clear"></div>
+     </div>
+   {% comment %} {% endif %} {% endcomment %}
+
+   {% if show_all %}
+   <div class="feat__collection-link a-center v-center">
+    <a href="{{ collection.url }}">{{ section.settings.show_more_text | escape }}</a>
+    </div>
+   {% endif %}
+
+   {%- liquid
+
+      assign enough_to_wrap = true
+
+      {% comment %} assign featured = all_products[section.settings.featured_product] {% endcomment %}
+
+      if collection.products.size == section.settings.grid
+        assign enough_to_wrap = false
+      endif
+
+   -%}
+  {% capture slideshow_config %}{
+      "wrapAround":{{ enough_to_wrap }},
+      "cellAlign": "left",
+      "dragThreshold":"15",
+      "draggable": {{ enough_to_wrap }},
+      "pauseAutoPlayOnHover":false,
+      "prevNextButtons":{{ enough_to_wrap }},
+      "pageDots": false
+   }{% endcapture %} 
+
+
+      <div class="collection__grid-loop {% if five_column == true %} five_column_grid{% endif %}{% if is_carousel %} featured__collection-carousel flickity__section js-carousel{% else %} grid__wrapper{% endif %}"{% if is_carousel %} data-flickity='{{ slideshow_config }}' data-slider-index="{{ forloop.index }}"{% endif %}>
+        {% if collection == blank %}
+          {% render 'onboard-product', product_limit: product_limit, grid_item_width: grid_item_width %}
+        {% else %}
+          {% for product in collection.products %}
+
+            {% assign item_class = '' %}
+            {% if forloop.first %}
+              {% assign item_class = 'large-item' %}
+            {% else %}
+              {% assign item_class = 'small-item' %}
+            {% endif %}
+          <div class="product-index-loop {{ grid_item_width }} {{ item_class }}"
+                data-product-id="{{ product.id }}"
+                data-alpha="{{ product.title }}"
+                data-price="{{ product.price }}"
+                data-color-options="{%- render 'product-listing-color-options', product: product, collection: collection -%}"
+                data-size-options="{%- render 'product-listing-size-options', product: product, collection: collection -%}"
+                data-aos="{{ settings.scroll_animation }}"
+                data-aos-delay="{{ forloop.index | times: 10 }}">
+                {% render 'product-listing', product: product, collection: collection, grid: section.settings.grid %}
+          </div>
+          
+          {% endfor %}
+        {% endif %}
+      </div> 
+
+      {% comment %} <div class="collection__grid-loop">
+
+          {% if collection == blank %}
+            {% render 'onboard-product', product_limit: product_limit, grid_item_width: grid_item_width %}
+          {% else %}
+            {% assign total_products = collection.products.size %}
+            {% assign count = 0 %}
+            
+           <div class="main-wrapper-block">
+                       <!-- Wrapper for first 5 items -->
+              <div class="wrapper">
+                {% for product in collection.products %}
+                  {% assign item_class = '' %}
+                  
+                  {% if count < 5 %}
+                    {% assign item_class = 'product-index-loop' %}
+                    {% if count == 1 %}
+                      <!-- Inner wrapper for last 4 items from the first 5 -->
+                      <div class="inner-wrapper">
+                    {% endif %}
+
+
+                    {% if count == 0 %}
+                      <!-- Featured product schema -->
+                    
+                      <div class="product-index-loop {{ grid_item_width }} {{ item_class }} {% if count == 0 %} large-item{% endif %}"
+                      data-product-id="{{ featured.id }}"
+                      data-alpha="{{ featured.title }}"
+                      data-price="{{ featured.price }}"
+                      data-color-options="{%- render 'product-listing-color-options', product: featured, collection: collection -%}"
+                      data-size-options="{%- render 'product-listing-size-options', product: featured, collection: collection -%}"
+                      data-aos="{{ settings.scroll_animation }}"
+                      data-aos-delay="{{ forloop.index | times: 10 }}">
+                      {% render 'product-listing', product: featured, collection: collection, grid: section.settings.grid %}
+                    </div>
+
+                    {% else %}
+                      <!-- Regular product listing -->
+                      <div class="product-index-loop {{ grid_item_width }} {{ item_class }} {% if count == 0 %} large-item{% endif %}"
+                        data-product-id="{{ product.id }}"
+                        data-alpha="{{ product.title }}"
+                        data-price="{{ product.price }}"
+                        data-color-options="{%- render 'product-listing-color-options', product: product, collection: collection -%}"
+                        data-size-options="{%- render 'product-listing-size-options', product: product, collection: collection -%}"
+                        data-aos="{{ settings.scroll_animation }}"
+                        data-aos-delay="{{ forloop.index | times: 10 }}">
+                        {% render 'product-listing', product: product, collection: collection, grid: section.settings.grid %}
+                      </div>
+                    {% endif %}
+                
+                    
+                    {% if count == 4 %}
+                      </div> <!-- Close inner-wrapper -->
+                    {% endif %}
+                  {% else %}
+                    <!-- Remaining items -->
+                    <div class="product-index-loop half-grid"
+                  
+                      data-product-id="{{ product.id }}"
+                      data-alpha="{{ product.title }}"
+                      data-price="{{ product.price }}"
+                      data-color-options="{%- render 'product-listing-color-options', product: product, collection: collection -%}"
+                      data-size-options="{%- render 'product-listing-size-options', product: product, collection: collection -%}"
+                      data-aos="{{ settings.scroll_animation }}"
+                      data-aos-delay="{{ forloop.index | times: 10 }}">
+                      {% render 'product-listing', product: product, collection: collection, grid: section.settings.grid %}
+              
+                    </div>
+                  {% endif %}
+                  
+                  {% assign count = count | plus: 1 %}
+                  
+                {% endfor %}
+              </div> <!-- Close wrapper -->
+            </div>
+                
+            <div class="other-block">
+              {% for product in collection.products %}
+
+                {% assign item_class = '' %}
+                {% if forloop.first %}
+                  {% assign item_class = 'large-item' %}
+                {% else %}
+                  {% assign item_class = 'small-item' %}
+                {% endif %}
+              <div class="product-index-loop"
+                    data-product-id="{{ product.id }}"
+                    data-alpha="{{ product.title }}"
+                    data-price="{{ product.price }}"
+                    data-color-options="{%- render 'product-listing-color-options', product: product, collection: collection -%}"
+                    data-size-options="{%- render 'product-listing-size-options', product: product, collection: collection -%}"
+                    data-aos="{{ settings.scroll_animation }}"
+                    data-aos-delay="{{ forloop.index | times: 10 }}">
+                    {% render 'product-listing', product: product, collection: collection, grid: section.settings.grid %}
+              </div>
+              
+              {% endfor %}
+            </div>
+            
+          {% endif %}
+
+      </div> {% endcomment %}
+
+      
+
+    </div>
+
+
+
+
+
+    {% if is_carousel %}
+    <style>
+      .collection__grid-loop.featured__collection-carousel {
+        margin: 0 0.6%;
+      }
+      .featured__collection-section.section-{{ section.id }} .collection__grid-loop.featured__collection-carousel .product-index {
+        width: {{ width }}%;
+        padding: 0 14px;
+        border: 0 !important;
+        grid-column: unset !important;
+      }
+      @media screen and (min-width: 741px) and (max-width: 980px) {
+        .collection__grid-loop.featured__collection-carousel .product-index {
+          width: 33% !important;
+        }
+      }
+      @media screen and (max-width: 740px) {
+        .collection__grid-loop.featured__collection-carousel .product-index {
+          width: 50% !important;
+        }
+      }
+      </style>
+    {% endif %}
+
+</section>
+
+
+<div class="clear"></div>
+
+{% comment %} 
+
+this is heading schema
+
+{
+    "type": "text",
+    "id": "title",
+    "label": "Heading",
+    "default": "Featured Collection"
+  }, {% endcomment %}
+
+{% schema %}
+{
+  "name": "All Featured collection",
+  "settings": [
+
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Collection"
+    },
+    {
+      "type":"checkbox",
+      "id":"show_all",
+      "label":"Add show all link",
+      "default":false
+    },
+    {
+      "type":"text",
+      "id":"show_more_text",
+      "label":"View all link",
+      "default":"View all"
+    },
+    {
+      "type":"checkbox",
+      "id":"carousel",
+      "label":"Display in carousel",
+      "default":false
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Products per row",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "products_shown",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "label": "Products shown",
+      "default": 4
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  },
+  "presets": [
+    {
+      "name": "All Featured Collection"
+    }
+  ]
+}
+{% endschema %}

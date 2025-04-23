@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "heading_banner_ywEHhE": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/2-colonnes-16WABR3602_32_sindythomas_1.webp",
+        "heading": "Collections",
+        "sub_heading": "",
+        "font_size": 30,
+        "content": ""
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "",
+        "sort": "alphabetical",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    }
+  },
+  "order": [
+    "heading_banner_ywEHhE",
+    "main"
+  ]
+}

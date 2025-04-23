@@ -1,0 +1,103 @@
+
+    <div class="container-style container-large">
+        <div class="product-page-fiber-top">
+            <h2>{{ section.settings.fiber_title }}</h2>
+            <h3>{{ section.settings.fiber_description }}</h3>
+        </div>
+    </div>
+    <div class="swiper product-page-fiber-slider">
+        <div class="swiper-wrapper">
+
+            {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <div class="swiper-slider-content">
+                        <div class="swiper-slider-col-left">
+                            <div class="standard-cover">
+                                <img src="{{ block.settings.image | img_url: '10x' }}"
+                                     class="lazyload"
+                                     data-src="{{ block.settings.image | img_url: 'master' }}"
+                                     data-widths="[1000]"
+                                     data-sizes="auto"
+                                     tabindex="-1"
+                                />
+                            </div>
+                        </div>
+                        <div class="swiper-slider-col-right">
+                          {% if block.settings.date != blank and block.settings.location != blank %}
+                            <div class="swiper-slider-col-right-top">
+                                <span>{{ block.settings.date }}</span>
+                                <span>{{ block.settings.location }}</span>
+                            </div>
+                            {% endif %}
+                            <h3>{{ block.settings.title }}</h3>
+                            <p>{{ block.settings.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <div class="swiper-scrollbar"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+{% schema %}
+{
+  "name": "Product - Fiber",
+  "tag": "section",
+  "class": "product-page-fiber-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "fiber_title",
+      "label": "Fiber Title",
+      "default": "every fiber has a story"
+    },
+    {
+      "type": "textarea",
+      "id": "fiber_description",
+      "label": "Fiber Description",
+      "default": "learn the history behind these<br> cloud vintage molecules"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings":[
+        {
+          "type": "text",
+          "id": "data",
+          "label": "Date"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product - Fiber"
+    }
+  ]
+}
+{% endschema %}

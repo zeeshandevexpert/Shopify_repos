@@ -1,0 +1,310 @@
+<style>
+
+.technology-banner-block{
+    background-color: #c1c4c5;
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+}
+
+.circle-container {
+    position: relative;
+    width: 850px;
+    height: 850px;
+    border-radius: 50%;
+    /* background-color: black; */
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:850px) {
+    .circle-container {
+       width: 500px;
+       height: 500px;
+    }
+}
+
+@media (max-width:480px) {
+    .circle-container {
+       width: 400px;
+       height: 400px;
+    }
+}
+
+.circle {
+    position: absolute;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+@media (max-width:850px) {
+    .circle {
+       width: 350px;
+       height: 350px;
+    }
+}
+@media (max-width:480px) {
+    .circle {
+       width: 250px;
+       height: 250px;
+    }
+}
+
+.carousel-image {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+}
+
+.carousel-image .text{
+ /* divert from landfill */
+
+font-family: 'Helvetica Neue LT Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 64px;
+line-height: 100%;
+leading-trim: both;
+text-edge: cap;
+text-align: center;
+letter-spacing: -0.02em;
+color: #F4F6F8;
+text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+max-width: 350px;
+   
+}
+
+@media (max-width:850px) {
+    .carousel-image .text{
+    font-size: 28px;    
+}
+}
+
+/* .carousel-image img{
+    width: 100%;
+} */
+
+.hidden {
+    opacity: 0;
+}
+
+.circle-count {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    /* pointer-events: none; Prevent interaction with dots */
+    border: 1px solid #F4F6F8;
+}
+
+@media (max-width:850px) {
+    .circle-count {
+       width: 400px;
+       height: 400px;
+    }
+}
+@media (max-width:480px) {
+    .circle-count {
+       width: 300px;
+       height: 300px;
+    }
+}
+
+.count-dot {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background-color: #c1c4c5;
+    /* background-image: url(//cycora.com/cdn/shop/files/cycora-technology-gradient-bg.jpg?v=1723495263); */
+    border: 1px solid #F4F6F8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #F4F6F8;
+    transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out;
+}
+
+@media (max-width:850px) {
+    .count-dot {
+       width: 25px;
+       height: 25px;
+    }
+}
+
+.count-dot.active {
+    background-color: #95BBCC;
+    border-color: #95BBCC;
+    color: #F4F6F8;
+}
+</style>
+
+<div class="technology-banner-block" style="background-image: url({{ section.settings.bg_image |  img_url: 'master' }});">
+
+    <div class="circle-container">
+        <div class="circle">
+            {% for block in section.blocks %}
+                {% assign image = block.settings.image %}
+                <div class="image-container carousel-image hidden" style="background-image: url({{ image | img_url: 'large' }});">
+                    <div class="text">{{ block.settings.text }}</div>
+                    {% comment %} <img class="" src="{{ image | img_url: 'large' }}" alt="Image {{ forloop.index }}"> {% endcomment %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="circle-count">
+            {% for block in section.blocks %}
+                <div class="count-dot" data-index="{{ forloop.index0 }}">{{ forloop.index }}</div>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll('.carousel-image');
+    const dots = document.querySelectorAll('.count-dot');
+    const carousel = document.querySelector('.circle-container');
+    let currentIndex = 0;
+    const totalDots = dots.length;
+    let circleRadius = 400; // Default radius
+    let changeTimeout;
+    const changeInterval = 2000; // 2-second delay
+
+    function updateDotPositions() {
+        dots.forEach((dot, index) => {
+            const angle = (index / totalDots) * (2 * Math.PI) - Math.PI / 2;
+            const x = circleRadius * Math.cos(angle);
+            const y = circleRadius * Math.sin(angle);
+            dot.style.transform = `translate(${x}px, ${y}px)`;
+        });
+    }
+
+    function adjustCircleRadius() {
+        const viewportWidth = window.innerWidth;
+
+        if (viewportWidth <= 480) {
+            circleRadius = 150; // Smaller radius for mobile screens
+        } else if (viewportWidth <= 850) {
+            circleRadius = 200; // Medium radius for tablet screens
+        } else {
+            circleRadius = 400; // Default radius for larger screens
+        }
+
+        updateDotPositions(); // Recalculate dot positions based on the new radius
+    }
+
+    function updateActiveImage() {
+        images.forEach(image => image.classList.add('hidden'));
+        dots.forEach(dot => dot.classList.remove('active'));
+
+        images[currentIndex].classList.remove('hidden');
+        dots[currentIndex].classList.add('active');
+    }
+
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateActiveImage();
+    }
+
+    function handleDotClick(index) {
+        clearTimeout(changeTimeout); // Clear any existing timeout
+        currentIndex = index;
+        updateActiveImage();
+        // Set a timeout to change the image after 2 seconds
+        changeTimeout = setTimeout(changeImage, changeInterval);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(changeImage, 3000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    adjustCircleRadius(); // Adjust radius and position dots on load
+    updateActiveImage();  // Show the first image and dot on load
+    // setInterval(changeImage, 4000);
+    startAutoSlide();     // Start the auto-slide
+
+    window.addEventListener('resize', adjustCircleRadius); // Adjust radius on window resize
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            handleDotClick(index);
+        });
+    });
+      // Stop the slider on hover
+      carousel.addEventListener('mouseenter', stopAutoSlide);
+
+// Restart the slider when mouse leaves
+carousel.addEventListener('mouseleave', startAutoSlide);
+});
+
+
+
+
+</script>
+
+{% schema %}
+
+    {
+    "name": "Dynamic Circular Carousel",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Background Image"
+        }
+    ],
+    "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings":[
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+        "name": "Technology Banner"
+    }
+  ]
+}
+
+{% endschema %}

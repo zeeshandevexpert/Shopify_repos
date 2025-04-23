@@ -1,0 +1,155 @@
+{%- liquid
+
+  assign has_title = false
+  assign unique_id = section.id | slice: -7, 7
+
+  if section.settings.allow_multiple
+    assign allow_multiple = true
+  endif
+
+  if section.settings.title != blank
+    assign has_title = true
+  endif
+
+-%}
+
+
+<section class="accordion__section global__section row section-{{ section.id }}">
+  <div class="accordion__section-content">
+
+    {% if has_title %}
+      <div class="section-heading">
+        <h2>{{ section.settings.title | escape }}</h2>
+        <span class="section-border">
+          {%- if settings.header_border_style == 'zigzag' -%}<div class="zigzag"></div>{% endif %}
+        </span>
+      </div>
+   {% endif %}
+
+    <div class="js-accordion c-accordion c-accordion--{{ unique_id }} c-accordion--custom-page desktop-12 tablet-6 mobile-3" id="c-accordion--{{ unique_id }}" {% if allow_multiple %}data-accordion-allow-multiple{% endif %}>
+     {% for block in section.blocks %}
+
+     {%- liquid
+
+       assign accordion_content_class = 'c-accordion__panel--'
+       assign accordion_content_id = accordion_content_class | append: unique_id | append: '-' | append: forloop.index
+
+       assign defaultOpen = section.settings.default_open_accordion
+
+      if block.settings.title != blank
+        assign accordion_title = block.settings.title
+      endif
+
+      if block.settings.content != blank
+        assign accordion_content = block.settings.content
+      endif
+
+     -%}
+
+       {% if accordion_title %}
+          <button class="js-accordion-header c-accordion__header" aria-expanded="false" aria-controls="{{ accordion_content_id }}" data-toggle="accordion">
+            {{ accordion_title }}
+              <span class="dropdown-arrow">
+                {% render 'snip-icons',
+                 wrapper: '.c-accordion__header',
+                 type: 'apollo',
+                 icon: 'down-carrot',
+                 classes: 'c-accordion__header--icon vib-center',
+                 size: '8px',
+                 fill: 'var(--text-color)',
+                 hover: 'var(--text-color)' %}
+              </span>
+          </button>
+           <div class="c-accordion__panel {{ accordion_content_id }} rte" id="{{ accordion_content_id }}" data-parent="#c-accordion--{{ unique_id }}">
+            <div class="c-accordion__inner">
+             {{ accordion_content }}
+            </div>
+           </div>
+       {% endif %}
+     {% endfor %}
+    </div>
+  </div>
+  <style>
+    @media screen and (min-width: 741px) {
+      .accordion__section.section-{{ section.id }} .accordion__section-content {
+        max-width: {{ section.settings.max_width }}%;
+        margin: 0 auto;
+      }
+    }
+  </style>
+</section>
+{% schema %}
+{
+  "name": "Accordion",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Accordion"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Content width less than 100% width will center on the page",
+      "default": 100
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_multiple",
+      "label": "Allow multiple accordions open at one time",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion_pane",
+      "name": "Accordion pane",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Accordion pane content</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Accordion",
+      "blocks": [
+        {
+          "type": "accordion_pane"
+        },
+        {
+          "type": "accordion_pane"
+        },
+        {
+          "type": "accordion_pane"
+        }
+      ]
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "index",
+      "page",
+      "product",
+      "search"
+    ]
+  }
+}
+{% endschema %}

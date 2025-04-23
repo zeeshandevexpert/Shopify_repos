@@ -1,0 +1,169 @@
+
+<div class="wrap-search-bar">
+  <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
+    <div class="field">
+      <input
+        class="search__input field__input"
+        id="{{ input_id }}"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.search' | t }}"
+        {%- if settings.predictive_search_enabled -%}
+          role="combobox"
+          aria-expanded="false"
+          aria-owns="predictive-search-results"
+          aria-controls="predictive-search-results"
+          aria-haspopup="listbox"
+          aria-autocomplete="list"
+          autocorrect="off"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        {%- endif -%}
+      >
+      <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+      <input type="hidden" name="options[prefix]" value="last">
+      <button
+        type="reset"
+        class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+        aria-label="{{ 'general.search.reset' | t }}"
+      >
+        <svg class="icon icon-close" aria-hidden="true" focusable="false">
+          <use xlink:href="#icon-reset">
+        </svg>
+      </button>
+      <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+        <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+        viewBox="0 0 488.4 488.4" xml:space="preserve">
+     <g>
+       <g>
+         <path d="M0,203.25c0,112.1,91.2,203.2,203.2,203.2c51.6,0,98.8-19.4,134.7-51.2l129.5,129.5c2.4,2.4,5.5,3.6,8.7,3.6
+           s6.3-1.2,8.7-3.6c4.8-4.8,4.8-12.5,0-17.3l-129.6-129.5c31.8-35.9,51.2-83,51.2-134.7c0-112.1-91.2-203.2-203.2-203.2
+           S0,91.15,0,203.25z M381.9,203.25c0,98.5-80.2,178.7-178.7,178.7s-178.7-80.2-178.7-178.7s80.2-178.7,178.7-178.7
+           S381.9,104.65,381.9,203.25z"/>
+       </g>
+     </g>
+     </svg>
+      </button>
+    </div>
+
+    {%- if settings.predictive_search_enabled -%}
+      <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search>
+        {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+      </div>
+
+      <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+    {%- endif -%}
+</form>
+
+</div>
+
+
+        <div class="scrolls-ct">
+  <div class="h-scroll-bar first">
+    {% for block in section.blocks %}  
+        {% case block.type %}
+          {% when 'slide-top' %}  
+            <div class="slide-wrapper">
+                <img src="{{ block.settings.slide |  img_url: 'master' }}" sizes="100vw" alt="" class="slide-image">
+              </div>
+        {% endcase %} 
+      {% endfor %}
+  </div>
+
+    <div class="h-scroll-bar second">
+        {% for block in section.blocks %}  
+            {% case block.type %}
+              {% when 'slide-bottom' %}  
+                <div class="slide-wrapper">
+                    <img src="{{ block.settings.slide |  img_url: 'master' }}" sizes="100vw" alt="" class="slide-image">
+                  </div>
+            {% endcase %} 
+          {% endfor %}
+    </div> 
+
+</div>
+
+<div class="logo_container full-mobile">
+  {% comment %} <span class="desc">Trusted by</span>  {% endcomment %}
+
+  <div class="logos">
+    {% for block in section.blocks %}  
+        {% case block.type %}
+          {% when 'icon-box' %}  
+                <img src="{{ block.settings.icon |  img_url: 'master' }}">
+        {% endcase %} 
+      {% endfor %}
+  </div>
+</div>
+
+
+<script type="text/javascript">
+	$(function(){
+		$('.h-scroll-bar.first').infiniteslide({
+			'speed': 50, //speed this is px/min
+			'direction': 'left', //choose  up/down/left/right
+			'pauseonhover': false, //if true,stop onmouseover
+			'responsive': false, //width/height recalculation on window resize. child element's width/height define %/vw/vh,this set true.
+			'clone': 2 //if child elements are too few (elements can't "infinite"), set 2 or over.
+		});
+		$('.h-scroll-bar.second').infiniteslide({
+			'speed': 50, //speed this is px/min
+			'direction': 'right', //choose  up/down/left/right
+			'pauseonhover': false, //if true,stop onmouseover
+			'responsive': false, //width/height recalculation on window resize. child element's width/height define %/vw/vh,this set true.
+			'clone': 2 //if child elements are too few (elements can't "infinite"), set 2 or over.
+		});
+	});
+</script>
+
+
+{% schema %}
+    {
+        "name": "Slides section",
+        "settings": [
+    
+            ],
+            "blocks": [
+              {
+                "type": "slide-top",
+                "name": "Top Slide",
+                "settings": [
+                  {
+                    "id": "slide",
+                    "type": "image_picker",
+                    "label": "Slide"
+                  }
+                ]
+              },
+              {
+                "type": "slide-bottom",
+                "name": "Bottom Slide",
+                "settings": [
+                  {
+                    "id": "slide",
+                    "type": "image_picker",
+                    "label": "Slide"
+                  }
+                ]
+              },
+              {
+                "type": "icon-box",
+                "name": "Icon Box",
+                "settings": [
+                  {
+                    "id": "icon",
+                    "type": "image_picker",
+                    "label": "Icon"
+                  }
+                ]
+              }
+          ],
+            "presets": [
+                {
+                    "name": "Slides section"
+                }   
+            ]
+    }
+    {% endschema %}

@@ -1,0 +1,43 @@
+{% assign name_handle = name | handle %}
+{% assign menu_handle = menu | handle %}
+
+{% assign has_tags = false %}
+{% for link in linklists[menu_handle].links %}
+{% assign lh = link.title | handle %}
+{% if collection.all_tags contains lh or collection.all_tags contains link.title %}
+{% assign has_tags = true %}
+{% endif %}
+{% endfor %}
+
+{% if has_tags and selectBox != true %}
+<div id="{{name_handle}}-filter" class="filter-group filter-group-class">
+  <h4 data-name="{{name}}"><a href="#" class="remove" data-type="{{name_handle}}">&times;</a><span class="fg-title">{{name}}</span></h4>
+  <div class="fg">
+    <div class="fg-inner">
+    {%- for link in linklists[menu_handle].links -%}
+    {% assign lh = link.title | handle %}
+    {% if collection.all_tags contains link.handle or collection.all_tags contains link.title %}
+    <div class="filter-elem swatch-style">
+      <input id="price-{{lh}}" type="radio" name="{{name_handle}}" value="{{link.handle}}" class="coll-filter-class" {% if current_tags contains lh or current_tags contains link.title %}checked{% endif %} />
+      <label for="price-{{lh}}">{{link.title}}</label>
+    </div>
+    {% endif %}
+    {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if has_tags and selectBox == true %}
+<div id="{{name_handle}}-filter" class="filter-group" >
+  <select name="{{name_handle}}" class="coll-filter-class">
+    <option value="">{{name}}</option>
+    {%- for link in linklists[menu_handle].links -%}
+    {% assign lh = link.title | handle %}
+    {% if collection.all_tags contains link.handle or collection.all_tags contains link.title %}
+    <option value="{{link.handle}}" {% if current_tags contains lh or current_tags contains link.title %}selected{% endif %} >{{link.title}}</option>
+    {% endif %}
+    {%- endfor -%}
+  </select>
+</div>
+{% endif %}

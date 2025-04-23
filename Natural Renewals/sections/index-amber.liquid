@@ -1,0 +1,122 @@
+<div class="container-style container-medium">
+    <div class="home-amber-row">
+        <div class="home-amber-col-left">
+            <div class="home-amber-desktop-only">
+                <div class="standard-cover">
+                    {% include "media-block" %}
+                </div>
+            </div>
+        </div>
+        <div class="home-amber-col-right">
+            <div class="home-amber-top">
+                <h2>{{ section.settings.title }}</h2>
+                <p>{{ section.settings.description }}</p>
+            </div>
+            <div class="home-amber-mobile-only">
+                <div class="standard-cover">
+                    {% include "media-block" %}
+                </div>
+            </div>
+            <div class="home-amber-bottom">
+                {% for block in section.blocks %}
+                    <div class="home-amber-info">
+                        <h4>{{ block.settings.title }}</h4>
+                        <a href="{{ block.settings.button_link }}">{{ block.settings.button_title }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Index - Amber",
+  "tag": "section",
+  "class": "home-amber-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "header",
+      "content": "Media Block"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "image"
+        },
+        {
+          "value": "vimeo_youtube_video",
+          "label": "YouTube or Vimeo Video"
+        },
+        {
+          "value": "video_file",
+          "label": "HTML5 Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video_url",
+      "id": "vimeo_youtube_video",
+      "label": "Video",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "video_file",
+      "label": "HTML5 Video File URL"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Point",
+      "type": "point",
+      "settings":[
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Index - Amber"
+    }
+  ]
+}
+{% endschema %}

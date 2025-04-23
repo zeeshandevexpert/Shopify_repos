@@ -1,0 +1,13 @@
+.track-order__login-box {
+  border: 1px solid #c5c5c5;
+  padding: 30px;
+  max-width: 500px;
+}
+.track-order__login-box + .track-order__login-box {
+  margin-left: 30px;
+}
+
+.track-order-login__btn {
+  width: 100%;
+  margin-bottom: 19.44444px;
+}

@@ -1,0 +1,261 @@
+{
+  "sections": {
+    "d8c84fdb-ab99-4a37-9c70-bb239fdf0275": {
+      "type": "video-banner",
+      "disabled": true,
+      "settings": {
+        "video_url": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/fc81a37815f74c1eabd9a009c0fe5248.mp4",
+        "video_url_mobile": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5b6e13ee3b02456b93be80239e10ae94.mp4",
+        "image_overlay_opacity": 0,
+        "video_height": "56.25",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "video_height_mobile": "100",
+        "show_text_below": true
+      }
+    },
+    "1d615018-233d-46e7-892d-06897eae6dc0": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "This Just In",
+            "heading_size": "h1"
+          }
+        },
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Shop our newest case",
+            "button_link_1": "shopify:\/\/collections\/new-arrivals",
+            "button_style_secondary_1": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0",
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Wildflower-Cases-caroline-Pro-Launch-Hero-01_18bb4acb-8bba-45a2-8316-ffd4b19fb548.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Wildflower-Cases-Natalie-Krim-MB.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "show_text_below": false
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "38dc023c-d847-4770-81df-9d1cf13129a1": {
+          "type": "quick_link",
+          "disabled": true,
+          "settings": {
+            "collection_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "38dc023c-d847-4770-81df-9d1cf13129a1"
+      ],
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2": {
+          "type": "marketing_tile",
+          "disabled": true,
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify:\/\/shop_images\/updated-pink-posie-airtag-marketing-tile_692ff93d-b4e3-4537-97f3-e5678c2670fb.jpg",
+            "link": "shopify:\/\/collections\/accessories",
+            "position": 5,
+            "title": "For maximum cuteness..(*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ",
+            "paragraph": "<p>Browse our selection of AirTag keychains and iPhone camera bling<\/p>",
+            "button_text": "Shop Accessories",
+            "hide_text_mobile": true
+          }
+        }
+      },
+      "block_order": [
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2"
+      ],
+      "settings": {
+        "collection_override": "",
+        "columns_desktop": 4,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "add_to_cart",
+        "shop_by_size": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "bb9350fe-1b3b-41b2-90cf-5c3d1a6d42c1": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "Go Behind the Scenes With Us:",
+        "heading_size": "h1",
+        "cover_image": "shopify:\/\/shop_images\/1ff2037114bb5e3418efe94a74bfd03e.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=qnU7yD0EdrY",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "c7a5f3d1-8143-4ebd-b3ef-1e0b227abac8": {
+      "type": "foursixty",
+      "blocks": {
+        "dc9d77f7-0cfa-416e-8436-4562e42bf653": {
+          "type": "title",
+          "settings": {
+            "title": "Shop Instagram"
+          }
+        },
+        "56cbff19-6c51-4178-b4ec-bf18ae94ae08": {
+          "type": "feed",
+          "settings": {
+            "feed_id": "wildflower-cases",
+            "total_images": 7,
+            "big_first_image": false,
+            "per_row": 5,
+            "image_margin": 5,
+            "feed_type": "slider"
+          }
+        },
+        "65220432-041d-4536-91d8-23e2112853cf": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/pages\/shop-wildflowercases-instagram",
+            "link_text": "Shop Our Instagram",
+            "button_style": "button"
+          }
+        }
+      },
+      "block_order": [
+        "dc9d77f7-0cfa-416e-8436-4562e42bf653",
+        "56cbff19-6c51-4178-b4ec-bf18ae94ae08",
+        "65220432-041d-4536-91d8-23e2112853cf"
+      ],
+      "settings": {
+        "width": "page-width",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "margins": 20,
+        "border_top": true,
+        "text_align": "center"
+      }
+    },
+    "e5a4fc4b-84c9-458a-bd2c-dde550144925": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14959056158768__e5a4fc4b-84c9-458a-bd2c-dde550144925-16849603222ed3a639-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Looking for a stylish and durable case for your iPhone 13? Look no further than Wildflower Cases' latest collection of cases. With a range of trendy designs to choose from, including floral prints, bold colors, and fun patterns, you're sure to find a case that fits your unique style. Each case is crafted with precision and care, ensuring that you receive a high-quality product that not only looks great but also provides long-lasting protection for your phone. Whether you're looking for a case that's understated or one that makes a statement, Wildflower Cases has you covered. With a reputation for delivering top-notch products and exceptional customer service, Wildflower Cases is the go-to destination for iPhone users who want a fashionable case that reflects their personality. So, if you want to add some style and protection to your iPhone 13, check out Wildflower Cases today.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14959056158768__e5a4fc4b-84c9-458a-bd2c-dde550144925-16849603222ed3a639-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "a0486b2e-2255-4e39-b83a-93998ea2af53": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14959056158768__a0486b2e-2255-4e39-b83a-93998ea2af53-16867198796ff4fbed-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Looking for a stylish and durable case for your iPhone 14 Plus? Look no further than Wildflower Cases' latest collection of cases. With a range of trendy designs to choose from, including floral prints, bold colors, and fun patterns, you're sure to find a case that fits your unique style. Each case is crafted with precision and care, ensuring that you receive a high-quality product that not only looks great but also provides long-lasting protection for your phone. Whether you're looking for a case that's understated or one that makes a statement, Wildflower Cases has you covered. With a reputation for delivering top-notch products and exceptional customer service, Wildflower Cases is the go-to destination for iPhone users who want a fashionable case that reflects their personality. So, if you want to add some style and protection to your iPhone 14 Plus, check out Wildflower Cases today.<\/p>"
+          }
+        },
+        "template--14959056158768__a0486b2e-2255-4e39-b83a-93998ea2af53-16867198796ff4fbed-2": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--14959056158768__a0486b2e-2255-4e39-b83a-93998ea2af53-16867198796ff4fbed-1",
+        "template--14959056158768__a0486b2e-2255-4e39-b83a-93998ea2af53-16867198796ff4fbed-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "marketing_tile_section_8cqAGJ": {
+      "type": "marketing-tile-section",
+      "blocks": {
+        "quote_tile_37i6qc": {
+          "type": "quote_tile",
+          "settings": {
+            "tile_size": "full-width",
+            "link": "",
+            "position": 5,
+            "title": "I love Wildflower Cases, I've had another one for more than a year. It's cute and protective. I decided to get another one for fun and I love it SO SO much. It's adorable and I get so many compliments.",
+            "author": "Kaelyn M."
+          }
+        }
+      },
+      "block_order": [
+        "quote_tile_37i6qc"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "d8c84fdb-ab99-4a37-9c70-bb239fdf0275",
+    "1d615018-233d-46e7-892d-06897eae6dc0",
+    "banner",
+    "product-grid",
+    "bb9350fe-1b3b-41b2-90cf-5c3d1a6d42c1",
+    "c7a5f3d1-8143-4ebd-b3ef-1e0b227abac8",
+    "e5a4fc4b-84c9-458a-bd2c-dde550144925",
+    "a0486b2e-2255-4e39-b83a-93998ea2af53",
+    "marketing_tile_section_8cqAGJ"
+  ]
+}

@@ -1,0 +1,19 @@
+<section class="collection__description-section row grid__wrapper"
+data-section-id="{{ section.id }}"
+data-aos="{{ settings.scroll_animation }}">
+  <div class="collection__description span-12">
+    {% if collection.description contains '[#banner_image]' or collection.description contains '[#banner_caption]' %}
+      <div class="rte">{{ collection.description | split: '[#' | first }}</div>
+    {% else %}
+       <div class="rte">{{ collection.description }}</div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Description",
+  "settings": [
+  ]
+}
+{% endschema %}

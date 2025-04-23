@@ -1,0 +1,9 @@
+{% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
+
+{% if collection.handle contains 'pre-sale' %}
+	{% section 'collection-template' %}
+{% else %}
+	{% section 'collection-template' %}
+{% endif %}

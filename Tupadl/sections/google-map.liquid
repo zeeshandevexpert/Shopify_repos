@@ -1,0 +1,23 @@
+<div class="google-map">
+    <div class="container">
+        {{ section.settings.embed_code }}
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Google Map",
+    "settings": [
+            {
+                "type": "html",
+                "id": "embed_code",
+                "label": "Embed Code"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Google Map"
+            }
+        ]
+}
+{% endschema %}

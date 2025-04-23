@@ -1,0 +1,37 @@
+{% comment %} {{ "custom-blog.css" |  asset_url |  stylesheet_tag }} {% endcomment %}
+
+<div class="ba-latest-stories">
+    <div class="ba-latest-stories__container ba-container">
+        <div class="ba-latest-stories__wrapper">
+          <div class="ba-latest-stories__left">
+            <h2 class="ba-latest-stories__header">Latest Stories</h2>
+          </div>
+          <div class="ba-latest-stories__right">
+        {% assign blogs_to_display = 'news,press' | split: ',' %}
+          {% for blog_handle in blogs_to_display %}
+            {% assign blog = blogs[blog_handle] %}
+            {% if blog %}
+              {% for article in blog.articles limit:1 %}
+                <a href="{{ article.url }}" class="ba-card-block">
+                <div class="ba-card-media">
+                {% if article.image %}
+                  <div class="ba-image">
+                     <img src="{{ article | img_url: 'large' }}">
+                  </div>
+                {% endif %}
+                </div>
+                <div class="ba-content-block">
+                  <p class="ba-card__subtitle">{{ blog.title }}</p>
+                  <p class="ba-card__title ba-card__title--large">{{ article.title }}</p>
+                </div>
+              </a>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+
+             
+
+          </div>
+        </div>
+    </div>
+  </div>

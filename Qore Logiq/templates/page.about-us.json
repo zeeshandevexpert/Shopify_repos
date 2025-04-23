@@ -1,0 +1,145 @@
+{
+  "sections": {
+    "main": {
+      "type": "default-banner-section",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/Defaul_Bg.png",
+        "left_image": "shopify:\/\/shop_images\/left_img.png",
+        "heading": "ABOUT US",
+        "text": "QORE LOGIC is the top plus size abdominal binder company\u2028recommended by physicians, nurses, hospitals, doulas, fitness experts and of course, new moms.",
+        "right_image": "shopify:\/\/shop_images\/right_image.png"
+      }
+    },
+    "iconlist_section_WJcii": {
+      "type": "iconlist-section",
+      "blocks": {
+        "icons_BqkheA": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_2.png",
+            "icon_heading": "HIGH PERFORMANCE\nCOMPRESSION",
+            "Subtitle": "3-tier compression. Provides smooth shaping under clothes."
+          }
+        },
+        "icons_N3AMKe": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_149.png",
+            "icon_heading": "EXTRA CHEST\nCOMPRESSION",
+            "Subtitle": "Minimizes the look of gynecomastia."
+          }
+        },
+        "icons_LhXP3d": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_3.png",
+            "icon_heading": "TOP NOTCH MATERIAL",
+            "Subtitle": "Blend of 93% Nylon, 7% Elastane holds firm."
+          }
+        },
+        "icons_DWWWMX": {
+          "type": "icons",
+          "settings": {
+            "image1": "shopify:\/\/shop_images\/Group_4.png",
+            "icon_heading": "BREATHABLE FABRIC",
+            "Subtitle": "Offers comfort, support and stability."
+          }
+        }
+      },
+      "block_order": [
+        "icons_BqkheA",
+        "icons_N3AMKe",
+        "icons_LhXP3d",
+        "icons_DWWWMX"
+      ],
+      "settings": {
+      }
+    },
+    "product_info_section_EC4Dmz": {
+      "type": "product-info-section",
+      "blocks": {
+        "icon_zmiDnp": {
+          "type": "icon",
+          "settings": {
+            "heading": "Transform Your Shape",
+            "text": "Take back your physique with your compression tank tops for men from QoreLogiq"
+          }
+        },
+        "icon_J3pMG3": {
+          "type": "icon",
+          "settings": {
+            "heading": "",
+            "text": ""
+          }
+        },
+        "icon_L3pEBP": {
+          "type": "icon",
+          "settings": {
+            "heading": "All Right Places",
+            "text": "Specifically designed to minimize gynocomastia, your mens shaper vest slims your chest, tummy and sides."
+          }
+        },
+        "icon_DXrKLw": {
+          "type": "icon",
+          "settings": {
+            "heading": "Top Notch Material",
+            "text": "Keep moobs out of sight with your gyno compression shirts for men constructed from a high-quality blend of 93% nylon and 7% elastane."
+          }
+        }
+      },
+      "block_order": [
+        "icon_zmiDnp",
+        "icon_J3pMG3",
+        "icon_L3pEBP",
+        "icon_DXrKLw"
+      ],
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/Mask_group_1.png",
+        "heading": "GYNECOSMATIA COMPRESSION SHIRTS FOR MEN",
+        "sub_heading": "LIVE LIFE BETTER",
+        "text": "",
+        "btn_text": "",
+        "btn_url": ""
+      }
+    },
+    "product_info_section_WmWjbW": {
+      "type": "product-info-section",
+      "blocks": {
+        "icon_QDcJKR": {
+          "type": "icon",
+          "settings": {
+            "heading": "Boost Confidence in Your Appearance",
+            "text": "Look slimmer in your new tummy tuck binder while giving your abdominal are the support it needs."
+          }
+        },
+        "icon_7ipjcN": {
+          "type": "icon",
+          "settings": {
+            "heading": "Say Goodbye to Your Abdominal Pain",
+            "text": "This Plus Size Abdominal Binder helps support your belly, waist & hips post-pregnancy and makes you forget all your abdominal injuries."
+          }
+        }
+      },
+      "block_order": [
+        "icon_QDcJKR",
+        "icon_7ipjcN"
+      ],
+      "settings": {
+        "reverse": true,
+        "image": "shopify:\/\/shop_images\/Group_162_1.png",
+        "heading": "PLUS SIZE ABDOMINAL BINDER",
+        "sub_heading": "REGAIN YOUR FREEDOM",
+        "text": "",
+        "btn_text": "",
+        "btn_url": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "iconlist_section_WJcii",
+    "product_info_section_EC4Dmz",
+    "product_info_section_WmWjbW"
+  ]
+}

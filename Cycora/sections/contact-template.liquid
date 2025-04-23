@@ -1,0 +1,104 @@
+
+    <div class="container-style contact-intro-container">
+        <div class="contact-intro-row">
+            <div class="contact-intro-col-left">
+                <h2>contact us</h2>
+                <p>after submission, we’ll be in touch shortly</p>
+            </div>
+            <div class="contact-intro-col-right">
+                <h3>kindly complete this form</h3>
+                {% form 'contact' %}
+
+                {% if form.posted_successfully? %}
+                    <div class="contact-intro-input-row">
+                        <div style="color:green">Your message has been sent successfully!</div>
+                    </div>
+                {% else %}
+                    {{ form.errors | default_errors }}
+
+                    <div class="contact-intro-input-row">
+                        <div class="contact-intro-input-col">
+                            <input type="email" name="contact[email]" placeholder="email*" required="required">
+                        </div>
+                        <div class="contact-intro-input-col">
+                            <input type="text" name="contact[name]" placeholder="full name*" required="required">
+                        </div>
+                        <div class="contact-intro-input-col">
+                            <input type="text" name="contact[company_name]" placeholder="company name">
+                        </div>
+                        <div class="contact-intro-input-col">
+                            <input type="text" name="contact[company_website]" placeholder="company website">
+                        </div>
+                        <div class="contact-intro-input-col contact-intro-input-col-fullwidth">
+                            <input type="text" name="contact[subject]" placeholder="message subject*">
+                        </div>
+                        <div class="contact-intro-input-col contact-intro-input-col-fullwidth">
+                            <textarea name="contact[message]" placeholder="enter your message here"></textarea>
+                        </div>
+                    </div>
+                    <div class="contact-intro-input-submit">
+                        <input type="submit" value="send">
+                    </div>
+                {% endif %}
+
+
+
+               {% endform %}
+
+            </div>
+        </div>
+
+    </div>
+
+{% schema %}
+{
+  "name": "Contact - Template",
+  "tag": "section",
+  "class": "contact-intro-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sliders_title",
+      "label": "Sliders Title"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Slide",
+      "type": "slide",
+      "settings":[
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact - Template"
+    }
+  ]
+}
+{% endschema %}

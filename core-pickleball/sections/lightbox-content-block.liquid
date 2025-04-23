@@ -1,0 +1,118 @@
+
+    
+    <div class="user-block-container">
+
+    <div class="user_block__header">
+      <h2 class="user_block__heading">{{ section.settings.heading }}</h2>
+    </div>
+
+      {% for block in section.blocks %}
+        <div class="user-image" onclick="toggleUserData('{{ block.id }}')">
+            <img src="{{ block.settings.image | img_url: 'master' }}" alt="User Image">
+            <h2 class="name">{{ block.settings.name }}
+                <span class="view-details">Click to view Details</span>
+            </h2>
+           
+          </div>
+
+            <div class="image-blurb-content__holder" id="user-data-{{ block.id }}" style="display: none;">
+                <div class="content-wrapper{% if block.settings.revert %} revert{% endif %}">
+                    <div class="pop-container">
+                        <div id="close-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 30 30">
+                        <path d="M 7 4 C 6.744125 4 6.4879687 4.0974687 6.2929688 4.2929688 L 4.2929688 6.2929688 C 3.9019687 6.6839688 3.9019687 7.3170313 4.2929688 7.7070312 L 11.585938 15 L 4.2929688 22.292969 C 3.9019687 22.683969 3.9019687 23.317031 4.2929688 23.707031 L 6.2929688 25.707031 C 6.6839688 26.098031 7.3170313 26.098031 7.7070312 25.707031 L 15 18.414062 L 22.292969 25.707031 C 22.682969 26.098031 23.317031 26.098031 23.707031 25.707031 L 25.707031 23.707031 C 26.098031 23.316031 26.098031 22.682969 25.707031 22.292969 L 18.414062 15 L 25.707031 7.7070312 C 26.098031 7.3170312 26.098031 6.6829688 25.707031 6.2929688 L 23.707031 4.2929688 C 23.316031 3.9019687 22.682969 3.9019687 22.292969 4.2929688 L 15 11.585938 L 7.7070312 4.2929688 C 7.5115312 4.0974687 7.255875 4 7 4 z"></path>
+                    </svg></div>
+                        <div class="left-block">
+                            <figure class="image-block">
+                                <img decoding="async"
+                                    src="{{ block.settings.image |  img_url: 'master' }}"
+                                    class="image-split-content__img" alt=""
+                                >
+
+                            </figure>
+                        </div>
+                        <div class="right-block">
+                            <div class="content-block">
+                                {% comment %} <div class="sub-heading">{{ section.settings.sub_heading }}</div> {% endcomment %}
+                                {% comment %} <h2 class="heading">{{ block.settings.name }}</h2> {% endcomment %}
+                                <div class="content">
+                                {{ block.settings.content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                </div>
+            </div>
+      {% endfor %}
+    </div>
+
+    
+    <script>
+        function toggleUserData(blockId) {
+            console.log('blockId:', blockId);
+          var userDataDiv = document.getElementById('user-data-' + blockId);
+          // Toggle the visibility of the user data
+          if (userDataDiv.style.display === 'none') {
+            userDataDiv.style.display = 'block';
+          } else {
+            userDataDiv.style.display = 'none';
+          }
+        }
+
+            // Close the popup when the close icon is clicked (for all popups)
+        $(".image-blurb-content__holder #close-icon").click(function() {
+            // Find the parent popup of the clicked close icon and hide it
+            $(this).closest('.image-blurb-content__holder').css("display", "none");
+        });
+
+      </script>
+    
+
+    {% schema %}
+        {
+          "name": "User Data Block",
+          "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Heading"
+            }
+          ],
+          "blocks": [
+            {
+              "type": "user_block",
+              "name": "User Block",
+              "settings": [
+                {
+                "type": "checkbox",
+                "id": "revert",
+                "label": "Column Reverse"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Column Image"
+            },
+
+            {
+                "type": "text",
+                "id": "name",
+                "label": "Name"
+            },
+            {
+                "type": "richtext",
+                "id": "content",
+                "label": "Content"
+            }
+              ]
+            }
+          ],
+          "presets": [
+            {
+              "name": "User Data Block",
+              "category": "Custom"
+            }
+          ]
+        }
+        {% endschema %}

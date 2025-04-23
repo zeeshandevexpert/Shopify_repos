@@ -1,0 +1,42 @@
+<section>
+  <h2 class="title">{{ section.settings.title }}</h2>
+  <div class="img-part">
+    <img class="lazyload" data-src="{{ section.settings.image | img_url: '1090x' }}" />
+  </div>
+  {{ section.settings.text }}
+  
+  <img class="lazyload story-back-img img1" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+  <img class="lazyload story-back-img img2" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+  <img class="lazyload story-back-img img3" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+  <img class="lazyload story-back-img img4" data-src="//cdn.shopify.com/s/files/1/0404/4773/8021/files/story-back-icon.png?v=1617646448" />
+</section>
+
+{% schema %}
+  {
+    "name": "Mission Section",
+	"class":  "story-mission story-index",
+    "settings": [
+		{
+			"type"  :  "text",
+			"id"    :  "title",
+			"label" :  "Title"
+		},
+		{
+			"type"  :  "image_picker",
+			"id"    :  "image",
+			"label" :  "Mission Image"
+		},
+		{
+			"type"  :  "richtext",
+			"id"    :  "text",
+			"label" :  "Mission Text"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

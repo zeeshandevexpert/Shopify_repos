@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "1654504858337e8b5e": {
+      "type": "material-head",
+      "settings": {
+      }
+    },
+    "1654505687450c0fd1": {
+      "type": "material-related-products",
+      "disabled": true,
+      "settings": {
+        "title_plp": "material in use",
+        "view_all_link": "shopify:\/\/collections\/all",
+        "title_plp_bottom": "interested in partnering with us?",
+        "learn_more_link": "shopify:\/\/pages\/overview"
+      }
+    }
+  },
+  "order": [
+    "1654504858337e8b5e",
+    "1654505687450c0fd1"
+  ]
+}

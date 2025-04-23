@@ -1,0 +1,67 @@
+
+{% comment %} PLEASE do not change this file {% endcomment %}   
+
+{%- liquid
+ assign shipping_country_code = localization.country.iso_code  
+ assign shipping_state_code = blank 
+ assign billing_country_code = localization.country.iso_code 
+-%}
+{%- liquid
+if checkout.shipping_address.country_code != blank     
+     assign shipping_country_code = checkout.shipping_address.country_code
+     assign shipping_state_code = checkout.shipping_address.province_code  
+ else if checkout.billing_address.country_code != blank     
+    assign shipping_country_code = checkout.billing_address.country_code   
+     assign shipping_state_code = checkout.billing_address.province_code   
+ endif   
+-%}
+{%- liquid
+ if checkout.billing_address.country_code != blank    
+     assign billing_country_code = checkout.billing_address.country_code 
+else if checkout.shipping_address.country_code != blank     
+     assign billing_country_code = checkout.shipping_address.country_code  
+ endif 
+-%}
+
+{%- liquid
+ assign tagsToCheck = "" | downcase | split: "," 
+assign checkout_customer_tags = checkout.customer.tags | downcase
+assign found = false 
+-%}
+
+{%- liquid
+ for item in tagsToCheck 
+   if checkout_customer_tags contains item 
+     assign found = true
+     break 
+   endif
+ endfor 
+-%}
+{% if found %}
+{% else %}
+    <script>   
+    GLBE_PARAMS = {  
+            environment: "webservices.global-e.com",   
+            siteId: "7ce243a1e1a2",   
+            isTokenEnabled: "true", 
+            billingCountry: "{{ billing_country_code }}",  
+            shippingCountry: "{{ shipping_country_code }}",    
+            shippingStateCode: "{{ shipping_state_code }}", 
+            shop: "{{ shop.permanent_domain }}",        
+            culture: "{{ locale }}",   
+            merchantId: "1158",   
+            operatedCountries: ["AD","AE","AG","AI","AL","AM","AO","AR","AT","AU","AW","AZ","BA","BB","BD","BE","BF","BG","BH","BJ","BL","BM","BN","BO","BR","BS","BT","BW","BZ","CA","CH","CI","CK","CL","CM","CN","CO","CR","CV","CW","CY","CZ","DE","DJ","DK","DM","DO","DZ","EC","EE","EG","ES","ET","FI","FJ","FK","FO","FR","GA","GB","GD","GE","GF","GG","GH","GI","GL","GM","GN","GP","GQ","GR","GT","GW","GY","HK","HN","HR","HT","HU","ID","IE","IL","IM","IN","IS","IT","JE","JM","JO","JP","KE","KG","KH","KI","KM","KN","KR","KW","KY","KZ","LA","LB","LC","LI","LK","LS","LT","LU","LV","MA","MC","MD","ME","MF","MG","MK","MN","MO","MQ","MR","MS","MT","MU","MV","MW","MX","MY","MZ","NA","NC","NG","NI","NL","NO","NP","NR","NU","NZ","OM","PA","PE","PF","PG","PH","PK","PL","PT","PY","QA","RE","RO","RS","RW","SA","SB","SC","SE","SG","SI","SK","SL","SM","SN","SR","ST","SV","SZ","TC","TD","TG","TH","TL","TM","TN","TO","TR","TT","TV","TW","TZ","UG","UY","UZ","VA","VC","VE","VG","VN","VU","WF","WS","ZA","ZM","ZW"],   
+            isOperatedCountry: () => GLBE_PARAMS.operatedCountries.indexOf(GLBE_PARAMS.shippingCountry) > -1,   
+            checkoutId: Shopify.Checkout.token,   
+            amount: {{ checkout.total_price }},  
+            integrationAppUrl: "https://crossborder-integration.global-e.com/",
+            suppressNativeAmazonPay: "true",
+            isIntegrationEnabled: "true"
+    };     
+    </script> 
+
+    {% if "AD,AE,AG,AI,AL,AM,AO,AR,AT,AU,AW,AZ,BA,BB,BD,BE,BF,BG,BH,BJ,BL,BM,BN,BO,BR,BS,BT,BW,BZ,CA,CH,CI,CK,CL,CM,CN,CO,CR,CV,CW,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,ES,ET,FI,FJ,FK,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GT,GW,GY,HK,HN,HR,HT,HU,ID,IE,IL,IM,IN,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LS,LT,LU,LV,MA,MC,MD,ME,MF,MG,MK,MN,MO,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PT,PY,QA,RE,RO,RS,RW,SA,SB,SC,SE,SG,SI,SK,SL,SM,SN,SR,ST,SV,SZ,TC,TD,TG,TH,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UG,UY,UZ,VA,VC,VE,VG,VN,VU,WF,WS,ZA,ZM,ZW" contains shipping_country_code %} 
+    {% comment %} <script src = "https://webservices.global-e.com/scripts/platforms/shopify/checkout.js" async></script>   {% endcomment %}
+    <script src="{{ 'checkout.js' | asset_url }}" defer></script>
+    {% endif %}
+{% endif %}

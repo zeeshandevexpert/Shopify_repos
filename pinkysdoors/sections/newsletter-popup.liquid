@@ -1,0 +1,140 @@
+<div id="newsletter-popup-wrapper"
+     data-section-id="{{ section.id }}" 
+     data-section-type="newsletter-popup" 
+     data-show-newsletter-popup="{{section.settings.show_newsletter_popup}}"
+     data-newsletter-popup-delay="{{section.settings.newsletter_popup_delay}}"
+     data-newsletter-cookie-expiration="{{section.settings.newsletter_popup_expiration}}"
+     style="display: none;"
+     >
+  <div id="newsletter-popup" class="newsletter-popup__inner flex flex--align-center" style="background-color: {{section.settings.bg_color}};">
+    {% if section.settings.image %}
+    <div class="lazyload newsletter-popup__image medium-up--one-third small--hide"
+         style="background-image: url({{section.settings.image | img_url: '10x'}});"
+         data-bgset="{% include 'bgset', image: section.settings.image %}"
+         data-sizes="auto">
+
+      ><div style="padding-bottom: 100%;"></div>
+    </div>
+    {% endif %}
+    <div class="newsletter-popup__form medium-up--two-thirds small--one-whole">
+      
+    {% if section.settings.section_title != blank %}
+    <h2 class="h4">{{ section.settings.section_title | newline_to_br  }}</h2>
+    {% endif %}
+    {% if section.settings.subheading != blank %}
+    {{ section.settings.subheading }}
+    {% endif %}
+    {% include 'klaviyo-signup', id:'popup', list_id:'JKYa2n' %}
+    <small>All emails include an unsubscribe link. You may opt-out at any time.<br/>See our <a href="/pages/privacy-policy">privacy policy</a></small>
+    </div>
+  </div>
+</div>
+
+<script>
+  var showNewsletterPopup = {{section.settings.show_newsletter_popup}},
+      showNewsletterWhere = [],
+      showNewsletterDelay = {{section.settings.newsletter_popup_delay}},
+      showNewsletterExpiration = {{section.settings.newsletter_popup_expiration}};
+      {%- if section.settings.show_homepage -%}
+      showNewsletterWhere.push('template-index');
+      {%- endif -%}
+  	  {%- if section.settings.show_plp -%}
+      showNewsletterWhere.push('template-collection');
+      {%- endif %}
+      {%- if section.settings.show_pdp -%}
+      showNewsletterWhere.push('template-product');
+      {%- endif -%}
+      {%- if section.settings.show_blog -%}
+      showNewsletterWhere.push('template-blog');
+      {%- endif -%}
+</script>
+
+{% schema %}
+  {
+    "name": "Newsletter Popup",
+    "class": "newsletter-popup",
+    "settings": [
+	  {
+		"type":"checkbox",
+		"id":"show_newsletter_popup",
+		"label":"Show Popup?"
+	  },
+	  {
+		"type":"text",
+		"id":"newsletter_popup_delay",
+		"label":"Delay",
+		"default":"0",
+		"info":"Show popup after xx seconds on page load"
+	  },
+      {
+		"type":"image_picker",
+		"id":"image",
+		"label":"Image"
+	  },
+	  {
+		"type":"text",
+		"id":"newsletter_popup_expiration",
+		"label":"Cookie Expiration",
+		"default":"90",
+		"info":"Cookie expires after xx days"
+	  },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": {
+          "en": "Heading",
+          "de": "Titel",
+          "fr": "En-tête"
+        },
+        "default": {
+          "en": "Subscribe to our newsletter",
+          "de": "Unseren Newsletter abonnieren",
+          "fr": "S'inscrire à la newsletter"
+        }
+      },
+	  {
+		"type":"color",
+		"id":"bg_color",
+		"label":"Background Color"
+	  },
+      {
+        "type": "richtext",
+        "id": "subheading",
+        "label": {
+          "en": "Text",
+          "de": "Unter-Überschrift",
+          "fr": "Sous-titre"
+        }
+      },
+	  {
+		"type":"header",
+		"content":"Page-Specific Settings"
+	  },
+      {
+        "type": "checkbox",
+        "id": "show_homepage",
+        "default": true,
+        "label": "Show on Homepage?"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_plp",
+        "default": true,
+        "label": "Show on PLP?"
+      }
+    ],
+    "presets": [{
+      "name": {
+        "en": "Newsletter Popup",
+        "de": "Newsletter Popup",
+        "fr": "Newsletter Popup"
+      },
+      "category": {
+        "en": "Promotional",
+        "de": "Promotional",
+        "fr": "Promotionnel"
+      }
+    }]
+  }
+{% endschema %}
+

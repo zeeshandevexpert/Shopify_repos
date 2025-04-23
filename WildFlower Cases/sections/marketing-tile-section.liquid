@@ -1,0 +1,146 @@
+<div class="grid">
+
+{%- liquid
+for block in section.blocks
+    render 'card-marketing-tile', block: block, media_size: section.settings.image_ratio
+endfor
+-%}
+</div>
+
+{% schema %}
+{
+  "name": "Marketing Quote Tile",
+  "class": "section",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "marketing_tile",
+      "name": "Marketing Tile",
+      "settings": [
+        {
+          "type": "select",
+          "id": "tile_size",
+          "default": "1x",
+          "label": "Tile size",
+          "options": [
+            {
+              "value": "1x",
+              "label": "1x"
+            },
+            {
+              "value": "2x",
+              "label": "2x"
+            },
+            {
+              "value": "full-width",
+              "label": "Full width"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "range",
+          "id": "position",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "label": "Position",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "paragraph",
+          "label": "Paragraph"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_text_mobile",
+          "label": "Hide text on mobile",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "quote_tile",
+      "name": "Quote Tile",
+      "settings": [
+        {
+          "type": "select",
+          "id": "tile_size",
+          "default": "1x",
+          "label": "Tile size",
+          "options": [
+            {
+              "value": "1x",
+              "label": "1x"
+            },
+            {
+              "value": "2x",
+              "label": "2x"
+            },
+            {
+              "value": "full-width",
+              "label": "Full width"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "range",
+          "id": "position",
+          "min": 0,
+          "max": 24,
+          "step": 1,
+          "label": "Position",
+          "default": 5
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "quote"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marketing Quote Tile"
+    }
+  ]
+}
+{% endschema %}

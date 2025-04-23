@@ -1,0 +1,115 @@
+
+    <div class="container-style container-large">
+
+        <div class="search-results-row search-results-row-title">
+            <div class="search-results-col-left">
+                <h2>section</h2>
+            </div>
+            <div class="search-results-col-right">
+                <h2>result</h2>
+            </div>
+        </div>
+        {% assign search_results_count = 0 %}
+
+        <div class="search-results-row">
+            <div class="search-results-col-left">
+                <h3>blog</h3>
+            </div>
+            <div class="search-results-col-right">
+
+                {% for item in search.results %}
+                    {% if item.object_type == 'article' and item.metafields.arena.article_year %}
+                        {% assign search_results_count = search_results_count | plus: 1 %}
+                        <div class="search-results-article-row">
+                            <div class="search-results-article-col-left">
+                                <span>{{ item.metafields.arena.article_year }}</span>
+                                <a href="{{ item.url }}">{{ item.title }}</a>
+                            </div>
+                            <div class="search-results-article-col-right">
+                                {% for tag in item.tags %}
+                                    <span>{{ tag }}</span>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+        <!--
+        <div class="search-results-row search-results-row-resources">
+            <div class="search-results-col-left">
+                <h3>resources</h3>
+            </div>
+            <div class="search-results-col-right">
+                <div class="search-results-article-row">
+                    <div class="search-results-article-col-left">
+                        <span>2021</span>
+                        <a href="article.html">the next phase of fashion infrastructure</a>
+                    </div>
+                    <div class="search-results-article-col-right">
+                        <span>procces</span><span>industry</span>
+                    </div>
+                </div>
+                <div class="search-results-article-row">
+                    <div class="search-results-article-col-left">
+                        <span>2021</span>
+                        <a href="article.html">deep look into our process</a>
+                    </div>
+                    <div class="search-results-article-col-right">
+                        <span>procces</span>
+                    </div>
+                </div>
+                <div class="search-results-article-row">
+                    <div class="search-results-article-col-left">
+                        <span>2021</span>
+                        <a href="article.html">how we built our worldclass team</a>
+                    </div>
+                    <div class="search-results-article-col-right">
+                        <span>company</span><span>culture</span>
+                    </div>
+                </div>
+                <div class="search-results-article-row">
+                    <div class="search-results-article-col-left">
+                        <span>2021</span>
+                        <a href="article.html">company growth in 2022</a>
+                    </div>
+                    <div class="search-results-article-col-right">
+                        <span>ambercycle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        -->
+
+    </div>
+    <script>
+        var search_results_count = {{ search_results_count }};
+    </script>
+{% schema %}
+{
+  "name": "Search - Results",
+  "tag": "section",
+  "class": "search-results-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "search"
+    },
+    {
+      "type": "textarea",
+      "id": "button_title",
+      "label": "Button Title",
+      "default": "try another search"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Search - Results"
+    }
+  ]
+}
+{% endschema %}

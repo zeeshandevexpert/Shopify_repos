@@ -1,0 +1,18 @@
+<div class="grid__item {% if width %}{{width}}{% endif %}">
+  {% assign name_handle = name | handle %}
+  {% assign label = name_handle | replace: '-','_' %}
+  {% assign form_label = form[label] %}
+  <label {% if labelsHidden %}class="visually-hidden" {% endif %} for="{{ formId }}-{{ name | handle }}">{{name}}{% if required %}*{% endif %}</label>
+  <input 
+         {% if required %}
+         required
+         {% endif %} 
+         placeholder="{{ name }}{% if required %}*{% endif %}" 
+         type="{{type}}" 
+         id="{{ formId }}-{{ name_handle }}" 
+         name="contact[{{label}}]" 
+         {% if type == 'tel'%}pattern="[0-9\-]*"{% endif %}
+         value="{% if form_label %}{{ form_label}}{% endif %}"
+         >
+
+</div>

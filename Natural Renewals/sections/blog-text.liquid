@@ -1,0 +1,48 @@
+
+    <h2>
+      {{ section.settings.text_1 }} <span class="linked-drophover">{{ section.settings.drophover_title }}<i>{{ section.settings.drophover_text }}</i>
+      </span> {{ section.settings.text_2 }}</h2><a href="{{ section.settings.button_link }}">{{ section.settings.button_title }}</a>
+{% schema %}
+{
+  "name": "Blog - Text Line",
+  "tag": "section",
+  "class": "blog-listing-bottom",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "text_1",
+      "label": "Text part 1"
+    },
+    {
+      "type": "textarea",
+      "id": "text_2",
+      "label": "Text part 2"
+    },
+    {
+      "type": "textarea",
+      "id": "drophover_title",
+      "label": "Title Drophover"
+    },
+    {
+      "type": "richtext",
+      "id": "drophover_text",
+      "label": "Text Drophover"
+    },
+    {
+      "type": "text",
+      "id": "button_title",
+      "label": "Link Title"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog - Text Line"
+    }
+  ]
+}
+{% endschema %}

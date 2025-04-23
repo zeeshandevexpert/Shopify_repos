@@ -1,0 +1,850 @@
+@font-face {
+  font-family: "Helvetica Neue LT Pro";
+  src: url("HelveticaNeueLTPro-Lt.woff2") format("woff2"), url("HelveticaNeueLTPro-Lt.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+.home-circularity-section .container-style {
+  max-width: 1920px;
+  padding: 0 50px;
+}
+@media (max-width: 991px) {
+  .home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row {
+    justify-content: center;
+  }
+}
+.home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col h4 {
+  color: #F5793B;
+  font-size: 40px;
+}
+.home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col p {
+  font-size: 24px;
+  font-family: "Helvetica Neue LT Pro";
+}
+.home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col.right {
+  width: calc(32% - 45px);
+}
+@media (max-width: 991px) {
+  .home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col.right {
+    width: 100%;
+  }
+}
+.home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col.right img {
+  margin-bottom: 10px;
+}
+@media (max-width: 991px) {
+  .home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col-line {
+    text-align: center;
+    margin-top: 34px;
+  }
+  .home-circularity-section .container-style .home-circularity-percentage .home-circularity-percentage-row .home-circularity-percentage-col-line img {
+    margin: 0 auto;
+  }
+}
+.home-circularity-section .container-style .home-circularity-middle .standard-cover {
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 576px) {
+  .home-circularity-section .container-style .home-circularity-middle .standard-cover {
+    border-radius: 15px;
+  }
+}
+.home-circularity-section .container-style .home-circularity-middle .standard-cover .standard-video-iframe {
+  height: 750px;
+}
+@media (max-width: 991px) {
+  .home-circularity-section .container-style .home-circularity-middle .standard-cover .standard-video-iframe {
+    height: 500px;
+  }
+}
+.home-circularity-section .container-style .home-circularity-middle .standard-cover .description-block {
+  position: absolute;
+  inset: 0;
+  padding-left: 35px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+@media (max-width: 576px) {
+  .home-circularity-section .container-style .home-circularity-middle .standard-cover .description-block {
+    padding: 25px;
+  }
+}
+.home-circularity-section .container-style .home-circularity-middle .standard-cover .description-block .content .text {
+  color: #FFF;
+  text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 40px;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+@media (max-width: 576px) {
+  .home-circularity-section .container-style .home-circularity-middle .standard-cover .description-block .content .text {
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+}
+.home-circularity-section .container-style .home-circularity-middle .standard-cover .description-block .content .link {
+  color: #F7F7F7;
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 20px;
+  font-style: normal;
+  padding: 0 37px 0 0;
+  background: url("../assets/arrow-right-white.svg") center right no-repeat;
+}
+@media (max-width: 576px) {
+  .home-circularity-section .container-style .home-circularity-middle .standard-cover .description-block .content .link {
+    font-size: 16px;
+  }
+}
+.home-circularity-section .container-style .home-circularity-middle .standard-cover video {
+  border-radius: 15px;
+}
+
+.home-materials-section .container-style {
+  max-width: 1920px;
+  padding: 0 50px;
+}
+
+.home-vintage-section .section-arrow-row {
+  padding: 40px;
+  text-align: center;
+}
+
+.partnership-section {
+  padding: 0 50px;
+}
+@media (max-width: 576px) {
+  .partnership-section {
+    padding: 0 20px;
+  }
+}
+.partnership-section .partnership-block-content {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.partnership-section .partnership-block-content .home-partnership-top {
+  padding: 250px 0 250px;
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .partnership-section .partnership-block-content .home-partnership-top {
+    padding: 100px 0;
+  }
+}
+.partnership-section .partnership-block-content .home-partnership-top h3 {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 40px;
+  line-height: 1.2em;
+  letter-spacing: -0.03em;
+  color: var(--colorlightblack);
+  text-align: left;
+  margin: 0;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  .partnership-section .partnership-block-content .home-partnership-top h3 {
+    font-size: 28px;
+  }
+}
+.partnership-section .partnership-block-content .home-partnership-top .link {
+  color: #222222;
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 20px;
+  font-style: normal;
+  padding: 0 37px 0 0;
+  background: url("../assets/arrow-right-black.svg") center right no-repeat;
+}
+.partnership-section .partnership-block-content .items-row {
+  display: flex;
+  grid-gap: 25px;
+}
+@media (max-width: 767px) {
+  .partnership-section .partnership-block-content .items-row {
+    flex-wrap: wrap;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  .partnership-section .partnership-block-content .items-row .item-block {
+    flex: 100%;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block .image {
+  position: relative;
+  border-radius: 15px;
+}
+@media (max-width: 576px) {
+  .partnership-section .partnership-block-content .items-row .item-block .image {
+    border-radius: 15px;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block .image img {
+  border-radius: 15px;
+  width: 100%;
+  display: block;
+}
+@media (max-width: 576px) {
+  .partnership-section .partnership-block-content .items-row .item-block .image img {
+    border-radius: 15px;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block .image:hover .overlay {
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+.partnership-section .partnership-block-content .items-row .item-block .image .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #DBEDF5;
+  opacity: 0;
+  transition: all 0.3s ease;
+  border-radius: 15px;
+}
+@media (max-width: 576px) {
+  .partnership-section .partnership-block-content .items-row .item-block .image .overlay {
+    border-radius: 15px;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block .image .description-block {
+  position: absolute;
+  inset: 0;
+  padding-left: 35px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+@media (max-width: 991px) {
+  .partnership-section .partnership-block-content .items-row .item-block .image .description-block {
+    padding-left: 15px;
+    padding-bottom: 30px;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block .image .description-block .content .text {
+  color: #FFF;
+  text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 40px;
+  font-style: normal;
+  margin-bottom: 20px;
+}
+@media (max-width: 991px) {
+  .partnership-section .partnership-block-content .items-row .item-block .image .description-block .content .text {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+}
+.partnership-section .partnership-block-content .items-row .item-block .image .description-block .content .text sup {
+  font-size: 50%;
+}
+.partnership-section .partnership-block-content .items-row .item-block .image .description-block .content .link {
+  color: #F7F7F7;
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 20px;
+  font-style: normal;
+  padding: 0 37px 0 0;
+  background: url("../assets/arrow-right-white.svg") center right no-repeat;
+}
+@media (max-width: 576px) {
+  .partnership-section .partnership-block-content .items-row .item-block .image .description-block .content .link {
+    font-size: 16px;
+  }
+}
+
+.article-content--full-section .article-content-block-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.article-content--full-section .article-content-block-wrapper .featured-image-blog {
+  margin-top: 50px;
+  padding: 15px;
+  height: 700px;
+}
+.article-content--full-section .article-content-block-wrapper .featured-image-blog img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+}
+.article-content--full-section .article-content-block-wrapper .article-content--row .article-content--col-right {
+  width: 700px;
+  height: 100%;
+  margin: 0 auto;
+}
+.article-content--full-section .article-content-block-wrapper .article-content--row .article-content--col-right img {
+  margin-top: 40px;
+  display: block;
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  object-position: top center;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.article-content--full-section .article-content-block-wrapper .article-content--row .article-content--col-right .article-content-top-title span {
+  color: #ADADAD;
+}
+.article-content-section .article-content-style2-row.center {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  height: 100%;
+  padding-bottom: 70px;
+  text-align: left;
+}
+.article-content-section .article-content-style2-row.center .article-content-style2-col-center {
+  width: 100%;
+  display: flex;
+}
+.article-content-section .article-content-style2-row.center .article-content-style2-col-center img {
+  width: 800px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+.article-content-section .article-content-style2-row.center .article-content-style2-col-center-top {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.article-content-section .article-content-style2-row.center .article-content-style2-col-center-top .article-content-style2-col-center-text {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.article-content-section .article-content-style2-row.center .article-content-style2-col-center-top .article-content-style2-col-center-text p span {
+  font-size: 16px !important;
+}
+
+@media (max-width: 775px) {
+  .article-content-section .article-content-style2-row.center .article-content-style2-col-center img {
+    width: 100%;
+  }
+  .article-content-section .article-content-style2-row.center .article-content-style2-col-center-top .article-content-style2-col-center-text p {
+    padding: 0px 20px;
+  }
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .feature_imgs {
+  display: none;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .feature_imgs.in_active {
+  display: none;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .variants {
+  display: none;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .variants img {
+  display: block;
+  margin: 0 auto;
+  max-width: 317px;
+  height: auto;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-prev {
+  border: none;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  color: #ADADAD;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-prev i {
+  font-size: 25px;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-prev i::before {
+  padding-left: 6px;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-next {
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background: transparent;
+  color: #ADADAD;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-next i {
+  font-size: 25px;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-next i::before {
+  padding-right: 6px;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-dots li {
+  color: #ADADAD;
+  font-size: 22px;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-dots li.slick-active {
+  color: #000;
+}
+.product-buy-section #sectionbuy .product-buy-row .product-buy-col-right .img-wraper .slick-dots li button {
+  font-size: 0px;
+  border: none;
+  background: transparent;
+}
+
+.process-text-block {
+  background-color: #F7F7F7;
+}
+.process-text-block .wrap-process-text {
+  height: 700px;
+}
+@media (max-width: 1080px) {
+  .process-text-block .wrap-process-text {
+    height: 500px;
+  }
+}
+.process-text-block .wrap-process-text.radial-gradient {
+  background: radial-gradient(50% 50% at 50% 50%, #DBEDF5 0.01%, rgba(219, 237, 245, 0.93) 31.25%, rgba(255, 255, 255, 0) 100%);
+}
+.process-text-block .wrap-process-text .content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 840px;
+  line-height: 38px;
+  margin: 0 auto;
+  flex-direction: column;
+}
+@media (max-width: 1080px) {
+  .process-text-block .wrap-process-text .content {
+    padding: 0 50px;
+  }
+}
+@media (max-width: 767px) {
+  .process-text-block .wrap-process-text .content {
+    padding: 0 20px;
+  }
+}
+.process-text-block .wrap-process-text .content .text {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 32px;
+}
+@media (max-width: 767px) {
+  .process-text-block .wrap-process-text .content .text {
+    font-size: 26px;
+  }
+}
+@media (max-width: 470px) {
+  .process-text-block .wrap-process-text .content .text {
+    font-size: 22px;
+  }
+}
+.process-text-block .wrap-process-text .content .link {
+  margin-top: 20px;
+  color: var(--colorlightblack);
+  font-size: 20px;
+  line-height: 1.3em;
+  font-family: "Helvetica Neue LT Pro";
+  letter-spacing: -0.01em;
+  display: flex;
+  position: relative;
+}
+.process-text-block .wrap-process-text .content .link img {
+  width: 30px;
+  transition: 0.3s ease-in;
+  margin-left: 10px;
+}
+.process-text-block .wrap-process-text .content .link:hover img {
+  transform: scale(1.2);
+}
+
+.past-present-future-section {
+  background: linear-gradient(180deg, #F7F7F7 0%, #DBEDF5 51.04%, #F7F7F7 100%);
+}
+
+.past-present-future {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+@media (max-width: 767px) {
+  .past-present-future {
+    padding: 0 20px;
+  }
+}
+.past-present-future .steps-container .heading {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 40px;
+  color: #222222;
+  margin-top: 0;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .heading {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .past-present-future .steps-container .heading {
+    font-size: 26px;
+  }
+}
+.past-present-future .steps-container .steps-row {
+  display: flex;
+  grid-gap: 25px;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .steps-row {
+    flex-wrap: wrap;
+  }
+}
+.past-present-future .steps-container .steps-row .step-block {
+  flex: 33.33%;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .steps-row .step-block {
+    flex: 0 0 50%;
+    flex-basis: calc(50% - 25px);
+  }
+}
+@media (max-width: 767px) {
+  .past-present-future .steps-container .steps-row .step-block {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+}
+.past-present-future .steps-container .steps-row .step-block .image {
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .steps-row .step-block .image {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 767px) {
+  .past-present-future .steps-container .steps-row .step-block .image:hover img {
+    filter: blur(7.5px);
+    transition: filter 0.3s ease;
+  }
+  .past-present-future .steps-container .steps-row .step-block .image:hover .description-block {
+    transition: all 0.7s ease;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 576px) {
+  .past-present-future .steps-container .steps-row .step-block .image {
+    border-radius: 15px;
+  }
+}
+.past-present-future .steps-container .steps-row .step-block .image img {
+  min-height: 100%;
+  width: 100%;
+  display: block;
+}
+.past-present-future .steps-container .steps-row .step-block .image .description-block {
+  border-radius: 15px;
+  background: rgba(219, 237, 245, 0.4);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  display: flex;
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s ease;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .steps-row .step-block .image .description-block {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .past-present-future .steps-container .steps-row .step-block .image .description-block {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.1803921569);
+  }
+}
+@media (max-width: 576px) {
+  .past-present-future .steps-container .steps-row .step-block .image .description-block {
+    border-radius: 15px;
+  }
+}
+.past-present-future .steps-container .steps-row .step-block .image .description-block .text {
+  width: 385px;
+  font-family: Helvetica-Regular, serif, Arial;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 24px;
+  color: #222222;
+  padding: 0 10px;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .steps-row .step-block .image .description-block .text {
+    font-size: 14px;
+    width: auto;
+  }
+}
+@media (max-width: 767px) {
+  .past-present-future .steps-container .steps-row .step-block .image .description-block .text {
+    font-size: 20px;
+    color: #F7F7F7;
+  }
+}
+.past-present-future .steps-container .steps-row .step-block .title {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 40px;
+  color: #222222;
+  font-weight: 300;
+}
+@media (max-width: 1080px) {
+  .past-present-future .steps-container .steps-row .step-block .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .past-present-future .steps-container .steps-row .step-block .title {
+    font-size: 26px;
+  }
+}
+
+.implementation-section {
+  background-color: #F7F7F7;
+}
+.implementation-section .implement-block {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+@media (max-width: 767px) {
+  .implementation-section .implement-block {
+    padding: 0 20px;
+  }
+}
+.implementation-section .implement-block .wrap-implement-block .heading {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 40px;
+  margin: 0;
+}
+@media (max-width: 1080px) {
+  .implementation-section .implement-block .wrap-implement-block .heading {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .implementation-section .implement-block .wrap-implement-block .heading {
+    font-size: 26px;
+  }
+}
+.implementation-section .implement-block .wrap-implement-block .sub-heading {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 24px;
+  padding-top: 10px;
+  margin: 0;
+}
+@media (max-width: 1080px) {
+  .implementation-section .implement-block .wrap-implement-block .sub-heading {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .implementation-section .implement-block .wrap-implement-block .sub-heading {
+    font-size: 18px;
+  }
+}
+.implementation-section .implement-block .wrap-implement-block .animation-block {
+  padding: 100px 0;
+  text-align: -webkit-center;
+}
+@media (max-width: 1440px) {
+  .implementation-section .implement-block .wrap-implement-block .animation-block img {
+    width: 100%;
+  }
+}
+.implementation-section .implement-block .wrap-implement-block .animation-block .standard-video-iframe video {
+  width: auto;
+}
+@media (max-width: 1200px) {
+  .implementation-section .implement-block .wrap-implement-block .animation-block .standard-video-iframe video {
+    width: 100%;
+  }
+}
+
+.impact-section .impact-block {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1080px) {
+  .impact-section .impact-block {
+    height: 700px;
+  }
+}
+.impact-section .impact-block .wrap-impact-block {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block {
+    padding: 0 20px;
+  }
+}
+.impact-section .impact-block .wrap-impact-block .content-block .heading {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 64px;
+  color: #F7F7F7;
+  margin: 0;
+}
+@media (max-width: 1080px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .heading {
+    font-size: 32px;
+  }
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .heading {
+    font-size: 26px;
+  }
+}
+.impact-section .impact-block .wrap-impact-block .content-block .divider-block {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  padding-top: 170px;
+  align-items: center;
+}
+@media (max-width: 1080px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block {
+    max-width: 700px;
+  }
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block {
+    padding-top: 100px;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 470px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block {
+    padding-top: 60px;
+  }
+}
+.impact-section .impact-block .wrap-impact-block .content-block .divider-block .title {
+  color: #F7F7F7;
+  padding-bottom: 10px;
+  text-shadow: 0px 0px 30px #0068F5;
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 64px;
+}
+@media (max-width: 1080px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .title {
+    font-size: 48px;
+  }
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 470px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .title {
+    font-size: 26px;
+  }
+}
+.impact-section .impact-block .wrap-impact-block .content-block .divider-block .text {
+  color: #F7F7F7;
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 24px;
+  width: 300px;
+}
+@media (max-width: 1080px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .text {
+    font-size: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .text {
+    font-size: 18px;
+  }
+}
+@media (max-width: 470px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .text {
+    font-size: 16px;
+  }
+}
+.impact-section .impact-block .wrap-impact-block .content-block .divider-block .line {
+  background: #F7F7F7;
+  height: 2px;
+  width: 300px;
+  transform: rotate(-45deg);
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .line {
+    display: none;
+  }
+}
+.impact-section .impact-block .wrap-impact-block .content-block .divider-block .content-text-block {
+  flex: 0 0 35%;
+}
+@media (max-width: 767px) {
+  .impact-section .impact-block .wrap-impact-block .content-block .divider-block .content-text-block {
+    margin-bottom: 40px;
+  }
+}
+
+.footer-section {
+  padding-top: 0 !important;
+}
+.footer-section .footer-container .footer-content {
+  margin-top: 0;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-left .newsletter-content-wrap {
+  max-width: 288px;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-left .newsletter-content-wrap h2 {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 24px;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-left .newsletter-content-wrap input {
+  background-color: #D9D9D9 !important;
+  color: #121212 !important;
+  font-family: "Helvetica Neue LT Pro";
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-left .newsletter-content-wrap input::placeholder {
+  color: #121212 !important;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-left .newsletter-content-wrap .needsclick #klaviyo_ariaid_4 {
+  font-family: "Helvetica Neue LT Pro" !important;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-left .newsletter-content-wrap button {
+  background: url("../assets/button-more.svg") center right no-repeat !important;
+  position: absolute;
+  right: 200%;
+  width: 15px;
+  text-indent: 200%;
+  white-space: nowrap !important;
+  overflow: hidden;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-right {
+  display: flex;
+  justify-content: space-between;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-right .footer-menu .item {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.footer-section .footer-container .footer-content .footer-row .footer-col-right .footer-menu .item a {
+  font-family: "Helvetica Neue LT Pro";
+  font-size: 24px;
+  color: #BBB;
+}
+sup {
+  font-size: 50% !important;
+}
+
+/*# sourceMappingURL=custom-style.css.map */

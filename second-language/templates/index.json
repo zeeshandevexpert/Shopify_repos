@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "text_section_rDWbaU": {
+      "type": "text-section",
+      "disabled": true,
+      "settings": {
+        "description": "<p>YOUR EXCLUSIVE CONNECTION TO A SHARP CURATION OF <strong>DESIGNER ARCHIVE SALES<\/strong><\/p>"
+      }
+    },
+    "two_column_blurb_section_i7YzGj": {
+      "type": "two-column-blurb-section",
+      "settings": {
+        "left_image": "shopify:\/\/shop_images\/left_1.png",
+        "right_image": "shopify:\/\/shop_images\/right_1.png",
+        "description": "<h3>YOUR EXCLUSIVE CONNECTION TO A SHARP CURATION OF DESIGNER ARCHIVE SALES<\/h3><p>SECOND LANGUAGE presents a carefully selected array of international designers offering high-quality, thoughtful, and timeless pieces.<br\/><br\/>Through our exclusive, online private sales, our designers present their archive collections, samples, and unique pieces, offering each piece another opportunity to be discovered, worn, and cherished.<\/p>",
+        "btn_text": "Sign up to receive access",
+        "btn_link": ""
+      }
+    },
+    "two_column_blurb_section_xXKdA4": {
+      "type": "two-column-blurb-section",
+      "settings": {
+        "left_image": "shopify:\/\/shop_images\/left.png",
+        "right_image": "shopify:\/\/shop_images\/right.png",
+        "bg_image": "shopify:\/\/shop_images\/white_paralex_87a41bf2-7919-49f5-89e4-afa47f8aa001.png",
+        "description": "<h3>OUR COMMITMENT<\/h3><p>Our vision creates an innovative marketplace that amplifies the voices of designers from diverse backgrounds, facilitating the global exchange of their work.<br\/><br\/>We efficiently sell collections from previous seasons, including samples and unique pieces that never went into production. Through our weekly, private sales, we position each piece as limited edition, exclusive, and one-of-a-kind for a limited time only.<\/p>",
+        "btn_text": "Get in touch",
+        "btn_link": ""
+      }
+    },
+    "image_column_section_a4WP8B": {
+      "type": "image-column-section",
+      "disabled": true,
+      "settings": {
+        "reverse": false,
+        "image": "shopify:\/\/shop_images\/Group_89.png",
+        "heading": "OUR COMMITMENT",
+        "description": "<p>Our vision creates an innovative marketplace that amplifies the voices of designers from diverse backgrounds, facilitating the global exchange of their work.<br\/><br\/>We efficiently sell collections from previous seasons, including samples and unique pieces that never went into production.<br\/><br\/>Through our weekly, private sales, we position each piece as limited edition, exclusive, and one-of-a-kind for a limited time only.<\/p>",
+        "btn_text": "Get in touch",
+        "btn_link": "#"
+      }
+    },
+    "two_column_list_NJAJ4w": {
+      "type": "two-column-list",
+      "blocks": {
+        "list_D3qR6w": {
+          "type": "List",
+          "settings": {
+            "heading": "ORIGINAL DESIGN",
+            "description": "<p> We focus on nurturing relationships with high-caliber womenswear brands including handbags, shoes, and jewelry, prioritizing those that embody the essence of true luxury. <\/p>"
+          }
+        },
+        "list_3rJJHc": {
+          "type": "List",
+          "settings": {
+            "heading": "QUALITY",
+            "description": "<p>Our goal is to collaborate with brands that uphold expert craftsmanship, employ high-quality materials,and prioritize sustainable practices.<\/p>"
+          }
+        },
+        "list_fKJMPF": {
+          "type": "List",
+          "settings": {
+            "heading": "CONSCIOUS CONSUMPTION",
+            "description": "<p>By giving previous season collections a second chance, we aim to shift the consumer mindset by encouraging consumers to embrace a more mindful and sustainable approach.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "list_D3qR6w",
+        "list_3rJJHc",
+        "list_fKJMPF"
+      ],
+      "disabled": true,
+      "settings": {
+        "left_image": "shopify:\/\/shop_images\/Group_2.png",
+        "right_image": "shopify:\/\/shop_images\/Group_1.png",
+        "heading": "OUR VALUES"
+      }
+    },
+    "two_column_blurb_section_aAaRRD": {
+      "type": "two-column-blurb-section",
+      "settings": {
+        "left_image": "shopify:\/\/shop_images\/left_2.png",
+        "right_image": "shopify:\/\/shop_images\/right_2.png",
+        "description": "",
+        "btn_text": "",
+        "btn_link": ""
+      }
+    }
+  },
+  "order": [
+    "text_section_rDWbaU",
+    "two_column_blurb_section_i7YzGj",
+    "two_column_blurb_section_xXKdA4",
+    "image_column_section_a4WP8B",
+    "two_column_list_NJAJ4w",
+    "two_column_blurb_section_aAaRRD"
+  ]
+}

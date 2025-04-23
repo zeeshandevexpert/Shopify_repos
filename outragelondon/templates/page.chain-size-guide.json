@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "main": {
+      "type": "custom-banner",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Untitled_design_-_2024-04-15T160106.891.png",
+        "heading": "",
+        "subheading": "Chain Size Guide",
+        "fg": "#ffffff"
+      }
+    },
+    "custom_richtext_Bat8iL": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Finding your chain size from home.",
+        "text": "<p>Measuring your chain size at home is straightforward, and a simple process. Here's all you need to do:<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_richtext_MAygLW": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "To measure your chain size accurately at home, you'll need:",
+        "text": "<p>To determine your size on the chain size chart, you'll require either a ruler or a measuring tape along with a flexible string or rope, ideally between 40-80 cm in length. It's advisable to use something slender like a rope, although even your belt could suffice.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_richtext_V6RPbF": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Time To Measure",
+        "text": "<p>Follow the steps below to get your perfect length necklace, if you need help just reach out to us info@outrageldn.com.<\/p>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_hQYYcm": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": false,
+        "img": "shopify:\/\/shop_images\/2_d5fc245a-3816-4f1f-877c-a8b03d208232.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Step 1:",
+        "heading": "Find the ideal length",
+        "text": "<ol><li>Prepare the rope or string.<\/li><li>Hold one end of the rope between your fingers.<\/li><li>Wrap the rope around your neck securely.<\/li><li>Experiment with different lengths until you find a comfortable and appealing position.<\/li><li>Once satisfied, mark the intersection of the rope with your finger.<\/li><li>Proceed to the next step.<\/li><\/ol>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_iwt_WeFYbA": {
+      "type": "custom-iwt",
+      "settings": {
+        "swap": true,
+        "img": "shopify:\/\/shop_images\/INCH_750_x_500_px_1.png",
+        "aligment": "custom-iwt-left",
+        "preheading": "Step 2:",
+        "heading": "Use our size Chart to find your length",
+        "text": "<ol><li>Maintain a grip on the intersection point.<\/li><li>Release the end of the rope but keep hold of the intersection.<\/li><li>Flatten the rope on a table to ensure it's fully stretched.<\/li><li>Measure the distance from the end of the rope to the intersection point using a Measuring tool e.g Tape or ruler.<\/li><li>This measurement indicates your desired chain length.<\/li><li>Refer to the chain size chart provided.<\/li><li>Choose the size that closely matches your desired length.<\/li><\/ol>",
+        "link_text": "",
+        "link": "",
+        "button_text": "",
+        "button_link": "",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    },
+    "custom_richtext_j9KFWz": {
+      "type": "custom-richtext",
+      "settings": {
+        "aligment": "custom-richtext-center",
+        "preheading": "",
+        "heading": "Found your Necklace size",
+        "text": "",
+        "link_text": "",
+        "link": "",
+        "button_text": "Discover Necklaces",
+        "button_link": "shopify:\/\/collections\/necklaces",
+        "bg": "#ffffff",
+        "fg": "#000000",
+        "lg": "#197bbd",
+        "bbg": "#000000",
+        "bfg": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_richtext_Bat8iL",
+    "custom_richtext_MAygLW",
+    "custom_richtext_V6RPbF",
+    "custom_iwt_hQYYcm",
+    "custom_iwt_WeFYbA",
+    "custom_richtext_j9KFWz"
+  ]
+}

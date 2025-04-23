@@ -1,0 +1,195 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "heading_banner_bimUKU": {
+      "type": "heading-banner",
+      "settings": {
+        "bg_image": "shopify:\/\/shop_images\/2-colonnes-16WABR3602_32_sindythomas_15e20e05-ba92-4374-99b7-77ad99fc7c79.webp",
+        "heading": "Bullpadel",
+        "sub_heading": " Dominate the Court with Precision and Power",
+        "font_size": 30,
+        "content": "<p>The Hack range, co-created with Paquito Navarro, delivers the perfect blend of control and explosive power, making it ideal for players seeking a fast and dynamic game. Experience unmatched maneuverability and elevate your performance with Bullpadel.<\/p>"
+      }
+    },
+    "collection_block_rpRh8J": {
+      "type": "collection-block",
+      "blocks": {
+        "item_W6tBMW": {
+          "type": "Item",
+          "settings": {
+            "collection": "padel"
+          }
+        },
+        "item_h7zTMV": {
+          "type": "Item",
+          "settings": {
+            "collection": "squash"
+          }
+        },
+        "item_GkNMhi": {
+          "type": "Item",
+          "settings": {
+            "collection": "tennis"
+          }
+        },
+        "item_3ENkUe": {
+          "type": "Item",
+          "settings": {
+            "collection": "padel"
+          }
+        }
+      },
+      "block_order": [
+        "item_W6tBMW",
+        "item_h7zTMV",
+        "item_GkNMhi",
+        "item_3ENkUe"
+      ],
+      "settings": {
+        "sub_heading": "EXPLORE OUR WORLD",
+        "heading": "CATEGORIES"
+      }
+    },
+    "image_text_blurb_block_fNUWPss": {
+      "type": "image-text-blurb-block",
+      "blocks": {
+        "item_XTiYH9": {
+          "type": "Item",
+          "disabled": true,
+          "settings": {
+            "title": ""
+          }
+        },
+        "item_H73EEC": {
+          "type": "Item",
+          "disabled": true,
+          "settings": {
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_XTiYH9",
+        "item_H73EEC"
+      ],
+      "settings": {
+        "reverse": false,
+        "sub_heading": "LOREM IPSUM",
+        "heading": "T-FIGHT ISOFLEX RANGE",
+        "content": "<p>Played by Daniil Medvedev and Iga Swiatek, the T-Fight Isoflex range brings a unique sensation of dynamic control thanks to 2 main innovations from TecniLab: RS Section and Isoflex. Discover the range!<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_29_6b0d52b4-8939-4a89-bb22-35bc78559adb.png",
+        "title": "",
+        "btn_text": "Shop Now",
+        "btn_link": ""
+      }
+    },
+    "image_text_blurb_block_awxcNfY": {
+      "type": "image-text-blurb-block",
+      "settings": {
+        "reverse": true,
+        "sub_heading": "LOREM IPSUM",
+        "heading": "What is Lorem Ipsum",
+        "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries<\/p>",
+        "image": "shopify:\/\/shop_images\/Group_102_1533d469-0102-4d1d-b654-b03803ca48b0.png",
+        "title": "",
+        "btn_text": "Shop Now",
+        "btn_link": ""
+      }
+    },
+    "collection_tab_fQjc4a3": {
+      "type": "collection-tab",
+      "blocks": {
+        "tab_Egm4qi": {
+          "type": "tab",
+          "settings": {
+            "collection": "padel",
+            "viewall": true
+          }
+        },
+        "tab_wDeTn6": {
+          "type": "tab",
+          "settings": {
+            "collection": "squash",
+            "viewall": true
+          }
+        },
+        "tab_9ktD9G": {
+          "type": "tab",
+          "settings": {
+            "collection": "tennis",
+            "viewall": true
+          }
+        }
+      },
+      "block_order": [
+        "tab_Egm4qi",
+        "tab_wDeTn6",
+        "tab_9ktD9G"
+      ],
+      "settings": {
+        "title": "Nothing",
+        "useslider": false,
+        "limit": 6,
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false
+      }
+    },
+    "testimonial_block_4796rp4": {
+      "type": "testimonial-block",
+      "blocks": {
+        "item_BYPcEb": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.webp",
+            "name": "Client Name"
+          }
+        },
+        "item_TwCMCd": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.webp",
+            "name": "Client Name"
+          }
+        },
+        "item_6qYRWz": {
+          "type": "Item",
+          "settings": {
+            "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s<\/p>",
+            "icon": "shopify:\/\/shop_images\/Group_94.webp",
+            "name": "Client Name"
+          }
+        }
+      },
+      "block_order": [
+        "item_BYPcEb",
+        "item_TwCMCd",
+        "item_6qYRWz"
+      ],
+      "settings": {
+        "sub_heading": "LOREM IPSUM",
+        "heading": "WHAT IS LOREM IPSUM"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "heading_banner_bimUKU",
+    "collection_block_rpRh8J",
+    "image_text_blurb_block_fNUWPss",
+    "image_text_blurb_block_awxcNfY",
+    "collection_tab_fQjc4a3",
+    "testimonial_block_4796rp4"
+  ]
+}

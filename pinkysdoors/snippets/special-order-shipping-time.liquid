@@ -1,0 +1,51 @@
+{%- if collection.handle contains 'steel-doors' or product.type contains 'Steel Doors'  -%}
+	{% assign special_order_value =  'shipping.special_order.steel_doors' | t %}
+
+{%- elsif product.handle contains 'pivot' or product.title contains 'Pivot'  -%}
+	{% assign special_order_value =  'shipping.special_order.pivot_doors' | t %}
+
+{%- elsif collection.handle contains 'doors-with-sidelight-transoms' or product.type contains 'Doors w/ Sidelight & Transom'  -%}
+	{% assign special_order_value =  'shipping.special_order.doors_with_sidelights_transoms' | t %}
+
+{%- elsif collection.handle contains 'wine-cellar-doors' or product.type contains 'Wine Cellar Door'  -%}
+	{% assign special_order_value =  'shipping.special_order.wine_cellar_doors' | t %}
+
+{%- elsif collection.handle contains 'passage-doors' or product.type contains 'Passage Doors'  -%}
+	{% assign special_order_value =  'shipping.special_order.passage_doors' | t %}
+
+{%- elsif collection.handle contains 'barn-doors' or product.type contains 'Barn Doors'  -%}
+	{% assign special_order_value =  'shipping.special_order.barn_doors' | t %}
+
+{%- elsif collection.handle contains 'french-doors' or product.type contains 'French Doors'  -%}
+	{% assign special_order_value =  'shipping.special_order.french_doors' | t %}
+
+{%- elsif collection.handle contains 'dutch-doors' or product.type contains 'Dutch Doors'  -%}
+	{% assign special_order_value =  'shipping.special_order.dutch_doors' | t %}
+
+{%- elsif collection.handle == 'transoms' or product.type == 'Transoms' -%}
+	{% assign special_order_value =  'shipping.special_order.transoms' | t %}
+
+{%- elsif collection.handle == 'sidelights' or product.type == 'Sidelights'  -%}
+	{% assign special_order_value =  'shipping.special_order.sidelights' | t %}
+
+{%- elsif collection.handle contains 'thermally-broken' or product.type contains 'Thermally Broken'  -%}
+	{% assign special_order_value =  'shipping.special_order.thermally_broken' | t %}
+
+{%- elsif collection.handle contains 'bi-fold' or product.type contains 'Bi-Fold' -%}
+	{% assign special_order_value =  'shipping.special_order.bifold' | t %}
+
+{%- elsif collection.handle contains 'door-handles' or product.type contains 'Door Handles'  -%}
+	{% assign special_order_value =  'shipping.special_order.door_handles' | t %}
+
+{%- elsif collection.handle contains 'iron-doors' or product.type contains 'Iron Doors' -%}
+	{% assign special_order_value = 'shipping.special_order.iron_doors' | t %}
+
+{%- elsif collection.handle contains 'windows' or product.type contains 'Windows' -%}
+	{% assign special_order_value = 'shipping.special_order.windows' | t %}
+
+{%- else -%}
+
+	{% assign special_order_value =  'shipping.special_order.general' | t %}
+
+{%- endif -%}
+{{ special_order_value }}

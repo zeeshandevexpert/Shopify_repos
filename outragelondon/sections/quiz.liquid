@@ -1,0 +1,756 @@
+{% schema %}
+{
+  "name": "Section Quiz",
+  "settings": [  
+    {
+      "type": "header",
+      "content": "Quiz Start Text"
+    },
+    {
+      "type": "text",
+      "id": "start_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "start_content",
+      "label": "Content"
+    },
+    {
+      "type": "header",
+      "content": "Quiz"
+    },
+    {
+      "type": "text",
+      "id": "start_text",
+      "label": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Question 1"
+    },
+    {
+      "type": "text",
+      "id": "question1_image",
+      "label": "Question 1 Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "question1_option1_image",
+      "label": "Question 1 Option 1 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "question1_option2_image",
+      "label": "Question 1 Option 2 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image1",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_text1",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "header",
+      "content": "Question 2"
+    },
+    {
+      "type": "text",
+      "id": "question2_image",
+      "label": "Question 2 Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "question2_option1_image",
+      "label": "Question 2 Option 1 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "question2_option2_image",
+      "label": "Question 2 Option 2 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image2",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_text2",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "header",
+      "content": "Question 3"
+    },
+    {
+      "type": "text",
+      "id": "question3_image",
+      "label": "Question 3 Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "question3_option1_image",
+      "label": "Question 3 Option 1 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "question3_option2_image",
+      "label": "Question 3 Option 2 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image3",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_text3",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "header",
+      "content": "Question 4"
+    },
+    {
+      "type": "text",
+      "id": "question4_image",
+      "label": "Question 4 Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "question4_option1_image",
+      "label": "Question 4 Option 1 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "question4_option2_image",
+      "label": "Question 4 Option 2 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image4",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_text4",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "header",
+      "content": "Question 5"
+    },
+    {
+      "type": "text",
+      "id": "question5_image",
+      "label": "Question 5 Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "question5_option1_image",
+      "label": "Question 5 Option 1 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "question5_option2_image",
+      "label": "Question 5 Option 2 Image URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_image5",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "textarea",
+      "id": "bottom_text5",
+      "label": "Bottom Text"
+    },
+    {
+      "type": "header",
+      "content": "Form Header"
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "form_text",
+      "label": "Content"
+    },
+  {
+    "type": "textarea",
+    "id": "blank_form_content",
+    "label": "Text",
+    "info": "When klaviyo form is already submitted then this text will be shown there instead of form."
+  }
+  ],
+  "presets": [
+    {
+      "name": "Section Quiz"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% comment %}
+quiz.liquid
+{% endcomment %}
+<div class="quiz-page-header">
+  <div class="page-width page-width--narrow">
+    <div class="close-popup"><a href="/collections/shop-all">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="cross"><g><path d="M16 2a14 14 0 1 0 14 14A14 14 0 0 0 16 2Zm0 26a12 12 0 1 1 12-12 12 12 0 0 1-12 12Z"></path><path d="M22.71 9.29a1 1 0 0 0-1.42 0L16 14.59l-5.29-5.3a1 1 0 0 0-1.42 1.42l5.3 5.29-5.3 5.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l5.29-5.3 5.29 5.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42L17.41 16l5.3-5.29a1 1 0 0 0 0-1.42Z"></path></g></svg>
+    </a></div>
+    <h2>{{ page.title }}</h2>
+</div>
+</div>
+
+<div class="main-div-quiz">
+<div id="startBtn">
+  <div class="start-content-area">
+  {% if section.settings.start_heading != blank %}   <h2 class="start-heading">{{ section.settings.start_heading }}</h2>     {% endif %}
+  {% if section.settings.start_content != blank %}   <p class="start-text">{{ section.settings.start_content }}</p>     {% endif %}
+  </div>
+<button id="startButton" onclick="startQuiz()">Start Quiz</button>
+</div>
+<div class="quiz-container" style="display: none;">
+    <form id="quizForm" style="display:block;">
+        <!-- Step 1 -->
+        <div class="quiz-step fade-in" id="step1" style="display:block;">
+          
+          {% if section.settings.start_text != blank %}   <h2>{{ section.settings.start_text }}</h2>     {% endif %}
+          
+            <h3>{{ section.settings.question1_image }}</h3>
+            <div class="flex-div">
+                <label><input type="radio" name="question1" value="silver" required> <img src="{{ section.settings.question1_option1_image | image_url }}" alt="Red" width="200" height="200"></label>
+                <label><input type="radio" name="question1" value="gold" required> <img src="{{ section.settings.question1_option2_image | image_url }}" alt="Blue" width="200" height="200"></label>
+            </div>
+            <div id="question1Error" class="question-error" style="color: red; display: none;">Please select an option.</div>
+            <button type="button" onclick="validateStep('question1', 2)" class="next-btn">Next</button>
+          {% if section.settings.bottom_image1 != blank or section.settings.bottom_text1 != blank %}
+          <div class="question-bottom-area">
+            {% if section.settings.bottom_image1 != blank %}
+            <div class="question-bottom-image">
+              <div class="bottom-image-inner">
+                <img src="{{ section.settings.bottom_image1 | img_url: 'master' }}" />
+              </div>
+            </div>
+              {% endif %}
+            {% if section.settings.bottom_text1 != blank %}
+            <div class="question-bottom-text">
+              <div class="bottom-text-inner">
+                {{ section.settings.bottom_text1 }}
+              </div>
+            </div>
+              {% endif %}
+          </div>
+            {% endif %}
+        </div>
+
+        <!-- Step 2 -->
+        <div class="quiz-step" id="step2" style="display:none;">
+          {% if section.settings.start_text != blank %}
+            <h2>{{ section.settings.start_text }}</h2>     
+            {% endif %}
+            <h3>{{ section.settings.question2_image }}</h3>
+            <div class="flex-div">
+                <label><input type="radio" name="question2" value="silver" required> <img src="{{ section.settings.question2_option1_image | image_url }}" alt="Yellow" width="200" height="200"></label>
+                <label><input type="radio" name="question2" value="gold" required> <img src="{{ section.settings.question2_option2_image | image_url }}" alt="Black" width="200" height="200"></label>
+            </div>
+            <div id="question2Error" class="question-error" style="color: red; display: none;">Please select an option.</div>
+        <div class="btn-center">
+            <button type="button" onclick="previousStep(1)">Previous</button>
+            <button type="button" onclick="validateStep('question2', 3)" class="next-btn">Next</button>
+        </div>
+          {% if section.settings.bottom_image2 != blank or section.settings.bottom_text2 != blank %}
+          <div class="question-bottom-area">
+            {% if section.settings.bottom_image2 != blank %}
+            <div class="question-bottom-image">
+              <div class="bottom-image-inner">
+                <img src="{{ section.settings.bottom_image2 | img_url: 'master' }}" />
+              </div>
+            </div>
+              {% endif %}
+            {% if section.settings.bottom_text2 != blank %}
+            <div class="question-bottom-text">
+              <div class="bottom-text-inner">
+                {{ section.settings.bottom_text2 }}
+              </div>
+            </div>
+              {% endif %}
+          </div>
+            {% endif %}
+        </div>
+
+        <!-- Step 3 -->
+        <div class="quiz-step" id="step3" style="display:none;">
+          {% if section.settings.start_text != blank %}   
+            <h2>{{ section.settings.start_text }}</h2>    
+            {% endif %}
+            <h3>{{ section.settings.question3_image }}</h3>
+            <div class="flex-div">
+                <label><input type="radio" name="question3" value="silver" required><img src="{{ section.settings.question3_option1_image | image_url }}" alt="Pink" width="200" height="200"></label>
+                <label><input type="radio" name="question3" value="gold" required><img src="{{ section.settings.question3_option2_image | image_url }}" alt="Orange" width="200" height="200"></label>
+            </div>
+            <div id="question3Error" class="question-error" style="color: red; display: none;">Please select an option.</div>
+            <button type="button" onclick="previousStep(2)">Previous</button>
+            <button type="button" onclick="validateStep('question3', 4)" class="next-btn">Next</button>
+
+          {% if section.settings.bottom_image3 != blank or section.settings.bottom_text3 != blank %}
+          <div class="question-bottom-area">
+            {% if section.settings.bottom_image3 != blank %}
+            <div class="question-bottom-image">
+              <div class="bottom-image-inner">
+                <img src="{{ section.settings.bottom_image3 | img_url: 'master' }}" />
+              </div>
+            </div>
+              {% endif %}
+            {% if section.settings.bottom_text3 != blank %}
+            <div class="question-bottom-text">
+              <div class="bottom-text-inner">
+                {{ section.settings.bottom_text3 }}
+              </div>
+            </div>
+              {% endif %}
+          </div>
+            {% endif %}
+        </div>
+
+        <!-- Step 4 -->
+        <div class="quiz-step" id="step4" style="display:none;">
+          {% if section.settings.start_text != blank %}   
+            <h2>{{ section.settings.start_text }}</h2>     
+            {% endif %}
+            <h3>{{ section.settings.question4_image }}</h3>
+            <div class="flex-div">
+                <label><input type="radio" name="question4" value="silver" required><img src="{{ section.settings.question4_option1_image | image_url }}" alt="Gray" width="200" height="200"></label>
+                <label><input type="radio" name="question4" value="gold" required><img src="{{ section.settings.question4_option2_image | image_url }}" alt="Beige" width="200" height="200"></label>
+            </div>
+            <div id="question4Error" class="question-error" style="color: red; display: none;">Please select an option.</div>
+            <button type="button" onclick="previousStep(3)">Previous</button>
+            <button type="button" onclick="validateStep('question4', 5)" class="next-btn">Next</button>
+
+          {% if section.settings.bottom_image4 != blank or section.settings.bottom_text4 != blank %}
+          <div class="question-bottom-area">
+            {% if section.settings.bottom_image4 != blank %}
+            <div class="question-bottom-image">
+              <div class="bottom-image-inner">
+                <img src="{{ section.settings.bottom_image4 | img_url: 'master' }}" />
+              </div>
+            </div>
+              {% endif %}
+            {% if section.settings.bottom_text4 != blank %}
+            <div class="question-bottom-text">
+              <div class="bottom-text-inner">
+                {{ section.settings.bottom_text4 }}
+              </div>
+            </div>
+              {% endif %}
+          </div>
+            {% endif %}
+        </div>
+
+        <!-- Step 5 -->
+        <div class="quiz-step" id="step5" style="display:none;">
+          {% if section.settings.start_text != blank %}   
+            <h2>{{ section.settings.start_text }}</h2>    
+            {% endif %}
+            <h3>{{ section.settings.question5_image }}</h3>
+            <div class="flex-div">
+                <label><input type="radio" name="question5" value="silver" required><img src="{{ section.settings.question5_option1_image | image_url }}" alt="Black" width="200" height="200"></label>
+                <label><input type="radio" name="question5" value="gold" required><img src="{{ section.settings.question5_option2_image | image_url }}" alt="White" width="200" height="200"></label>
+            </div>
+            <div id="question5Error" class="question-error" style="color: red; display: none;">Please select an option.</div>
+            <button type="button" onclick="previousStep(4)">Previous</button>
+            <button type="button" onclick="validateStep('question5',6)" class="next-btn">Next</button>
+          {% if section.settings.bottom_image5 != blank or section.settings.bottom_text5 != blank %}
+          <div class="question-bottom-area">
+            {% if section.settings.bottom_image5 != blank %}
+            <div class="question-bottom-image">
+              <div class="bottom-image-inner">
+                <img src="{{ section.settings.bottom_image5 | img_url: 'master' }}" />
+              </div>
+            </div>
+              {% endif %}
+            {% if section.settings.bottom_text5 != blank %}
+            <div class="question-bottom-text">
+              <div class="bottom-text-inner">
+                {{ section.settings.bottom_text5 }}
+              </div>
+            </div>
+              {% endif %}
+          </div>
+            {% endif %}
+        </div>
+
+        <!-- Step 6 -->
+        {% comment %}<div class="quiz-step" id="step6" style="display:none;">
+          {% if section.settings.start_text != blank %}   <h2>{{ section.settings.start_text }}</h2>     {% endif %}
+            <!-- Add Klaviyo form div here -->
+            
+            <button type="button" onclick="previousStep(5)">Previous</button>
+            <button type="button" onclick="showQuizResult()">Stop Quiz</button>
+        </div>{% endcomment %}
+
+        <!-- Quiz Result -->
+        <div class="quiz-step quizResult" id="step6" style="display:none;">
+          <div class="form-upper-header">
+          {% if section.settings.form_heading != blank %}
+          <div class="form-heading">
+            <h2>{{ section.settings.form_heading }}</h2>
+          </div>
+            {% endif %}
+          {% if section.settings.form_text != blank %}
+            <div class="form-text">{{ section.settings.form_text }}</div>
+          {% endif %}
+        </div>
+            <div class="klaviyo-form-WGE8Em"></div>
+        </div>
+    </form>
+</div>
+  </div>
+<script>
+  var klaviyo_text = "{{ section.settings.blank_form_content }}";
+  console.log('klaviyo_text = '+klaviyo_text);
+  function startQuiz() {
+    document.getElementById("startBtn").style.display = 'none';
+    document.querySelector('.quiz-container').style.display = 'block';
+    // Show the first step of the quiz
+    document.getElementById('step1').style.display = 'block';
+}
+ function validateStep(questionName, nextStepNumber) {
+        const question = document.querySelector(`input[name="${questionName}"]:checked`);
+        const errorElement = document.getElementById(`${questionName}Error`);
+        if (question) {
+            errorElement.style.display = 'none';
+            nextStep(nextStepNumber);
+        } else {
+            errorElement.style.display = 'block';
+        }
+    }
+
+    function nextStep(step) {
+        const currentStep = document.querySelector('.quiz-step:not([style*="display: none"])');
+        currentStep.classList.remove('fade-in');
+        setTimeout(() => {
+            currentStep.style.display = 'none';
+            document.getElementById('step' + step).style.display = 'block';
+            setTimeout(() => {
+               document.getElementById('step' + step).classList.add('fade-in');
+                    if(step == "5"){
+                      submitKlavyio();
+                    }
+               
+            }, 10); // Adding a slight delay before adding fade-in class
+        }, 500); // Delay to match the transition duration
+    }
+
+    function previousStep(step) {
+        const currentStep = document.querySelector('.quiz-step:not([style*="display: none"])');
+        currentStep.classList.remove('fade-in');
+        setTimeout(() => {
+            currentStep.style.display = 'none';
+            document.getElementById('step' + step).style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('step' + step).classList.add('fade-in');
+            }, 10); // Adding a slight delay before adding fade-in class
+        }, 500); // Delay to match the transition duration
+    }
+
+function showQuizResult() {
+  const currentStep = document.querySelector('.quiz-step:not([style*="display: none"])');
+  currentStep.classList.remove('fade-in');
+  setTimeout(() => {
+    currentStep.style.display = 'none';
+    document.getElementByClassName('quizResult').style.display = 'block';
+    setTimeout(() => {
+      document.getElementByClassName('quizResult').classList.add('fade-in');
+    }, 10); // Adding a slight delay before adding fade-in class
+  }, 500); // Delay to match the transition duration
+
+  // Call checkSelectedOptions after setting display styles
+  submitKlavyio();
+}
+
+// Function to set the klavyio value and trigger events
+function setInputValue(input, value) {
+  input.value = value;
+  // Trigger input and change events
+  input.dispatchEvent(new Event('input', { bubbles: true }));
+  input.dispatchEvent(new Event('change', { bubbles: true }));
+}
+
+
+function logSelectedRadio() {
+  let silverCount = 0;
+  let goldCount = 0;
+
+  // Assuming you have 5 steps
+  for (let step = 1; step <= 5; step++) {
+    const radioButtons = document.querySelectorAll(`#step${step} input[type="radio"]:checked`);
+
+    radioButtons.forEach(radioButton => {
+      if (radioButton.value === 'silver') {
+        silverCount++;
+      } else if (radioButton.value === 'gold') {
+        goldCount++;
+      }
+    });
+  }
+
+  let result;
+  if (silverCount > goldCount) {
+    console.log('%cSilver', 'color: silver');
+    result = 'silver';
+  } else if (goldCount > silverCount) {
+    console.log('%cGold', 'color: gold');
+    result = 'gold';
+  } else {
+    console.log('%cBoth have equal selections', 'color: gray');
+    result = 'equal';
+  }
+
+  return {
+    silverCount,
+    goldCount,
+    result // Adding the result to the return object
+  };
+}
+
+// Function to check if values are alternating between '1' and '2' or '2' and '1'
+function checkAlternating(values) {
+  for (let i = 0; i < values.length - 1; i++) {
+    if (values[i] === values[i + 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+  
+function getColor(){
+  
+  return "Pink";
+}
+
+
+  
+function submitKlavyio(){
+    // Get the input elements
+    var color = document.querySelector('.klaviyo-form input[placeholder="Color"]');
+  if(color == null){
+    var form_data= klaviyo_text;
+    $("form#quizForm").append('<span class="already-submitted-value">'+form_data+'</span>');
+  }
+    var result = logSelectedRadio();
+console.log(result.result);
+  // Set the values
+    setInputValue(color, result.result);
+
+  
+  // var clickEvent = new MouseEvent('click', {
+  //     bubbles: true,
+  //     cancelable: true,
+  //     view: window
+  //   });
+  //   var inputElement = document.querySelector('.go952291206');
+
+  //   inputElement.dispatchEvent(clickEvent);
+
+
+}
+
+  
+
+</script>
+
+<style>
+  .klaviyo-form  div[data-testid="form-row"]:not(:last-child) {
+    /* display: none !important; */
+}
+
+ .klaviyo-form div[data-testid="form-row"]:nth-child(5) {
+    display: none !important;
+}
+  .klaviyo-form div[data-testid="form-row"]:nth-child(4) label {
+    align-items: start !important;
+    width: 100% !important;
+    padding: 0 !important;
+    text-align: left;
+  }
+  .klaviyo-form div[data-testid="form-row"]:nth-child(4) label svg:nth-child(2) {
+    left: 6px !important;
+}
+      .quiz-container, #startBtn {
+        max-width: 55%;
+        margin: 40px auto 75px;
+        padding: 50px 20px 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .quiz-step {
+        display: none;
+    }
+
+    .quiz-step h2 {
+        font-size: 1.5em;
+      margin-bottom:30px;
+    }
+
+    .quiz-step label {
+    display: inline-block;
+    margin: 10px 0;
+    justify-content: center;
+    transition: border-color .15s ease-in-out, transform .4s ease;
+    width: 45%;
+    float: none;
+    text-align: center;
+    padding: 0 20px;
+}
+
+    label:hover {
+    transform: translateY(-5px);  
+    }
+
+    /* .quiz-step input[type="email"] {
+        width: 85%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+    } */
+
+    .quiz-step button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .quiz-step button:hover {
+        background-color: #000;
+    }
+
+    #quizResult {
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .quiz-step {
+        transition: opacity 0.5s ease-in-out;
+        opacity: 0; /* Initial opacity set to 0 */
+        text-align: center;
+    }
+
+    .fade-in {
+        opacity: 1; /* Opacity set to 1 to trigger fade-in effect */
+    }
+
+    div#initialStep {
+        opacity: 1;
+    }
+
+    .quiz-step input[type="radio"] {
+        display: none;
+    }
+
+    .quiz-step label img {
+        border: 2px solid #D8D8D8;
+        cursor: pointer;
+    border-radius: 20px;
+    width: 100%;
+    }
+
+    .quiz-step input[type="radio"]:checked + img {
+        border: 2px solid #000;
+    }
+
+    .flex-div {
+        display: inline-block;
+        justify-content: space-between;
+        width: 100%;
+        margin: 10px auto;
+    }
+   #startButton:hover{
+     transform: translateY(-5px);
+   }
+  #startButton {
+    display: block;
+    margin: 40px auto;
+    padding: 15px 40px;
+    font-size: 34px;
+    background: black;
+    color: white;
+    border-radius: 12px;
+    transition: border-color .15s ease-in-out, transform .4s ease;
+}
+  #startBtn{
+    text-align: center;
+  }
+  button.next-btn {
+    padding: 10px 35px;
+}
+
+ /* .quiz-step .needsclick[data-testid="form-row"]:nth-child(6) .needsclick[data-testid="form-component"]:nth-child(1) {
+    width: 20px !important;
+    flex: none !important;
+   align-items: flex-start !important;
+} */
+  .quiz-step input {
+    padding-left: 35px !important;
+}
+  div#step6 {
+    max-width: 500px;
+    margin: 0 auto;
+}
+  .quiz-step .needsclick[data-testid="form-row"]:nth-child(6) .needsclick[data-testid="form-component"]:nth-child(2) {
+    text-align: left;
+}
+  .quiz-step .needsclick[data-testid="form-row"]:nth-child(6) .needsclick[data-testid="form-component"]:nth-child(1) label svg:nth-child(1) {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+  .quiz-step .needsclick[data-testid="form-row"]:nth-child(6) .needsclick[data-testid="form-component"]:nth-child(1) label svg:nth-child(2) {
+    position: relative;
+    left: 7px;
+    width: 14px;
+    text-align: center;
+    fill: green;
+}
+  .quiz-step .needsclick[data-testid="form-row"]:nth-child(6) .needsclick[data-testid="form-component"]:nth-child(1) label:hover{
+        transform: none !important;
+  }
+  .quiz-step button[aria-label="Search Countries"] svg {
+    fill: #ddd !important;
+}
+  .quiz-step .needsclick[data-testid="form-row"]:nth-child(6) .needsclick[data-testid="form-component"]:nth-child(1) label svg:nth-child(2) polygon {
+  fill: green;
+}
+  .quiz-step button[aria-label="Search Countries"] {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+  @media only screen and (max-width: 768px) {
+   .quiz-container, #startBtn {
+        max-width: 70%;
+    }
+.flex-div {
+    display: block;
+  margin: 30px auto;
+      width: 100%;
+
+}    
+  }
+</style>
+

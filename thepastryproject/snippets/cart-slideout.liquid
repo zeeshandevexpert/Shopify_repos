@@ -1,0 +1,249 @@
+{%- capture section_settings -%}
+{
+  "type": {{ settings.cart-type | json }},
+  "itemCount": {{ cart.item_count }},
+  "drawer": true,
+  "hasShippingEstimator": false
+}
+{%- endcapture -%}
+
+<div id="CartDrawer" class="drawer drawer--right cart--drawer" tabindex="-1" aria-hidden="true" data-section-id="cart-drawer" data-section-type="cart-drawer" data-section-settings='{{ section_settings }}'>
+  <form id="CartDrawerForm" action="/cart" method="post" novalidate="" class="Cart drawer__contents">
+    <div class="drawer__fixed-header">
+      <div class="drawer__header">
+        <div class="drawer__title">{{ 'general.cart_drawer.title' | t }}</div>
+
+        <div class="drawer__close">
+          <button type="button" class="drawer__close-button js-drawer-close">
+            {%- render 'icon' with 'drawer-close' -%}
+            <span class="sr-only">Close cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer__inner">
+      <div class="drawer__scrollable">
+        <div class="Drawer__Main">
+          {%- if cart.item_count == 0 -%}
+          <div class="drawer__cart-empty">
+            <div class="empty-drawer-content drawer-spacing">
+              <div class="cart__warnings">
+                <div class="empty-cart-header">
+                  <div class="icon--wrapper">
+                    <svg class="icon icon-empty-cart" width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21.284 24H5.71869C3.94653 24.0015 2.27389 23.1803 1.19101 21.7776C0.108138 20.3746 -0.262791 18.5486 0.187482 16.8344L4.3588 0.857685C4.42359 0.606158 4.57205 0.384229 4.7797 0.228622C4.9876 0.07276 5.24219 -0.00759718 5.50164 0.000565859H21.5012C21.7606 -0.00759718 22.0152 0.07276 22.2231 0.228622C22.4308 0.384229 22.5793 0.606158 22.644 0.857685L26.8495 16.8572C27.2929 18.574 26.9141 20.3992 25.8243 21.7979C24.7346 23.1966 23.057 24.0101 21.2841 23.9999L21.284 24ZM6.38153 2.28628L2.40437 17.4173C2.13397 18.4428 2.3536 19.5356 2.99874 20.3771C3.64847 21.2213 4.65355 21.7154 5.71854 21.7144H21.2838C22.3489 21.7154 23.3539 21.2213 24.0036 20.3771C24.6488 19.5356 24.8684 18.4428 24.598 17.4173L20.6208 2.28628H6.38153Z" fill="#0E1C2C"/>
+                      <path d="M13.5012 10.8574C11.9857 10.8574 10.5324 10.2554 9.46079 9.18374C8.38915 8.11208 7.78711 6.65882 7.78711 5.1433C7.78711 4.73489 8.00496 4.35762 8.35852 4.15355C8.71209 3.94947 9.14779 3.94947 9.50135 4.15355C9.85491 4.35762 10.0728 4.7349 10.0728 5.1433C10.0728 6.36828 10.7263 7.50013 11.787 8.11236C12.8477 8.72484 14.1548 8.72484 15.2155 8.11236C16.2761 7.50013 16.9297 6.36828 16.9297 5.1433C16.9297 4.73489 17.1476 4.35762 17.5011 4.15355C17.8547 3.94947 18.2904 3.94947 18.644 4.15355C18.9975 4.35762 19.2154 4.7349 19.2154 5.1433C19.2154 6.65882 18.6133 8.1121 17.5417 9.18374C16.47 10.2554 15.0168 10.8574 13.5012 10.8574Z" fill="#A7A7A7"/>
+                    </svg>
+                  </div>       
+
+                  <h3 class="cart__empty-text">{{ 'general.cart_drawer.empty_cart_heading' | t }}</h3>
+                  <p class="empty-cart-description">{{ 'general.cart_drawer.empty_cart_text' | t }}</p>
+                  {% comment %}
+                  <a href="{{ settings.continue_shopping | default: routes.all_products_collection_url }}" class="btn secondary-btn cart__checkout">
+                    {{ 'cart.general.continue_browsing_html' | t }} <span class="ButtonArrow">{%- render 'icon' with 'button-arrow' -%}</span>
+                  </a>
+                  {% endcomment %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {%- else -%}
+          
+          <div class="Drawer__Container">
+            <div class="cart__items Cart__ItemList">
+              {%- for line_item in cart.items -%}
+              <div class="CartItemWrapper drawer-spacing">
+                <div class="cart__item" data-key="7832646418490:bbe782091327c3ea879b313da85bd431"><div class="cart__image">
+                  <a class="cart__media--wrap media" href="{{ line_item.url }}" style="height: 0; padding-bottom: {{ 100 | divided_by: line_item.image.aspect_ratio }}%;">
+                    {{ line_item.image | image_url: width: 240 | image_tag: 
+                  	alt: line_item.image.alt,
+                    widths: '180, 360, 540',
+                    sizes: '100vw',
+                    class: 'CartItem__Image', 
+                    loading: 'lazy' }}
+                  </a>
+                  </div>
+                  <div class="cart__item-details">
+                    <div class="cart__item-title">
+                      <a href="{{ line_item.url }}" class="cart__item-name">{{ line_item.product.title }}</a>
+                      
+                      {%- unless line_item.product.has_only_default_variant -%}
+                        <div class="cart__item--variants">
+                          {%- for option in line_item.options_with_values -%}
+                            <div class="CartItem__Variant"><span>{{ option.name }}:</span> {{ option.value }}</div>
+                          {%- endfor -%}
+                        </div>
+                      {%- endunless -%}
+                     
+                      {%- if line_item.selling_plan_allocation != null -%}
+                        <div class="cart__item--variants">
+                          {{ line_item.selling_plan_allocation.selling_plan.name }}
+                        </div>
+                      {%- endif -%}
+
+                      {%- assign property_size = line_item.properties | size -%}
+                      {% if property_size > 0 %}
+                        <div class="cart__item--properties">
+                          <ul class="CartItem__PropertyList list-unstyled">
+                          {% for p in line_item.properties %}
+                            {%- assign first_character_in_key = p.first | truncate: 1, '' -%}
+                            {% unless p.last == blank or first_character_in_key == '_' %}
+                              <li class="CartItem__Property">
+                                {{ p.first }}:
+                                {% if p.last contains '/uploads/' %}
+                                  <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                                {% else %}
+                                  {{ p.last }}
+                                {% endif %}
+                              </li>
+                            {% endunless %}
+                          {% endfor %}
+                          </ul>
+                        </div>
+                      {% endif %}
+
+                      <div class="cart__item--price hidden-tablet-and-up">
+                        {%- if line_item.original_price != line_item.final_price -%}
+                        <span class="CartItem__OriginalPrice Price Price--compareAt">{{ line_item.original_price | money }}</span>
+                        <span class="CartItem__Price Price Price--highlight">{{ line_item.final_price | money }}</span>
+                        {%- elsif line_item.variant.compare_at_price > line_item.variant.price -%}
+                          <span class="CartItem__OriginalPrice Price Price--compareAt">{{ line_item.variant.compare_at_price | times: line_item.quantity | money }}</span>
+                          <span class="CartItem__PricePrice Price--highlight">{{ line_item.final_line_price | money }}</span>
+                        {%- else -%}
+                        <span class="CartItem__Price Price Price--regular">{{ line_item.final_price | money }}</span>
+                        {%- endif -%}
+                      </div>
+
+                    </div>
+                    <div class="cart__item-bottom">
+                      {%- capture item_actions -%}
+                      <div class="CartItem__Actions">
+                        <div class="CartItem__QuantitySelector">
+                          <div class="QuantitySelector quantity">
+                            {%- assign quantity_minus_one = line_item.quantity | minus: 1 -%}
+
+                            <a class="QuantitySelector__Button quantity__button" title="increase by 1" href="{{ routes.cart_change_url }}?quantity={{ quantity_minus_one }}&line={{ forloop.index }}" data-quantity="{{ quantity_minus_one }}" data-line="{{ forloop.index }}" data-action="update-item-quantity">
+                              {% render 'icon-minus' %}
+                            </a>
+
+                            <input type="text" name="updates[]" id="updates_{{ line_item.key }}" class="QuantitySelector__CurrentQuantity quantity__input" pattern="[0-9]*" data-line="{{ forloop.index }}" value="{{ line_item.quantity }}">
+
+                            {%- assign quantity_plus_one = line_item.quantity | plus: 1 -%}
+
+                            <a class="QuantitySelector__Button quantity__button" title="decrease by 1" href="{{ line_item.url_to_remove }}" data-quantity="{{ quantity_plus_one }}" data-line="{{ forloop.index }}" data-action="update-item-quantity">
+                              {% render 'icon-plus' %}
+                            </a>
+                          </div>
+                        </div>
+
+                        <a href="{{ routes.cart_change_url }}?quantity=0&line={{ forloop.index }}" class="CartItem__Remove" data-quantity="0" data-line="{{ forloop.index }}" data-action="remove-item">                          
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L9 9" stroke="#181803" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M1 9L9 1" stroke="#181803" stroke-width="1.5" stroke-linecap="round"/>
+                          </svg>
+                          <span class="CartItem__Remove--text sr-only">Löschen</span>
+                        </a>
+
+                        <div class="cart__item--price hidden-phone">
+                          {%- if line_item.original_price != line_item.final_price -%}
+                          <span class="CartItem__OriginalPrice Price Price--compareAt">{{ line_item.original_price | money }}</span>  
+                          <span class="CartItem__Price Price Price--highlight">{{ line_item.final_price | money }}</span>
+                          {%- elsif line_item.variant.compare_at_price > line_item.variant.price -%}
+                            <span class="CartItem__OriginalPrice Price Price--compareAt">{{ line_item.variant.compare_at_price | times: line_item.quantity | money }}</span>
+                            <span class="CartItem__PricePrice Price--highlight">{{ line_item.final_line_price | money }}</span>
+                          {%- else -%}
+                          <span class="CartItem__Price Price Price--regular">{{ line_item.final_price | money }}</span>
+                          {%- endif -%}
+                        </div>
+                      </div>
+                      {%- endcapture -%}
+
+                      {{ item_actions }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {%- endfor -%}
+
+            </div>
+          </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if cart.item_count > 0 -%}
+      <div class="drawer__footer">
+        <div class="drawer__footer-info">
+          <div class="cart__item-row">
+            <div class="cart__item-sub">
+              <div class="cart__subtotal">{{ 'cart.general.subtotal' | t }}:</div>
+              <div class="subtotal__amount" data-subtotal>{{ cart.original_total_price | money }}</div>
+            </div>    
+          </div>
+          {% if cart.discount_applications.size > 0 %}
+          <div class="cart__item-row">
+            {% for discount_application in cart.discount_applications %}
+            <div class="cart__item-sub">
+                <div class="cart__subtotal">Discount name: {{ discount_application.title }}</div>
+                <div class="subtotal__amount" data-subtotal>-{{ discount_application.total_allocated_amount | money }}</div>
+            </div> 
+            {% endfor %}
+          </div>
+          {% endif %}
+          <div class="cart__item-row">
+            <div class="cart__item-sub">
+              <div class="cart__subtotal">{{ 'cart.general.total' | t }}:</div>
+              <div class="subtotal__amount" data-subtotal>{{ cart.total_price | money }}</div>
+            </div>    
+          </div>
+          <div class="cart__item-row">
+            <div class="cart__item-sub cart__item-shipping">
+              {%- capture taxes_shipping_checkout -%} 
+                {%- if cart.taxes_included and shop.shipping_policy.body != blank -%}
+                  {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                {%- elsif cart.taxes_included -%}
+                  {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
+                {%- elsif shop.shipping_policy.body != blank -%}
+                  {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
+                {%- else -%}
+                  {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
+                {%- endif -%} 
+              {%- endcapture -%}
+              <div class="cart__shipping">{{ taxes_shipping_checkout }}</div>
+            </div>    
+          </div>
+          
+          <div class="cart__checkout-wrapper">
+            <button type="submit" name="checkout" data-terms-required="false" class="btn secondary-btn cart__checkout" {% if cart == empty %} disabled{% endif %}>
+              {{ 'cart.general.checkout_mobile' | t }}
+              <span class="ButtonIcon">{%- render 'icon' with 'product-bag' -%} </span>
+            </button>
+          </div>
+          <div class="PaymentList CartDrawer__PaymentMethods">
+            {%- capture payment_methods -%}
+            {%- for type in shop.enabled_payment_types -%}
+            <li class="HorizontalList__Item">{{ type | payment_type_svg_tag: class: 'Icon' }}</li>
+            {%- endfor -%}
+            {%- endcapture -%}
+
+            <ul class="Cart__PaymentList HorizontalList">
+              {%- if payment_methods != blank -%}
+              {{ payment_methods }}
+              {%- else -%}
+              {%- assign enabled_payment_types = 'amazon,american_express,visa,master,maestro,apple_pay,google_pay,shopify_pay,paypal' | remove: ' ' | split: ',' -%}
+              {%- for type in enabled_payment_types limit: 12 -%}
+              <li class="HorizontalList__Item">
+                {{ type | payment_type_svg_tag: class: 'Icon' }}
+              </li>
+              {%- endfor -%}
+              {%- endif -%}
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      {%- endif -%}
+    </div>
+  </form>
+</div>

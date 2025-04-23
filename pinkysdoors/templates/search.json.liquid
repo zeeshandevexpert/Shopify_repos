@@ -1,0 +1,45 @@
+{% layout none %}
+{%- assign alreadyChecked = false -%}
+{%- assign search_results = search.results | sort: 'best-selling' -%}
+{%- paginate search.results by 50 -%}
+{
+  "results_count": {{ search.results_count }},
+  "terms": {{ search.terms | json }},
+  {%- if search.results_count > 0 -%}
+  "items": [
+    {%- for item in search_results -%}
+	{%- unless item.title contains 'PDP'  -%}
+	{%- assign type = item.object_type -%}
+	{%- assign item_title = item.title | split: settings.split_value -%}
+	  {
+        "title": "{{ item_title[0] | strip }}",
+        "type": "{{item.object_type}}",
+		{%- if item_title[1] -%}"color":"{{item_title[1] | strip}}",{%- endif -%}
+        "url": "{{ item.url }}",
+        "featured_image": {% if item.featured_image %}"{{ item.featured_image.src | img_url: '50x' }}"{% elsif item.image %}"{{item.image | img_url: '50x'}}"{% else %}false{% endif %},
+		"variants": {{ item.variants | json }},
+		"price_max":"{{ item.price_max }}",
+        "price": "{{ item.price }}",
+        "available": {% if item.available %}true{% else %}false{% endif %}
+      } 
+	  {%- if item.collections.first and item.collections.first.title != 'Shop All' and alreadyChecked == false -%}
+	  {%- assign alreadyChecked = true -%}
+	  {%- assign all_collections = item.collections -%}
+	 {%- endif -%}
+     {% unless forloop.last %},{% endunless %}
+	{%- endunless -%}
+    {%- endfor -%}
+  ],
+  {%- endif -%}
+  "page": {{ paginate.current_page }},
+  "next_page": {% if paginate.next.is_link %}"{{ paginate.next.url }}"{% else %}false{% endif %},
+  "collections": [
+  {%- for col in all_collections -%}
+    {
+    "title":"{{col.title}}",
+    "url":"{{col.url}}"
+    }{% unless forloop.last %},{% endunless %}
+  {%- endfor -%}
+  ]
+}
+{%- endpaginate -%}

@@ -1,0 +1,555 @@
+{%- assign social_icons = false -%}
+{%- assign inline_list = false -%}
+
+{%- if
+  settings.social_twitter_link != blank
+  or settings.social_facebook_link != blank
+  or settings.social_pinterest_link != blank
+  or settings.social_instagram_link != blank
+  or settings.social_tumblr_link != blank
+  or settings.social_snapchat_link != blank
+  or settings.social_youtube_link != blank
+  or settings.social_vimeo_link != blank
+  or settings.social_houzz_link != blank
+  or template.name == 'article'
+  or template.name == 'blog'
+-%}
+  {%- assign social_icons = true -%}
+{%- endif -%}
+
+{%- case section.blocks.size -%}
+  {%- when 1 -%}
+    {%- assign footer_item = 'site-footer__item--full-width' -%}
+    {%- assign inline_list = true -%}
+  {%- when 2 -%}
+    {%- assign footer_item = 'site-footer__item--one-half' -%}
+    {%- assign inline_list = true -%}
+  {%- when 3 -%}
+    {%- assign footer_item = 'site-footer__item--one-quarter' -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'newsletter' -%}
+        {%- assign footer_item = 'site-footer__item--one-quarter' -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- when 4 -%}
+    {%- assign footer_item = 'site-footer__item--one-quarter' -%}
+  {%- when 5 -%}
+    {%- assign footer_item = 'site-footer__item--one-fifth' -%}
+{%- endcase -%}
+
+{% comment %} Create an appropriate hover color based on text color and brightness {% endcomment %}
+{%- assign footer_text_color = section.settings.color_footer_text -%}
+{%- assign footer_text_color_brightness = section.settings.color_footer_text | color_brightness -%}
+{%- if footer_text_color_brightness <= 26 -%}
+  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 25 -%}
+{%- elsif footer_text_color_brightness <= 65 -%}
+  {%- assign footer_text_color_hover = footer_text_color | color_lighten: 15 -%}
+{%- else -%}
+  {%- assign footer_text_color_hover = footer_text_color | color_darken: 10 -%}
+{%- endif -%}
+
+<style>
+  .site-footer__hr {
+    border-bottom: 1px solid {{ section.settings.color_footer_bg | color_darken: 10 }};
+  }
+
+  .site-footer a,
+  .site-footer__rte p,
+  .site-footer small {
+    color: {{ section.settings.color_footer_text }};
+  }
+
+  .site-footer {
+    background-color: {{ section.settings.color_footer_bg }};
+  }
+
+  .site-footer a:hover {
+    color: {{ footer_text_color_hover }};
+  }
+</style>
+
+<div class="site-footer__newsletter-wrapper">
+  <div class="site-footer__newsletter flex flex--align-center">      
+    <div class="newsletter__info">
+      {% comment %}<h4 class="h2">Stay in touch</h4>{% endcomment %}
+      <p><b>Sign up to our newsletter.</b> We'll keep you up-to-date on the latest news and exclusive offers!</p>
+    </div>
+    {% include 'klaviyo-signup', id:'above-footer', list_id:'JKYa2n' %}
+  </div>
+</div>
+
+<footer class="site-footer" role="contentinfo" data-section-id="{{ section.id }}" data-section-type="footer-section">
+  <div class="footerBio">
+    <p>
+      With roots dating back to 1978, PINKYS celebrates the beauty of Southern California sunsets: Blush. Breathtaking. Ethereal. Expansive. Born and raised in Los Angeles, we champion the creative lifestyle of LA—the light, the air, the palpable energy of the city—to create high-grade architectural elements that break down walls and create infinite opportunities wherever you see them. Southern California is an ideal. A dream in the minds of all who pursue it. Forever becoming. Each door and window crafted by PINKYS is a view. A frame. A connection to the natural world outside. Enjoy the view.
+    </p>
+  </div>  
+  <div class="page-width">
+      
+    <div class="site-footer__callouts flex flex--space-between small--flex-columns">
+      <div class="site-footer__callout flex relative">
+        <div class="site-footer__callout-icon">
+          <svg aria-hidden="true" role="presentation" width="48" height="48" viewBox="0 0 48 48"  xmlns="http://www.w3.org/2000/svg"><g fill="#FEFEFE" fill-rule="evenodd"><path d="M45.13 24.003c.003-11.661-9.46-21.134-21.118-21.137-11.658-.003-21.126 9.463-21.13 21.125C2.88 35.651 12.345 45.125 24 45.128c11.656.004 21.126-9.464 21.13-21.125M25.366 48h-2.72c-.115-.026-.229-.068-.345-.075-2.207-.135-4.341-.61-6.424-1.343C4.637 42.624-2.054 30.522.567 18.888c1.34-5.94 4.46-10.724 9.365-14.318 3.697-2.71 7.86-4.187 12.44-4.509 3.08-.216 6.093.136 9.018 1.104C37.365 3.145 41.903 6.9 44.996 12.38a22.8 22.8 0 012.768 8.36c.081.632.157 1.265.236 1.897v2.72c-.027.143-.07.284-.08.428-.15 2.3-.636 4.53-1.463 6.676-2.11 5.478-5.73 9.666-10.846 12.54a22.834 22.834 0 01-8.352 2.763c-.631.08-1.262.157-1.893.236"/><path d="M32 39.67c-1.156.656-2.267 1.285-3.593 1.328-1.29.041-2.366-.526-3.391-1.23-2.241-1.536-4.058-3.514-5.679-5.682-3.01-4.027-5.33-8.413-6.66-13.305a19.293 19.293 0 01-.673-4.416c-.065-1.887.636-3.38 2.207-4.427.464-.31.936-.608 1.446-.938l4.538 7.96c-1.568 1.13-1.626 2.754-1.319 4.404.556 2.986 1.951 5.529 4.238 7.531.64.56 1.37.965 2.21 1.149.736.16 1.424.034 2.134-.338L32 39.67M30.934 28c.47-.013.752.161.934.506 1.335 2.53 2.67 5.062 3.993 7.6.277.533.13 1.101-.346 1.415-.69.456-1.387.899-2.09 1.329-.484.295-1.015.148-1.292-.375-1.34-2.528-2.67-5.061-3.994-7.6-.27-.517-.138-1.087.315-1.39a73.5 73.5 0 012.154-1.37c.124-.078.278-.098.326-.114M24 15.49c.008.5-.137.81-.435 1.003-.715.466-1.433.928-2.164 1.362-.523.312-1.007.112-1.34-.517-1.181-2.233-2.36-4.467-3.54-6.701-.13-.247-.27-.49-.39-.741-.259-.537-.129-1.107.343-1.417a68.265 68.265 0 012.098-1.324c.506-.306 1.024-.152 1.316.398 1.33 2.5 2.65 5.005 3.969 7.513.083.159.118.35.143.424"/></g></svg>
+        </div>
+        <div class="site-footer__callout-text">
+          <p><b>{{ 'footer.callout_1_title' | t }}</b><br>
+          {{ 'footer.callout_1_text' | t }}</p>
+        </div>
+        <a href="{{ 'footer.callout_1_link' | t }}" class="link--abs-pos">
+          <span class="visually-hidden">{{ 'footer.callout_1_text' | t }}</span>
+        </a>
+      </div>
+      <div class="site-footer__callout flex">
+        <div class="site-footer__callout-icon">
+          {%- render 'icon-value-prop-2' -%}
+        </div>
+        <div class="site-footer__callout-text">
+          <p><b>{{ 'footer.callout_2_title' | t }}</b><br>
+          {{ 'footer.callout_2_text' | t }}</p>
+        </div>
+        <a href="{{ 'footer.callout_2_link' | t }}" class="link--abs-pos">
+          <span class="visually-hidden">{{ 'footer.callout_2_text' | t }}</span>
+        </a>
+      </div>
+      <div class="site-footer__callout flex">
+        <div class="site-footer__callout-icon">
+          <svg aria-hidden="true" role="presentation" width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><title>Group 6</title><g fill="#FEFEFE" fill-rule="evenodd"><path d="M31.53 19.615l-.007-.016c-.006-.004-.012-.01-.018-.013a137253.476 137253.476 0 00-7.442-4.285h-.012l-.061.034-6.945 4.003c-.14.08-.28.16-.418.241-.014.008-.034.012-.032.04l7.464 4.301 7.471-4.305m-6.518 6.017l-.002.057a308104.717 308104.717 0 00.003 8.612l.01.007c.024-.003.046-.02.069-.034l1.404-.821 4.93-2.884 1-.584c.024-.014.05-.023.069-.053v-.092-8.404-.066c0-.012-.004-.023-.007-.039-.014.005-.023.007-.031.012l-7.445 4.289m-1.974 8.675c.002-.008.006-.015.006-.021v-8.65l-.078-.048-7.234-4.169-.135-.077c-.01-.005-.022-.004-.033-.006-.008.093-.006 8.613.002 8.669.035.027 7.378 4.265 7.45 4.298.005.003.013.002.022.004m15.798-1.761l-.95 1.71c-.133-.073-.255-.147-.38-.22l-.364-.214-.372-.217-.366-.214-.372-.218-.371-.218-.366-.214-.372-.217-.365-.215-.372-.217-.365-.214-.375-.22-.078.045-2.01 1.169-3.699 2.151-3.089 1.797a.669.669 0 01-.134.062c-.048.015-.094.032-.14.049a.91.91 0 01-.556.02 1.225 1.225 0 01-.308-.125L14.62 31.7l-.073-.04-.06.03c-.976.573-1.952 1.144-2.929 1.716l-1.385.811c-.02.013-.042.023-.063.034a63.376 63.376 0 01-.947-1.577c.013-.021.038-.03.058-.042l1.116-.653 3.186-1.866.07-.044v-.106V19.79c0-.177.031-.345.102-.506.012-.027.028-.052.044-.077.007-.013.018-.024.024-.037a.544.544 0 01.13-.18c.002 0 .005-.002.005-.005.017-.057.066-.083.11-.114a.102.102 0 00.03-.04.078.078 0 01.047-.045.502.502 0 00.073-.036l5.729-3.331 3.07-1.785.086-.052.001-.095v-3.285-1.033c0-.027-.004-.054.007-.083.013-.002.025-.005.037-.005H25c.004.018.008.032.008.046.002.025 0 .05 0 .074v4.379l.079.047a52745.998 52745.998 0 008.853 5.05c.05.028.096.06.135.103.057.059.115.116.173.173.14.14.194.656.154.66l-.005.044V29.945l1.475.865 1.481.868 1.482.868"/><path d="M24 45.118c-11.656-.004-21.12-9.474-21.117-21.132.003-11.66 9.471-21.124 21.129-21.12 11.657.002 21.121 9.473 21.118 21.131-.004 11.659-9.474 21.124-21.13 21.12m23.764-24.382a22.79 22.79 0 00-2.768-8.358C41.903 6.898 37.365 3.143 31.39 1.165 28.465.196 25.452-.155 22.37.061c-4.578.322-8.742 1.8-12.44 4.508C5.029 8.162 1.907 12.945.569 18.883c-2.622 11.632 4.068 23.731 15.31 27.688 2.082.733 4.216 1.208 6.423 1.342.116.007.23.05.345.076h2.72c.63-.079 1.262-.155 1.893-.236a22.837 22.837 0 008.352-2.762c5.115-2.873 8.736-7.061 10.846-12.537a22.568 22.568 0 001.463-6.675c.01-.144.053-.285.08-.428v-2.72c-.079-.632-.155-1.264-.236-1.896"/></g></svg>
+        </div>
+        <div class="site-footer__callout-text">
+          <p><b>{{ 'footer.callout_3_title' | t }}</b><br>
+          {{ 'footer.callout_3_text' | t }}</p>
+        </div>
+        {% if customer %}
+        {% assign track_link = '/pages/track-my-order' %}
+        {% else %}
+        {% assign track_link = '/pages/track-my-order-login' %}
+        {% endif %}
+        <a href="{{ track_link }}" class="link--abs-pos">
+          <span class="visually-hidden">{{ 'footer.callout_3_text' | t }}</span>
+        </a>
+      </div>
+    </div>
+    <div class="site-footer__content">
+      {%- for block in section.blocks -%}
+
+        <div class="site-footer__item
+                    {% if section.blocks.size == 1 %} site-footer__item--center{% endif %}
+                    {{ footer_item }}
+                    {% if block.type == 'newsletter' and section.blocks.size == 3 %}site-footer-newsletter__one-half{% endif %}"
+             {{ block.shopify_attributes }}>
+          <div class="site-footer__item-inner site-footer__item-inner--{{ block.type }}">
+
+            {%- if block.settings.title -%}
+              <h4>{{ block.settings.title | escape }}</h4>
+            {%- endif -%}
+
+            {%- case block.type -%}
+              {%- when 'newsletter' -%}
+                {% include 'klaviyo-signup', id:'footer', list_id:'JKYa2n' %}
+
+              {%- when 'text' -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="site-footer__rte
+                              {% if section.blocks.size == 1 %} site-footer__single-block--centered{% endif %}">
+                      {{ block.settings.text }}
+                  </div>
+                {%- endif -%}
+
+              {%- when 'link_list' -%}
+                {%- assign footer_linklist = block.settings.menu -%}
+                  <ul class="site-footer__linklist
+                            {% if inline_list %}list--inline{% endif %}">
+                    {%- for link in linklists[footer_linklist].links -%}
+                      <li class="site-footer__linklist-item">
+                        <a href="{{ link.url }}"
+                          {% if link.current %} aria-current="page"{% endif %}
+                        >
+                          {{ link.title | escape }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                    {% if block.settings.title == 'Information' %}
+                    <!-- li class="site-footer__linklist-item"><a href="/pages/become-an-installer">Become an Installer</a></li -->
+                    <li class="site-footer__linklist-item"><a href="#" data-acsb-custom-trigger="true">Accessibility</a></li>
+                    {% endif %}
+                  </ul>
+
+            {%- endcase -%}
+
+          </div>
+          
+        </div>
+      {%- endfor -%}
+      <div class="site-footer__item--last">
+        <div class="site-footer__item--last--inner">
+        <!-- Pinkys Footer Logo -->
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="57" viewBox="0 0 1000 570">
+            <image id="Vector_Smart_Object" data-name="Vector Smart Object" x="11" y="62" width="977" height="447" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGIAAAAtCAYAAABVq763AAAE3klEQVR4nO2cWYgcVRSGv5lMNqPGSKKgkoxoMCC4L9FIHPVBJYKKK7i9yPggonkRXNAXfZAo+qDgEgWRgMuDiVvEBaOOiivBDcVAMqLixECS0RBpk7Qc+AsOla7q7tqre344TNF1695zz3/Xc8+dgWazSc1wFDDi5GapvxrY4OS3OlWrDkQMO6MvB44OvT9Pfz8I/b4ZeAm4qyA9U2Gogjod64xusihhPkbYxY6IU4A7gI/UazZlqHNqVIWI64GLRMCROZVxMHCDxPC7CFkPrMmpzI5RNBEDwHFuqNkJ3AI8kKLlJ4URfh1wjoh4Cpjr5pifgcLG7byJMMMf7wx/LjDfvV+Xc/nd4HDgUuAafbMN+FCNZGPehWdNxCBwgjP8spDh6wTT+wrgDUfEKHCAesy3wL6s6pMFETakXKUubpPrvAzyrCrOBm6Sbts18Y8BrwDjaXTulghLf5qMPqIWcjmwqlbmzAbzNJSZ7AFeBp5WbzFyvtLvHaEdEdOBU91QYwTMce9nVNhQRcNssUJi2CVCgsn/a+C/KJ3CRFhmZzjDW1ec3TOmKhbWYC+UGHYDnzpivgAagUZDoRXNmT1meN/QppWoB7LrBRJEzOdamW0YauEaqBK+A+4FzgduT6DXEmCpxutrE9ZresRzWsx2neD+ojd043It/ApsAT5rk/5uLR9f06JgYZflTVMZu1P0dJuMn9PkPJIwj7bIkoiGDL1FjrhWeV/W5eboH/e8PQERAdIMtzb5/qk85nSQPhGyIMLcAy8CE84lsEPugjrgrQ50zH1TGkeEzerPyEm2PCbdXznoVQSsB9+mtX/e+Bh4VsPbsJOFwQY4jgjziP4CrK2xsaNgc9SVwJcFlWdlbY14Z17h4cGYjwPjb8tBsTLxjs4miiKBNp7lSfNbxfWIhzRBHZKDYmXhQVsqAnsLLv894G016h1OdgbPcUSMFqhoUdhb5BmDgw0/V8cliBuaehH3aZV0aNXq1m9EIN/PN/IiVwb9SASaPMdcKE7p6FciDDO1T3qiArrE7iNMyVlaNXmZq8mnV2AujFszrsuuFqujpjyvs7ol4k5l0goDIubvGpDR0LLxiC6+mQwZ0ZyHpxPvfbXIwgX6JupkboWcmPsh6dDUlBOu46PAkmAknKzQmcfaqDCq1dSger3NIyfKvbNMk/u/Md/vEeFxNokMauv1OcJik37U8+tt0m5V44raZ1jUxvsJdDBf0kkKsHg+KlEW3tcF6roTJW2W4uDDXdKGvlijPSbm/YHqVcMhOaiTzLMgwqLlHg2dR+Tmty8BhwGL5aldElO8ucofSapelgdDM6Tw4pg0azVOjkvs9OzdDHVIAzuzP6tFi55ZROFFH5UuCnki11WIiJU6Fi0FQzrW7NUojipjvyiOIM6GUFxTo571qyzaxjV5NOSDGet3q2WAVJF+U0gOa8Rv5hX72gleVT79EA3u4aPBzQZ/AJckzSwLImwZ+rCkl+5HhGHui0/cUFO5+xEe+xRAtlG+nXY3hqqM4MZQYPgf8vQc5D1HmOLfSx6PuENXFUzoOnBP3qELwyr2k+RJ9+4eXcXN81ZpGP5WKbpUWRqqsmpa467Y+nvWkxmWYXm9MHXPunNskqwOfbFeJ4Ph/zwQhc2utaOAgRsrUL+WmPpfHFUA8D949BveYVmQ1wAAAABJRU5ErkJggg=="/>
+          </svg>
+
+          <!-- svg width="89" height="51" viewBox="0 0 89 51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Group 21</title><defs><path id="a" d="M0 51h89V0H0z"/></defs><g fill="none" fill-rule="evenodd"><path fill="#323232" d="M-1036-87H404v442h-1440z"/><g><path d="M26.635 11.392c.467-1.752 1.23-2.684 3.35-2.344 1.797.289.712 3.544-.636 5.38-1.232 1.678-2.65 1.973-2.928 1.796-.58-.372.172-4.667.214-4.832" fill="#FEFEFE"/><path d="M19.614 11.699c-.696.755-1.211 1.53-1.548 2.323-.34.756-.499 1.992-.48 3.71.018 1.719.177 3.635.48 5.749-1.09.227-2.161.397-3.214.51-1.277-2.68-2.17-5.136-2.68-7.364-.503-2.228-.4-4.134.312-5.721.527-1.133 1.485-2.19 2.876-3.172 1.39-.982 3.006-1.813 4.847-2.493a33.595 33.595 0 015.831-1.558c2.05-.358 3.965-.482 5.751-.369 1.784.113 3.333.464 4.648 1.049 1.316.586 2.162 1.484 2.539 2.69.412 1.285.262 2.663-.451 4.135-.715 1.474-1.853 2.918-3.41 4.336-1.561 1.415-3.487 2.737-5.779 3.963-2.292 1.228-4.808 2.258-7.552 3.088.113-2.68.329-5.098.65-7.25.317-2.153.629-3.777.927-4.872.227-.794.144-1.2-.251-1.217-.395-.02-.902.197-1.522.65s-1.278 1.057-1.974 1.813m-1.351 18.806a241.8 241.8 0 01-1.608-2.945l1.918-.68c.187 1.172.402 2.323.647 3.456.243 1.132.48 2.19.704 3.173-.563-1.022-1.118-2.021-1.661-3.004m3.804 2.01a71.91 71.91 0 01-.339-6.938 80.652 80.652 0 006.256-3.143 69.22 69.22 0 005.863-3.653 56.8 56.8 0 005.014-3.91c1.503-1.321 2.762-2.615 3.777-3.88 1.015-1.265 1.718-2.473 2.113-3.626.395-1.151.403-2.18.028-3.088-.338-.83-1.118-1.48-2.337-1.953-1.223-.471-2.727-.792-4.51-.962-1.785-.17-3.757-.21-5.92-.114a73.46 73.46 0 00-6.593.593c-2.235.304-4.415.71-6.538 1.22-2.123.509-4.038 1.095-5.75 1.755-1.708.662-3.125 1.388-4.253 2.182-1.128.793-1.804 1.605-2.03 2.435a7.703 7.703 0 00-.11 2.946c.148 1.02.48 2.124.985 3.314.507 1.189 1.183 2.483 2.028 3.88a207.159 207.159 0 002.903 4.645 34.602 34.602 0 01-5.437.028 37.067 37.067 0 01-5.497-.821c-.752-.15-1.248-.103-1.492.142-.245.246-.293.614-.14 1.104.147.49.485 1.038 1.012 1.644.526.604 1.194 1.152 2 1.641.808.492 1.721.89 2.735 1.19 1.014.303 2.102.378 3.27.227 1.803-.227 3.794-.66 5.974-1.303.567.868 7.363 13.59 8.255 13.624.57.02.555-.671.027-2.522a34.592 34.592 0 01-1.294-6.656" fill="#FEFEFE"/><path d="M67.208 47.26c-.176.955-.601 1.639-1.273 2.054-.676.414-1.722.433-3.13.054-2.365-.593-4.45-1.416-6.257-2.471-1.804-1.058-3.291-2.121-4.457-3.192-1.167-1.074-1.99-2.071-2.473-2.99-.48-.918-.582-1.576-.303-1.969.247-.315.887-.51 1.916-.585 1.033-.073 2.333-.057 3.896.047 1.567.106 3.326.267 5.277.483 1.948.217 3.962.44 6.044.67.31 1.57.558 3.04.742 4.412.185 1.37.19 2.533.018 3.487m-19.34-30.72a81.71 81.71 0 01.194-5.938c.131-1.784.352-3.28.665-4.489.313-1.208.745-1.902 1.3-2.083.591-.183 1.044 0 1.356.55.311.552.486 1.346.521 2.385.035 1.037-.033 2.24-.203 3.613a38.232 38.232 0 01-.79 4.24 46.663 46.663 0 01-1.269 4.293 336.854 336.854 0 01-1.696 4.642s-.075-5.037-.078-7.213m7.524 14.17a6.626 6.626 0 01-1.162-.677c-.356-.282-.556-.526-.605-.73-.048-.207.052-.43.304-.67 1.001-.999 1.695-2.628 2.157-3.484.462-.858.742-1.61.84-2.259.097-.647.068-1.184-.084-1.611-.156-.427-.347-.692-.577-.793-.505-.236-1.114-.186-1.829.154-.716.342-1.45.873-2.202 1.594-.75.721-1.477 1.592-2.172 2.614a15.328 15.328 0 00-1.694 3.21c-.064-.487-.11-.996-.138-1.524-.029-.528-.058-1.057-.083-1.584a40.049 40.049 0 002.74-5.225 45.208 45.208 0 002.044-5.611 46.954 46.954 0 001.24-5.371c.286-1.716.402-3.228.351-4.529-.049-1.302-.274-2.34-.67-3.112-.399-.774-.973-1.14-1.724-1.099-1.165.063-2.164.703-3.003 1.918-.838 1.219-1.536 2.789-2.09 4.709-.559 1.92-.981 4.071-1.27 6.449a91.927 91.927 0 00-.58 7.151 89.178 89.178 0 00-.033 6.808c.045 1.253.11 2.38.191 3.387a3.752 3.752 0 01-.728 1.01c-.267.26-.568.398-.906.416-.336.018-.583-.31-.729-.982-.148-.672-.323-1.437-.518-2.297a15.176 15.176 0 00-.78-2.454c-.321-.777-.829-1.262-1.514-1.451a2.46 2.46 0 00-1.716.148 5.394 5.394 0 00-1.578 1.107 8.25 8.25 0 00-1.267 1.626c-.363.607-.644 1.18-.841 1.72-.087-.903-.045-1.718.126-2.446.167-.727.243-1.298.22-1.715-.011-.187-.116-.38-.315-.578a2.241 2.241 0 00-.73-.472 2.989 2.989 0 00-.887-.207c-.301-.02-.56.05-.779.212-.254.164-.436.646-.542 1.448-.11.8-.157 1.672-.145 2.617.011.92.068 1.8.166 2.643-.028.063-.055.124-.087.188a8.38 8.38 0 01-.829 1.406c-.177.2-.373.36-.593.486a1.25 1.25 0 01-.668.178c-.226-.007-.439-.109-.637-.306-.2-.197-.328-.503-.388-.916-.102-.485.084-4.467.02-5.983-.048-1.115-3.081.148-3.295 1.678-.102.736-.221 1.534-.212 2.42.011.89.11 1.736.304 2.538.193.803.56 1.34 1.102 1.616a3.94 3.94 0 001.549.484c.53.046 1.025.019 1.493-.08.462-.1.877-.284 1.24-.55.363-.265.666-.556.913-.873.178-.239.326-.458.465-.669.027.049.056.094.085.133.445.58 1 .919 1.663 1.014.664.098 1.097-.048 1.303-.437.17-.35.248-.79.24-1.32-.01-.527.096-1.214.314-2.058.1-.269.233-.588.402-.957.168-.369.365-.69.597-.968.23-.276.475-.489.728-.635.255-.146.48-.129.68.05.198.177.345.662.444 1.45.1.789.275 1.622.529 2.497.25.875.631 1.662 1.22 2.289 2.984 3.17 6.622 1.54 8.953-4.416 2.186-5.59 4.133-2.153 2.763-.927-.47.422-.964.798-1.431 1.183-.47.384-.754.674-.857.868-.204.428 2.24 2.866 6.815 3.574 7.386.907 8.738-5.79 8.738-5.79-.171 2.902.08 7.052.687 9.682-2.752-.117-5.347-.28-7.785-.49-2.439-.21-4.61-.359-6.514-.446-1.905-.087-3.484-.069-4.738.055-1.253.124-2.055.46-2.403 1.008-.523.748-.398 1.695.376 2.845.778 1.15 1.921 2.327 3.436 3.533 1.511 1.202 3.284 2.346 5.315 3.429a34.333 34.333 0 006.148 2.564c2.065.627 4 .92 5.804.88 1.801-.04 3.244-.562 4.32-1.565.927-.92 1.339-2.228 1.23-3.923-.108-1.695-.427-3.608-.952-5.735 1.663.175 3.28.334 4.849.476 1.57.144 3.024.235 4.364.277a41.81 41.81 0 003.523-.018c1.014-.054 1.794-.21 2.346-.467.807-.346 1.484-.798 2.017-1.355.533-.559.93-1.1 1.183-1.624.254-.524.371-.992.348-1.408-.02-.415-.166-.671-.433-.77-.27-.1-.765.002-1.481.306-.719.303-1.8.654-3.247 1.05-1.445.402-3.299.757-5.558 1.067-2.26.31-5.085.443-8.473.396-.334-1.304-1.279-5.67-1.115-9.205a7.106 7.106 0 01.855-3.05c.169-.35.174-.739.021-1.166a3.117 3.117 0 00-.708-1.126 2.003 2.003 0 00-1.078-.593c-.395-.072-.757.088-1.073.482-.176.237-.4.637-.67 1.2-.273.564-.49 1.057-.654 1.481-.27.62-1.461 3.172-2.162 3.966a3.992 3.992 0 01-1.193.916c-.364.19-.629.195-.788.013-.158-.14-.258-.43-.3-.862a8.78 8.78 0 01.004-1.503c.046-.571.128-1.881.319-2.536.191-.65.44-1.271.746-1.855.139-.235.044-.4-.281-.496-.324-.096-.719-.103-1.186-.02-.465.08-.956.267-1.466.558-.511.293-.866.691-1.063 1.194-.202.464-.358 1.117-.463 1.953-.105.838-.062 2.35.053 3.138l.127.978s-.773.25-2.338-.462" fill="#FEFEFE"/><path d="M83.966 24.006a2.078 2.078 0 00-.893-1.262c-.456-.305-1.118-.442-1.983-.41a8.877 8.877 0 00-2.259.38c-.792.234-1.51.453-2.154.657-.642.202-1.18.311-1.613.327-.432.015-.682-.164-.749-.536-.07-.412.209-.804.839-1.175.63-.374 1.369-.69 2.214-.946a13.437 13.437 0 012.532-.514c.842-.088 1.442-.013 1.799.224.36.237.62.196.782-.12.165-.316.17-.723.015-1.222-.151-.5-.463-.977-.933-1.432-.469-.454-1.136-.685-2.005-.69a4.96 4.96 0 00-2.491.653 8.37 8.37 0 00-2.078 1.617 7.833 7.833 0 00-1.392 2.043c-.337.727-.503 1.376-.498 1.944.027.794.278 1.351.757 1.671.479.323 1.057.504 1.74.544.682.039 1.423.018 2.227-.066a26.118 26.118 0 012.165-.145c.64-.015 1.147.088 1.522.304.377.216.497.67.364 1.363-.102.614-.519 1.178-1.251 1.691-.733.515-1.497.85-2.295 1.009-.798.158-1.527.084-2.194-.222-.664-.307-1-.99-1.011-2.05.004-.418-.186-.553-.57-.41-.385.146-.773.452-1.171.92-.395.466-.7 1.04-.91 1.72-.207.68-.135 1.366.22 2.057.272.583.805.977 1.594 1.18.788.2 1.68.177 2.679-.073.996-.252 2.03-.78 3.096-1.584 1.07-.806 2.036-1.925 2.9-3.359.466-.795.784-1.54.953-2.236.17-.695.187-1.312.052-1.852M69.51 16.87c.363-1.366.958-2.092 2.61-1.827 1.4.225.555 2.762-.496 4.193-.96 1.308-2.065 1.538-2.282 1.4-.452-.29.135-3.638.167-3.766" fill="#FEFEFE"/><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path fill="#FEFEFE" mask="url(#b)" d="M58.705 6.865h1.088V1.727h-1.088zM65.64 3.376c0-.424-.329-.686-.758-.686h-1.15v1.386h1.15c.429 0 .759-.261.759-.7m-.108 3.49L64.53 5.04h-.797v1.825h-1.088V1.727h2.391c1.065 0 1.725.701 1.725 1.656 0 .902-.575 1.394-1.127 1.526l1.157 1.956h-1.257M73.082 4.3c0-.963-.606-1.687-1.548-1.687-.95 0-1.556.724-1.556 1.687 0 .955.605 1.687 1.556 1.687.942 0 1.548-.732 1.548-1.687m-4.223 0c0-1.548 1.126-2.658 2.675-2.658 1.54 0 2.667 1.11 2.667 2.658 0 1.548-1.127 2.658-2.667 2.658-1.549 0-2.675-1.11-2.675-2.658M80.025 6.865l-2.437-3.35v3.35H76.5V1.727h1.119l2.368 3.228V1.727h1.088v5.138zM60.861 10.814c0-.533-.326-.948-.943-.948h-.554v1.901h.55c.598 0 .947-.433.947-.953m-2.14 1.523v-3.04h1.192c.948 0 1.606.605 1.606 1.517 0 .921-.658 1.523-1.601 1.523H58.72M66.147 10.819c0-.57-.359-.999-.917-.999-.562 0-.92.429-.92.999 0 .565.358.998.92.998.558 0 .917-.433.917-.998m-2.5 0c0-.917.667-1.573 1.583-1.573.912 0 1.579.656 1.579 1.573 0 .916-.667 1.573-1.579 1.573-.916 0-1.583-.657-1.583-1.573M71.432 10.819c0-.57-.358-.999-.916-.999-.563 0-.921.429-.921.999 0 .565.358.998.92.998.559 0 .917-.433.917-.998m-2.5 0c0-.917.667-1.573 1.584-1.573.911 0 1.578.656 1.578 1.573 0 .916-.667 1.573-1.578 1.573-.917 0-1.583-.657-1.583-1.573M76.137 10.272c0-.251-.195-.406-.45-.406h-.68v.82h.68c.255 0 .45-.154.45-.414m-.064 2.065l-.594-1.08h-.472v1.08h-.644v-3.04h1.415c.63 0 1.02.414 1.02.98 0 .533-.34.825-.666.902l.685 1.158h-.744M78.977 11.908l.354-.506c.213.224.544.415.962.415.358 0 .526-.16.526-.337 0-.529-1.742-.16-1.742-1.304 0-.506.435-.926 1.147-.926.481 0 .88.146 1.18.425l-.359.483a1.296 1.296 0 00-.88-.333c-.272 0-.426.118-.426.3 0 .48 1.737.156 1.737 1.291 0 .556-.399.976-1.21.976-.586 0-1.003-.196-1.29-.484"/></g></g></svg -->
+        <br><br>
+        <ul class="list--inline site-footer__social-icons social-icons site-footer__icon-list">
+          {%- if settings.social_facebook_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_facebook_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-facebook' -%}
+              <span class="icon__fallback-text">Facebook</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_twitter_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_twitter_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-twitter' -%}
+              <span class="icon__fallback-text">Twitter</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_pinterest_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_pinterest_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-pinterest' -%}
+              <span class="icon__fallback-text">Pinterest</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_instagram_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-instagram' -%}
+              <span class="icon__fallback-text">Instagram</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_tumblr_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_tumblr_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-tumblr' -%}
+              <span class="icon__fallback-text">Tumblr</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_snapchat_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_snapchat_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-snapchat' -%}
+              <span class="icon__fallback-text">Snapchat</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_youtube_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_youtube_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-youtube' -%}
+              <span class="icon__fallback-text">YouTube</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_vimeo_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_vimeo_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-vimeo' -%}
+              <span class="icon__fallback-text">Vimeo</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if settings.social_houzz_link != blank -%}
+          <li>
+            <a class="social-icons__link" href="{{ settings.social_houzz_link | escape }}" aria-describedby="a11y-external-message" target="_blank">
+              {%- include 'icon-houzz' -%}
+              <span class="icon__fallback-text">Houzz</span>
+            </a>
+          </li>
+          {%- endif -%}
+          {%- if template.name == 'blog' or template.name == 'article' -%}
+          <li>
+            <a class="social-icons__link" href="{{ shop.url }}{{ blog.url }}.atom">
+              {%- include 'icon-rss' -%}
+              <span class="icon__fallback-text">RSS</span>
+            </a>
+          </li>
+          {%- endif -%}
+        </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+  
+ <!---  IDS footer Badge Section -->
+  <div class="page-width small--text-center" style="display:none;">
+    <h4>Master Reseller of Iron Door Source</h4>
+    <div class="iron-door-source--footer"><img class="lazyload lazyfade" data-src="{{ 'irondoorsource.png' | file_img_url: 'master' }}" alt="Iron Door Source"></div>
+    
+  </div>
+
+  <div class="page-width footer--copyright-row text-center">
+    <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }} {{ shop.name | link_to: '/' }}. All Rights Reserved. &nbsp;&nbsp; <a class="site-footer__tel" href="tel:844-843-6677">(844) 843-6677</a>
+      <a class="new-media-link" href="https://newmedia.com/" target="_blank">Performance Marketing by NEWMEDIA - We Scale Brands.®</a>
+    </small>
+    <div class="site-footer__payment-icons text-center">
+      {% unless shop.enabled_payment_types == empty %}
+      <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
+      <ul class="payment-icons list--inline site-footer__icon-list">
+        {% assign enabled_payment_types = 'apple_pay, diners_club, discover,elo, google_pay, jcb,master,paypal,visa' | remove: ' ' | split: ',' %}
+        {% for type in enabled_payment_types %}
+        <span style="display: none;">
+          {{type}}
+        </span>
+        {% unless type == 'american_express' %}
+        <li class="payment-icon">
+          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+        </li>
+        {% endunless %}
+        {% endfor %}
+      </ul>
+      {% endunless %}
+    </div>
+
+  </div>
+</footer>
+
+
+
+{% schema %}
+{
+  "name": {
+    "de": "Fußzeile",
+    "en": "Footer",
+    "es": "Pie de página",
+    "fr": "Pied de page",
+    "it": "Footer",
+    "ja": "フッター",
+    "pt-BR": "Rodapé"
+  },
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": {
+        "de": "Zahlungsarten",
+        "en": "Payment methods",
+        "es": "Métodos de pago",
+        "fr": "Moyens de paiement",
+        "it": "Metodi di pagamento",
+        "ja": "お支払い方法",
+        "pt-BR": "Formas de pagamento"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": {
+        "de": "Zahlungs-Buttons anzeigen",
+        "en": "Show payment icons",
+        "es": "Mostrar iconos de pago",
+        "fr": "Afficher les icônes de paiement",
+        "it": "Mostra le icone di pagamento",
+        "ja": "支払いアイコンを表示する",
+        "pt-BR": "Exibir ícones de pagamento"
+      },
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": {
+        "de": "Farbe",
+        "en": "Color",
+        "es": "Color",
+        "fr": "Couleur",
+        "it": "Colore",
+        "ja": "色",
+        "pt-BR": "Cor"
+      }
+    },
+    {
+      "type": "color",
+      "id": "color_footer_bg",
+      "label": {
+        "de": "Schriftfarbe",
+        "en": "Background",
+        "es": "Fondo",
+        "fr": "Couleur de fond",
+        "it": "Sfondo",
+        "ja": "背景",
+        "pt-BR": "Plano de fundo"
+      },
+      "default": "#F5F5F5"
+    },
+    {
+      "type": "color",
+      "id": "color_footer_text",
+      "label": {
+        "de": "Text",
+        "en": "Text",
+        "es": "Texto",
+        "fr": "Texte",
+        "it": "Testo",
+        "ja": "テキスト",
+        "pt-BR": "Texto"
+      },
+      "default": "#3d4246"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": {
+        "de": "Menü",
+        "en": "Menu",
+        "es": "Menú",
+        "fr": "Menu",
+        "it": "Menu",
+        "ja": "メニュー",
+        "pt-BR": "Menu"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Überschrift",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "Titre",
+            "it": "Heading",
+            "ja": "見出し",
+            "pt-BR": "Título"
+          },
+          "default": {
+            "de": "Quick-Links",
+            "en": "Quick links",
+            "es": "Enlaces rápidos",
+            "fr": "Liens rapides",
+            "it": "Link rapidi",
+            "ja": "クイックリンク",
+            "pt-BR": "Links rápidos"
+          }
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": {
+            "de": "Menü",
+            "en": "Menu",
+            "es": "Menú",
+            "fr": "Menu",
+            "it": "Menu",
+            "ja": "メニュー",
+            "pt-BR": "Menu"
+          },
+          "default": "footer"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": {
+        "de": "Text",
+        "en": "Text",
+        "es": "Texto",
+        "fr": "Texte",
+        "it": "Testo",
+        "ja": "テキスト",
+        "pt-BR": "Texto"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Überschrift",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "Titre",
+            "it": "Heading",
+            "ja": "見出し",
+            "pt-BR": "Título"
+          },
+          "default": {
+            "de": "Reden Sie über Ihr Unternehmen",
+            "en": "Talk about your business",
+            "es": "Habla sobre tu negocio",
+            "fr": "Parlez de votre entreprise",
+            "it": "Parla della tua attività commerciale",
+            "ja": "あなたのビジネスについて語る",
+            "pt-BR": "Fale sobre o seu negócio"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": {
+            "de": "Text",
+            "en": "Text",
+            "es": "Texto",
+            "fr": "Texte",
+            "it": "Testo",
+            "ja": "テキスト",
+            "pt-BR": "Texto"
+          },
+          "default": {
+            "de": "<p>Teilen Sie Ihre Shop-Details, Werbeaktionen oder Markeninhalte mit Ihren Kunden.</p>",
+            "en": "<p>Share store details, promotions, or brand content with your customers.</p>",
+            "es": "<p>Comparte detalles de la tienda, promociones o contenido de la marca con tus clientes.</p>",
+            "fr": "<p>Partagez les détails de la boutique, les promotions ou le contenu de la marque avec vos clients.</p>",
+            "it": "<p>Condividi dettagli del negozio, promozioni o contenuti del brand con i clienti.</p>",
+            "ja": "<p>ストア詳細、プロモーション、ブランドのコンテンツをお客様と共有する。</p>",
+            "pt-BR": "<p>Compartilhe detalhes da loja, promoções ou conteúdo da marca com seus clientes.</p>"
+          }
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "limit": 1,
+      "name": {
+        "de": "Newsletter-Anmeldung",
+        "en": "Newsletter signup",
+        "es": "Suscripción al boletín",
+        "fr": "Inscription",
+        "it": "Iscriviti alla Newsletter",
+        "ja": "メールマガジンの登録",
+        "pt-BR": "Assinatura da newsletter"
+      },
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "de": "Überschrift",
+            "en": "Heading",
+            "es": "Título",
+            "fr": "Titre",
+            "it": "Heading",
+            "ja": "見出し",
+            "pt-BR": "Título"
+          },
+          "info": {
+            "de": "Abonnenten werden zu Ihrer \"akzeptiert Marketingmaterial\"-Liste hinzugefügt [Kundenliste.](/admin/customers?query=&accepts_marketing=1)",
+            "en": "Subscribers will be added to your “accepts marketing” [customer list.](/admin/customers?query=&accepts_marketing=1)",
+            "es": "Se añadirá los suscriptores a tu lista \"acepta marketing\"[lista de clients.](/admin/customers?query=&accepts_marketing=1)",
+            "fr": "Les abonnés seront ajoutés à votre [liste de clients](/admin/customers?query=&accepts_marketing=1) « Accepte le marketing ».",
+            "it": "Gli iscritti verranno aggiunti al tuo [elenco clienti](/admin/customers?query=&accepts_marketing=1) “Accetta marketing”.",
+            "ja": "購読者は「マーケティングを受け入れる」[顧客リスト](/admin/customers?query=&accepts_marketing=1)に追加されます。",
+            "pt-BR": "Os assinantes serão adicionados à sua lista de pessoas que “aceitam marketing” [lista de clientes.](/admin/customers?query=&accepts_marketing=1)"
+          },
+          "default": {
+            "de": "Newsletter",
+            "en": "Newsletter",
+            "es": "Boletín",
+            "fr": "Newsletter",
+            "it": "Newsletter",
+            "ja": "メールマガジン",
+            "pt-BR": "Newsletter"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,85 @@
+footer{
+    padding: 30px 20px;
+    background: #000000 !important;
+    .footer__content-top{
+        max-width: 1400px;
+        margin: 0 auto;
+        padding-bottom: 0;
+        .footer__blocks-wrapper{
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 0;
+            // margin-top: 50px;
+            border-top: 2px solid $whitealt;
+            border-bottom: 2px solid $whitealt;
+            @media screen and (max-width:767px) {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .footer-block{
+                // flex-basis: 18%;
+                // @media screen and (max-width:767px) {
+                //     flex-basis: 48%;
+                // }
+                .footer-block__heading{
+                    font-size: 16px;
+                    font-family: $sportingbold;
+                    color: $whitealt;
+                    text-transform: uppercase;
+                }
+                .footer-block__details-content{
+                    display: flex;
+                    flex-direction: column;
+                    li{
+                        a{
+                            font-size: 12px;
+                            font-family: $sportingregular;
+                            color: $whitealt;
+                            line-height: 36px;
+                            opacity: 0.7;
+                            transition: all 0.3s ease-in-out;
+                            text-transform: uppercase;
+                            &:hover{
+                                opacity: 1;   
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-wrapper-bottom{
+        display: flex;
+        padding: 30px 0 0;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto;
+        @media screen and (max-width:567px) {
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .copyright{
+            font-size: 16px;
+            font-family: $sportingbold;
+            color: $whitealt;
+            @media screen and (max-width:567px) {
+                text-align: center;
+            }
+            a{
+                color: $whitealt;
+            }
+        }
+        .footer-socials{
+            display: flex;
+            gap: 20px;
+            a{
+                img{
+                    
+                }    
+            }    
+        }
+    }
+
+}

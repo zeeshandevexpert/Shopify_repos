@@ -1,0 +1,71 @@
+{
+  "name": "Footer",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "1520914274198": {
+          "type": "text",
+          "settings": {
+            "title": "About",
+            "footer_text": "<p>Suppliers of Reclaimed French Oak, Stone, Terracotta & Architectural Elements.<\/p>",
+            "column_size": 3
+          }
+        },
+        "3be29135-d390-4a89-b2cf-db58eabd594e": {
+          "type": "menu",
+          "settings": {
+            "footer_nav": "footer",
+            "title": "Info",
+            "column_size": 2
+          }
+        },
+        "7b6bdc81-6acc-4f97-81df-3b7d4786109b": {
+          "type": "menu",
+          "settings": {
+            "footer_nav": "main-menu",
+            "title": "Explore",
+            "column_size": 2
+          }
+        },
+        "ff638e4a-8d1f-4217-abed-5fb8af4b5241": {
+          "type": "menu",
+          "settings": {
+            "footer_nav": "primary-menu",
+            "title": "Quick links",
+            "column_size": 2
+          }
+        },
+        "838397bd-3345-4b45-952a-8db92e06ca11": {
+          "type": "newsletter",
+          "disabled": true,
+          "settings": {
+            "title": "Connect",
+            "mailing_subheading": "<p>Join our mailing list for updates<\/p>",
+            "column_size": 3
+          }
+        }
+      },
+      "block_order": [
+        "1520914274198",
+        "3be29135-d390-4a89-b2cf-db58eabd594e",
+        "7b6bdc81-6acc-4f97-81df-3b7d4786109b",
+        "ff638e4a-8d1f-4217-abed-5fb8af4b5241",
+        "838397bd-3345-4b45-952a-8db92e06ca11"
+      ],
+      "settings": {
+        "show_credit_cards": false,
+        "enable_follow_on_shop": false,
+        "show_copyright": false,
+        "show_locale_selector": false,
+        "show_country_selector": false,
+        "bg_color": "#ffde59",
+        "color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

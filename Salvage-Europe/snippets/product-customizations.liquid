@@ -1,0 +1,48 @@
+{% comment %}
+snippets/product-customizations.liquid
+Renders "product customizations" a.k.a. line item properties.
+Accepts:
+- block:                       {Object} Section block object. (required)
+- product_buttons_form_id:     {String} Block form ID. (required)
+Usage:
+{%
+  render 'product-customizations',
+  block: block,
+  product_buttons_form_id: product_buttons_form_id
+%}
+{% endcomment %}
+{% assign unique_id = block.settings.title | handleize %}
+<div class="product__line-item">
+  <p class="line-item-property__field line-item-property__field--{{ block.settings.property_type }}">
+    <label for="{{ unique_id }}">{{ block.settings.title }}:</label>
+    {% if block.settings.required %}<span class="required-label">* {{ 'products.product.required' | t }}</span>{% endif %}
+    {% case block.settings.property_type %}
+      {% when 'text' %}
+        <input id="{{ unique_id }}"
+         type="text"
+         {% if block.settings.required %}required{% endif %}
+         data-product-property
+         name="properties[{{ block.settings.title }}]"
+         data-property-id="{{ block.id }}"
+         value=""
+         form="{{ product_buttons_form_id }}">
+      {% when 'multi_line_text' %}
+        <textarea id="{{ unique_id }}"
+         {% if block.settings.required %}required{% endif %}
+         data-product-property
+         name="properties[{{ block.settings.title }}]"
+         data-property-id="{{ block.id }}"
+         form="{{ product_buttons_form_id }}"
+         ></textarea>
+      {% when 'image' %}
+        <input id="{{ unique_id }}"
+          type="file"
+          {% if block.settings.required %}required{% endif %}
+          data-product-property
+          name="properties[{{ block.settings.title }}]"
+          data-property-id="{{ block.id }}"
+          value=""
+          form="{{ product_buttons_form_id }}">
+    {% endcase %}
+  </p>
+</div><!-- /.product__line-item -->

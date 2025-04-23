@@ -1,0 +1,115 @@
+{% style %}
+{%- liquid
+
+  assign main_font = settings.main_font
+  assign nav_font = settings.nav_font
+  assign heading_font = settings.heading_font
+
+-%}
+  :root {
+    --main-family: {{ main_font.family }}, {{ main_font.fallback_families }};
+    --main-weight: {{ main_font.weight }};
+    --main-style: {{ main_font.style }};
+    --nav-family: {{ nav_font.family }}, {{ nav_font.fallback_families }};
+    --nav-weight: {{ nav_font.weight }};
+    --nav-style: {{ nav_font.style }};
+    --heading-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+    --heading-weight: {{ heading_font.weight }};
+    --heading-style: {{ heading_font.style }};
+
+    --font-size: {{ settings.font_size }}px;
+    --h1-size: {{ settings.h1_size }}px;
+    --h2-size: {{ settings.h2_size }}px;
+    --h3-size: {{ settings.h3_size }}px;
+    --nav-size: {{ settings.nav_size }}px;
+
+    --announcement-background: {{ settings.announcement_background }};
+    --announcement-text: {{ settings.announcement_text }};
+    --header-background: {{ settings.header_background }};
+    --header-text: {{ settings.header_text }};
+    --nav-color: {{ settings.nav_color }};
+    --nav-hover-link-color: {{ settings.nav_hover_link_color }};
+    --nav-hover-accent-color: {{ settings.nav_hover_accent_color }};
+    --nav-dropdown-text: {{ settings.nav_dropdown_text }};
+    --nav-dropdown-background: {{ settings.nav_dropdown_background }};
+    --mobile-header-background: {{ settings.mobile_header_background }};
+    --mobile-header-text: {{ settings.mobile_header_text }};
+    --background: {{ settings.background }};
+    --text-color: {{ settings.text_color }};
+    --sale-color: {{ settings.sale_color }};
+    --so-color: {{ settings.so_color }};
+    --new-color: {{ settings.new_color }};
+    --dotted-color: {{ settings.dotted_color }};
+    --review-stars: {{ settings.review_stars }};
+    --secondary-color: {{ settings.secondary_color }};
+    --section-heading-text: {{ settings.section_heading_text }};
+    --section-heading-primary: {{ settings.section_heading_primary }};
+    --section-heading-primary-hover: {{ settings.section_heading_primary_hover }};
+    --section-heading-accent: {{ settings.section_heading_accent }};
+    --banner-text: {{ settings.banner_text }};
+    --banner-caption-bg: {{ settings.banner_caption_bg }};
+    --button-color: {{ settings.button_color }};
+    --button-text: {{ settings.button_text }};
+    --button-hover: {{ settings.button_hover }};
+    --secondary-button-color: {{ settings.secondary_button_color }};
+    --secondary-button-text: {{ settings.secondary_button_text }};
+    --secondary-button-hover: {{ settings.secondary_button_hover }};
+    --direction-color: {{ settings.direction_color }};
+    --direction-background: {{ settings.direction_background }};
+    --direction-hover: {{ settings.direction_hover }};
+    --swatch-color: {{ settings.swatch_color }};
+    --swatch-background: {{ settings.swatch_background }};
+    --swatch-border: {{ settings.swatch_border }};
+    --swatch-selected-color: {{ settings.swatch_selected_color }};
+    --swatch-selected-background: {{ settings.swatch_selected_background }};
+    --swatch-selected-border: {{ settings.swatch_selected_border }};
+    --footer-background: {{ settings.footer_background }};
+    --footer-text: {{ settings.footer_text }};
+    --footer-icons: {{ settings.footer_icons }};
+
+    --header-border-width: {{ settings.header_border_width }}%;
+    --header-border-weight: {{ settings.header_border_weight }}px;
+    --header-border-style: {{ settings.header_border_style }};
+    --free-shipping-bg: {{ settings.free_shipping_bg }};
+    --free-shipping-text: {{ settings.free_shipping_text }};
+    --keyboard-focus: {{ settings.keyboard_focus }};
+    --focus-border-style: {{ settings.focus_border_style }};
+    --focus-border-weight: {{ settings.focus_border_weight }}px;
+
+    --error-msg-dark: #e81000;
+    --error-msg-light: {{ '#e81000' | color_lighten: 50 }};
+    --success-msg-dark: #007f5f;
+    --success-msg-light: {{ '#007f5f' | color_lighten: 70 }};
+
+    --select-arrow-bg: url({{ 'select-arrow.png' | asset_url }});
+    --icon-border-color: {{ settings.text_color | color_lighten: 90 }};
+    --product-align: {{ settings.product_align }};
+
+    --color-body-text: var(--text-color);
+    --color-body: var(--background);
+    --color-bg: var(--background);
+    --color-filter-size: 18px;
+
+    --star-active: {{ settings.text_color | color_to_rgb }};
+    --star-inactive: {{ settings.text_color | color_lighten: 80 | color_to_rgb }};
+
+    --section-background: {{ settings.background }};
+    --section-overlay-color: 0, 0, 0;
+    --section-overlay-opacity: 0;
+    --section-button-size: {{ settings.font_size }}px;;
+    --desktop-section-height: ;
+    --mobile-section-height: ;
+
+
+  }
+  @media (max-width: 740px) {
+  :root {
+    --font-size: calc({{ settings.font_size }}px - ({{ settings.font_size }}px * 0.15));
+    --nav-size: calc({{ settings.nav_size }}px - ({{ settings.nav_size }}px * 0.15));
+    --h1-size: calc({{ settings.h1_size }}px - ({{ settings.h1_size }}px * 0.15));
+    --h2-size: calc({{ settings.h2_size }}px - ({{ settings.h2_size }}px * 0.15));
+    --h3-size: calc({{ settings.h3_size }}px - ({{ settings.h3_size }}px * 0.15));
+    --section-button-size: calc({{ settings.font_size }}px - ({{ settings.font_size }}px * 0.15));
+  }
+}
+{% endstyle %}

@@ -1,0 +1,883 @@
+jQuery.fn.highlight = function (str, className) {
+  var regex = new RegExp(str, "gi");
+  return this.each(function () {
+    $(this).contents().filter(function() {
+      return this.nodeType == 3 && regex.test(this.nodeValue);
+    }).replaceWith(function() {
+      return (this.nodeValue || "").replace(regex, function(match) {
+        return "<span class=\"" + className + "\">" + match + "</span>";
+      });
+    });
+  });
+};
+
+
+var isPaged = false;
+var inStockOnly = [];
+
+if($('body').hasClass('template-collection') && window.location.pathname.indexOf('special-order') == -1 && $('#Collection .grid .grid__item').length == 0) {
+  //alert(window.location.pathname);
+  
+  if(window.location.href.indexOf('new-custom') !== -1) {
+      
+  } else if(window.location.pathname == '/collections/iron-doors/az') {
+    window.location.href = '/collections/iron-doors?ap=SHIPAZ';
+  } else {
+    var specialOrderPath = window.location.pathname + '-special-order';
+    // window.location.href = specialOrderPath;
+    console.log('redirect?', specialOrderPath);
+  }  
+}
+
+theme.updateFilterPrice = function(el) {
+  var $product = $(el);
+  var regularPriceFormatted = theme.Currency.formatMoney(parseFloat($product.data('original-regular-price')),theme.moneyFormat);
+  var salePriceFormatted = theme.Currency.formatMoney(parseFloat($product.data('original-sale-price')),theme.moneyFormat);
+  var extras = '';
+  var originalSalePrice = salePriceFormatted;
+  if(theme.wholesale.isWholesale) {
+    salePriceFormatted = theme.Currency.formatMoney(theme.getWholesalePrice(parseFloat($product.data('original-sale-price'))),theme.moneyFormat);
+    $product.find('.product-card__price-sale').html('Dealer Price: '  + salePriceFormatted );
+    $product.find('.product-card__price-regular').html('MSRP: ' + originalSalePrice).show();
+  } else {
+    $product.find('.product-card__price-sale').html('From ' + salePriceFormatted + extras);
+  }
+  $product.addClass('price--updated');
+}
+
+theme.updateFilterPricing = function(isFiltered) {
+  console.log('theme.updateFilterPricing');
+  var firstMatch = false;
+  $.each(window.productsJSON,function(i,product) {  
+    if(i==0) {
+      //       console.log(product);
+    }
+    theme.updateFilterPrice('.product-card-'+product.id);
+  });
+  return false;
+};
+
+
+
+theme.updatePagedPricing = function() {
+  $('.product-card:not(.price--updated)').each(function() {
+    theme.updateFilterPrice(this);
+  });
+};
+
+theme.hideUnavailableSizeFilters = function(url) {
+  var url = window.location.href.split('?')[0];
+  if ('URLSearchParams' in window) {
+    var searchParams = new URLSearchParams(window.location.search);
+    searchParams.set("view", "view-json");
+    var newParams = searchParams.toString();
+  }
+  console.log(url+'/products.json');
+//   collections/iron-doors/products.json
+  $.get(url+'/products.json',function(data) {
+    var json = data;
+    console.log(data);
+    window.productsJSON = json.products;
+    $('.size-filter .filter-elem').hide();
+    $.each(json.products,function(i,product) {
+      $.each(product.variants,function(vi,variant) {
+        if(variant.available) {
+          var mySize = variant.title.split(' / ')[0];
+          $('.size-filter .filter-elem label:contains('+mySize+')').closest('.filter-elem').show();
+        }
+      });
+    });
+  },'json')
+  .done(function(c) {
+  })
+  .fail(function(e) {
+    console.log('theme.hideUnavailableSizeFilters error: ', e);
+  });
+};
+
+theme.removeActiveSizeFilter = function(el) {
+  if(!$(el).closest('.filter-group').hasClass('size-filter')) return;
+  var $selected = $('.size-filter.is--filtered');  
+  $selected.find('.coll-filter').not(el).prop('selected',false).removeAttr('checked');
+  $selected.removeClass('is--filtered').find('.remove').hide();
+  $selected.find('.fg-title').text($selected.find('.fg-title').attr('data-original-title'));
+
+
+};
+
+theme.updateProductLink = function(id,variantId) {
+  var $product = $('#product-card-'+id+' .grid-view-item__link');
+  if($product.length) {
+    var currentHref = $product.attr('href'),
+        newHref = currentHref + '?variant='+variantId;
+    $product.attr('href',newHref);
+  }
+};
+
+theme.getLowestVariantPrice = function(id,arr) {
+  if(arr.length == 0) return false;
+  var salePrice = arr[0].price;
+  var ogPrice = arr[0].compare_at_price;
+  var chosenVariant = arr[0];
+  $.each(arr,function(i,variant) {
+    if(variant.price < salePrice) {
+      salePrice = variant.price;
+      ogPrice = variant.compare_at_price;
+      chosenVariant = variant;
+    }
+  });
+  theme.updateFilteredPrice(id,salePrice,ogPrice);
+};
+
+theme.updateFilteredPrice = function(id,price,ogPrice) {
+  //   console.log('updateFilteredPrice',price,ogPrice,id);
+  var $product = $('.product-card-'+id);
+  if($product.length) {
+    var regularPriceFormatted = theme.Currency.formatMoney(ogPrice,theme.moneyFormat);
+    var salePriceFormatted = theme.Currency.formatMoney(price,theme.moneyFormat);
+    //     console.log('SALE from '+ salePriceFormatted);
+    $product.find('.product-card__price-sale').html('SALE from ' + salePriceFormatted);
+    $product.find('.product-card__price-regular').html('Reg. from ' + regularPriceFormatted);
+    var isAir4 = $product.find(".product-card__title:contains('Air 4')").length;
+    var isAir5 = $product.find(".product-card__title:contains('Air 5')").length;
+    if(isAir4 || isAir5) {
+      $product.find('.product-card__price-sale').html('From ' + salePriceFormatted);
+    }
+  } 
+
+};
+
+theme.finishCollectionProcessing = function() {
+  theme.noCollectionResults();
+  isPaged = false;
+  $.each(inStockOnly,function(i,inStock) {
+    $('#product-card-'+inStock.id).fadeIn('slow');
+  });
+  theme.preorderProducts();
+  $('.next-page-preloader__svg').fadeOut('slow');
+  $('.collection-preloader').fadeOut('slow');
+};
+
+var ajaxRequests = [];
+
+theme.hideUnavailableFilterResults = function(url,type) {
+  return;
+  inStockOnly = [];
+  var type = (type != false) ? '-'+type : '';
+
+  //   console.log('hideUnavailableFilterResults');
+  if($('.coll-filter:checked').length == 0) {
+    $('#Collection'+type+' .grid__item').show();
+    theme.finishCollectionProcessing();
+    return false;
+  }
+
+  /* only hide new results */
+  var pageMatch = url.split('page=')[1].split('&')[0],
+      queryParams = '?view=view-json',
+      $pageMatchEl = $('#Collection'+type+' .product-card[data-page="'+pageMatch+'"]');
+
+  //   $pageMatchEl.parent().hide();
+  //   if(url.indexOf('?') != -1 && ) {
+  //     queryParams = '&view=view-json';
+  //   }
+  if ('URLSearchParams' in window && url.indexOf('?') > -1) {
+    var oldUrl = new URL('https://pinkysirondoors.com'+url);
+    var searchParams = oldUrl.searchParams;
+    searchParams.set("view", "view-json");
+    oldUrl.search = searchParams.toString();
+    url = oldUrl.toString()
+  }
+  var request = $.get(url,function(data) {
+    var json = JSON.parse(data);  
+    var jsonProducts = json.products;
+
+    $.each(jsonProducts,function(i,product) {
+      window.productsJSON.push(product);
+    });
+
+    var foundAny = false;
+
+    $.each(jsonProducts,function(i,product) {
+      var foundOne = false;
+      var validVariants = [];
+      $.each(product.variants,function(vi,variant) {
+        if(variant.available && theme.multiSearchAnd(variant.title,json.currentTags)) {
+          validVariants.push(variant);
+          $('#Collection'+type+' #product-card-'+product.id).fadeIn();
+          $('#Collection'+type+' #product-card-'+product.id).find('.checks-balances small').html(variant.title);
+          foundOne = true;
+          foundAny = true;
+          return false;
+        }
+      });
+      if(foundOne) {
+        inStockOnly.push(product);
+        theme.getLowestVariantPrice(product.id,validVariants);
+        $('#product-card-'+product.id).fadeIn('slow');
+      } else {
+        $('#product-card-'+product.id).hide();
+      }
+    }); 
+    $.each(json.currentTags,function(t,currentTag) {
+      $('.checks-balances small').highlight(currentTag,'highlight');
+    });
+    theme.finishCollectionProcessing();
+  },'text');
+  ajaxRequests.push(request);
+};
+
+theme.noCollectionResults = function() {
+  $('.collection-box').each(function(i,c) {
+    var $visible = $(c).find('.grid__item:visible');
+    var $none = $(c).find('.none-available--wrapper');
+    if($visible.length == 0) {
+      $none.fadeIn();
+    } else {
+      $none.fadeOut();
+    }
+  });
+};
+theme.checkRemoveAllButton = function() {
+  var $removeAll = $('.remove-all');
+  if($('.coll-filter:checked').length >= 1) {
+    $removeAll.addClass('show');
+  } else {
+    $removeAll.removeClass('show');
+  }
+  //   console.log($('.coll-filter:checked').length);
+};
+
+theme.filterData = {
+  doorTypesSelected: false,
+  singleDoorSize: false,
+  doubleDoorSize: false
+};
+
+
+theme.applyFilters = function(el) {
+  theme.doorTypesSelected = 0;
+  //   $.each(ajaxRequests,function(i,request) {
+  //     request.abort();
+  //   });
+  //   console.log('theme.applyFilters');
+  $('.collection-preloader').fadeIn('slow');
+  var etaTag = '';
+  var collection = '#Collection';
+  var collectionHandle = $('.products').data('collection-handle');
+  var collectionUrl = '/collections/'+collectionHandle;
+  var $t = $(el);
+  
+
+  theme.checkRemoveAllButton();
+  theme.removeActiveSizeFilter(el);
+
+  
+
+  $t.closest('.filter-group').addClass('is--filtered').find('.fg-title').text($t.next().text());
+
+  var singleDoorArray = [],
+      doubleDoorArray = [],
+      swingGlassArray = [],
+      singleDoorQuery = '',
+      doubleDoorQuery = '',
+      swingGlassQuery = '';
+
+  var grid = '#Collection .grid',
+      gridItem = '#Collection .grid__item',
+      paginationWrapper = '.pagination--wrapper';
+
+  $t.closest('.filter-group').find('.remove').fadeIn();
+
+
+  var $swingInputChecked = $('#door-swing-filter input:checked'),
+      $glassInputChecked = $('#glass-filter input:checked'),
+      $singleDoorInputChecked = $('#single-door-size-filter input:checked'),
+      $doubleDoorInputChecked = $('#double-door-size-filter input:checked');
+  
+  var $sizeInputChecked = $('.size-filter input:checked');
+  
+  
+
+  if($swingInputChecked.length) {
+    swingGlassArray.push($swingInputChecked.val());
+  }
+
+  if($glassInputChecked.length) {
+    swingGlassArray.push($glassInputChecked.val());
+  }
+
+  if($singleDoorInputChecked.length) {
+    theme.doorTypesSelected++;
+
+    singleDoorArray.push($singleDoorInputChecked.val());
+    setCookie('single-door',$singleDoorInputChecked.next().text(), {expires: 5});
+    singleDoorArray = singleDoorArray.concat(swingGlassArray);
+  } 
+
+  if($doubleDoorInputChecked.length) {
+    theme.doorTypesSelected++;
+    doubleDoorArray.push($doubleDoorInputChecked.val());
+    setCookie('double-door',$doubleDoorInputChecked.next().text(), {expires: 5});
+    doubleDoorArray = doubleDoorArray.concat(swingGlassArray);
+
+  } 
+
+
+
+
+  /* Pause for now */
+
+  if(theme.isMobile()) {
+    $t.closest('.filter-group').find('.fg').hide();
+    $('.filters-inner').fadeOut();
+  } else {
+    $('.filter-group.is--open .fg-title').trigger('click');
+  }
+
+  //   window.productsJSON = [];
+
+  $('#collection-grid-0').empty();
+//   $('#collection-grid-1').empty();
+  window.productsJSON = [];
+
+  $('.filter-group').removeClass('is--open');
+
+
+  // Single Door Query
+  if(singleDoorArray.length) {
+    theme.filterData.singleDoorSize = singleDoorArray;
+    var basehref = '/collections/'+collectionHandle+'/'+singleDoorArray.join('+')+'?page=1';
+    var ajaxhref = basehref + '?view=infinite-scroll';
+    theme.getNewCollection(ajaxhref);
+    return false;
+  }
+
+  // Double Door Query
+  if(doubleDoorArray.length) {
+    theme.filterData.doubleDoorSize = doubleDoorArray;
+    var basehref = '/collections/'+collectionHandle+'/'+doubleDoorArray.join('+')+'?page=1';
+    var ajaxhref = basehref +'&view=infinite-scroll';
+    theme.getNewCollection(ajaxhref);
+    return false;
+  }
+
+
+  // Only Swing / Glass
+  if(!singleDoorArray.length && !doubleDoorArray.length) {
+    swingGlassQuery = swingGlassArray.join('+');
+    var basehref = '/collections/'+collectionHandle+'/'+swingGlassArray.join('+')+'?page=1';
+    var ajaxhref = basehref + '&view=infinite-scroll';
+    theme.getNewCollection(ajaxhref);
+
+    return false;
+  }  
+};
+
+theme.getCollectionPaging = function(url) {
+  $.get(url,function(data) {
+    var allPages = $(data).find('#collection-grid').data('all-pages').split(',');
+    theme.loadAllPages(allPages,false);
+  });
+};
+
+
+theme.getNewCollection = function(url,type) {
+  var type = type || false;
+  var collection = '#Collection';
+  var newCollection = '#Collection';
+  if(type) {
+    newCollection = collection + '-' + type;
+    $(collection).empty().hide();
+  } else {
+    $(collection).show();
+  }
+  var urlToShow = url.split('?')[0];
+  var pagination = '.pagination--wrapper';
+  var request = $.get(url,function(data) {
+    $(newCollection).html($(data).find(collection).html());
+    if($(data).find(pagination).length) {
+      $(pagination).html($(data).find(pagination).html());
+    } else {
+      $(pagination).remove();
+    }
+    window.history.replaceState({}, null, urlToShow);
+    $(newCollection).attr('data-current-page',$(data).find(collection).attr('data-current-page'));
+    $(window).scroll();
+    theme.finishCollectionProcessing();
+    theme.isPaging = false;
+  });
+  ajaxRequests.push(request);
+};
+
+
+theme.getNewCollections = function(urls) {
+  var gridToGet = '#collection-grid-0';
+  var gridToReplace = gridToGet;
+  console.log(urls);
+  $.each(urls,function(i,url) {
+    var gridToReplace = `#collection-grid-${i}`;
+    var request = $.get(url,function(data) {
+      $(gridToReplace).html($(data).find(gridToGet).html());
+      console.log($('.pagination-wrapper').eq(i).length);
+      if($('.pagination-wrapper').eq(i).length == 0) {
+        console.log("no pagination yet");
+        if($(data).find('.pagination-wrapper').length) {
+          console.log('has pagination');
+          $('#Collection').append($(data).find('.pagination-wrapper').attr('data-pagination-for',`collection-grid-${i}`));
+		}                    
+      }
+      theme.finishCollectionProcessing();
+      theme.isPaging = false;
+    });
+    ajaxRequests.push(request);
+  });
+};
+
+
+theme.setCurrentTags = function(currentTags) {
+  
+  $('.coll-filter:checked').each(function(i,checkedFilter) {
+    var txt = $(checkedFilter).next().text();
+    console.log(txt);
+    $(checkedFilter).closest('.filter-group').addClass('is--filtered').find('.fg-title').text(txt);
+    
+  });
+  $.each(currentTags,function(t,tag) {
+    
+  });
+};
+
+theme.setActiveFilter = function(t) {
+  
+  var myVal = $(t).val();
+  var myFilterGroup = $(t).closest('.filter-group');
+  myFilterGroup.addClass('is--filtered').find('.remove').show();
+  myFilterGroup.find('.fg-title').text(myVal);
+  
+};
+
+theme.checkActiveFilters = function() {
+  $('.filter-group').each(function(i,fg) {
+    if($(fg).find('.coll-filter:checked').length == 0) {
+      theme.removeActiveFilter(fg);
+    }
+  });
+}
+
+theme.removeActiveFilter = function(t) {
+  
+  var myFilterGroup = $(t).closest('.filter-group');
+  myFilterGroup.find('.remove').hide();
+  myFilterGroup.find('.coll-filter').prop('checked',false);
+  myFilterGroup.removeClass('is--filtered');
+  var ogText = myFilterGroup.find('.fg-title').data('original-title');
+  myFilterGroup.find('.fg-title').text(ogText);
+  $(t).closest('form').submit();
+    
+};
+
+theme.updateCollectionPrices = function() {
+  var selectedSize = $('input[name="filter.v.option.size"]:checked');
+  if(selectedSize.length == 0) return;
+  
+  $('.product-card').each(function(i,product) {
+    var variants = $(product).data('variants');
+    if(i==0) {
+      console.log(variants);
+    }
+    var variantPrice = variants[0].price;
+    $.each(variants,function(v,variant) {
+      if(variant.option1 == $(selectedSize).val()) {
+        if(variant.price < variantPrice) {
+          variantPrice = variant.price
+        }
+      }
+    });
+    var formattedPrice = theme.Currency.formatMoney(variantPrice,theme.moneyFormat);
+    $('.ws-sale-price').html(formattedPrice);
+  });
+
+};
+
+theme.renderFilters = function() {
+  const filters = document.querySelector('#CollectionFiltersForm');
+  if(filters) {
+    const formData = new FormData(filters);
+    const searchParams = new URLSearchParams(formData).toString();
+    const url = `${window.location.pathname}?section_id=collection-filters&${searchParams}`;
+    $.get(url,function(data) {
+      $('#CollectionFiltersForm').html($(data).find('#CollectionFiltersForm').html());
+    });
+  }
+};
+  
+
+theme.collectionFiltersNew = function() {
+  
+  theme.renderFilters();
+  
+  $('.coll-filter:checked').each(function(f) {
+    theme.setActiveFilter(this);
+  });
+  
+  theme.updateCollectionPrices();
+  
+  $(document).on('change','.coll-filter',function(e) {
+    theme.setActiveFilter(this);
+    theme.checkActiveFilters();
+    $(this).closest('form').submit();
+  });
+  
+  $(document).on('click','.remove',function(e) {    
+    console.log(e);
+    theme.removeActiveFilter(this);
+  });
+  
+  $(document).on('click touchend','.filter-group .fg-title',function(e) {
+    e.preventDefault();
+    $('.filter-group').removeClass('is--open');
+    var $this = $(this),
+        $filterGroup = $this.closest('.filter-group');
+    if(!$filterGroup.hasClass('is--open')) {
+      /* hideAll */
+      $filterGroup.addClass('is--open');
+    } else {
+      $filterGroup.removeClass('is--open');
+    }
+  });
+  
+  $(document).on('click',function(e) {
+    var $target = $(e.target);
+    if(!$target.closest('.filter-group').length && $('.filter-group').hasClass('is--open')) {
+      $('.filter-group').removeClass('is--open');
+    }    
+  });
+  
+  $('#CollectionFiltersForm').submit(function(e) {
+    const formData = new FormData(e.target.closest('form'));
+    const searchParams = new URLSearchParams(formData).toString();
+    const url = `${window.location.pathname}?section_id=collection-template&${searchParams}`;
+    $.get(url,function(data) {
+      $('#collection-grid-0').html($(data).find('#collection-grid-0').html());
+      $('.pagination--wrapper').html($(data).find('.pagination--wrapper').html());
+//       if($(data).find('.pagination--wrapper').length)
+      
+      theme.updateCollectionPrices();
+      history.pushState({ searchParams }, '', `${window.location.pathname}${searchParams && '?'.concat(searchParams)}`);
+    },'html');
+    e.preventDefault();
+    return false;
+  });
+  
+  $(document).on('click','.filter-menu__link',function(e) {
+    e.preventDefault();
+    console.log('click');
+    if(!theme.isMobile()) return;
+    
+    $('.filters-inner').fadeToggle();
+  });
+  
+};
+
+theme.collectionFilters = function() {
+  //   console.log('theme.CollectionFilters');
+  theme.updateFilterPricing(false);
+  var initialCollectionTitle = false;
+
+  /* Collection Filtering  */
+  var collFilters = $('.coll-filter'),
+      collFiltersClass = $('.coll-filter-class'),
+      checkedFilters = $('.coll-filter:checked'),
+      collectionMain = $('#Collection'),
+      collectionTitle = collectionMain.data('collection-title'),
+      collectionHandle = $('.products').data('collection-handle'),
+      isFiltered = false,
+      isClassFiltered = false,
+      selectedColor = false,
+      currentUrl = window.collectionUrl,
+      currentTags = $('#collection-grid-0').data('current-tags');
+
+
+//   theme.hideUnavailableSizeFilters(currentUrl);
+
+  
+  checkFilters();
+  theme.setCurrentTags(currentTags);
+
+  function checkFilters() {
+//     theme.hideUnavailableSizeFilters(currentUrl);
+    isFiltered = $('.coll--filter:checked').length > 0;
+    //     console.log('isFiltered',isFiltered);
+    isClassFiltered = false;
+    var classFilters = [];
+    var filterBy = '';
+
+    $('.filter-group').removeClass('active');
+    collFilters.each(function() {
+      var f = $(this);
+      if(f.is(':checked')) {
+        f.closest('.filter-group').find('.remove').show();
+        f.closest('.filter-group').addClass('active');
+        isFiltered = true;
+        if(filterBy == '') {
+          filterBy = '.'+$(this).val();
+        } else {
+          filterBy = filterBy+'-'+$(this).val();
+        }
+      } 
+    });
+
+    isFiltered ? $('body').addClass('is--filtered') : $('body').removeClass('is--filtered');
+
+    if($('.grid__item:visible').length) {
+      $('.none-available--wrapper').hide();
+    } else {
+      $('.none-available--wrapper').show();
+    }
+
+    //     theme.updateFilterPricing(isFiltered);
+    if(isMobile()) {
+      $('.filters-inner').hide();
+      //$('.fg').hide();
+    }
+
+  }
+
+  $(document).on('click','.filter-menu__link',function(e) {
+    e.preventDefault();
+    console.log('click');
+    if(!theme.isMobile()) return;
+    
+    $('.filters-inner').fadeToggle();
+  });
+  $('.filter-group .fg-title').on('click',function(e) {
+    e.preventDefault();
+    if(!isMobile()) return;
+    $(this).next().slideToggle();
+  });
+
+  var $menu = $('.filter-group');
+
+  $(document).on('click',function(e) {
+    var $target = $(e.target);
+    if(!$target.closest('.filter-group').length && $('.filter-group').hasClass('is--open')) {
+      $('.filter-group').removeClass('is--open');
+    }    
+  });
+  //   console.log('cached?');
+  $(document).on('click touchend','.filter-group .fg-title',function(e) {
+    e.preventDefault();
+    $('.filter-group').removeClass('is--open');
+    var $this = $(this),
+        $filterGroup = $this.closest('.filter-group');
+    if(!$filterGroup.hasClass('is--open')) {
+      /* hideAll */
+      $filterGroup.addClass('is--open');
+    } else {
+      $filterGroup.removeClass('is--open');
+    }
+  });
+
+  $('.collection-filters .remove-all').on('click',function(e) {
+    e.preventDefault();
+    $('.filters .coll-filter').prop('checked',false).removeAttr('checked').eq(0).trigger('change');
+    $('.filters .remove').hide();
+    $(this).removeClass('show');
+    //     $('#Collection').html(initialCollectionHTML);
+    $('.fg-title').each(function(i,title) {
+      var $t = $(this);
+      $t.html($t.data('original-title'));
+    });
+    //location.reload();
+    $('body').removeClass('is--filtered');
+
+  });
+  $(document).on('click touchend','.filter-group .remove',function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    $this.closest('.filter-group').find('.coll-filter').prop('checked',false).removeAttr('checked').eq(0).trigger('change');
+    //$(this).closest('.filter-group').find('.coll-filter-class').prop('checked',false).removeAttr('checked').eq(0).trigger('change');
+    $this.hide();
+    $this.closest('.filter-group').removeClass('is--filtered').removeClass('is--open');
+    var title =  $this.closest('.filter-group').find('.fg-title');
+    var original = title.data('original-title');
+    title.text(original);
+    checkFilters();
+  });
+
+  //checkFilters();
+
+
+  $(document).on('change','.coll-filter-class',function() {
+    var myVal = '.'+$(this).val();
+    checkFilters();
+  });
+
+  $(document).on('change', '.coll-filter', function(e) {
+    theme.applyFilters(e.target);
+  });
+
+
+
+  $(document).on('change','.select-type .form-radio',function(e) {
+    e.preventDefault();
+    var hrefForTitle = '/collections/'+$(this).parent().data('href');
+    window.location.href = hrefForTitle;
+  });
+};
+
+
+
+theme.collectionFilter = function(q) {
+  var query = `{
+products(first: 20, query:"${q} -title:'Special Order' -title:Clearance -title:'Pre-Sale' product_type:'Iron Doors' AND inventory_total:>=1", sortKey:TITLE) {
+edges {
+node {
+id
+title
+variants(first:20) {
+edges {
+node {
+title
+availableForSale
+}
+}
+}
+}
+}
+}
+}`;
+  var sizes = q.split(' ');
+  var newQuery = sizes.join('" x ');
+  var finalQuery = newQuery + '"';
+  var settings = {
+    'async': true,
+    'crossDomain': true,
+    'url': '//pinkysdoors.myshopify.com/api/graphql',
+    'method': 'POST',
+    'headers': {
+      'X-Shopify-Storefront-Access-Token': 'ce74c601a7ae9787e896a6530c7cdc93',
+      'Content-Type': 'application/graphql',
+    },
+    'data': query
+  };
+  console.log(finalQuery);
+  return $.ajax(settings).done(function(response) {
+    $(response.data.products.edges).each(function(i,product) {
+      $(product.node.variants.edges).each(function(d,variant) {
+        if(!variant.node.availableForSale) return true;
+        if(variant.node.title.indexOf(finalQuery) != -1) {
+          console.log(product.node.title);
+        }
+      });
+    });
+  });
+};
+
+theme.isOnScreen = function(elem) {
+  // if the element doesn't exist, abort
+  if( $(elem).length == 0 ) {
+    return;
+  }
+  var $window = $(window)
+  var viewport_top = $window.scrollTop()
+  var viewport_height = $window.height()
+  var viewport_bottom = viewport_top + viewport_height
+  var $elem = $(elem)
+  var top = $elem.offset().top
+  var height = $elem.height()
+  var bottom = top + height
+
+  return (top >= viewport_top && top < viewport_bottom) ||
+    (bottom > viewport_top && bottom <= viewport_bottom) ||
+    (height > viewport_height && top <= viewport_top && bottom >= viewport_bottom)
+};
+
+
+
+
+
+theme.testAPI = function(q) {
+  var query = '72" x 96" "Right Hand In Swing" collection:92472705133 -Special -Clearance inventory_total:>1';
+  var q = `query($input:  {
+products(first:50, query: ${query}) {
+edges {
+node {
+title 
+}
+}
+} 
+}`;
+  var settings = {
+    'async': true,
+    'crossDomain': true,
+    'url': '//pinkysdoors.myshopify.com/api/graphql',
+    'method': 'POST',
+    'headers': {
+      'X-Shopify-Storefront-Access-Token': 'ce74c601a7ae9787e896a6530c7cdc93',
+      'Content-Type': 'application/graphql',
+    },
+    'data': q
+  };
+  // Get checkout URL from shopify
+  return $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+};
+
+theme.isPaging = false;
+
+theme.getNextPage = function(url) {
+  if(theme.isPaging) return;
+  var pagination = '.pagination--wrapper';
+  $.get(url,function(data) {
+    var $items = $(data).find('#collection-grid-0 .grid__item');
+    $items.each(function(i,item) {
+      var id = $(item).attr('id');
+      if(!$(`#${id}`).length) {
+        $(item).appendTo('#collection-grid-0');
+        theme.updateFilterPricing();
+      }
+    });
+    if($(data).find(pagination).length) {
+      $(pagination).html($(data).find('.pagination--wrapper').html());
+    } else {
+      $(pagination).remove();
+    }
+
+    theme.finishCollectionProcessing();
+    theme.isPaging = false;
+  });
+};
+
+theme.preloaderVisible = function() {
+//   $('.next-page-preloader').each(function(i,preloader) {
+//     if(theme.isOnScreen(preloader)) {
+//       var nextPageUrl = `${$('.next-page-preloader').attr('data-paginate-next-url')}&view=infinite-scroll`;
+//       theme.getNextPage(nextPageUrl)
+//       theme.isPaging = true;
+//     }
+//   });
+  if(theme.isOnScreen('.next-page-preloader')) { 
+    var nextPageUrl = `${$('.next-page-preloader').attr('data-paginate-next-url')}&view=infinite-scroll`;
+    theme.getNextPage(nextPageUrl);
+    var currentPage = parseFloat($('.fixed-pagination__current').text());
+    theme.isPaging = true;
+  }	
+}
+
+
+$(function() {
+  theme.collectionFiltersNew(); 
+  if($('.next-page-preloader').length) {
+    theme.preloaderVisible();
+    window.addEventListener('scroll', function(e) {
+      theme.preloaderVisible();
+    });
+  }
+  
+  
+  
+//   console.log($('#Collection .product-card').eq(0).data('sizes-available'));
+});

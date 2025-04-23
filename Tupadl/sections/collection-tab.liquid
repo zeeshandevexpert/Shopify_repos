@@ -1,0 +1,240 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+
+{%  if section.blocks.size > 0 %}
+    <div class="collections-tab-section">
+    <script src="//code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+      {% comment %} {%  if section.settings.useslider %}
+      
+      {%  endif %} {% endcomment %}
+
+      <div id="tabs" class="tabs">
+        {%  assign tabContent = '' %}
+        <ul>
+        {%  for block in section.blocks %}
+         {%  assign collection = collections[block.settings.collection] %}
+          <li><a href="#tabs-{{ collection.id }}">{{ collection.title  }}</a></li>
+          {%  capture content  %}
+              <div id="tabs-{{ collection.id }}">
+                <div class="collection-products">
+                 {%- for product in block.settings.collection.products limit: section.settings.limit -%}
+                 <div class="collection-product">
+                    {% render 'card-product-custom',
+                      card_product: product,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      image_shape: section.settings.image_shape,
+                      show_secondary_image: section.settings.show_secondary_image,
+                      show_vendor: section.settings.show_vendor,
+                      show_rating: section.settings.show_rating,
+                      show_quick_add: section.settings.enable_quick_add,
+                      section_id: section.id
+                    %}
+                 </div>
+                {%- endfor -%}
+                </div>
+               {%  if block.settings.viewall %}
+
+                 <a href="{{ block.settings.collection.url }}" class="button-link"> View all </a>    
+                 {%  endif  %}
+              </div>
+          {%  endcapture %}
+          {%  assign tabContent = tabContent | append: content %}
+        {%  endfor %}  
+        </ul>   
+        {{ tabContent }}
+      </div>  
+    </div> 
+      <script>
+    $( function() {
+      {%  if section.settings.useslider %}
+      function tabSlider(){
+            $('.tabs .product-grid.slick-initialized ').slick('unslick');
+            $('.tabs .product-grid ').slick({
+              dots: false,
+              arrows: true,
+              infinite: false,
+              speed: 300,
+              slidesToShow: 4,
+              slidesToScroll: 4,
+              responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                  }
+                }
+              
+              ]
+            });
+      }
+          {%  endif %}
+      $( "#tabs" ).tabs({
+        create: function( event, ui ) {
+           {%  if section.settings.useslider %}
+         tabSlider()
+              {%  endif %}
+        },
+        activate: function( event, ui ) {
+          {%  if section.settings.useslider %}
+         tabSlider()
+              {%  endif %}
+        }
+      });
+    
+    } );
+    </script>
+ 
+  {%  endif %}  
+  {% schema %}
+    {
+      "name": "Collection Tabs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+         {
+          "type": "checkbox",
+          "id": "useslider",
+          "label": "Use slider",
+          "default": true
+        },
+         {
+          "type": "range",
+          "id": "limit",
+          "label": "Product To Show",
+          "min": 3,
+          "max": 6,
+          "step": 1,
+          "default": 3
+        },
+        {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "square",
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+        }
+      ],
+      "default": "adapt",
+      "label": "t:sections.main-collection-product-grid.settings.image_ratio.label"
+    },{
+      "type": "select",
+      "id": "image_shape",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.all.image_shape.options__1.label"
+        },
+        {
+          "value": "arch",
+          "label": "t:sections.all.image_shape.options__2.label"
+        },
+        {
+          "value": "blob",
+          "label": "t:sections.all.image_shape.options__3.label"
+        },
+        {
+          "value": "chevronleft",
+          "label": "t:sections.all.image_shape.options__4.label"
+        },
+        {
+          "value": "chevronright",
+          "label": "t:sections.all.image_shape.options__5.label"
+        },
+        {
+          "value": "diamond",
+          "label": "t:sections.all.image_shape.options__6.label"
+        },
+        {
+          "value": "parallelogram",
+          "label": "t:sections.all.image_shape.options__7.label"
+        },
+        {
+          "value": "round",
+          "label": "t:sections.all.image_shape.options__8.label"
+        }
+      ],
+      "default": "default",
+      "label": "t:sections.all.image_shape.label",
+      "info": "t:sections.all.image_shape.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_vendor.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
+      "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    }
+      ],
+      "blocks": [
+      {
+        "type": "tab",
+        "name": "Tab",
+        "limit": 5,
+      
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "checkbox",
+          "id": "viewall",
+          "label": "Show view all",
+          "default": true
+        }
+      ]
+    
+      }
+    ],
+      "presets": [
+      {
+        "name": "Collection Tabs",
+        "blocks": []
+      }
+    ]
+    }
+  {% endschema %}

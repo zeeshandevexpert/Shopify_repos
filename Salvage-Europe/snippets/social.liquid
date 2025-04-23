@@ -1,0 +1,71 @@
+<div id="social">
+  <div class="share-icons">
+    <a href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}{% if template == 'blog' or template == 'article' %}{{ article.url }}{% else %}{{ product.url }}{% endif %}"
+      class="facebook"
+      title="{{ 'social.icons.facebook' | t }}"
+      target="_blank">
+
+      {% render 'snip-icons',
+       wrapper: '.share-icons',
+       type: 'social',
+       icon: 'facebook',
+       classes: 'share-icons--icon',
+       size: '14px',
+       fill: 'var(--text-color)',
+       hover: 'var(--text-color)' %}
+
+    </a>
+    <a href="//twitter.com/intent/tweet?status={{ shop.url | append: share_permalink }}{% if template contains 'blog' or template == 'article' %}{{ article.url }}{% else %}{{ product.url }}{% endif %}"
+      title="{{ 'social.icons.twitter' | t }}"
+      target="_blank"
+      class="twitter">
+
+      {% render 'snip-icons',
+       wrapper: '.share-icons',
+       type: 'social',
+       icon: 'twitter',
+       classes: 'share-icons--icon',
+       size: '14px',
+       fill: 'var(--text-color)',
+       hover: 'var(--text-color)' %}
+
+    </a>
+    {% if template == 'collection' or template == 'product' or template == 'index' %}
+      <a href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}{{ product.url }}&amp;media={{ product.featured_media | image_url: width: 1000 | prepend: 'http:' }}"
+        title="{{ 'social.icons.pinterest' | t }}"
+        target="_blank"
+        class="pinterest">
+
+        {% render 'snip-icons',
+         wrapper: '.share-icons',
+         type: 'social',
+         icon: 'pinterest',
+         classes: 'share-icons--icon',
+         size: '14px',
+         fill: 'var(--text-color)',
+         hover: 'var(--text-color)' %}
+
+      </a>
+    {% endif %}
+
+    {% if template contains 'blog' or template contains 'article' %}
+      {% if article.image %}
+        <a href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}{{ article.url }}&amp;media={{ article.image | image_url: width: 600 | prepend: 'http:' }}"
+          title="{{ 'social.icons.pinterest' | t }}"
+          target="_blank"
+          class="pinterest">
+
+          {% render 'snip-icons',
+           wrapper: '.share-icons',
+           type: 'social',
+           icon: 'pinterest',
+           classes: 'share-icons--icon',
+           size: '14px',
+           fill: 'var(--text-color)',
+           hover: 'var(--text-color)' %}
+
+          </a>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

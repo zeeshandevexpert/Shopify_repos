@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "165895546012772598": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default",
+        "sticky_header": false
+      }
+    },
+    "165407027378b72537": {
+      "type": "collection-materials-head",
+      "blocks": {
+        "22fc2429-e739-486f-873a-2840519d0303": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "®technical",
+            "image": "shopify:\/\/shop_images\/Ambercycle_4_22_27_93ba95dc-927f-4ea8-a0ff-922bf354eef4.jpg",
+            "description": "to keep you free as you move through the toughest environments",
+            "button_title": "closer look",
+            "button_link": "shopify:\/\/blogs\/materials\/®yarn"
+          }
+        },
+        "f0c3fa02-9a40-4e5b-b8a6-4bda47b2891a": {
+          "type": "slide",
+          "settings": {
+            "title": "®athletic",
+            "image": "shopify:\/\/shop_images\/Untitled_design-56.png",
+            "description": "fabric that lets your breathe and give you the best performance",
+            "button_title": "closer look",
+            "button_link": "shopify:\/\/blogs\/materials\/®knit-fabric"
+          }
+        },
+        "f597815e-73a9-42e5-a600-bced57ab7fa8": {
+          "type": "slide",
+          "settings": {
+            "title": "®lifestyle",
+            "image": "shopify:\/\/shop_images\/Untitled_design-58.png",
+            "description": "comfort and quality shaped for everyday wear",
+            "button_title": "closer look",
+            "button_link": "shopify:\/\/blogs\/materials\/®cloudknit"
+          }
+        },
+        "ef2b3f96-a54e-4748-b559-8bf4e1ad6483": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "title": "®everyday",
+            "image": "shopify:\/\/shop_images\/6.png",
+            "description": "for garments that move with you every day",
+            "button_title": "closer look",
+            "button_link": "shopify:\/\/blogs\/materials\/®cloud-knit-fabric"
+          }
+        }
+      },
+      "block_order": [
+        "22fc2429-e739-486f-873a-2840519d0303",
+        "f0c3fa02-9a40-4e5b-b8a6-4bda47b2891a",
+        "f597815e-73a9-42e5-a600-bced57ab7fa8",
+        "ef2b3f96-a54e-4748-b559-8bf4e1ad6483"
+      ],
+      "settings": {
+        "sliders_title": "applications"
+      }
+    },
+    "main": {
+      "type": "collection-materials-template",
+      "settings": {
+        "title": "view by garment",
+        "bottom_description": "a deeper look into our collaborations",
+        "link": "shopify:\/\/blogs\/zine"
+      }
+    }
+  },
+  "order": [
+    "165895546012772598",
+    "165407027378b72537",
+    "main"
+  ]
+}

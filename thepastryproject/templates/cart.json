@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "image-with-text-block": {
+      "type": "image--image-with-text-block",
+      "disabled": true,
+      "settings": {
+        "text-color": "#3a3a3a",
+        "background-color": "rgba(0,0,0,0)",
+        "horizontal-alignment": "center",
+        "subheading": "",
+        "title": "Share your story",
+        "text": "",
+        "button_link": "",
+        "button_label": ""
+      }
+    },
+    "main": {
+      "type": "template--cart",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "image-with-text-block",
+    "main"
+  ]
+}

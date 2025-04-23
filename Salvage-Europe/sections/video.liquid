@@ -1,0 +1,78 @@
+<div class="global__section" data-section-id="{{ section.id }}" data-section-type="video-section" data-aos="{{ settings.scroll_animation }}">
+  <div class="row">
+    {% if section.settings.title != blank %}
+      {% render 'section-headings', type: section.settings.title, link: section.settings.video_url %}
+    {% endif %}
+  </div>
+{% if section.settings.full_width %}<div class="gridlock-fluid"><div class="row" style="width: 100%;">{% endif %}
+  <div class="row">
+    <div class="desktop-12 tablet-6 mobile-3 section-{{ section.id }}">
+      <div class="videoWrapper" data-aos="{{ settings.scroll_animation }}">
+        {% if section.settings.video_url == blank %}
+          <iframe src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" title="{{ section.settings.description | escape }}" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+        {% else %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720" title="{{ section.settings.description | escape }}" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe src="//player.vimeo.com/video/{{ section.settings.video_url.id }}?byline=0&portrait=0&badge=0" title="{{ section.settings.description | escape }}" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+    {% if section.settings.full_width %}</div></div>{% endif %}
+</div>
+
+<div class="clear"></div>
+
+{% schema %}
+{
+  "name":"Video",
+  "settings":[
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Enable full width"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "YouTube or Vimeo link",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "default": "Describe the video for customers using screen readers",
+      "label": "Video alt text"
+    }
+  ],
+  "enabled_on": {
+    "templates": [
+      "404",
+      "article",
+      "blog",
+      "cart",
+      "collection",
+      "index",
+      "list-collections",
+      "page",
+      "product",
+      "search",
+      "customers/account"
+    ]
+  },
+  "presets": [
+    {
+      "name": "Video"
+    }
+  ]
+}
+{% endschema %}

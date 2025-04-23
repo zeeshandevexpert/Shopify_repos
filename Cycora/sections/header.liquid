@@ -1,0 +1,65 @@
+<style>
+  .cart_wrapper.header-menu-element-right {
+    position: relative;
+    padding-left: 35px;
+  }
+
+  .cart_wrapper.header-menu-element-right h3 {
+    cursor: pointer;
+  }
+
+  .header-dark-skin .cart_wrapper.header-menu-element-right:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #fff;
+  }
+
+  .header-light-skin .cart_wrapper.header-menu-element-right:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: #000;
+  }
+</style>
+
+<div class="header-row">
+  <div class="header-col-left">
+    <a href="/">
+      <img src="{{ settings.header_light_logo | img_url: "master" }}">
+      <img src="{{ settings.header_dark_logo | img_url: "master" }}">
+    </a>
+    <span class="logo-by">{{ settings.header_logo_title }}</span>
+  </div>
+  <div class="header-col-right">
+    <span class="menu-mobile"><i>menu</i><i>close</i></span>
+    <nav class="header-menu">
+      <div class="header-menu-list">
+        {% include 'menu-desktop-new' %}
+      </div>
+      <div class="header-mobile-only">
+        {% include 'menu-mobile' %}
+      </div>
+    </nav>
+    <span class="full-bleed-bg"></span>
+  </div>
+</div>
+
+<span class="scroll-to-top"></span>
+{% schema %}
+{
+  "name": "Header",
+  "tag": "div",
+  "class": "container-style container-large",
+  "settings": [
+  ],
+  "blocks": [
+  ]
+}
+{% endschema %}

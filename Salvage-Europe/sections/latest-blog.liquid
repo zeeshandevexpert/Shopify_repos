@@ -1,0 +1,47 @@
+<div class="sidebar-item blog-latest" {{ section.shopify_attributes }}>
+    <h5 class="sidebar-heading">{{ section.settings.heading }}</h5>
+
+    <div class="wrap-latest-blog">
+    {% for article in blog.articles limit: 4 %}
+        <a href="{{ article.url}}">
+            {% if article.image %}
+                <div class="featured-article">
+                <div class="article-image">
+                    {%- render 'Blog-page',
+                    type: article.image,
+                    width: 500
+                    -%}
+                </div>
+                <div class="article-caption">
+                <h4>{{ article.title | truncate: 30 }}</h4>
+                    {% comment %} <p>{{ article.excerpt_or_content | strip_html | truncatewords: 30 }}</p> {% endcomment %}
+                    {% comment %} <span>{{ article.created_at | date: "%b %d, %y" }}</span> {% endcomment %}
+                </div>
+                </div>
+            {% endif %}
+      </a>
+    {% endfor %}
+    </div>
+  </div>
+
+
+  {% schema %}
+    {
+       "name": "Latest Blog Post",
+      "settings": [ 
+        {
+            "type":"text",
+            "id": "heading",
+            "label": "Post Heading" 
+        }
+      ],
+    "presets": [
+     {
+       "name": "Latest Blog Post",
+       "settings": {
+         
+        }
+     }
+   ]
+    }
+    {% endschema %}

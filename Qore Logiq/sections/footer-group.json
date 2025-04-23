@@ -1,0 +1,62 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_zDWNMN": {
+          "type": "text",
+          "settings": {
+            "heading": "",
+            "subtext": "<p>JOIN QORE LOGIQ FREE VIP CLUBAND GET ACCESS TO MEMBERS-ONLYFREEBIES & DISCOUNTS<\/p>"
+          }
+        },
+        "link_list_cYMmhW": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Shop",
+            "menu": "shop"
+          }
+        },
+        "link_list_rzQng6": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Qore Logiq",
+            "menu": "qore-logiq"
+          }
+        },
+        "link_list_G3Pjc6": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Customer Support",
+            "menu": "customer-support"
+          }
+        }
+      },
+      "block_order": [
+        "text_zDWNMN",
+        "link_list_cYMmhW",
+        "link_list_rzQng6",
+        "link_list_G3Pjc6"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": false,
+        "enable_language_selector": false,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

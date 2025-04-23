@@ -1,0 +1,231 @@
+<style>
+  #shopify-section-{{ section.id }} .custom-iwt-link{
+    color: {{section.settings.lg}};
+  }
+  #shopify-section-{{ section.id }} .custom-iwt-link:hover{
+    color: {{section.settings.fg}};
+  }
+  .custom-iwt-text a{
+    color: {{section.settings.lg}};
+  }
+</style>
+<div class="custom-review-sec custom-iwt" style="background: {{ section.settings.bg }}; color: {{ section.settings.fg }};">
+  <div class="custom-iwt-wrapper">
+    <div class="custom-iwt-flex-wrapper {% if section.settings.swap %}custom-iwt-flex-swap{% endif %}">
+      <div class="custom-iwt-flex-text-wrapper">
+        <div class="custom-iwt-text-wrapper {{ section.settings.aligment }}">
+          {% if section.settings.preheading != blank %}
+            <p class="custom-iwt-preheading">{{ section.settings.preheading }}</p>
+          {% endif %}
+          {% if section.settings.heading != blank %}
+            <h2 class="custom-iwt-heading">{{ section.settings.heading }}</h2>
+          {% endif %}
+          <div class="custom-iwt-flex-image-wrapper for-mobile">
+        <div class="custom-vwt-video-wrapper {% if section.settings.enable_video %}active_video{% endif %}">
+            {% if section.settings.video != blank %}
+              {{ section.settings.video | video_tag: image_size: '700x', loop: true, controls: false, muted: true, autoplay: true, playsinline: true, class: 'custom-vwt-video' }}
+            {% endif %}
+          </div>
+        
+          {% if section.settings.img %}
+            <img src="{{ section.settings.img | img_url: 'master' }}" class="custom-iwt-img {% if section.settings.enable_video %}active_img{% endif %}" />
+          {% endif %}
+      </div>
+          {% if section.settings.text != blank %}
+            <div class="custom-iwt-text">{{ section.settings.text }}</div>
+          {% endif %}
+          <div class="review-area" style="background-color: {{ section.settings.review_bg }}">
+            <div class="review-box-inner">
+              {% if section.settings.customer_image != blank or section.settings.customer_name != blank %}
+              <div class="customer-image-name-area">
+                {% if section.settings.customer_image != blank %}
+                <div class="customer-image">
+                  <div class="customer-image-inner">
+                    <img src="{{ section.settings.customer_image | img_url: 'master' }}" />
+                  </div>
+                </div>
+                {% endif %}
+                {% if section.settings.customer_name != blank %}
+                <div class="customer-name">
+                  <div class="customer-name-inner">
+                    <div class="star-rating">
+                      <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="full" role="img"><use href="#looxicons-rating-icon"></use></svg>
+                      <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="full" role="img"><use href="#looxicons-rating-icon"></use></svg>
+                      <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="full" role="img"><use href="#looxicons-rating-icon"></use></svg>
+                      <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="full" role="img"><use href="#looxicons-rating-icon"></use></svg>
+                      <svg class="loox-icon" viewBox="0 0 24 24" data-lx-fill="full" role="img"><use href="#looxicons-rating-icon"></use></svg>
+                    </div>
+                    <div class="name-area">
+                      <span>{{ section.settings.customer_name }}</span>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% if section.settings.customer_review != blank %}
+              <div class="customer-review-text">
+                {{ section.settings.customer_review }}
+              </div>
+              {% endif %}
+              {% if section.settings.verified_text != blank %}
+              <div class="customer-verified-text">
+                
+                <span><img src="{{ 'verified.svg' | asset_url }}" /></span>{{ section.settings.verified_text }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="custom-iwt-flex-image-wrapper for-desktop">
+
+        
+          <div class="custom-vwt-video-wrapper {% if section.settings.enable_video %}active_video{% endif %}">
+            {% if section.settings.video != blank %}
+              {{ section.settings.video | video_tag: image_size: '700x', loop: true, controls: false, muted: true, autoplay: true, playsinline: true, class: 'custom-vwt-video' }}
+            {% endif %}
+          </div>
+        
+          {% if section.settings.img %}
+            <img src="{{ section.settings.img | img_url: 'master' }}" class="custom-iwt-img {% if section.settings.enable_video %}active_img{% endif %}" />
+          {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Custom Image Text Reviews",
+  "class": "custom-image-reviews-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "swap",
+      "label": "Switch Directions"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video",
+      "label": "Enable Video"
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "radio",
+      "id": "aligment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "custom-iwt-left",
+          "label": "Left"
+        },
+        {
+          "value": "custom-iwt-center",
+          "label": "Center"
+        },
+        {
+          "value": "custom-iwt-right",
+          "label": "Right"
+        }
+      ],
+      "default": "custom-iwt-left"
+    },
+    {
+      "type": "text",
+      "id": "preheading",
+      "label": "Preheading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "image_picker",
+      "id": "customer_image",
+      "label": "Customer Image"
+    },
+    {
+      "type": "text",
+      "id": "customer_name",
+      "label": "Customer Name"
+    },
+    {
+      "type": "textarea",
+      "id": "customer_review",
+      "label": "Customer Review Text"
+    },
+    {
+      "type": "text",
+      "id": "verified_text",
+      "label": "Verified text"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg",
+      "label": "Bg Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "review_bg",
+      "label": "Review Box Bg Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "fg",
+      "label": "Text Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "lg",
+      "label": "Link Color",
+      "default": "#197bbd"
+    },
+    {
+      "type": "color",
+      "id": "bbg",
+      "label": "Button Bg Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "bfg",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image With Text Reviews"
+    }
+  ],
+  "disabled_on": {
+    "groups": ["custom.popups"]
+  }
+}
+{% endschema %}

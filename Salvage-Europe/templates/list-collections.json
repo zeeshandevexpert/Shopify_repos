@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "banner-header": {
+      "type": "banner-header",
+      "settings": {
+        "image_height": 400,
+        "parallax_scroll": false,
+        "heading": "",
+        "float_header": false,
+        "center_heading": true
+      }
+    },
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-list-collections-all",
+      "settings": {
+        "grid": 4,
+        "mobile_single": true
+      }
+    },
+    "16269858630ec50934": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "title": "Welcome",
+        "rich_text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "alignment": "center",
+        "text_width": 60,
+        "text_size": 15,
+        "padding": 30,
+        "color": "#000000",
+        "background": "",
+        "no_bottom_margin": false
+      }
+    },
+    "162698583543703cb2": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured Collection",
+        "collection": "",
+        "show_all": true,
+        "show_more_text": "View all",
+        "carousel": true,
+        "grid": 4,
+        "products_shown": 4
+      }
+    }
+  },
+  "order": [
+    "banner-header",
+    "breadcrumbs",
+    "main",
+    "16269858630ec50934",
+    "162698583543703cb2"
+  ]
+}

@@ -1,0 +1,196 @@
+{% comment %}
+Don't edit this file.
+This snippet is auto generated and will be overwritten.
+{% endcomment %}
+<script>
+    $(document).ready(function(){
+        CDE_init_login_register();
+    });
+
+    async function CDE_init_login_register() {
+        if('#CDE_login_form') {
+            $('#CDE_login_form').html(CDE_loginForm);
+        }
+        if('#CDE_register_form') {
+            $('#CDE_register_form').html(CDE_registerForm);
+        }
+        if('#CDE_restore_form') {
+            $('#CDE_restore_form').html(CDE_restoreForm);
+        }
+    }
+
+    async function CDE_submit_login_form() {
+
+        CDE_errorMessagesCallbackInit();
+
+        var customer_email = $('input[name="customer_login[email]"]');
+        var customer_password = $('input[name="customer_login[password]"]');
+
+        customer_email.removeClass('CDE-input-error');
+        customer_password.removeClass('CDE-input-error');
+
+        $('#CDE_login_global_error').empty();
+        $('#CDE_login_button').attr('disabled',true).attr('value',CDE_settings.loginLoadingMessage);
+
+        var error_required_fields = 0;
+
+        if(customer_email.val() == ''){customer_email.addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback(customer_email); }
+        if(customer_password.val() == ''){customer_password.addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback(customer_email); }
+
+        if(error_required_fields > 0){
+
+            $('#CDE_login_button').attr('disabled',false).attr('value',CDE_settings.loginButtonTitle);
+            return false;
+        }
+
+        await CDE_login_customer(customer_email.val(), customer_password.val(), 1);
+
+    }
+
+    async function CDE_login_customer(email, password, main_login) {
+        var data = {
+            'customer[email]'    : email,
+            'customer[password]' : password,
+            form_type: 'customer_login',
+            utf8: '✓'
+        };
+
+        $.ajax({
+            url: '/account/login?json',
+            method: 'post',
+            data: data,
+            dataType: 'html',
+            async: true
+        }).done(function(html){
+
+            if (html.indexOf('Challenge') > -1) {
+                document.location.href='/challenge';
+                return true;
+            }else if(html.indexOf('Account')  > -1) {
+                document.location.href='/account';
+                return true;
+            }else {
+                if(main_login==1){
+                    $('#CDE_login_global_error').html(CDE_settings.loginErrorMessage);
+                    $('#CDE_login_button').attr('disabled',false).attr('value',CDE_settings.loginButtonTitle);
+                }
+            }
+
+        });
+    }
+
+    async function CDE_submit_register_form() {
+
+        CDE_errorMessagesCallbackInit();
+
+        $('#CDE_register_global_error').empty();
+        $('#CDE_register_button').attr('disabled',true).attr('value',CDE_settings.loginLoadingMessage);
+
+        var data_register = {
+            "first_name" : $('input[name="customer_register[first_name]"]').val(),
+            "last_name"  : $('input[name="customer_register[last_name]"]').val(),
+            "email"      : $('input[name="customer_register[email]"]').val(),
+            "password"   : $('input[name="customer_register[password]"]').val(),
+            "confirm_password"   : $('input[name="customer_register[confirm_password]"]').val()
+        }
+
+        $('input[name="customer_register[first_name]"], input[name="customer_register[last_name]"], input[name="customer_register[email]"], input[name="customer_register[password]"], input[name="customer_register[confirm_password]"]').removeClass('CDE-input-error');
+
+        var error_required_fields = 0;
+        if(data_register.first_name == ''){$('input[name="customer_register[first_name]"]').addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback($('input[name="customer_register[first_name]"]')); }
+        if(data_register.last_name == ''){$('input[name="customer_register[last_name]"]').addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback($('input[name="customer_register[last_name]"]')); }
+        if(data_register.email == ''){$('input[name="customer_register[email]"]').addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback($('input[name="customer_register[email]"]')); }
+        if(data_register.password == ''){$('input[name="customer_register[password]"]').addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback($('input[name="customer_register[password]"]')); }
+        if(data_register.confirm_password == ''){$('input[name="customer_register[confirm_password]"]').addClass('CDE-input-error');error_required_fields++; CDE_errorMessagesCallback($('input[name="customer_register[confirm_password]"]')); }
+
+        if(data_register.password != data_register.confirm_password){
+            $('#CDE_register_global_error').html(CDE_settings.passwordsErrorMessage);
+            $('input[name="customer_register[confirm_password]"]').addClass('CDE-input-error');error_required_fields++;
+            CDE_errorMessagesCallback($('input[name="customer_register[confirm_password]"]'));
+        }
+
+        if(!CDE_extraFieldsValidation()){
+            error_required_fields++;
+        }
+
+        if(error_required_fields > 0){
+            $('#CDE_register_button').attr('disabled',false).attr('value',CDE_settings.registerButtonTitle);
+            return false;
+        }
+
+        if(typeof $('input[name="customer[CDE_current_customer_email]').val() != 'undefined'){
+            var current_customer_email = $('input[name="CDE_current_customer_email"]').val();
+        }else{
+            var current_customer_email = $('#CDE_current_customer_email').val();
+        }
+        let access_token = await CDE_get_access_token();
+        var data = {
+            'access_token'  : access_token,
+            'action'        : 'createCustomer',
+            'apiVersion'    : apiVersion,
+            'shopName'      : shopName,
+            'customerId'    : customerId,
+            'customerEmail' : current_customer_email,
+            'customerData'  : data_register
+        }
+
+        let response = await CDE_send_request('POST',data);
+        var obj_res = jQuery.parseJSON(response);
+
+        if (obj_res['succ']=='true') {
+            await CDE_login_customer(data_register.email, data_register.password, 0);
+        }else{
+            $('#CDE_register_button').attr('disabled',false).attr('value',CDE_settings.registerButtonTitle);
+            $('#CDE_register_global_error').html(obj_res.message);
+            CDE_errorMessagesCallback('');
+        }
+
+    }
+
+    async function CDE_submit_restore_form() {
+        var customer_email = $('input[name="customer_restore[email]"]');
+        $('#CDE_restore_global_error').empty();
+        $('#CDE_restore_button').attr('disabled',true).attr('value', CDE_settings.loginLoadingMessage);
+
+        var error_required_fields = 0;
+
+        if(customer_email.val() == ''){
+            $('#CDE_restore_global_error').text(CDE_settings.restoreErrorEmailFormat);
+            error_required_fields++;
+        }
+
+        if(error_required_fields > 0){
+            $('#CDE_restore_button').attr('disabled',false).attr('value', 'Submit');
+            return false;
+        }else{
+            await CDE_restore_customer(customer_email.val());
+        }
+    }
+
+    async function CDE_restore_customer(email) {
+        var data = {
+            'email'    : email,
+            form_type: 'recover_customer_password',
+            utf8: '✓'
+        };
+
+        $.ajax({
+            url: '/account/recover?json',
+            method: 'post',
+            data: data,
+            dataType: 'html',
+            async: true
+        }).done(function(html){
+            if (html.indexOf('Challenge') > -1) {
+                document.location.href='/challenge';
+                return true;
+            }else if (html.indexOf('class="errors"') > -1) {
+                $('#CDE_restore_global_error').text(CDE_settings.restoreNoAccountFound);
+                $('#CDE_restore_button').attr('disabled',false).attr('value', 'Submit');
+            }else{
+                $('#CDE_forgot_password_form').hide();
+                $('#CDE_succes_restore_message').show();
+            }
+        });
+    }
+</script>

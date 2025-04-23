@@ -1,0 +1,94 @@
+{% for option in product.options %}
+
+  {%- liquid
+
+    assign option_handle = option | handle
+    assign option_index = forloop.index0
+    assign values = ''
+
+  -%}
+
+  {% capture downcased_option %}{{ option | downcase }}{% endcapture %}
+  {% if downcased_option contains 'color' or downcased_option contains 'colour' or downcased_option contains 'cor' or downcased_option contains 'farbe' or downcased_option contains 'couleur' %}
+
+
+  <div class="col-swatch" data-collection-prod-swatches>
+    <product-swatches data-duration="400">
+      <ul data-option-index="{{ option_index }}" class="{{ option_handle }} options">
+      {% for variant in product.variants %}
+        {% assign value = variant.options[option_index] %}
+        {% capture wrapped_value %},{{ value }},{% endcapture %}
+        {% unless values contains wrapped_value %}
+
+        <li data-option-title="{{ value | escape }}"
+            {% if variant.featured_media %}
+            data-href="{{ variant.image | image_url: width: 300 }}"
+            {% endif %}
+            class="js-collection-swatch color {{ value | handle }} {% if forloop.first %}js-is-active{% endif %}">
+
+          <a href="{{ variant.url | within: collection }}" title="{{ variant.title }}">
+
+            {%- liquid
+
+              assign variant_image_url = blank
+              assign swatch_image_avail = false
+              assign variant_image_avail = false
+              assign use_image = false
+
+              assign image_url = value | handle | append: '.png' | file_url
+              assign img_handle = value | handle | append: '.png'
+
+              if images[img_handle] != blank
+                assign swatch_image_avail = true
+              endif
+
+              if variant.image
+                assign variant_image_avail = true
+                assign variant_image_url = variant.image | image_url: width: 100
+              endif
+
+              assign bg_image_value = image_url
+
+              if variant_image_url != blank and settings.color_swatch_style == 'variant-image'
+                assign bg_image_value = variant_image_url
+              endif
+
+
+              if settings.color_swatch_style == 'variant-image' or settings.color_swatch_style == 'custom-image' and settings.show_color_swatches == true
+                if swatch_image_avail or variant_image_avail
+                  assign use_image = true
+                endif
+              endif
+
+            -%}
+
+            {% capture bg_color %}
+              background-color: {{ value | split: ' ' | last | handle }};
+            {% endcapture %}
+
+            {% capture bg_image %}
+              background-image: url({{ bg_image_value }});
+            {% endcapture %}
+
+            {% capture inline_styles %}
+              {% if use_image %}
+              {{ bg_color }} {{ bg_image }} background-position: center center;
+              {% else %}
+              {{ bg_color }}
+              {% endif %}
+            {% endcapture %}
+
+
+            <span style="{{ inline_styles }}"></span>
+          </a>
+        </li>
+        {% capture values %}{{ values }}{{ wrapped_value }}{% endcapture %}
+        {% endunless %}
+      {% endfor %}
+      </ul>
+    </product-swatches>
+  </div><!-- .swatch -->
+
+  {% endif %}
+
+{% endfor %}

@@ -1,0 +1,53 @@
+{% comment %}
+snippets/product-pickup-availability.liquid
+
+- product
+- current_variant
+{% endcomment %}
+{% unless product == empty %}
+  <div class="product-single__store-availability-container"
+    data-variant-id="{{ current_variant.id }}"
+    data-product-title="{{ product.title | escape }}"
+    style="visibility:hidden; min-height: 120px;" data-store-availability-container>
+  </div>
+{% else %}
+  <div
+    class="product-single__store-availability-container"
+    style="visibility: visible; opacity: 1; display: block;">
+    <div
+      class="store-availability-container animated fadeIn"
+      data-pick-up-available="true"
+      data-section-id="pickup-availability"
+      data-section-type="store-availability"
+      style="display: block;">
+      <div class="store-availability-information">
+        <div class="store-availability-information-container">
+          <p class="store-availability-information__title">
+            {% render 'snip-icons',
+               wrapper: '.store-availability-list__stock',
+               type: 'apollo',
+               icon: 'close',
+               classes: 'store-availability-list__stock--icon vib-center',
+               size: '10px',
+               fill: 'var(--text-color)',
+               hover: 'var(--text-color)' %}
+            <span class="vib-center">{{ 'products.product_pickup_availability.pick_up_available_at_html' | t: location_name: shop.address.city }}</span>
+          </p>
+          <p class="store-availability-information__stock">
+            {{ 'general.onboard.featured_product_pickup_stock' | t }}
+          </p>
+          <div class="slideout__trigger--open store-availability-information__stores">
+            <button
+              class="slideout__trigger-store-availability"
+              aria-label="Open pickup availability slideout"
+              tabindex="0"
+              type="button"
+              name="button"
+              disable
+              aria-controls="slideout-store-availability">{{ 'products.product_pickup_availability.check_other_stores' | t }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endunless %}

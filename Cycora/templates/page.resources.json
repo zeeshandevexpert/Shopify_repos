@@ -1,0 +1,241 @@
+{
+  "sections": {
+    "165895538000db87eb": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "light",
+        "page_header_type": "default",
+        "sticky_header": false
+      }
+    },
+    "16539965974abf5afc": {
+      "type": "resources-hero",
+      "blocks": {
+        "article_f3q9qC": {
+          "type": "article",
+          "settings": {
+            "subtitle": "METAL",
+            "title": "Kozaburo: \n<br>Circularity & Heritage",
+            "image": "shopify:\/\/shop_images\/Kozaburo_18_jpg.webp",
+            "link": "https:\/\/metalmagazine.eu\/en\/post\/kozaburo-circularity-and-heritage"
+          }
+        },
+        "ab2c585e-cfd2-47e4-a77b-603150f2c503": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Hypebeast",
+            "title": "Kozaburo SS24: <br>\nThe Land of the Setting Sun",
+            "image": "shopify:\/\/shop_images\/IMG_7107.png",
+            "link": "https:\/\/hypebeast.com\/2023\/9\/kozaburo-ss24-nyfw-runway"
+          }
+        },
+        "0b819468-b2c9-402f-84a7-237175dca2a0": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Hypebeast",
+            "title": "TOMBOGO SS24: <br> Futuristic Edge & Utility",
+            "image": "shopify:\/\/shop_images\/Tombogo_ss24_details_press_007.jpg",
+            "link": "https:\/\/hypebeast.com\/2023\/6\/tombogo-tommy-bogo-ss24-paris-fashin-week-runway"
+          }
+        },
+        "0ebd4732-b094-4c9b-a560-27561b67c677": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Textile World",
+            "title": "Pertex®: <br>High-Performance Circular Fabric",
+            "image": "shopify:\/\/shop_images\/Ambercycle_4_22_27_93ba95dc-927f-4ea8-a0ff-922bf354eef4.jpg",
+            "link": "https:\/\/www.textileworld.com\/textile-world\/2022\/10\/pertex-and-cycora-to-collaborate-on-development-of-high-performance-circular-fabric-for-the-outdoor-and-sportswear-industry\/"
+          }
+        },
+        "d65758f5-e56d-408d-9d8d-f6c8f464dba5": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Sourcing Journal",
+            "title": "Saucony: <br> Circularity meets Performance",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-08-26_at_2.54.17_PM.png",
+            "link": "https:\/\/sourcingjournal.com\/sustainability\/sustainability-materials\/saucony-ambercycle-cycora-regenerated-polyester-performance-activewear-materials-366778\/"
+          }
+        },
+        "e8aee0f3-5faf-4a08-ae0c-4e0054dac69b": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Freethink",
+            "title": "Just Might Work",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-06-30_at_1.56.24_PM.png",
+            "link": "https:\/\/www.youtube.com\/watch?v=G1KhFJbtV-M&t=245s"
+          }
+        },
+        "0648c34b-8786-4f1a-af42-47d374142ab4": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Just Style",
+            "title": "SELECTED FEMME: \n<br> The First cycora® Dress",
+            "image": "shopify:\/\/shop_images\/Screenshot_2023-07-11_at_10.31.27_AM.png",
+            "link": "https:\/\/www.just-style.com\/news\/selected-femme-chooses-ambercycle-for-regenerated-polyester-dress-launch\/"
+          }
+        },
+        "26b8c724-a237-4154-b9d8-9bc3912a869f": {
+          "type": "article",
+          "settings": {
+            "subtitle": "VOGUE",
+            "title": "H&M: <br>  Circular Design Story",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2022-06-30_at_1.53.42_PM.png",
+            "link": "https:\/\/www.vogue.in\/fashion\/content\/innovation-circular-design-story-by-handm-champions-minimal-waste-at-the-end-of-a-garments-life-cycle"
+          }
+        },
+        "28f46328-0abb-4e3b-8b7f-5917fd24ed7a": {
+          "type": "article",
+          "settings": {
+            "subtitle": "California Apparel News",
+            "title": "cycora® by Ambercycle Hopes to End Waste Through Textile Recycling",
+            "image": "shopify:\/\/shop_images\/Cycora_Still-07_t600.png",
+            "link": "https:\/\/www.apparelnews.net\/news\/2021\/jun\/03\/cycora-hopes-end-waste-tell-consumers-st\/"
+          }
+        },
+        "8c7abe9e-3cc2-45b1-bdf8-65fdc878ce59": {
+          "type": "article",
+          "settings": {
+            "subtitle": "Sourcing Journal",
+            "title": "H&M’s Circular Design Story Capsule",
+            "image": "shopify:\/\/shop_images\/hmcircular20_jpg.webp",
+            "link": "https:\/\/sourcingjournal.com\/topics\/raw-materials\/hm-circular-design-story-ambercycle-cycora-regenerated-polyester-rosario-dawson-317276\/"
+          }
+        }
+      },
+      "block_order": [
+        "article_f3q9qC",
+        "ab2c585e-cfd2-47e4-a77b-603150f2c503",
+        "0b819468-b2c9-402f-84a7-237175dca2a0",
+        "0ebd4732-b094-4c9b-a560-27561b67c677",
+        "d65758f5-e56d-408d-9d8d-f6c8f464dba5",
+        "e8aee0f3-5faf-4a08-ae0c-4e0054dac69b",
+        "0648c34b-8786-4f1a-af42-47d374142ab4",
+        "26b8c724-a237-4154-b9d8-9bc3912a869f",
+        "28f46328-0abb-4e3b-8b7f-5917fd24ed7a",
+        "8c7abe9e-3cc2-45b1-bdf8-65fdc878ce59"
+      ],
+      "settings": {
+        "title": "resources",
+        "subtitle": "cycora® in the news"
+      }
+    },
+    "1653996599514d3ca4": {
+      "type": "resourcer-fabric",
+      "blocks": {
+        "76aae52e-cbf9-4908-a230-c983462df560": {
+          "type": "point",
+          "settings": {
+            "title": "2022",
+            "link": "https:\/\/textileexchange.org\/wp-content\/uploads\/2022\/10\/Textile-Exchange_PFMR_2022.pdf",
+            "description": "Preferred Fiber & Materials Market Report",
+            "point_1": "textile exchange",
+            "point_2": "",
+            "point_3": ""
+          }
+        },
+        "bd5c31e5-36e5-463c-8e03-4ea7a217ca37": {
+          "type": "point",
+          "settings": {
+            "title": "2020",
+            "link": "http:\/\/www2.globalfashionagenda.com\/initiatives\/fashion-on-climate\/#\/",
+            "description": "Fashion on Climate",
+            "point_1": "global fashion agenda",
+            "point_2": "McKinsey",
+            "point_3": ""
+          }
+        },
+        "f6617d07-8db0-4932-83b3-a6ea06d172af": {
+          "type": "point",
+          "disabled": true,
+          "settings": {
+            "title": "2019",
+            "link": "https:\/\/sourcingjournal.com\/topics\/raw-materials\/ambercycle-hm-zalando-bestseller-circularity-cycora-textile-waste-renewcell-321020\/",
+            "description": "Preferred Fiber & Materials Report",
+            "point_1": "textile exchange",
+            "point_2": "",
+            "point_3": ""
+          }
+        },
+        "ee23a997-f103-4d4e-9f57-edef66d27e9f": {
+          "type": "point",
+          "settings": {
+            "title": "2018",
+            "link": "https:\/\/www.youtube.com\/watch?v=tLfNUD0-8ts",
+            "description": "The True Cost of Fast Fashion",
+            "point_1": "the economist",
+            "point_2": "",
+            "point_3": ""
+          }
+        },
+        "40e76a79-20c6-4031-96a9-9f2ddb6e2757": {
+          "type": "point",
+          "settings": {
+            "title": "2017",
+            "link": "https:\/\/ellenmacarthurfoundation.org\/topics\/fashion\/overview",
+            "description": "Make Fashion Circular",
+            "point_1": "ellen mcarthur foundation",
+            "point_2": "",
+            "point_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "76aae52e-cbf9-4908-a230-c983462df560",
+        "bd5c31e5-36e5-463c-8e03-4ea7a217ca37",
+        "f6617d07-8db0-4932-83b3-a6ea06d172af",
+        "ee23a997-f103-4d4e-9f57-edef66d27e9f",
+        "40e76a79-20c6-4031-96a9-9f2ddb6e2757"
+      ],
+      "settings": {
+        "title": "educational resources",
+        "description": "reports & articles",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/IMG_8201.jpg",
+        "vimeo_youtube_video": "",
+        "video_file": ""
+      }
+    },
+    "165399637926a2affb": {
+      "type": "related-products",
+      "blocks": {
+        "1c0ae39c-42d0-4725-8163-9563a92655d3": {
+          "type": "product",
+          "settings": {
+            "product": "essential-hoodie"
+          }
+        },
+        "9d51cd97-80d1-43ef-9897-4d2bb47fa863": {
+          "type": "product",
+          "settings": {
+            "product": "essential-hoodie-1"
+          }
+        },
+        "dce188a1-8825-426c-a20b-2fa4fab2bc92": {
+          "type": "product",
+          "settings": {
+            "product": "essential-hoodie-2"
+          }
+        }
+      },
+      "block_order": [
+        "1c0ae39c-42d0-4725-8163-9563a92655d3",
+        "9d51cd97-80d1-43ef-9897-4d2bb47fa863",
+        "dce188a1-8825-426c-a20b-2fa4fab2bc92"
+      ],
+      "disabled": true,
+      "settings": {
+        "display_status": true,
+        "title_plp": "brand partnerships",
+        "view_all_link": "",
+        "title_after_plp": "interested in partnering with us to<br>\ncreate a branded collection?",
+        "learn_more": ""
+      }
+    }
+  },
+  "order": [
+    "165895538000db87eb",
+    "16539965974abf5afc",
+    "1653996599514d3ca4",
+    "165399637926a2affb"
+  ]
+}

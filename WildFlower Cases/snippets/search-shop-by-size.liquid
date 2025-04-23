@@ -1,0 +1,31 @@
+{% render 'hs-defer-css' with filename: 'shop-by-size.css', pages: 'collection,index,product' | split: ',', local: true %}
+
+<div class="shop-by-size__wrapper">
+  <div class="page-width">
+    <div class="shop-by-size">
+      {% assign sizes = shop.metaobjects.all_i_phone_case_sizes.all-i-phone-case-sizes.iphone_size.value %}
+
+      {% for iphone in sizes %}
+        {%- liquid
+          assign param_search_terms = search.terms | split: " " | join: "+" | url_param_escape
+          assign param_size = iphone.name.value | split: " " | join: "+" | url_param_escape
+
+          assign url = "/search?q=" | append: param_search_terms
+          assign url = url | append: "&type=product"
+          assign url = url | append: "&filter.v.option.size=" | append: param_size
+        -%}
+
+        <div class="shop-by-size__item relative {% if iphone.collection.value.url == collection.url %}active{% endif %}" >
+          <div class="icon {{ icon }}">
+            <img loading="lazy" src="{{ iphone.icon | file_url }}" width height>
+            <span class="visually-hidden">{{ iphone.name.value }} icon</span>
+          </div>
+
+          <a href="{{ url }}" class="link--fill-parent">
+            <span class="visually-hidden">{{ iphone.name.value }}</span>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

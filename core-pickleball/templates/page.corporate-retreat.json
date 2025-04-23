@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "featured_product_AyRPbJ": {
+      "type": "featured-product",
+      "settings": {
+        "featured_product": "",
+        "image_layout": "stacked",
+        "product_photo_alignement": "left",
+        "enable_zoom": true,
+        "product_vendor": false,
+        "product_title_size": false,
+        "product_header_alignement": "",
+        "product_selector": "radio",
+        "quantity_enabled": false,
+        "button_cart_icon": true,
+        "enable_payment_button": false,
+        "show_description": false,
+        "social_sharing_products": true,
+        "show_product_tags": true,
+        "dbtfy_product_tabs_first": true,
+        "amazon_enable": true,
+        "amazon_link": "",
+        "amazon_button_label": "",
+        "ticktextclass": ""
+      }
+    }
+  },
+  "order": [
+    "featured_product_AyRPbJ"
+  ]
+}

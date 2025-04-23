@@ -1,0 +1,15 @@
+<style class="product-body-style">  
+  .product-body-style {padding-left: 30px; padding-right: 30px; max-width: 1150px !important; margin: 0 auto;}
+</style>
+
+{% include 'collection-image-header-infinite' %}
+
+<div class="product-body-style">
+  {% if settings.announcement_position == 'under' %}
+  {% include 'announcement' %}
+  {% endif %}
+  
+  {% include 'breadcrumbs' %}
+  
+  {% section 'collection-template-infinite-scroll' %}
+</div>

@@ -1,0 +1,154 @@
+{% if section.settings.display_status == true %}
+    <div class="container-style container-medium">
+        <div class="tech-facility-row">
+            <div class="tech-facility-col-left">
+                <div class="standard-cover">
+                    {% include "media-block" %}
+                </div>
+            </div>
+            <div class="tech-facility-col-right">
+                <div class="tech-facility-top">
+                    <h2>{{ section.settings.title }}</h2>
+                    {{ section.settings.description }}
+                </div>
+
+                <div class="tech-facility-mobile-only">
+                    <div class="standard-cover">
+                        {% include "media-block" %}
+                    </div>
+                </div>
+
+
+                <div class="tech-facility-bottom">
+                    <div class="tech-facility-info-row">
+                        <div class="tech-facility-info">
+                            <h4>{{ section.settings.point_1 }}</h4>
+                            <h5>{{ section.settings.point_1_description }}</h5>
+                        </div>
+                        <div class="tech-facility-info">
+                            <h4>{{ section.settings.point_2 }}</h4>
+                            <h5>{{ section.settings.point_2_description }}</h5>
+                        </div>
+                        <div class="tech-facility-info">
+                            <h4>{{ section.settings.point_3 }}</h4>
+                            <h5>{{ section.settings.point_3_description }}</h5>
+                        </div>
+                        <div class="tech-facility-info">
+                            <h4>{{ section.settings.point_4 }}</h4>
+                            <h5>{{ section.settings.point_4_description }}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "How We Work - Products",
+  "tag": "section",
+  "class": "tech-facility-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "display_status",
+      "label": "Display This Section",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "point_1",
+      "label": "Point 1 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "point_1_description",
+      "label": "Point 1 Description"
+    },
+    {
+      "type": "text",
+      "id": "point_2",
+      "label": "Point 2 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "point_2_description",
+      "label": "Point 2 Description"
+    },
+    {
+      "type": "text",
+      "id": "point_3",
+      "label": "Point 3 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "point_3_description",
+      "label": "Point 3 Description"
+    },
+    {
+      "type": "text",
+      "id": "point_4",
+      "label": "Point 4 Title"
+    },
+    {
+      "type": "textarea",
+      "id": "point_4_description",
+      "label": "Point 4 Description"
+    },
+    {
+      "type": "header",
+      "content": "Media Block"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "image"
+        },
+        {
+          "value": "vimeo_youtube_video",
+          "label": "YouTube or Vimeo Video"
+        },
+        {
+          "value": "video_file",
+          "label": "HTML5 Video"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video_url",
+      "id": "vimeo_youtube_video",
+      "label": "YouTube or Vimeo Video",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ]
+    },
+    {
+      "type": "text",
+      "id": "video_file",
+      "label": "HTML5 Video File URL"
+    }
+  ]
+}
+{% endschema %}

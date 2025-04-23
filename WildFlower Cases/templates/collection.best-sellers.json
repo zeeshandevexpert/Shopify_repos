@@ -1,0 +1,164 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "color_scheme": "background-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2": {
+          "type": "marketing_tile",
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify:\/\/shop_images\/Olivia-Coming-Soon-Hero-DT.jpg",
+            "link": "#",
+            "position": 5,
+            "title": "Need Help?",
+            "paragraph": "<p>Browse our Style Tips and get inspired<\/p>",
+            "button_text": "Go To Style tips"
+          }
+        },
+        "f465fd6b-d458-43f8-99f6-c919a223d7b1": {
+          "type": "marketing_tile",
+          "settings": {
+            "tile_size": "2x",
+            "image": "shopify:\/\/shop_images\/324855867_3355743068034223_1923643533189022191_n.jpg",
+            "link": "",
+            "position": 5,
+            "title": "AirPod Max Cover",
+            "paragraph": "",
+            "button_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "34ffb5d5-755c-463a-9bed-4c9080b2f1c2",
+        "f465fd6b-d458-43f8-99f6-c919a223d7b1"
+      ],
+      "settings": {
+        "columns_desktop": 4,
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "button_style": "choose_size",
+        "shop_by_size": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "c7a5f3d1-8143-4ebd-b3ef-1e0b227abac8": {
+      "type": "foursixty",
+      "blocks": {
+        "dc9d77f7-0cfa-416e-8436-4562e42bf653": {
+          "type": "title",
+          "settings": {
+            "title": "Shop Instagram"
+          }
+        },
+        "56cbff19-6c51-4178-b4ec-bf18ae94ae08": {
+          "type": "feed",
+          "settings": {
+            "feed_id": "wildflower-cases",
+            "total_images": 7,
+            "big_first_image": false,
+            "per_row": 5,
+            "image_margin": 5,
+            "feed_type": "slider"
+          }
+        },
+        "65220432-041d-4536-91d8-23e2112853cf": {
+          "type": "button",
+          "settings": {
+            "link": "shopify:\/\/pages\/shop-wildflowercases-instagram",
+            "link_text": "Shop Our Instagram",
+            "button_style": "button"
+          }
+        }
+      },
+      "block_order": [
+        "dc9d77f7-0cfa-416e-8436-4562e42bf653",
+        "56cbff19-6c51-4178-b4ec-bf18ae94ae08",
+        "65220432-041d-4536-91d8-23e2112853cf"
+      ],
+      "settings": {
+        "width": "page-width",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "margins": 20,
+        "border_top": true,
+        "text_align": "center"
+      }
+    },
+    "1d615018-233d-46e7-892d-06897eae6dc0": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "This Just In",
+            "heading_size": "h1"
+          }
+        },
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop our newest case",
+            "button_link_1": "shopify:\/\/collections\/new-arrivals",
+            "button_style_secondary_1": true
+          }
+        }
+      },
+      "block_order": [
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-0",
+        "template--14961327341616__1d615018-233d-46e7-892d-06897eae6dc0-166688777394898c57-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Wildflower-Cases-Natalie-Krim-DT.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/Wildflower-Cases-Natalie-Krim-MB.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "top-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "left",
+        "show_text_below": false
+      }
+    },
+    "marketing_tile_section_8cqAGJ": {
+      "type": "marketing-tile-section",
+      "blocks": {
+        "quote_tile_37i6qc": {
+          "type": "quote_tile",
+          "settings": {
+            "tile_size": "full-width",
+            "logo": "shopify:\/\/shop_images\/Nylon_logo.png",
+            "link": "",
+            "position": 12,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "author": ""
+          }
+        }
+      },
+      "block_order": [
+        "quote_tile_37i6qc"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "c7a5f3d1-8143-4ebd-b3ef-1e0b227abac8",
+    "1d615018-233d-46e7-892d-06897eae6dc0",
+    "marketing_tile_section_8cqAGJ"
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "sections": {
+    "1656073119271e84c3": {
+      "type": "header-skin",
+      "settings": {
+        "skin": "dark",
+        "page_header_type": "shadow-gradient",
+        "sticky_header": true
+      }
+    },
+    "1653979377789bdf4d": {
+      "type": "index-vintage",
+      "settings": {
+        "text_color": "#ffffff",
+        "title": "vintage molecules",
+        "description": "cycora<sup>®<\/sup> is the new regenerated material<br> created from end-of-life textile <span class=\"linked-drophover\">'waste'<i><strong>'waste'<\/strong>waste is a perception of material that has been deemed with no value. we're on a mission to reimagine waste streams.<\/i><\/span>",
+        "button_title": "",
+        "button_link": "shopify:\/\/blogs\/zine",
+        "media_type": "vimeo_youtube_video",
+        "image": "shopify:\/\/shop_images\/orange_is_the_new_cycora.png",
+        "image_mobile": "shopify:\/\/shop_images\/orange_is_the_new_cycora.png",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/731444637",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/881af15503824c7492497e270b747215.mp4"
+      }
+    },
+    "a35ac7a2-d33d-4917-973a-3a2df800b448": {
+      "type": "index-experiment",
+      "disabled": true,
+      "settings": {
+        "title": "community events",
+        "image_bg": "shopify:\/\/shop_images\/Untitled_design-110.png",
+        "button_title": "sign up",
+        "button_link": "https:\/\/rooc77q0lau.typeform.com\/to\/vq8VwfLu?typeform-source=www.google.com",
+        "media_type": "video_file",
+        "image": "shopify:\/\/shop_images\/Screenshot_2023-05-02_at_4.03.36_PM.png",
+        "vimeo_youtube_video": "",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/3dff3fd9d4034dcd82c536da315893fc.mp4"
+      }
+    },
+    "929cb9f9-0788-42ed-bf55-1f8121bbe712": {
+      "type": "index-partnership-block",
+      "blocks": {
+        "da56bc6e-43bf-4c77-88fb-b5bf1bb55d9c": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/zara.jpg",
+            "title": "Zara Athleticz x cycora<sup>®<\/sup>",
+            "button_title": "partnerships",
+            "button_link": "https:\/\/cycora.com\/blogs\/zine\/zara-circularity-meets-performance"
+          }
+        },
+        "5390a48b-2029-4f0e-86b0-74a55868561f": {
+          "type": "item",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/community.png",
+            "title": "community",
+            "button_title": "sign up",
+            "button_link": "https:\/\/rooc77q0lau.typeform.com\/to\/vq8VwfLu"
+          }
+        }
+      },
+      "block_order": [
+        "da56bc6e-43bf-4c77-88fb-b5bf1bb55d9c",
+        "5390a48b-2029-4f0e-86b0-74a55868561f"
+      ],
+      "settings": {
+        "heading": "regenerated to offer the same versatility and strength as conventional materials, at a fraction of the environmental costs",
+        "button_title": "our technology",
+        "button_link": "shopify:\/\/pages\/our-process"
+      }
+    },
+    "165397959584b1fd2a": {
+      "type": "index-circularity",
+      "settings": {
+        "title_2": "<p>redesigning the fashion industry<\/p>",
+        "block_1_title": "> 100b.",
+        "block_1_desc": "<p>garments are landfilled <\/p><p>or incinerated every year<\/p>",
+        "block_2_title": "> 50%",
+        "block_2_desc": "<p>of global fiber <\/p><p>production is polyester<\/p>",
+        "block_3_logo": "shopify:\/\/shop_images\/Group.svg",
+        "block_3_desc": "<p>is made by diverting this material<\/p><p>away from landfills and burn pits  <\/p>",
+        "media_type": "video_file",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2022-06-06_at_8.40.14_AM.png",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/783412663",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/02bb8079130640ddb747147e833e4973.mp4",
+        "title": "cycora<sup>®<\/sup>.lab",
+        "button_title": "shop now",
+        "button_link": "https:\/\/cycora.com\/pages\/experiments"
+      }
+    },
+    "16539796127f5931da": {
+      "type": "index-experiment",
+      "disabled": true,
+      "settings": {
+        "title": "step into <br>cycora®.lab",
+        "image_bg": "shopify:\/\/shop_images\/undesigning-film-april-27-23-13-min.jpg",
+        "button_title": "explore",
+        "button_link": "shopify:\/\/pages\/experiments",
+        "media_type": "image",
+        "image": "shopify:\/\/shop_images\/undesigning-february-film-16-min.jpg",
+        "vimeo_youtube_video": "",
+        "video_file": ""
+      }
+    },
+    "165397959997599560": {
+      "type": "index-materials",
+      "settings": {
+        "title": "",
+        "subtitle": "we’re reducing dependence on Earth’s raw resources, bringing us one step closer to material harmony",
+        "description": "regenerated at the molecular level in order to create premium yarns fabrics that are made to perform\n <br> <br>",
+        "image_bg": "shopify:\/\/shop_images\/Group_17.png",
+        "button_title": "learn more",
+        "button_link": "https:\/\/cycora.com\/collections\/materials"
+      }
+    },
+    "16539796145335f412": {
+      "type": "index-amber",
+      "blocks": {
+        "48344f13-91a9-4c14-92a9-9c8d844684f2": {
+          "type": "point",
+          "settings": {
+            "title": "14,560 sq ft",
+            "button_title": "diverting clothing from landfill",
+            "button_link": ""
+          }
+        },
+        "2841e3dd-7dbf-4180-a7c5-f700cf5bd1d8": {
+          "type": "point",
+          "settings": {
+            "title": "42 team members",
+            "button_title": "discover open roles",
+            "button_link": ""
+          }
+        },
+        "140c7191-b92c-4e07-a1e3-aafb204f8888": {
+          "type": "point",
+          "settings": {
+            "title": "1 mission",
+            "button_title": "read about us",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "48344f13-91a9-4c14-92a9-9c8d844684f2",
+        "2841e3dd-7dbf-4180-a7c5-f700cf5bd1d8",
+        "140c7191-b92c-4e07-a1e3-aafb204f8888"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "cycora® by Ambercycle, Inc.",
+        "description": "Ambercycle's mission is to end waste in the fashion industry. The Ambercycle™ Ecosystem enables the consolidation, regeneration, and reintegration of end-of-life textiles back into supply chains, reducing the extraction of finite resources from the planet.",
+        "media_type": "video_file",
+        "image": "shopify:\/\/shop_images\/2021206_CycoraxH_M_ML-157.jpg",
+        "vimeo_youtube_video": "https:\/\/vimeo.com\/729005165",
+        "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6ac06b5c1ff24e4f9c1102d8600632e3.mov"
+      }
+    }
+  },
+  "order": [
+    "1656073119271e84c3",
+    "1653979377789bdf4d",
+    "a35ac7a2-d33d-4917-973a-3a2df800b448",
+    "929cb9f9-0788-42ed-bf55-1f8121bbe712",
+    "165397959584b1fd2a",
+    "16539796127f5931da",
+    "165397959997599560",
+    "16539796145335f412"
+  ]
+}

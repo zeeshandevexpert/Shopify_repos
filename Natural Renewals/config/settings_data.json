@@ -1,0 +1,133 @@
+{
+  "current": {
+    "header_light_logo": "shopify:\/\/shop_images\/logo-light-skin.webp",
+    "header_dark_logo": "shopify:\/\/shop_images\/logo-dark-skin.webp",
+    "header_logo_title": "",
+    "footer_logo": "shopify:\/\/shop_images\/logo-dark-skin.webp",
+    "footer_logo_title": "",
+    "email_subscribe_code": "<div class=\"klaviyo-form-YpBreH\"><\/div>",
+    "favicon_image": "shopify:\/\/shop_images\/2_5cd6a04a-7871-4363-941c-d4aaadb42a66.png",
+    "copyright_text": "+1 657 529 2674 <br>3045 E 11th Street Los Angeles, CA 90023<br> <br> \n© 2023 Ambercycle, Inc. All rights reserved.",
+    "header_type": "shadow-gradient",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo-light-skin.webp",
+    "checkout_logo_size": "large",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "a565e255-0315-498b-b8b3-9d642b98a20d": {
+            "type": "item",
+            "settings": {
+              "footer_nav": "footer"
+            }
+          },
+          "68b9c9af-cd62-40da-88b1-8784d36b7627": {
+            "type": "item",
+            "settings": {
+              "footer_nav": "social-menu"
+            }
+          }
+        },
+        "block_order": [
+          "a565e255-0315-498b-b8b3-9d642b98a20d",
+          "68b9c9af-cd62-40da-88b1-8784d36b7627"
+        ],
+        "settings": {
+          "footer_title": "stay in the loop...",
+          "email_subscribe_code": "<div class=\"klaviyo-form-YpBreH\"><\/div>",
+          "instagram_link": "",
+          "facebook_link": "",
+          "twitter_link": "",
+          "linkedin_link": "",
+          "tiktok_link": "",
+          "youtube_link": ""
+        }
+      },
+      "how-we-work-template": {
+        "type": "how-we-work-template",
+        "settings": {
+          "display_status": true,
+          "title": "the technology",
+          "description": "<p>cycora® is made from material sources, regenerated, and re-engineered through the Ambercycle™ Ecosystem <\/p>",
+          "point_1": "step 1",
+          "point_1_description": "end-of-life textiles are intercepted from<br> the landfill. hardware, such as buttons<br> and zippers, is removed.",
+          "point_2": "step 2",
+          "point_2_description": "material is shredded and purified at a <br>molecular level, separating out dyes and<br> other impurities",
+          "point_3": "step 3",
+          "point_3_description": "the purified materials are reconstituted<br> into pellets",
+          "point_4": "step 4",
+          "point_4_description": "regenerated pellets are spun into new <br>fibers and yarns, for use in new premium <br>cycora® fabrics.",
+          "media_type": "video_file",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2022-07-14_at_10.35.35_AM.png",
+          "vimeo_youtube_video": "https:\/\/vimeo.com\/730070026",
+          "video_file": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/6cd00b11f9304f42b4d8eafd72ff7b20.mov"
+        }
+      },
+      "related-products": {
+        "type": "related-products",
+        "blocks": {
+          "049af76d-2eb0-4ab1-a34a-00b7c1239a7b": {
+            "type": "product",
+            "settings": {
+              "product": "essential-hoodie"
+            }
+          },
+          "26fda993-334b-43a2-9aeb-64e75e637611": {
+            "type": "product",
+            "settings": {
+              "product": "essential-hoodie-1"
+            }
+          },
+          "6f2a23c6-03ba-4914-9a61-24da8c4c7b0d": {
+            "type": "product",
+            "settings": {
+              "product": "essential-hoodie-2"
+            }
+          }
+        },
+        "block_order": [
+          "049af76d-2eb0-4ab1-a34a-00b7c1239a7b",
+          "26fda993-334b-43a2-9aeb-64e75e637611",
+          "6f2a23c6-03ba-4914-9a61-24da8c4c7b0d"
+        ],
+        "settings": {
+          "display_status": false,
+          "title_plp": "brand partnerships",
+          "view_all_link": "",
+          "title_after_plp": "interested in partnering with us to<br>\ncreate a branded collection?",
+          "learn_more": ""
+        }
+      },
+      "account-bottom": {
+        "type": "account-bottom",
+        "settings": {
+          "text": "need help with something?",
+          "link_title": "contact us",
+          "link": "shopify:\/\/pages\/contact"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "807785498547235276": {
+        "type": "shopify:\/\/apps\/contact-form-ultimate\/blocks\/app-embed-block\/7f36c127-5e2b-4909-bcc7-2631483e37a4",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "855628211100114053": {
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
+  }
+}

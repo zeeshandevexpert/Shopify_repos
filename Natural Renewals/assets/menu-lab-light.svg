@@ -1,0 +1,26 @@
+<svg width="65" height="64" viewBox="0 0 65 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_994_1277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="12" y="41" width="30" height="23">
+<rect x="12.5522" y="41.1423" width="29.3877" height="22.8571" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask0_994_1277)">
+<circle cx="27.2461" cy="41.469" r="14.1939" stroke="#6C7072"/>
+</g>
+<mask id="mask1_994_1277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="41" y="22" width="24" height="31">
+<rect x="41.9351" y="52.2448" width="29.3877" height="22.8571" transform="rotate(-90 41.9351 52.2448)" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask1_994_1277)">
+<circle cx="42.2617" cy="37.5509" r="14.1939" transform="rotate(-90 42.2617 37.5509)" stroke="#6C7072"/>
+</g>
+<mask id="mask2_994_1277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="23" y="0" width="31" height="23">
+<rect x="53.0366" y="22.8571" width="29.3877" height="22.8571" transform="rotate(180 53.0366 22.8571)" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask2_994_1277)">
+<circle cx="38.3427" cy="22.5304" r="14.1939" transform="rotate(180 38.3427 22.5304)" stroke="#6C7072"/>
+</g>
+<mask id="mask3_994_1277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="11" width="24" height="31">
+<rect x="23.6538" y="11.7546" width="29.3877" height="22.8571" transform="rotate(90 23.6538 11.7546)" fill="#E5E5E5"/>
+</mask>
+<g mask="url(#mask3_994_1277)">
+<circle cx="23.3271" cy="26.4485" r="14.1939" transform="rotate(90 23.3271 26.4485)" stroke="#6C7072"/>
+</g>
+</svg>

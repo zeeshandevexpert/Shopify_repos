@@ -1,0 +1,36 @@
+<!-- /templates/index.liquid -->
+<div class="index-sections">
+  {{ content_for_index }}
+</div>
+{% assign product = all_products["core-pickleball"] %}
+<script type="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    Variant: {{ product.selected_or_first_available_variant.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.selected_or_first_available_variant.price|money|json }},
+    CompareAtPrice: {{ product.selected_or_first_available_variant.compare_at_price|money|json }}
+  };
+  
+  console.log(item)
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>

@@ -1,0 +1,189 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": true,
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "page_width": "page-width--narrow"
+      }
+    },
+    "18f9c176-83de-441a-9fbf-0379d51d5635": {
+      "type": "image-banner",
+      "blocks": {
+        "template--14943818383408__18f9c176-83de-441a-9fbf-0379d51d5635-16655193008e577c94-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "How Wildflower Cases Blossomed",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--14943818383408__18f9c176-83de-441a-9fbf-0379d51d5635-16655193008e577c94-0"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WF-Our-Story-DT_3e41178b-f213-4137-8e6d-6119dca7e7d8.jpg",
+        "image_mobile": "shopify:\/\/shop_images\/WF-Our-Story-DT_3e41178b-f213-4137-8e6d-6119dca7e7d8.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "bottom-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "show_text_below": false
+      }
+    },
+    "dffd165a-b0de-4130-8629-3cc47666dd33": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14943818383408__dffd165a-b0de-4130-8629-3cc47666dd33-16655193019dc6212a-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Women owned, family style",
+            "heading_size": "h2"
+          }
+        },
+        "template--14943818383408__dffd165a-b0de-4130-8629-3cc47666dd33-16655193019dc6212a-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wildflower Cases is a women owned and operated iPhone accessories company in Los Angeles, California. Each exclusive and limited edition fashion iPhone accessory is designed by founder Michelle Carlson and her two daughters, Devon and Sydney Carlson. Wildflower represents all of the girls passionately experiencing life with a free spirit and sense of independence, who are able to grow and survive anywhere, and are driven to succeed.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14943818383408__dffd165a-b0de-4130-8629-3cc47666dd33-16655193019dc6212a-0",
+        "template--14943818383408__dffd165a-b0de-4130-8629-3cc47666dd33-16655193019dc6212a-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/famiily.jpg",
+        "border_top": false,
+        "page_width": "page-width--narrow",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "067f478b-3c53-4afb-b547-658a2c93e6dc": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14943818383408__067f478b-3c53-4afb-b547-658a2c93e6dc-1665519425194ca1dd-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Once a passion project<\/p>",
+            "heading_size": "h2"
+          }
+        },
+        "template--14943818383408__067f478b-3c53-4afb-b547-658a2c93e6dc-1665519425194ca1dd-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What is now a brand known around the globe, initially began as just a hobby for Michelle. 11 years ago, she was on a search to find fashionable iPhone cases to gift her daughters. Realizing that cute, stylish cases were nearly impossible to find at the time, she began to make her own out of fabric and studs she had once used to accessorize denim shorts for her daughters. Inspired by her previous handiwork and using a similar concept, she hand-made Devon and Sydney their first iPhone cases.Upon seeing the cases that Michelle designed, Sydney and Devon freaked out, as did their circle of friends at high school. Soon Michelle started hand-making extra cases so if someone wanted to buy them off of her, they could. Two weeks later at a local restaurant, the Carlsons unexpectedly ran into Miley Cyrus who, after seeing the cases, freaked out and inspired Michelle and her daughters to create a website and start selling cases.<\/p><p>Upon seeing the cases that Michelle designed, Sydney and Devon freaked out, as did their circle of friends at high school. Soon Michelle started hand-making extra cases so if someone wanted to buy them off of her, they could. Two weeks later at a local restaurant, the Carlsons unexpectedly ran into Miley Cyrus who, after seeing the cases, freaked out and inspired Michelle and her daughters to create a website and start selling the cases. <\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14943818383408__067f478b-3c53-4afb-b547-658a2c93e6dc-1665519425194ca1dd-0",
+        "template--14943818383408__067f478b-3c53-4afb-b547-658a2c93e6dc-1665519425194ca1dd-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "d918e2c8-ca5a-42be-a95c-4b5c927565ef": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--14943818383408__d918e2c8-ca5a-42be-a95c-4b5c927565ef-16655193571ca0ed76-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "It all started with a selfie",
+            "heading_size": "h2"
+          }
+        },
+        "template--14943818383408__d918e2c8-ca5a-42be-a95c-4b5c927565ef-16655193571ca0ed76-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>What started as a passion project soon morphed into a full-blown business after a chance encounter with singer and actress, Miley Cyrus at a Los Angeles restaurant. After running into her, Devon asked Miley for a photo and it was at that moment Miley noticed the phone case. Devon could see Miley’s excitement towards the case and offered her one. She inquired where she could buy more, but Wildflower had yet to exist. <br\/> <br\/> <em><strong>Miley exclaimed, “What?! You need to start selling these online now!”<\/strong><\/em><br\/> <br\/> Miley tweeted a photo of the cases and tagged Devon, who consequently became swarmed with questions asking where to buy the cases. Devon recalls, \"We stayed up all night — ’til 5am — and made a website. In the morning I started replying to everyone on Twitter with “wildflowercases.com”. We immediately started getting orders and the rest is history. I believe Miley was there to motivate my mom to start this business with us. It was meant to be and we love Miley forever for it.\"<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--14943818383408__d918e2c8-ca5a-42be-a95c-4b5c927565ef-16655193571ca0ed76-0",
+        "template--14943818383408__d918e2c8-ca5a-42be-a95c-4b5c927565ef-16655193571ca0ed76-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/our-story--s2.jpg",
+        "border_top": false,
+        "page_width": "page-width--narrow",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "946e7b84-a684-4340-acd1-e6b921420603": {
+      "type": "rich-text",
+      "blocks": {
+        "template--14943818383408__946e7b84-a684-4340-acd1-e6b921420603-16655195231b495db0-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "<p>Our journey ahead<\/p>",
+            "heading_size": "h2"
+          }
+        },
+        "template--14943818383408__946e7b84-a684-4340-acd1-e6b921420603-16655195231b495db0-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Beginning with humble roots and only two handmade cell phone cases, Wildflower is now one of the fastest growing millennial iPhone fashion accessories and social media brands. They continue to increase their global exposure, with retail outlets in Japan, Australia, Dubai, Europe and Singapore. Wildflower has since secured exclusive partnerships with retail powerhouses like Urban Outfitters, Nordstrom, Free People, Dolls Kill, and hundreds of retail boutiques across the country. Their designs have been spotted in the hands of Kylie Jenner and 100s of social media influencers.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--14943818383408__946e7b84-a684-4340-acd1-e6b921420603-16655195231b495db0-0",
+        "template--14943818383408__946e7b84-a684-4340-acd1-e6b921420603-16655195231b495db0-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "background_image_size": "cover",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "main",
+    "18f9c176-83de-441a-9fbf-0379d51d5635",
+    "dffd165a-b0de-4130-8629-3cc47666dd33",
+    "067f478b-3c53-4afb-b547-658a2c93e6dc",
+    "d918e2c8-ca5a-42be-a95c-4b5c927565ef",
+    "946e7b84-a684-4340-acd1-e6b921420603"
+  ]
+}

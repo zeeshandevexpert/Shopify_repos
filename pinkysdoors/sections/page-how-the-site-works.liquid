@@ -1,0 +1,21 @@
+{% if section.settings.embed_code != blank %}
+<div class="video-flex-wrapper">
+  {{section.settings.embed_code}}
+</div>
+{% else %}
+<img src="{{ 'coming-soon-badge.png' | file_url }}" width="100%" />
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "How Our Site Works",
+    "settings": [
+	{
+  	  "type":"textarea",
+	  "id":"embed_code",
+	  "label":"Embed Code"
+	}
+	]
+  }
+{% endschema %}

@@ -1,0 +1,108 @@
+<!-- CORE--FOOTER -->
+    <footer class="core-footer">
+        <div class="yellow-bar">
+            <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/yellow-bar.png?v=1731620870" alt="">
+        </div>
+        <div class="footer-yellow-after">
+          <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/Rectangle_51.png?v=1731705791">
+        </div>
+        <div class="stay-connected">
+            <div class="stay-connected-form">
+                <h3 class="ff-helvetica black-c primary-heading t-uppercase">Stay Connected!</h3>
+              {% form 'customer' %}
+  {% if form.posted_successfully? %}
+    <p class="success-message">Thanks for submitting your email.</p>
+  {% else %}
+    {{ form.errors | default_errors }}
+    <div class="form-container">
+      <input type="email" name="contact[email]" placeholder="Your Email" required>
+      <button class="ff-proxima white-c fw-600" type="submit" aria-label="Submit email">SUBMIT</button>
+    </div>
+  {% endif %}
+{% endform %}
+
+            </div>
+        </div>
+        <div class="footer-wrapper">
+            <div class="primary-container">
+                <div class="footer-flex d-flex">
+                    <div class="footer-card-1">
+                        <div class="foter-logo">
+                            <a href="/"><img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/footer-logo.png?v=1731620870" alt=""></a>
+                        </div>
+                        <div class="footer-1-icon">
+                            <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/location.png?v=1731620870" alt="">
+                            <a href="https://maps.app.goo.gl/wW2H7aisFTKyXYZ87" class="white-c ff-proxima-reg">CORE
+                                Pickleball LLC, 184 South Livingston Ave,
+                                Suite
+                                9-108, Livingston NJ,
+                                07039</a>
+                        </div>
+                        <div class="footer-1-icon">
+                            <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/msg.png?v=1731620870" alt="">
+                            <a href="mailto:customercare@corepickleballusa.com"
+                                class="white-c ff-proxima-reg">customercare@corepickleballusa.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-menu">
+                        <h3 class="ff-helvetica white-c t-uppercase">QUICK LINKS</h3>
+                        <ul>
+                            <li><a href="https://coreathletics.com/search" class="ff-proxima-reg white-c">Search</a></li>
+                            <li><a href="https://coreathletics.com/policies/privacy-policy" class="ff-proxima-reg white-c">Privacy Policy</a></li>
+                            <li><a href="https://coreathletics.com/policies/terms-of-service" class="ff-proxima-reg white-c">Terms Of Service</a></li>
+                            <li><a href="https://coreathletics.com/pages/contact-us" class="ff-proxima-reg white-c">Contact Us</a></li>
+                            <li><a href="https://coreathletics.com/policies/refund-policy" class="ff-proxima-reg white-c">Refund Policy</a></li>
+                            <li><a href="https://coreathletics.com/pages/quality-guarantee" class="ff-proxima-reg white-c">Quality Gurantee</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu">
+                        <h3 class="ff-helvetica white-c t-uppercase">QUICK LINKS</h3>
+                        <ul>
+                            <li><a href="https://coreathletics.com/pages/club-core-submission" class="ff-proxima-reg white-c">Core Submission</a></li>
+                            <li><a href="https://coreathletics.com/pages/partners" class="ff-proxima-reg white-c">Partners</a></li>
+                            <li><a href="https://coreathletics.com/pages/ppt-refund-policy" class="ff-proxima-reg white-c">PPT Refund Policy</a></li>
+                            <li><a href="https://coreathletics.com/products/core-pickleball-outdoor-neon-green-6-pack-fast-and-built-to-last" class="ff-proxima-reg white-c">Subscribe & Save</a></li>
+                            <li><a href="https://coreathletics.com/pages/b2b-wholesale" class="ff-proxima-reg white-c">Reseller Application</a></li>
+                            <li><a href="https://coreathletics.com/pages/testimonials" class="ff-proxima-reg white-c">Testimonials</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu footer-social-icon">
+                        <h3 class="ff-helvetica white-c t-uppercase">FOLLOW US</h3>
+                        <ul>
+                            <li><a href="https://www.facebook.com/corepickleballusa/" class="ff-proxima white-c"><img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/Facebook.png?v=1731620870"
+                                        alt="">Facebook</a></li>
+                            <li><a href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2Fcore_pickleball%2F&is_from_rle" class="ff-proxima white-c"><img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/Instagram.png?v=1731620870"
+                                        alt="">Instagram</a></li>
+                            <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fcorepickleball" class="ff-proxima white-c"><img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/Frame_3.png?v=1731620870"
+                                        alt="">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pay-icons">
+                    <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/shop_pay.png?v=1731620870" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/visa.png?v=1731620870" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/mastercard.png?v=1731620870" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/apple_pay.png?v=1731620870" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/google_pay.png?v=1731620870" alt="">
+                    <img src="https://cdn.shopify.com/s/files/1/0908/1513/6050/files/amex.png?v=1731620870" alt="">
+                </div>
+                <div class="copyright">
+                    <p class="ff-proxima-reg white-c t-center">Copyright © 2024 CORE Pickleball</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- CORE--FOOTER--END -->
+
+
+{% schema %}
+  {
+    "name": "HM Core Footer",
+    "settings": [],
+    "presets": [
+      {
+        "name": "HM Core Footer"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,288 @@
+.featured-product-wrapper{
+    padding: 120px 20px 35px;
+}
+
+.page-full-width{
+    max-width: 1600px;
+    margin: 0 auto;
+    .product{
+        align-items: center;
+        .product__media-wrapper{
+
+        }
+        .product__info-wrapper{
+            product-info{
+                .price{
+                    .price__container{
+                        .price-item{
+                         /* $129.99 */
+
+                            font-family: "Montserrat", sans-serif;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 46px;
+                            line-height: 56px;
+                            /* identical to box height */
+                            text-transform: uppercase;
+                            /* 1 */
+                            // background: linear-gradient(90deg, #005AA9 0%, #007CC1 43.5%, #6BB5E4 100%);
+                            background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            letter-spacing: normal;
+                            // text-fill-color: transparent;
+   
+                        }
+                    }
+                }
+                .product__title{
+                    margin: 0;
+                    h1{
+                        font-family: "Montserrat", sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 44px;
+                        line-height: 56px;
+                        /* identical to box height */
+                        text-transform: uppercase;
+                        /* 1 */
+                        // background: linear-gradient(90deg, #005AA9 0%, #007CC1 43.5%, #6BB5E4 100%);
+                        background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        letter-spacing: normal;
+                    }
+                }
+                .product__description{
+                    font-family: "Montserrat", sans-serif;
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #626262;
+                    letter-spacing: normal;
+                }
+                
+                variant-selects{
+                    .product-form__input{
+                        .form__label{
+                            font-family: "Montserrat", sans-serif;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 24px;
+                            // line-height: 56px;
+                            /* identical to box height */
+                            text-transform: uppercase;
+                            /* 1 */
+                            background: linear-gradient(90deg, #005AA9 0%, #007CC1 43.5%, #6BB5E4 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                            background-clip: text;
+                            letter-spacing: normal;
+                        }
+                        label{
+                            font-family: "Montserrat", sans-serif;
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 24px;
+                            border: 0;
+                            min-width: 180px;
+                            /* 1 */
+                            // background: linear-gradient(90deg, #005AA9 0%, #007CC1 43.5%, #6BB5E4 100%);
+                            background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+                            border-radius: 36px;
+                        }
+                    }
+                }
+                .product-form__quantity{
+                    .form__label{
+                        font-family: "Montserrat", sans-serif;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 24px;
+                        // line-height: 56px;
+                        /* identical to box height */
+                        text-transform: uppercase;
+                        /* 1 */
+                        // background: linear-gradient(90deg, #005AA9 0%, #007CC1 43.5%, #6BB5E4 100%);
+                        background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        letter-spacing: normal;
+                    }
+                    .price-per-item__container{
+                        .quantity{
+                            .quantity__button{
+                                font-weight: 600;
+                                font-size: 24px;
+                                font-family: "Montserrat", sans-serif;
+                                color: #231F20;
+                            }
+
+                            .quantity__input{
+                                outline: none;
+                                font-weight: 600;
+                                font-family: "Montserrat", sans-serif; 
+                                font-size: 24px;
+                                color: #231F20;
+                                
+                            }
+                            &::after{
+                                border-radius: 36px;
+                                box-shadow: none;
+                                border: 2px solid #007CC1;
+                            }
+                        }
+
+                    }
+                }
+
+                .product-form{
+                    .form{
+                        .product-form__buttons{
+                            .product-form__submit{
+                                // background: linear-gradient(90deg, #6BB5E4 0%, #007CC1 45%, #005AA9 100%);
+                                background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+                                border-radius: 6px;
+                                span{
+                                    font-family: "Montserrat", sans-serif;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    color: #fff;
+                                    text-transform: uppercase;
+                                }
+                                &::after{
+                                    // border-radius: 36px;
+                                    box-shadow: none;
+                                    // border: 2px solid #007CC1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.featured-product{
+           &.reverse{
+            flex-direction: row-reverse;
+           }
+        }
+    }
+}
+
+
+.main-wrapper{
+    padding: 0;
+    .main-heading{
+        font-size: 40px;
+        font-weight: 600;
+        font-family: Montserrat, sans-serif;
+        line-height: 120%;
+        background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+
+
+.order-section{
+    .order-container{
+        .text-column{
+            .wrap-icon-box{
+                display: flex;
+                max-width: 1000px;
+                align-items: center;
+                @media (max-width:767px) {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+                .icon-box{
+                    text-align: center;
+                    width: calc(20% - 10px);
+                         display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        height: 100%;
+                        margin: 0 5px;
+                    @media (max-width:767px) {
+                        margin: 15px;
+                        width: calc(50% - 30px);
+                    }
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        object-fit: contain;
+                    }
+                    .title{
+                        margin: 0;
+                        p{
+                            text-align: center;
+                            font-size: 14px;
+                            font-weight: 700;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-family: "Montserrat", sans-serif;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.contact{
+    &.contact-form-wrapper{
+        display: flex;
+        align-items: center;
+        max-width: 1600px;
+        margin: 0 auto;
+        gap: 30px;
+        .form-block{
+            width: 50%;
+        }
+        .image-block{
+            width: 50%;
+            img{
+                border-radius: 25px;
+            }
+        }
+    }
+}
+
+.isolate{
+    .content-container{
+        .rich-text__blocks{
+            .rich-text__heading{
+                font-size: 30px;
+                font-weight: 600;
+                font-family: Montserrat, sans-serif;
+                line-height: 120%;
+                background: linear-gradient(90deg, #2e3490, #007cc1 60%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-transform: uppercase;
+            }
+            .rich-text__buttons{
+                background: linear-gradient(90deg, #2e3490, #005aa9);
+                display: inline-block;
+                padding: 15px 30px;
+                border-radius: 6px;
+                cursor: pointer;
+                max-width: fit-content;
+                a{
+                    font-size: 20px;
+                    font-family: Montserrat, sans-serif;
+                    line-height: 155%;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

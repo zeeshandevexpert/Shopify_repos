@@ -1,0 +1,305 @@
+ /* @import url('https://fonts.cdnfonts.com/css/helvetica-neue-lt-pro-55'); */
+
+.contact-intro-section {
+	/* padding: 240px 0 188px 0; */
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background-position: center; */
+	height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.contact-intro-container {
+	max-width:1350px;
+	padding: 0 30px;
+}
+
+.contact-intro-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.contact-intro-col-left {
+	width:50%;
+}
+
+.contact-intro-col-left h2 {
+	font-size:48px;
+	line-height: 1em;
+	letter-spacing: -0.03em;
+	color:#fff;
+	margin:0 0 36px 0;
+	font-family: "Helvetica Neue LT Pro";
+}
+
+
+
+.contact-intro-col-left p {
+	font-family: "Helvetica Neue LT Pro";
+	font-size:24px;
+	line-height: 1em;
+	letter-spacing: -0.03em;
+	color:#fff;
+	margin:0;
+}
+
+.contact-intro-col-left .desc ul {
+	
+	list-style: none;
+	padding: 0;
+	
+}
+.contact-intro-col-left .desc ul li {
+	font-family: "Helvetica Neue LT Pro";
+	font-size:24px;
+	line-height: 1em;
+	letter-spacing: -0.03em;
+	color:#fff;
+	
+	margin-bottom: 10px;
+}
+.contact-intro-col-left .desc ul li::before {
+	content: "";
+    background-image: url(https://cdn.shopify.com/s/files/1/0646/7790/4638/files/arrow.svg?v=1719011807);
+    background-size: 100%;
+    height: 20px;
+    width: 30px;
+    display: inline-block;
+    background-repeat: no-repeat;
+	margin-right: 15px;
+	vertical-align: bottom;
+}
+
+.contact-intro-col-right {
+	width:50%;
+}
+
+.contact-intro-col-right .contact-form{
+	padding: 20px;
+	border: 2px solid #fff;
+	border-radius: 10px;
+}
+
+.contact-intro-col-right h3 {
+	display:inline-flex;
+	align-items: center;
+	font-size:14px;
+	letter-spacing: 0.02em;
+	padding-right:18px;
+	background:url('arrow-bottom.svg') center right no-repeat;
+	margin:0 0 60px 0;
+}
+
+.contact-intro-input-row {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-left:-14px;
+}
+.contact-intro-input-row-success {
+	margin-top: 10px;
+	font-size: 20px;
+	font-family: Helvetica Neue LT Pro;
+}
+
+@media (min-width:991px) {
+
+	.contact-intro-input-row-success {
+	display: inline-block;
+    margin-left: 10px;	
+	}
+	
+}
+
+
+.klaviyo-form .needsclick input {
+	color: #fff;
+	font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-weight:400;
+	font-size:14px;
+	background:none;
+	width:100%;
+	border:0 !important;
+	border-radius: 0;
+	padding:0;
+	margin:0;
+	outline:none;
+	height:40px;
+	line-height: 40px;	
+	border-bottom:1px solid #DAE4E7 !important;
+}
+.contact-intro-input-col {
+	width:calc(50% - 14px);
+	margin-left:14px;
+	margin-bottom: 30px;
+}
+
+.contact-intro-input-col-fullwidth {
+	width:calc(100% - 14px);
+}
+
+.contact-intro-input-col label {
+	display:block;
+	font-family: Helvetica Neue LT Pro;
+	padding:0;
+	margin:0;	
+	font-size:14px;
+	line-height: 1em;
+}
+
+.contact-intro-input-col input {
+	color: #fff;
+	font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-weight:400;
+	font-size:14px;
+	background:none;
+	width:100%;
+	border:none;
+	border-radius: 0;
+	padding:0;
+	margin:0;
+	outline:none;
+	height:40px;
+	line-height: 40px;	
+	border-bottom:1px solid #DAE4E7;
+}
+
+.contact-intro-input-col input::placeholder {
+	color: #fff;
+}
+
+.contact-intro-input-col textarea {
+	display:block;
+	background:transparent;
+	width:100%;
+	border:none;
+	outline:none;
+	border-bottom:1px solid #DAE4E7;
+	height:132px;
+	overflow-y: auto;
+	color:var(--colorlightblack);
+	font-family: Helvetica Neue LT Pro;
+	font-size:14px;
+	border-radius: 0;
+	padding:0;
+	margin:0;
+	resize: none;
+}
+
+.contact-intro-input-col textarea::placeholder {
+	font-family: 'Helvetica-Regular';
+	color:var(--colorlightblack);
+}
+
+.contact-intro-col-right h4 {
+	color:var(--colorlightblack);
+	font-size:14px;
+	line-height: 1.5em;
+	margin: 0;
+}
+
+.contact-intro-input-attach {
+	border-bottom:1px solid #DAE4E7;
+}
+
+.contact-intro-input-attach label {
+	font-family: Helvetica Neue LT Pro;
+    display: inline-flex;
+    line-height: 40px;
+    cursor: pointer;
+	color:#b9b9ba;
+}
+
+.contact-intro-input-attach input {
+	display:none;
+}
+
+.contact-intro-input-submit {
+	margin-top:9px;
+}
+
+.contact-intro-input-submit input {
+	/* display: inline-flex; */
+    color: #000000;
+    font-size: 24px;
+	letter-spacing: -0.01em;
+	font-family: 'Helvetica Neue LT Pro', sans-serif;
+  font-weight:500;
+  text-align: -webkit-center;
+    background: #DBEDF5;
+    border: none;
+    border-radius: 6px;
+    /* padding: 0 70px 0 50px; */
+  text-align:center;
+    margin: 0 auto;
+    outline: none;
+    height: 50px;
+	width: 150px;
+    line-height: 40px;
+	cursor: pointer;
+}
+
+@media (max-width:991px) {
+	.contact-intro-input-row-success {
+		text-align: center;
+		}
+	.contact-intro-section {
+		padding:152px 0 110px 0;
+	}
+
+	.contact-intro-row {
+		margin-left:0;
+		flex-wrap: wrap;
+	}
+
+	.contact-intro-col-left {
+		width:100%;
+		margin-left:0;
+		margin-bottom: 40px;
+	}
+
+	.contact-intro-col-left h2 {
+		font-size:32px;
+		margin: 0 0 31px 0;
+	}
+
+	.contact-intro-col-left p {
+		font-size: 16px;	
+	}
+	.contact-intro-col-left .desc ul li {
+		font-size: 16px;	
+	}
+
+	.contact-intro-col-left .desc ul li::before {
+		height: 14px;
+		width: 20px;
+	}
+
+	.contact-intro-col-right {
+		width:100%;
+		margin-left:0;
+	}
+
+	.contact-intro-input-row {
+		margin-left:0;
+	}
+	.contact-intro-col-right .contact-form{
+		padding: 35px 45px;
+		padding-bottom: 15px;
+	}
+
+	.contact-intro-input-col input{
+		height: 25px;
+		line-height: 25px;
+	}
+	.contact-intro-input-submit input{
+		width: 100%;
+	}
+	.contact-intro-input-col {
+		width:100%;
+		margin-left:0;
+	}
+
+}

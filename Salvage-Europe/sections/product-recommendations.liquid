@@ -1,0 +1,76 @@
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+<section
+  class="product-page relative mt7 row main__section product-recommendations__wrapper" id="related-products"
+  data-section-id="{{ section.id }}" data-limit="{{ section.settings.limit }}">
+  <div class="product-recommendations" data-product-id="{{ product.id }}">
+      <div class="span-12">
+        <div class="section-heading">
+          <h2>{{ section.settings.product_recommendations_heading }}</h2>
+          <span class="section-border">
+            {%- if settings.header_border_style == 'zigzag' -%}<div class="zigzag"></div>{% endif %}
+          </span>
+        </div>
+      </div>
+      <div class="clear"></div>
+      {%- liquid
+
+        case section.settings.grid
+          when 2
+            assign grid_item_width = 'span-6 auto'
+          when 3
+            assign grid_item_width = 'span-4 md-span-4 sm-span-6 auto'
+          when 4
+            assign grid_item_width = 'span-3 md-span-4 sm-span-6 auto'
+         endcase
+
+      -%}
+      <div class="collection__grid-loop grid__wrapper">
+        {%- for product in recommendations.products limit: section.settings.limit -%}
+          <div class="product-index {{ grid_item_width }}" data-product-id="{{ product.id }}" data-aos="{{ settings.scroll_animation }}" data-aos-delay="{{ forloop.index | times: 150  }}">
+              {% render 'product-listing', product: product, grid: section.settings.grid %}
+          </div>
+        {%- endfor -%}
+      </div>
+  </div>
+</section>
+{%- else  -%}
+  <div class="page-width js-product-rec-wrapper"
+    data-base-url="{{ routes.product_recommendations_url }}"
+    data-product-id="{{ product.id }}"
+    data-section-id="{{ section.id }}"
+    data-intent="related"
+    data-section-type="product-recommendations">
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_recommendations_heading",
+      "label": "Heading",
+      "default": "Recommended products"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "label": "Products per row",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "label": "Products to show",
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

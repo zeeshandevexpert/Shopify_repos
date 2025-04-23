@@ -1,0 +1,55 @@
+
+    <div class="container-style container-large">
+        <div class="general-more-products-top">
+            <h2>{{ section.settings.title_plp }}</h2>
+            <a href="{{ section.settings.view_all_link }}">view all</a>
+        </div>
+    </div>
+    <div class="general-more-products-row">
+
+        {% assign products_list = article.metafields.arena.material_related_products | split: "|" %}
+        {% for product_handle in products_list %}
+            {% assign product = all_products[product_handle] %}
+            {% include "product-grid"  %}
+        {% endfor %}
+
+    </div>
+    <div class="general-more-products-bottom">
+        <h4>{{ section.settings.title_plp_bottom }}</h4>
+        <a href="{{ section.settings.learn_more_link }}">learn more</a>
+    </div>
+
+{% schema %}
+{
+  "name": "Material Details - Prod.",
+  "tag": "section",
+  "class": "general-more-products-section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title_plp",
+      "label": "Products List Title"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Links"
+    },
+    {
+      "type": "textarea",
+      "id": "title_plp_bottom",
+      "label": "Bottom Title"
+    },
+    {
+      "type": "url",
+      "id": "learn_more_link",
+      "label": "Learn More Links"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Material Details - Prod."
+    }
+  ]
+}
+{% endschema %}

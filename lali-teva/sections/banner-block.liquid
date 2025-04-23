@@ -1,0 +1,44 @@
+<section class="banner-block" style="background-image: url({{ section.settings.bg_image | img_url: 'master' }})">
+    <div class="wrap-banner-block">
+        <div class="heading">
+            {{ section.settings.text }}
+        </div>
+        <a href="{{ section.setttings.btn_link }}" class="btn">{{ section.settings.btn_text }}</a>
+    </div>
+
+</section>
+
+
+{% schema %}
+{
+  "name": "Banner Block",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    }
+   
+  ],
+  "presets": [
+    {
+      "name": "Banner Block",
+    }
+  ]
+}
+{% endschema %}
